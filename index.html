@@ -167,12 +167,29 @@
 </footer>
 
 <script>
+<script>
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      // 1. Manejo visual de los botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
+
+      // 2. Lógica de filtrado de las categorías
+      const filtro = btn.textContent.trim();
+      
+      document.querySelectorAll('.cat-card').forEach(card => {
+        const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
+        
+        // Si tocamos "Todas" mostramos todo, sino comparamos nombres
+        if (filtro === 'Todas' || nombreCategoria === filtro) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
+</script>
 </script>
 
 </body>
