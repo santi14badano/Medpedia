@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IC: Manejo de la Insuficiencia Cardíaca — Medpedia</title>
+    <title>IC: Guía de Tratamiento — Medpedia</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
+        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
-        th, td { border: 1px solid var(--borde); padding: 10px; }
+        .cuadro { background: #fff8f8; border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
+        th { background: #f9f9f9; }
     </style>
 </head>
 <body>
 <nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
 <main>
-    <span class="badge">Cardiología / Medicina Interna</span>
+    <span class="badge">Cardiología</span>
     <h1>Insuficiencia Cardíaca (IC)</h1>
+    <p><em>Manejo de la IC con Fracción de Eyección Reducida (FEyR ≤ 40%).</em></p>
 
-    <h2>1. Clasificación Funcional y Estructural</h2>
+    <h2>1. Clasificación Funcional (NYHA)</h2>
+    <ul>
+        <li><strong>Clase I:</strong> Sin limitación a la actividad física habitual.</li>
+        <li><strong>Clase II:</strong> Limitación leve. Disnea en actividad moderada.</li>
+        <li><strong>Clase III:</strong> Limitación marcada. Disnea ante esfuerzos mínimos.</li>
+        <li><strong>Clase IV:</strong> Incapacidad de realizar cualquier actividad sin síntomas. Disnea en reposo.</li>
+    </ul>
+
+    <h2>2. Los 4 Pilares del Tratamiento (Dosis iniciales)</h2>
+    <div class="cuadro">
+        <strong>Objetivo:</strong> Reducir mortalidad y hospitalizaciones. Iniciar los 4 lo antes posible.
+    </div>
     <table>
-        <thead><tr><th>NYHA (Síntomas)</th><th>AHA (Estructural)</th></tr></thead>
-        <tbody>
-            <tr><td><strong>I:</strong> Sin limitación física.</td><td><strong>A:</strong> Riesgo de IC (HTA, DBT) sin daño estructural.</td></tr>
-            <tr><td><strong>II:</strong> Limitación leve (actividad habitual causa disnea).</td><td><strong>B:</strong> Daño estructural (ej. Infarto previo) sin síntomas.</td></tr>
-            <tr><td><strong>III:</strong> Limitación marcada (menos que actividad habitual).</td><td><strong>C:</strong> Daño estructural CON síntomas (IC clínica).</td></tr>
-            <tr><td><strong>IV:</strong> Incapacidad de realizar actividad sin disnea o en reposo.</td><td><strong>D:</strong> IC refractaria a tratamiento estándar.</td></tr>
-        </tbody>
+        <tr><th>Fármaco</th><th>Dosis Inicio Típica</th></tr>
+        <tr><td><strong>ARNI (Sacubitrilo/Valsartán)</strong></td><td>49/51 mg cada 12 horas.</td></tr>
+        <tr><td><strong>Beta-bloqueante (Bisoprolol)</strong></td><td>1.25 mg cada 24 horas.</td></tr>
+        <tr><td><strong>ARM (Espironolactona)</strong></td><td>25 mg cada 24 horas.</td></tr>
+        <tr><td><strong>iSGLT2 (Dapagliflozina)</strong></td><td>10 mg cada 24 horas.</td></tr>
     </table>
 
-    <h2>2. Tratamiento ICFEr (FEy ≤ 40%) - Dosis de Inicio</h2>
+    <h2>3. Manejo de la Congestión</h2>
+    <p>Los diuréticos de asa (Furosemida) se utilizan para alcanzar la euvolemia (paciente "seco"), pero no han demostrado reducir mortalidad por sí solos.</p>
     <ul>
-        <li><strong>ARNI:</strong> Sacubitrilo/Valsartán 49/51 mg c/12h.</li>
-        <li><strong>Betabloqueantes:</strong> Bisoprolol 1.25 mg/día o Carvedilol 3.125 mg c/12h. (Subir dosis cada 2 semanas).</li>
-        <li><strong>Antag. Mineralocort.:</strong> Espironolactona 25 mg/día (Controlar K+ y Creatinina).</li>
-        <li><strong>iSGLT2:</strong> Empagliflozina o Dapagliflozina 10 mg/día.</li>
+        <li><strong>Furosemida:</strong> Iniciar 20-40 mg VO/EV según el estado del paciente.</li>
+    </ul>
+
+    <h2>4. Signos de Alerta en la Re-evaluación</h2>
+    <ul>
+        <li>Aumento de peso (>2kg en 3 días).</li>
+        <li>Edema de miembros inferiores en progresión.</li>
+        <li>Ortopnea o Disnea Paroxística Nocturna.</li>
     </ul>
 </main>
 </body>
