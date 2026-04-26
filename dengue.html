@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue: Manejo Clínico — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --infecto: #8e44ad; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+        .logo span { color: var(--verde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: #f4eafc; color: var(--infecto); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
+        h2 { font-family: 'Fraunces', serif; color: var(--infecto); border-bottom: 2px solid #f4eafc; padding-bottom: 5px; margin-top: 2.5rem; }
+        .cuadro { background: var(--fondo); border-left: 4px solid var(--infecto); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .alerta { color: #d32f2f; font-weight: bold; background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #feb2b2; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; font-size: 14px; }
+        th { background: #f9f9f9; }
+    </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
+<main>
+    <span class="badge">Infectología</span>
+    <h1>Dengue: Manejo Clínico</h1>
+    <p><em>Protocolo basado en la Guía para el Equipo de Salud del Ministerio de Salud de la Nación Argentina.</em></p>
+
+    <div class="alerta">
+        ⚠️ SIGNOS DE ALARMA: Dolor abdominal intenso, vómitos persistentes, sangrado de mucosas, letargia o irritabilidad, hepatomegalia >2cm, aumento del hematocrito.
+    </div>
+
+    <h2>1. Clasificación por Grupos</h2>
+    <table>
+        <thead>
+            <tr><th>Grupo</th><th>Criterios</th><th>Manejo</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Grupo A</strong></td><td>Sin signos de alarma, tolera vía oral.</td><td>Ambulatorio (Reposo/SRO)</td></tr>
+            <tr><td><strong>Grupo B1</strong></td><td>Sin signos de alarma + Comorbilidades o Riesgo Social.</td><td>Internación/Observación</td></tr>
+            <tr><td><strong>Grupo B2</strong></td><td><strong>Con signos de alarma presentes.</strong></td><td>Hidratación EV inmediata</td></tr>
+            <tr><td><strong>Grupo C</strong></td><td>Dengue Grave (Shock, falla multiorgánica).</td><td>UTI</td></tr>
+        </tbody>
+    </table>
+
+    <h2>2. Tratamiento</h2>
+    <div class="cuadro">
+        <strong>Importante:</strong> El único analgésico permitido es el <span style="color:#d32f2f">Paracetamol</span>. Prohibidos AINES (Ibuprofeno, Aspirina, Diclofenac) por riesgo de hemorragia.
+    </div>
+</main>
+</body>
+</html>
