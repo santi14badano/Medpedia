@@ -1,85 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DM2: Guía de Manejo Clínico — Medpedia</title>
+    <title>DM2: Guía de Manejo — Medpedia</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --endo: #f39c12; }
+        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --endo: #f39c12; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .badge { background: #fef5e7; color: var(--endo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--endo); border-bottom: 2px solid #fef5e7; padding-bottom: 5px; margin-top: 2.5rem; }
-        h3 { color: var(--endo); margin-top: 1.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
+        .cuadro { background: #fffcf5; border-left: 4px solid var(--endo); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
         th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
         th { background: #f9f9f9; }
-        .cuadro { background: #fffcf5; border-left: 4px solid var(--endo); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
     </style>
 </head>
 <body>
 <nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
 <main>
-    <span class="badge">Endocrinología / Metabolismo</span>
-    <h1>Diabetes Mellitus Tipo 2 (DM2)</h1>
+    <span class="badge">Endocrinología</span>
+    <h1>Diabetes Mellitus Tipo 2</h1>
+    <p><em>Abordaje terapéutico basado en las guías de la ADA 2026.</em></p>
 
-    <h2>1. Diagnóstico y Metas</h2>
-    <p>Confirmar con dos resultados alterados (mismo test o combinados):</p>
-    <ul>
-        <li><strong>Glucemia Ayuno:</strong> ≥ 126 mg/dL (8h ayuno).</li>
-        <li><strong>HbA1c:</strong> ≥ 6.5% (Estandarizada por NGSP).</li>
-        <li><strong>PTOG:</strong> ≥ 200 mg/dL a las 2h (carga 75g glucosa).</li>
-        <li><strong>Glucemia al azar:</strong> ≥ 200 mg/dL + Síntomas (Polidipsia, Poliuria, Polifagia, Pérdida peso).</li>
-    </ul>
-
+    <h2>1. Criterios Diagnósticos</h2>
     <div class="cuadro">
-        <strong>Objetivos de Control:</strong> <br>
-        • HbA1c < 7% (General). <br>
-        • HbA1c < 8% (Ancianos, fragilidad, alta carga de comorbilidad). <br>
-        • TA < 130/80 mmHg.
+        <ul>
+            <li><strong>Glucemia en ayunas:</strong> ≥ 126 mg/dL (en 2 ocasiones).</li>
+            <li><strong>HbA1c:</strong> ≥ 6.5%.</li>
+            <li><strong>PTOG (75g):</strong> ≥ 200 mg/dL a las 2 horas.</li>
+            <li><strong>Glucemia al azar:</strong> ≥ 200 mg/dL + síntomas cardinales (4P).</li>
+        </ul>
     </div>
 
-    <h2>2. Tratamiento Farmacológico (Algoritmo 2026)</h2>
-    <h3>Primer Paso: Estilo de Vida + Metformina</h3>
-    <p><strong>Metformina:</strong> 500-850 mg VO inicial. Dosis máx: 2550 mg/día. (Suspender si FG < 30 ml/min).</p>
-
-    <h3>Segundo Paso: Según Comorbilidad (Independiente de HbA1c)</h3>
+    <h2>2. Objetivos de Control</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Si el paciente tiene:</th>
-                <th>Fármaco de Elección</th>
-                <th>Beneficio Adicional</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Insuf. Cardíaca (IC)</strong></td>
-                <td>iSGLT2 (Dapagliflozina 10mg/d)</td>
-                <td>Reduce hospitalización por IC.</td>
-            </tr>
-            <tr>
-                <td><strong>Enf. Renal Crónica (ERC)</strong></td>
-                <td>iSGLT2 (Empagliflozina 10-25mg/d)</td>
-                <td>Reduce progresión de albuminuria.</td>
-            </tr>
-            <tr>
-                <td><strong>Enf. Cardiovascular (EVC)</strong></td>
-                <td>GLP-1 RA (Liraglutida 0.6-1.8mg/d SC)</td>
-                <td>Reduce riesgo de IAM y ACV.</td>
-            </tr>
-            <tr>
-                <td><strong>Obesidad</strong></td>
-                <td>GLP-1 RA o iSGLT2</td>
-                <td>Promueve pérdida de peso significativa.</td>
-            </tr>
-        </tbody>
+        <tr><th>Parámetro</th><th>Objetivo General</th></tr>
+        <tr><td>Hemoglobina Glicosilada (HbA1c)</td><td>< 7.0%</td></tr>
+        <tr><td>Glucemia Pre-prandial</td><td>80 - 130 mg/dL</td></tr>
+        <li>Glucemia Post-prandial (1-2h)</td><td>< 180 mg/dL</td></tr>
     </table>
+
+    <h2>3. Tratamiento Farmacológico Inicial</h2>
+    <h3>Primera Línea</h3>
+    <p><strong>Metformina:</strong> Iniciar con 500 mg VO con la cena para minimizar efectos gastrointestinales. Escalar hasta 2000 mg/día según tolerancia.</p>
+
+    <h3>Pacientes con Alto Riesgo Cardiovascular o Renal</h3>
+    <p>Independientemente de la HbA1c, se debe considerar:</p>
+    <ul>
+        <li><strong>iSGLT2 (Dapagliflozina/Empagliflozina):</strong> Si hay Insuficiencia Cardíaca o Enfermedad Renal Crónica.</li>
+        <li><strong>arGLP-1 (Liraglutida/Semaglutida):</strong> Si predomina la Enfermedad Cardiovascular aterosclerótica o la Obesidad.</li>
+    </ul>
+
+    <h2>4. Complicaciones Agudas</h2>
+    <p>Vigilar signos de <strong>Cetoacidosis Diabética (CAD)</strong> o <strong>Estado Hiperglucémico Hiperosmolar (EHH)</strong>: deshidratación severa, aliento cetónico o alteración del sensorio.</p>
 </main>
 </body>
 </html>
