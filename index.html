@@ -1,153 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="google-site-verification" content="-BhfR5SVYdzI9k5yDMVfWHzOBBtIc7dESSUpSpPyk8M" />
-  
-  <title>Medpedia — Información médica para estudiantes argentinos</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --verde: #1D9E75;
-      --verde-claro: #E1F5EE;
-      --verde-oscuro: #0F6E56;
-      --texto: #1a1a1a;
-      --texto-secundario: #555;
-      --texto-terciario: #888;
-      --borde: #e8e8e8;
-      --fondo: #fafaf8;
-      --blanco: #ffffff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.5; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medpedia — Apuntes Médicos Actualizados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --texto-sec: #555; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1.5rem 2rem; text-align: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 28px; text-decoration: none; color: var(--texto); }
+        .logo span { color: var(--verde); }
+        
+        header { max-width: 800px; margin: 4rem auto 2rem; text-align: center; padding: 0 1.5rem; }
+        header h1 { font-family: 'Fraunces', serif; font-size: 42px; margin-bottom: 1rem; }
+        header p { color: var(--texto-sec); font-size: 18px; }
 
-    /* NAVBAR */
-    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
-    .logo span { color: var(--verde); }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-size: 14px; color: var(--texto-secundario); text-decoration: none; }
-
-    /* HERO */
-    .hero { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 4rem 2rem; text-align: center; }
-    .hero-badge { display: inline-block; background: var(--verde-claro); color: var(--verde-oscuro); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; }
-    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 500; line-height: 1.2; color: var(--texto); margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .hero h1 em { color: var(--verde); font-style: italic; }
-    .hero p { font-size: 16px; color: var(--texto-secundario); max-width: 500px; margin: 0 auto 2rem; }
-
-    /* BUSCADOR */
-    .search-wrap { max-width: 560px; margin: 0 auto; position: relative; }
-    .search-wrap input { width: 100%; padding: 14px 20px; border: 1.5px solid var(--borde); border-radius: 40px; font-size: 15px; background: var(--fondo); outline: none; }
-    .search-wrap input:focus { border-color: var(--verde); }
-
-    /* CONTENIDO */
-    main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
-    .section-label { font-size: 11px; font-weight: 500; color: var(--texto-terciario); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
-
-    /* ESPECIALIDADES */
-    .especialidades { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3rem; }
-    .esp-btn { padding: 7px 16px; border-radius: 20px; font-size: 13px; border: 1px solid var(--borde); background: var(--blanco); cursor: pointer; transition: 0.2s; }
-    .esp-btn.activo, .esp-btn:hover { background: var(--verde); color: white; border-color: var(--verde); }
-
-    /* GRID Y LISTA */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
-
-    .articulos-lista { display: flex; flex-direction: column; gap: 10px; }
-    .art-row { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(--texto); transition: 0.2s; }
-    .art-row:hover { border-color: var(--verde); transform: translateY(-2px); }
-    .art-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; background: var(--verde-claro); color: var(--verde-oscuro); }
-
-    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); margin-top: 4rem; }
-  </style>
+        main { max-width: 900px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+        
+        .grid-especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        
+        .categoria { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s; }
+        .categoria:hover { transform: translateY(-5px); border-color: var(--verde); }
+        
+        .categoria h2 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--verde); margin-top: 0; border-bottom: 1px solid var(--verde-claro); padding-bottom: 10px; }
+        
+        .lista-apuntes { list-style: none; padding: 0; margin: 1rem 0 0; }
+        .lista-apuntes li { margin-bottom: 0.8rem; }
+        .lista-apuntes a { text-decoration: none; color: var(--texto); font-weight: 500; display: block; padding: 8px; border-radius: 8px; transition: background 0.2s; }
+        .lista-apuntes a:hover { background: var(--verde-claro); color: var(--verde); }
+        
+        .proximamente { color: #aaa; font-size: 13px; font-style: italic; margin-left: 8px; }
+    </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo">Med<span>pedia</span></a>
-  <div class="nav-links">
-    <a href="#">Especialidades</a>
-    <a href="#">Guías</a>
-  </div>
+    <a href="index.html" class="logo">Med<span>pedia</span></a>
 </nav>
 
-<div class="hero">
-  <div class="hero-badge">Para estudiantes de medicina de Argentina</div>
-  <h1>El conocimiento médico, <em>explicado para estudiar</em></h1>
-  <p>Guías oficiales del Ministerio de Salud simplificadas para tus exámenes.</p>
-  <div class="search-wrap">
-    <input type="text" id="buscador" placeholder="Buscá una patología o tema..." />
-  </div>
-</div>
+<header>
+    <h1>Tu biblioteca médica personal.</h1>
+    <p>Resúmenes basados en las Guías de Práctica Clínica de Argentina y consensos internacionales.</p>
+</header>
 
 <main>
-  <div class="section-label">Especialidades</div>
-  <div class="especialidades">
-    <button class="esp-btn activo">Todas</button>
-    <button class="esp-btn">Cardiología</button>
-    <button class="esp-btn">Endocrinología</button>
-    <button class="esp-btn">Neurología</button>
-  </div>
+    <div class="grid-especialidades">
+        <div class="categoria">
+            <h2>Cardiología</h2>
+            <ul class="lista-apuntes">
+                <li><a href="hta.html">Hipertensión Arterial (HTA)</a></li>
+                <li><a href="#" style="color:#aaa; cursor:default;">Insuficiencia Cardíaca <span class="proximamente">(Pronto)</span></a></li>
+            </ul>
+        </div>
 
-  <div class="two-col">
-    <div class="articulos-seccion">
-      <div class="section-label">Artículos Recientes</div>
-      <div class="articulos-lista">
-        <a href="dm2.html" class="art-row">
-          <span>Diabetes Mellitus Tipo 2</span>
-          <span class="art-tag">Endocrinología</span>
-        </a>
-        <a href="iam.html" class="art-row">
-          <span>Infarto Agudo de Miocardio</span>
-          <span class="art-tag">Cardiología</span>
-        </a>
-        <a href="obesidad.html" class="art-row">
-          <span>Obesidad — Abordaje Integral</span>
-          <span class="art-tag">Endocrinología</span>
-        </a>
-        <a href="acv.html" class="art-row">
-          <span>ACV Isquémico Agudo</span>
-          <span class="art-tag">Neurología</span>
-        </a>
-      </div>
+        <div class="categoria">
+            <h2>Endocrinología</h2>
+            <ul class="lista-apuntes">
+                <li><a href="obesidad.html">Obesidad: Manejo Integral</a></li>
+                <li><a href="#" style="color:#aaa; cursor:default;">Diabetes Tipo 2 <span class="proximamente">(Pronto)</span></a></li>
+            </ul>
+        </div>
+
+        <div class="categoria">
+            <h2>Neurología</h2>
+            <ul class="lista-apuntes">
+                <li><a href="acv.html">ACV Isquémico Agudo</a></li>
+            </ul>
+        </div>
+
+        <div class="categoria">
+            <h2>Neumonología</h2>
+            <ul class="lista-apuntes">
+                <li><a href="asma-epoc.html">Asma y EPOC</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </main>
-
-<footer>
-  <p>Medpedia Argentina · Basado en guías del Ministerio de Salud de la Nación</p>
-</footer>
-
-<script>
-  // Lógica de filtrado básica
-  const botones = document.querySelectorAll('.esp-btn');
-  const filas = document.querySelectorAll('.art-row');
-
-  botones.forEach(btn => {
-    btn.addEventListener('click', () => {
-      botones.forEach(b => b.classList.remove('activo'));
-      btn.classList.add('activo');
-      const filtro = btn.textContent.trim();
-      
-      filas.forEach(fila => {
-        const tag = fila.querySelector('.art-tag').textContent.trim();
-        fila.style.display = (filtro === 'Todas' || tag === filtro) ? 'flex' : 'none';
-      });
-    });
-  });
-
-  // Buscador
-  document.getElementById('buscador').addEventListener('input', (e) => {
-    const term = e.target.value.toLowerCase();
-    filas.forEach(fila => {
-      const texto = fila.textContent.toLowerCase();
-      fila.style.display = texto.includes(term) ? 'flex' : 'none';
-    });
-  });
-</script>
 
 </body>
 </html>
