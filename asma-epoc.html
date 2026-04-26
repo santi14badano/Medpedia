@@ -1,49 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respiratorio: Asma y EPOC — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --neumo: #2980b9; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
-        .badge { background: #e1f0fa; color: var(--neumo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--neumo); border-bottom: 2px solid #e1f0fa; padding-bottom: 5px; margin-top: 2.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asma y EPOC — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --neumo: #2980b9; --neumo-claro: #e1f0fa; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neumo { background: var(--neumo-claro); color: var(--neumo); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-neumo { border-left: 3px solid var(--neumo); background: var(--neumo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+
+    .step-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--neumo); color: white; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-content { flex: 1; }
+    .step-title { font-size: 14px; font-weight: 500; color: var(--texto); margin-bottom: 4px; }
+    .step-detail { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-neumo { background: var(--neumo-claro); color: var(--neumo); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+
+    .divider { border: none; border-top: 2px solid var(--borde); margin: 2.5rem 0; }
+
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Neumonología</span>
-    <h1>Asma y EPOC</h1>
 
-    <h2>1. EPOC (Guía GOLD 2026)</h2>
-    <p>Caracterizado por limitación persistente al flujo aéreo (VEF1/CVF < 0.70 post-BD).</p>
-    <table>
-        <tr><th>Grupo</th><th>Síntomas / Exacerbaciones</th><th>Tratamiento</th></tr>
-        <tr><td><strong>A</strong></td><td>mMRC 0-1 / 0-1 mod</td><td>Broncodilatador</td></tr>
-        <tr><td><strong>B</strong></td><td>mMRC ≥ 2 / 0-1 mod</td><td>LABA + LAMA</td></tr>
-        <tr><td><strong>E</strong></td><td>≥ 2 mod o ≥ 1 internación</td><td>LABA + LAMA (+ ICS si Eos ≥ 300)</td></tr>
-    </table>
+<nav>
+  <a href="../index.html" class="logo">Med<span>pedia</span></a>
+  <a href="../index.html" class="nav-back">← Volver</a>
+</nav>
 
-    <h2>2. Asma (Guía GINA)</h2>
-    <p>Enfermedad inflamatoria crónica con hiperreactividad bronquial reversible.</p>
-    <ul>
-        <li><strong>Rescate preferido:</strong> ICS-Formoterol a dosis bajas (en todos los steps).</li>
-        <li><strong>Mantenimiento:</strong> Según control de síntomas (Step 1 al 5).</li>
-    </ul>
+<div class="contenido">
+  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Neumonología</a> › Asma y EPOC</div>
+  <div class="titulo">Asma y EPOC</div>
+  <div class="meta">
+    <span class="tag tag-neumo">Neumonología</span>
+    <span class="tag tag-fuente">GINA 2024 · GOLD 2024 · ALAT 2024</span>
+  </div>
 
-    <h2>3. Manejo de Crisis Aguda</h2>
-    <p>Salbutamol (4-10 pufs cada 20 min) + Corticoides sistémicos (Prednisona 40-50mg) + Oxígeno (Sat 93-95%).</p>
-</main>
+  <!-- ==================== ASMA ==================== -->
+  <div class="seccion">
+    <div class="sec-titulo" style="font-size:20px; font-family:'Fraunces',serif;">Parte 1 — Asma</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>El asma es una <strong>enfermedad inflamatoria crónica de la vía aérea</strong> caracterizada por hiperreactividad bronquial y obstrucción variable y reversible al flujo aéreo. Afecta a más de 300 millones de personas en el mundo.</p>
+      <p>La inflamación crónica produce síntomas episódicos como sibilancias, disnea, opresión torácica y tos, que varían en frecuencia e intensidad y suelen empeorar de noche o con el ejercicio.</p>
+      <p><strong>Clave GINA 2024:</strong> el objetivo del tratamiento es lograr el <strong>control de síntomas</strong> y minimizar el riesgo futuro de exacerbaciones y pérdida de función pulmonar — no solo tratar los síntomas cuando aparecen.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Sibilancias</div><div class="sintoma-desc">Sonido silbante espiratorio — el signo más característico</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea</div><div class="sintoma-desc">Dificultad respiratoria, especialmente al esfuerzo o de noche</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Tos crónica</div><div class="sintoma-desc">Frecuentemente nocturna o matutina — puede ser el único síntoma</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Opresión torácica</div><div class="sintoma-desc">Sensación de pecho apretado — precede o acompaña el broncoespasmo</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Variabilidad</div><div class="sintoma-desc">Síntomas fluctúan — peores de noche, con ejercicio, alérgenos, frío o infecciones</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Reversibilidad</div><div class="sintoma-desc">Mejoran espontáneamente o con broncodilatadores</div></div>
+    </div>
+    <div class="hl-info" style="margin-top:10px;">El diagnóstico de asma requiere demostrar <strong>variabilidad y reversibilidad</strong> de la obstrucción. La espirometría con prueba broncodilatadora es el estudio de elección: respuesta positiva = aumento de VEF1 ≥12% y ≥200 ml post-BD.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico — espirometría y criterios</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo diagnóstico</th><th>Observación</th></tr>
+        <tr><td><strong>Espirometría + prueba BD</strong></td><td>VEF1/CVF &lt;0,70 con reversibilidad: ↑VEF1 ≥12% y ≥200ml post-salbutamol</td><td>Estudio de elección</td></tr>
+        <tr><td><strong>PEF (flujo espiratorio máximo)</strong></td><td>Variabilidad diurna &gt;10% en adultos — medido 2 veces al día por 2 semanas</td><td>Alternativa cuando no hay espirometría disponible (GINA 2024)</td></tr>
+        <tr><td><strong>Prueba de metacolina</strong></td><td>Positiva si caída del VEF1 ≥20% — confirma hiperreactividad bronquial</td><td>Útil cuando espirometría es normal con síntomas típicos</td></tr>
+        <tr><td><strong>FeNO (óxido nítrico exhalado)</strong></td><td>&gt;40 ppb sugiere inflamación eosinofílica — predice respuesta a ICS</td><td>No disponible en todos los centros en Argentina</td></tr>
+        <tr><td><strong>Eosinófilos en sangre</strong></td><td>≥300 células/µl → fenotipo eosinofílico — responde a ICS y biológicos</td><td>Útil para guiar tratamiento escalonado</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🎯 Evaluación del control del asma</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Bien controlada</th><th>Parcialmente controlada</th><th>No controlada</th></tr>
+        <tr><td>Síntomas diurnos</td><td>≤2 días/semana</td><td>&gt;2 días/semana</td><td>3 o más criterios de parcialmente controlada</td></tr>
+        <tr><td>Despertares nocturnos</td><td>Ninguno</td><td>Cualquiera</td><td>—</td></tr>
+        <tr><td>Uso de rescate</td><td>≤2 días/semana</td><td>&gt;2 días/semana</td><td>—</td></tr>
+        <tr><td>Limitación actividad</td><td>Ninguna</td><td>Cualquiera</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento escalonado — GINA 2024 (Vía 1, preferida)</div>
+    <div class="hl-neumo"><strong>Cambio clave GINA 2024:</strong> el rescate preferido en <strong>todos los pasos</strong> es ICS-formoterol a dosis baja (NO salbutamol solo). Esto reduce el riesgo de exacerbaciones graves incluso en asma leve.</div>
+
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Paso 1 — Asma intermitente leve</div>
+        <div class="step-detail"><strong>Rescate:</strong> ICS-formoterol a dosis baja según necesidad (budesonida 200 mcg/formoterol 6 mcg).<br><strong>No requiere mantenimiento diario.</strong> Alternativa si ICS-formoterol no disponible: SABA (salbutamol) + ICS en cada uso.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Paso 2 — Asma leve persistente</div>
+        <div class="step-detail"><strong>Mantenimiento:</strong> ICS a dosis baja diario (budesonida 200–400 mcg/día o beclometasona 100–200 mcg/día).<br><strong>Rescate:</strong> ICS-formoterol a dosis baja según necesidad. Alternativa de mantenimiento: anti-leucotrienos (montelukast 10 mg/día).</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Paso 3 — Asma moderada persistente</div>
+        <div class="step-detail"><strong>Mantenimiento:</strong> ICS a dosis bajas + LABA (budesonida/formoterol 160/4,5 mcg 1-2 inhalaciones cada 12h).<br><strong>Rescate:</strong> ICS-formoterol a dosis baja (terapia MART si usa budesonida/formoterol).<br>Alternativa: ICS a dosis intermedias (budesonida 400–800 mcg/día).</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Paso 4 — Asma moderada-grave no controlada</div>
+        <div class="step-detail"><strong>Mantenimiento:</strong> ICS a dosis intermedias-altas + LABA. Considerar agregar LAMA (tiotropio) como tercera droga.<br><strong>Rescate:</strong> ICS-formoterol a dosis baja.<br>Referir a especialista para evaluación fenotípica.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">Paso 5 — Asma grave refractaria</div>
+        <div class="step-detail"><strong>Mantenimiento:</strong> ICS a dosis altas + LABA + evaluación para <strong>tratamiento biológico</strong> según fenotipo:<br>
+        • Eosinofílico (Eos ≥300): <strong>Mepolizumab, Benralizumab, Dupilumab</strong><br>
+        • IgE elevada: <strong>Omalizumab</strong><br>
+        Los corticoides orales son último recurso por efectos adversos graves a largo plazo.</div>
+      </div>
+    </div>
+
+    <div class="hl-warn">La terapia MART (Mantenimiento y Alivio con el Mismo inhalador) se puede usar en pasos 3-5 con budesonida/formoterol: misma combinación para mantenimiento y rescate — simplifica el tratamiento y mejora la adherencia.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Crisis asmática aguda — manejo</div>
+    <div class="hl-danger">Ante una crisis grave: saturación &lt;92%, dificultad para hablar, uso de músculos accesorios, FR &gt;30/min → tratamiento inmediato + considerar internación.</div>
+
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Gravedad</th><th>Características</th><th>Manejo</th></tr>
+        <tr><td><strong>Leve-Moderada</strong></td><td>Habla normal, Sat ≥92%, VEF1 &gt;50%</td><td>Salbutamol 4–10 puff c/20 min × 3 + Prednisona 40–50 mg VO + O₂ si Sat &lt;94%</td></tr>
+        <tr><td><strong>Grave</strong></td><td>Habla entrecortada, Sat &lt;92%, VEF1 &lt;50%</td><td>Salbutamol + ipratropio nebulizados + Metilprednisolona 1 mg/kg IV + O₂ (Sat 93–95%) + considerar MgSO₄ IV</td></tr>
+        <tr><td><strong>Riesgo vital</strong></td><td>Sin sibilancias ("tórax silente"), cianosis, alteración de conciencia</td><td>UCI — ventilación mecánica si falla tratamiento médico máximo</td></tr>
+      </table>
+    </div>
+
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">Salbutamol (SABA)</div>
+      <div class="farma-clase">Beta-2 agonista de acción corta · broncodilatador de rescate</div>
+      <div class="dosis-badge">Inhalador: 2–4 puff c/20 min × 3 dosis · Nebulización: 2,5–5 mg en 3 ml SF c/20 min × 3</div>
+      <div class="farma-detalle">Broncodilatador de acción rápida (inicio en 5 min). Primera línea en crisis aguda. Efectos adversos: taquicardia, temblor, hipokalemia con dosis altas.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ipratropio (SAMA)</div>
+      <div class="farma-clase">Anticolinérgico de acción corta · complemento en crisis grave</div>
+      <div class="dosis-badge">Nebulización: 0,5 mg combinado con salbutamol · cada 20 min × 3 dosis en crisis grave</div>
+      <div class="farma-detalle">Agrega broncodilatación adicional en crisis moderada-grave. Reduce hospitalizaciones cuando se combina con SABA en urgencias. No indicado como rescate habitual en asma estable.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Corticoides sistémicos</div>
+      <div class="farma-clase">Prednisona / Metilprednisolona · antiinflamatorio en crisis</div>
+      <div class="dosis-badge">Prednisona: 40–50 mg/día VO por 5–7 días · Metilprednisolona: 1–2 mg/kg/día IV en crisis grave</div>
+      <div class="farma-detalle">Reducen la inflamación y previenen la recaída. Iniciar precozmente en crisis moderada-grave. No requieren reducción gradual si el curso es &lt;10 días. Evitar uso crónico — efectos adversos sistémicos graves.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Sulfato de Magnesio (MgSO₄)</div>
+      <div class="farma-clase">Broncodilatador · uso en crisis grave que no responde</div>
+      <div class="dosis-badge">2 g IV en 20 minutos (dosis única)</div>
+      <div class="farma-detalle">Indicado en crisis grave o riesgo vital que no responde a broncodilatadores y corticoides. Produce relajación del músculo liso bronquial. Seguro y eficaz como coadyuvante en urgencias.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ==================== EPOC ==================== -->
+  <div class="seccion">
+    <div class="sec-titulo" style="font-size:20px; font-family:'Fraunces',serif;">Parte 2 — EPOC</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La EPOC es una <strong>enfermedad pulmonar prevenible y tratable</strong> caracterizada por síntomas respiratorios persistentes y limitación crónica al flujo aéreo. Es actualmente <strong>una de las tres principales causas de muerte en el mundo</strong>.</p>
+      <p>La causa principal es la <strong>exposición prolongada al humo de tabaco</strong> (85–90% de los casos). Otras causas: biomasa, contaminación, exposición ocupacional.</p>
+      <p><strong>Diagnóstico espirométrico:</strong> VEF1/CVF &lt;0,70 post-broncodilatador — limitación no completamente reversible (lo que la diferencia del asma).</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea progresiva</div><div class="sintoma-desc">Inicialmente al esfuerzo, luego en reposo — principal síntoma discapacitante</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Tos crónica productiva</div><div class="sintoma-desc">Matutina, con expectoración mucosa — "tos del fumador"</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Sibilancias</div><div class="sintoma-desc">Pueden estar presentes — menos prominentes que en asma</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Tórax en tonel</div><div class="sintoma-desc">Hiperinsuflación — diámetro AP aumentado en enfisema avanzado</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Cianosis</div><div class="sintoma-desc">Labios y dedos — en EPOC avanzada con hipoxemia crónica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Exacerbaciones</div><div class="sintoma-desc">Aumento agudo de disnea, tos o expectoración — precipitadas por infecciones</div></div>
+    </div>
+    <div class="hl-warn" style="margin-top:10px;">La EPOC es <strong>crónica y progresiva</strong> — a diferencia del asma, la obstrucción no es completamente reversible con broncodilatadores. El principal factor de riesgo modificable es el <strong>abandono del tabaco</strong>.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación GOLD 2024 — grupos ABE</div>
+    <div class="hl-neumo">GOLD 2024 clasifica a los pacientes en 3 grupos según síntomas (escala mMRC o CAT) y riesgo de exacerbaciones — esto guía el tratamiento inicial.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Grupo</th><th>Síntomas</th><th>Exacerbaciones/año</th><th>Tratamiento inicial</th></tr>
+        <tr><td><strong>A</strong></td><td>Pocos síntomas (mMRC 0-1 / CAT &lt;10)</td><td>0–1 moderadas (sin hospitalización)</td><td>Broncodilatador de acción larga (LABA o LAMA)</td></tr>
+        <tr><td><strong>B</strong></td><td>Más síntomas (mMRC ≥2 / CAT ≥10)</td><td>0–1 moderadas (sin hospitalización)</td><td>LABA + LAMA (terapia dual)</td></tr>
+        <tr><td><strong>E</strong> (exacerbador)</td><td>Cualquier nivel de síntomas</td><td>≥2 moderadas o ≥1 con hospitalización</td><td>LABA + LAMA · agregar ICS si Eos ≥300/µl</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">La espirometría clasifica la gravedad por VEF1 (GOLD 1–4), pero el tratamiento inicial se guía por el grupo ABE, no por el VEF1.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Escala mMRC — disnea</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Grado mMRC</th><th>Descripción</th></tr>
+        <tr><td><strong>0</strong></td><td>Disnea solo con ejercicio intenso</td></tr>
+        <tr><td><strong>1</strong></td><td>Disnea al caminar rápido o subir una pendiente leve</td></tr>
+        <tr><td><strong>2</strong></td><td>Camina más lento que personas de su edad o debe parar por disnea en llano</td></tr>
+        <tr><td><strong>3</strong></td><td>Debe parar por disnea a los 100 metros o luego de unos minutos en llano</td></tr>
+        <tr><td><strong>4</strong></td><td>La disnea impide salir de la casa o aparece al vestirse/desvestirse</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Fármacos en EPOC — con dosis</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LAMA — Anticolinérgicos de acción larga</div>
+      <div class="farma-clase">Tiotropio · Umeclidinio · Glicopirronio</div>
+      <div class="dosis-badge">Tiotropio: 18 mcg/día inhalado (1 cápsula) · Umeclidinio: 62,5 mcg/día</div>
+      <div class="farma-detalle">Broncodilatadores de primera línea en EPOC. Reducen disnea, exacerbaciones y mejoran calidad de vida. El tiotropio es el más estudiado — reduce exacerbaciones y hospitalizaciones. Se inhala una vez al día.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LABA — Beta-2 agonistas de acción larga</div>
+      <div class="farma-clase">Salmeterol · Formoterol · Indacaterol · Olodaterol</div>
+      <div class="dosis-badge">Salmeterol: 50 mcg cada 12h · Indacaterol: 150–300 mcg/día · Formoterol: 12 mcg cada 12h</div>
+      <div class="farma-detalle">Broncodilatadores de larga duración. Mejoran síntomas y función pulmonar. Combinados con LAMA son más eficaces que cada uno por separado (terapia dual de primera línea en grupo B y E).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">ICS — Corticoides inhalados (en EPOC)</div>
+      <div class="farma-clase">Fluticasona · Budesonida · Beclometasona</div>
+      <div class="dosis-badge">Fluticasona: 500 mcg cada 12h · Budesonida: 400–800 mcg/día</div>
+      <div class="farma-detalle">
+        <strong>Indicación en EPOC (GOLD 2024):</strong> agregar a LABA+LAMA en grupo E cuando Eos ≥300/µl.<br>
+        <span class="badge-no">No usar</span> como monoterapia en EPOC — aumenta riesgo de neumonía sin beneficio adicional.<br>
+        Si Eos &lt;100/µl: no agregar ICS — escaso beneficio y mayor riesgo.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Triple terapia (LABA + LAMA + ICS)</div>
+      <div class="farma-clase">Combinaciones fijas: Budesonida/Glicopirronio/Formoterol · Fluticasona/Umeclidinio/Vilanterol</div>
+      <div class="dosis-badge">1 inhalación al día — combinación fija triple</div>
+      <div class="farma-detalle">Indicada en grupo E con Eos ≥300/µl o pacientes que siguen exacerbando con LABA+LAMA. Reduce mortalidad y exacerbaciones en pacientes seleccionados. Disponible en combinaciones fijas de un solo dispositivo.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Roflumilast</div>
+      <div class="farma-clase">Inhibidor de PDE-4 · antiinflamatorio oral</div>
+      <div class="dosis-badge">500 mcg/día VO — iniciar con 250 mcg/día por 4 semanas para reducir efectos GI</div>
+      <div class="farma-detalle">Indicado en EPOC grave (VEF1 &lt;50%) con bronquitis crónica y exacerbaciones frecuentes, como complemento a broncodilatadores. Efectos adversos frecuentes: náuseas, diarrea, pérdida de peso, insomnio.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Oxigenoterapia crónica domiciliaria (OCD)</div>
+      <div class="farma-clase">Indicación en EPOC con hipoxemia crónica</div>
+      <div class="dosis-badge">≥15 horas/día · objetivo: Sat O₂ ≥90% (PaO₂ ≥60 mmHg)</div>
+      <div class="farma-detalle">Único tratamiento que mejora la sobrevida en EPOC con hipoxemia grave. Indicaciones: PaO₂ ≤55 mmHg en reposo, o ≤60 mmHg con policitemia o cor pulmonale. Requiere evaluación en estado estable (fuera de exacerbación).</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Exacerbación aguda de EPOC — manejo</div>
+    <div class="hl-danger">La exacerbación de EPOC es la principal causa de hospitalización y muerte en estos pacientes. Diagnóstico: aumento agudo de disnea, tos o expectoración más allá de la variación habitual.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Tratamiento</th><th>Dosis</th><th>Indicación</th></tr>
+        <tr><td><strong>Salbutamol nebulizado</strong></td><td>2,5 mg c/20 min × 3, luego c/4–6h</td><td>Primera línea — broncodilatación inmediata</td></tr>
+        <tr><td><strong>Ipratropio nebulizado</strong></td><td>0,5 mg c/6h — combinado con salbutamol</td><td>Agrega broncodilatación adicional</td></tr>
+        <tr><td><strong>Prednisona</strong></td><td>40 mg/día VO por 5 días</td><td>Acorta duración de la exacerbación y mejora VEF1</td></tr>
+        <tr><td><strong>Antibióticos</strong></td><td>Amoxicilina-clavulánico 875/125 mg c/8h VO o Azitromicina 500 mg/día × 3 días</td><td>Si expectoración purulenta o exacerbación grave</td></tr>
+        <tr><td><strong>O₂ controlado</strong></td><td>Sat objetivo 88–92% — evitar hipercapnia</td><td>Hipoxemia — cuidado con supresión del drive respiratorio</td></tr>
+        <tr><td><strong>VNI (BiPAP)</strong></td><td>IPAP 12–20 cmH₂O / EPAP 4–8 cmH₂O</td><td>Insuficiencia respiratoria hipercápnica — reduce intubación</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">En EPOC el objetivo de saturación es <strong>88–92%</strong> — NO 95–100% como en asma. La hiperoxia suprime el drive respiratorio hipóxico y puede generar hipercapnia y acidosis respiratoria.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diferencias clave Asma vs EPOC</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Asma</th><th>EPOC</th></tr>
+        <tr><td>Inicio habitual</td><td>Infancia / juventud</td><td>&gt;40 años</td></tr>
+        <tr><td>Causa principal</td><td>Atopia / alergia</td><td>Tabaco / biomasa</td></tr>
+        <tr><td>Obstrucción</td><td>Variable y <strong>reversible</strong></td><td>Persistente y poco reversible</td></tr>
+        <tr><td>Inflamación</td><td>Eosinofílica (principalmente)</td><td>Neutrofílica / macrófagos</td></tr>
+        <tr><td>Respuesta a ICS</td><td>Excelente</td><td>Parcial (solo si Eos elevados)</td></tr>
+        <tr><td>Espirometría post-BD</td><td>VEF1/CVF puede normalizarse</td><td>VEF1/CVF &lt;0,70 persiste</td></tr>
+        <tr><td>Pronóstico</td><td>Controlable — no progresa necesariamente</td><td>Progresiva — no se revierte el daño</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Diferencia asma vs EPOC — tabla completa</span>
+      <span class="pill">Criterio diagnóstico espirométrico de EPOC</span>
+      <span class="pill">¿Por qué ICS-formoterol como rescate en asma?</span>
+      <span class="pill">Grupos ABE de GOLD 2024</span>
+      <span class="pill">Escala mMRC — puntajes</span>
+      <span class="pill">¿Cuándo agregar ICS en EPOC?</span>
+      <span class="pill">Terapia MART — qué es y cuándo</span>
+      <span class="pill">Manejo de crisis asmática leve vs grave</span>
+      <span class="pill">Dosis de salbutamol en crisis aguda</span>
+      <span class="pill">¿Por qué O₂ al 88–92% en EPOC?</span>
+      <span class="pill">Indicación de oxigenoterapia domiciliaria</span>
+      <span class="pill">¿Cuándo dar antibióticos en exacerbación EPOC?</span>
+      <span class="pill">Indicación de VNI en EPOC</span>
+      <span class="pill">Pasos GINA 1 al 5 — qué fármaco en cada uno</span>
+      <span class="pill">Cambio clave GINA 2024 vs guías anteriores</span>
+      <span class="pill">¿Qué es el Eos ≥300 y por qué importa?</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Global Initiative for Asthma (GINA) 2024 · Global Initiative for Chronic Obstructive Lung Disease (GOLD) 2024 · Guía de Asma Grave ALAT 2024 · Asociación Latinoamericana de Tórax.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
