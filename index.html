@@ -3,34 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medpedia — Apuntes Médicos Actualizados</title>
+    <title>Medpedia — Biblioteca de Guías Clínicas</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --texto-sec: #555; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1.5rem 2rem; text-align: center; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1.5rem; text-align: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 28px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        
-        header { max-width: 800px; margin: 4rem auto 2rem; text-align: center; padding: 0 1.5rem; }
+        header { max-width: 800px; margin: 3rem auto; text-align: center; padding: 0 1rem; }
         header h1 { font-family: 'Fraunces', serif; font-size: 42px; margin-bottom: 1rem; }
-        header p { color: var(--texto-sec); font-size: 18px; }
-
         main { max-width: 900px; margin: 0 auto 4rem; padding: 0 1.5rem; }
-        
-        .grid-especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        
+        .grid-especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .categoria { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s; }
         .categoria:hover { transform: translateY(-5px); border-color: var(--verde); }
-        
         .categoria h2 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--verde); margin-top: 0; border-bottom: 1px solid var(--verde-claro); padding-bottom: 10px; }
-        
         .lista-apuntes { list-style: none; padding: 0; margin: 1rem 0 0; }
         .lista-apuntes li { margin-bottom: 0.8rem; }
-        .lista-apuntes a { text-decoration: none; color: var(--texto); font-weight: 500; display: block; padding: 8px; border-radius: 8px; transition: background 0.2s; }
+        .lista-apuntes a { text-decoration: none; color: var(--texto); font-weight: 500; display: block; padding: 8px; border-radius: 8px; }
         .lista-apuntes a:hover { background: var(--verde-claro); color: var(--verde); }
-        
-        .proximamente { color: #aaa; font-size: 13px; font-style: italic; margin-left: 8px; }
     </style>
 </head>
 <body>
@@ -40,8 +31,8 @@
 </nav>
 
 <header>
-    <h1>Tu biblioteca médica personal.</h1>
-    <p>Resúmenes basados en las Guías de Práctica Clínica de Argentina y consensos internacionales.</p>
+    <h1>Tu biblioteca médica.</h1>
+    <p>Resúmenes técnicos basados en protocolos oficiales de Argentina.</p>
 </header>
 
 <main>
@@ -49,8 +40,16 @@
         <div class="categoria">
             <h2>Cardiología</h2>
             <ul class="lista-apuntes">
-                <li><a href="hta.html">Hipertensión Arterial (HTA)</a></li>
-                <li><a href="#" style="color:#aaa; cursor:default;">Insuficiencia Cardíaca <span class="proximamente">(Pronto)</span></a></li>
+                <li><a href="hta.html">Hipertensión Arterial</a></li>
+                <li><a href="ic.html">Insuficiencia Cardíaca</a></li>
+            </ul>
+        </div>
+
+        <div class="categoria">
+            <h2>Infectología</h2>
+            <ul class="lista-apuntes">
+                <li><a href="dengue.html">Dengue: Manejo Clínico</a></li>
+                <li><a href="neumonia.html">Neumonía (NAC)</a></li>
             </ul>
         </div>
 
@@ -58,7 +57,6 @@
             <h2>Endocrinología</h2>
             <ul class="lista-apuntes">
                 <li><a href="obesidad.html">Obesidad: Manejo Integral</a></li>
-                <li><a href="#" style="color:#aaa; cursor:default;">Diabetes Tipo 2 <span class="proximamente">(Pronto)</span></a></li>
             </ul>
         </div>
 
