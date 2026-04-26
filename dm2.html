@@ -1,65 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DM2: Guía de Manejo — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --endo: #f39c12; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: #fef5e7; color: var(--endo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--endo); border-bottom: 2px solid #fef5e7; padding-bottom: 5px; margin-top: 2.5rem; }
-        .cuadro { background: #fffcf5; border-left: 4px solid var(--endo); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-        th { background: #f9f9f9; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Mellitus Tipo 2 — Medpedia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --texto: #1a1a1a; --texto-secundario: #555; --texto-terciario: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 14px; color: var(--texto-secundario); text-decoration: none; }
+
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-terciario); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: #E1F5EE; color: #0F6E56; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-terciario); border: 1px solid var(--borde); }
+
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-secundario); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #E24B4A; background: #FCEBEB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-secundario); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-moleculas { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-secundario); line-height: 1.65; }
+
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-terciario); line-height: 1.4; }
+
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--verde); color: white; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { font-size: 14px; line-height: 1.6; flex: 1; }
+
+    .badge-no { background: #FCEBEB; color: #A32D2D; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-secundario); }
+
+    .fuente { font-size: 11px; color: var(--texto-terciario); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Endocrinología</span>
-    <h1>Diabetes Mellitus Tipo 2</h1>
-    <p><em>Abordaje terapéutico basado en las guías de la ADA 2026.</em></p>
 
-    <h2>1. Criterios Diagnósticos</h2>
-    <div class="cuadro">
-        <ul>
-            <li><strong>Glucemia en ayunas:</strong> ≥ 126 mg/dL (en 2 ocasiones).</li>
-            <li><strong>HbA1c:</strong> ≥ 6.5%.</li>
-            <li><strong>PTOG (75g):</strong> ≥ 200 mg/dL a las 2 horas.</li>
-            <li><strong>Glucemia al azar:</strong> ≥ 200 mg/dL + síntomas cardinales (4P).</li>
-        </ul>
+<nav>
+  <a href="../index.html" class="logo">Med<span>pedia</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Inicio</a>
+    <a href="#">Especialidades</a>
+  </div>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Endocrinología</a> › Diabetes Mellitus Tipo 2</div>
+  <div class="titulo">Diabetes Mellitus Tipo 2 (DM2)</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-fuente">Guía Ministerio de Salud · Res. 3877/2023</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La DM2 es una enfermedad metabólica crónica que resulta de la combinación de <strong>insulinorresistencia</strong> y <strong>déficit progresivo de secreción de insulina</strong>. Representa el <strong>90–95%</strong> de todos los casos de diabetes.</p>
+      <p>Se asocia con obesidad, sedentarismo, HTA y dislipemia. En Argentina el <strong>12,7%</strong> de la población adulta reporta glucemia elevada o diabetes, con alrededor de <strong>9.000 muertes anuales</strong>, el 27% antes de los 65 años.</p>
     </div>
+  </div>
 
-    <h2>2. Objetivos de Control</h2>
-    <table>
-        <tr><th>Parámetro</th><th>Objetivo General</th></tr>
-        <tr><td>Hemoglobina Glicosilada (HbA1c)</td><td>< 7.0%</td></tr>
-        <tr><td>Glucemia Pre-prandial</td><td>80 - 130 mg/dL</td></tr>
-        <li>Glucemia Post-prandial (1-2h)</td><td>< 180 mg/dL</td></tr>
-    </table>
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="hl-warn" style="margin-bottom:12px;">La DM2 suele ser <strong>silenciosa en sus primeras etapas</strong>. Muchos pacientes ya tienen complicaciones crónicas al momento del diagnóstico.</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Poliuria</div><div class="sintoma-desc">Micción frecuente y abundante por glucosuria osmótica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Polidipsia</div><div class="sintoma-desc">Sed excesiva secundaria a deshidratación por poliuria</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Polifagia</div><div class="sintoma-desc">Hambre excesiva por incapacidad de utilizar glucosa</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Pérdida de peso</div><div class="sintoma-desc">A pesar del aumento de apetito, por catabolismo</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Visión borrosa</div><div class="sintoma-desc">Por cambios osmóticos en el cristalino</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fatiga y astenia</div><div class="sintoma-desc">Por incapacidad celular de usar glucosa como energía</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Infecciones frecuentes</div><div class="sintoma-desc">Micóticas, urinarias y cutáneas por hiperglucemia</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Cicatrización lenta</div><div class="sintoma-desc">Heridas que tardan en sanar, especialmente en pies</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Parestesias</div><div class="sintoma-desc">Hormigueo o entumecimiento en manos y pies (neuropatía)</div></div>
+    </div>
+    <div class="hl-info" style="margin-top:10px;">A diferencia de la DM1, la DM2 <strong>raramente debuta con cetoacidosis</strong>. La instalación es gradual y muchas veces el diagnóstico es incidental en un análisis de rutina.</div>
+  </div>
 
-    <h2>3. Tratamiento Farmacológico Inicial</h2>
-    <h3>Primera Línea</h3>
-    <p><strong>Metformina:</strong> Iniciar con 500 mg VO con la cena para minimizar efectos gastrointestinales. Escalar hasta 2000 mg/día según tolerancia.</p>
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Rastreo y diagnóstico</div>
+    <div class="hl">Realizar GPA a población general ≥45 años, y en menores de 45 con al menos 1 factor de riesgo. Si es normal, repetir cada 3–5 años.</div>
+    <div class="hl-warn">La HbA1c <span class="badge-no">NO</span> se usa como prueba inicial de diagnóstico en Argentina — menor sensibilidad, mayor costo y falta de estandarización en nuestro medio.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Valor</th><th>Observación</th></tr>
+        <tr><td>GPA (glucemia plasmática en ayunas)</td><td>≥ 126 mg/dl</td><td>Confirmar en 2 ocasiones distintas</td></tr>
+        <tr><td>Glucemia 2h post PTOG75</td><td>≥ 200 mg/dl</td><td>Prueba de referencia, mayor sensibilidad</td></tr>
+        <tr><td>Glucemia al azar con síntomas</td><td>≥ 200 mg/dl</td><td>Poliuria, polidipsia, pérdida de peso</td></tr>
+        <tr><td>GAA (glucemia alterada en ayunas)</td><td>100–125 mg/dl</td><td>Prediabetes — confirmar con PTOG75</td></tr>
+        <tr><td>TGA (tolerancia a la glucosa alterada)</td><td>140–199 mg/dl (2h post PTOG)</td><td>Prediabetes — mayor riesgo cardiovascular</td></tr>
+      </table>
+    </div>
+  </div>
 
-    <h3>Pacientes con Alto Riesgo Cardiovascular o Renal</h3>
-    <p>Independientemente de la HbA1c, se debe considerar:</p>
-    <ul>
-        <li><strong>iSGLT2 (Dapagliflozina/Empagliflozina):</strong> Si hay Insuficiencia Cardíaca o Enfermedad Renal Crónica.</li>
-        <li><strong>arGLP-1 (Liraglutida/Semaglutida):</strong> Si predomina la Enfermedad Cardiovascular aterosclerótica o la Obesidad.</li>
-    </ul>
+  <!-- METAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🎯 Metas del tratamiento</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Meta general</th><th>Cuándo flexibilizar</th></tr>
+        <tr><td>HbA1c</td><td>&lt; 7%</td><td>Hasta 8–8,5% en ancianos, comorbilidades graves o hipoglucemias frecuentes</td></tr>
+        <tr><td>GPA</td><td>80–130 mg/dl</td><td>—</td></tr>
+        <tr><td>Glucemia postprandial 2h</td><td>&lt; 180 mg/dl</td><td>—</td></tr>
+        <tr><td>Presión arterial</td><td>&lt; 140/90 mmHg</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
 
-    <h2>4. Complicaciones Agudas</h2>
-    <p>Vigilar signos de <strong>Cetoacidosis Diabética (CAD)</strong> o <strong>Estado Hiperglucémico Hiperosmolar (EHH)</strong>: deshidratación severa, aliento cetónico o alteración del sensorio.</p>
-</main>
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento farmacológico — escalones y dosis</div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Estilo de vida saludable + Metformina</strong> — primera línea para la inmensa mayoría de los pacientes.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Intensificación:</strong> agregar un 2º fármaco si no se alcanza la meta con metformina a dosis máxima tolerada tras 3 meses.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Triple terapia o insulinización:</strong> cuando el doble esquema es insuficiente, o ante hiperglucemia sintomática al diagnóstico.</div></div>
+
+    <div style="margin-top:16px;">
+      <div class="farma-card">
+        <div class="farma-nombre">Metformina</div>
+        <div class="farma-moleculas">Biguanida · fármaco de inicio</div>
+        <div class="dosis-badge">500–850 mg con las comidas · Dosis máxima: 2.550–3.000 mg/día</div>
+        <div class="farma-detalle">Reduce la producción hepática de glucosa y mejora la sensibilidad periférica a la insulina. No produce hipoglucemias ni aumento de peso. Iniciar con dosis baja y aumentar gradualmente para minimizar efectos gastrointestinales. Contraindicada con filtrado glomerular &lt;30 ml/min.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Sulfonilureas (SU)</div>
+        <div class="farma-moleculas">Gliclazida · Glimepirida · Glipizida</div>
+        <div class="dosis-badge">Gliclazida: 30–120 mg/día · Glimepirida: 1–6 mg/día · Glipizida: 2,5–20 mg/día</div>
+        <div class="farma-detalle">Estimulan la secreción de insulina por las células beta. Riesgo de hipoglucemia y aumento de peso. Gliclazida es la preferida por menor riesgo de hipoglucemia. <span class="badge-no">Evitar glibenclamida</span> — mayor riesgo de hipoglucemias graves.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Tiazolidinedionas (TZD)</div>
+        <div class="farma-moleculas">Pioglitazona</div>
+        <div class="dosis-badge">15–30 mg/día · Dosis máxima: 45 mg/día (1 toma)</div>
+        <div class="farma-detalle">Mejoran la insulinorresistencia (agonistas PPAR-γ). No producen hipoglucemias. Pueden causar retención de líquidos, aumento de peso y mayor riesgo de fracturas en mujeres. Contraindicadas en insuficiencia cardíaca.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Meglitinidas</div>
+        <div class="farma-moleculas">Repaglinida</div>
+        <div class="dosis-badge">0,5–4 mg antes de cada comida · Dosis máxima: 16 mg/día</div>
+        <div class="farma-detalle">Secretagogos de acción rápida y corta duración. Administrar 15–30 min antes de cada comida. Útiles en pacientes con horarios irregulares de alimentación. Se puede usar en cualquier grado de enfermedad renal.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Inhibidores de DPP-4 (iDPP4)</div>
+        <div class="farma-moleculas">Vildagliptina · Sitagliptina · Linagliptina</div>
+        <div class="dosis-badge">Sitagliptina: 100 mg/día · Vildagliptina: 50 mg 2 veces/día · Linagliptina: 5 mg/día</div>
+        <div class="farma-detalle">Inhiben la enzima DPP-4, aumentando GLP-1 endógeno. Efecto glucosa-dependiente — bajo riesgo de hipoglucemia. Neutros en peso. Linagliptina no requiere ajuste en insuficiencia renal. No combinar con aGLP1.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Inhibidores SGLT-2 (iSGLT2)</div>
+        <div class="farma-moleculas">Empagliflozina · Canagliflozina</div>
+        <div class="dosis-badge">Empagliflozina: 10–25 mg/día · Canagliflozina: 100–300 mg/día (antes del desayuno)</div>
+        <div class="farma-detalle">Inhiben la reabsorción renal de glucosa. Beneficio cardiovascular y renal demostrado. Pérdida de peso. Reducción de PA. Contraindicados con filtrado glomerular &lt;45 ml/min. Riesgo de infecciones genitourinarias y cetoacidosis euglucémica.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Análogos de GLP-1 (aGLP1)</div>
+        <div class="farma-moleculas">Liraglutida · Dulaglutida</div>
+        <div class="dosis-badge">Liraglutida: 0,6 mg/día SC (inicio) → hasta 1,8 mg/día · Dulaglutida: 0,75–1,5 mg/semana SC</div>
+        <div class="farma-detalle">Estimulan secreción de insulina glucosa-dependiente, suprimen glucagón y retardan vaciamiento gástrico. Pérdida de peso significativa. Beneficio cardiovascular. Náuseas frecuentes al inicio. No combinar con iDPP4.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Insulina</div>
+        <div class="farma-moleculas">NPH · Insulina regular · Glargina · Análogos rápidos</div>
+        <div class="dosis-badge">NPH: iniciar 10 UI/día SC o 0,1–0,2 UI/kg/día · Ajustar según automonitoreo</div>
+        <div class="farma-detalle">Indicada cuando no se logra control con antidiabéticos orales o ante hiperglucemia sintomática al diagnóstico. La guía argentina prioriza <strong>NPH sobre análogos lentos</strong> en el sistema público por costo-efectividad.</div>
+      </div>
+    </div>
+    <div class="hl-danger" style="margin-top:4px;"><span class="badge-no">Evitar glibenclamida</span> — mayor riesgo de hipoglucemias graves. Preferir gliclazida dentro de las sulfonilureas.</div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Complicación</th><th>Dato clave</th></tr>
+        <tr><td rowspan="3"><strong>Microvasculares</strong></td><td>Retinopatía diabética</td><td>2ª causa de ceguera en Argentina</td></tr>
+        <tr><td>Nefropatía diabética</td><td>1ª causa de ingreso a diálisis y trasplante en Argentina</td></tr>
+        <tr><td>Neuropatía periférica</td><td>25% desarrollará úlcera de pie en su vida</td></tr>
+        <tr><td rowspan="3"><strong>Macrovasculares</strong></td><td>Enfermedad coronaria</td><td>Principal causa de muerte en DM2</td></tr>
+        <tr><td>ACV</td><td>Riesgo 2–4 veces mayor que población general</td></tr>
+        <tr><td>Enfermedad arterial periférica</td><td>Amputaciones 20 veces más frecuentes en diabéticos</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">¿Por qué no usar HbA1c para diagnóstico inicial?</span>
+      <span class="pill">Criterios diagnósticos con valores exactos</span>
+      <span class="pill">¿Por qué metformina primero?</span>
+      <span class="pill">Diferencia GAA vs TGA vs DM2</span>
+      <span class="pill">¿Por qué evitar glibenclamida?</span>
+      <span class="pill">Dosis de metformina inicio vs máxima</span>
+      <span class="pill">Mecanismo iDPP4 vs iSGLT2 vs aGLP1</span>
+      <span class="pill">¿Cuándo insulinizar?</span>
+      <span class="pill">NPH vs análogos en sistema público</span>
+      <span class="pill">Complicaciones micro vs macrovasculares</span>
+      <span class="pill">Meta de HbA1c general y cuándo flexibilizar</span>
+      <span class="pill">¿Qué fármaco tiene beneficio cardiovascular?</span>
+      <span class="pill">Contraindicación de metformina en IRC</span>
+      <span class="pill">Diferencia clínica DM1 vs DM2</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuente: Guía de Práctica Clínica Nacional sobre Prevención, Diagnóstico y Tratamiento de la Diabetes Mellitus Tipo 2 · Ministerio de Salud de la Nación Argentina · Resolución 3877/2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
