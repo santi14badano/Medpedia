@@ -10,17 +10,28 @@
     <loc>https://medpedia-c47w.vercel.app/hta.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://medpedia-c47w.vercel.app/ic.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://medpedia-c47w.vercel.app/dengue.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://medpedia-c47w.vercel.app/neumonia.html</loc>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://medpedia-c47w.vercel.app/acv.html</loc>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://medpedia-c47w.vercel.app/obesidad.html</loc>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://medpedia-c47w.vercel.app/asma-epoc.html</loc>
     <priority>0.8</priority>
