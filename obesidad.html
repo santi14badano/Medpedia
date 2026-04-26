@@ -3,101 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obesidad: Guía Clínica Completa — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Obesidad: Guía de Tratamiento — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --endo: #f39c12; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: var(--verde-claro); color: #0F6E56; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; color: var(--texto); }
-        h2 { font-family: 'Fraunces', serif; color: var(--verde); border-bottom: 2px solid var(--verde-claro); padding-bottom: 5px; margin-top: 2.5rem; }
-        h3 { margin-top: 1.5rem; color: #333; }
-        .cuadro { background: var(--fondo); border-left: 4px solid var(--verde); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-        .farmacos-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
-        .farmacos-table th, .farmacos-table td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-        .farmacos-table th { background: #f2f2f2; }
-        .resaltado { font-weight: bold; color: var(--verde); }
-        .u-alerta { color: #d32f2f; font-weight: bold; }
+        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: #fef5e7; color: var(--endo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
+        h2 { font-family: 'Fraunces', serif; color: var(--endo); border-bottom: 2px solid #fef5e7; padding-bottom: 5px; margin-top: 2.5rem; }
     </style>
 </head>
 <body>
-
-<nav>
-    <a href="index.html" class="logo">Med<span>pedia</span></a>
-    <a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a>
-</nav>
-
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
 <main>
-    <span class="badge">Endocrinología y Metabolismo</span>
-    <h1>Obesidad: Manejo Clínico y Farmacológico</h1>
-    <p><em>Resumen integral basado en la Guía de Práctica Clínica Nacional (MinSal) y consensos de la SAOTA.</em></p>
+    <span class="badge">Endocrinología / Nutrición</span>
+    <h1>Obesidad y Riesgo Metabólico</h1>
 
-    <div class="cuadro">
-        <strong>Punto Clave:</strong> La obesidad no es solo "peso alto", es una <span class="resaltado">enfermedad inflamatoria crónica</span>. El objetivo no es solo bajar kilos, sino mejorar el perfil metabólico y reducir el riesgo cardiovascular.
-    </div>
-
-    <h2>1. Evaluación Inicial y Comorbilidades</h2>
-    <p>Además del IMC, es obligatorio evaluar la presencia de complicaciones para estadificar al paciente:</p>
+    <h2>1. Diagnóstico y Clasificación (IMC)</h2>
     <ul>
-        <li><strong>Metabólicas:</strong> Diabetes Tipo 2, Insulinorresistencia (Acantosis nigricans), Dislipemia.</li>
-        <li><strong>Cardiovasculares:</strong> HTA, Insuficiencia cardíaca, Enfermedad coronaria.</li>
-        <li><strong>Mecánicas/Otros:</strong> SAHOS (Apneas del sueño), Artrosis, Higado Graso (EHGNA), Reflujo gastroesofágico.</li>
+        <li><strong>Sobrepeso:</strong> 25.0 - 29.9 kg/m².</li>
+        <li><strong>Obesidad Grado I:</strong> 30.0 - 34.9 kg/m².</li>
+        <li><strong>Obesidad Grado II:</strong> 35.0 - 39.9 kg/m².</li>
+        <li><strong>Obesidad Grado III (Mórbida):</strong> ≥ 40.0 kg/m².</li>
+    </ul>
+    <p><em>Perímetro de cintura de riesgo: > 88 cm en mujeres y > 102 cm en hombres.</em></p>
+
+    <h2>2. Tratamiento Farmacológico</h2>
+    <p>Indicado en IMC ≥ 30 o IMC ≥ 27 con comorbilidades:</p>
+    <ul>
+        <li><strong>Liraglutida (Análogo GLP-1):</strong> 0.6 mg a 3.0 mg SC diario.</li>
+        <li><strong>Orlistat:</strong> 120 mg con cada comida principal (inhibidor de lipasa).</li>
     </ul>
 
-    <h2>2. Tratamiento Farmacológico (Dosis y Mecanismos)</h2>
-    <p>Indicado con <strong>IMC ≥ 30 kg/m²</strong> o <strong>≥ 27 kg/m² con comorbilidades</strong>. En Argentina, los fármacos aprobados y más utilizados son:</p>
-
-    <table class="farmacos-table">
-        <thead>
-            <tr>
-                <th>Fármaco</th>
-                <th>Mecanismo</th>
-                <th>Dosis Típica</th>
-                <th>Efectos Adversos</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Orlistat</strong></td>
-                <td>Inhibidor de lipasa gástrica y pancreática (no absorbe grasas).</td>
-                <td>120 mg con cada comida principal.</td>
-                <td>Esteatorrea, urgencia fecal, flatulencia.</td>
-            </tr>
-            <tr>
-                <td><strong>Liraglutida (Saxenda)</strong></td>
-                <td>Análogo de GLP-1 (inyectable diario). Aumenta saciedad.</td>
-                <td>Escalamiento semanal: 0.6 mg → 1.2 → 1.8 → 2.4 → <span class="resaltado">3.0 mg (dosis final)</span>.</td>
-                <td>Náuseas, vómitos (frecuentes al inicio).</td>
-            </tr>
-            <tr>
-                <td><strong>Semaglutida (Wegovy)</strong></td>
-                <td>Análogo de GLP-1 (inyectable semanal).</td>
-                <td>Escalamiento hasta <span class="resaltado">2.4 mg semanales</span>.</td>
-                <td>Similares a Liraglutida pero más cómodo por ser semanal.</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>3. Tratamiento Quirúrgico (Bariátrica)</h2>
-    <p>La cirugía no es "el último recurso", es una herramienta para casos de alto riesgo:</p>
-    <ul>
-        <li><strong>Indicaciones:</strong> IMC > 40 o IMC > 35 con comorbilidades mayores (DBT2 difícil control, SAHOS grave).</li>
-        <li><strong>Técnicas:</strong> Manga gástrica (Restrictiva) o Bypass gástrico en Y de Roux (Mixta).</li>
-        <li><strong>Contraindicaciones:</strong> Trastornos psiquiátricos no compensados, adicción a sustancias activa.</li>
-    </ul>
-
-    <div class="cuadro" style="background: #fff9e7; border-color: #f1c40f;">
-        <strong>Examen Final:</strong> Siempre preguntan la diferencia entre obesidad androide (forma de manzana, riesgo CV alto) y ginoide (forma de pera). <span class="u-alerta">Dato:</span> Un descenso del 5% al 10% del peso inicial ya reduce significativamente la presión arterial y la glucemia.
-    </div>
-
-    <p style="font-size:12px; margin-top:3rem; border-top:1px solid #eee; padding-top:1rem;">
-        Fuente: Guía de Práctica Clínica Nacional - Ministerio de Salud de la Nación Argentina / Consensos Sociedad Argentina de Obesidad y Trastornos Alimentarios (SAOTA).
-    </p>
+    <h2>3. Cirugía Bariátrica</h2>
+    <p>Criterios: IMC ≥ 40 o IMC ≥ 35 con comorbilidades graves (DBT2, apnea del sueño, HTA refractaria) que no respondieron a tratamiento médico.</p>
 </main>
-
 </body>
 </html>
