@@ -159,25 +159,32 @@
 </footer>
 
 <script>
+ <script>
+  // Lógica de los botones de especialidades
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Manejo de botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
-
       const filtro = btn.textContent.trim();
       
-      // Filtrar categorías
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
-        if (filtro === 'Todas' || nombreCategoria === filtro) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
       });
     });
   });
+
+  // Lógica del buscador (NUEVO)
+  const inputBusqueda = document.querySelector('.search-wrap input');
+  inputBusqueda.addEventListener('input', (e) => {
+    const termino = e.target.value.toLowerCase();
+    
+    document.querySelectorAll('.art-row').forEach(art => {
+      const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
+      art.style.display = titulo.includes(termino) ? 'flex' : 'none';
+    });
+  });
+</script>
 </script>
 
 </body>
