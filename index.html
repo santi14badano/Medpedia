@@ -149,6 +149,24 @@
           <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
         </a>
 
+<div>
+      <div class="section-label">Artículos recientes</div>
+      <div class="articulos-lista">
+        <a href="dm2.html" class="art-row">
+          <div class="art-titulo">Diabetes Mellitus Tipo 2 — diagnóstico y tratamiento</div>
+          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
+        </a>
+
+        <a href="iam.html" class="art-row">
+          <div class="art-titulo">Infarto Agudo de Miocardio — manejo inicial y reperfusión</div>
+          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
+        </a>
+
+        <a href="#" class="art-row">
+          <div class="art-titulo">ACV isquémico agudo — diagnóstico y trombolisis</div>
+          <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
+        </a>
+
         <a href="asma.html" class="art-row">
           <div class="art-titulo">Asma bronquial — clasificación y tratamiento escalonado</div>
           <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
@@ -159,21 +177,15 @@
           <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
         </a>
       </div>
-  <div class="art-titulo">Infarto Agudo de Miocardio — manejo inicial y reperfusión</div>
-  <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-</a>
-      </div>
     </div>
   </div>
-
 </main>
 
 <footer>
   <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
-  <p style="margin-top:6px;">Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank">Ministerio de Salud de la Nación</a> · El contenido no reemplaza la consulta médica profesional.</p>
+  <p style="margin-top:6px;">Basado en guías oficiales del Ministerio de Salud de la Nación</p>
 </footer>
 
-<script>
 <script>
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -187,7 +199,6 @@
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
         
-        // Si tocamos "Todas" mostramos todo, sino comparamos nombres
         if (filtro === 'Todas' || nombreCategoria === filtro) {
           card.style.display = 'block';
         } else {
@@ -196,7 +207,6 @@
       });
     });
   });
-</script>
 </script>
 
 </body>
