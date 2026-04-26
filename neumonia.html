@@ -1,71 +1,793 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAC: Guía de Tratamiento — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --infecto: #8e44ad; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: #f4eafc; color: var(--infecto); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--infecto); border-bottom: 2px solid #f4eafc; padding-bottom: 5px; margin-top: 2.5rem; }
-        .escala { background: #fdfaff; border-left: 4px solid var(--infecto); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
-        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAC: Guía de Tratamiento — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-med: #0F6E56;
+      --texto: #1a1a1a; --texto-sec: #5F5E5A; --borde: #e8e8e8;
+      --fondo: #fafaf8; --blanco: #ffffff;
+      --amber: #FAEEDA; --amber-text: #854F0B;
+      --rojo: #FCEBEB; --rojo-text: #A32D2D;
+      --azul: #E6F1FB; --azul-text: #185FA5;
+      --gris: #F1EFE8; --gris-text: #5F5E5A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
+
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+    .logo span { color: var(--verde); }
+    .nav-back { text-decoration: none; color: var(--verde); font-weight: 500; font-size: 14px; }
+
+    main { max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem 4rem; }
+
+    .page-header { display: flex; align-items: center; gap: 14px; margin-bottom: 2rem; }
+    .page-icon { background: var(--verde-claro); border-radius: 12px; padding: 10px 14px; font-size: 22px; color: var(--verde); font-weight: bold; }
+    .page-title { font-family: 'Fraunces', serif; font-size: 32px; line-height: 1.2; }
+    .page-sub { font-size: 13px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--borde); margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab { padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--texto-sec); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; border-radius: 4px 4px 0 0; }
+    .tab:hover { color: var(--texto); background: var(--fondo); }
+    .tab.active { color: var(--verde-med); border-bottom-color: var(--verde); }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* Cards */
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .card-title { font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+
+    /* Badges */
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+    .badge-teal { background: var(--verde-claro); color: var(--verde-med); }
+    .badge-amber { background: var(--amber); color: var(--amber-text); }
+    .badge-red { background: var(--rojo); color: var(--rojo-text); }
+    .badge-blue { background: var(--azul); color: var(--azul-text); }
+    .badge-gray { background: var(--gris); color: var(--gris-text); }
+
+    /* Grid */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+
+    h3 { font-size: 14px; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--texto); }
+    h3:first-child { margin-top: 0; }
+    p { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.2rem; }
+    li { font-size: 13px; color: var(--texto-sec); line-height: 1.7; }
+    strong { color: var(--texto); }
+
+    /* Drug table */
+    .drug-header { display: grid; grid-template-columns: 1.2fr 1.2fr 0.6fr; gap: 8px; padding: 6px 0 8px; font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--borde); }
+    .drug-row { display: grid; grid-template-columns: 1.2fr 1.2fr 0.6fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); align-items: start; font-size: 13px; }
+    .drug-row:last-child { border-bottom: none; }
+    .drug-name { font-weight: 600; color: var(--texto); }
+    .drug-dose { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Score calculator */
+    .score-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--borde); gap: 12px; }
+    .score-row:last-child { border-bottom: none; }
+    .score-label { font-size: 14px; font-weight: 500; }
+    .score-sub { font-size: 12px; color: var(--texto-sec); margin-top: 2px; }
+    .toggle { width: 40px; height: 22px; background: #D3D1C7; border-radius: 11px; cursor: pointer; position: relative; transition: background 0.2s; border: none; flex-shrink: 0; }
+    .toggle.on { background: var(--verde); }
+    .toggle::after { content: ''; position: absolute; width: 18px; height: 18px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .toggle.on::after { left: 20px; }
+
+    .score-display { background: var(--fondo); border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: center; }
+    .score-number { font-family: 'Fraunces', serif; font-size: 56px; line-height: 1; }
+    .score-interp { font-size: 14px; margin-top: 10px; }
+
+    /* Stat cards */
+    .stat { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .stat-label { font-size: 12px; color: var(--texto-sec); }
+    .stat-val { font-size: 20px; font-weight: 700; margin-top: 2px; color: var(--texto); }
+    .stat-sub { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Scenario sub-tabs */
+    .scenario-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stab { padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-sec); border-radius: 8px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .stab:hover { background: var(--fondo); color: var(--texto); }
+    .stab.active { background: var(--verde-claro); color: var(--verde-med); border-color: #5DCAA5; }
+
+    .scenario { display: none; }
+    .scenario.active { display: block; }
+
+    /* Timeline */
+    .timeline-item { display: flex; gap: 14px; margin-bottom: 14px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--verde); flex-shrink: 0; }
+    .tl-line { width: 2px; background: var(--borde); flex: 1; margin-top: 4px; min-height: 20px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--texto); }
+    .tl-body { font-size: 13px; color: var(--texto-sec); margin-top: 3px; line-height: 1.6; }
+
+    /* Germ boxes */
+    .germ-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main { padding: 0 1rem 3rem; }
+      .page-title { font-size: 24px; }
+      .drug-header, .drug-row { grid-template-columns: 1fr 1fr; }
+      .drug-header span:last-child, .drug-row > *:last-child { display: none; }
+    }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
 <main>
-    <span class="badge">Infectología / Neumonología</span>
-    <h1>Neumonía Adquirida en la Comunidad (NAC)</h1>
-    <p><em>Manejo inicial y criterios de severidad para el médico de guardia.</em></p>
-
-    <h2>1. Evaluación de Severidad (CURB-65)</h2>
-    <div class="escala">
-        <p>Se otorga 1 punto por cada ítem presente:</p>
-        <ul>
-            <li><strong>C:</strong> Confusión mental.</li>
-            <li><strong>U:</strong> Urea > 42 mg/dL.</li>
-            <li><strong>R:</strong> Frecuencia Respiratoria ≥ 30 vpm.</li>
-            <li><strong>B:</strong> Presión Arterial (S < 90 o D ≤ 60 mmHg).</li>
-            <li><strong>65:</strong> Edad ≥ 65 años.</li>
-        </ul>
+  <div class="page-header">
+    <div class="page-icon">+</div>
+    <div>
+      <div class="page-title">Neumonía Adquirida en la Comunidad</div>
+      <div class="page-sub">Guía clínica completa · Infectología / Neumonología · IDSA/ATS · SADI</div>
     </div>
-    <table>
-        <tr><th>Puntos</th><th>Riesgo</th><th>Conducta</th></tr>
-        <tr><td>0 - 1</td><td>Bajo</td><td>Tratamiento Ambulatorio</td></tr>
-        <tr><td>2</td><td>Moderado</td><td>Internación en Sala General</td></tr>
-        <tr><td>≥ 3</td><td>Alto</td><td>Internación en UTI</td></tr>
-    </table>
+  </div>
 
-    <h2>2. Esquema Antibiótico Empírico</h2>
-    <h3>Ambulatorio (Paciente previamente sano)</h3>
-    <ul>
-        <li><strong>Opción A:</strong> Amoxicilina 1g cada 12 horas VO por 5-7 días.</li>
-        <li><strong>Opción B:</strong> Claritromicina 500mg cada 12 horas VO (si hay sospecha de atípicos).</li>
-    </ul>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('clinica', this)">Clínica</button>
+    <button class="tab" onclick="showTab('curb', this)">CURB-65</button>
+    <button class="tab" onclick="showTab('psi', this)">PSI / PORT</button>
+    <button class="tab" onclick="showTab('tto', this)">Tratamiento</button>
+    <button class="tab" onclick="showTab('monitoreo', this)">Monitoreo</button>
+    <button class="tab" onclick="showTab('prevencion', this)">Prevención</button>
+  </div>
 
-    <h3>Internados (Sala General)</h3>
-    <ul>
-        <li><strong>Esquema:</strong> Ampicilina/Sulbactam 1.5g EV cada 6 horas + Claritromicina 500mg cada 12 horas.</li>
-    </ul>
+  <!-- CLÍNICA -->
+  <div class="section active" id="sec-clinica">
+    <div class="grid-2" style="margin-bottom:1rem;">
+      <div class="card">
+        <div class="card-title">Síntomas típicos</div>
+        <ul>
+          <li><strong>Fiebre</strong> > 38°C o hipotermia < 36°C</li>
+          <li><strong>Tos</strong> generalmente productiva</li>
+          <li><strong>Expectoración</strong> purulenta o herrumbrosa</li>
+          <li><strong>Dolor pleurítico</strong></li>
+          <li><strong>Disnea</strong>, taquipnea</li>
+          <li>Escalofríos, diaforesis</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Síntomas atípicos</div>
+        <ul>
+          <li>Inicio subagudo, progresivo</li>
+          <li>Tos seca o escasa expectoración</li>
+          <li>Cefalea, mialgias, fatiga marcada</li>
+          <li>Síntomas GI: náuseas, diarrea</li>
+          <li>Rash cutáneo (Mycoplasma)</li>
+          <li>Sin consolidación franca en Rx</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>3. Criterios de Estabilidad Clínica</h2>
-    <p>Para considerar el alta o pase a vía oral:</p>
-    <ul>
-        <li>Afebril por 48-72 hs.</li>
-        <li>Frecuencia cardíaca < 100 lpm.</li>
-        <li>Saturación O2 > 90% aire ambiental.</li>
-        <li>Tolerancia oral conservada.</li>
-    </ul>
+    <div class="card">
+      <div class="card-title">Examen físico</div>
+      <div class="grid-2">
+        <div>
+          <h3>Signos clásicos de consolidación</h3>
+          <ul>
+            <li>Matidez a la percusión</li>
+            <li>Soplo tubario o bronquial</li>
+            <li>Aumento de las vibraciones vocales</li>
+            <li>Crepitantes finos (rales)</li>
+            <li>Egofonía / pectoriloquia áfona</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Signos de alarma</h3>
+          <ul>
+            <li>FR ≥ 30 rpm</li>
+            <li>FC ≥ 125 lpm</li>
+            <li>PA sistólica < 90 mmHg</li>
+            <li>Sat O₂ < 90% al aire ambiente</li>
+            <li>Confusión mental nueva</li>
+            <li>Cianosis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Diagnóstico — estudios iniciales</div>
+      <div class="grid-2">
+        <div>
+          <h3>Mínimos en guardia</h3>
+          <ul>
+            <li>Rx tórax (frente + perfil)</li>
+            <li>Hemograma completo</li>
+            <li>Glucemia, uremia, creatinina</li>
+            <li>Gases arteriales o Sat O₂</li>
+            <li>PCR o VSG</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Según severidad / internación</h3>
+          <ul>
+            <li>Hemocultivos x2 (antes del ATB)</li>
+            <li>Cultivo y Gram de esputo</li>
+            <li>Antigenuria Legionella y Neumococo</li>
+            <li>Procalcitonina (si disponible)</li>
+            <li>Lactato si sospecha de sepsis</li>
+            <li>TC de tórax si Rx no concluyente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Gérmenes más frecuentes</div>
+      <div class="grid-2" style="margin-top:0.25rem;">
+        <div class="germ-box">
+          <div class="badge badge-teal" style="margin-bottom:8px;">Típicos</div>
+          <ul>
+            <li>Streptococcus pneumoniae</li>
+            <li>Haemophilus influenzae</li>
+            <li>Staphylococcus aureus</li>
+            <li>Klebsiella pneumoniae</li>
+            <li>Moraxella catarrhalis</li>
+          </ul>
+        </div>
+        <div class="germ-box">
+          <div class="badge badge-blue" style="margin-bottom:8px;">Atípicos</div>
+          <ul>
+            <li>Mycoplasma pneumoniae</li>
+            <li>Chlamydophila pneumoniae</li>
+            <li>Legionella pneumophila</li>
+            <li>Coxiella burnetii</li>
+          </ul>
+        </div>
+        <div class="germ-box">
+          <div class="badge badge-amber" style="margin-bottom:8px;">Virales</div>
+          <ul>
+            <li>Influenza A / B</li>
+            <li>SARS-CoV-2</li>
+            <li>VRS (adultos mayores)</li>
+            <li>Parainfluenza</li>
+          </ul>
+        </div>
+        <div class="germ-box">
+          <div class="badge badge-gray" style="margin-bottom:8px;">Especiales</div>
+          <ul>
+            <li>Pneumocystis jirovecii (inmunosup.)</li>
+            <li>Aspergillus spp. (inmunosup.)</li>
+            <li>Pseudomonas aeruginosa (EPOC)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURB-65 -->
+  <div class="section" id="sec-curb">
+    <div class="card">
+      <div class="card-title">Calculadora CURB-65 — 1 punto por cada ítem</div>
+      <div class="score-row">
+        <div>
+          <div class="score-label"><strong>C</strong> — Confusión mental</div>
+          <div class="score-sub">Desorientación nueva en tiempo, lugar o persona</div>
+        </div>
+        <button class="toggle" id="t-c" onclick="toggleCurb('c')"></button>
+      </div>
+      <div class="score-row">
+        <div>
+          <div class="score-label"><strong>U</strong> — Urea > 42 mg/dL</div>
+          <div class="score-sub">Equivale a BUN > 19 mg/dL (literatura anglosajona)</div>
+        </div>
+        <button class="toggle" id="t-u" onclick="toggleCurb('u')"></button>
+      </div>
+      <div class="score-row">
+        <div>
+          <div class="score-label"><strong>R</strong> — Frecuencia respiratoria ≥ 30 rpm</div>
+          <div class="score-sub">Medida en reposo</div>
+        </div>
+        <button class="toggle" id="t-r" onclick="toggleCurb('r')"></button>
+      </div>
+      <div class="score-row">
+        <div>
+          <div class="score-label"><strong>B</strong> — Presión arterial baja</div>
+          <div class="score-sub">PAS < 90 mmHg o PAD ≤ 60 mmHg</div>
+        </div>
+        <button class="toggle" id="t-b" onclick="toggleCurb('b')"></button>
+      </div>
+      <div class="score-row">
+        <div>
+          <div class="score-label"><strong>65</strong> — Edad ≥ 65 años</div>
+          <div class="score-sub"></div>
+        </div>
+        <button class="toggle" id="t-65" onclick="toggleCurb('65')"></button>
+      </div>
+    </div>
+
+    <div class="score-display">
+      <div class="score-number" id="curb-num" style="color: var(--verde);">0</div>
+      <div style="font-size:13px; color:var(--texto-sec); margin-top:4px;">puntos</div>
+      <div class="score-interp" id="curb-interp" style="margin-top:12px;">
+        <span class="badge badge-teal">Riesgo bajo</span>
+      </div>
+      <div id="curb-conducta" style="margin-top:10px; font-size:14px; font-weight:600; color:var(--texto);">Tratamiento ambulatorio</div>
+      <div id="curb-mort" style="margin-top:4px; font-size:12px; color:var(--texto-sec);">Mortalidad estimada: &lt; 1%</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tabla de referencia</div>
+      <div class="drug-header"><span>Puntos</span><span>Conducta</span><span>Mortalidad</span></div>
+      <div class="drug-row"><span><strong>0 – 1</strong></span><span>Ambulatorio <span class="badge badge-teal">Bajo</span></span><span>&lt; 1%</span></div>
+      <div class="drug-row"><span><strong>2</strong></span><span>Internación sala <span class="badge badge-amber">Moderado</span></span><span>~9%</span></div>
+      <div class="drug-row"><span><strong>3</strong></span><span>Sala / evaluar UTI <span class="badge badge-red">Alto</span></span><span>~14–17%</span></div>
+      <div class="drug-row"><span><strong>4 – 5</strong></span><span>UTI urgente <span class="badge badge-red">Muy alto</span></span><span>~27–40%</span></div>
+    </div>
+    <p style="font-size:12px; color:var(--texto-sec); margin-top:0.25rem;">Limitación: no evalúa hipoxemia ni comorbilidades. Siempre integrar con juicio clínico.</p>
+  </div>
+
+  <!-- PSI/PORT -->
+  <div class="section" id="sec-psi">
+    <div class="card">
+      <div class="card-title">PSI / PORT — Paso 1: Clase I</div>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios para Clase I (sin sumar puntos)</h3>
+          <ul>
+            <li>Edad < 50 años</li>
+            <li>Sin neoplasia activa</li>
+            <li>Sin ICC, ECV, IRC, hepatopatía</li>
+            <li>Sin alteración del sensorio</li>
+            <li>FC < 125, FR < 30, PAS ≥ 90, T° 35–40°C</li>
+          </ul>
+          <div style="margin-top:10px;"><span class="badge badge-teal">Mortalidad &lt; 0.1% → Ambulatorio</span></div>
+        </div>
+        <div>
+          <h3>Si no cumple Clase I → sumar puntos</h3>
+          <ul>
+            <li>≤ 70 pts → <strong>Clase II</strong> → ambulatorio</li>
+            <li>71–90 pts → <strong>Clase III</strong> → observación</li>
+            <li>91–130 pts → <strong>Clase IV</strong> → internación</li>
+            <li>> 130 pts → <strong>Clase V</strong> → UTI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">PSI — Variables y puntaje</div>
+      <div class="drug-header"><span>Variable</span><span>Detalle</span><span>Puntos</span></div>
+      <div class="drug-row"><span>Edad (hombre)</span><span>= años del paciente</span><span>+ años</span></div>
+      <div class="drug-row"><span>Edad (mujer)</span><span>= años − 10</span><span>+ años−10</span></div>
+      <div class="drug-row"><span>Institucionalizado</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>Neoplasia activa</span><span></span><span>+30</span></div>
+      <div class="drug-row"><span>Hepatopatía</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>ICC</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>ECV / ACV</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>Nefropatía crónica</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>Alteración del sensorio</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>FR ≥ 30 rpm</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>PAS < 90 mmHg</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>Temperatura < 35° o ≥ 40°C</span><span></span><span>+15</span></div>
+      <div class="drug-row"><span>FC ≥ 125 lpm</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>pH arterial < 7.35</span><span></span><span>+30</span></div>
+      <div class="drug-row"><span>BUN > 30 mg/dL</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>Na < 130 mEq/L</span><span></span><span>+20</span></div>
+      <div class="drug-row"><span>Glucemia > 250 mg/dL</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>Hematocrito < 30%</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>PaO₂ < 60 mmHg</span><span></span><span>+10</span></div>
+      <div class="drug-row"><span>Derrame pleural</span><span></span><span>+10</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Criterios IDSA/ATS para admisión a UTI</div>
+      <p>Se requiere 1 criterio mayor <strong>O</strong> 3 o más criterios menores.</p>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios mayores</h3>
+          <ul>
+            <li>Ventilación mecánica invasiva</li>
+            <li>Shock séptico (requiere vasopresores)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Criterios menores</h3>
+          <ul>
+            <li>FR ≥ 30 rpm</li>
+            <li>PaO₂/FiO₂ < 250</li>
+            <li>Compromiso multilobar (Rx)</li>
+            <li>Confusión / desorientación</li>
+            <li>Uremia > 44 mg/dL</li>
+            <li>Leucopenia < 4.000/mm³</li>
+            <li>Trombocitopenia < 100.000/mm³</li>
+            <li>Hipotermia < 36°C</li>
+            <li>Hipotensión que requiere fluidos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="section" id="sec-tto">
+    <div class="scenario-tabs">
+      <button class="stab active" onclick="showScenario('amb', this)">Ambulatorio</button>
+      <button class="stab" onclick="showScenario('sala', this)">Internación — sala</button>
+      <button class="stab" onclick="showScenario('uti', this)">UTI</button>
+      <button class="stab" onclick="showScenario('especial', this)">Situaciones especiales</button>
+    </div>
+
+    <div class="scenario active" id="sc-amb">
+      <div class="card">
+        <div class="card-title">Ambulatorio — paciente previamente sano (sin comorbilidades)</div>
+        <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Amoxicilina</div><div class="drug-dose">Primera línea</div></div>
+          <div>1 g c/8 hs VO</div>
+          <div>5–7 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Azitromicina</div><div class="drug-dose">Atípicos o alergia a penicilinas</div></div>
+          <div>500 mg c/24 hs VO</div>
+          <div>5 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Claritromicina</div><div class="drug-dose">Alternativa a macrólidos</div></div>
+          <div>500 mg c/12 hs VO</div>
+          <div>7 días</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Ambulatorio — con comorbilidades o ATB en los últimos 3 meses</div>
+        <p style="margin-bottom:10px;">Comorbilidades: diabetes, EPOC, IRC, ICC, inmunosupresión, tabaquismo activo.</p>
+        <div class="drug-header"><span>Esquema</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Amox/Clavulánico + Azitromicina</div><div class="drug-dose">Combinación de elección</div></div>
+          <div>875/125 mg c/12 hs VO + 500 mg c/24 hs VO</div>
+          <div>5–7 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Levofloxacino</div><div class="drug-dose">Monoterapia — fluoroquinolona respiratoria</div></div>
+          <div>750 mg c/24 hs VO</div>
+          <div>5 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Moxifloxacino</div><div class="drug-dose">Alternativa a levofloxacino</div></div>
+          <div>400 mg c/24 hs VO</div>
+          <div>5–7 días</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-sala">
+      <div class="card">
+        <div class="card-title">Internación — sala general (no UTI)</div>
+        <div class="drug-header"><span>Esquema</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ampicilina/Sulbactam + Azitromicina</div><div class="drug-dose">Primera línea (SADI)</div></div>
+          <div>3 g c/6 hs EV + 500 mg c/24 hs EV o VO</div>
+          <div>5–7 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ceftriaxona + Azitromicina</div><div class="drug-dose">Alternativa (IDSA/ATS)</div></div>
+          <div>1–2 g c/24 hs EV + 500 mg c/24 hs</div>
+          <div>5–7 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Levofloxacino</div><div class="drug-dose">Monoterapia — si contraindicación a betalactámico</div></div>
+          <div>750 mg c/24 hs EV o VO</div>
+          <div>5–7 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ampicilina EV + Amoxicilina/Clavulánico VO</div><div class="drug-dose">Escalada a VO temprana</div></div>
+          <div>Paso a VO a las 48–72 hs si estabilidad</div>
+          <div>Completar 5–7 días total</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Criterios para paso a vía oral</div>
+        <ul>
+          <li>Afebril ≥ 24–48 hs</li>
+          <li>FR < 24 rpm y FC < 100 lpm</li>
+          <li>Sat O₂ > 90% sin O₂ suplementario</li>
+          <li>Tolerancia oral conservada</li>
+          <li>Leucocitosis en mejoría</li>
+          <li>Sin signos de sepsis activa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-uti">
+      <div class="card">
+        <div class="card-title">UTI — sin riesgo de Pseudomonas aeruginosa</div>
+        <div class="drug-header"><span>Esquema</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ceftriaxona + Azitromicina EV</div><div class="drug-dose">Primera línea IDSA</div></div>
+          <div>2 g c/24 hs EV + 500 mg c/24 hs EV</div>
+          <div>7–10 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ceftriaxona + Levofloxacino EV</div><div class="drug-dose">Alternativa si no hay macrólidos</div></div>
+          <div>2 g c/24 hs EV + 750 mg c/24 hs EV</div>
+          <div>7–10 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Ampicilina/Sulbactam + Azitromicina</div><div class="drug-dose">Opción SADI en UTI</div></div>
+          <div>3 g c/6 hs EV + 500 mg c/24 hs EV</div>
+          <div>7–10 días</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">UTI — con riesgo de Pseudomonas aeruginosa</div>
+        <p style="margin-bottom:10px;">Factores de riesgo: EPOC severo, bronquiectasias, uso reciente de ATB de amplio espectro, hospitalización reciente, corticoides crónicos.</p>
+        <div class="drug-header"><span>Esquema</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Piperacilina/Tazobactam + Levofloxacino</div><div class="drug-dose">Primera línea con riesgo pseudomónico</div></div>
+          <div>4,5 g c/6 hs EV + 750 mg c/24 hs EV</div>
+          <div>10–14 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Cefepime + Levofloxacino</div><div class="drug-dose">Alternativa</div></div>
+          <div>2 g c/8 hs EV + 750 mg c/24 hs EV</div>
+          <div>10–14 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Imipenem + Ciprofloxacino</div><div class="drug-dose">Alta resistencia o carbapenem necesario</div></div>
+          <div>500 mg c/6 hs EV + 400 mg c/12 hs EV</div>
+          <div>10–14 días</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Soporte en UTI</div>
+        <div class="grid-2">
+          <div>
+            <h3>Oxigenoterapia</h3>
+            <ul>
+              <li>Objetivo Sat O₂ > 92% (> 88–90% en EPOC)</li>
+              <li>CNAF si FR elevada con Sat < 92% con mascarilla</li>
+              <li>VNI si EAP asociado o hipercapnia leve</li>
+              <li>VMI si Glasgow < 8, fatiga resp., fracaso VNI</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Otros</h3>
+            <ul>
+              <li>Fluidoterapia guiada por lactato (sepsis)</li>
+              <li>Vasopresores si shock: noradrenalina primera línea</li>
+              <li>Dexametasona 6 mg/día si hipoxemia grave (IDSA 2023)</li>
+              <li>Profilaxis TVP en internados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-especial">
+      <div class="card">
+        <div class="card-title">Legionella pneumophila</div>
+        <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Duración</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Levofloxacino</div><div class="drug-dose">Primera línea</div></div>
+          <div>750 mg c/24 hs EV o VO</div>
+          <div>14–21 días</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Azitromicina</div><div class="drug-dose">Alternativa</div></div>
+          <div>500 mg c/24 hs EV</div>
+          <div>14 días</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Influenza + sobreinfección bacteriana</div>
+        <ul>
+          <li>Oseltamivir 75 mg c/12 hs VO × 5 días (iniciar idealmente < 48 hs del inicio)</li>
+          <li>Cobertura ATB para S. aureus y S. pneumoniae</li>
+          <li>Considerar Vancomicina 15–20 mg/kg c/8–12 hs EV si sospecha SAMR</li>
+          <li>Linezolid 600 mg c/12 hs como alternativa a Vancomicina en NAC-SAMR</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Paciente inmunocomprometido</div>
+        <ul>
+          <li>Ampliar cobertura: incluir hongos (Aspergillus, Pneumocystis jirovecii)</li>
+          <li><strong>PCP:</strong> TMP/SMX 15–20 mg/kg/día de TMP en 3–4 dosis EV × 21 días</li>
+          <li><strong>Aspergilosis:</strong> Voriconazol 6 mg/kg c/12 hs el día 1, luego 4 mg/kg c/12 hs EV</li>
+          <li>Isavuconazol como alternativa a voriconazol (menos hepatotóxico)</li>
+          <li>Considerar BAL para diagnóstico etiológico temprano</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Alergia a penicilinas</div>
+        <ul>
+          <li>Levofloxacino 750 mg c/24 hs — primera línea alternativa</li>
+          <li>Moxifloxacino 400 mg c/24 hs — alternativa</li>
+          <li>Aztreonam + macrólido si se requiere cobertura gram negativa</li>
+          <li>Reactividad cruzada con cefalosporinas es baja (~2%) — evaluar uso</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">NAC grave + bacteriemia / sepsis</div>
+        <ul>
+          <li>Hemocultivos x2 antes del ATB (no demorar inicio más de 1 hora)</li>
+          <li>Lactato arterial — si > 2 mmol/L: sepsis severa</li>
+          <li>Inicio ATB dentro de la primera hora del diagnóstico de sepsis</li>
+          <li>Drenaje pleural si empiema confirmado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONITOREO -->
+  <div class="section" id="sec-monitoreo">
+    <div class="card">
+      <div class="card-title">Criterios de estabilidad clínica</div>
+      <div class="grid-3">
+        <div class="stat"><div class="stat-label">Temperatura</div><div class="stat-val">≤ 37.8°C</div><div class="stat-sub">afebril ≥ 24–48 hs</div></div>
+        <div class="stat"><div class="stat-label">FC</div><div class="stat-val">< 100 lpm</div></div>
+        <div class="stat"><div class="stat-label">FR</div><div class="stat-val">< 24 rpm</div></div>
+        <div class="stat"><div class="stat-label">PAS</div><div class="stat-val">≥ 90 mmHg</div></div>
+        <div class="stat"><div class="stat-label">Sat O₂</div><div class="stat-val">> 90%</div><div class="stat-sub">aire ambiente</div></div>
+        <div class="stat"><div class="stat-label">Tolerancia oral</div><div class="stat-val">Conservada</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Seguimiento y respuesta al tratamiento</div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div><div class="tl-title">48–72 hs</div><div class="tl-body">Evaluación inicial de respuesta. Si no hay mejoría: ampliar microbiología, buscar gérmenes atípicos, complicaciones (derrame, absceso) o diagnóstico alternativo (TEP, vasculitis, neoplasia).</div></div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div><div class="tl-title">5–7 días</div><div class="tl-body">Considerar paso a vía oral si se cumplen criterios de estabilidad. Control de laboratorio: hemograma, función renal, PCR.</div></div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div><div class="tl-title">Alta hospitalaria</div><div class="tl-body">Dar instrucciones escritas. Indicar consulta urgente si reaparece fiebre, disnea progresiva o empeoramiento clínico. Turno de control ambulatorio en 7–10 días.</div></div>
+      </div>
+      <div class="timeline-item" style="margin-bottom:0;">
+        <div class="tl-left"><div class="tl-dot"></div></div>
+        <div><div class="tl-title">4–6 semanas post-alta</div><div class="tl-body">Rx tórax de control para confirmar resolución del infiltrado. Especialmente importante en mayores de 50 años o fumadores — descartar neoplasia subyacente.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Complicaciones a vigilar</div>
+      <div class="grid-2">
+        <div>
+          <ul>
+            <li><strong>Derrame paraneumónico</strong> — eco / TC si sospecha</li>
+            <li><strong>Empiema</strong> — drenaje pleural (toracocentesis / tubo)</li>
+            <li><strong>Absceso pulmonar</strong> — ATB prolongado 4–6 semanas</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Sepsis / bacteriemia</strong> — hemocultivos, lactato</li>
+            <li><strong>Falla respiratoria aguda</strong> → escalada soporte O₂ / UTI</li>
+            <li><strong>Falla multiorgánica</strong> → UTI urgente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN -->
+  <div class="section" id="sec-prevencion">
+    <div class="card">
+      <div class="card-title">Vacunación antineumocócica — Calendario Argentina 2024</div>
+      <div class="drug-header"><span>Vacuna</span><span>Población objetivo</span><span>Esquema</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">VCN13 (Prevenar 13)</div><div class="drug-dose">Conjugada — 13 serotipos</div></div>
+        <div>≥ 65 años sin vacunación previa</div>
+        <div>1 dosis</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">VPN23 (Pneumovax 23)</div><div class="drug-dose">Polisacárida — 23 serotipos</div></div>
+        <div>≥ 65 años + inmunocomprometidos</div>
+        <div>1–2 dosis (≥ 12 meses post VCN13)</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">VCN15 / VCN20</div><div class="drug-dose">Nuevas conjugadas (ACIP USA 2023)</div></div>
+        <div>≥ 65 años (reemplaza secuencia en EE.UU.)</div>
+        <div>1 dosis única</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Vacunación antigripal</div>
+      <ul>
+        <li>Vacuna cuadrivalente — <strong>anual</strong></li>
+        <li>Obligatoria en Argentina: embarazadas, ≥ 65 años, personal de salud, pacientes con comorbilidades</li>
+        <li>Reduce mortalidad por neumonía asociada a influenza hasta un 40%</li>
+        <li>Idealmente antes del inicio de la temporada invernal (abril–mayo en Argentina)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Otras medidas preventivas</div>
+      <div class="grid-2">
+        <div>
+          <h3>Modificables</h3>
+          <ul>
+            <li>Cesación tabáquica</li>
+            <li>Reducción del consumo de alcohol</li>
+            <li>Control de ERGE si hay riesgo de aspiración</li>
+            <li>Higiene de manos y respiratoria</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Clínicas</h3>
+          <ul>
+            <li>Evitar IBP innecesarios (aumentan riesgo)</li>
+            <li>Nutrición adecuada en adultos mayores</li>
+            <li>Fisioterapia respiratoria en EPOC</li>
+            <li>Evaluar disfagia en pacientes neurológicos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fuentes de referencia</div>
+      <ul>
+        <li>IDSA/ATS — Infectious Diseases Society of America / American Thoracic Society Guidelines (2007, actualización 2019–2023)</li>
+        <li>SADI — Sociedad Argentina de Infectología, Guías de NAC</li>
+        <li>Ministerio de Salud Argentina — Calendario Nacional de Vacunación 2024</li>
+        <li>Mandell et al., IDSA CAP Guidelines, Clin Infect Dis 2007</li>
+        <li>Torres et al., ERS/ESCMID/ESICM Severe CAP Guidelines, Eur Respir J 2023</li>
+      </ul>
+    </div>
+  </div>
+
 </main>
+
+<script>
+  const curbState = { c: false, u: false, r: false, b: false, '65': false };
+  const curbInterp = [
+    { label: 'Riesgo bajo', cls: 'badge-teal', conducta: 'Tratamiento ambulatorio', mort: 'Mortalidad estimada: < 1%', color: '#1D9E75' },
+    { label: 'Riesgo bajo', cls: 'badge-teal', conducta: 'Ambulatorio (considerar observación breve)', mort: 'Mortalidad estimada: ~1%', color: '#1D9E75' },
+    { label: 'Riesgo moderado', cls: 'badge-amber', conducta: 'Internación en sala general', mort: 'Mortalidad estimada: ~9%', color: '#BA7517' },
+    { label: 'Riesgo alto', cls: 'badge-red', conducta: 'Internación — evaluar UTI', mort: 'Mortalidad estimada: ~14–17%', color: '#E24B4A' },
+    { label: 'Riesgo muy alto', cls: 'badge-red', conducta: 'Ingreso a UTI urgente', mort: 'Mortalidad estimada: ~27%', color: '#E24B4A' },
+    { label: 'Riesgo muy alto', cls: 'badge-red', conducta: 'Ingreso a UTI urgente', mort: 'Mortalidad estimada: ~27–40%', color: '#E24B4A' }
+  ];
+
+  function toggleCurb(key) {
+    curbState[key] = !curbState[key];
+    document.getElementById('t-' + key).classList.toggle('on', curbState[key]);
+    const total = Object.values(curbState).filter(Boolean).length;
+    document.getElementById('curb-num').textContent = total;
+    document.getElementById('curb-num').style.color = curbInterp[total].color;
+    const i = curbInterp[total];
+    document.getElementById('curb-interp').innerHTML = '<span class="badge ' + i.cls + '">' + i.label + '</span>';
+    document.getElementById('curb-conducta').textContent = i.conducta;
+    document.getElementById('curb-mort').textContent = i.mort;
+  }
+
+  function showTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function showScenario(id, el) {
+    document.querySelectorAll('.scenario').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sc-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
 </body>
 </html>
