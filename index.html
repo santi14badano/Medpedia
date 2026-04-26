@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <<<meta name="google-site-verification" content="google835bfa9cb3ce96af" /> /> />
+  
+  <meta name="google-site-verification" content="google835bfa9cb3ce96af" />
+  
   <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -145,7 +147,7 @@
           <div class="art-titulo">Asma bronquial — clasificación y tratamiento escalonado</div>
           <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
         </a>
-        <a href="#" class="art-row">
+        <a href="obesidad.html" class="art-row">
           <div class="art-titulo">Obesidad — abordaje integral según normativa nacional</div>
           <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
         </a>
@@ -160,22 +162,15 @@
 </footer>
 
 <script>
-  // 1. Lógica de los botones de especialidades
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Manejo visual de botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
-
       const filtro = btn.textContent.trim();
-      
-      // Filtrar categorías (grilla izquierda)
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
         card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
       });
-
-      // Filtrar artículos (lista derecha) por categoría
       document.querySelectorAll('.art-row').forEach(art => {
         const tagArticulo = art.querySelector('.art-tag').textContent.trim();
         art.style.display = (filtro === 'Todas' || tagArticulo === filtro) ? 'flex' : 'none';
@@ -183,16 +178,12 @@
     });
   });
 
-  // 2. Lógica del BUSCADOR (Escribir para filtrar)
   const inputBusqueda = document.querySelector('.search-wrap input');
   inputBusqueda.addEventListener('input', (e) => {
     const termino = e.target.value.toLowerCase().trim();
-    
     document.querySelectorAll('.art-row').forEach(art => {
       const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
       const especialidad = art.querySelector('.art-tag').textContent.toLowerCase();
-      
-      // Si el texto que escribís está en el título o en la especialidad, se queda
       if (titulo.includes(termino) || especialidad.includes(termino)) {
         art.style.display = 'flex';
       } else {
