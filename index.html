@@ -159,25 +159,30 @@
 </footer>
 
 <script>
- <script>
- <script>
-  // Lógica de los botones de especialidades
+  // 1. Filtrado por botones de Especialidades
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // 1. Manejo visual de los botones
+      // Manejo visual de botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
 
-      // 2. Filtrado de las tarjetas de categorías (la grilla de la izquierda)
       const filtro = btn.textContent.trim();
+      
+      // Filtrar categorías (grilla izquierda)
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
         card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
       });
+
+      // Filtrar artículos (lista derecha)
+      document.querySelectorAll('.art-row').forEach(art => {
+        const tagArticulo = art.querySelector('.art-tag').textContent.trim();
+        art.style.display = (filtro === 'Todas' || tagArticulo === filtro) ? 'flex' : 'none';
+      });
     });
   });
 
-  // Lógica del buscador (filtra la lista de artículos recientes a la derecha)
+  // 2. Filtrado por texto en el Buscador
   const inputBusqueda = document.querySelector('.search-wrap input');
   inputBusqueda.addEventListener('input', (e) => {
     const termino = e.target.value.toLowerCase().trim();
@@ -186,7 +191,7 @@
       const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
       const especialidad = art.querySelector('.art-tag').textContent.toLowerCase();
       
-      // Muestra el artículo si el término coincide con el título o la especialidad
+      // Muestra si el término está en el título o en la etiqueta de especialidad
       if (titulo.includes(termino) || especialidad.includes(termino)) {
         art.style.display = 'flex';
       } else {
@@ -194,10 +199,6 @@
       }
     });
   });
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
