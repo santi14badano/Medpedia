@@ -159,7 +159,7 @@
 </footer>
 
 <script>
-  // 1. Filtrado por botones de Especialidades
+  // 1. Lógica de los botones de especialidades
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       // Manejo visual de botones
@@ -174,7 +174,7 @@
         card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
       });
 
-      // Filtrar artículos (lista derecha)
+      // Filtrar artículos (lista derecha) por categoría
       document.querySelectorAll('.art-row').forEach(art => {
         const tagArticulo = art.querySelector('.art-tag').textContent.trim();
         art.style.display = (filtro === 'Todas' || tagArticulo === filtro) ? 'flex' : 'none';
@@ -182,7 +182,7 @@
     });
   });
 
-  // 2. Filtrado por texto en el Buscador
+  // 2. Lógica del BUSCADOR (Escribir para filtrar)
   const inputBusqueda = document.querySelector('.search-wrap input');
   inputBusqueda.addEventListener('input', (e) => {
     const termino = e.target.value.toLowerCase().trim();
@@ -191,7 +191,7 @@
       const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
       const especialidad = art.querySelector('.art-tag').textContent.toLowerCase();
       
-      // Muestra si el término está en el título o en la etiqueta de especialidad
+      // Si el texto que escribís está en el título o en la especialidad, se queda
       if (titulo.includes(termino) || especialidad.includes(termino)) {
         art.style.display = 'flex';
       } else {
