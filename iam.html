@@ -1,296 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infarto Agudo de Miocardio — Medpedia</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
-      --texto: #1a1a1a; --texto-secundario: #555; --texto-terciario: #888;
-      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
-    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
-    .logo span { color: var(--verde); }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-size: 14px; color: var(--texto-secundario); text-decoration: none; }
-
-    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-    .breadcrumb { font-size: 12px; color: var(--texto-terciario); margin-bottom: 1rem; }
-    .breadcrumb a { color: var(--verde); text-decoration: none; }
-    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
-    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
-    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
-    .tag-cardio { background: #FCEBEB; color: #A32D2D; }
-    .tag-fuente { background: var(--fondo); color: var(--texto-terciario); border: 1px solid var(--borde); }
-
-    .seccion { margin-bottom: 2rem; }
-    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
-    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-secundario); }
-    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
-    .card strong { color: var(--texto); }
-
-    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-danger { border-left: 3px solid #E24B4A; background: #FCEBEB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-
-    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-secundario); font-weight: 500; border-bottom: 1px solid var(--borde); }
-    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
-    tr:last-child td { border-bottom: none; }
-
-    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
-    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
-    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
-    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
-    .farma-detalle { font-size: 13px; color: var(--texto-secundario); line-height: 1.65; }
-
-    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
-    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
-    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-    .sintoma-desc { font-size: 12px; color: var(--texto-terciario); line-height: 1.4; }
-
-    .tiempo-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--borde); }
-    .tiempo-row:last-child { border-bottom: none; }
-    .tiempo-badge { background: #FCEBEB; color: #A32D2D; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
-    .tiempo-desc { font-size: 13px; color: var(--texto); }
-
-    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
-    .step-num { width: 26px; height: 26px; border-radius: 50%; background: #E24B4A; color: white; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .step-content { font-size: 14px; line-height: 1.6; flex: 1; }
-
-    .badge-no { background: #FCEBEB; color: #A32D2D; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
-    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-secundario); }
-
-    .fuente { font-size: 11px; color: var(--texto-terciario); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
-    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); }
-    footer a { color: var(--verde); text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAM: Protocolo Crítico — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+        .logo span { color: var(--verde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
+        h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
+        .cuadro-critico { background: #fff5f5; border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; }
+    </style>
 </head>
 <body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
+<main>
+    <span class="badge">Cardiología</span>
+    <h1>Infarto Agudo (IAM)</h1>
+    
+    <h2>1. Clínica: El Dolor Típico</h2>
+    <ul>
+        <li><strong>Localización:</strong> Retroesternal opresivo ("garra").</li>
+        <li><strong>Irradiación:</strong> Brazo izquierdo, cuello, mandíbula o espalda.</li>
+        <li><strong>Equivalentes:</strong> Disnea, sudoración fría, náuseas (común en diabéticos y mujeres).</li>
+    </ul>
 
-<nav>
-  <a href="../index.html" class="logo">Med<span>pedia</span></a>
-  <div class="nav-links">
-    <a href="../index.html">Inicio</a>
-    <a href="#">Especialidades</a>
-  </div>
-</nav>
+    <h2>2. Estratificación (Killip y Kimball)</h2>
+    <table>
+        <thead><tr><th>Grado</th><th>Clínica</th><th>Mortalidad</th></tr></thead>
+        <tbody>
+            <tr><td>I</td><td>Sin signos de falla cardíaca.</td><td>6%</td></tr>
+            <tr><td>II</td><td>Estertores crepitantes, R3 galope.</td><td>17%</td></tr>
+            <tr><td>III</td><td>Edema Agudo de Pulmón (EAP).</td><td>38%</td></tr>
+            <tr><td>IV</td><td>Shock cardiogénico.</td><td>81%</td></tr>
+        </tbody>
+    </table>
 
-<div class="contenido">
-  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Cardiología</a> › Infarto Agudo de Miocardio</div>
-  <div class="titulo">Infarto Agudo de Miocardio (IAM)</div>
-  <div class="meta">
-    <span class="tag tag-cardio">Cardiología</span>
-    <span class="tag tag-fuente">Guía Nacional Reperfusión IAM · Ministerio de Salud Argentina</span>
-  </div>
-
-  <!-- CONCEPTO -->
-  <div class="seccion">
-    <div class="sec-titulo">📌 Concepto clave</div>
-    <div class="card">
-      <p>El IAM ocurre cuando la <strong>oclusión aguda de una arteria coronaria</strong> interrumpe el flujo sanguíneo al miocardio, produciendo necrosis del tejido privado de oxígeno. Es una emergencia cardiovascular y la <strong>principal causa de muerte</strong> en Argentina y el mundo.</p>
-      <p>Se clasifica según el ECG en dos grandes grupos con manejo diferente:</p>
-      <p><strong>IAMCEST</strong> (con elevación del segmento ST) — oclusión total de la coronaria. Requiere reperfusión inmediata.<br>
-      <strong>IAMSEST</strong> (sin elevación del ST) — oclusión parcial o transitoria. Manejo según estratificación de riesgo.</p>
+    <h2>3. Farmacoterapia de Emergencia</h2>
+    <div class="cuadro-critico">
+        <strong>Antiagregación Doble (Carga):</strong><br>
+        • <strong>Aspirina:</strong> 200 - 325 mg (masticada).<br>
+        • <strong>Clopidogrel:</strong> 300 mg (o 600 mg si va a Angioplastia).<br>
+        <br>
+        <strong>Anticoagulación:</strong><br>
+        • <strong>Heparina Sódica:</strong> 60 UI/kg bolo (máx 4000 UI).
     </div>
-  </div>
-
-  <!-- SIGNOS Y SÍNTOMAS -->
-  <div class="seccion">
-    <div class="sec-titulo">🩺 Signos y síntomas</div>
-    <div class="hl-danger">El síntoma cardinal es el <strong>dolor precordial opresivo</strong> de más de 20 minutos de duración, que no cede con nitratos. Ante cualquier sospecha, realizar ECG en los primeros <strong>10 minutos</strong>.</div>
-    <div class="sintoma-grid">
-      <div class="sintoma-item"><div class="sintoma-nombre">Dolor precordial</div><div class="sintoma-desc">Opresivo, en "puño", irradiado a brazo izquierdo, cuello o mandíbula</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Disnea</div><div class="sintoma-desc">Dificultad para respirar, especialmente en infartos extensos</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Diaforesis</div><div class="sintoma-desc">Sudoración fría y profusa — signo de activación simpática</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Náuseas y vómitos</div><div class="sintoma-desc">Frecuentes en IAM inferior por irritación vagal</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Palidez</div><div class="sintoma-desc">Por vasoconstricción periférica y bajo gasto cardíaco</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Síncope o presíncope</div><div class="sintoma-desc">Por arritmias o hipotensión — peor pronóstico</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Presentación atípica</div><div class="sintoma-desc">En diabéticos, mujeres y ancianos: epigastralgia, fatiga o solo disnea</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">IAM silente</div><div class="sintoma-desc">Sin dolor, más frecuente en diabéticos por neuropatía autonómica</div></div>
-    </div>
-    <div class="hl-info" style="margin-top:10px;">En mujeres, diabéticos y ancianos el IAM frecuentemente <strong>no presenta el dolor clásico</strong>. Siempre tener alto índice de sospecha ante fatiga inexplicada, epigastralgia o disnea súbita.</div>
-  </div>
-
-  <!-- DIAGNÓSTICO -->
-  <div class="seccion">
-    <div class="sec-titulo">🔬 Diagnóstico</div>
-    <div class="hl">El ECG es el estudio clave — debe realizarse e interpretarse en los primeros <strong>10 minutos</strong> desde el primer contacto médico.</div>
-    <div class="tabla-wrap">
-      <table>
-        <tr><th>Estudio</th><th>Hallazgo</th><th>Observación</th></tr>
-        <tr><td><strong>ECG</strong></td><td>Elevación del ST ≥1mm en ≥2 derivaciones contiguas (IAMCEST) o descenso del ST / inversión de T (IAMSEST)</td><td>Estudio de primera línea — no demorar</td></tr>
-        <tr><td><strong>Troponina de alta sensibilidad</strong></td><td>Elevada — confirma necrosis miocárdica</td><td>Puede ser normal en las primeras horas. Repetir a las 3h</td></tr>
-        <tr><td><strong>CK-MB</strong></td><td>Elevada</td><td>Menos específica que troponina. Útil para evaluar reinfarto</td></tr>
-        <tr><td><strong>Ecocardiograma</strong></td><td>Alteraciones de la motilidad parietal regional</td><td>Útil cuando el ECG no es diagnóstico</td></tr>
-        <tr><td><strong>Rx tórax</strong></td><td>Puede mostrar congestión pulmonar o cardiomegalia</td><td>No retrasar reperfusión para obtenerla</td></tr>
-      </table>
-    </div>
-    <div class="hl-warn">En el IAMCEST el diagnóstico es <strong>clínico-electrocardiográfico</strong>. No hay que esperar los resultados de laboratorio para iniciar la reperfusión.</div>
-  </div>
-
-  <!-- TIEMPOS -->
-  <div class="seccion">
-    <div class="sec-titulo">⏱️ Tiempos clave — el tiempo es músculo</div>
-    <div class="card">
-      <div class="tiempo-row"><span class="tiempo-badge">10 min</span><span class="tiempo-desc">Tiempo máximo para obtener e interpretar el primer ECG desde el primer contacto médico</span></div>
-      <div class="tiempo-row"><span class="tiempo-badge">120 min</span><span class="tiempo-desc">Tiempo máximo puerta-balón para ATCp (angioplastia primaria) — estrategia preferida</span></div>
-      <div class="tiempo-row"><span class="tiempo-badge">30 min</span><span class="tiempo-badge" style="background:#FAEEDA;color:#854F0B;">puerta-aguja</span><span class="tiempo-desc">Tiempo máximo para iniciar fibrinólisis cuando no hay acceso a ATCp en tiempo</span></div>
-      <div class="tiempo-row"><span class="tiempo-badge" style="background:#E1F5EE;color:#0F6E56;">12 hs</span><span class="tiempo-desc">Ventana terapéutica para reperfusión en IAMCEST con síntomas persistentes</span></div>
-    </div>
-    <div class="hl-danger" style="margin-top:10px;"><strong>"El tiempo es músculo"</strong> — cada minuto de oclusión coronaria equivale a más necrosis irreversible. La rapidez en la reperfusión es el principal determinante del pronóstico.</div>
-  </div>
-
-  <!-- TRATAMIENTO -->
-  <div class="seccion">
-    <div class="sec-titulo">💊 Tratamiento — fármacos y dosis</div>
-
-    <div class="hl" style="margin-bottom:14px;">Ante cualquier IAM confirmado o con alta sospecha, iniciar inmediatamente: <strong>AAS + anticoagulación + reperfusión</strong>.</div>
-
-    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Tratamiento inmediato</strong> — desde el primer contacto médico, independientemente de la estrategia de reperfusión.</div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Reperfusión</strong> — ATCp si está disponible en tiempo. Fibrinólisis si no hay acceso a hemodinamia en ≤120 min.</div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Tratamiento a largo plazo</strong> — antiagregación dual, betabloqueantes, IECA y estatinas post-IAM.</div></div>
-
-    <div style="margin-top:16px;">
-
-      <div class="farma-card">
-        <div class="farma-nombre">Aspirina (AAS)</div>
-        <div class="farma-clase">Antiagregante plaquetario · primera línea inmediata</div>
-        <div class="dosis-badge">160–325 mg VO masticada inmediatamente · Luego 100 mg/día indefinido</div>
-        <div class="farma-detalle">Inhibidor irreversible de la COX-1. Reduce la agregación plaquetaria. Administrar lo antes posible — masticada para absorción más rápida. Continuar indefinidamente como prevención secundaria. Si alergia a AAS, usar clopidogrel.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Clopidogrel</div>
-        <div class="farma-clase">Antiagregante plaquetario · tienopiridina</div>
-        <div class="dosis-badge">Dosis de carga: 300–600 mg VO · Mantenimiento: 75 mg/día por 12 meses</div>
-        <div class="farma-detalle">Inhibidor del receptor P2Y12. Se combina con AAS en terapia antiplaquetaria dual (TAPD) por al menos 12 meses post-IAM. En pacientes que reciben fibrinólisis, dosis de carga de 300 mg (≤75 años) o sin carga (>75 años).</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Heparina no fraccionada (HNF)</div>
-        <div class="farma-clase">Anticoagulante · uso hospitalario</div>
-        <div class="dosis-badge">Bolo IV: 60–70 UI/kg (máx 5.000 UI) · Infusión: 12–15 UI/kg/h (máx 1.000 UI/h)</div>
-        <div class="farma-detalle">Anticoagulante de elección durante la ATCp. Previene la extensión del trombo y complicaciones tromboembólicas. Monitorear con KPTT (objetivo 50–70 seg). Disponible en todos los centros del sistema público argentino.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Enoxaparina (HBPM)</div>
-        <div class="farma-clase">Heparina de bajo peso molecular · alternativa a HNF</div>
-        <div class="dosis-badge">1 mg/kg SC cada 12h · Ajustar en IRC (FG &lt;30: 1 mg/kg/día)</div>
-        <div class="farma-detalle">Alternativa a la HNF especialmente en IAMSEST. Ventaja: no requiere monitoreo de KPTT. Mayor biodisponibilidad y efecto más predecible. Contraindicada en insuficiencia renal grave.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Estreptoquinasa (STK) — Fibrinólisis</div>
-        <div class="farma-clase">Fibrinolítico · cuando no hay acceso a ATCp en tiempo</div>
-        <div class="dosis-badge">1.500.000 UI IV en 30–60 minutos</div>
-        <div class="farma-detalle">Fibrinolítico de primera línea en el sistema público argentino por costo-efectividad. Indicado en IAMCEST cuando no se puede realizar ATCp dentro de los 120 min desde el primer contacto médico. Contraindicaciones absolutas: ACV hemorrágico previo, cirugía mayor reciente, hemorragia activa.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Betabloqueantes</div>
-        <div class="farma-clase">Carvedilol · Metoprolol · Bisoprolol</div>
-        <div class="dosis-badge">Metoprolol: 25–50 mg VO cada 12h · Carvedilol: 3,125–25 mg cada 12h</div>
-        <div class="farma-detalle">Reducen la mortalidad post-IAM. Disminuyen el consumo de O₂ miocárdico, previenen arritmias y remodelado ventricular. Iniciar dentro de las primeras 24h si no hay contraindicaciones (bradicardia, bloqueo AV, broncoespasmo, IC descompensada).</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">IECA / ARA II</div>
-        <div class="farma-clase">Ramipril · Enalapril · Losartán</div>
-        <div class="dosis-badge">Ramipril: iniciar 2,5 mg/día → hasta 10 mg/día · Enalapril: 2,5–10 mg cada 12h</div>
-        <div class="farma-detalle">Indicados en todos los pacientes post-IAM con disfunción ventricular (FEVI &lt;40%), HTA o diabetes. Previenen el remodelado ventricular y reducen la mortalidad. Iniciar dentro de las primeras 24h si PA lo permite. ARA II si intolerancia a IECA.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Estatinas de alta intensidad</div>
-        <div class="farma-clase">Atorvastatina · Rosuvastatina</div>
-        <div class="dosis-badge">Atorvastatina: 40–80 mg/día · Rosuvastatina: 20–40 mg/día</div>
-        <div class="farma-detalle">Iniciar lo antes posible independientemente del LDL basal. Reducen la mortalidad cardiovascular, estabilizan la placa y tienen efectos pleiotrópicos antiinflamatorios. Continuar indefinidamente como prevención secundaria. Meta: LDL &lt;70 mg/dl.</div>
-      </div>
-
-      <div class="farma-card">
-        <div class="farma-nombre">Nitratos</div>
-        <div class="farma-clase">Nitroglicerina · uso sintomático</div>
-        <div class="dosis-badge">0,4 mg SL cada 5 min (máx 3 dosis) · IV: 5–200 mcg/min según respuesta</div>
-        <div class="farma-detalle">Útiles para alivio del dolor y manejo de la congestión pulmonar. <span class="badge-no">Contraindicados</span> si PA sistólica &lt;90 mmHg, bradicardia &lt;50 lpm, IAM de ventrículo derecho, o uso de inhibidores de PDE5 (sildenafil) en las últimas 24–48h.</div>
-      </div>
-
-    </div>
-    <div class="hl-danger" style="margin-top:4px;"><span class="badge-no">No demorar la reperfusión</span> para completar estudios complementarios. El diagnóstico clínico-ECG es suficiente para iniciar el tratamiento en el IAMCEST.</div>
-  </div>
-
-  <!-- COMPLICACIONES -->
-  <div class="seccion">
-    <div class="sec-titulo">⚠️ Complicaciones</div>
-    <div class="tabla-wrap">
-      <table>
-        <tr><th>Tipo</th><th>Complicación</th><th>Dato clave</th></tr>
-        <tr><td rowspan="3"><strong>Eléctricas</strong></td><td>Fibrilación ventricular (FV)</td><td>Principal causa de muerte prehospitalaria — requiere desfibrilación inmediata</td></tr>
-        <tr><td>Bloqueo AV completo</td><td>Más frecuente en IAM inferior — puede requerir marcapasos transitorio</td></tr>
-        <tr><td>Taquicardia ventricular (TV)</td><td>Tratar con amiodarona o cardioversión según estabilidad hemodinámica</td></tr>
-        <tr><td rowspan="3"><strong>Mecánicas</strong></td><td>Insuficiencia cardíaca aguda</td><td>Por disfunción ventricular — clasificar con Killip-Kimball</td></tr>
-        <tr><td>Shock cardiogénico</td><td>Killip IV — mortalidad &gt;50% — requiere soporte hemodinámico</td></tr>
-        <tr><td>Rotura de pared libre / tabique</td><td>Complicación mecánica grave — generalmente días post-IAM</td></tr>
-        <tr><td rowspan="2"><strong>Trombóticas</strong></td><td>Reinfarto</td><td>Por reoclusión — monitorear con CK-MB seriada</td></tr>
-        <tr><td>ACV embólico</td><td>Por trombo intracavitario — más frecuente en IAM anterior extenso</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- KILLIP -->
-  <div class="seccion">
-    <div class="sec-titulo">📊 Clasificación de Killip-Kimball</div>
-    <div class="tabla-wrap">
-      <table>
-        <tr><th>Clase</th><th>Hallazgo clínico</th><th>Mortalidad aproximada</th></tr>
-        <tr><td><strong>Killip I</strong></td><td>Sin signos de IC — pulmones limpios</td><td>~6%</td></tr>
-        <tr><td><strong>Killip II</strong></td><td>Estertores en bases + 3er ruido (S3)</td><td>~17%</td></tr>
-        <tr><td><strong>Killip III</strong></td><td>Edema agudo de pulmón — estertores en más del 50% del campo pulmonar</td><td>~38%</td></tr>
-        <tr><td><strong>Killip IV</strong></td><td>Shock cardiogénico — hipotensión + signos de hipoperfusión periférica</td><td>&gt;50%</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- EXAMEN -->
-  <div class="seccion">
-    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
-    <div class="pill-list">
-      <span class="pill">Diferencia IAMCEST vs IAMSEST</span>
-      <span class="pill">¿Cuántos minutos para el primer ECG?</span>
-      <span class="pill">Tiempo puerta-balón máximo</span>
-      <span class="pill">¿Cuándo fibrinólisis vs ATCp?</span>
-      <span class="pill">Dosis de AAS en fase aguda</span>
-      <span class="pill">¿Por qué masticar el AAS?</span>
-      <span class="pill">Contraindicaciones de nitratos en IAM</span>
-      <span class="pill">Clasificación de Killip-Kimball</span>
-      <span class="pill">¿Qué fármacos reducen mortalidad post-IAM?</span>
-      <span class="pill">IAM de VD — ¿qué no dar?</span>
-      <span class="pill">Presentación atípica en mujeres y diabéticos</span>
-      <span class="pill">¿Por qué estatinas si LDL es normal?</span>
-      <span class="pill">Complicación eléctrica más frecuente y precoz</span>
-      <span class="pill">Meta de LDL en prevención secundaria</span>
-    </div>
-  </div>
-
-  <div class="fuente">
-    Fuente: Guía de Práctica Clínica Nacional para la Reperfusión del Infarto Agudo de Miocardio · Ministerio de Salud de la Nación Argentina · Dirección Nacional de Abordaje Integral de Enfermedades No Transmisibles.<br>
-    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
-  </div>
-</div>
-
-<footer>
-  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
-</footer>
-
+</main>
 </body>
 </html>
