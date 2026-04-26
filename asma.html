@@ -3,57 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asma Bronquial — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Asma y EPOC: Guía Comparativa — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-oscuro: #0F6E56; --texto: #1a1a1a; --fondo: #fafaf8; --blanco: #ffffff; --borde: #e8e8e8; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; margin: 0; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; position: sticky; top: 0; }
-        .logo { font-family: 'Fraunces', serif; font-size: 20px; color: var(--texto); text-decoration: none; }
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --neumo: #1A5E9A; --neumo-claro: #E6F1FB; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        article { max-width: 800px; margin: 2rem auto; background: var(--blanco); padding: 3rem; border: 1px solid var(--borde); border-radius: 12px; }
-        .badge { background: #E6F1FB; color: #1A5E9A; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: var(--neumo-claro); color: var(--neumo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 36px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--verde-oscuro); margin-top: 2rem; border-bottom: 1px solid var(--borde); padding-bottom: 0.5rem; }
-        .highlight-box { background: #f0f7f4; border-left: 4px solid var(--verde); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; font-size: 14px; }
-        th { background: var(--fondo); }
+        h2 { font-family: 'Fraunces', serif; color: var(--neumo); border-bottom: 2px solid var(--neumo-claro); padding-bottom: 5px; margin-top: 2.5rem; }
+        .cuadro-comparativo { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .cuadro-comparativo th, .cuadro-comparativo td { border: 1px solid var(--borde); padding: 12px; font-size: 14px; }
+        .cuadro-comparativo th { background: var(--neumo-claro); color: var(--neumo); }
+        .dosis-box { background: #fef9e7; border-left: 4px solid #f1c40f; padding: 1rem; margin: 1rem 0; border-radius: 4px; font-size: 14px; }
+        .resaltado { font-weight: bold; color: var(--neumo); }
     </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a></nav>
-<article>
+
+<nav>
+    <a href="index.html" class="logo">Med<span>pedia</span></a>
+    <a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a>
+</nav>
+
+<main>
     <span class="badge">Neumonología</span>
-    <h1>Asma Bronquial: Guía de Manejo</h1>
-    <p>El asma es una enfermedad inflamatoria crónica de las vías aéreas que se caracteriza por hiperreactividad bronquial y obstrucción reversible.</p>
+    <h1>Asma vs. EPOC: Diagnóstico y Manejo</h1>
+    <p><em>Actualizado según GINA 2024 y GOLD 2024 para la práctica clínica argentina.</em></p>
 
-    <h2>1. Diagnóstico Clínico</h2>
-    <p>Se sospecha por la tríada clásica:</p>
-    <ul>
-        <li><strong>Sibilancias</strong> (generalmente espiratorias).</li>
-        <li><strong>Tos</strong> (predominio nocturno o inducida por ejercicio).</li>
-        <li><strong>Disnea</strong> paroxística.</li>
-    </ul>
-
-    <h2>2. Clasificación de la Gravedad</h2>
-    <table>
-        <tr><th>Categoría</th><th>Síntomas Diurnos</th><th>Limitación Actividad</th></tr>
-        <tr><td>Intermitente</td><td>< 2 veces/mes</td><td>Ninguna</td></tr>
-        <tr><td>Persistente Leve</td><td>> 2 veces/semana</td><td>Algo</td></tr>
-        <tr><td>Persistente Moderada</td><td>Diarios</td><td>Bastante</td></tr>
-        <tr><td>Persistente Grave</td><td>Continuos</td><td>Mucha</td></tr>
+    <h2>1. Diferencias Clave (Semiología)</h2>
+    <table class="cuadro-comparativo">
+        <tr>
+            <th>Característica</th>
+            <th>Asma</th>
+            <th>EPOC</th>
+        </tr>
+        <tr>
+            <td><strong>Inicio</strong></td>
+            <td>Generalmente en la infancia/juventud.</td>
+            <td>Generalmente >40 años.</td>
+        </tr>
+        <tr>
+            <td><strong>Antecedentes</strong></td>
+            <td>Atopia, rinitis, alergias.</td>
+            <td><span class="resaltado">Tabaquismo</span> o humo de biomasa.</td>
+        </tr>
+        <tr>
+            <td><strong>Síntomas</strong></td>
+            <td>Variables, nocturnos, sibilancias.</td>
+            <td>Progresivos, disnea de esfuerzo, tos crónica.</td>
+        </tr>
+        <tr>
+            <td><strong>Obstrucción</strong></td>
+            <td>Variable y <span class="resaltado">Reversible</span>.</td>
+            <td>Persistente y <span class="resaltado">No reversible</span>.</td>
+        </tr>
     </table>
 
-    <h2>3. Tratamiento Escalonado (GINA)</h2>
-    <div class="highlight-box">
-        <strong>Pilar terapéutico:</strong> El uso de corticoides inhalados (CI) es fundamental. Ya no se recomienda el uso de SABA (Salbutamol) solo; siempre debe ir acompañado de CI.
+    <h2>2. Diagnóstico Espirométrico</h2>
+    <p>La espirometría con prueba broncodilatadora (PBD) es el estándar de oro.</p>
+    <ul>
+        <li><strong>Asma:</strong> Aumento del FEV1 >12% y >200 ml post-salbutamol.</li>
+        <li><strong>EPOC:</strong> Relación FEV1/FVC <span class="resaltado">< 0.70 post-broncodilatador</span>.</li>
+    </ul>
+
+    <h2>3. Tratamiento del Asma (Escalones GINA)</h2>
+    <p>Ya no se recomienda el uso de SABA (Salbutamol) solo. Se prefiere el uso de <strong>Corticoides Inhalados (CI)</strong> desde el inicio.</p>
+    
+    <div class="dosis-box">
+        <strong>Pilar terapéutico:</strong> Combinación de <strong>Budesonida + Formoterol</strong>.
+        <br>• <em>Dosis baja:</em> 160/4.5 µg (1 inhalación cada 12 hs o según necesidad).
+        <br>• <em>Dosis alta:</em> 320/9 µg (2 inhalaciones cada 12 hs).
     </div>
-    <ol>
-        <li><strong>Step 1 y 2:</strong> CI a dosis bajas + Formoterol (según necesidad).</li>
-        <li><strong>Step 3:</strong> CI a dosis bajas + LABA de mantenimiento.</li>
-        <li><strong>Step 4:</strong> CI a dosis medias + LABA de mantenimiento.</li>
-    </ol>
-</article>
+
+    <h2>4. Tratamiento del EPOC (Grupos GOLD A, B, E)</h2>
+    <p>El tratamiento se basa en broncodilatadores de larga acción (LAMA/LABA).</p>
+    <ul>
+        <li><strong>Grupo A (Pocos síntomas):</strong> Un broncodilatador (SAMA o SABA).</li>
+        <li><strong>Grupo B (Muchos síntomas):</strong> LABA + LAMA (ej. <em>Indacaterol + Glicopirronio</em>).</li>
+        <li><strong>Grupo E (Exacerbadores):</strong> LABA + LAMA. Considerar CI si eosinófilos >300 cél/µL.</li>
+    </ul>
+
+    <div class="dosis-box">
+        <strong>Dosis Comunes en Argentina:</strong>
+        <br>• <strong>Salbutamol:</strong> 100 µg/dosis (Rescate: 2 disparos cada 4-6 hs).
+        <br>• <strong>Bromuro de Ipratropio:</strong> 20 µg/dosis.
+        <br>• <strong>Tiotropio (LAMA):</strong> 18 µg (1 cápsula/día con inhalador de polvo seco).
+    </div>
+
+    <p style="font-size:12px; margin-top:3rem; border-top:1px solid #eee; padding-top:1rem;">
+        Fuentes: GINA 2024 / GOLD 2024 / Guía de Prevención y Control de Enfermedades Respiratorias Crónicas - Min. Salud Argentina.
+    </p>
+</main>
+
 </body>
 </html>
