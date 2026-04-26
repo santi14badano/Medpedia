@@ -3,42 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACV Isquémico — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ACV Isquémico Agudo — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-oscuro: #0F6E56; --texto: #1a1a1a; --fondo: #fafaf8; --blanco: #ffffff; --borde: #e8e8e8; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; margin: 0; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; position: sticky; top: 0; }
-        .logo { font-family: 'Fraunces', serif; font-size: 20px; color: var(--texto); text-decoration: none; }
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --texto-sec: #555; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        article { max-width: 800px; margin: 2rem auto; background: var(--blanco); padding: 3rem; border: 1px solid var(--borde); border-radius: 12px; }
-        .badge { background: #EEEDFE; color: #3C3489; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 36px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--verde-oscuro); margin-top: 2rem; border-bottom: 1px solid var(--borde); padding-bottom: 0.5rem; }
-        .highlight-box { background: #FCEBEB; border-left: 4px solid #A32D2D; padding: 1.5rem; margin: 1.5rem 0; }
+        main { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: #EEEDFE; color: #3C3489; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        h1 { font-family: 'Fraunces', serif; font-size: 36px; margin: 1rem 0; color: var(--texto); }
+        h2 { font-family: 'Fraunces', serif; color: var(--verde); border-bottom: 2px solid var(--verde-claro); padding-bottom: 5px; margin-top: 2rem; }
+        .highlight { background: #fff9c4; padding: 2px 5px; font-weight: bold; }
+        .cuadro { background: var(--fondo); border-left: 4px solid var(--verde); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        .footer-note { font-size: 12px; color: var(--texto-terciario); margin-top: 4rem; text-align: center; border-top: 1px solid var(--borde); padding-top: 2rem; }
     </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a></nav>
-<article>
+
+<nav>
+    <a href="index.html" class="logo">Med<span>pedia</span></a>
+    <a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a>
+</nav>
+
+<main>
     <span class="badge">Neurología</span>
-    <h1>ACV Isquémico Agudo</h1>
-    <p>El ACV isquémico ocurre por la oclusión de una arteria cerebral, lo que genera una zona de infarto y una zona de penumbra recuperable.</p>
+    <h1>ACV Isquémico Agudo: Manejo Inicial</h1>
+    <p><em>Resumen basado en la Guía de Práctica Clínica del Ministerio de Salud de la Nación Argentina.</em></p>
 
-    <h2>1. Ventana Terapéutica</h2>
-    <p>El tiempo es el factor determinante para el pronóstico funcional.</p>
-    <ul>
-        <li><strong>Trombólisis endovenosa (rTPA):</strong> Hasta las 4.5 horas.</li>
-        <li><strong>Trombectomía mecánica:</strong> Hasta las 6 horas (en casos seleccionados hasta 24hs).</li>
-    </ul>
-
-    <h2>2. Manejo de la Tensión Arterial</h2>
-    <div class="highlight-box">
-        <strong>Para trombolizar:</strong> La TA debe ser inferior a <strong>185/110 mmHg</strong>. Si es mayor, se debe bajar con labetalol antes de iniciar el rTPA.
+    <div class="cuadro">
+        <strong>Definición:</strong> Déficit neurológico focal de inicio súbito causado por la oclusión de una arteria cerebral. El tiempo es cerebro: cada minuto mueren 1.9 millones de neuronas.
     </div>
 
-    <h2>3. Escala NIHSS</h2>
-    <p>Se utiliza para cuantificar el déficit neurológico. Un puntaje > 21 indica un ACV grave.</p>
-</article>
+    <h2>1. Evaluación Inicial (Protocolo de Guardia)</h2>
+    <p>Ante la sospecha (Escala de Cincinnati positiva: asimetría facial, caída del brazo, alteración del habla), se debe:</p>
+    <ul>
+        <li><strong>ABC y Signos Vitales:</strong> Mantener saturación >94%. </li>
+        <li><strong>HGT (Hemoglucotest):</strong> <span class="highlight">Obligatorio</span> para descartar hipoglucemia (el gran simulador).</li>
+        <li><strong>Anamnesis:</strong> Determinar con exactitud el <strong>Tiempo de Inicio</strong> (último momento visto bien).</li>
+    </ul>
+
+    <h2>2. Diagnóstico por Imágenes</h2>
+    <p>El estudio de elección inicial es la <strong>TAC de cráneo sin contraste</strong> para diferenciar isquemia de hemorragia.</p>
+    <ul>
+        <li><strong>Escala de ASPECTS:</strong> Se utiliza en la TAC para evaluar la extensión del daño isquémico en el territorio de la ACM (máximo 10 puntos).</li>
+    </ul>
+
+    <h2>3. Tratamiento de Reperfusión</h2>
+    <p>Es la clave del manejo agudo. Existen dos pilares:</p>
+    
+    <div class="cuadro">
+        <strong>A. Trombolisis Endovenosa (rtPA / Alteplase):</strong>
+        <ul>
+            <li><strong>Ventana terapéutica:</strong> Hasta las <span class="highlight">4.5 horas</span> del inicio de los síntomas.</li>
+            <li><strong>Criterio de TA:</strong> Debe ser < 185/110 mmHg para iniciar el fármaco.</li>
+        </ul>
+    </div>
+
+    <div class="cuadro">
+        <strong>B. Trombectomía Mecánica:</strong>
+        <ul>
+            <li>Indicada en oclusión de grandes vasos.</li>
+            <li><strong>Ventana terapéutica:</strong> Hasta las 6 horas (y hasta 24 hs en casos seleccionados por mismatch en RM/TC perfusión).</li>
+        </ul>
+    </div>
+
+    <h2>4. Manejo de la Presión Arterial</h2>
+    <ul>
+        <li><strong>Si NO es candidato a reperfusión:</strong> Solo tratar si la TA es >220/120 mmHg (bajar un 15% en 24hs).</li>
+        <li><strong>Si ES candidato a reperfusión:</strong> Mantener <185/110 antes del rTPA y <180/105 después del rTPA.</li>
+    </ul>
+
+    <p class="footer-note">Fuente: Guía de Práctica Clínica - Ministerio de Salud de la Nación Argentina. <br> Este contenido es para estudio académico.</p>
+</main>
+
 </body>
 </html>
