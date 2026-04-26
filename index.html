@@ -73,11 +73,9 @@
     .tag-farma { background: #FAEEDA; color: #854F0B; }
     .art-arrow { color: var(--texto-terciario); font-size: 16px; }
 
-    /* DOS COLUMNAS */
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
     @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
 
-    /* FOOTER */
     footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); margin-top: 2rem; }
     footer a { color: var(--verde); text-decoration: none; }
   </style>
@@ -104,19 +102,14 @@
 </div>
 
 <main>
-
   <div class="section-label">Especialidades</div>
   <div class="especialidades">
     <button class="esp-btn activo">Todas</button>
-    <button class="esp-btn">Medicina Interna</button>
     <button class="esp-btn">Cardiología</button>
     <button class="esp-btn">Neurología</button>
     <button class="esp-btn">Farmacología</button>
-    <button class="esp-btn">Pediatría</button>
     <button class="esp-btn">Endocrinología</button>
     <button class="esp-btn">Neumonología</button>
-    <button class="esp-btn">Ginecología</button>
-    <button class="esp-btn">Cirugía</button>
   </div>
 
   <div class="two-col">
@@ -133,45 +126,24 @@
     </div>
 
     <div>
-<div class="art-list">
-        <a href="dm2.html" class="art-row">
-          <div class="art-titulo">Diabetes Mellitus Tipo 2 — diagnóstico y tratamiento</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
-        </a>
-
-        <a href="iam.html" class="art-row">
-          <div class="art-titulo">Infarto Agudo de Miocardio — manejo inicial y reperfusión</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-
-        <a href="#" class="art-row">
-          <div class="art-titulo">ACV isquémico agudo — diagnóstico y trombolisis</div>
-          <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
-        </a>
-
-<div>
       <div class="section-label">Artículos recientes</div>
       <div class="articulos-lista">
         <a href="dm2.html" class="art-row">
           <div class="art-titulo">Diabetes Mellitus Tipo 2 — diagnóstico y tratamiento</div>
           <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
         </a>
-
         <a href="iam.html" class="art-row">
           <div class="art-titulo">Infarto Agudo de Miocardio — manejo inicial y reperfusión</div>
           <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
         </a>
-
         <a href="#" class="art-row">
           <div class="art-titulo">ACV isquémico agudo — diagnóstico y trombolisis</div>
           <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
         </a>
-
         <a href="asma.html" class="art-row">
           <div class="art-titulo">Asma bronquial — clasificación y tratamiento escalonado</div>
           <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
         </a>
-
         <a href="#" class="art-row">
           <div class="art-titulo">Obesidad — abordaje integral según normativa nacional</div>
           <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
@@ -183,22 +155,21 @@
 
 <footer>
   <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
-  <p style="margin-top:6px;">Basado en guías oficiales del Ministerio de Salud de la Nación</p>
+  <p style="margin-top:6px;">Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank">Ministerio de Salud de la Nación</a></p>
 </footer>
 
 <script>
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      // 1. Manejo visual de los botones
+      // Manejo de botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
 
-      // 2. Lógica de filtrado de las categorías
       const filtro = btn.textContent.trim();
       
+      // Filtrar categorías
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
-        
         if (filtro === 'Todas' || nombreCategoria === filtro) {
           card.style.display = 'block';
         } else {
