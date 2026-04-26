@@ -3,43 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAC: Guía de Antibióticos — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>NAC: Guía Académica — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --infecto: #8e44ad; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .badge { background: #f4eafc; color: var(--infecto); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--infecto); border-bottom: 2px solid #f4eafc; padding-bottom: 5px; margin-top: 2.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
-        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; }
+        h3 { color: var(--infecto); margin-top: 1.5rem; }
+        .cuadro { background: var(--fondo); border-left: 4px solid var(--infecto); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
+        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
+        th { background: #f9f9f9; font-weight: 700; }
+        .critico { color: #d32f2f; font-weight: bold; }
     </style>
 </head>
 <body>
 <nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
 <main>
-    <span class="badge">Infectología</span>
-    <h1>Neumonía (NAC)</h1>
+    <span class="badge">Infectología / Neumonología</span>
+    <h1>Neumonía Adquirida en la Comunidad (NAC)</h1>
 
-    <h2>1. Signos y Síntomas</h2>
+    <h2>1. Diagnóstico Clínico-Radiológico</h2>
+    <p>Presencia de un infiltrado nuevo en la Rx de tórax (Gold Standard) sumado a:</p>
     <ul>
-        <li><strong>Fiebre</strong> (> 38°C), escalofríos y taquicardia.</li>
-        <li><strong>Tos</strong> (productiva o seca) y dolor pleurítico.</li>
-        <li><strong>Examen físico:</strong> Matidez a la percusión, aumento de vibraciones vocales, estertores crepitantes.</li>
+        <li><strong>Síntomas:</strong> Fiebre, tos, disnea, dolor pleurítico, expectoración mucopurulenta.</li>
+        <li><strong>Examen Físico:</strong> Síndrome de condensación (matidez, aumento de vibraciones vocales, estertores crepitantes, soplo tubario).</li>
+        <li><strong>Laboratorio:</strong> Leucocitosis con desviación a la izquierda, Procalcitonina (>0.25 ng/ml sugiere origen bacteriano).</li>
     </ul>
 
-    <h2>2. Esquema Antibiótico (Dosis Adultos)</h2>
+    <h2>2. Estratificación de Riesgo y Pronóstico</h2>
+    <h3>Escala CURB-65</h3>
+    <p>Determina mortalidad a 30 días. (1 punto por ítem: <b>C</b>onfusión, <b>U</b>rea >42, <b>R</b>esp ≥30, <b>B</b>P <90/60, Edad ≥<b>65</b>).</p>
+    <ul>
+        <li><strong>0-1:</strong> Riesgo bajo (1.5%). Ambulatorio.</li>
+        <li><strong>2:</strong> Riesgo moderado (9%). Internación en Sala General.</li>
+        <li><strong>≥3:</strong> Riesgo alto (22%). Evaluación para UTI.</li>
+    </ul>
+
+    <h3>Criterios de ATS/IDSA para UTI</h3>
+    <div class="cuadro">
+        <strong>Mayores (1 o +):</strong> Necesidad de Ventilación Mecánica Asistida (VMA) o Shock séptico con necesidad de vasopresores. <br>
+        <strong>Menores (3 o +):</strong> Frec. Resp >30, PaO2/FiO2 ≤250, Multilobar, Confusión, Urea >42, Leucopenia <4000, Trombocitopenia <100k, Hipotermia, Hipotensión que requiere fluidos.
+    </div>
+
+    <h2>3. Tratamiento Antibiótico Empírico (Dosis Adultos)</h2>
     <table>
-        <thead><tr><th>Escenario</th><th>Antibiótico Sugerido</th><th>Dosis habitual</th></tr></thead>
+        <thead>
+            <tr>
+                <th>Grupo de Paciente</th>
+                <th>Esquema Sugerido</th>
+                <th>Dosis y Vía</th>
+            </tr>
+        </thead>
         <tbody>
-            <tr><td><strong>Ambulatorio (Sano)</strong></td><td>Amoxicilina</td><td>1 g cada 12 hs (VO)</td></tr>
-            <tr><td><strong>Con comorbilidades</strong></td><td>Amox/Clavulánico + Claritromicina</td><td>875/125 c/12h + 500 c/12h</td></tr>
-            <tr><td><strong>Sala General</strong></td><td>Ampicilina/Sulbactam + Claritromicina</td><td>1.5 g c/6h (EV) + 500 c/12h (VO/EV)</td></tr>
-            <tr><td><strong>UTI</strong></td><td>Ceftriaxona + Claritromicina</td><td>2 g c/24h (EV) + 500 c/12h (EV)</td></tr>
+            <tr>
+                <td><strong>Ambulatorio (Sano)</strong></td>
+                <td>Amoxicilina</td>
+                <td>1 g c/12h VO por 5-7 días.</td>
+            </tr>
+            <tr>
+                <td><strong>Ambulatorio (Comorbilidad/ATB previo)</strong></td>
+                <td>Amox/Clavulánico + Claritromicina</td>
+                <td>875/125 mg c/12h + 500 mg c/12h VO.</td>
+            </tr>
+            <tr>
+                <td><strong>Sala General</strong></td>
+                <td>Ampicilina/Sulbactam + Claritromicina</td>
+                <td>1.5 g c/6h EV + 500 mg c/12h VO/EV.</td>
+            </tr>
+            <tr>
+                <td><strong>UTI (Sin Ps. aeruginosa)</strong></td>
+                <td>Ceftriaxona + Claritromicina</td>
+                <td>2 g c/24h EV + 500 mg c/12h EV.</td>
+            </tr>
+            <tr>
+                <td><strong>UTI (Sospecha de Pseudomonas)</strong></td>
+                <td>Piperacilina/Tazobactam</td>
+                <td>4.5 g c/6h EV (infusión extendida).</td>
+            </tr>
         </tbody>
     </table>
 </main>
