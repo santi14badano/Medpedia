@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hipertensión Arterial (HTA) — Medpedia</title>
+    <title>HTA: Guía Completa — Medpedia</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
@@ -16,70 +16,51 @@
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
         .cuadro { background: var(--fondo); border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { padding: 12px; border: 1px solid var(--borde); text-align: left; }
-        th { background: var(--fondo); }
-        .u-alerta { color: var(--cardio); font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; }
+        th { background: #f9f9f9; }
+        .dosis { font-weight: bold; color: var(--cardio); }
     </style>
 </head>
 <body>
-
-<nav>
-    <a href="index.html" class="logo">Med<span>pedia</span></a>
-    <a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a>
-</nav>
-
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
 <main>
     <span class="badge">Cardiología</span>
     <h1>Hipertensión Arterial (HTA)</h1>
-    <p><em>Guía técnica para el diagnóstico y tratamiento según normativas nacionales.</em></p>
+    <p><em>Basado en el Consenso Argentino de Hipertensión Arterial.</em></p>
 
-    <div class="cuadro">
-        <strong>Definición:</strong> Persistencia de valores de presión arterial sistólica (PAS) <span class="u-alerta">≥ 140 mmHg</span> y/o presión arterial diastólica (PAD) <span class="u-alerta">≥ 90 mmHg</span> en el consultorio.
-    </div>
+    <h2>1. Clínica y Diagnóstico</h2>
+    <p>La HTA es el "asesino silencioso". La mayoría son asintomáticos hasta que hay daño de órgano blanco.</p>
+    <ul>
+        <li><strong>Síntomas (en crisis):</strong> Cefalea holocraneana, tinnitus, visión borrosa, epistaxis.</li>
+        <li><strong>Técnica:</strong> Reposo de 5 min, brazo a nivel del corazón, manguito adecuado (2/3 del brazo).</li>
+    </ul>
 
-    <h2>1. Clasificación de Niveles de Presión</h2>
+    <h2>2. Clasificación de Valores (mmHg)</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Categoría</th>
-                <th>Sistólica (mmHg)</th>
-                <th>Diastólica (mmHg)</th>
-            </tr>
-        </thead>
+        <thead><tr><th>Categoría</th><th>PAS</th><th>PAD</th></tr></thead>
         <tbody>
-            <tr><td>Óptima</td><td>< 120</td><td>< 80</td></tr>
-            <tr><td>Normal</td><td>120 - 129</td><td>80 - 84</td></tr>
-            <tr><td>Limítrofe</td><td>130 - 139</td><td>85 - 89</td></tr>
-            <tr><td><strong>HTA Nivel 1</strong></td><td><strong>140 - 159</strong></td><td><strong>90 - 99</strong></td></tr>
-            <tr><td><strong>HTA Nivel 2</strong></td><td><strong>160 - 179</strong></td><td><strong>100 - 109</strong></td></tr>
-            <tr><td><strong>HTA Nivel 3</strong></td><td><strong>≥ 180</strong></td><td><strong>≥ 110</strong></td></tr>
+            <tr><td>Normal</td><td>< 130</td><td>< 85</td></tr>
+            <tr><td>Limítrofe</td><td>130-139</td><td>85-89</td></tr>
+            <tr><td><strong>HTA Grado 1</strong></td><td>140-159</td><td>90-99</td></tr>
+            <tr><td><strong>HTA Grado 2</strong></td><td>160-179</td><td>100-109</td></tr>
+            <tr><td><strong>HTA Grado 3</strong></td><td>≥ 180</td><td>≥ 110</td></tr>
         </tbody>
     </table>
 
-    <h2>2. Diagnóstico: El Protocolo Correcto</h2>
-    <p>No basta con una sola toma. Se requiere:</p>
-    <ul>
-        <li>Al menos <strong>dos mediciones</strong> por consulta, en al menos <strong>dos visitas</strong> distintas.</li>
-        <li><strong>MDPA (Monitoreo Domiciliario):</strong> Muy útil para descartar "HTA de guardapolvo blanco".</li>
-        <li><strong>MAPA (Presurometría):</strong> El estándar de oro para evaluar ritmo circadiano (dipper vs non-dipper).</li>
-    </ul>
-
-    <h2>3. Tratamiento Farmacológico</h2>
-    <p>La mayoría de los pacientes requiere terapia combinada desde el inicio.</p>
-    <div class="cuadro">
-        <strong>Esquema de inicio sugerido:</strong>
-        <br>1. <strong>IECA</strong> (Enalapril) o <strong>ARA II</strong> (Losartán/Valsartán).
-        <br>2. <strong>+ Calcioantagonista</strong> (Amlodipina) o <strong>Diurético Tiazídico</strong> (Clortalidona/Hidroclorotiazida).
-    </div>
-
-    <p class="u-alerta">Importante:</p>
-    <p>Los Betabloqueantes (Atenolol/Bisoprolol) no suelen ser de primera línea en HTA no complicada, a menos que haya indicación específica (Falla cardíaca, post-IAM, joven con deseo de embarazo).</p>
-
-    <p style="font-size:12px; margin-top:3rem; border-top:1px solid #eee; padding-top:1rem;">
-        Fuente: Guía de Práctica Clínica Nacional sobre Prevención, Diagnóstico y Tratamiento de la HTA - Ministerio de Salud de la Nación Argentina.
-    </p>
+    <h2>3. Tratamiento Farmacológico (Dosis Comunes)</h2>
+    <div class="cuadro"><strong>Estrategia:</strong> Iniciar con biterapia (dos fármacos en una sola pastilla) excepto en ancianos frágiles o Grado 1 de bajo riesgo.</div>
+    <table>
+        <thead><tr><th>Grupo</th><th>Fármaco</th><th>Dosis Inicial</th><th>Dosis Máx</th></tr></thead>
+        <tbody>
+            <tr><td><strong>IECA</strong></td><td>Enalapril</td><td>5 - 10 mg/día</td><td>40 mg/día</td></tr>
+            <tr><td><strong>ARA II</strong></td><td>Losartán</td><td>50 mg/día</td><td>100 mg/día</td></tr>
+            <tr><td></td><td>Valsartán</td><td>80 mg/día</td><td>320 mg/día</td></tr>
+            <tr><td><strong>Calcioantag.</strong></td><td>Amlodipina</td><td>5 mg/día</td><td>10 mg/día</td></tr>
+            <tr><td><strong>Diuréticos</strong></td><td>Hidroclorotiazida</td><td>12.5 mg/día</td><td>25 - 50 mg/día</td></tr>
+            <tr><td></td><td>Clortalidona</td><td>12.5 mg/día</td><td>25 mg/día</td></tr>
+        </tbody>
+    </table>
 </main>
-
 </body>
 </html>
