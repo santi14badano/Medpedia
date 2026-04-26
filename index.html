@@ -160,13 +160,16 @@
 
 <script>
  <script>
+ <script>
   // Lógica de los botones de especialidades
   document.querySelectorAll('.esp-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      // 1. Manejo visual de los botones
       document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
+
+      // 2. Filtrado de las tarjetas de categorías (la grilla de la izquierda)
       const filtro = btn.textContent.trim();
-      
       document.querySelectorAll('.cat-card').forEach(card => {
         const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
         card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
@@ -174,17 +177,27 @@
     });
   });
 
-  // Lógica del buscador (NUEVO)
+  // Lógica del buscador (filtra la lista de artículos recientes a la derecha)
   const inputBusqueda = document.querySelector('.search-wrap input');
   inputBusqueda.addEventListener('input', (e) => {
-    const termino = e.target.value.toLowerCase();
+    const termino = e.target.value.toLowerCase().trim();
     
     document.querySelectorAll('.art-row').forEach(art => {
       const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
-      art.style.display = titulo.includes(termino) ? 'flex' : 'none';
+      const especialidad = art.querySelector('.art-tag').textContent.toLowerCase();
+      
+      // Muestra el artículo si el término coincide con el título o la especialidad
+      if (titulo.includes(termino) || especialidad.includes(termino)) {
+        art.style.display = 'flex';
+      } else {
+        art.style.display = 'none';
+      }
     });
   });
 </script>
+
+</body>
+</html>
 </script>
 
 </body>
