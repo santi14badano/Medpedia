@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTA: Guía Completa — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>HTA: Guía de Manejo — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
+        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
-        .cuadro { background: var(--fondo); border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .info-box { background: #fff8f8; border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
         table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
-        th, td { border: 1px solid var(--borde); padding: 10px; text-align: left; }
-        th { background: #f9f9f9; }
-        .dosis { font-weight: bold; color: var(--cardio); }
+        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
+        th { background: #f9f9f9; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -27,40 +27,38 @@
 <main>
     <span class="badge">Cardiología</span>
     <h1>Hipertensión Arterial (HTA)</h1>
-    <p><em>Basado en el Consenso Argentino de Hipertensión Arterial.</em></p>
+    <p><em>Valores diagnósticos y algoritmos de tratamiento según el Consenso Argentino de HTA.</em></p>
 
-    <h2>1. Clínica y Diagnóstico</h2>
-    <p>La HTA es el "asesino silencioso". La mayoría son asintomáticos hasta que hay daño de órgano blanco.</p>
+    <h2>1. Clasificación de la Presión Arterial</h2>
+    <table>
+        <thead>
+            <tr><th>Categoría</th><th>Sistólica (mmHg)</th><th>Diastólica (mmHg)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Presión Normal</td><td>< 130</td><td>y < 85</td></tr>
+            <tr><td>Limítrofe</td><td>130 - 139</td><td>o 85 - 89</td></tr>
+            <tr><td>HTA Nivel 1</td><td>140 - 159</td><td>o 90 - 99</td></tr>
+            <tr><td>HTA Nivel 2</td><td>160 - 179</td><td>o 100 - 109</td></tr>
+            <tr><td>HTA Nivel 3</td><td>≥ 180</td><td>o ≥ 110</td></tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <strong>Diagnóstico:</strong> Se define HTA con valores ≥ 140/90 mmHg en al menos dos tomas en diferentes consultas, o mediante MDPA/MAPA.
+    </div>
+
+    <h2>2. Tratamiento Farmacológico</h2>
+    <p>La tendencia actual es iniciar con <strong>Biterapia en una sola pastilla</strong> (adherencia):</p>
     <ul>
-        <li><strong>Síntomas (en crisis):</strong> Cefalea holocraneana, tinnitus, visión borrosa, epistaxis.</li>
-        <li><strong>Técnica:</strong> Reposo de 5 min, brazo a nivel del corazón, manguito adecuado (2/3 del brazo).</li>
+        <li><strong>IECA o ARA II + Calcioantagonista:</strong> (Ej: Enalapril + Amlodipina).</li>
+        <li><strong>IECA o ARA II + Diurético Tiazídico:</strong> (Ej: Losartán + Hidroclorotiazida).</li>
     </ul>
 
-    <h2>2. Clasificación de Valores (mmHg)</h2>
-    <table>
-        <thead><tr><th>Categoría</th><th>PAS</th><th>PAD</th></tr></thead>
-        <tbody>
-            <tr><td>Normal</td><td>< 130</td><td>< 85</td></tr>
-            <tr><td>Limítrofe</td><td>130-139</td><td>85-89</td></tr>
-            <tr><td><strong>HTA Grado 1</strong></td><td>140-159</td><td>90-99</td></tr>
-            <tr><td><strong>HTA Grado 2</strong></td><td>160-179</td><td>100-109</td></tr>
-            <tr><td><strong>HTA Grado 3</strong></td><td>≥ 180</td><td>≥ 110</td></tr>
-        </tbody>
-    </table>
-
-    <h2>3. Tratamiento Farmacológico (Dosis Comunes)</h2>
-    <div class="cuadro"><strong>Estrategia:</strong> Iniciar con biterapia (dos fármacos en una sola pastilla) excepto en ancianos frágiles o Grado 1 de bajo riesgo.</div>
-    <table>
-        <thead><tr><th>Grupo</th><th>Fármaco</th><th>Dosis Inicial</th><th>Dosis Máx</th></tr></thead>
-        <tbody>
-            <tr><td><strong>IECA</strong></td><td>Enalapril</td><td>5 - 10 mg/día</td><td>40 mg/día</td></tr>
-            <tr><td><strong>ARA II</strong></td><td>Losartán</td><td>50 mg/día</td><td>100 mg/día</td></tr>
-            <tr><td></td><td>Valsartán</td><td>80 mg/día</td><td>320 mg/día</td></tr>
-            <tr><td><strong>Calcioantag.</strong></td><td>Amlodipina</td><td>5 mg/día</td><td>10 mg/día</td></tr>
-            <tr><td><strong>Diuréticos</strong></td><td>Hidroclorotiazida</td><td>12.5 mg/día</td><td>25 - 50 mg/día</td></tr>
-            <tr><td></td><td>Clortalidona</td><td>12.5 mg/día</td><td>25 mg/día</td></tr>
-        </tbody>
-    </table>
+    <h2>3. Urgencia vs Emergencia</h2>
+    <ul>
+        <li><strong>Urgencia Hipertensiva:</strong> Sin daño de órgano blanco. Tratamiento vía oral, descenso en 24-48h.</li>
+        <li><strong>Emergencia Hipertensiva:</strong> Con daño agudo (Encefalopatía, IAM, Edema Agudo de Pulmón). Tratamiento EV y requiere internación.</li>
+    </ul>
 </main>
 </body>
 </html>
