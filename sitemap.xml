@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://https://medpedia-c47w.vercel.app/</loc>
+    <loc>https://medpedia-c47w.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://TU-WEB.vercel.app/acv.html</loc>
+    <loc>https://medpedia-c47w.vercel.app/acv.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://TU-WEB.vercel.app/obesidad.html</loc>
+    <loc>https://medpedia-c47w.vercel.app/obesidad.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://TU-WEB.vercel.app/asma-epoc.html</loc>
+    <loc>https://medpedia-c47w.vercel.app/asma-epoc.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
