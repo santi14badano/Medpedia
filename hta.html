@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipertensión Arterial (HTA) — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
+        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+        .logo span { color: var(--verde); }
+        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
+        h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
+        .cuadro { background: var(--fondo); border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 12px; border: 1px solid var(--borde); text-align: left; }
+        th { background: var(--fondo); }
+        .u-alerta { color: var(--cardio); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Med<span>pedia</span></a>
+    <a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a>
+</nav>
+
+<main>
+    <span class="badge">Cardiología</span>
+    <h1>Hipertensión Arterial (HTA)</h1>
+    <p><em>Guía técnica para el diagnóstico y tratamiento según normativas nacionales.</em></p>
+
+    <div class="cuadro">
+        <strong>Definición:</strong> Persistencia de valores de presión arterial sistólica (PAS) <span class="u-alerta">≥ 140 mmHg</span> y/o presión arterial diastólica (PAD) <span class="u-alerta">≥ 90 mmHg</span> en el consultorio.
+    </div>
+
+    <h2>1. Clasificación de Niveles de Presión</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Sistólica (mmHg)</th>
+                <th>Diastólica (mmHg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Óptima</td><td>< 120</td><td>< 80</td></tr>
+            <tr><td>Normal</td><td>120 - 129</td><td>80 - 84</td></tr>
+            <tr><td>Limítrofe</td><td>130 - 139</td><td>85 - 89</td></tr>
+            <tr><td><strong>HTA Nivel 1</strong></td><td><strong>140 - 159</strong></td><td><strong>90 - 99</strong></td></tr>
+            <tr><td><strong>HTA Nivel 2</strong></td><td><strong>160 - 179</strong></td><td><strong>100 - 109</strong></td></tr>
+            <tr><td><strong>HTA Nivel 3</strong></td><td><strong>≥ 180</strong></td><td><strong>≥ 110</strong></td></tr>
+        </tbody>
+    </table>
+
+    <h2>2. Diagnóstico: El Protocolo Correcto</h2>
+    <p>No basta con una sola toma. Se requiere:</p>
+    <ul>
+        <li>Al menos <strong>dos mediciones</strong> por consulta, en al menos <strong>dos visitas</strong> distintas.</li>
+        <li><strong>MDPA (Monitoreo Domiciliario):</strong> Muy útil para descartar "HTA de guardapolvo blanco".</li>
+        <li><strong>MAPA (Presurometría):</strong> El estándar de oro para evaluar ritmo circadiano (dipper vs non-dipper).</li>
+    </ul>
+
+    <h2>3. Tratamiento Farmacológico</h2>
+    <p>La mayoría de los pacientes requiere terapia combinada desde el inicio.</p>
+    <div class="cuadro">
+        <strong>Esquema de inicio sugerido:</strong>
+        <br>1. <strong>IECA</strong> (Enalapril) o <strong>ARA II</strong> (Losartán/Valsartán).
+        <br>2. <strong>+ Calcioantagonista</strong> (Amlodipina) o <strong>Diurético Tiazídico</strong> (Clortalidona/Hidroclorotiazida).
+    </div>
+
+    <p class="u-alerta">Importante:</p>
+    <p>Los Betabloqueantes (Atenolol/Bisoprolol) no suelen ser de primera línea en HTA no complicada, a menos que haya indicación específica (Falla cardíaca, post-IAM, joven con deseo de embarazo).</p>
+
+    <p style="font-size:12px; margin-top:3rem; border-top:1px solid #eee; padding-top:1rem;">
+        Fuente: Guía de Práctica Clínica Nacional sobre Prevención, Diagnóstico y Tratamiento de la HTA - Ministerio de Salud de la Nación Argentina.
+    </p>
+</main>
+
+</body>
+</html>
