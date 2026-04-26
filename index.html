@@ -4,18 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta name="google-site-verification" content="<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="-BhfR5SVYdzI9k5yDMVfWHzOBBtIc7dESSUpSpPyk8M" />
   
-  <meta name="google-site-verification" content="PONÉ_ACÁ_EL_CÓDIGO_NUEVO" />
-  
-  <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
-  ..." />
-  
-  <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
+  <title>Medpedia — Información médica para estudiantes argentinos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -31,7 +22,7 @@
       --blanco: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.5; }
 
     /* NAVBAR */
     nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
@@ -39,57 +30,38 @@
     .logo span { color: var(--verde); }
     .nav-links { display: flex; gap: 1.5rem; }
     .nav-links a { font-size: 14px; color: var(--texto-secundario); text-decoration: none; }
-    .nav-links a:hover { color: var(--verde); }
 
     /* HERO */
     .hero { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 4rem 2rem; text-align: center; }
-    .hero-badge { display: inline-block; background: var(--verde-claro); color: var(--verde-oscuro); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.05em; }
-    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.2; color: var(--texto); margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero-badge { display: inline-block; background: var(--verde-claro); color: var(--verde-oscuro); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; }
+    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 500; line-height: 1.2; color: var(--texto); margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
     .hero h1 em { color: var(--verde); font-style: italic; }
-    .hero p { font-size: 16px; color: var(--texto-secundario); max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+    .hero p { font-size: 16px; color: var(--texto-secundario); max-width: 500px; margin: 0 auto 2rem; }
 
     /* BUSCADOR */
     .search-wrap { max-width: 560px; margin: 0 auto; position: relative; }
-    .search-wrap input { width: 100%; padding: 14px 20px 14px 48px; border: 1.5px solid var(--borde); border-radius: 40px; font-size: 15px; font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); outline: none; transition: border-color 0.2s; }
+    .search-wrap input { width: 100%; padding: 14px 20px; border: 1.5px solid var(--borde); border-radius: 40px; font-size: 15px; background: var(--fondo); outline: none; }
     .search-wrap input:focus { border-color: var(--verde); }
-    .search-wrap svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--texto-terciario); }
 
-    /* CONTENIDO PRINCIPAL */
+    /* CONTENIDO */
     main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
     .section-label { font-size: 11px; font-weight: 500; color: var(--texto-terciario); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
 
     /* ESPECIALIDADES */
     .especialidades { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3rem; }
-    .esp-btn { padding: 7px 16px; border-radius: 20px; font-size: 13px; font-family: 'DM Sans', sans-serif; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-secundario); cursor: pointer; transition: all 0.15s; }
-    .esp-btn:hover, .esp-btn.activo { background: var(--verde); color: white; border-color: var(--verde); }
+    .esp-btn { padding: 7px 16px; border-radius: 20px; font-size: 13px; border: 1px solid var(--borde); background: var(--blanco); cursor: pointer; transition: 0.2s; }
+    .esp-btn.activo, .esp-btn:hover { background: var(--verde); color: white; border-color: var(--verde); }
 
-    /* GRID DE CATEGORÍAS */
-    .categorias-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 3rem; }
-    .cat-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: var(--texto); transition: all 0.15s; }
-    .cat-card:hover { border-color: var(--verde); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(29,158,117,0.08); }
-    .cat-icon { font-size: 24px; margin-bottom: 10px; }
-    .cat-nombre { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .cat-desc { font-size: 12px; color: var(--texto-terciario); }
+    /* GRID Y LISTA */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
 
-    /* ARTÍCULOS RECIENTES */
-    .articulos-lista { display: flex; flex-direction: column; gap: 8px; }
-    .art-row { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; text-decoration: none; color: var(--texto); transition: all 0.15s; }
-    .art-row:hover { border-color: var(--verde); }
-    .art-titulo { font-size: 14px; font-weight: 400; }
-    .art-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .art-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
-    .tag-endo { background: #E1F5EE; color: #0F6E56; }
-    .tag-cardio { background: #FCEBEB; color: #A32D2D; }
-    .tag-neuro { background: #EEEDFE; color: #3C3489; }
-    .tag-neumo { background: #E6F1FB; color: #1A5E9A; }
-    .tag-farma { background: #FAEEDA; color: #854F0B; }
-    .art-arrow { color: var(--texto-terciario); font-size: 16px; }
+    .articulos-lista { display: flex; flex-direction: column; gap: 10px; }
+    .art-row { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(--texto); transition: 0.2s; }
+    .art-row:hover { border-color: var(--verde); transform: translateY(-2px); }
+    .art-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; background: var(--verde-claro); color: var(--verde-oscuro); }
 
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
-    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
-
-    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); margin-top: 2rem; }
-    footer a { color: var(--verde); text-decoration: none; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); margin-top: 4rem; }
   </style>
 </head>
 <body>
@@ -98,18 +70,16 @@
   <a href="index.html" class="logo">Med<span>pedia</span></a>
   <div class="nav-links">
     <a href="#">Especialidades</a>
-    <a href="#">Guías clínicas</a>
-    <a href="#">Acerca de</a>
+    <a href="#">Guías</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-badge">Para estudiantes de medicina argentina</div>
+  <div class="hero-badge">Para estudiantes de medicina de Argentina</div>
   <h1>El conocimiento médico, <em>explicado para estudiar</em></h1>
-  <p>Guías clínicas oficiales del Ministerio de Salud, reescritas y simplificadas para que puedas estudiar, entender y rendir.</p>
+  <p>Guías oficiales del Ministerio de Salud simplificadas para tus exámenes.</p>
   <div class="search-wrap">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" placeholder="Buscá una patología, fármaco o tema..." />
+    <input type="text" id="buscador" placeholder="Buscá una patología o tema..." />
   </div>
 </div>
 
@@ -118,47 +88,29 @@
   <div class="especialidades">
     <button class="esp-btn activo">Todas</button>
     <button class="esp-btn">Cardiología</button>
-    <button class="esp-btn">Neurología</button>
-    <button class="esp-btn">Farmacología</button>
     <button class="esp-btn">Endocrinología</button>
-    <button class="esp-btn">Neumonología</button>
+    <button class="esp-btn">Neurología</button>
   </div>
 
   <div class="two-col">
-    <div>
-      <div class="section-label">Categorías</div>
-      <div class="categorias-grid">
-        <a href="#" class="cat-card"><div class="cat-icon">🫀</div><div class="cat-nombre">Cardiología</div><div class="cat-desc">IAM, HTA, IC, arritmias</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-nombre">Neurología</div><div class="cat-desc">ACV, epilepsia, meningitis</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">💊</div><div class="cat-nombre">Farmacología</div><div class="cat-desc">Mecanismos y dosis</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🫁</div><div class="cat-nombre">Neumonología</div><div class="cat-desc">Asma, EPOC, NAC</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🧬</div><div class="cat-nombre">Endocrinología</div><div class="cat-desc">Diabetes, tiroides</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🩺</div><div class="cat-nombre">Semiología</div><div class="cat-desc">Signos y maniobras</div></a>
-      </div>
-    </div>
-
-    <div>
-      <div class="section-label">Artículos recientes</div>
+    <div class="articulos-seccion">
+      <div class="section-label">Artículos Recientes</div>
       <div class="articulos-lista">
         <a href="dm2.html" class="art-row">
-          <div class="art-titulo">Diabetes Mellitus Tipo 2 — diagnóstico y tratamiento</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
+          <span>Diabetes Mellitus Tipo 2</span>
+          <span class="art-tag">Endocrinología</span>
         </a>
         <a href="iam.html" class="art-row">
-          <div class="art-titulo">Infarto Agudo de Miocardio — manejo inicial y reperfusión</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="acv.html" class="art-row">
-          <div class="art-titulo">ACV isquémico agudo — diagnóstico y trombolisis</div>
-          <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="asma.html" class="art-row">
-          <div class="art-titulo">Asma bronquial — clasificación y tratamiento escalonado</div>
-          <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
+          <span>Infarto Agudo de Miocardio</span>
+          <span class="art-tag">Cardiología</span>
         </a>
         <a href="obesidad.html" class="art-row">
-          <div class="art-titulo">Obesidad — abordaje integral según normativa nacional</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
+          <span>Obesidad — Abordaje Integral</span>
+          <span class="art-tag">Endocrinología</span>
+        </a>
+        <a href="acv.html" class="art-row">
+          <span>ACV Isquémico Agudo</span>
+          <span class="art-tag">Neurología</span>
         </a>
       </div>
     </div>
@@ -166,38 +118,33 @@
 </main>
 
 <footer>
-  <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
-  <p style="margin-top:6px;">Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank">Ministerio de Salud de la Nación</a></p>
+  <p>Medpedia Argentina · Basado en guías del Ministerio de Salud de la Nación</p>
 </footer>
 
 <script>
-  document.querySelectorAll('.esp-btn').forEach(btn => {
+  // Lógica de filtrado básica
+  const botones = document.querySelectorAll('.esp-btn');
+  const filas = document.querySelectorAll('.art-row');
+
+  botones.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
+      botones.forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
       const filtro = btn.textContent.trim();
-      document.querySelectorAll('.cat-card').forEach(card => {
-        const nombreCategoria = card.querySelector('.cat-nombre').textContent.trim();
-        card.style.display = (filtro === 'Todas' || nombreCategoria === filtro) ? 'block' : 'none';
-      });
-      document.querySelectorAll('.art-row').forEach(art => {
-        const tagArticulo = art.querySelector('.art-tag').textContent.trim();
-        art.style.display = (filtro === 'Todas' || tagArticulo === filtro) ? 'flex' : 'none';
+      
+      filas.forEach(fila => {
+        const tag = fila.querySelector('.art-tag').textContent.trim();
+        fila.style.display = (filtro === 'Todas' || tag === filtro) ? 'flex' : 'none';
       });
     });
   });
 
-  const inputBusqueda = document.querySelector('.search-wrap input');
-  inputBusqueda.addEventListener('input', (e) => {
-    const termino = e.target.value.toLowerCase().trim();
-    document.querySelectorAll('.art-row').forEach(art => {
-      const titulo = art.querySelector('.art-titulo').textContent.toLowerCase();
-      const especialidad = art.querySelector('.art-tag').textContent.toLowerCase();
-      if (titulo.includes(termino) || especialidad.includes(termino)) {
-        art.style.display = 'flex';
-      } else {
-        art.style.display = 'none';
-      }
+  // Buscador
+  document.getElementById('buscador').addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+    filas.forEach(fila => {
+      const texto = fila.textContent.toLowerCase();
+      fila.style.display = texto.includes(term) ? 'flex' : 'none';
     });
   });
 </script>
