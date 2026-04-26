@@ -4,24 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medpedia — Biblioteca de Guías Clínicas</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --texto-sec: #555; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; }
+        
+        /* Navbar */
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1.5rem; text-align: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 28px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
+
+        /* Header */
         header { max-width: 800px; margin: 3rem auto; text-align: center; padding: 0 1rem; }
         header h1 { font-family: 'Fraunces', serif; font-size: 42px; margin-bottom: 1rem; }
-        main { max-width: 900px; margin: 0 auto 4rem; padding: 0 1.5rem; }
-        .grid-especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .categoria { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s; }
-        .categoria:hover { transform: translateY(-5px); border-color: var(--verde); }
+        header p { color: var(--texto-sec); font-size: 18px; }
+
+        /* Grid de Contenido */
+        main { max-width: 1000px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+        .grid-especialidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .categoria { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1.5rem; transition: all 0.3s ease; }
+        .categoria:hover { transform: translateY(-5px); border-color: var(--verde); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .categoria h2 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--verde); margin-top: 0; border-bottom: 1px solid var(--verde-claro); padding-bottom: 10px; }
+        
+        /* Enlaces */
         .lista-apuntes { list-style: none; padding: 0; margin: 1rem 0 0; }
         .lista-apuntes li { margin-bottom: 0.8rem; }
-        .lista-apuntes a { text-decoration: none; color: var(--texto); font-weight: 500; display: block; padding: 8px; border-radius: 8px; }
-        .lista-apuntes a:hover { background: var(--verde-claro); color: var(--verde); }
+        .lista-apuntes a { text-decoration: none; color: var(--texto); font-weight: 500; display: block; padding: 10px; border-radius: 8px; border: 1px solid transparent; }
+        .lista-apuntes a:hover { background: var(--verde-claro); color: var(--verde); border-color: var(--verde); }
+        
+        /* Tags */
+        .tag-update { font-size: 10px; background: var(--verde); color: white; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; font-weight: bold; }
+
+        /* Botón Cafecito Flotante */
+        .btn-cafecito {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00bb2d;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+        .btn-cafecito:hover { transform: scale(1.05); background: #00a327; }
     </style>
 </head>
 <body>
@@ -32,7 +67,7 @@
 
 <header>
     <h1>Tu biblioteca médica.</h1>
-    <p>Resúmenes técnicos basados en protocolos oficiales de Argentina.</p>
+    <p>Protocolos de alta complejidad, scores y dosis para estudiantes y profesionales.</p>
 </header>
 
 <main>
@@ -40,15 +75,16 @@
         <div class="categoria">
             <h2>Cardiología</h2>
             <ul class="lista-apuntes">
-                <li><a href="hta.html">Hipertensión Arterial</a></li>
-                <li><a href="ic.html">Insuficiencia Cardíaca</a></li>
+                <li><a href="hta.html">Hipertensión Arterial <span class="tag-update">PRO</span></a></li>
+                <li><a href="ic.html">Insuficiencia Cardíaca (IC)</a></li>
+                <li><a href="iam.html">Infarto Agudo (SCACEST)</a></li>
             </ul>
         </div>
 
         <div class="categoria">
             <h2>Infectología</h2>
             <ul class="lista-apuntes">
-                <li><a href="dengue.html">Dengue: Manejo Clínico</a></li>
+                <li><a href="dengue.html">Dengue: Manejo Clínico <span class="tag-update">PRO</span></a></li>
                 <li><a href="neumonia.html">Neumonía (NAC)</a></li>
             </ul>
         </div>
@@ -56,7 +92,8 @@
         <div class="categoria">
             <h2>Endocrinología</h2>
             <ul class="lista-apuntes">
-                <li><a href="obesidad.html">Obesidad: Manejo Integral</a></li>
+                <li><a href="dm2.html">Diabetes Mellitus Tipo 2</a></li>
+                <li><a href="obesidad.html">Obesidad y Manejo Metabólico</a></li>
             </ul>
         </div>
 
@@ -70,11 +107,15 @@
         <div class="categoria">
             <h2>Neumonología</h2>
             <ul class="lista-apuntes">
-                <li><a href="asma-epoc.html">Asma y EPOC</a></li>
+                <li><a href="asma-epoc.html">Asma y EPOC (GOLD/GINA)</a></li>
             </ul>
         </div>
     </div>
 </main>
+
+<a href="https://cafecito.app/TU_USUARIO" class="btn-cafecito" target="_blank">
+    ☕ Invitame un Cafecito
+</a>
 
 </body>
 </html>
