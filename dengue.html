@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dengue: Manejo Clínico — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Dengue: Manejo Clínico Avanzado — Medpedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --infecto: #8e44ad; }
         body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
         nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
         .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
+        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
         .badge { background: #f4eafc; color: var(--infecto); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
         h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
         h2 { font-family: 'Fraunces', serif; color: var(--infecto); border-bottom: 2px solid #f4eafc; padding-bottom: 5px; margin-top: 2.5rem; }
-        .cuadro { background: var(--fondo); border-left: 4px solid var(--infecto); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
-        .alerta { color: #d32f2f; font-weight: bold; background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #feb2b2; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; font-size: 14px; }
+        .alerta-box { background: #fff5f5; border: 1px solid #feb2b2; color: #c53030; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
+        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
         th { background: #f9f9f9; }
     </style>
 </head>
@@ -27,29 +26,59 @@
 <main>
     <span class="badge">Infectología</span>
     <h1>Dengue: Manejo Clínico</h1>
-    <p><em>Protocolo basado en la Guía para el Equipo de Salud del Ministerio de Salud de la Nación Argentina.</em></p>
 
-    <div class="alerta">
-        ⚠️ SIGNOS DE ALARMA: Dolor abdominal intenso, vómitos persistentes, sangrado de mucosas, letargia o irritabilidad, hepatomegalia >2cm, aumento del hematocrito.
+    <div class="alerta-box">
+        <strong>⚠️ SIGNOS DE ALARMA (Evaluar al bajar la fiebre):</strong>
+        <ul style="margin: 10px 0 0 20px;">
+            <li>Dolor abdominal intenso y continuo.</li>
+            <li>Vómitos persistentes (>3 en 1h o 4 en 6h).</li>
+            <li>Acumulación de líquidos (Ascitis, Derrame pleural/pericárdico).</li>
+            <li>Sangrado de mucosas (Gingivorragia, epistaxis).</li>
+            <li>Letargia o irritabilidad extrema.</li>
+            <li>Hepatomegalia > 2 cm.</li>
+            <li>Aumento brusco del Hematocrito con caída de Plaquetas.</li>
+        </ul>
     </div>
 
-    <h2>1. Clasificación por Grupos</h2>
+    <h2>1. Grupos de Atención y Tratamiento</h2>
     <table>
         <thead>
-            <tr><th>Grupo</th><th>Criterios</th><th>Manejo</th></tr>
+            <tr>
+                <th>Grupo</th>
+                <th>Criterio Clínico</th>
+                <th>Manejo e Hidratación</th>
+            </tr>
         </thead>
         <tbody>
-            <tr><td><strong>Grupo A</strong></td><td>Sin signos de alarma, tolera vía oral.</td><td>Ambulatorio (Reposo/SRO)</td></tr>
-            <tr><td><strong>Grupo B1</strong></td><td>Sin signos de alarma + Comorbilidades o Riesgo Social.</td><td>Internación/Observación</td></tr>
-            <tr><td><strong>Grupo B2</strong></td><td><strong>Con signos de alarma presentes.</strong></td><td>Hidratación EV inmediata</td></tr>
-            <tr><td><strong>Grupo C</strong></td><td>Dengue Grave (Shock, falla multiorgánica).</td><td>UTI</td></tr>
+            <tr>
+                <td><strong>Grupo A</strong></td>
+                <td>Sin signos de alarma, sin comorbilidades.</td>
+                <td><strong>Ambulatorio:</strong> Reposo absoluto, Paracetamol (máx 4g/día), Líquidos (SRO 2-3L/día).</td>
+            </tr>
+            <tr>
+                <td><strong>Grupo B1</strong></td>
+                <td>Sin signos de alarma + Comorbilidad (Embarazo, DBT, IRC, Riesgo Social).</td>
+                <td><strong>Internación:</strong> Estimular VO. Si no tolera: Mantenimiento EV a 2-3 ml/kg/h.</td>
+            </tr>
+            <tr>
+                <td><strong>Grupo B2</strong></td>
+                <td><strong>Con Signos de Alarma.</strong></td>
+                <td><strong>Internación:</strong> SF 0.9% 10 ml/kg en la 1° hora. Luego reducir gradualmente según respuesta.</td>
+            </tr>
+            <tr>
+                <td><strong>Grupo C</strong></td>
+                <td>Shock (Hipotensión, pulso débil), Sangrado grave, Falla de órganos.</td>
+                <td><strong>UTI:</strong> Expansión rápida (Cristaloides 20 ml/kg en 15-30 min).</td>
+            </tr>
         </tbody>
     </table>
 
-    <h2>2. Tratamiento</h2>
-    <div class="cuadro">
-        <strong>Importante:</strong> El único analgésico permitido es el <span style="color:#d32f2f">Paracetamol</span>. Prohibidos AINES (Ibuprofeno, Aspirina, Diclofenac) por riesgo de hemorragia.
-    </div>
+    <h2>2. Laboratorio y Diagnóstico</h2>
+    <ul>
+        <li><strong>Fase Febril (Día 0-5):</strong> Antígeno NS1, PCR (Detección directa).</li>
+        <li><strong>Fase de Recuperación (>Día 6):</strong> Serología IgM/IgG (Detección indirecta).</li>
+        <li><strong>Hematocrito:</strong> Fundamental para detectar hemoconcentración antes de que baje la TA.</li>
+    </ul>
 </main>
 </body>
 </html>
