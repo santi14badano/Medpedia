@@ -1,84 +1,760 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dengue: Manejo Clínico Avanzado — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --infecto: #8e44ad; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 900px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); }
-        .badge { background: #f4eafc; color: var(--infecto); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--infecto); border-bottom: 2px solid #f4eafc; padding-bottom: 5px; margin-top: 2.5rem; }
-        .alerta-box { background: #fff5f5; border: 1px solid #feb2b2; color: #c53030; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13px; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-        th { background: #f9f9f9; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dengue: Guía Clínica — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-med: #0F6E56;
+      --texto: #1a1a1a; --texto-sec: #5F5E5A; --borde: #e8e8e8;
+      --fondo: #fafaf8; --blanco: #ffffff;
+      --amber: #FAEEDA; --amber-text: #854F0B;
+      --rojo: #FCEBEB; --rojo-text: #A32D2D;
+      --azul: #E6F1FB; --azul-text: #185FA5;
+      --gris: #F1EFE8; --gris-text: #5F5E5A;
+      --naranja: #FEF3E2; --naranja-text: #9A3412;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
+
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+    .logo span { color: var(--verde); }
+    .nav-back { text-decoration: none; color: var(--verde); font-weight: 500; font-size: 14px; }
+
+    main { max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem 4rem; }
+
+    .page-header { display: flex; align-items: center; gap: 14px; margin-bottom: 2rem; }
+    .page-icon { background: #FAEEDA; border-radius: 12px; padding: 10px 14px; font-size: 22px; color: #854F0B; font-weight: bold; }
+    .page-title { font-family: 'Fraunces', serif; font-size: 32px; line-height: 1.2; }
+    .page-sub { font-size: 13px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Alerta box */
+    .alerta { background: var(--rojo); border: 1px solid #F09595; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+    .alerta-title { font-size: 13px; font-weight: 700; color: var(--rojo-text); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .alerta ul { padding-left: 1.2rem; }
+    .alerta li { font-size: 13px; color: #791F1F; line-height: 1.7; }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--borde); margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab { padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--texto-sec); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; border-radius: 4px 4px 0 0; }
+    .tab:hover { color: var(--texto); background: var(--fondo); }
+    .tab.active { color: var(--verde-med); border-bottom-color: var(--verde); }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* Cards */
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .card-title { font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+
+    /* Badges */
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+    .badge-teal { background: var(--verde-claro); color: var(--verde-med); }
+    .badge-amber { background: var(--amber); color: var(--amber-text); }
+    .badge-red { background: var(--rojo); color: var(--rojo-text); }
+    .badge-blue { background: var(--azul); color: var(--azul-text); }
+    .badge-gray { background: var(--gris); color: var(--gris-text); }
+    .badge-orange { background: var(--naranja); color: var(--naranja-text); }
+
+    /* Grid */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+
+    h3 { font-size: 14px; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--texto); }
+    h3:first-child { margin-top: 0; }
+    p { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.2rem; }
+    li { font-size: 13px; color: var(--texto-sec); line-height: 1.7; }
+    strong { color: var(--texto); }
+
+    /* Drug / data rows */
+    .drug-header { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 8px; padding: 6px 0 8px; font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--borde); }
+    .drug-row { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); align-items: start; font-size: 13px; }
+    .drug-row:last-child { border-bottom: none; }
+    .drug-name { font-weight: 600; color: var(--texto); }
+    .drug-dose { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Grupo cards */
+    .grupo-card { border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; }
+    .grupo-card.g-a { border-top: 3px solid #1D9E75; }
+    .grupo-card.g-b1 { border-top: 3px solid #EF9F27; }
+    .grupo-card.g-b2 { border-top: 3px solid #E24B4A; }
+    .grupo-card.g-c { border-top: 3px solid #A32D2D; }
+    .grupo-label { font-size: 20px; font-weight: 700; font-family: 'Fraunces', serif; margin-bottom: 4px; }
+    .grupo-sub { font-size: 12px; color: var(--texto-sec); margin-bottom: 10px; }
+
+    /* Fase timeline horizontal */
+    .fases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-bottom: 1rem; border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; }
+    .fase { padding: 1rem 1.25rem; }
+    .fase:not(:last-child) { border-right: 1px solid var(--borde); }
+    .fase-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .fase-dias { font-size: 11px; color: var(--texto-sec); margin-bottom: 8px; }
+
+    /* Stat cards */
+    .stat { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .stat-label { font-size: 12px; color: var(--texto-sec); }
+    .stat-val { font-size: 20px; font-weight: 700; margin-top: 2px; color: var(--texto); }
+    .stat-sub { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Scenario sub-tabs */
+    .scenario-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stab { padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-sec); border-radius: 8px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .stab:hover { background: var(--fondo); color: var(--texto); }
+    .stab.active { background: var(--verde-claro); color: var(--verde-med); border-color: #5DCAA5; }
+    .scenario { display: none; }
+    .scenario.active { display: block; }
+
+    /* Score calculator */
+    .score-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--borde); gap: 12px; }
+    .score-row:last-child { border-bottom: none; }
+    .score-label { font-size: 14px; font-weight: 500; }
+    .score-sub { font-size: 12px; color: var(--texto-sec); margin-top: 2px; }
+    .toggle { width: 40px; height: 22px; background: #D3D1C7; border-radius: 11px; cursor: pointer; position: relative; transition: background 0.2s; border: none; flex-shrink: 0; }
+    .toggle.on { background: var(--verde); }
+    .toggle::after { content: ''; position: absolute; width: 18px; height: 18px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    .toggle.on::after { left: 20px; }
+    .score-display { background: var(--fondo); border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: center; }
+    .score-number { font-family: 'Fraunces', serif; font-size: 56px; line-height: 1; }
+
+    /* Timeline vertical */
+    .timeline-item { display: flex; gap: 14px; margin-bottom: 14px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--verde); flex-shrink: 0; }
+    .tl-dot-red { background: #E24B4A; }
+    .tl-line { width: 2px; background: var(--borde); flex: 1; margin-top: 4px; min-height: 20px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--texto); }
+    .tl-body { font-size: 13px; color: var(--texto-sec); margin-top: 3px; line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      main { padding: 0 1rem 3rem; }
+      .page-title { font-size: 24px; }
+      .fases { grid-template-columns: 1fr; }
+      .fase:not(:last-child) { border-right: none; border-bottom: 1px solid var(--borde); }
+      .drug-header, .drug-row { grid-template-columns: 1fr 1fr; }
+      .drug-header span:last-child, .drug-row > *:last-child { display: none; }
+    }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Infectología</span>
-    <h1>Dengue: Manejo Clínico</h1>
 
-    <div class="alerta-box">
-        <strong>⚠️ SIGNOS DE ALARMA (Evaluar al bajar la fiebre):</strong>
-        <ul style="margin: 10px 0 0 20px;">
-            <li>Dolor abdominal intenso y continuo.</li>
-            <li>Vómitos persistentes (>3 en 1h o 4 en 6h).</li>
-            <li>Acumulación de líquidos (Ascitis, Derrame pleural/pericárdico).</li>
-            <li>Sangrado de mucosas (Gingivorragia, epistaxis).</li>
-            <li>Letargia o irritabilidad extrema.</li>
-            <li>Hepatomegalia > 2 cm.</li>
-            <li>Aumento brusco del Hematocrito con caída de Plaquetas.</li>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-icon">D</div>
+    <div>
+      <div class="page-title">Dengue: Manejo Clínico</div>
+      <div class="page-sub">Guía clínica completa · Infectología · OPS/OMS · Ministerio de Salud Argentina</div>
+    </div>
+  </div>
+
+  <div class="alerta">
+    <div class="alerta-title">Signos de alarma — evaluar especialmente al ceder la fiebre (día 3–6)</div>
+    <ul>
+      <li>Dolor abdominal intenso y continuo</li>
+      <li>Vómitos persistentes (> 3 en 1 hora o > 4 en 6 horas)</li>
+      <li>Acumulación de líquidos: ascitis, derrame pleural o pericárdico</li>
+      <li>Sangrado de mucosas: gingivorragia, epistaxis, petequias en aumento</li>
+      <li>Letargia, irritabilidad extrema o alteración del sensorio</li>
+      <li>Hepatomegalia > 2 cm bajo el reborde costal</li>
+      <li>Aumento brusco del hematocrito con caída simultánea de plaquetas</li>
+    </ul>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('clinica', this)">Clínica y fases</button>
+    <button class="tab" onclick="showTab('grupos', this)">Grupos y manejo</button>
+    <button class="tab" onclick="showTab('laboratorio', this)">Laboratorio</button>
+    <button class="tab" onclick="showTab('hidratacion', this)">Hidratación</button>
+    <button class="tab" onclick="showTab('complicaciones', this)">Complicaciones</button>
+    <button class="tab" onclick="showTab('prevencion', this)">Prevención</button>
+  </div>
+
+  <!-- CLÍNICA Y FASES -->
+  <div class="section active" id="sec-clinica">
+
+    <div class="fases">
+      <div class="fase" style="background:#FAEEDA22;">
+        <div class="fase-title" style="color:#854F0B;">Fase febril</div>
+        <div class="fase-dias">Día 1 – 3 (hasta día 5)</div>
+        <ul>
+          <li>Fiebre alta súbita (39–40°C)</li>
+          <li>Mialgias, artralgias intensas</li>
+          <li>Cefalea retroocular</li>
+          <li>Eritema facial, náuseas</li>
+          <li>Petequias tempranas</li>
+          <li>NS1 y PCR positivos</li>
         </ul>
+      </div>
+      <div class="fase" style="background:#FCEBEB22;">
+        <div class="fase-title" style="color:#A32D2D;">Fase crítica</div>
+        <div class="fase-dias">Día 4 – 6 (al ceder la fiebre)</div>
+        <ul>
+          <li>Caída de plaquetas</li>
+          <li>Fuga capilar (hemoconcentración)</li>
+          <li>Signos de alarma</li>
+          <li>Riesgo de shock</li>
+          <li>Sangrado grave posible</li>
+          <li>IgM comienza a positivizarse</li>
+        </ul>
+      </div>
+      <div class="fase" style="background:#E1F5EE22;">
+        <div class="fase-title" style="color:#0F6E56;">Fase de recuperación</div>
+        <div class="fase-dias">Día 7 – 10</div>
+        <ul>
+          <li>Reabsorción de líquidos extravasados</li>
+          <li>Riesgo de sobrecarga hídrica</li>
+          <li>Bradicardia relativa</li>
+          <li>Rash de convalecencia (islas blancas)</li>
+          <li>Plaquetas en recuperación</li>
+          <li>IgM/IgG positivos</li>
+        </ul>
+      </div>
     </div>
 
-    <h2>1. Grupos de Atención y Tratamiento</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Grupo</th>
-                <th>Criterio Clínico</th>
-                <th>Manejo e Hidratación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Grupo A</strong></td>
-                <td>Sin signos de alarma, sin comorbilidades.</td>
-                <td><strong>Ambulatorio:</strong> Reposo absoluto, Paracetamol (máx 4g/día), Líquidos (SRO 2-3L/día).</td>
-            </tr>
-            <tr>
-                <td><strong>Grupo B1</strong></td>
-                <td>Sin signos de alarma + Comorbilidad (Embarazo, DBT, IRC, Riesgo Social).</td>
-                <td><strong>Internación:</strong> Estimular VO. Si no tolera: Mantenimiento EV a 2-3 ml/kg/h.</td>
-            </tr>
-            <tr>
-                <td><strong>Grupo B2</strong></td>
-                <td><strong>Con Signos de Alarma.</strong></td>
-                <td><strong>Internación:</strong> SF 0.9% 10 ml/kg en la 1° hora. Luego reducir gradualmente según respuesta.</td>
-            </tr>
-            <tr>
-                <td><strong>Grupo C</strong></td>
-                <td>Shock (Hipotensión, pulso débil), Sangrado grave, Falla de órganos.</td>
-                <td><strong>UTI:</strong> Expansión rápida (Cristaloides 20 ml/kg en 15-30 min).</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Síntomas frecuentes</div>
+        <ul>
+          <li><strong>Fiebre</strong> 38.5–40°C, inicio brusco</li>
+          <li><strong>Cefalea</strong> intensa, retroocular</li>
+          <li><strong>Mialgias y artralgias</strong> ("fiebre quebrantahuesos")</li>
+          <li><strong>Náuseas y vómitos</strong></li>
+          <li><strong>Rash maculopapular</strong> en tronco y extremidades</li>
+          <li><strong>Petequias</strong> espontáneas o al torniquete</li>
+          <li>Anorexia, astenia marcada</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Examen físico — hallazgos clave</div>
+        <ul>
+          <li><strong>Prueba del torniquete positiva:</strong> ≥ 20 petequias en 2.5 cm²</li>
+          <li><strong>Hepatomegalia</strong> — buscar siempre</li>
+          <li><strong>Matidez en flancos</strong> (ascitis incipiente)</li>
+          <li><strong>Murmullo vesicular disminuido</strong> (derrame pleural)</li>
+          <li>Estado hemodinámico: FC, FR, TAS, relleno capilar</li>
+          <li>Sangrado activo: mucosas, piel, heces, orina</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>2. Laboratorio y Diagnóstico</h2>
-    <ul>
-        <li><strong>Fase Febril (Día 0-5):</strong> Antígeno NS1, PCR (Detección directa).</li>
-        <li><strong>Fase de Recuperación (>Día 6):</strong> Serología IgM/IgG (Detección indirecta).</li>
-        <li><strong>Hematocrito:</strong> Fundamental para detectar hemoconcentración antes de que baje la TA.</li>
-    </ul>
+    <div class="card">
+      <div class="card-title">Dengue grave — criterios diagnósticos (OMS)</div>
+      <div class="grid-2">
+        <div>
+          <h3>Fuga capilar grave</h3>
+          <ul>
+            <li>Shock por dengue (SSD / DSS)</li>
+            <li>Acumulación de líquidos con dificultad respiratoria</li>
+          </ul>
+          <h3 style="margin-top:12px;">Sangrado grave</h3>
+          <ul>
+            <li>Hematemesis, melena, hematuria macroscópica</li>
+            <li>Sangrado SNC</li>
+            <li>Sangrado que requiere transfusión</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Compromiso grave de órganos</h3>
+          <ul>
+            <li>Hepatitis grave (AST/ALT > 1000 UI/L)</li>
+            <li>Miocarditis o pericarditis</li>
+            <li>Encefalitis / encefalopatía</li>
+            <li>Falla renal aguda</li>
+            <li>Rabdomiólisis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPOS Y MANEJO -->
+  <div class="section" id="sec-grupos">
+    <div class="grid-2" style="margin-bottom:1rem;">
+      <div class="grupo-card g-a">
+        <div class="grupo-label" style="color:#1D9E75;">Grupo A</div>
+        <div class="grupo-sub">Sin signos de alarma · Sin comorbilidades</div>
+        <span class="badge badge-teal">Ambulatorio</span>
+        <ul style="margin-top:10px;">
+          <li>Reposo relativo o absoluto</li>
+          <li>Paracetamol 500–1000 mg c/6 hs (máx. 4 g/día)</li>
+          <li>Líquidos orales: SRO, agua, jugos, caldos (≥ 2–3 L/día adultos)</li>
+          <li><strong>EVITAR:</strong> AAS, ibuprofeno, diclofenac, corticoides</li>
+          <li>Control diario o c/48 hs con hemograma</li>
+          <li>Retorno inmediato si aparecen signos de alarma</li>
+        </ul>
+      </div>
+      <div class="grupo-card g-b1">
+        <div class="grupo-label" style="color:#BA7517;">Grupo B1</div>
+        <div class="grupo-sub">Sin signos de alarma + comorbilidad o riesgo social</div>
+        <span class="badge badge-amber">Internación</span>
+        <ul style="margin-top:10px;">
+          <li>Embarazo · Diabetes · IRC · ICC · inmunosupresión</li>
+          <li>Riesgo social: vive solo, lejos del centro de salud</li>
+          <li>Estimular hidratación oral intensa</li>
+          <li>Si no tolera VO: SF 0.9% mantenimiento 2–3 ml/kg/h</li>
+          <li>Hemograma c/12–24 hs</li>
+          <li>Paracetamol para fiebre (mismas dosis)</li>
+        </ul>
+      </div>
+      <div class="grupo-card g-b2">
+        <div class="grupo-label" style="color:#E24B4A;">Grupo B2</div>
+        <div class="grupo-sub">Con signos de alarma</div>
+        <span class="badge badge-red">Internación urgente</span>
+        <ul style="margin-top:10px;">
+          <li>Internación en área de observación</li>
+          <li>SF 0.9% 10 ml/kg en la primera hora</li>
+          <li>Reevaluar cada hora: PA, FC, diuresis, hematocrito</li>
+          <li>Si mejora: reducir a 5–7 ml/kg/h las siguientes 2–4 hs</li>
+          <li>Hemograma c/6 hs, función renal, hepática</li>
+          <li>Evaluar traslado a UTI si no responde</li>
+        </ul>
+      </div>
+      <div class="grupo-card g-c">
+        <div class="grupo-label" style="color:#A32D2D;">Grupo C</div>
+        <div class="grupo-sub">Dengue grave — Shock · Sangrado mayor · Falla orgánica</div>
+        <span class="badge badge-red">UTI</span>
+        <ul style="margin-top:10px;">
+          <li>Expansión rápida: cristaloides 20 ml/kg en 15–30 min</li>
+          <li>Repetir hasta 3 bolos si no responde</li>
+          <li>Si no mejora con cristaloides: considerar coloides</li>
+          <li>Transfusión: GR si Hb < 7 g/dL con sangrado activo</li>
+          <li>Plaquetas: solo si < 10.000/mm³ o sangrado activo</li>
+          <li>Monitoreo continuo: PA invasiva, diuresis horaria</li>
+          <li>Ecocardiograma si sospecha miocarditis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Contraindicaciones absolutas</div>
+      <div class="grid-2">
+        <div>
+          <h3>Fármacos a evitar siempre</h3>
+          <ul>
+            <li><strong>AAS / aspirina</strong> — riesgo de sangrado grave</li>
+            <li><strong>AINEs</strong> (ibuprofeno, diclofenac, naproxeno)</li>
+            <li><strong>Corticoides</strong> — no han demostrado beneficio</li>
+            <li><strong>Antibióticos</strong> — no indicados salvo coinfección bacteriana</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Procedimientos a evitar</h3>
+          <ul>
+            <li>Inyecciones IM (riesgo de hematoma)</li>
+            <li>Sonda nasogástrica si plaquetas < 50.000/mm³</li>
+            <li>Catéter subclavio si coagulopatía activa</li>
+            <li>Transfusión profiláctica de plaquetas sin indicación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LABORATORIO -->
+  <div class="section" id="sec-laboratorio">
+    <div class="card">
+      <div class="card-title">Diagnóstico según fase</div>
+      <div class="drug-header"><span>Método</span><span>Momento de uso</span><span>Interpretación</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Antígeno NS1</div><div class="drug-dose">Detección directa</div></div>
+        <div>Día 1–5 (fase febril)</div>
+        <div>Alta sensibilidad en los primeros días. Se negativiza al aparecer anticuerpos.</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">PCR-RT (ARN viral)</div><div class="drug-dose">Gold standard</div></div>
+        <div>Día 1–5</div>
+        <div>Mayor especificidad. Permite serotipificación (1, 2, 3, 4).</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">IgM anti-dengue</div><div class="drug-dose">Serología indirecta</div></div>
+        <div>> Día 5–6</div>
+        <div>Positivo en infección aguda o reciente. Persiste hasta 3 meses.</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">IgG anti-dengue</div><div class="drug-dose">Infección secundaria</div></div>
+        <div>Desde día 7 en adelante</div>
+        <div>Título alto en infección secundaria (mayor riesgo de dengue grave).</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Monitoreo hematológico — parámetros críticos</div>
+      <div class="grid-3">
+        <div class="stat">
+          <div class="stat-label">Plaquetas</div>
+          <div class="stat-val">≥ 100.000</div>
+          <div class="stat-sub">Normal. Control c/48 hs si fiebre</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Plaquetas</div>
+          <div class="stat-val">50–100.000</div>
+          <div class="stat-sub">Alarma. Internación, control c/24 hs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Plaquetas</div>
+          <div class="stat-val">&lt; 20.000</div>
+          <div class="stat-sub">Riesgo de sangrado espontáneo</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Hematocrito</div>
+          <div class="stat-val">↑ ≥ 20%</div>
+          <div class="stat-sub">Hemoconcentración = fuga capilar</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Hematocrito</div>
+          <div class="stat-val">↓ súbito</div>
+          <div class="stat-sub">Sangrado interno — actuar de inmediato</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Leucocitos</div>
+          <div class="stat-val">&lt; 4.000</div>
+          <div class="stat-sub">Leucopenia: hallazgo típico de dengue</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Laboratorio por grupo clínico</div>
+      <div class="drug-header"><span>Grupo</span><span>Estudios iniciales</span><span>Frecuencia</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Grupo A</div><div class="drug-dose">Ambulatorio</div></div>
+        <div>Hemograma completo. NS1 o PCR si < día 5.</div>
+        <div>c/48 hs o ante cambio clínico</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Grupo B1</div><div class="drug-dose">Internación simple</div></div>
+        <div>Hemograma, función renal, glucemia, ionograma, NS1/IgM.</div>
+        <div>c/12–24 hs</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Grupo B2</div><div class="drug-dose">Signos de alarma</div></div>
+        <div>+ hepatograma, coagulograma, albuminemia, ecocardiograma si sospecha.</div>
+        <div>c/6 hs</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Grupo C</div><div class="drug-dose">Dengue grave / UTI</div></div>
+        <div>Todo lo anterior + lactato, gasometría, troponina, ecocardiograma.</div>
+        <div>c/2–4 hs o continuo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIDRATACIÓN -->
+  <div class="section" id="sec-hidratacion">
+    <div class="card">
+      <div class="card-title">Hidratación oral — Grupo A y B1 sin vómitos</div>
+      <div class="grid-2">
+        <div>
+          <h3>Volumen recomendado (adultos)</h3>
+          <ul>
+            <li>Mínimo 2–3 litros por día</li>
+            <li>SRO (suero de rehidratación oral) — primera opción</li>
+            <li>Agua, jugos naturales, caldos, leche, isotónicas</li>
+            <li>Fraccionada en pequeños sorbos frecuentes si náuseas</li>
+          </ul>
+        </div>
+        <div>
+          <h3>En niños</h3>
+          <ul>
+            <li>&lt; 10 kg: 100 ml/kg/día</li>
+            <li>10–20 kg: 1000 ml + 50 ml por kg sobre 10 kg</li>
+            <li>20–30 kg: 1500 ml + 20 ml por kg sobre 20 kg</li>
+            <li>Fórmula de Holliday-Segar como base</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hidratación EV — Grupo B2 (con signos de alarma)</div>
+      <div class="drug-header"><span>Momento</span><span>Solución y velocidad</span><span>Duración</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Primera hora</div><div class="drug-dose">Bolo inicial</div></div>
+        <div>SF 0.9% a 10 ml/kg/h EV</div>
+        <div>1 hora</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Horas 2–4</div><div class="drug-dose">Si mejoría clínica</div></div>
+        <div>SF 0.9% o Ringer Lactato a 5–7 ml/kg/h</div>
+        <div>2–4 horas</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Horas 4–6</div><div class="drug-dose">Reducción progresiva</div></div>
+        <div>3–5 ml/kg/h según tolerancia y diuresis</div>
+        <div>2–4 horas</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Mantenimiento</div><div class="drug-dose">Si estable</div></div>
+        <div>2–3 ml/kg/h hasta tolerancia oral</div>
+        <div>Hasta diuresis ≥ 0.5 ml/kg/h</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Resucitación de volumen — Grupo C (Shock)</div>
+      <div class="drug-header"><span>Paso</span><span>Volumen y solución</span><span>Tiempo</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Bolo 1</div><div class="drug-dose">Shock compensado</div></div>
+        <div>Cristaloides (SF o Ringer) 10–20 ml/kg</div>
+        <div>15–30 min</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Bolo 2</div><div class="drug-dose">Si no responde</div></div>
+        <div>Cristaloides 10–20 ml/kg adicionales</div>
+        <div>15–30 min</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Bolo 3</div><div class="drug-dose">Shock refractario</div></div>
+        <div>Coloides (dextrano, almidón) 10–20 ml/kg</div>
+        <div>30 min</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Sin respuesta</div><div class="drug-dose">Evaluar hemorragia</div></div>
+        <div>Considerar transfusión de GR + plasma fresco</div>
+        <div>Urgente</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Criterios de respuesta adecuada a la hidratación</div>
+      <div class="grid-3">
+        <div class="stat"><div class="stat-label">Diuresis</div><div class="stat-val">≥ 0.5</div><div class="stat-sub">ml/kg/h</div></div>
+        <div class="stat"><div class="stat-label">PA estable</div><div class="stat-val">PAS ≥ 90</div><div class="stat-sub">mmHg</div></div>
+        <div class="stat"><div class="stat-label">FC</div><div class="stat-val">< 100</div><div class="stat-sub">lpm en adultos</div></div>
+        <div class="stat"><div class="stat-label">Hematocrito</div><div class="stat-val">↓ basal</div><div class="stat-sub">respecto al ingreso</div></div>
+        <div class="stat"><div class="stat-label">Relleno capilar</div><div class="stat-val">≤ 2 seg</div><div class="stat-sub"></div></div>
+        <div class="stat"><div class="stat-label">Estado mental</div><div class="stat-val">Alerta</div><div class="stat-sub">orientado</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="background:#FAEEDA22; border-color:#EF9F27;">
+      <div class="card-title" style="color:#854F0B;">Cuidado en fase de recuperación (día 7–10)</div>
+      <p style="margin-bottom:8px;">Al reabsorberse los líquidos extravasados, existe riesgo de <strong>sobrecarga hídrica</strong>, especialmente en pacientes con cardiopatía o nefropatía.</p>
+      <ul>
+        <li>Reducir o suspender el goteo EV</li>
+        <li>Vigilar signos de edema pulmonar: disnea, taquicardia, crepitantes</li>
+        <li>Si bradicardia relativa + PA normal: signo de recuperación esperado</li>
+        <li>No indicar más bolos sin evidencia de hipoperfusión</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="section" id="sec-complicaciones">
+    <div class="card">
+      <div class="card-title">Shock por dengue (SSD)</div>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios diagnósticos</h3>
+          <ul>
+            <li>Presión de pulso ≤ 20 mmHg (PAS–PAD)</li>
+            <li>Hipotensión: PAS < 90 mmHg adultos</li>
+            <li>Pulso rápido y débil</li>
+            <li>Piel fría, pálida, sudorosa</li>
+            <li>Relleno capilar > 2 segundos</li>
+            <li>Oliguria / anuria</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Manejo</h3>
+          <ul>
+            <li>Expansión rápida — ver pestaña Hidratación</li>
+            <li>Monitoreo continuo de signos vitales</li>
+            <li>Sonda vesical para medir diuresis horaria</li>
+            <li>Evaluar vasopresores si refractario (noradrenalina)</li>
+            <li>Buscar causas ocultas: sangrado, carditis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Sangrado grave</div>
+      <div class="drug-header"><span>Situación</span><span>Conducta</span><span>Umbral</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Sangrado activo + inestabilidad</div></div>
+        <div>Transfusión de GR + plasma fresco congelado</div>
+        <div>Urgente</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Plaquetopenia sin sangrado</div></div>
+        <div>No transfundir plaquetas en forma profiláctica</div>
+        <div>Ver indicación abajo</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Transfusión de plaquetas</div></div>
+        <div>Solo si &lt; 10.000/mm³ sin sangrado, o &lt; 20–50.000 con sangrado activo</div>
+        <div>Individualizar</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Sangrado GI</div></div>
+        <div>IBP EV, endoscopía diferida hasta estabilización</div>
+        <div>Según severidad</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Complicaciones orgánicas</div>
+      <div class="grid-2">
+        <div>
+          <h3>Hepatitis por dengue</h3>
+          <ul>
+            <li>AST/ALT elevadas — frecuente y autolimitado</li>
+            <li>Hepatitis grave: AST o ALT > 1000 UI/L</li>
+            <li>Evitar hepatotóxicos (paracetamol en altas dosis)</li>
+            <li>No requiere tratamiento específico salvo falla hepática fulminante</li>
+          </ul>
+          <h3 style="margin-top:12px;">Miocarditis</h3>
+          <ul>
+            <li>Arritmias, IC aguda, fracción de eyección reducida</li>
+            <li>Ecocardiograma + troponina</li>
+            <li>Soporte: evitar sobrecarga hídrica</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Compromiso renal</h3>
+          <ul>
+            <li>Falla renal aguda por hipoperfusión o daño directo viral</li>
+            <li>Vigilar creatinina, ionograma, diuresis</li>
+            <li>Diálisis si oligoanuria refractaria</li>
+          </ul>
+          <h3 style="margin-top:12px;">Neurológico</h3>
+          <ul>
+            <li>Encefalitis, convulsiones, síndrome de Guillain-Barré (raro)</li>
+            <li>TC/RMN cerebral si focalidad neurológica</li>
+            <li>Tratar complicación específica</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Dengue en poblaciones especiales</div>
+      <div class="grid-2">
+        <div>
+          <h3>Embarazo</h3>
+          <ul>
+            <li>Mayor riesgo de hemorragia obstétrica</li>
+            <li>Internación siempre (Grupo B1 mínimo)</li>
+            <li>Vigilar signos de alarma fetales y maternos</li>
+            <li>Paracetamol único analgésico seguro</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Adultos mayores e inmunocomprometidos</h3>
+          <ul>
+            <li>Presentación atípica frecuente</li>
+            <li>Mayor riesgo de descompensación</li>
+            <li>Internación precoz ante cualquier duda</li>
+            <li>Vigilar función renal y cardíaca de base</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN -->
+  <div class="section" id="sec-prevencion">
+    <div class="card">
+      <div class="card-title">Vacunación — Dengvaxia (CYD-TDV)</div>
+      <div class="drug-header"><span>Aspecto</span><span>Detalle</span><span></span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">Indicación</div></div>
+        <div>Solo en personas con infección previa confirmada (serológicamente)</div>
+        <div></div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Edad</div></div>
+        <div>9 a 45 años (varía por país)</div>
+        <div></div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Esquema</div></div>
+        <div>3 dosis SC: 0, 6 y 12 meses</div>
+        <div></div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Advertencia</div></div>
+        <div>Contraindicada en seronegativos: puede aumentar riesgo de dengue grave en primoinfección</div>
+        <div></div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Argentina</div></div>
+        <div>No incluida en el calendario nacional (al 2024). Uso según contexto epidemiológico local.</div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Control del vector — Aedes aegypti</div>
+      <div class="grid-2">
+        <div>
+          <h3>Eliminación de criaderos</h3>
+          <ul>
+            <li>Vaciar y limpiar recipientes con agua estancada semanalmente</li>
+            <li>Cubrir depósitos de agua</li>
+            <li>Desechar neumáticos, latas, botellas expuestas</li>
+            <li>Cambiar agua de floreros y bebederos de animales c/3 días</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Protección personal</h3>
+          <ul>
+            <li>Repelentes con DEET ≥ 20% o Icaridina</li>
+            <li>Ropa de manga larga y pantalón largo</li>
+            <li>Mosquiteros en ventanas y camas</li>
+            <li>Espirales o difusores en ambientes cerrados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Medidas de salud pública</div>
+      <ul>
+        <li>Notificación obligatoria a las autoridades sanitarias (caso sospechoso y confirmado)</li>
+        <li>Fumigación peridomiciliaria ante brotes (adulticida ULV)</li>
+        <li>Control larvario con BTI (Bacillus thuringiensis israelensis) en agua potable</li>
+        <li>Educación comunitaria — el mosquito Aedes pica de día, principalmente al amanecer y al atardecer</li>
+        <li>Evitar hacinamiento en zonas de brote</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fuentes de referencia</div>
+      <ul>
+        <li>OPS/OMS — Dengue: Guías para la atención de enfermos en la Región de las Américas (2016)</li>
+        <li>Ministerio de Salud Argentina — Guía para el Equipo de Salud: Dengue (2024)</li>
+        <li>SADI — Sociedad Argentina de Infectología, Recomendaciones dengue</li>
+        <li>WHO — Dengue and severe dengue. Fact Sheet 2023</li>
+      </ul>
+    </div>
+  </div>
+
 </main>
+
+<script>
+  function showTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function showScenario(id, el) {
+    document.querySelectorAll('.scenario').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sc-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
 </body>
 </html>
