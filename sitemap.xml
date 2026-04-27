@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
-    <loc>https://medpedia-c47w.vercel.app/</loc>
+    <loc>https://medpedia-7ahi.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
   <url>
-    <loc>https://medpedia-c47w.vercel.app/hta.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/iam.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-c47w.vercel.app/ic.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://medpedia-c47w.vercel.app/dengue.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/hta.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-c47w.vercel.app/neumonia.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://medpedia-c47w.vercel.app/acv.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/ic.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-c47w.vercel.app/obesidad.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/acv.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-c47w.vercel.app/asma-epoc.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/asma-epoc.html</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://medpedia-7ahi.vercel.app/neumonia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://medpedia-7ahi.vercel.app/dm2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://medpedia-7ahi.vercel.app/obesidad.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://medpedia-7ahi.vercel.app/dengue.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
