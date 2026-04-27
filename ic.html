@@ -1,41 +1,310 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IC: Guía Terapéutica — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insuficiencia Cardíaca — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --cardio: #d32f2f; --cardio-claro: #fdeaea; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: var(--cardio-claro); color: var(--cardio); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid var(--cardio); background: var(--cardio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .pilar-card { background: var(--blanco); border: 2px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; position: relative; }
+    .pilar-card.destacado { border-color: var(--cardio); }
+    .pilar-num { position: absolute; top: -12px; left: 16px; background: var(--cardio); color: white; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 10px; }
+    .badge-no { background: var(--cardio-claro); color: var(--cardio); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Cardiología</span>
-    <h1>Insuficiencia Cardíaca (FEyR)</h1>
-    <p><em>Manejo de la IC con Fracción de Eyección Reducida.</em></p>
 
-    <h2>1. Los 4 Fantásticos (Pilares)</h2>
-    <p>Tratamiento que reduce mortalidad en todos los pacientes con FEyR ≤ 40%:</p>
-    <ul>
-        <li><strong>ARNI:</strong> Sacubitrilo/Valsartán (o IECA/ARA II).</li>
-        <li><strong>Beta-bloqueantes:</strong> Bisoprolol, Carvedilol o Nebivolol.</li>
-        <li><strong>ARM:</strong> Espironolactona o Eplerenona.</li>
-        <li><strong>iSGLT2:</strong> Dapagliflozina o Empagliflozina.</li>
-    </ul>
+<nav>
+  <a href="../index.html" class="logo">Med<span>pedia</span></a>
+  <a href="../index.html" class="nav-back">← Volver</a>
+</nav>
 
-    <h2>2. Manejo de Congestión</h2>
-    <p>Uso de <strong>Furosemida</strong> para aliviar síntomas de edema y disnea, ajustando según peso diario y balance hídrico.</p>
-</main>
+<div class="contenido">
+  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Cardiología</a> › Insuficiencia Cardíaca</div>
+  <div class="titulo">Insuficiencia Cardíaca (IC)</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-fuente">ESC 2023 · ACC 2024 · Consenso SAC 2023</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La IC es un síndrome clínico en el que el corazón no puede bombear suficiente sangre para satisfacer las necesidades metabólicas del organismo, o solo puede hacerlo a expensas de presiones de llenado elevadas.</p>
+      <p>Se clasifica según la <strong>fracción de eyección del ventrículo izquierdo (FEVI)</strong> medida por ecocardiograma:</p>
+      <p><strong>ICFEr (reducida):</strong> FEVI ≤ 40% — mayor evidencia terapéutica, cuádruple terapia.<br>
+      <strong>ICFElr (ligeramente reducida):</strong> FEVI 41–49% — zona gris, evidencia en expansión.<br>
+      <strong>ICFEp (preservada):</strong> FEVI ≥ 50% — diagnóstico por exclusión y evidencia de disfunción diastólica.</p>
+      <p>Es la <strong>primera causa de hospitalización</strong> en mayores de 65 años en Argentina. La mortalidad al año ronda el 20–30% y a los 5 años supera el 50%.</p>
+    </div>
+  </div>
+
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea de esfuerzo</div><div class="sintoma-desc">Síntoma más frecuente — se cuantifica con la clasificación NYHA</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Ortopnea</div><div class="sintoma-desc">Disnea al acostarse — por redistribución de fluidos al tórax</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">DPN</div><div class="sintoma-desc">Disnea paroxística nocturna — despierta al paciente de noche</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Edemas periféricos</div><div class="sintoma-desc">Maleolares y pretibiales — signo de congestión venosa sistémica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fatiga y astenia</div><div class="sintoma-desc">Por bajo gasto cardíaco e hipoperfusión muscular</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">R3 (galope)</div><div class="sintoma-desc">Tercer ruido cardíaco — signo de IC con alta especificidad</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Ingurgitación yugular</div><div class="sintoma-desc">Presión venosa central elevada — IC derecha o biventricular</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Crepitantes bibasales</div><div class="sintoma-desc">Por edema pulmonar intersticial — IC izquierda</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Hepatomegalia / ascitis</div><div class="sintoma-desc">Congestión hepática por IC derecha avanzada</div></div>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN NYHA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación funcional NYHA</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Clase NYHA</th><th>Descripción</th><th>Implicancia</th></tr>
+        <tr><td><strong>I</strong></td><td>Sin limitación — actividad física ordinaria no causa síntomas</td><td>Tratamiento igual — sin síntomas no significa sin riesgo</td></tr>
+        <tr><td><strong>II</strong></td><td>Limitación leve — síntomas con actividad física moderada (subir escaleras, caminar rápido)</td><td>Mayoría de los pacientes — objetivo del tratamiento</td></tr>
+        <tr><td><strong>III</strong></td><td>Limitación marcada — síntomas con actividad física mínima (vestirse, caminar en llano)</td><td>Considerar dispositivos (DAI, TRC) si FEVI ≤35%</td></tr>
+        <tr><td><strong>IV</strong></td><td>Síntomas en reposo — no puede realizar ninguna actividad sin síntomas</td><td>IC avanzada — evaluar trasplante o asistencia circulatoria</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="hl">El diagnóstico de IC requiere: síntomas compatibles + evidencia de disfunción cardíaca estructural o funcional. El ecocardiograma es el estudio fundamental.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo / Utilidad</th><th>Observación</th></tr>
+        <tr><td><strong>Ecocardiograma</strong></td><td>FEVI, tamaño de cámaras, función diastólica, valvulopatías, motilidad parietal</td><td>Estudio de elección — define fenotipo y tratamiento</td></tr>
+        <tr><td><strong>BNP / NT-proBNP</strong></td><td>Elevados en IC activa. BNP &gt;100 pg/ml o NT-proBNP &gt;300 pg/ml en agudo</td><td>Útil para diagnóstico y monitoreo. En pacientes con ARNI usar NT-proBNP (el BNP sube artificialmente con sacubitrilo)</td></tr>
+        <tr><td><strong>ECG</strong></td><td>HVI, bloqueo de rama izquierda (BRIHH), FA, isquemia</td><td>BRIHH + FEVI ≤35% → indicación de TRC</td></tr>
+        <tr><td><strong>Rx tórax</strong></td><td>Cardiomegalia, líneas B de Kerley, congestión vascular, derrame pleural</td><td>Rápido y accesible en urgencias</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>Hemograma, función renal, ionograma, glucemia, perfil tiroideo, ferritina/IST</td><td>Ferropenia (ferritina &lt;100 o IST &lt;20%) presente en 50% — tratar con hierro IV</td></tr>
+        <tr><td><strong>Holter / monitor</strong></td><td>Detección de FA paroxística, arritmias ventriculares</td><td>FA es causa y complicación frecuente de IC</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LOS 4 PILARES -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Los 4 pilares — ICFEr (FEVI ≤ 40%)</div>
+    <div class="hl-danger"><strong>Cuádruple terapia:</strong> los 4 pilares deben iniciarse lo antes posible — idealmente en las primeras 6 semanas. Las guías ESC 2023 y ACC 2024 priorizan iniciar las 4 clases a dosis bajas antes que esperar a optimizar de a uno. Cada pilar reduce mortalidad de forma independiente y aditiva — juntos pueden añadir ~5 años de vida a un paciente de 70 años.</div>
+
+    <div class="pilar-card destacado">
+      <div class="pilar-num">PILAR 1</div>
+      <div class="farma-nombre" style="margin-top:8px;">ARNI — Sacubitrilo/Valsartán</div>
+      <div class="farma-clase">Inhibidor de neprilisina + ARA II · preferido sobre IECA</div>
+      <div class="dosis-badge">Inicio: 24/26 mg cada 12h VO · Meta: 97/103 mg cada 12h · Esperar 36h si venía con IECA</div>
+      <div class="farma-detalle">Superior al enalapril en reducción de mortalidad CV y hospitalizaciones (PARADIGM-HF). Es el fármaco de primera línea en ICFEr según ESC 2023 y ACC 2024. Si no disponible o no tolerable → IECA (enalapril 2,5–10 mg c/12h o ramipril 2,5–5 mg/día) o ARA II (valsartán 40–160 mg c/12h).<br><br><span class="badge-no">Nunca combinar con IECA</span> — riesgo de angioedema grave. Suspender IECA 36h antes de iniciar. En pacientes con ARNI usar NT-proBNP para monitoreo (no BNP).</div>
+    </div>
+
+    <div class="pilar-card destacado">
+      <div class="pilar-num">PILAR 2</div>
+      <div class="farma-nombre" style="margin-top:8px;">Betabloqueantes</div>
+      <div class="farma-clase">Solo 3 con evidencia en IC: Bisoprolol · Carvedilol · Metoprolol succinato</div>
+      <div class="dosis-badge">Bisoprolol: 1,25 mg/día → meta 10 mg/día · Carvedilol: 3,125 mg c/12h → meta 25 mg c/12h · Metoprolol succinato: 12,5–25 mg/día → meta 200 mg/día</div>
+      <div class="farma-detalle">Reducen mortalidad, muerte súbita y hospitalizaciones. Iniciar solo cuando el paciente esté estable y euvolémico — <span class="badge-no">nunca en descompensación aguda</span>. Titular lentamente cada 2 semanas. Nebivolol tiene evidencia en mayores de 70 años. <span class="badge-no">No usar atenolol ni propranolol</span> — sin evidencia en IC.</div>
+    </div>
+
+    <div class="pilar-card destacado">
+      <div class="pilar-num">PILAR 3</div>
+      <div class="farma-nombre" style="margin-top:8px;">ARM — Antagonistas del receptor de mineralocorticoides</div>
+      <div class="farma-clase">Espironolactona · Eplerenona</div>
+      <div class="dosis-badge">Espironolactona: 25–50 mg/día VO · Eplerenona: 25–50 mg/día VO</div>
+      <div class="farma-detalle">Reducen mortalidad y hospitalizaciones (RALES, EMPHASIS-HF). Espironolactona es más económica pero puede causar ginecomastia. Eplerenona más selectiva — menos efectos androgénicos.<br>Contraindicados si K⁺ &gt;5 mEq/L o creatinina &gt;2,5 mg/dl. Monitorear K⁺ y función renal a los 7 días del inicio y con cada ajuste de dosis.</div>
+    </div>
+
+    <div class="pilar-card destacado">
+      <div class="pilar-num">PILAR 4</div>
+      <div class="farma-nombre" style="margin-top:8px;">iSGLT2 — Inhibidores del cotransportador sodio-glucosa tipo 2</div>
+      <div class="farma-clase">Dapagliflozina · Empagliflozina</div>
+      <div class="dosis-badge">Dapagliflozina: 10 mg/día VO · Empagliflozina: 10 mg/día VO</div>
+      <div class="farma-detalle">Reducen mortalidad CV y hospitalizaciones por IC (DAPA-HF, EMPEROR-Reduced). Son los únicos con recomendación clase I en todo el espectro de FEVI (ICFEr, ICFElr e ICFEp). Sin necesidad de titulación — iniciar a dosis plena desde el día 1. Seguros para iniciar incluso durante la hospitalización (primeras 24–72h si estable hemodinámicamente).<br>No requieren diabetes para indicarse en IC. Contraindicados con TFG &lt;20 ml/min.</div>
+    </div>
+  </div>
+
+  <!-- DIURÉTICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">💧 Diuréticos — manejo de la congestión</div>
+    <div class="hl-warn">Los diuréticos alivian síntomas pero <span class="badge-no">no reducen mortalidad</span>. Usar la dosis mínima eficaz para mantener al paciente euvolémico. Ajustar según peso diario (objetivo: pérdida de 0,5–1 kg/día en descompensación).</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Furosemida</div>
+      <div class="farma-clase">Diurético de asa · primera línea en congestión</div>
+      <div class="dosis-badge">Crónico: 20–80 mg/día VO · Agudo EV: 40–80 mg bolo → infusión 5–40 mg/h según respuesta</div>
+      <div class="farma-detalle">Diurético de elección en IC. En IC aguda preferir vía EV. Meta: diuresis ≥100 ml/h las primeras horas. Si resistencia diurética: aumentar dosis, agregar tiazida (hidroclorotiazida 25 mg) o espironolactona. Monitorear K⁺, Na⁺ y creatinina.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Torasemida</div>
+      <div class="farma-clase">Diurético de asa · alternativa oral a furosemida</div>
+      <div class="dosis-badge">10–20 mg/día VO · Dosis máxima: 200 mg/día</div>
+      <div class="farma-detalle">Mayor biodisponibilidad oral que furosemida (80–100% vs 40–60%). Puede ser preferida en pacientes con absorción intestinal comprometida por edema. Menor efecto rebote.</div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS ADICIONALES -->
+  <div class="seccion">
+    <div class="sec-titulo">➕ Fármacos adicionales — segunda línea</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ivabradina</div>
+      <div class="farma-clase">Inhibidor de canales If · reducción de FC</div>
+      <div class="dosis-badge">Inicio: 5 mg cada 12h VO · Meta: 7,5 mg cada 12h · Ajustar para FC 50–60 lpm</div>
+      <div class="farma-detalle">Indicada cuando FC ≥70 lpm en ritmo sinusal a pesar de betabloqueante a dosis máxima tolerada, o si el betabloqueante está contraindicado. <span class="badge-no">No usar en FA</span> — no actúa en nodo AV. Reduce hospitalizaciones por IC (SHIFT trial).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hierro IV — Carboximaltosa férrica</div>
+      <div class="farma-clase">Suplemento de hierro · tratamiento de ferropenia</div>
+      <div class="dosis-badge">500–1000 mg IV en dosis única · repetir según ferritina e IST</div>
+      <div class="farma-detalle">Indicado en IC con ferropenia (ferritina &lt;100 ng/ml o ferritina 100–299 con IST &lt;20%), independientemente de si hay anemia. Mejora síntomas, calidad de vida y reduce hospitalizaciones (AFFIRM-AHF, FAIR-HF). El hierro oral tiene baja absorción en IC — preferir IV.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Vericiguat</div>
+      <div class="farma-clase">Estimulador de guanilato ciclasa soluble</div>
+      <div class="dosis-badge">Inicio: 2,5 mg/día VO · Meta: 10 mg/día</div>
+      <div class="farma-detalle">Indicado en IC crónica sintomática con FEVI &lt;45% que se hospitalizó por IC o requirió diuréticos IV en los últimos 6 meses, a pesar de tratamiento optimizado. Reduce el riesgo de muerte CV + hospitalización (VICTORIA trial).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Digoxina</div>
+      <div class="farma-clase">Glucósido cardíaco · control de FC en FA</div>
+      <div class="dosis-badge">0,125–0,25 mg/día VO · Nivel sérico objetivo: 0,5–0,9 ng/ml</div>
+      <div class="farma-detalle">Uso actual limitado. Indicado para control de FC en FA con IC cuando betabloqueantes son insuficientes o contraindicados. También puede usarse para reducir síntomas en ritmo sinusal como cuarta o quinta línea. Margen terapéutico estrecho — vigilar toxicidad (náuseas, visión amarillenta, bloqueos).</div>
+    </div>
+  </div>
+
+  <!-- ICFEp -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 IC con FEVI preservada (ICFEp) — FEVI ≥ 50%</div>
+    <div class="hl-info">La ICFEp representa el 50% de los casos de IC. Es un diagnóstico de exclusión — requiere descartar otras causas de disnea. El tratamiento hasta 2023 era principalmente sintomático; los iSGLT2 son ahora el único fármaco con clase I de recomendación.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tratamiento</th><th>Evidencia</th><th>Indicación</th></tr>
+        <tr><td><strong>iSGLT2 (dapagliflozina / empagliflozina)</strong></td><td>Clase I — ESC 2023</td><td>Primera línea en ICFEp — reducen hospitalizaciones</td></tr>
+        <tr><td><strong>Diuréticos (furosemida)</strong></td><td>Clase I — control de síntomas</td><td>Aliviar congestión — pilar sintomático</td></tr>
+        <tr><td><strong>Control agresivo de comorbilidades</strong></td><td>Clase I</td><td>HTA, FA, diabetes, obesidad, SAOS — son la causa del fenómeno</td></tr>
+        <tr><td><strong>ARNI, ARM, betabloqueantes</strong></td><td>Clase IIb — evidencia débil</td><td>Considerar si FEVI cercana al 50% o FA concomitante</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- IC AGUDA -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 IC aguda descompensada — manejo inicial</div>
+    <div class="hl-danger">La IC aguda es una emergencia. Clasificar según perfil hemodinámico: ¿húmedo o seco? ¿frío o caliente? El perfil húmedo-caliente (congestión sin hipoperfusión) es el más frecuente — tratar con diuréticos IV.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Perfil</th><th>Congestión</th><th>Perfusión</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Húmedo-Caliente</strong> (más frecuente)</td><td>Sí</td><td>Normal</td><td>Diuréticos IV + vasodilatadores</td></tr>
+        <tr><td><strong>Húmedo-Frío</strong> (shock)</td><td>Sí</td><td>Reducida</td><td>Inotrópicos + diuréticos con cuidado</td></tr>
+        <tr><td><strong>Seco-Frío</strong></td><td>No</td><td>Reducida</td><td>Carga de volumen cuidadosa + inotrópicos</td></tr>
+        <tr><td><strong>Seco-Caliente</strong></td><td>No</td><td>Normal</td><td>Optimizar tratamiento crónico</td></tr>
+      </table>
+    </div>
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">Dobutamina</div>
+      <div class="farma-clase">Inotrópico · IC aguda con hipoperfusión</div>
+      <div class="dosis-badge">2–20 mcg/kg/min en infusión IV continua · titular según respuesta hemodinámica</div>
+      <div class="farma-detalle">Indicada en shock cardiogénico o bajo gasto severo. Aumenta la contractilidad y reduce la poscarga. Uso a corto plazo — puede aumentar la mortalidad a largo plazo. Monitoreo en UCI o unidad coronaria. Contraindicada en obstrucción al tracto de salida (miocardiopatía hipertrófica obstructiva).</div>
+    </div>
+  </div>
+
+  <!-- DISPOSITIVOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔧 Dispositivos — cuándo indicarlos</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Dispositivo</th><th>Indicación</th><th>Requisito</th></tr>
+        <tr><td><strong>DAI (Desfibrilador automático implantable)</strong></td><td>Prevención de muerte súbita</td><td>FEVI ≤35% + NYHA II–III + ≥3 meses de TMO · esperanza de vida &gt;1 año</td></tr>
+        <tr><td><strong>TRC (Terapia de resincronización cardíaca)</strong></td><td>Resincronización ventricular</td><td>FEVI ≤35% + BRIHH + QRS ≥150 ms + NYHA II–IV a pesar de TMO</td></tr>
+        <tr><td><strong>TRC-D</strong></td><td>Resincronización + desfibrilación</td><td>Combinación de ambas indicaciones anteriores</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">Reevaluar la FEVI con ecocardiograma a los 3–6 meses de optimización del tratamiento médico antes de indicar un dispositivo — muchos pacientes mejoran la FEVI con tratamiento farmacológico.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Definición de ICFEr, ICFElr e ICFEp</span>
+      <span class="pill">Los 4 pilares y sus moléculas exactas</span>
+      <span class="pill">¿Por qué sacubitrilo/valsartán es mejor que IECA?</span>
+      <span class="pill">¿Por qué no combinar ARNI con IECA?</span>
+      <span class="pill">¿Cuándo NO iniciar betabloqueante?</span>
+      <span class="pill">Betabloqueantes con evidencia en IC (solo 3)</span>
+      <span class="pill">Dosis de inicio y meta de sacubitrilo/valsartán</span>
+      <span class="pill">Contraindicaciones de ARM</span>
+      <span class="pill">¿Por qué usar NT-proBNP con ARNI?</span>
+      <span class="pill">iSGLT2 en ICFEp — único con clase I</span>
+      <span class="pill">Ferropenia en IC — cuándo y cómo tratar</span>
+      <span class="pill">Clasificación NYHA — 4 clases</span>
+      <span class="pill">Perfil húmedo/seco frío/caliente</span>
+      <span class="pill">Indicación de DAI vs TRC</span>
+      <span class="pill">¿Cuándo reevaluar con eco post-tratamiento?</span>
+      <span class="pill">Ivabradina — indicación y contraindicación en FA</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Guía ESC 2021 sobre Diagnóstico y Tratamiento de la Insuficiencia Cardíaca · Actualización ESC 2023 · Consenso de Expertos ACC 2024 · Consenso de Insuficiencia Cardíaca — Sociedad Argentina de Cardiología (SAC) 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
