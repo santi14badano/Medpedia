@@ -1,61 +1,298 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obesidad: Manejo Metabólico — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --endo: #f39c12; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: #fef5e7; color: var(--endo); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--endo); border-bottom: 2px solid #fef5e7; padding-bottom: 5px; margin-top: 2.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-        th { background: #f9f9f9; }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obesidad y Manejo Metabólico — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --endo: #e67e22; --endo-claro: #fef5e7; --endo-oscuro: #854F0B; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: var(--endo-claro); color: var(--endo-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid var(--endo); background: var(--endo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .imc-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--borde); font-size: 13px; align-items: center; }
+    .imc-row:last-child { border-bottom: none; }
+    .imc-row.header { font-size: 11px; font-weight: 600; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.05em; background: var(--fondo); }
+    .imc-normal { background: #E1F5EE; }
+    .imc-sobre { background: #FAEEDA; }
+    .imc-1 { background: #FDEAEA; }
+    .imc-2 { background: #FCDDDD; }
+    .imc-3 { background: #F5C6C6; }
+    .compl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .compl-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .compl-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .compl-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .step-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; display: flex; gap: 14px; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--endo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.6; }
+    .step-content strong { color: var(--texto); }
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Endocrinología / Nutrición</span>
-    <h1>Obesidad y Manejo Metabólico</h1>
-    <p><em>Abordaje integral del paciente con exceso de peso y riesgo cardiometabólico.</em></p>
 
-    <h2>1. Clasificación según IMC (OMS)</h2>
-    <table>
-        <tr><th>Categoría</th><th>IMC (kg/m²)</th></tr>
-        <tr><td>Normopeso</td><td>18.5 - 24.9</td></tr>
-        <tr><td>Sobrepeso</td><td>25.0 - 29.9</td></tr>
-        <tr><td>Obesidad Grado I</td><td>30.0 - 34.9</td></tr>
-        <tr><td>Obesidad Grado II</td><td>35.0 - 39.9</td></tr>
-        <tr><td>Obesidad Grado III (Mórbida)</td><td>≥ 40.0</td></tr>
-    </table>
+<nav>
+  <a href="../index.html" class="logo">Med<span>pedia</span></a>
+  <a href="../index.html" class="nav-back">← Volver</a>
+</nav>
 
-    <h2>2. Complicaciones Asociadas</h2>
-    <ul>
-        <li><strong>Metabólicas:</strong> Resistencia a la insulina, DM2, Dislipemia.</li>
-        <li><strong>Cardiovasculares:</strong> HTA, Insuficiencia cardíaca, ACV.</li>
-        <li><strong>Mecánicas:</strong> SAHOS (Apneas del sueño), Artrosis de carga.</li>
-    </ul>
+<div class="contenido">
+  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Endocrinología</a> › Obesidad</div>
+  <div class="titulo">Obesidad y Manejo Metabólico</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-endo" style="background:#E1F5EE;color:#0F6E56;">Nutrición</span>
+    <span class="tag tag-fuente">Consenso Argentino 2025 · OMS · Ley 26.396</span>
+  </div>
 
-    <h2>3. Pilares del Tratamiento</h2>
-    <ul>
-        <li><strong>Cambios en el Estilo de Vida:</strong> Déficit calórico de 500-750 kcal/día y 150-300 min de ejercicio semanal.</li>
-        <li><strong>Farmacoterapia:</strong> Indicada en IMC ≥ 30 o ≥ 27 con comorbilidades.
-            <ul>
-                <li>Liraglutida / Semaglutida (Análogos GLP-1).</li>
-                <li>Orlistat (Inhibidor de lipasas).</li>
-            </ul>
-        </li>
-        <li><strong>Cirugía Bariátrica:</strong> Considerar en IMC ≥ 40 o ≥ 35 con complicaciones graves.</li>
-    </ul>
-</main>
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La obesidad es una condición <strong>multifactorial, compleja y potencialmente reversible</strong> caracterizada por acumulación excesiva o distribución anormal de tejido adiposo que afecta la salud. El Consenso Argentino 2025 la define como una condición con determinantes biológicos, ambientales, emocionales y sociales — no solo un problema de voluntad.</p>
+      <p>En Argentina, <strong>más del 60% de los adultos presenta exceso de peso</strong> y la obesidad afecta al 24,3% de la población — porcentaje que supera el 30% en mayores de 50 años. La prevalencia de obesidad creció un 74% entre 2005 y 2018.</p>
+      <p>El IMC es la herramienta diagnóstica más usada, pero tiene limitaciones — no distingue masa grasa de masa magra ni refleja la distribución de la grasa. El <strong>perímetro de cintura</strong> es un complemento esencial para evaluar riesgo cardiometabólico.</p>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN IMC -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación según IMC — OMS</div>
+    <div class="tabla-wrap">
+      <div class="imc-row header"><span>Categoría</span><span>IMC (kg/m²)</span><span>Conducta</span></div>
+      <div class="imc-row imc-normal"><span><strong>Normopeso</strong></span><span>18,5 – 24,9</span><span>Prevención y mantenimiento</span></div>
+      <div class="imc-row imc-sobre"><span><strong>Sobrepeso</strong></span><span>25,0 – 29,9</span><span>CEV + evaluar comorbilidades</span></div>
+      <div class="imc-row imc-1"><span><strong>Obesidad Grado I</strong></span><span>30,0 – 34,9</span><span>CEV + considerar farmacoterapia</span></div>
+      <div class="imc-row imc-2"><span><strong>Obesidad Grado II</strong></span><span>35,0 – 39,9</span><span>Farmacoterapia + evaluar cirugía si comorbilidades</span></div>
+      <div class="imc-row imc-3"><span><strong>Obesidad Grado III (severa)</strong></span><span>≥ 40,0</span><span>Cirugía bariátrica — primera opción</span></div>
+    </div>
+
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Perímetro de cintura</th><th>Riesgo aumentado</th><th>Riesgo muy alto</th></tr>
+        <tr><td><strong>Hombres</strong></td><td>≥ 94 cm</td><td>≥ 102 cm</td></tr>
+        <tr><td><strong>Mujeres</strong></td><td>≥ 80 cm</td><td>≥ 88 cm</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">El perímetro de cintura elevado indica <strong>obesidad central (visceral)</strong> — mayor riesgo cardiovascular y metabólico independientemente del IMC. En Argentina se usa el criterio OMS/IDF para adultos.</div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones asociadas</div>
+    <div class="compl-grid">
+      <div class="compl-item"><div class="compl-nombre">Diabetes Tipo 2</div><div class="compl-desc">Resistencia a la insulina — la obesidad es el principal factor de riesgo modificable</div></div>
+      <div class="compl-item"><div class="compl-nombre">HTA</div><div class="compl-desc">Por aumento del gasto cardíaco, retención de sodio y activación del SRAA</div></div>
+      <div class="compl-item"><div class="compl-nombre">Dislipemia</div><div class="compl-desc">TG elevados, HDL bajo, LDL denso — perfil aterogénico clásico</div></div>
+      <div class="compl-item"><div class="compl-nombre">Enfermedad cardiovascular</div><div class="compl-desc">IAM, IC, ACV — el riesgo aumenta de forma lineal con el IMC</div></div>
+      <div class="compl-item"><div class="compl-nombre">SAOS</div><div class="compl-desc">Síndrome de apneas-hipopneas del sueño — presente en 40–70% de obesos</div></div>
+      <div class="compl-item"><div class="compl-nombre">HGNA / MAFLD</div><div class="compl-desc">Hígado graso no alcohólico — puede progresar a cirrosis</div></div>
+      <div class="compl-item"><div class="compl-nombre">Artrosis de carga</div><div class="compl-desc">Rodilla y cadera — sobrecarga articular por exceso de peso</div></div>
+      <div class="compl-item"><div class="compl-nombre">Cáncer</div><div class="compl-desc">Mayor riesgo de mama, colon, endometrio, riñón y esófago</div></div>
+      <div class="compl-item"><div class="compl-nombre">Depresión / ansiedad</div><div class="compl-desc">Bidireccional — el estigma y la imagen corporal impactan en la salud mental</div></div>
+    </div>
+  </div>
+
+  <!-- EVALUACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Evaluación inicial — estudios complementarios</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Objetivo</th></tr>
+        <tr><td><strong>Glucemia en ayunas + HbA1c</strong></td><td>Descartar DM2 o prediabetes</td></tr>
+        <tr><td><strong>Perfil lipídico</strong></td><td>CT, LDL, HDL, TG — evaluar riesgo cardiovascular</td></tr>
+        <tr><td><strong>Función hepática (TGO, TGP, GGT)</strong></td><td>Descartar HGNA/MAFLD</td></tr>
+        <tr><td><strong>Función renal (creatinina, urea)</strong></td><td>Afección renal por HTA o DM2 asociada</td></tr>
+        <tr><td><strong>TSH</strong></td><td>Descartar hipotiroidismo como causa secundaria</td></tr>
+        <tr><td><strong>Cortisol urinario / prueba de supresión</strong></td><td>Si sospecha de síndrome de Cushing</td></tr>
+        <tr><td><strong>ECG + PA</strong></td><td>Evaluación cardiovascular basal</td></tr>
+        <tr><td><strong>Polisomnografía</strong></td><td>Si sospecha de SAOS — somnolencia diurna, ronquidos, apneas referidas</td></tr>
+        <tr><td><strong>Ecografía hepática</strong></td><td>Confirmación de HGNA — si transaminasas elevadas</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento — enfoque escalonado</div>
+    <div class="hl">El Consenso Argentino 2025 establece que el <strong>cambio de estilo de vida (CEV) es siempre la primera línea</strong>. Los fármacos y la cirugía se agregan — no reemplazan — los cambios de hábitos.</div>
+
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Cambios de estilo de vida (CEV) — siempre primera línea</strong><br>
+      Déficit calórico de 500–750 kcal/día respecto al gasto energético → pérdida esperada 0,5–1 kg/semana.<br>
+      Actividad física aeróbica: 150–300 min/semana de intensidad moderada (caminar rápido, natación, ciclismo).<br>
+      Resistencia muscular 2–3 veces/semana.<br>
+      Abordaje conductual y psicológico — fundamental para sostener cambios a largo plazo.</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Farmacoterapia — indicaciones según IMC</strong><br>
+      IMC ≥ 30 kg/m² sin comorbilidades → indicado si no se logra pérdida ≥5% del peso en 3–6 meses con CEV.<br>
+      IMC ≥ 27 kg/m² con comorbilidades (DM2, HTA, SAOS, dislipemia) → indicado desde el inicio junto con CEV.<br>
+      Meta mínima de eficacia: pérdida del 5–10% del peso en los primeros 3–6 meses.</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Cirugía bariátrica — criterios Ley Argentina 26.396</strong><br>
+      IMC ≥ 40 kg/m² sin comorbilidades, o IMC ≥ 35 kg/m² con ≥2 comorbilidades graves.<br>
+      Fracaso previo de tratamiento médico integral por al menos 2 años.<br>
+      Evaluación multidisciplinaria: cirujano, nutricionista, psicólogo, endocrinólogo.<br>
+      La ley 26.396 obliga a las obras sociales y prepagas a cubrir el procedimiento.</div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Fármacos antiobesidad — con dosis</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Semaglutida (Wegovy / Ozempic)</div>
+      <div class="farma-clase">Análogo de GLP-1 · primera línea de farmacoterapia · disponible en Argentina</div>
+      <div class="dosis-badge">Inicio: 0,25 mg/semana SC · Escalar cada 4 semanas → Meta para obesidad: 2,4 mg/semana SC</div>
+      <div class="farma-detalle">
+        El fármaco antiobesidad más eficaz actualmente disponible. En los estudios STEP logró una reducción del <strong>15–17% del peso corporal</strong> — superior a cualquier fármaco previo. A dosis de 7,2 mg (en investigación) alcanzó pérdidas del 20,7%, comparables a la cirugía bariátrica.<br><br>
+        Mecanismo: agonista del receptor GLP-1 — reduce el apetito, enlentece el vaciamiento gástrico y mejora la saciedad. También reduce riesgo cardiovascular (estudio SELECT: reducción del 20% en muertes CV, IAM y ACV).<br><br>
+        La primera semaglutida de fabricación nacional fue lanzada en Argentina en 2025, ampliando el acceso.<br><br>
+        <strong>Efectos adversos frecuentes:</strong> náuseas, vómitos, diarrea o constipación — disminuyen con la titulación gradual.<br>
+        <span class="badge-no">Contraindicada</span> en antecedentes de cáncer tiroideo medular, pancreatitis, o NEM tipo 2. Precaución en litiasis biliar.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Liraglutida (Saxenda)</div>
+      <div class="farma-clase">Análogo de GLP-1 · alternativa a semaglutida</div>
+      <div class="dosis-badge">Inicio: 0,6 mg/día SC · Escalar 0,6 mg/semana → Meta: 3 mg/día SC</div>
+      <div class="farma-detalle">Análogo de GLP-1 de acción diaria (vs semanal de semaglutida). Pérdida de peso de 5–8% en promedio — menor eficacia que semaglutida. Mismas contraindicaciones que semaglutida. Requiere inyección diaria lo que puede afectar la adherencia. Disponible en Argentina con cobertura en algunas obras sociales.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Tirzepatida (Mounjaro)</div>
+      <div class="farma-clase">Análogo dual GLP-1/GIP · el más potente disponible actualmente</div>
+      <div class="dosis-badge">Inicio: 2,5 mg/semana SC · Escalar cada 4 semanas → Meta: 10–15 mg/semana SC</div>
+      <div class="farma-detalle">
+        Agonista dual de receptores GLP-1 y GIP — mayor eficacia que semaglutida en monoterapia. Estudios SURMOUNT demostraron pérdidas de peso del <strong>20–22%</strong> a las 72 semanas. Aprobada por FDA y ANMAT para DM2 y obesidad.<br>
+        Perfil de efectos adversos similar a semaglutida. Disponible en Argentina — costo elevado y cobertura variable.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Orlistat</div>
+      <div class="farma-clase">Inhibidor de lipasas pancreáticas · acción periférica</div>
+      <div class="dosis-badge">120 mg 3 veces al día con cada comida principal (con grasa)</div>
+      <div class="farma-detalle">
+        Reduce la absorción de grasas en un 30%. Pérdida de peso modesta: 3–5% del peso corporal. Fármaco más accesible económicamente en Argentina — sin receta en algunos formatos.<br>
+        <strong>Efectos adversos frecuentes:</strong> esteatorrea, flatulencia con descarga grasa, urgencia fecal — especialmente si la dieta es rica en grasas. Reduce absorción de vitaminas liposolubles (A, D, E, K) — suplementar.<br>
+        Indicado como alternativa cuando los análogos GLP-1 no están disponibles o son intolerables.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Metformina</div>
+      <div class="farma-clase">Biguanida · uso off-label en obesidad sin diabetes</div>
+      <div class="dosis-badge">500–2.550 mg/día VO con las comidas</div>
+      <div class="farma-detalle">No aprobada específicamente para obesidad sin diabetes, pero ampliamente usada en prediabetes con sobrepeso/obesidad por su efecto modesto sobre el peso (–2 a –3 kg) y su capacidad de retrasar la progresión a DM2. Muy bien tolerada, bajo costo y disponible en el sistema público argentino.</div>
+    </div>
+  </div>
+
+  <!-- CIRUGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔧 Cirugía bariátrica — tipos y resultados</div>
+    <div class="hl-warn">La cirugía bariátrica es el tratamiento más eficaz a largo plazo para la obesidad severa — logra pérdidas del 25–35% del peso corporal mantenidas a 10 años. La tirzepatida y semaglutida a altas dosis se están acercando a estos resultados con tratamiento farmacológico.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Técnica</th><th>Mecanismo</th><th>Pérdida de peso</th><th>Observación</th></tr>
+        <tr><td><strong>Manga gástrica (sleeve)</strong></td><td>Restrictivo — reduce el volumen gástrico en un 80%</td><td>25–30% del peso</td><td>Técnica más realizada en Argentina actualmente</td></tr>
+        <tr><td><strong>Bypass gástrico en Y de Roux</strong></td><td>Restrictivo + malabsortivo</td><td>30–35% del peso</td><td>Mayor eficacia en DM2 — remisión del 80% a 1 año</td></tr>
+        <tr><td><strong>Banda gástrica ajustable</strong></td><td>Restrictivo — banda alrededor del cardias</td><td>15–20% del peso</td><td>Menos usada actualmente — mayor tasa de reoperación</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">La cirugía bariátrica tiene tasas de remisión de DM2 del 60–80% a 1 año — muy superior a cualquier tratamiento farmacológico. También mejora HTA, dislipemia y SAOS. Requiere seguimiento nutricional de por vida y suplementación vitamínica.</div>
+  </div>
+
+  <!-- SÍNDROME METABÓLICO -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Síndrome metabólico — criterios IDF/ATP III</div>
+    <div class="card">
+      <p>El síndrome metabólico se diagnostica con <strong>3 o más</strong> de los siguientes criterios:</p>
+      <p>🔸 <strong>Obesidad abdominal:</strong> cintura ≥94 cm (H) / ≥80 cm (M) — criterio central en IDF<br>
+      🔸 <strong>TG elevados:</strong> ≥150 mg/dl o tratamiento específico<br>
+      🔸 <strong>HDL bajo:</strong> &lt;40 mg/dl (H) / &lt;50 mg/dl (M)<br>
+      🔸 <strong>PA elevada:</strong> ≥130/85 mmHg o tratamiento antihipertensivo<br>
+      🔸 <strong>Glucemia en ayunas elevada:</strong> ≥100 mg/dl o DM2 conocida</p>
+      <p>El síndrome metabólico multiplica por 2–5 el riesgo cardiovascular y por 5 el riesgo de desarrollar DM2.</p>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Clasificación IMC — valores exactos por grado</span>
+      <span class="pill">Perímetro de cintura — valores de riesgo H y M</span>
+      <span class="pill">¿Cuándo indicar farmacoterapia? — IMC ≥30 o ≥27 con comorbilidades</span>
+      <span class="pill">Criterios de cirugía bariátrica según ley argentina</span>
+      <span class="pill">Mecanismo de semaglutida y liraglutida</span>
+      <span class="pill">¿Cuánto peso pierde con semaglutida vs cirugía?</span>
+      <span class="pill">Efectos adversos de análogos GLP-1</span>
+      <span class="pill">Contraindicaciones de semaglutida</span>
+      <span class="pill">¿Por qué orlistat produce esteatorrea?</span>
+      <span class="pill">Criterios de síndrome metabólico — 5 componentes</span>
+      <span class="pill">Diferencia sleeve vs bypass gástrico</span>
+      <span class="pill">¿Cuándo sospechar causa secundaria de obesidad?</span>
+      <span class="pill">Meta de pérdida de peso en 3–6 meses con farmacoterapia</span>
+      <span class="pill">¿Por qué suplementar vitaminas con orlistat?</span>
+      <span class="pill">Tirzepatida — diferencia con semaglutida</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Consenso Argentino de Obesidad — Sociedad Argentina de Nutrición / SAOTA 2025 · Guía de Práctica Clínica Nacional sobre Diagnóstico y Tratamiento de la Obesidad · Ministerio de Salud de la Nación Argentina · Ley Nacional de Obesidad 26.396 · Estudios STEP (semaglutida) · SURMOUNT (tirzepatida).<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
