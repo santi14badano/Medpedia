@@ -1,64 +1,332 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTA: Guía de Manejo — Medpedia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --verde: #1D9E75; --texto: #1a1a1a; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; --cardio: #d32f2f; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); margin: 0; line-height: 1.6; }
-        nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
-        .logo span { color: var(--verde); }
-        main { max-width: 850px; margin: 3rem auto; background: var(--blanco); padding: 3rem; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .badge { background: #fdeaea; color: var(--cardio); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        h1 { font-family: 'Fraunces', serif; font-size: 38px; margin: 1rem 0; }
-        h2 { font-family: 'Fraunces', serif; color: var(--cardio); border-bottom: 2px solid #fdeaea; padding-bottom: 5px; margin-top: 2.5rem; }
-        .info-box { background: #fff8f8; border-left: 4px solid var(--cardio); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
-        th, td { border: 1px solid var(--borde); padding: 12px; text-align: left; }
-        th { background: #f9f9f9; font-weight: 700; }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hipertensión Arterial — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --cardio: #d32f2f; --cardio-claro: #fdeaea; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: var(--cardio-claro); color: var(--cardio); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid var(--cardio); background: var(--cardio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .badge-no { background: var(--cardio-claro); color: var(--cardio); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" style="text-decoration:none; color:var(--verde); font-weight:500;">← Volver</a></nav>
-<main>
-    <span class="badge">Cardiología</span>
-    <h1>Hipertensión Arterial (HTA)</h1>
-    <p><em>Valores diagnósticos y algoritmos de tratamiento según el Consenso Argentino de HTA.</em></p>
 
-    <h2>1. Clasificación de la Presión Arterial</h2>
-    <table>
-        <thead>
-            <tr><th>Categoría</th><th>Sistólica (mmHg)</th><th>Diastólica (mmHg)</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Presión Normal</td><td>< 130</td><td>y < 85</td></tr>
-            <tr><td>Limítrofe</td><td>130 - 139</td><td>o 85 - 89</td></tr>
-            <tr><td>HTA Nivel 1</td><td>140 - 159</td><td>o 90 - 99</td></tr>
-            <tr><td>HTA Nivel 2</td><td>160 - 179</td><td>o 100 - 109</td></tr>
-            <tr><td>HTA Nivel 3</td><td>≥ 180</td><td>o ≥ 110</td></tr>
-        </tbody>
-    </table>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
 
-    <div class="info-box">
-        <strong>Diagnóstico:</strong> Se define HTA con valores ≥ 140/90 mmHg en al menos dos tomas en diferentes consultas, o mediante MDPA/MAPA.
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Hipertensión Arterial</div>
+  <div class="titulo">Hipertensión Arterial (HTA)</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-fuente">Consenso Argentino HTA 2025 · Guía Nacional 2024</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La HTA es la <strong>enfermedad cardiovascular más prevalente</strong> y el principal factor de riesgo modificable para IAM, ACV, IC y enfermedad renal crónica. En Argentina afecta al <strong>46% de los adultos</strong> y solo la mitad de los hipertensos conocidos tiene su PA controlada.</p>
+      <p>Se define por valores de PA sistólica ≥140 mmHg y/o diastólica ≥90 mmHg en consultorio, confirmados en al menos <strong>dos mediciones en dos consultas diferentes</strong>. También puede diagnosticarse mediante MAPA (monitoreo ambulatorio) o MDPA (monitoreo domiciliario).</p>
+      <p>El 90–95% de los casos es <strong>HTA primaria o esencial</strong> — sin causa identificable. El 5–10% restante es HTA secundaria — siempre buscarla en pacientes jóvenes, HTA resistente o de inicio brusco.</p>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación — Consenso Argentino 2025</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Categoría</th><th>PAS (mmHg)</th><th>PAD (mmHg)</th><th>Conducta</th></tr>
+        <tr><td><strong>Normal</strong></td><td>&lt; 130</td><td>y &lt; 85</td><td>Control cada 2 años</td></tr>
+        <tr><td><strong>Limítrofe (normal-alta)</strong></td><td>130–139</td><td>o 85–89</td><td>CEV + control anual + evaluar RCV</td></tr>
+        <tr><td><strong>HTA Nivel 1</strong></td><td>140–159</td><td>o 90–99</td><td>CEV ± fármacos según RCV</td></tr>
+        <tr><td><strong>HTA Nivel 2</strong></td><td>160–179</td><td>o 100–109</td><td>CEV + fármacos (iniciar biterapia)</td></tr>
+        <tr><td><strong>HTA Nivel 3</strong></td><td>≥ 180</td><td>o ≥ 110</td><td>Fármacos inmediatos + internación si emergencia</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">Los valores diagnósticos difieren según el método de medición. <strong>MAPA 24h:</strong> ≥130/80 mmHg de promedio diurno. <strong>MDPA:</strong> ≥135/85 mmHg. Estos métodos son más reproducibles y predicen mejor el riesgo cardiovascular que la medición en consultorio.</div>
+  </div>
+
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="hl-warn">La HTA es la <strong>"asesina silenciosa"</strong> — la mayoría de los pacientes no tiene síntomas hasta que aparece daño de órgano blanco. El diagnóstico suele ser incidental en una consulta de rutina.</div>
+    <div class="sintoma-grid" style="margin-top:10px;">
+      <div class="sintoma-item"><div class="sintoma-nombre">Cefalea</div><div class="sintoma-desc">Occipital matutina — clásica pero inespecífica. Solo frecuente en HTA grave</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Epistaxis</div><div class="sintoma-desc">Sangrado nasal — más frecuente en HTA no controlada</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Acúfenos / tinnitus</div><div class="sintoma-desc">Zumbido de oídos — asociado a HTA crónica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Visión borrosa</div><div class="sintoma-desc">Por retinopatía hipertensiva — signo de daño de órgano blanco</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Palpitaciones</div><div class="sintoma-desc">Por hipertrofia ventricular izquierda o arritmias asociadas</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea de esfuerzo</div><div class="sintoma-desc">Por disfunción diastólica o IC hipertensiva avanzada</div></div>
+    </div>
+  </div>
+
+  <!-- DAÑO DE ÓRGANO BLANCO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Daño de órgano blanco — siempre buscar</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Órgano</th><th>Manifestación</th><th>Estudio</th></tr>
+        <tr><td><strong>Corazón</strong></td><td>HVI, IC diastólica, cardiopatía isquémica, FA</td><td>ECG, ecocardiograma</td></tr>
+        <tr><td><strong>Cerebro</strong></td><td>ACV, AIT, deterioro cognitivo, encefalopatía</td><td>TAC/RM si síntomas</td></tr>
+        <tr><td><strong>Riñón</strong></td><td>Nefroangioesclerosis, proteinuria, ERC</td><td>Creatinina, clearance, orina completa</td></tr>
+        <tr><td><strong>Retina</strong></td><td>Retinopatía hipertensiva — grados I al IV (Keith-Wagener)</td><td>Fondo de ojo</td></tr>
+        <tr><td><strong>Arterias</strong></td><td>Aterosclerosis acelerada, aneurisma aórtico</td><td>Eco-Doppler carotídeo, índice tobillo-brazo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico y evaluación inicial</div>
+    <div class="hl">Medir PA en ambos brazos en la primera consulta. Usar siempre el brazo con valores más altos en controles posteriores. Una diferencia interbraquial ≥10 mmHg es significativa y puede indicar enfermedad arterial periférica.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Estudio</th><th>Objetivo</th></tr>
+        <tr><td><strong>Laboratorio básico</strong></td><td>Glucemia, creatinina, ionograma, ácido úrico, perfil lipídico, orina completa con sedimento</td></tr>
+        <tr><td><strong>ECG</strong></td><td>HVI (Sokolow-Lyon &gt;35mm), bloqueos, arritmias, isquemia</td></tr>
+        <tr><td><strong>MAPA 24h</strong></td><td>Confirmar HTA, detectar bata blanca, HTA enmascarada y patrón dipper/non-dipper</td></tr>
+        <tr><td><strong>Ecocardiograma</strong></td><td>HVI, función diastólica, FEVI — si ECG anormal o síntomas cardíacos</td></tr>
+        <tr><td><strong>Fondo de ojo</strong></td><td>Retinopatía hipertensiva — grados I-IV</td></tr>
+        <tr><td><strong>Microalbuminuria</strong></td><td>Daño renal subclínico — &gt;30 mg/día es significativa</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>HTA de bata blanca:</strong> PA elevada en consultorio pero normal en MAPA/MDPA — no requiere tratamiento farmacológico, solo seguimiento. <strong>HTA enmascarada:</strong> PA normal en consultorio pero elevada en MAPA — peor pronóstico, requiere tratamiento.</div>
+  </div>
+
+  <!-- RIESGO CARDIOVASCULAR -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Estratificación del riesgo cardiovascular</div>
+    <div class="card">
+      <p>El tratamiento no depende solo del nivel de PA sino del <strong>riesgo cardiovascular global</strong>. Se estratifica combinando el nivel de HTA con los factores de riesgo asociados.</p>
+      <p><strong>Factores de riesgo que elevan el riesgo:</strong> edad (H &gt;55, M &gt;65), tabaquismo, dislipemia, glucemia alterada, obesidad abdominal, antecedentes familiares de ECV precoz, sedentarismo.</p>
+      <p><strong>Daño de órgano blanco subclínico:</strong> HVI, microalbuminuria, engrosamiento íntima-media carotídea, índice tobillo-brazo &lt;0,9.</p>
+      <p><strong>Condiciones clínicas establecidas:</strong> ACV, IAM, ERC, retinopatía grado III-IV, DM2 con daño de órgano.</p>
+    </div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Nivel de HTA</th><th>Sin FR adicionales</th><th>1–2 FR</th><th>≥3 FR / DOB / DM</th><th>ECV establecida</th></tr>
+        <tr><td>Limítrofe (130–139/85–89)</td><td>Bajo</td><td>Bajo-Moderado</td><td>Moderado-Alto</td><td>Alto</td></tr>
+        <tr><td>HTA Nivel 1</td><td>Bajo-Moderado</td><td>Moderado</td><td>Moderado-Alto</td><td>Muy alto</td></tr>
+        <tr><td>HTA Nivel 2</td><td>Moderado</td><td>Moderado-Alto</td><td>Alto</td><td>Muy alto</td></tr>
+        <tr><td>HTA Nivel 3</td><td>Alto</td><td>Alto</td><td>Muy alto</td><td>Muy alto</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- METAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🎯 Metas del tratamiento</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Población</th><th>Meta de PA</th></tr>
+        <tr><td><strong>General (18–64 años)</strong></td><td>&lt; 130/80 mmHg si tolera</td></tr>
+        <tr><td><strong>Adultos mayores (65–79 años)</strong></td><td>&lt; 140/90 mmHg · considerar &lt;130/80 si tolera</td></tr>
+        <tr><td><strong>Mayores de 80 años</strong></td><td>&lt; 150/90 mmHg · individualizar según fragilidad</td></tr>
+        <tr><td><strong>Diabéticos</strong></td><td>&lt; 130/80 mmHg</td></tr>
+        <tr><td><strong>ERC con proteinuria</strong></td><td>&lt; 130/80 mmHg</td></tr>
+        <tr><td><strong>Post-ACV / Post-IAM</strong></td><td>&lt; 130/80 mmHg</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO NO FARMACOLÓGICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🥗 Tratamiento no farmacológico — siempre primero</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Medida</th><th>Reducción de PA esperada</th></tr>
+        <tr><td>Dieta DASH (↓ sodio, ↑ frutas, verduras, lácteos descremados)</td><td>8–14 mmHg</td></tr>
+        <tr><td>Reducción de sal — meta &lt;5 g/día (≈1 cucharadita)</td><td>2–8 mmHg</td></tr>
+        <tr><td>Actividad física aeróbica — 150 min/semana</td><td>4–9 mmHg</td></tr>
+        <tr><td>Pérdida de peso — por cada 10 kg perdidos</td><td>5–20 mmHg</td></tr>
+        <tr><td>Moderación de alcohol — máx 2 unidades/día (H) / 1 (M)</td><td>2–4 mmHg</td></tr>
+        <tr><td>Abandono del tabaco</td><td>Variable — reduce RCV global</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO FARMACOLÓGICO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento farmacológico — fármacos y dosis</div>
+    <div class="hl">El Consenso Argentino 2025 recomienda iniciar con <strong>biterapia en comprimido único</strong> en la mayoría de los pacientes (excepto ancianos frágiles o HTA nivel 1 de bajo riesgo). Combinar siempre IECA o ARA II con calcioantagonista o diurético tiazídico.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">IECA — Inhibidores de la enzima convertidora de angiotensina</div>
+      <div class="farma-clase">Enalapril · Ramipril · Lisinopril · Perindopril</div>
+      <div class="dosis-badge">Enalapril: 5–40 mg/día (1–2 tomas) · Ramipril: 2,5–10 mg/día · Lisinopril: 5–40 mg/día · Perindopril: 4–8 mg/día</div>
+      <div class="farma-detalle">Primera línea en HTA con DM, ERC con proteinuria, post-IAM, IC con FEyR reducida. Reducen la proteinuria y tienen efecto nefroprotector. <span class="badge-no">Contraindicados</span> en embarazo, angioedema previo, estenosis bilateral de arterias renales, hiperpotasemia. Efecto adverso frecuente: tos seca (10–15%) — cambiar a ARA II.</div>
     </div>
 
-    <h2>2. Tratamiento Farmacológico</h2>
-    <p>La tendencia actual es iniciar con <strong>Biterapia en una sola pastilla</strong> (adherencia):</p>
-    <ul>
-        <li><strong>IECA o ARA II + Calcioantagonista:</strong> (Ej: Enalapril + Amlodipina).</li>
-        <li><strong>IECA o ARA II + Diurético Tiazídico:</strong> (Ej: Losartán + Hidroclorotiazida).</li>
-    </ul>
+    <div class="farma-card">
+      <div class="farma-nombre">ARA II — Antagonistas del receptor de angiotensina II</div>
+      <div class="farma-clase">Losartán · Valsartán · Irbesartán · Telmisartán · Candesartán</div>
+      <div class="dosis-badge">Losartán: 50–100 mg/día · Valsartán: 80–320 mg/día · Irbesartán: 150–300 mg/día · Telmisartán: 40–80 mg/día</div>
+      <div class="farma-detalle">Mismas indicaciones que IECA — preferir cuando hay intolerancia a IECA (tos). Mismas contraindicaciones excepto que no producen tos. <span class="badge-no">Nunca combinar IECA + ARA II</span> — riesgo de hiperpotasemia e IR aguda. El telmisartán tiene la vida media más larga — ideal para pacientes con mala adherencia.</div>
+    </div>
 
-    <h2>3. Urgencia vs Emergencia</h2>
-    <ul>
-        <li><strong>Urgencia Hipertensiva:</strong> Sin daño de órgano blanco. Tratamiento vía oral, descenso en 24-48h.</li>
-        <li><strong>Emergencia Hipertensiva:</strong> Con daño agudo (Encefalopatía, IAM, Edema Agudo de Pulmón). Tratamiento EV y requiere internación.</li>
-    </ul>
-</main>
+    <div class="farma-card">
+      <div class="farma-nombre">Calcioantagonistas (CA) dihidropiridínicos</div>
+      <div class="farma-clase">Amlodipina · Nifedipina retard · Felodipina</div>
+      <div class="dosis-badge">Amlodipina: 2,5–10 mg/día · Nifedipina retard: 30–60 mg/día · Felodipina: 2,5–10 mg/día</div>
+      <div class="farma-detalle">Excelente para HTA en ancianos, afrodescendientes, HTA sistólica aislada y angina de pecho. Neutros metabólicamente — no afectan glucemia ni lípidos. Efectos adversos: edemas maleolares (más frecuente con amlodipina), rubor, cefalea. La amlodipina es el más usado por su larga vida media y buena tolerancia.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Diuréticos tiazídicos</div>
+      <div class="farma-clase">Hidroclorotiazida (HCTZ) · Clortalidona · Indapamida</div>
+      <div class="dosis-badge">HCTZ: 12,5–25 mg/día · Clortalidona: 12,5–25 mg/día · Indapamida: 1,5–2,5 mg/día</div>
+      <div class="farma-detalle">Primera línea especialmente en HTA sistólica aislada, ancianos, afrodescendientes y combinaciones. La clortalidona e indapamida tienen mejor evidencia de reducción de eventos CV que la HCTZ. Efectos adversos: hipokalemia, hiponatremia, hiperuricemia, hiperglucemia. Monitorear electrolitos al inicio y con cambios de dosis.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Betabloqueantes</div>
+      <div class="farma-clase">Atenolol · Bisoprolol · Metoprolol · Carvedilol · Nebivolol</div>
+      <div class="dosis-badge">Bisoprolol: 2,5–10 mg/día · Atenolol: 25–100 mg/día · Metoprolol: 50–200 mg/día · Carvedilol: 12,5–50 mg/día</div>
+      <div class="farma-detalle">Ya no son primera línea en HTA sin otras indicaciones. <span class="badge-si">Indicados</span> cuando hay: post-IAM, IC con FEyR reducida, angina, FA con respuesta ventricular rápida, migraña, temblor esencial. <span class="badge-no">Evitar</span> en EPOC, asma, bloqueo AV, arteriopatía periférica severa. Carvedilol y nebivolol tienen menor efecto sobre el metabolismo glucídico.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Diuréticos de asa</div>
+      <div class="farma-clase">Furosemida · Torasemida</div>
+      <div class="dosis-badge">Furosemida: 20–80 mg/día · Torasemida: 5–10 mg/día</div>
+      <div class="farma-detalle">No son primera línea en HTA sin IC. Indicados en HTA con IC concomitante o ERC avanzada (TFG &lt;30 ml/min) donde los tiazídicos pierden eficacia. Mayor potencia diurética que tiazídicos pero menor efecto antihipertensivo sostenido.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antagonistas de mineralocorticoides</div>
+      <div class="farma-clase">Espironolactona · Eplerenona</div>
+      <div class="dosis-badge">Espironolactona: 25–100 mg/día · Eplerenona: 25–50 mg/día</div>
+      <div class="farma-detalle">Cuarto fármaco de elección en HTA resistente. También primera línea en hiperaldosteronismo primario (causa secundaria frecuente). Monitorear K⁺ y función renal. Espironolactona puede producir ginecomastia — eplerenona es más selectiva.</div>
+    </div>
+  </div>
+
+  <!-- URGENCIA VS EMERGENCIA -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Urgencia vs Emergencia hipertensiva</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Urgencia hipertensiva</th><th>Emergencia hipertensiva</th></tr>
+        <tr><td><strong>PA</strong></td><td>Generalmente ≥180/110 mmHg</td><td>Generalmente ≥180/120 mmHg</td></tr>
+        <tr><td><strong>Daño de órgano blanco agudo</strong></td><td><span class="badge-no">Ausente</span></td><td><span class="badge-si">Presente</span> — encefalopatía, IAM, EAP, ACV, disección aórtica</td></tr>
+        <tr><td><strong>Síntomas</strong></td><td>Cefalea, ansiedad, epistaxis</td><td>Deterioro neurológico, disnea severa, dolor torácico</td></tr>
+        <tr><td><strong>Tratamiento</strong></td><td>Vía oral — descenso gradual en 24–48h</td><td>Vía IV — descenso controlado en minutos a horas</td></tr>
+        <tr><td><strong>Internación</strong></td><td>No necesaria — ambulatorio</td><td>UCI o unidad coronaria</td></tr>
+        <tr><td><strong>Meta de descenso</strong></td><td>10–25% en 24–48h</td><td>No más del 25% en la primera hora · luego gradual</td></tr>
+      </table>
+    </div>
+
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">Urgencia hipertensiva — tratamiento oral</div>
+      <div class="farma-clase">Captopril · Atenolol · Amlodipina</div>
+      <div class="dosis-badge">Captopril: 25 mg VO (puede repetirse a los 30–60 min) · Atenolol: 25–50 mg VO · Amlodipina: 5–10 mg VO</div>
+      <div class="farma-detalle">El captopril sublingual fue abandonado — no usar. Administrar VO y observar 1–2 horas. No descender la PA bruscamente — riesgo de hipoperfusión cerebral y coronaria. Ajustar el tratamiento crónico en la consulta siguiente.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Emergencia hipertensiva — tratamiento IV</div>
+      <div class="farma-clase">Labetalol · Nitroprusiato · Nicardipina · Nitroglicerina</div>
+      <div class="dosis-badge">Labetalol: 20 mg IV lento, repetir c/10 min hasta 300 mg · Nicardipina: 5–15 mg/h IV · Nitroprusiato: 0,25–10 mcg/kg/min IV (solo en UCI)</div>
+      <div class="farma-detalle">Elegir el fármaco según el órgano blanco comprometido. <strong>Encefalopatía/ACV:</strong> labetalol o nicardipina. <strong>EAP:</strong> nitroglicerina IV + furosemida. <strong>Disección aórtica:</strong> labetalol (objetivo PAS &lt;120 mmHg). <strong>IAM:</strong> nitroglicerina IV. El nitroprusiato solo en UCI por riesgo de toxicidad por cianuro.</div>
+    </div>
+  </div>
+
+  <!-- HTA SECUNDARIA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 HTA secundaria — cuándo sospecharla</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa</th><th>Prevalencia</th><th>Pista clínica</th><th>Estudio</th></tr>
+        <tr><td><strong>Hiperaldosteronismo primario</strong></td><td>5–10% de HTA</td><td>Hipokalemia espontánea, HTA resistente</td><td>Relación aldosterona/renina</td></tr>
+        <tr><td><strong>ERC / Nefropatía</strong></td><td>2–5%</td><td>Proteinuria, creatinina elevada, sedimento activo</td><td>Función renal, orina, eco renal</td></tr>
+        <tr><td><strong>Estenosis de arteria renal</strong></td><td>1–2%</td><td>HTA resistente, soplo abdominal, empeora con IECA</td><td>Eco-Doppler renal, Angio-TAC</td></tr>
+        <tr><td><strong>SAOS</strong></td><td>Frecuente</td><td>Obesidad, ronquidos, somnolencia, HTA resistente</td><td>Polisomnografía</td></tr>
+        <tr><td><strong>Hipotiroidismo</strong></td><td>Frecuente</td><td>Fatiga, constipación, PA diastólica elevada</td><td>TSH</td></tr>
+        <tr><td><strong>Feocromocitoma</strong></td><td>Raro 0,1–0,6%</td><td>Crisis hipertensivas paroxísticas, cefalea, sudoración, palpitaciones</td><td>Metanefrinas en orina/plasma</td></tr>
+        <tr><td><strong>Síndrome de Cushing</strong></td><td>Raro</td><td>Obesidad central, estrías, diabetes, osteoporosis</td><td>Cortisol libre urinario, supresión con dexametasona</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Criterios diagnósticos de HTA — consultorio vs MAPA</span>
+      <span class="pill">Clasificación — valores exactos niveles 1, 2 y 3</span>
+      <span class="pill">HTA de bata blanca vs enmascarada</span>
+      <span class="pill">¿Por qué iniciar con biterapia?</span>
+      <span class="pill">¿Cuándo NO usar betabloqueantes como primera línea?</span>
+      <span class="pill">Diferencia urgencia vs emergencia hipertensiva</span>
+      <span class="pill">¿Por qué no bajar la PA bruscamente?</span>
+      <span class="pill">IECA vs ARA II — diferencias y contraindicaciones</span>
+      <span class="pill">¿Cuándo sospechar HTA secundaria?</span>
+      <span class="pill">Hiperaldosteronismo primario — diagnóstico</span>
+      <span class="pill">Efectos adversos de cada clase de antihipertensivo</span>
+      <span class="pill">Meta de PA en diabéticos y post-ACV</span>
+      <span class="pill">¿Cuándo agregar espironolactona?</span>
+      <span class="pill">Tratamiento de emergencia hipertensiva por órgano blanco</span>
+      <span class="pill">Daño de órgano blanco — qué estudiar en cada uno</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Consenso Argentino de Hipertensión Arterial 2025 — FAC/SAHA/SAC · Guía de Práctica Clínica Nacional sobre HTA 2024 — Ministerio de Salud de la Nación Argentina · Guía ESC/ESH de HTA 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
