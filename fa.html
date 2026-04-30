@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibrilación Auricular — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --cardio: #d32f2f; --cardio-claro: #fdeaea; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: var(--cardio-claro); color: var(--cardio); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid var(--cardio); background: var(--cardio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .score-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--borde); }
+    .score-item:last-child { border-bottom: none; }
+    .score-pts { background: var(--cardio-claro); color: var(--cardio); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; min-width: 50px; text-align: center; }
+    .score-desc { font-size: 13px; color: var(--texto); line-height: 1.5; }
+    .badge-no { background: var(--cardio-claro); color: var(--cardio); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Fibrilación Auricular</div>
+  <div class="titulo">Fibrilación Auricular (FA)</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-fuente">Guía ESC 2024 · Consenso SAC 2023</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La FA es la <strong>arritmia cardíaca sostenida más frecuente</strong> — afecta al 2–4% de la población adulta y su prevalencia aumenta con la edad (10% en mayores de 80 años). Es la principal causa de ACV cardioembólico y de hospitalización por arritmia.</p>
+      <p>Se caracteriza por actividad eléctrica auricular desorganizada, sin ondas P definidas, con respuesta ventricular irregular. El riesgo de ACV en FA no anticoagulada es 5 veces mayor que en la población general.</p>
+      <p><strong>Clasificación por duración:</strong><br>
+      • <strong>FA de primer diagnóstico</strong> — primer episodio detectado, independientemente de la duración.<br>
+      • <strong>FA paroxística</strong> — termina espontáneamente en ≤7 días (habitualmente en &lt;48h).<br>
+      • <strong>FA persistente</strong> — dura &gt;7 días o requiere cardioversión para terminar.<br>
+      • <strong>FA persistente de larga duración</strong> — dura &gt;12 meses con estrategia de control de ritmo.<br>
+      • <strong>FA permanente</strong> — no se intenta restaurar el ritmo sinusal — decisión consensuada médico-paciente.</p>
+    </div>
+  </div>
+
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="hl-warn">Hasta el <strong>30% de los pacientes con FA son asintomáticos</strong> — la FA puede detectarse de forma incidental en un ECG de rutina o al investigar un ACV de causa desconocida.</div>
+    <div class="sintoma-grid" style="margin-top:10px;">
+      <div class="sintoma-item"><div class="sintoma-nombre">Palpitaciones</div><div class="sintoma-desc">Irregulares, rápidas — síntoma más frecuente. Pueden ser el único síntoma</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea</div><div class="sintoma-desc">Por taquicardia y pérdida de la contribución auricular al llenado ventricular</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fatiga / astenia</div><div class="sintoma-desc">Por bajo gasto cardíaco relativo durante la taquiarritmia</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Mareos / presíncope</div><div class="sintoma-desc">Por hipotensión transitoria durante episodios de FA rápida</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Dolor torácico</div><div class="sintoma-desc">Por isquemia subendocárdica en taquicardia prolongada — especialmente en cardiopatía de base</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Pulso irregular</div><div class="sintoma-desc">Signo clínico característico — "pulso arrítmico" sin patrón regular</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">ACV / AIT</div><div class="sintoma-desc">Primera manifestación en FA silente — siempre buscar FA en ACV criptogénico</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">IC descompensada</div><div class="sintoma-desc">FA rápida puede precipitar o agravar IC — taquimiocardiopatía si es crónica</div></div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="hl">El diagnóstico de FA requiere documentación electrocardiográfica — al menos 30 segundos en Holter o una derivación de ECG de 12 derivaciones. No se puede diagnosticar solo por el pulso irregular.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo / Utilidad</th></tr>
+        <tr><td><strong>ECG de 12 derivaciones</strong></td><td>Ausencia de ondas P, línea de base irregular (ondas f a 350–600 lpm), intervalos RR completamente irregulares. Frecuencia ventricular variable (habitualmente 100–160 lpm sin tratamiento)</td></tr>
+        <tr><td><strong>Holter 24–48h</strong></td><td>FA paroxística — detecta episodios intermitentes no capturados en ECG de reposo</td></tr>
+        <tr><td><strong>Monitor implantable (loop recorder)</strong></td><td>FA silente en ACV criptogénico — monitoreo continuo hasta 3 años. Detecta FA paroxística de baja carga</td></tr>
+        <tr><td><strong>Ecocardiograma</strong></td><td>Evalúa cardiopatía estructural subyacente, función ventricular, tamaño auricular, valvulopatías. Ecocardiograma transesofágico (ETE) — descarta trombo en orejuela antes de cardioversión</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>TSH (hipertiroidismo como causa), función renal (ajuste de dosis de ACOD), hemograma, ionograma, coagulación</td></tr>
+        <tr><td><strong>Smartwatch / wearables</strong></td><td>ESC 2024 reconoce su utilidad para detección — requieren confirmación con ECG médico</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHA2DS2-VA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Score CHA₂DS₂-VA — riesgo de ACV</div>
+    <div class="hl-info">La guía ESC 2024 actualiza el score — elimina el sexo femenino como factor de riesgo independiente (era CHA₂DS₂-VASc). El nuevo score se llama <strong>CHA₂DS₂-VA</strong>. Puntaje máximo: 9 puntos.</div>
+    <div class="card" style="margin-top:10px;">
+      <div class="score-item"><span class="score-pts">1 pt</span><span class="score-desc"><strong>C</strong> — Insuficiencia cardíaca congestiva o disfunción ventricular izquierda (FEVI ≤40%)</span></div>
+      <div class="score-item"><span class="score-pts">1 pt</span><span class="score-desc"><strong>H</strong> — Hipertensión arterial</span></div>
+      <div class="score-item"><span class="score-pts">2 pts</span><span class="score-desc"><strong>A₂</strong> — Edad ≥75 años</span></div>
+      <div class="score-item"><span class="score-pts">1 pt</span><span class="score-desc"><strong>D</strong> — Diabetes mellitus</span></div>
+      <div class="score-item"><span class="score-pts">2 pts</span><span class="score-desc"><strong>S₂</strong> — ACV, AIT o tromboembolismo previo</span></div>
+      <div class="score-item"><span class="score-pts">1 pt</span><span class="score-desc"><strong>V</strong> — Enfermedad vascular (IAM previo, arteriopatía periférica, placa aórtica)</span></div>
+      <div class="score-item"><span class="score-pts">1 pt</span><span class="score-desc"><strong>A</strong> — Edad 65–74 años</span></div>
+    </div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Puntaje CHA₂DS₂-VA</th><th>Indicación de anticoagulación</th></tr>
+        <tr><td><strong>0 puntos</strong></td><td><span class="badge-no">No anticoagular</span> — riesgo muy bajo</td></tr>
+        <tr><td><strong>1 punto</strong></td><td><span class="badge-no">No anticoagular de rutina</span> — considerar individualmente</td></tr>
+        <tr><td><strong>≥ 2 puntos</strong></td><td><span class="badge-si">Anticoagular</span> — beneficio claramente superior al riesgo hemorrágico</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">El ACV previo o AIT puntúa <strong>2 puntos</strong> — por sí solo ya indica anticoagulación independientemente de otros factores.</div>
+  </div>
+
+  <!-- ANTICOAGULACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Anticoagulación — prevención del ACV</div>
+    <div class="hl"><strong>Los ACOD (anticoagulantes orales directos) son la primera línea</strong> sobre warfarina en FA no valvular — mayor eficacia, menor riesgo de hemorragia intracraneal y más fácil manejo. La warfarina solo se mantiene en FA valvular (prótesis mecánica, estenosis mitral moderada-grave).</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Apixabán</div>
+      <div class="farma-clase">ACOD — inhibidor directo del factor Xa · primera línea preferida</div>
+      <div class="dosis-badge">5 mg cada 12h VO · Dosis reducida: 2,5 mg cada 12h si ≥2 de: edad ≥80 años, peso ≤60 kg, creatinina ≥1,5 mg/dl</div>
+      <div class="farma-detalle">El ACOD con mejor perfil de seguridad hemorrágica (ARISTOTLE trial). Menor tasa de hemorragia mayor que warfarina y que rivaroxabán. No requiere monitoreo rutinario de coagulación. Ajuste de dosis con criterios específicos — no reducir dosis empíricamente sin cumplir los criterios. Contraindicado con TFG &lt;15 ml/min.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Rivaroxabán</div>
+      <div class="farma-clase">ACOD — inhibidor directo del factor Xa</div>
+      <div class="dosis-badge">20 mg/día VO con la cena · Dosis reducida: 15 mg/día si TFG 15–49 ml/min</div>
+      <div class="farma-detalle">Administración una vez al día — ventaja para adherencia. Tomar siempre con la comida principal para maximizar absorción. Eficacia similar a warfarina con menor hemorragia intracraneal (ROCKET-AF). Contraindicado con TFG &lt;15 ml/min.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Dabigatrán</div>
+      <div class="farma-clase">ACOD — inhibidor directo de la trombina (factor IIa)</div>
+      <div class="dosis-badge">150 mg cada 12h VO · Dosis reducida: 110 mg cada 12h si edad ≥80 años o alto riesgo hemorrágico</div>
+      <div class="farma-detalle">Único ACOD con antídoto específico disponible (idarucizumab — Praxbind). Mayor eficacia que warfarina en prevención de ACV isquémico a dosis de 150 mg. Mayor tasa de dispepsia — tomar con comida. Contraindicado con TFG &lt;30 ml/min. Requiere buena función renal — monitorear periódicamente.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Warfarina (acenocumarol)</div>
+      <div class="farma-clase">Anticoagulante oral antagonista de vitamina K · segunda línea</div>
+      <div class="dosis-badge">Dosis individualizada según RIN · objetivo RIN 2,0–3,0 · control mensual</div>
+      <div class="farma-detalle">Reservada para FA valvular (prótesis mecánica, estenosis mitral reumática moderada-grave) donde los ACOD están contraindicados. En estos pacientes el objetivo de RIN puede ser más alto (2,5–3,5 con prótesis mecánica mitral). Múltiples interacciones farmacológicas y alimentarias — requiere educación del paciente.</div>
+    </div>
+  </div>
+
+  <!-- CONTROL DE FRECUENCIA -->
+  <div class="seccion">
+    <div class="sec-titulo">❤️ Control de frecuencia cardíaca</div>
+    <div class="hl-info">La <strong>meta de FC en reposo es &lt;110 lpm</strong> como objetivo inicial permisivo (guía ESC 2024). Objetivo más estricto (&lt;80 lpm) solo si persisten síntomas con FC &lt;110 lpm.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Fármaco</th><th>Dosis</th><th>Indicación preferida</th><th>Contraindicación</th></tr>
+        <tr><td><strong>Bisoprolol</strong></td><td>2,5–10 mg/día VO</td><td>Primera línea — especialmente con IC (FEVI ≤40%)</td><td>Bradicardia, bloqueo AV, broncoespasmo</td></tr>
+        <tr><td><strong>Metoprolol succinato</strong></td><td>25–200 mg/día VO</td><td>Primera línea — IC con FEVI reducida</td><td>Bradicardia, bloqueo AV</td></tr>
+        <tr><td><strong>Diltiazem</strong></td><td>120–360 mg/día VO</td><td>FEVI preservada (≥40%) — buena tolerancia</td><td><span class="badge-no">Contraindicado si FEVI &lt;40%</span></td></tr>
+        <tr><td><strong>Verapamilo</strong></td><td>120–360 mg/día VO</td><td>FEVI preservada — alternativa al diltiazem</td><td><span class="badge-no">Contraindicado si FEVI &lt;40%</span></td></tr>
+        <tr><td><strong>Digoxina</strong></td><td>0,125–0,25 mg/día VO</td><td>IC con FEVI ≤40% — complemento a betabloqueante</td><td>Margen estrecho — monitorear nivel sérico</td></tr>
+        <tr><td><strong>Amiodarona IV</strong></td><td>150–300 mg IV en 10–20 min + infusión</td><td>FA con IC aguda e inestabilidad hemodinámica</td><td>Tiroideopatía, toxicidad pulmonar previa</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CONTROL DE RITMO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔄 Control de ritmo — cardioversión y antiarrítmicos</div>
+    <div class="hl-warn"><strong>Regla fundamental de la cardioversión:</strong> si la FA dura &gt;24–48h o duración desconocida → anticoagular al menos 3 semanas antes de cardioverter O realizar ETE para descartar trombo en orejuela izquierda.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cardioversión eléctrica (CVE)</div>
+      <div class="farma-clase">Choque sincronizado · primera línea en inestabilidad hemodinámica</div>
+      <div class="dosis-badge">200 J bifásico sincronizado · repetir con mayor energía si no convierte</div>
+      <div class="farma-detalle">Indicación urgente si FA con inestabilidad hemodinámica (hipotensión, IC aguda, angina). En FA estable, elegir entre CVE y cardioversión farmacológica según duración, cardiopatía de base y preferencia del paciente. La CVE tiene mayor tasa de conversión a ritmo sinusal que la farmacológica.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Flecainida — cardioversión farmacológica</div>
+      <div class="farma-clase">Antiarrítmico clase IC · "pill in the pocket"</div>
+      <div class="dosis-badge">200–300 mg VO dosis única ("pastilla de bolsillo") · o 1,5–3 mg/kg IV en 10–20 min</div>
+      <div class="farma-detalle">Muy eficaz para cardioversión de FA paroxística en pacientes <strong>sin cardiopatía estructural</strong>. Estrategia "pill in the pocket" — el paciente toma la pastilla cuando siente la FA. <span class="badge-no">Contraindicada</span> en cardiopatía isquémica, IC, HVI significativa o cualquier cardiopatía estructural — riesgo de arritmias ventriculares graves.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Amiodarona — mantenimiento del ritmo sinusal</div>
+      <div class="farma-clase">Antiarrítmico clase III · con cardiopatía estructural</div>
+      <div class="dosis-badge">Carga: 600–800 mg/día VO por 4 semanas · Mantenimiento: 100–200 mg/día VO</div>
+      <div class="farma-detalle">El antiarrítmico más eficaz para mantener el ritmo sinusal — de elección cuando hay cardiopatía estructural (IC, HVI, cardiopatía isquémica). Múltiples efectos adversos a largo plazo: toxicidad tiroidea (hipo e hipertiroidismo), pulmonar, hepática, fotosensibilidad, depósitos corneales. Requiere monitoreo de TSH, transaminasas y Rx tórax cada 6–12 meses.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Propafenona</div>
+      <div class="farma-clase">Antiarrítmico clase IC · sin cardiopatía estructural</div>
+      <div class="dosis-badge">450–600 mg VO dosis única (cardioversión) · Mantenimiento: 150–300 mg cada 8h VO</div>
+      <div class="farma-detalle">Alternativa a flecainida para cardioversión y mantenimiento en FA sin cardiopatía estructural. Similar perfil de contraindicaciones que flecainida. Tiene efecto betabloqueante leve adicional. Disponible en Argentina — más accesible que algunos otros antiarrítmicos.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ablación con catéter (aislamiento de venas pulmonares)</div>
+      <div class="farma-clase">Tratamiento intervencionista · control de ritmo de primera línea en seleccionados</div>
+      <div class="dosis-badge">Procedimiento electrofisiológico — no farmacológico</div>
+      <div class="farma-detalle">La guía ESC 2024 posiciona la ablación como opción de <strong>primera línea en FA paroxística sintomática</strong> en centros con experiencia, incluso antes de probar antiarrítmicos. También indicada en FA persistente con síntomas refractarios y en IC con taquimiocardiopatía. Tasa de éxito: 70–80% a 1 año en FA paroxística. Mantener anticoagulación al menos 3 meses post-ablación.</div>
+    </div>
+  </div>
+
+  <!-- PROTOCOLO AF-CARE -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Protocolo AF-CARE — ESC 2024</div>
+    <div class="card">
+      <p>La guía ESC 2024 reemplaza el protocolo ABC por <strong>AF-CARE</strong>:</p>
+      <p>🔸 <strong>C — Comorbilidades:</strong> identificar y tratar HTA, obesidad, diabetes, SAOS, alcohol, sedentarismo. Son causa y factor de progresión de la FA.<br>
+      🔸 <strong>A — Anticoagulación:</strong> prevención del ACV según CHA₂DS₂-VA. ACOD de primera línea.<br>
+      🔸 <strong>R — Reducción de síntomas:</strong> control de frecuencia y/o ritmo según preferencias del paciente y cardiopatía de base.<br>
+      🔸 <strong>E — Evaluación dinámica:</strong> reevaluar periódicamente el riesgo tromboembólico, el control de síntomas y las comorbilidades — el manejo debe adaptarse en el tiempo.</p>
+    </div>
+  </div>
+
+  <!-- FA Y SITUACIONES ESPECIALES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Situaciones especiales</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Consideración clave</th></tr>
+        <tr><td><strong>FA + ACV agudo</strong></td><td>No anticoagular en las primeras 24h post-ACV (riesgo de transformación hemorrágica). Iniciar ACOD entre 4–14 días según tamaño del infarto</td></tr>
+        <tr><td><strong>FA + IC con FEVI reducida</strong></td><td>Control de frecuencia con betabloqueante + digoxina. Ablación si taquimiocardiopatía. Amiodarona si control de ritmo. ACOD para anticoagulación</td></tr>
+        <tr><td><strong>FA + coronariopatía</strong></td><td>Doble terapia (ACOD + clopidogrel) por 12 meses post-SCA. Luego monoterapia con ACOD. Evitar triple terapia salvo casos seleccionados</td></tr>
+        <tr><td><strong>FA valvular (prótesis mecánica)</strong></td><td>Warfarina — los ACOD están contraindicados. Objetivo RIN 2,5–3,5 en prótesis mitral</td></tr>
+        <tr><td><strong>FA en embarazo</strong></td><td>Heparina (HNF o HBPM) — los ACOD están contraindicados. Cardioversión eléctrica segura en cualquier trimestre</td></tr>
+        <tr><td><strong>FA + sangrado activo</strong></td><td>Suspender anticoagulación temporalmente — reevaluar riesgo-beneficio. Cierre percutáneo de orejuela si anticoagulación contraindicada permanentemente</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Clasificación de FA por duración — 5 tipos</span>
+      <span class="pill">ECG de FA — ausencia de P + RR irregular</span>
+      <span class="pill">Score CHA₂DS₂-VA — componentes y puntaje</span>
+      <span class="pill">Cambio ESC 2024 — eliminación del sexo femenino</span>
+      <span class="pill">¿Cuándo anticoagular? — CHA₂DS₂-VA ≥2</span>
+      <span class="pill">ACOD vs warfarina — cuándo cada uno</span>
+      <span class="pill">Dosis de apixabán y criterios de reducción</span>
+      <span class="pill">¿Cuándo usar diltiazem? — solo si FEVI ≥40%</span>
+      <span class="pill">Flecainida — contraindicación en cardiopatía estructural</span>
+      <span class="pill">Regla de cardioversión y duración de FA</span>
+      <span class="pill">¿Cuándo ETE antes de cardioversión?</span>
+      <span class="pill">Amiodarona — efectos adversos a largo plazo</span>
+      <span class="pill">Ablación — primera línea en FA paroxística sintomática</span>
+      <span class="pill">FA + ACV — cuándo iniciar anticoagulación</span>
+      <span class="pill">FA valvular — por qué ACOD contraindicado</span>
+      <span class="pill">Protocolo AF-CARE — 4 componentes</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Guía ESC 2024 para el Manejo de la Fibrilación Auricular · Van Gelder IC et al. European Heart Journal 2024 · Consenso de Fibrilación Auricular — Sociedad Argentina de Cardiología (SAC) 2023 · Guías ACC/AHA/HRS 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
