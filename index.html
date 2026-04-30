@@ -57,6 +57,8 @@
     .tag-neuro { background: #EEEDFE; color: #3C3489; }
     .tag-neumo { background: #E6F1FB; color: #1A5E9A; }
     .tag-infecto { background: #FFF3E0; color: #E65100; }
+    .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
+    .tag-hemato { background: #F3E5F5; color: #6A1B9A; }
     .art-arrow { color: var(--texto-ter); font-size: 16px; }
     .art-pro { font-size: 10px; background: var(--verde); color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; }
     .btn-cafecito { position: fixed; bottom: 24px; right: 24px; background: #00bb2d; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, background 0.2s; }
@@ -95,6 +97,8 @@
     <button class="esp-btn" data-filter="neumo">Neumonología</button>
     <button class="esp-btn" data-filter="endo">Endocrinología</button>
     <button class="esp-btn" data-filter="infecto">Infectología</button>
+    <button class="esp-btn" data-filter="gastro">Gastroenterología</button>
+    <button class="esp-btn" data-filter="hemato">Hematología</button>
   </div>
 
   <div class="two-col">
@@ -149,6 +153,22 @@
           <div class="art-titulo">Dengue — Manejo Clínico</div>
           <div class="art-meta"><span class="art-pro">PRO</span><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
         </a>
+        <a href="sepsis.html" class="art-row" data-cat="infecto">
+          <div class="art-titulo">Sepsis y Shock Séptico</div>
+          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="fa.html" class="art-row" data-cat="cardio">
+          <div class="art-titulo">Fibrilación Auricular</div>
+          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="pancreatitis.html" class="art-row" data-cat="gastro">
+          <div class="art-titulo">Pancreatitis Aguda</div>
+          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="tep.html" class="art-row" data-cat="hemato neumo">
+          <div class="art-titulo">Tromboembolismo Pulmonar (TEP)</div>
+          <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
+        </a>
       </div>
     </div>
   </div>
@@ -185,6 +205,10 @@
     { titulo: 'Diabetes Mellitus Tipo 2', url: 'dm2.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'diabetes dm2 metformina insulina glucemia hba1c sulfonilurea sglt2 glp1' },
     { titulo: 'Obesidad y Manejo Metabólico', url: 'obesidad.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'obesidad imc sobrepeso metformina orlistat semaglutida dieta ejercicio tirzepatida' },
     { titulo: 'Dengue — Manejo Clínico', url: 'dengue.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'dengue fiebre aedes mosquito trombocitopenia ns1 hidratacion plaquetas' },
+    { titulo: 'Sepsis y Shock Séptico', url: 'sepsis.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'sepsis shock septico sofa qsofa antibioticos lactato noradrenalina uci uti bacteriemia' },
+    { titulo: 'Fibrilación Auricular', url: 'fa.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'fibrilacion auricular fa anticoagulacion chadsvasc warfarina naco amiodarona cardioversion betabloqueante' },
+    { titulo: 'Pancreatitis Aguda', url: 'pancreatitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'pancreatitis aguda amilasa lipasa ranson apache bisap ayuno hidratacion via biliar coledocolitiasis' },
+    { titulo: 'Tromboembolismo Pulmonar', url: 'tep.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'tep tromboembolismo pulmonar wells pesi anticoagulacion hbpm heparina alteplasa embolia trombosis' },
   ];
 
   const input = document.getElementById('search-input');
