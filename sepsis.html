@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepsis y Shock Séptico — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --infecto: #7b1fa2; --infecto-claro: #f3e5f5; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--infecto-claro); color: var(--infecto); }
+    .tag-uci { background: #FCEBEB; color: #A32D2D; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-infecto { border-left: 3px solid var(--infecto); background: var(--infecto-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .score-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--borde); }
+    .score-item:last-child { border-bottom: none; }
+    .score-pts { background: var(--infecto-claro); color: var(--infecto); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+    .score-desc { font-size: 13px; color: var(--texto); line-height: 1.5; }
+    .tiempo-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--borde); }
+    .tiempo-row:last-child { border-bottom: none; }
+    .tiempo-badge { background: #fff5f5; color: #e74c3c; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+    .tiempo-desc { font-size: 13px; color: var(--texto); line-height: 1.5; }
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › Sepsis</div>
+  <div class="titulo">Sepsis y Shock Séptico</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-uci">Emergencias / UCI</span>
+    <span class="tag tag-fuente">Surviving Sepsis Campaign 2021 · SSC 2026 · Sepsis-3</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave — definiciones Sepsis-3</div>
+    <div class="card">
+      <p><strong>Sepsis:</strong> disfunción orgánica potencialmente mortal causada por una respuesta desregulada del huésped a la infección. Ya no se usa el término "sepsis grave" — toda sepsis implica disfunción orgánica.</p>
+      <p><strong>Shock séptico:</strong> subconjunto de la sepsis con alteraciones circulatorias, celulares y metabólicas que aumentan la mortalidad. Se define por la presencia de los <strong>3 criterios</strong>: (1) sepsis confirmada o sospechada, (2) hipotensión que requiere vasopresores para mantener TAM ≥65 mmHg, y (3) lactato &gt;2 mmol/L a pesar de resucitación adecuada con fluidos.</p>
+      <p>La sepsis es la <strong>primera causa de muerte en UCI</strong> a nivel mundial. El diagnóstico y tratamiento en la primera hora ("hora dorada") permite alcanzar una tasa de supervivencia hasta del 80% — el retraso más allá de seis horas reduce la supervivencia al 30%.</p>
+    </div>
+  </div>
+
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="hl-danger">La sepsis es un <strong>diagnóstico clínico</strong> — no debe descartarse ni confirmarse con un solo biomarcador. Sospecharla ante cualquier paciente con infección y deterioro del estado general.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Sistema</th><th>Manifestaciones</th></tr>
+        <tr><td><strong>General</strong></td><td>Fiebre &gt;38°C o hipotermia &lt;36°C, escalofríos, taquicardia &gt;90 lpm, taquipnea &gt;20 rpm</td></tr>
+        <tr><td><strong>Neurológico</strong></td><td>Alteración del sensorio, confusión, agitación, somnolencia — frecuentemente el primer signo en ancianos</td></tr>
+        <tr><td><strong>Cardiovascular</strong></td><td>Hipotensión (PAS &lt;90 o caída &gt;40 del basal), taquicardia, piel moteada, relleno capilar &gt;2 seg</td></tr>
+        <tr><td><strong>Renal</strong></td><td>Oliguria &lt;0,5 ml/kg/h, creatinina elevada — IRA por hipoperfusión</td></tr>
+        <tr><td><strong>Respiratorio</strong></td><td>Taquipnea, hipoxemia, necesidad de O₂ suplementario — puede progresar a SDRA</td></tr>
+        <tr><td><strong>Hepático</strong></td><td>Ictericia, bilirrubina &gt;2 mg/dl — disfunción hepática por hipoperfusión</td></tr>
+        <tr><td><strong>Hematológico</strong></td><td>Trombocitopenia, coagulopatía, CID en casos graves</td></tr>
+        <tr><td><strong>Metabólico</strong></td><td>Hiperlactatemia &gt;2 mmol/L — marcador de hipoperfusión tisular</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">En <strong>ancianos, inmunosuprimidos y neonatos</strong> la sepsis puede presentarse sin fiebre ni leucocitosis. La hipotermia, la confusión o la oliguria aisladas deben hacer sospechar sepsis en estos grupos.</div>
+  </div>
+
+  <!-- SCORES -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Scores — qSOFA y SOFA</div>
+    <div class="hl-infecto">El <strong>qSOFA</strong> es la herramienta de tamizaje rápido para detectar sepsis fuera de UCI. El <strong>SOFA</strong> confirma disfunción orgánica y define sepsis formalmente.</div>
+
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th colspan="3">qSOFA — Quick SOFA (tamizaje rápido, sin laboratorio)</th></tr>
+        <tr><th>Criterio</th><th>Valor</th><th>Puntaje</th></tr>
+        <tr><td>Frecuencia respiratoria</td><td>≥ 22 rpm</td><td>1 punto</td></tr>
+        <tr><td>Alteración del sensorio</td><td>Glasgow &lt; 15</td><td>1 punto</td></tr>
+        <tr><td>Presión arterial sistólica</td><td>≤ 100 mmHg</td><td>1 punto</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">qSOFA ≥ 2 puntos → alta probabilidad de sepsis → activar protocolo, solicitar lactato y hemocultivos, iniciar antibióticos. No es diagnóstico por sí solo — es una alarma clínica.</div>
+
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th colspan="2">SOFA — Sequential Organ Failure Assessment (define disfunción orgánica)</th></tr>
+        <tr><th>Órgano / Sistema</th><th>Variable evaluada</th></tr>
+        <tr><td><strong>Respiratorio</strong></td><td>PaO₂/FiO₂ (ratio)</td></tr>
+        <tr><td><strong>Coagulación</strong></td><td>Plaquetas (×10³/µL)</td></tr>
+        <tr><td><strong>Hepático</strong></td><td>Bilirrubina (mg/dl)</td></tr>
+        <tr><td><strong>Cardiovascular</strong></td><td>TAM o dosis de vasopresores</td></tr>
+        <tr><td><strong>Neurológico</strong></td><td>Glasgow</td></tr>
+        <tr><td><strong>Renal</strong></td><td>Creatinina o diuresis</td></tr>
+      </table>
+    </div>
+    <div class="hl"><strong>Definición formal de sepsis (Sepsis-3):</strong> infección sospechada o confirmada + aumento del SOFA ≥ 2 puntos respecto al basal. Cada punto extra de SOFA aumenta la mortalidad aproximadamente un 10%.</div>
+  </div>
+
+  <!-- TIEMPOS -->
+  <div class="seccion">
+    <div class="sec-titulo">⏱️ Tiempos clave — la hora dorada</div>
+    <div class="card">
+      <div class="tiempo-row"><span class="tiempo-badge">Inmediato</span><span class="tiempo-desc">Reconocimiento clínico + activación del protocolo "código sepsis" — similar al código IAM o código ACV</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">1 hora</span><span class="tiempo-desc">Hemocultivos (2 pares) + lactato + antibióticos en shock séptico o sepsis de alta probabilidad</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">1–3 horas</span><span class="tiempo-desc">Antibióticos en sepsis posible sin shock + resucitación con fluidos (30 ml/kg de cristaloides si hipotensión o lactato &gt;4)</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">6 horas</span><span class="tiempo-badge" style="background:#FAEEDA;color:#854F0B;">Control de foco</span><span class="tiempo-desc">Identificar y controlar el foco infeccioso (drenaje, desbridamiento, remoción de catéter)</span></div>
+    </div>
+    <div class="hl-danger"><strong>Antibióticos primero, hemocultivos después</strong> — si hay dificultad para obtener hemocultivos, NO demorar los antibióticos. Cada hora de retraso en el antibiótico aumenta la mortalidad del shock séptico aproximadamente un 7%.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Estudios diagnósticos</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo / Utilidad</th><th>Observación</th></tr>
+        <tr><td><strong>Hemocultivos</strong></td><td>2 pares (aerobio + anaerobio) de sitios distintos — identifican el agente causal en 30–40%</td><td>Obtener ANTES del antibiótico si no demora &gt;45 min</td></tr>
+        <tr><td><strong>Lactato sérico</strong></td><td>&gt;2 mmol/L → hipoperfusión. &gt;4 mmol/L → shock séptico independientemente de la PA</td><td>Repetir a las 2h — la aclaración del lactato guía la resucitación</td></tr>
+        <tr><td><strong>Procalcitonina (PCT)</strong></td><td>&gt;0,5 ng/ml sugiere infección bacteriana — útil para guiar desescalada antibiótica</td><td>Repetir cada 24–48h — la caída del 80% permite suspender antibióticos</td></tr>
+        <tr><td><strong>Hemograma completo</strong></td><td>Leucocitosis &gt;12.000 o leucopenia &lt;4.000, trombocitopenia, desvío a la izquierda</td><td>Leucopenia es de peor pronóstico</td></tr>
+        <tr><td><strong>PCR</strong></td><td>Elevada — inespecífica pero útil para seguimiento</td><td>Tarda más en normalizarse que la PCT</td></tr>
+        <tr><td><strong>Función renal y hepática</strong></td><td>Creatinina, urea, bilirrubina, TGO/TGP — evalúan disfunción orgánica (SOFA)</td><td>Componentes del score SOFA</td></tr>
+        <tr><td><strong>Coagulación</strong></td><td>TP, KPTT, fibrinógeno, dímero D — descartar CID</td><td>Plaquetas &lt;100.000 = disfunción orgánica</td></tr>
+        <tr><td><strong>Gasometría arterial</strong></td><td>PaO₂/FiO₂, pH, bicarbonato, lactato — evalúa oxigenación y acidosis metabólica</td><td>Esencial en todo paciente con sepsis grave</td></tr>
+        <tr><td><strong>Cultivos del foco sospechado</strong></td><td>Urocultivo, cultivo de esputo, líquido pleural, LCR según sospecha clínica</td><td>Siempre antes del antibiótico</td></tr>
+        <tr><td><strong>Imagen</strong></td><td>Rx tórax, ecografía abdominal, TAC según foco sospechado</td><td>Para identificar y caracterizar el foco</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento — resucitación y antibióticos</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Resucitación con fluidos</div>
+      <div class="farma-clase">Cristaloides isotónicos · primera línea</div>
+      <div class="dosis-badge">30 ml/kg de solución fisiológica 0,9% o Ringer lactato IV en las primeras 3 horas</div>
+      <div class="farma-detalle">Iniciar inmediatamente ante hipotensión o lactato &gt;4 mmol/L. Después de la carga inicial, guiar la resucitación con parámetros dinámicos (variación de la presión de pulso, ecocardiografía) — un protocolo rígido no es superior a la reevaluación frecuente. <span class="badge-no">Evitar</span> soluciones con almidón (HES) — aumentan el riesgo de IRA y mortalidad. El Ringer lactato puede ser preferible al SF 0,9% para evitar la acidosis hiperclorémica.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Noradrenalina (norepinefrina)</div>
+      <div class="farma-clase">Vasopresor · primera línea en shock séptico</div>
+      <div class="dosis-badge">0,1–3 mcg/kg/min en infusión IV continua · titular para TAM ≥65 mmHg (≥60–65 en mayores de 65 años)</div>
+      <div class="farma-detalle">Vasopresor de elección en shock séptico — efecto vasoconstrictor potente con menor taquicardia que la adrenalina. Iniciar si la TAM &lt;65 mmHg persiste tras la resucitación con fluidos. Colocar vía central lo antes posible — puede iniciarse por vía periférica de calibre grueso en los primeros minutos. Las guías 2026 introducen la hipotensión permisiva en mayores de 65 años, con objetivo de TAM de 60–65 mmHg.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Vasopresina</div>
+      <div class="farma-clase">Vasopresor · segundo agente en shock refractario</div>
+      <div class="dosis-badge">0,03–0,04 UI/min IV fija (no titular) · agregar a noradrenalina cuando dosis &gt;0,25–0,5 mcg/kg/min</div>
+      <div class="farma-detalle">Segundo vasopresor de elección cuando la noradrenalina a dosis altas no logra el objetivo de TAM. Permite reducir la dosis de noradrenalina (efecto ahorrador). No usar como vasopresor único de primera línea en shock séptico.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hidrocortisona</div>
+      <div class="farma-clase">Corticoide · insuficiencia suprarrenal relativa en shock refractario</div>
+      <div class="dosis-badge">200 mg/día IV en infusión continua o 50 mg c/6h IV · por 7 días o hasta resolución del shock</div>
+      <div class="farma-detalle">Indicada en shock séptico refractario a fluidos y vasopresores a dosis altas. Mejora la hemodinamia y reduce la duración del shock, pero no reduce mortalidad en todos los estudios. <span class="badge-no">No hacer</span> prueba de estimulación con ACTH para indicarla — no predice la respuesta al tratamiento.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antibióticos empíricos — según foco sospechado</div>
+      <div class="farma-clase">Cobertura de amplio espectro · ajustar según cultivos</div>
+      <div class="dosis-badge">Iniciar dentro de la 1ª hora en shock séptico · dentro de las 3 horas en sepsis sin shock</div>
+      <div class="farma-detalle">
+        La elección depende del foco sospechado, el contexto del paciente y la epidemiología local. Principios generales:<br><br>
+        <strong>Foco pulmonar (NAC grave):</strong> Piperacilina-Tazobactam 4,5 g c/6h IV + Azitromicina 500 mg/día IV<br>
+        <strong>Foco urinario (urosepsis):</strong> Ceftriaxona 1–2 g/día IV o Piperacilina-Tazobactam 4,5 g c/8h IV<br>
+        <strong>Foco abdominal:</strong> Piperacilina-Tazobactam 4,5 g c/6h IV ± Metronidazol 500 mg c/8h IV<br>
+        <strong>Foco desconocido / shock séptico:</strong> Meropenem 1–2 g c/8h IV + Vancomicina 25–30 mg/kg/día IV (si sospecha de SAMR)<br>
+        <strong>Paciente inmunocomprometido:</strong> Meropenem + Vancomicina ± Fluconazol 400 mg/día IV (si sospecha fúngica)<br><br>
+        La cobertura de bacterias multirresistentes se recomienda solo en pacientes de alto riesgo (colonización previa, infección previa, antibioterapia prolongada); en pacientes de bajo riesgo se desaconseja explícitamente la cobertura empírica de MDR.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Desescalada antibiótica — guiada por procalcitonina</div>
+      <div class="farma-clase">Optimización del tratamiento · reducir resistencia y toxicidad</div>
+      <div class="dosis-badge">Ajustar antibiótico a las 48–72h según cultivos · suspender si PCT cae &gt;80% del valor pico</div>
+      <div class="farma-detalle">Una vez obtenidos los resultados de cultivos, ajustar el antibiótico al espectro más estrecho posible (desescalada). La procalcitonina es el biomarcador más útil para guiar la duración — una caída del 80% del valor pico es criterio para considerar la suspensión. La duración habitual es 7–10 días — acortar si hay buena respuesta clínica.</div>
+    </div>
+  </div>
+
+  <!-- MEDIDAS DE SOPORTE -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Medidas de soporte en UCI</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Medida</th><th>Detalle</th></tr>
+        <tr><td><strong>Ventilación protectora (si ARM)</strong></td><td>Volumen tidal 6 ml/kg de peso ideal · presión meseta &lt;30 cmH₂O · PEEP según oxigenación</td></tr>
+        <tr><td><strong>Control glucémico</strong></td><td>Mantener glucemia 140–180 mg/dl — evitar hipoglucemia (peor que hiperglucemia moderada)</td></tr>
+        <tr><td><strong>Profilaxis TVP</strong></td><td>HBPM (enoxaparina 40 mg/día SC) a menos que haya contraindicación activa</td></tr>
+        <tr><td><strong>Profilaxis de úlcera de estrés</strong></td><td>Omeprazol 40 mg/día IV en pacientes con VM o coagulopatía</td></tr>
+        <tr><td><strong>Nutrición enteral precoz</strong></td><td>Iniciar dentro de las 24–48h si el paciente está hemodinámicamente estable</td></tr>
+        <tr><td><strong>Sedoanalgesia mínima</strong></td><td>Protocolo de mínima sedación — evaluar diariamente la posibilidad de despertar</td></tr>
+        <tr><td><strong>Transfusión de GR</strong></td><td>Solo si Hb &lt;7 g/dl (en ausencia de isquemia activa, hemorragia o hipoxemia grave)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FOCOS MÁS FRECUENTES -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Focos de sepsis — los más frecuentes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Foco</th><th>Frecuencia</th><th>Gérmenes habituales</th><th>Pista clínica</th></tr>
+        <tr><td><strong>Pulmonar (NAC/HAP)</strong></td><td>~30%</td><td>S. pneumoniae, K. pneumoniae, P. aeruginosa (HAP)</td><td>Tos, disnea, consolidación en Rx</td></tr>
+        <tr><td><strong>Urinario (urosepsis)</strong></td><td>~25%</td><td>E. coli, Klebsiella, Proteus</td><td>Disuria, bacteriuria, piuria</td></tr>
+        <tr><td><strong>Abdominal</strong></td><td>~20%</td><td>E. coli, anaerobios, Enterococcus</td><td>Dolor abdominal, peritonismo, aire libre</td></tr>
+        <tr><td><strong>Catéter / BRCAV</strong></td><td>~15%</td><td>S. aureus, Staphylococcus coagulasa negativo, Cándida</td><td>Inflamación en sitio de inserción, bacteriemia sin foco</td></tr>
+        <tr><td><strong>Piel y partes blandas</strong></td><td>~5%</td><td>S. aureus, Streptococcus A, anaerobios (fascitis)</td><td>Celulitis, úlceras, dolor desproporcionado (fascitis)</td></tr>
+        <tr><td><strong>SNC (meningitis)</strong></td><td>~2%</td><td>N. meningitidis, S. pneumoniae, L. monocytogenes</td><td>Rigidez de nuca, fotofobia, petequias</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Mecanismo</th><th>Manejo</th></tr>
+        <tr><td><strong>SDRA</strong></td><td>Lesión pulmonar inflamatoria — PaO₂/FiO₂ &lt;300</td><td>Ventilación protectora, decúbito prono si &lt;150</td></tr>
+        <tr><td><strong>IRA (injuria renal aguda)</strong></td><td>Hipoperfusión + toxicidad directa</td><td>Resucitación adecuada, evitar nefrotóxicos, diálisis si necesario</td></tr>
+        <tr><td><strong>CID (coagulación intravascular diseminada)</strong></td><td>Activación sistémica de la coagulación</td><td>Tratar la sepsis de base, PFC y plaquetas si sangrado activo</td></tr>
+        <tr><td><strong>Disfunción miocárdica séptica</strong></td><td>Depresión reversible de la función ventricular</td><td>Dobutamina si bajo gasto + vasopresores</td></tr>
+        <tr><td><strong>Encefalopatía séptica</strong></td><td>Disfunción cerebral por inflamación sistémica</td><td>Tratar la sepsis de base, evitar sedación excesiva</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Definición de sepsis vs shock séptico (Sepsis-3)</span>
+      <span class="pill">Criterios de shock séptico — los 3 juntos</span>
+      <span class="pill">qSOFA — 3 criterios y puntaje de alarma</span>
+      <span class="pill">¿Por qué ya no existe "sepsis grave"?</span>
+      <span class="pill">Tiempo para antibióticos — 1h en shock, 3h en sepsis</span>
+      <span class="pill">¿Cuándo NO demorar antibióticos por hemocultivos?</span>
+      <span class="pill">Vasopresor de primera línea — noradrenalina</span>
+      <span class="pill">Meta de TAM en shock séptico — 65 mmHg</span>
+      <span class="pill">¿Cuándo agregar vasopresina?</span>
+      <span class="pill">¿Cuándo usar hidrocortisona en sepsis?</span>
+      <span class="pill">Resucitación con fluidos — 30 ml/kg de cristaloides</span>
+      <span class="pill">Lactato &gt;4 — qué implica y qué hacer</span>
+      <span class="pill">Desescalada antibiótica — rol de la procalcitonina</span>
+      <span class="pill">Foco más frecuente de sepsis — pulmonar y urinario</span>
+      <span class="pill">SOFA — 6 órganos evaluados</span>
+      <span class="pill">Glucemia objetivo en sepsis — 140–180 mg/dl</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021 · Surviving Sepsis Campaign 2026 (actualización) · Singer M et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA 2016 · Protocolo de Atención Integral de Sepsis — IMSS 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
