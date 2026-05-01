@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERC: Guía Clínica — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-med: #0F6E56;
+      --texto: #1a1a1a; --texto-sec: #5F5E5A; --borde: #e8e8e8;
+      --fondo: #fafaf8; --blanco: #ffffff;
+      --rojo: #FCEBEB; --rojo-text: #A32D2D; --rojo-border: #F09595;
+      --amber: #FAEEDA; --amber-text: #854F0B;
+      --azul: #E6F1FB; --azul-text: #185FA5;
+      --gris: #F1EFE8; --gris-text: #5F5E5A;
+      --nefro: #185FA5; --nefro-claro: #E6F1FB;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
+
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+    .logo span { color: var(--verde); }
+    .nav-back { text-decoration: none; color: var(--verde); font-weight: 500; font-size: 14px; }
+
+    main { max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem 4rem; }
+
+    .page-header { display: flex; align-items: center; gap: 14px; margin-bottom: 2rem; }
+    .page-icon { background: var(--nefro-claro); border-radius: 12px; padding: 10px 14px; font-size: 22px; color: var(--nefro); font-weight: bold; }
+    .page-title { font-family: 'Fraunces', serif; font-size: 32px; line-height: 1.2; }
+    .page-sub { font-size: 13px; color: var(--texto-sec); margin-top: 2px; }
+
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--borde); margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab { padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--texto-sec); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; border-radius: 4px 4px 0 0; }
+    .tab:hover { color: var(--texto); background: var(--fondo); }
+    .tab.active { color: var(--nefro); border-bottom-color: var(--nefro); }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .card-title { font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+    .badge-teal { background: var(--verde-claro); color: var(--verde-med); }
+    .badge-amber { background: var(--amber); color: var(--amber-text); }
+    .badge-red { background: var(--rojo); color: var(--rojo-text); }
+    .badge-blue { background: var(--nefro-claro); color: var(--nefro); }
+    .badge-gray { background: var(--gris); color: var(--gris-text); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+
+    h3 { font-size: 14px; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--texto); }
+    h3:first-child { margin-top: 0; }
+    p { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.2rem; }
+    li { font-size: 13px; color: var(--texto-sec); line-height: 1.7; }
+    strong { color: var(--texto); }
+
+    .drug-header { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 8px; padding: 6px 0 8px; font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--borde); }
+    .drug-row { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); align-items: start; font-size: 13px; }
+    .drug-row:last-child { border-bottom: none; }
+    .drug-name { font-weight: 600; color: var(--texto); }
+    .drug-dose { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Estadios ERC */
+    .estadio-row { display: grid; grid-template-columns: 0.4fr 0.8fr 1fr 1.2fr; gap: 8px; padding: 10px 12px; border-radius: 8px; font-size: 13px; align-items: center; margin-bottom: 4px; }
+    .estadio-header { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texto-sec); padding: 4px 12px; display: grid; grid-template-columns: 0.4fr 0.8fr 1fr 1.2fr; gap: 8px; }
+    .e1 { background: #E1F5EE; }
+    .e2 { background: #D4EDD8; }
+    .e3a { background: #FAEEDA; }
+    .e3b { background: #F5DFC0; }
+    .e4 { background: #FCDDDD; }
+    .e5 { background: #F5C6C6; }
+
+    .stat { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .stat-label { font-size: 12px; color: var(--texto-sec); }
+    .stat-val { font-size: 18px; font-weight: 700; margin-top: 2px; color: var(--texto); }
+    .stat-sub { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    .info-box { background: var(--nefro-claro); border-left: 3px solid var(--nefro); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 13px; color: #0d3d6e; }
+    .alerta { background: var(--rojo); border: 1px solid var(--rojo-border); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .alerta-title { font-size: 12px; font-weight: 700; color: var(--rojo-text); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+
+    .scenario-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stab { padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-sec); border-radius: 8px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .stab:hover { background: var(--fondo); }
+    .stab.active { background: var(--nefro-claro); color: var(--nefro); border-color: #7AAEDD; }
+    .scenario { display: none; }
+    .scenario.active { display: block; }
+
+    .timeline-item { display: flex; gap: 14px; margin-bottom: 14px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--nefro); flex-shrink: 0; }
+    .tl-line { width: 2px; background: var(--borde); flex: 1; margin-top: 4px; min-height: 20px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--texto); }
+    .tl-body { font-size: 13px; color: var(--texto-sec); margin-top: 3px; line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      main { padding: 0 1rem 3rem; }
+      .page-title { font-size: 24px; }
+      .estadio-row, .estadio-header { grid-template-columns: 0.4fr 0.8fr 1fr; }
+      .estadio-row > *:last-child, .estadio-header > *:last-child { display: none; }
+      .drug-header, .drug-row { grid-template-columns: 1fr 1fr; }
+      .drug-header span:last-child, .drug-row > *:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-icon">🫘</div>
+    <div>
+      <div class="page-title">Enfermedad Renal Crónica (ERC)</div>
+      <div class="page-sub">Guía clínica completa · Nefrología · KDIGO 2024 · SAN · Ministerio de Salud Argentina</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('clasificacion', this)">Clasificación</button>
+    <button class="tab" onclick="showTab('diagnostico', this)">Diagnóstico</button>
+    <button class="tab" onclick="showTab('complicaciones', this)">Complicaciones</button>
+    <button class="tab" onclick="showTab('tratamiento', this)">Tratamiento</button>
+    <button class="tab" onclick="showTab('trs', this)">Terapia de reemplazo</button>
+    <button class="tab" onclick="showTab('derivacion', this)">Derivación y seguimiento</button>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="section active" id="sec-clasificacion">
+    <div class="card">
+      <div class="card-title">Definición — KDIGO 2012</div>
+      <div class="info-box">
+        <strong>ERC:</strong> Anomalías en la estructura o función renal presentes por <strong>más de 3 meses</strong>, con implicancias para la salud. Se define por TFG &lt; 60 ml/min/1.73 m² y/o marcadores de daño renal (albuminuria, alteraciones en sedimento urinario, imagenológicas o histológicas).
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Estadios por TFG (KDIGO)</div>
+      <div class="estadio-header">
+        <span>Estadio</span><span>TFG (ml/min)</span><span>Descripción</span><span>Conducta</span>
+      </div>
+      <div class="estadio-row e1">
+        <span><strong>G1</strong></span><span>≥ 90</span><span>Normal o alta</span><span>Diagnóstico y tto. de causa + FRCV</span>
+      </div>
+      <div class="estadio-row e2">
+        <span><strong>G2</strong></span><span>60 – 89</span><span>Levemente disminuida</span><span>Estimación de progresión</span>
+      </div>
+      <div class="estadio-row e3a">
+        <span><strong>G3a</strong></span><span>45 – 59</span><span>Leve a moderada</span><span>Evaluar y tratar complicaciones</span>
+      </div>
+      <div class="estadio-row e3b">
+        <span><strong>G3b</strong></span><span>30 – 44</span><span>Moderada a grave</span><span>Derivación a nefrología</span>
+      </div>
+      <div class="estadio-row e4">
+        <span><strong>G4</strong></span><span>15 – 29</span><span>Gravemente disminuida</span><span>Preparación para TRS</span>
+      </div>
+      <div class="estadio-row e5">
+        <span><strong>G5</strong></span><span>&lt; 15</span><span>Falla renal</span><span>TRS o tratamiento conservador</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Clasificación por albuminuria (A)</div>
+      <div class="drug-header"><span>Categoría</span><span>Albuminuria (mg/g Cr)</span><span>Descripción</span></div>
+      <div class="drug-row">
+        <span><strong>A1</strong></span>
+        <span>&lt; 30 mg/g</span>
+        <span>Normal a levemente aumentada</span>
+      </div>
+      <div class="drug-row">
+        <span><strong>A2</strong></span>
+        <span>30 – 300 mg/g</span>
+        <span>Moderadamente aumentada (microalbuminuria)</span>
+      </div>
+      <div class="drug-row">
+        <span><strong>A3</strong></span>
+        <span>&gt; 300 mg/g</span>
+        <span>Gravemente aumentada (macroalbuminuria)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Causas más frecuentes de ERC en Argentina</div>
+      <div class="grid-2">
+        <div>
+          <h3>Principales</h3>
+          <ul>
+            <li><strong>Nefropatía diabética</strong> — 40–45% (causa más frecuente)</li>
+            <li><strong>Nefroangioesclerosis hipertensiva</strong> — 25–30%</li>
+            <li><strong>Glomerulopatías primarias</strong> — GEFS, GNM, IgA</li>
+            <li><strong>Nefropatía obstructiva</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Otras causas</h3>
+          <ul>
+            <li>Nefropatía lúpica</li>
+            <li>Nefropatía por analgésicos / AINEs</li>
+            <li>Riñones poliquísticos (PQRAD)</li>
+            <li>Nefropatía por mieloma múltiple</li>
+            <li>Nefropatía isquémica (estenosis arteria renal)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="section" id="sec-diagnostico">
+    <div class="card">
+      <div class="card-title">Cálculo de TFG estimada (TFGe)</div>
+      <p>Se recomienda usar la fórmula <strong>CKD-EPI 2021</strong> (sin raza). El laboratorio debe reportarla automáticamente con cada creatinina sérica.</p>
+      <div class="grid-2">
+        <div>
+          <h3>Fórmulas disponibles</h3>
+          <ul>
+            <li><strong>CKD-EPI 2021</strong> — preferida (KDIGO 2024)</li>
+            <li><strong>MDRD</strong> — alternativa, subestima TFG alta</li>
+            <li><strong>Cockcroft-Gault</strong> — útil para ajuste de fármacos</li>
+            <li><strong>Cistatina C</strong> — más precisa en casos dudosos</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cuándo usar cistatina C</h3>
+          <ul>
+            <li>Masa muscular muy reducida (desnutrición, amputación)</li>
+            <li>Embarazo</li>
+            <li>Dieta vegana estricta</li>
+            <li>Confirmación diagnóstica en G3 sin albuminuria</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Evaluación inicial — estudios complementarios</div>
+      <div class="grid-2">
+        <div>
+          <h3>Laboratorio básico</h3>
+          <ul>
+            <li>Creatinina sérica + TFGe (CKD-EPI)</li>
+            <li>Orina completa + sedimento</li>
+            <li>Cociente albúmina/creatinina en orina (CACO)</li>
+            <li>Ionograma (Na⁺, K⁺, Cl⁻, HCO₃⁻)</li>
+            <li>Glucemia en ayunas / HbA1c</li>
+            <li>Hemograma completo</li>
+            <li>Perfil lipídico</li>
+            <li>Ácido úrico</li>
+            <li>Ca²⁺, P, PTH intacta, 25-OH vitamina D</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Imágenes y otros</h3>
+          <ul>
+            <li>Ecografía renal y de vías urinarias (siempre)</li>
+            <li>ECG si HTA o sospecha HVI</li>
+            <li>Proteinuria en orina de 24 hs (si CACO > 300)</li>
+            <li>Serología: ANA, ANCA, complemento (si glomerulopatía)</li>
+            <li>Electroforesis de proteínas (si > 50 años)</li>
+            <li>Biopsia renal según indicación nefrológica</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Factores de progresión de la ERC</div>
+      <div class="grid-2">
+        <div>
+          <h3>Modificables</h3>
+          <ul>
+            <li>HTA no controlada</li>
+            <li>Diabetes mal controlada (HbA1c elevada)</li>
+            <li>Proteinuria persistente</li>
+            <li>Tabaquismo activo</li>
+            <li>Obesidad</li>
+            <li>Uso de AINEs, aminoglucósidos, contrastes yodados</li>
+            <li>Obstrucción urinaria no tratada</li>
+          </ul>
+        </div>
+        <div>
+          <h3>No modificables</h3>
+          <ul>
+            <li>Edad avanzada</li>
+            <li>Sexo masculino</li>
+            <li>Raza (mayor riesgo afrodescendiente)</li>
+            <li>Antecedentes familiares</li>
+            <li>Bajo peso al nacer / reducción congénita de nefronas</li>
+            <li>Enfermedad renal de base (tipo histológico)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Velocidad de progresión — cuándo sospechar deterioro acelerado</div>
+      <ul>
+        <li>Caída de TFGe &gt; 5 ml/min/año</li>
+        <li>Caída de TFGe &gt; 10 ml/min en 5 años</li>
+        <li>Aumento de creatinina &gt; 25% respecto a basal sin causa aparente</li>
+        <li>Aparición o empeoramiento de proteinuria</li>
+        <li>Hematuria macroscópica recurrente</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="section" id="sec-complicaciones">
+    <div class="scenario-tabs">
+      <button class="stab active" onclick="showScenario('anemia', this)">Anemia</button>
+      <button class="stab" onclick="showScenario('mineral', this)">Mineral-óseo</button>
+      <button class="stab" onclick="showScenario('electrolitos', this)">Electrolitos y ácido-base</button>
+      <button class="stab" onclick="showScenario('cardio', this)">Cardiovascular</button>
+      <button class="stab" onclick="showScenario('uremia', this)">Uremia</button>
+    </div>
+
+    <div class="scenario active" id="sc-anemia">
+      <div class="card">
+        <div class="card-title">Anemia de la ERC — diagnóstico</div>
+        <div class="grid-3">
+          <div class="stat"><div class="stat-label">Diagnóstico (hombre)</div><div class="stat-val">Hb &lt; 13 g/dL</div></div>
+          <div class="stat"><div class="stat-label">Diagnóstico (mujer)</div><div class="stat-val">Hb &lt; 12 g/dL</div></div>
+          <div class="stat"><div class="stat-label">Aparece desde</div><div class="stat-val">G3–G4</div><div class="stat-sub">universalmente en G5</div></div>
+        </div>
+        <h3 style="margin-top:1rem;">Evaluación antes de tratar</h3>
+        <ul>
+          <li>Ferritina sérica y saturación de transferrina (TSAT)</li>
+          <li>Reticulocitos</li>
+          <li>Descartar déficit de vitamina B12 y folatos</li>
+          <li>Descartar sangrado oculto (occulttest)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Tratamiento de la anemia renal</div>
+        <div class="drug-header"><span>Tratamiento</span><span>Indicación / dosis</span><span>Meta</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Hierro EV (sacarosa o carboximaltosa)</div><div class="drug-dose">Primera corrección si ferropenia</div></div>
+          <div>Si ferritina &lt; 500 ng/mL y TSAT &lt; 30%: 200 mg EV c/1–2 semanas</div>
+          <div>Ferritina 200–500 ng/mL · TSAT 20–30%</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Hierro VO</div><div class="drug-dose">Solo en G1–G3 si tolerancia</div></div>
+          <div>Sulfato ferroso 325 mg c/8–12 hs VO (en ayunas)</div>
+          <div>Mismas metas</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Eritropoyetina alfa (EPO)</div><div class="drug-dose">AEE — agente estimulante eritropoyesis</div></div>
+          <div>50–150 UI/kg SC 3 veces/semana. Ajustar según Hb</div>
+          <div>Hb 10–11.5 g/dL (no superar 13)</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Darbepoetina alfa</div><div class="drug-dose">AEE larga acción</div></div>
+          <div>0.45 mcg/kg SC semanal o 0.75 mcg/kg c/2 semanas</div>
+          <div>Hb 10–11.5 g/dL</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Roxadustat / Daprodustat</div><div class="drug-dose">Inhibidores HIF-PH — VO (nuevos)</div></div>
+          <div>Roxadustat: 70–100 mg 3 veces/semana VO</div>
+          <div>Alternativa oral a EPO. Aprobados en Argentina 2023.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-mineral">
+      <div class="card">
+        <div class="card-title">Trastorno mineral y óseo de la ERC (TMO-ERC)</div>
+        <p>Conjunto de alteraciones en calcio, fósforo, PTH y vitamina D que aparecen desde G3b y causan calcificaciones vasculares, osteodistrofia renal y mortalidad cardiovascular.</p>
+        <div class="drug-header"><span>Alteración</span><span>Estadio de aparición</span><span>Consecuencia</span></div>
+        <div class="drug-row"><span>↓ vitamina D activa</span><span>Desde G3</span><span>↓ absorción Ca²⁺ intestinal</span></div>
+        <div class="drug-row"><span>↑ FGF-23</span><span>Desde G2–G3</span><span>↑ excreción de P, ↓ 1,25-vitD</span></div>
+        <div class="drug-row"><span>Hiperfosfatemia</span><span>G3b–G4</span><span>Calcificaciones vasculares</span></div>
+        <div class="drug-row"><span>Hipocalcemia</span><span>G3b–G4</span><span>Estímulo para HPTsecundario</span></div>
+        <div class="drug-row"><span>Hiperparatiroidismo secundario</span><span>G3–G5</span><span>Osteítis fibrosa, dolor óseo</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Tratamiento del TMO-ERC</div>
+        <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Indicación</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Quelantes de fósforo — Carbonato de calcio</div><div class="drug-dose">Primera línea si Ca normal</div></div>
+          <div>500–1500 mg con las comidas VO</div>
+          <div>Hiperfosfatemia. Evitar si Ca &gt; 10 mg/dL.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Sevelamer</div><div class="drug-dose">Quelante sin calcio — preferido en diálisis</div></div>
+          <div>800–1600 mg con cada comida VO</div>
+          <div>Hiperfosfatemia con hipercalcemia o calcificaciones.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Carbonato de lantano</div><div class="drug-dose">Sin calcio ni aluminio</div></div>
+          <div>500–1000 mg con las comidas VO</div>
+          <div>Alternativa a sevelamer.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Calcitriol (1,25-OH₂ vitamina D)</div><div class="drug-dose">Vitamina D activa</div></div>
+          <div>0.25–0.5 mcg/día VO</div>
+          <div>Hiperparatiroidismo secundario con Ca y P normales.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Cinacalcet</div><div class="drug-dose">Calcimimético</div></div>
+          <div>30–90 mg/día VO</div>
+          <div>Hiperparatiroidismo secundario severo en diálisis.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-electrolitos">
+      <div class="card">
+        <div class="card-title">Hiperpotasemia</div>
+        <div class="info-box">Complicación frecuente desde G3b. K⁺ &gt; 5.5 mEq/L. Riesgo de arritmias letales.</div>
+        <div class="drug-header"><span>Nivel K⁺</span><span>Conducta</span><span></span></div>
+        <div class="drug-row"><span>5.5 – 6.0 mEq/L</span><span>Dieta baja en K⁺ + suspender IECA/ARA II si es la causa</span><span></span></div>
+        <div class="drug-row"><span>6.0 – 6.5 mEq/L</span><span>+ Resinas (patirómero 8.4 g/día o sulfonato de sodio 15–30 g/día VO)</span><span></span></div>
+        <div class="drug-row"><span>&gt; 6.5 o con cambios ECG</span><span>Gluconato de Ca²⁺ EV + insulina + glucosa + bicarbonato EV + diálisis urgente</span><span></span></div>
+        <h3 style="margin-top:1rem;">Alimentos a restringir (ricos en K⁺)</h3>
+        <ul>
+          <li>Banana, naranja, kiwi, melón, uva pasa</li>
+          <li>Papa, batata, choclo, tomate, zanahoria</li>
+          <li>Legumbres, frutos secos, chocolate</li>
+          <li>Sustitutos de sal con KCl</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Acidosis metabólica</div>
+        <p>HCO₃⁻ &lt; 22 mEq/L. Frecuente en G4–G5. Acelera la progresión de la ERC y el catabolismo muscular.</p>
+        <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Meta</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Bicarbonato de sodio VO</div><div class="drug-dose">Primera línea — KDIGO</div></div>
+          <div>0.5–1 mEq/kg/día VO (comprimidos 500–650 mg)</div>
+          <div>HCO₃⁻ ≥ 22 mEq/L</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Veverimer</div><div class="drug-dose">Quelante de H⁺ intestinal — nuevo</div></div>
+          <div>6 g/día VO (en ensayos clínicos)</div>
+          <div>Alternativa sin carga de sodio</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Hiponatremia e hipernatremia</div>
+        <ul>
+          <li>Hiponatremia dilucional frecuente en G4–G5 por incapacidad de excretar agua libre</li>
+          <li>Restricción hídrica si natremia &lt; 130 mEq/L con edema</li>
+          <li>Diuréticos de asa (furosemida) para manejo de volumen</li>
+          <li>En diálisis: ajuste del sodio del dializante</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-cardio">
+      <div class="card">
+        <div class="card-title">Riesgo cardiovascular en la ERC</div>
+        <p>La ERC es un equivalente de riesgo cardiovascular muy alto. La mortalidad CV es la principal causa de muerte en pacientes con ERC, superando a la progresión a diálisis.</p>
+        <div class="grid-2">
+          <div>
+            <h3>Control de PA en ERC</h3>
+            <ul>
+              <li>Meta: PAS &lt; 120 mmHg si tolera (SPRINT-CKD)</li>
+              <li>Meta estándar KDIGO: &lt; 130/80 mmHg</li>
+              <li>IECA o ARA II: primera línea (nefroprotección)</li>
+              <li>Vigilar K⁺ y creatinina al inicio y c/1–2 semanas</li>
+              <li>Aumento de creatinina hasta 30% aceptable al iniciar IECA/ARAII</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dislipemia en ERC</h3>
+            <ul>
+              <li>Estatinas: indicadas en todos los pacientes ERC ≥ 50 años</li>
+              <li>Atorvastatina 20–40 mg/día — primera línea</li>
+              <li>Rosuvastatina 10 mg/día — alternativa</li>
+              <li>No iniciar estatinas en pacientes en hemodiálisis (sin beneficio demostrado)</li>
+              <li>Ezetimibe como complemento si LDL no controlado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Beneficio cardiovascular y renal — nuevas drogas</div>
+        <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Beneficio en ERC</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Dapagliflozina (iSGLT2)</div><div class="drug-dose">DAPA-CKD — indicación aprobada sin diabetes</div></div>
+          <div>10 mg/día VO</div>
+          <div>Reduce progresión ERC, hospitalización CV y mortalidad. TFGe ≥ 25.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Empagliflozina (iSGLT2)</div><div class="drug-dose">EMPA-KIDNEY</div></div>
+          <div>10 mg/día VO</div>
+          <div>Reducción de progresión a diálisis o muerte renal.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Finerenona (ARM no esteroideo)</div><div class="drug-dose">FIDELIO-DKD / FIGARO-DKD</div></div>
+          <div>10–20 mg/día VO</div>
+          <div>Reduce proteinuria y eventos CV en nefropatía diabética.</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Semaglutida (GLP-1 RA)</div><div class="drug-dose">FLOW trial 2024</div></div>
+          <div>1 mg SC semanal</div>
+          <div>Reduce progresión renal y mortalidad CV en DM2 con ERC.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-uremia">
+      <div class="card">
+        <div class="card-title">Síndrome urémico — manifestaciones</div>
+        <div class="grid-2">
+          <div>
+            <h3>Síntomas generales</h3>
+            <ul>
+              <li>Astenia, fatiga crónica</li>
+              <li>Anorexia, náuseas, vómitos</li>
+              <li>Prurito urémico</li>
+              <li>Fetor urémico (aliento a amoniaco)</li>
+              <li>Hipo persistente</li>
+              <li>Pérdida de peso / desnutrición</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Complicaciones sistémicas</h3>
+            <ul>
+              <li>Encefalopatía urémica (asterixis, confusión)</li>
+              <li>Pericarditis urémica (frotar pericárdico)</li>
+              <li>Neuropatía periférica (síndrome de piernas inquietas)</li>
+              <li>Disfunción plaquetaria → sangrado</li>
+              <li>Inmunosupresión → infecciones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="alerta">
+        <div class="alerta-title">Indicaciones de diálisis de urgencia</div>
+        <ul style="padding-left:1.2rem;">
+          <li style="color:#791F1F;">Hiperpotasemia grave refractaria (K⁺ &gt; 6.5 con cambios ECG)</li>
+          <li style="color:#791F1F;">Acidosis metabólica grave refractaria (pH &lt; 7.1)</li>
+          <li style="color:#791F1F;">Sobrecarga de volumen / EAP refractario a diuréticos</li>
+          <li style="color:#791F1F;">Encefalopatía urémica</li>
+          <li style="color:#791F1F;">Pericarditis urémica</li>
+          <li style="color:#791F1F;">Sangrado urémico grave</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="section" id="sec-tratamiento">
+    <div class="card">
+      <div class="card-title">Objetivos del tratamiento en ERC</div>
+      <div class="grid-3">
+        <div class="stat"><div class="stat-label">PA meta</div><div class="stat-val">&lt; 130/80</div><div class="stat-sub">mmHg</div></div>
+        <div class="stat"><div class="stat-label">HbA1c (DM)</div><div class="stat-val">&lt; 7%</div><div class="stat-sub">individualizar en G4–G5</div></div>
+        <div class="stat"><div class="stat-label">Proteinuria</div><div class="stat-val">&lt; 500</div><div class="stat-sub">mg/día (meta en nefropatía DM)</div></div>
+        <div class="stat"><div class="stat-label">LDL</div><div class="stat-val">&lt; 70</div><div class="stat-sub">mg/dL (muy alto riesgo CV)</div></div>
+        <div class="stat"><div class="stat-label">Hemoglobina</div><div class="stat-val">10 – 11.5</div><div class="stat-sub">g/dL</div></div>
+        <div class="stat"><div class="stat-label">Bicarbonato</div><div class="stat-val">≥ 22</div><div class="stat-sub">mEq/L</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fármacos nefroprotectores de primera línea</div>
+      <div class="drug-header"><span>Fármaco</span><span>Dosis</span><span>Indicación</span></div>
+      <div class="drug-row">
+        <div><div class="drug-name">IECA (ej. Ramipril, Enalapril)</div><div class="drug-dose">Primera línea en ERC con proteinuria</div></div>
+        <div>Ramipril 5–10 mg/día · Enalapril 5–40 mg/día VO</div>
+        <div>ERC con albuminuria ≥ A2. Reducen proteinuria y progresión.</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">ARA II (ej. Losartán, Telmisartán)</div><div class="drug-dose">Si tos con IECA</div></div>
+        <div>Losartán 50–100 mg/día · Telmisartán 40–80 mg/día VO</div>
+        <div>Misma eficacia que IECA. No combinar con IECA.</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Dapagliflozina / Empagliflozina</div><div class="drug-dose">iSGLT2 — KDIGO 2024 recomienda en todos con TFGe ≥ 25</div></div>
+        <div>10 mg/día VO</div>
+        <div>Con o sin diabetes. Reduce progresión y muerte CV.</div>
+      </div>
+      <div class="drug-row">
+        <div><div class="drug-name">Finerenona</div><div class="drug-dose">En nefropatía diabética con proteinuria</div></div>
+        <div>10–20 mg/día VO (ajustar según K⁺ y TFGe)</div>
+        <div>Complementa IECA/ARA II. Vigilar hiperpotasemia.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Dieta en la ERC</div>
+      <div class="drug-header"><span>Nutriente</span><span>Recomendación</span><span>Estadio</span></div>
+      <div class="drug-row"><span>Proteínas</span><span>0.6–0.8 g/kg/día (sin diálisis)</span><span>G3–G5 sin TRS</span></div>
+      <div class="drug-row"><span>Sal (Na⁺)</span><span>&lt; 2–3 g/día (&lt; 5 g de sal)</span><span>Todos los estadios</span></div>
+      <div class="drug-row"><span>Potasio</span><span>Restricción si K⁺ &gt; 5 mEq/L</span><span>G3b–G5</span></div>
+      <div class="drug-row"><span>Fósforo</span><span>&lt; 800–1000 mg/día</span><span>G3b–G5</span></div>
+      <div class="drug-row"><span>Líquidos</span><span>Sin restricción salvo oliguria o anuria</span><span>G1–G4 (restricción en G5D)</span></div>
+      <div class="drug-row"><span>Calorías</span><span>30–35 kcal/kg/día</span><span>Todos (evitar desnutrición)</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fármacos a ajustar o evitar según TFGe</div>
+      <div class="drug-header"><span>Fármaco</span><span>Conducta</span><span>TFGe</span></div>
+      <div class="drug-row"><span>Metformina</span><span>Reducir dosis 50% · Suspender si &lt; 30</span><span>&lt; 45 ml/min</span></div>
+      <div class="drug-row"><span>AINEs</span><span>Evitar siempre (reducen flujo renal)</span><span>Todos</span></div>
+      <div class="drug-row"><span>Aminoglucósidos</span><span>Ajustar dosis + monitoreo de niveles</span><span>Todo ERC</span></div>
+      <div class="drug-row"><span>Contraste yodado</span><span>Hidratación previa + suspender IECA 48 hs</span><span>&lt; 60 ml/min</span></div>
+      <div class="drug-row"><span>Gadolinio (RMN)</span><span>Evitar o usar macrocíclico · Riesgo fibrosis sistémica nefrogénica</span><span>&lt; 30 ml/min</span></div>
+      <div class="drug-row"><span>Digoxina</span><span>Reducir dosis, monitoreo de niveles</span><span>&lt; 60 ml/min</span></div>
+      <div class="drug-row"><span>NACO (rivaroxabán, apixabán)</span><span>Ajustar según ficha técnica · Apixabán preferido</span><span>&lt; 50 ml/min</span></div>
+      <div class="drug-row"><span>Insulina</span><span>Reducir dosis (menor degradación renal)</span><span>&lt; 30 ml/min</span></div>
+    </div>
+  </div>
+
+  <!-- TRS -->
+  <div class="section" id="sec-trs">
+    <div class="card">
+      <div class="card-title">Modalidades de terapia de reemplazo renal (TRS)</div>
+      <div class="grid-2">
+        <div>
+          <h3>Hemodiálisis (HD)</h3>
+          <ul>
+            <li>3 sesiones/semana de 3–5 horas</li>
+            <li>Acceso: fístula arteriovenosa (FAV) — preferida</li>
+            <li>Alternativa: prótesis (PTFE) o catéter tunelizado</li>
+            <li>FAV debe confeccionarse cuando TFGe &lt; 20–25 ml/min</li>
+            <li>Mayor mortalidad CV vs. diálisis peritoneal en primer año</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Diálisis peritoneal (DP)</h3>
+          <ul>
+            <li>DPCA: 4 intercambios manuales/día</li>
+            <li>DPA: cicladora nocturna automática</li>
+            <li>Mayor autonomía, mejor preservación de función renal residual</li>
+            <li>Contraindicada en: cirugías abdominales múltiples, ostomías, hernias no reparables</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Trasplante renal</div>
+      <ul>
+        <li>Tratamiento de elección en pacientes elegibles — mejor sobrevida y calidad de vida</li>
+        <li>Trasplante anticipado (pre-diálisis): con TFGe &lt; 20 ml/min + progresión documentada</li>
+        <li>Donante vivo: mejores resultados que donante cadavérico</li>
+        <li>Evaluación de lista de espera: INCUCAI en Argentina</li>
+        <li>Inmunosupresión de mantenimiento: tacrolimus + micofenolato + corticoides</li>
+        <li>Contraindicaciones absolutas: neoplasia activa, infección activa grave, enfermedad CV severa no tratable</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cuándo iniciar TRS</div>
+      <div class="info-box">
+        No hay un valor fijo de TFGe para iniciar diálisis. La decisión es clínica, basada en síntomas urémicos y calidad de vida, no solo en números.
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Indicaciones absolutas (urgencia)</h3>
+          <ul>
+            <li>Hiperpotasemia refractaria</li>
+            <li>Acidosis grave refractaria</li>
+            <li>Sobrecarga de volumen refractaria</li>
+            <li>Encefalopatía urémica</li>
+            <li>Pericarditis urémica</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Indicaciones relativas (programadas)</h3>
+          <ul>
+            <li>TFGe &lt; 10 ml/min (o &lt; 6 en diabéticos)</li>
+            <li>Síntomas urémicos que deterioran calidad de vida</li>
+            <li>Desnutrición progresiva refractaria</li>
+            <li>Imposibilidad de manejo médico ambulatorio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tratamiento conservador sin diálisis (TSIN)</div>
+      <p>Opción válida en pacientes seleccionados (muy ancianos, múltiples comorbilidades) en quienes la diálisis no mejoraría sobrevida ni calidad de vida.</p>
+      <ul>
+        <li>Manejo sintomático de uremia: antieméticos, antipruriginosos, analgesia</li>
+        <li>Control de volumen con diuréticos</li>
+        <li>Soporte nutricional y psicológico</li>
+        <li>Cuidados paliativos integrales</li>
+        <li>Decisión compartida con paciente y familia</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DERIVACIÓN Y SEGUIMIENTO -->
+  <div class="section" id="sec-derivacion">
+    <div class="card">
+      <div class="card-title">Criterios de derivación a nefrología</div>
+      <div class="drug-header"><span>Criterio</span><span>Detalle</span><span>Urgencia</span></div>
+      <div class="drug-row"><span>TFGe &lt; 30 ml/min (G4–G5)</span><span>Preparación para TRS</span><span><span class="badge badge-red">Urgente</span></span></div>
+      <div class="drug-row"><span>Caída rápida TFGe (&gt; 5 ml/min/año)</span><span>Posible causa tratable</span><span><span class="badge badge-amber">Preferencial</span></span></div>
+      <div class="drug-row"><span>Proteinuria &gt; 1 g/día</span><span>Evaluación etiológica</span><span><span class="badge badge-amber">Preferencial</span></span></div>
+      <div class="drug-row"><span>Hematuria + proteinuria</span><span>Sospecha glomerulopatía</span><span><span class="badge badge-amber">Preferencial</span></span></div>
+      <div class="drug-row"><span>HTA refractaria en ERC</span><span>Causa secundaria / optimización</span><span><span class="badge badge-amber">Preferencial</span></span></div>
+      <div class="drug-row"><span>Hiperpotasemia recurrente</span><span>Ajuste de tratamiento</span><span><span class="badge badge-amber">Preferencial</span></span></div>
+      <div class="drug-row"><span>Sospecha ERC secundaria compleja</span><span>Glomerulopatías, vasculitis, mieloma</span><span><span class="badge badge-red">Urgente</span></span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Frecuencia de seguimiento según estadio</div>
+      <div class="drug-header"><span>Estadio</span><span>Frecuencia controles</span><span>Estudios mínimos</span></div>
+      <div class="drug-row"><span>G1 – G2</span><span>Anual</span><span>Creatinina + CACO + PA</span></div>
+      <div class="drug-row"><span>G3a</span><span>Cada 6 meses</span><span>+ ionograma + hemograma</span></div>
+      <div class="drug-row"><span>G3b</span><span>Cada 3–6 meses</span><span>+ Ca, P, PTH, 25-OH-vitD</span></div>
+      <div class="drug-row"><span>G4</span><span>Cada 3 meses</span><span>+ bioquímica completa + evaluación TRS</span></div>
+      <div class="drug-row"><span>G5 sin TRS</span><span>Mensual o más frecuente</span><span>Completo + decisión TRS</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Vacunación recomendada en ERC</div>
+      <ul>
+        <li><strong>Influenza:</strong> anual (toda la vida)</li>
+        <li><strong>Neumococo:</strong> VCN13 + VPN23 (ver guía HTA/EPOC)</li>
+        <li><strong>Hepatitis B:</strong> esquema reforzado (doble dosis 40 mcg × 4 dosis) — respuesta reducida en ERC</li>
+        <li><strong>COVID-19:</strong> esquema completo + refuerzos</li>
+        <li><strong>Hepatitis A:</strong> si no inmune</li>
+        <li>Evitar vacunas a virus vivos en inmunodepresión severa</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fuentes de referencia</div>
+      <ul>
+        <li>KDIGO — 2024 CKD Guidelines (Kidney Disease: Improving Global Outcomes)</li>
+        <li>KDIGO — 2012 CKD Classification (base)</li>
+        <li>SAN — Sociedad Argentina de Nefrología, Guías ERC</li>
+        <li>DAPA-CKD Trial — Heerspink et al., NEJM 2020</li>
+        <li>EMPA-KIDNEY Trial — The EMPA-KIDNEY Collaborative Group, NEJM 2023</li>
+        <li>FIDELIO-DKD Trial — Bakris et al., NEJM 2020</li>
+        <li>FLOW Trial — Perkovic et al., NEJM 2024</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+  function showScenario(id, el) {
+    document.querySelectorAll('.scenario').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sc-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
