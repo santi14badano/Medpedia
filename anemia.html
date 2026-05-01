@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anemia — Clasificación, Diagnóstico y Tratamiento — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --hemato: #880e4f; --hemato-claro: #fce4ec; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-hemato { background: var(--hemato-claro); color: var(--hemato); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid var(--hemato); background: var(--hemato-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Hematología</a> › Anemia</div>
+  <div class="titulo">Anemia — Clasificación, Diagnóstico y Tratamiento</div>
+  <div class="meta">
+    <span class="tag tag-hemato">Hematología</span>
+    <span class="tag tag-hemato" style="background:#E3F2FD;color:#1565C0;">Clínica Médica</span>
+    <span class="tag tag-fuente">OMS · SAP · SEMERGEN 2024 · Harrison 2024</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La anemia es la <strong>disminución de la concentración de hemoglobina (Hb) por debajo de los valores normales</strong>, lo que reduce la capacidad de transporte de oxígeno a los tejidos. Es la patología hematológica más frecuente a nivel mundial.</p>
+      <p><strong>Criterios diagnósticos OMS (adultos):</strong><br>
+      • Hombres: Hb &lt; 13 g/dl<br>
+      • Mujeres no embarazadas: Hb &lt; 12 g/dl<br>
+      • Mujeres embarazadas: Hb &lt; 11 g/dl</p>
+      <p><strong>Gravedad según Hb:</strong><br>
+      • Leve: Hb 10–12/13 g/dl<br>
+      • Moderada: Hb 8–9,9 g/dl<br>
+      • Grave: Hb &lt; 8 g/dl → evaluar transfusión<br>
+      • Muy grave: Hb &lt; 6 g/dl → riesgo vital</p>
+    </div>
+  </div>
+
+  <!-- SIGNOS Y SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos y síntomas</div>
+    <div class="hl-warn">La intensidad de los síntomas depende más de la <strong>velocidad de instalación</strong> que del valor de Hb. Una anemia crónica de Hb 7 g/dl puede ser bien tolerada, mientras que una caída aguda a Hb 9 g/dl puede producir síntomas graves.</div>
+    <div class="sintoma-grid" style="margin-top:10px;">
+      <div class="sintoma-item"><div class="sintoma-nombre">Palidez</div><div class="sintoma-desc">Piel, conjuntivas y mucosas — signo clínico más frecuente</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fatiga / astenia</div><div class="sintoma-desc">Por hipoxia tisular — síntoma más sensible</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Disnea de esfuerzo</div><div class="sintoma-desc">Por compensación ventilatoria a la hipoxia</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Taquicardia</div><div class="sintoma-desc">Mecanismo compensador para mantener el aporte de O₂</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Cefalea / mareos</div><div class="sintoma-desc">Por hipoperfusión cerebral relativa</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Pica</div><div class="sintoma-desc">Deseo de comer hielo, tierra, almidón — específico de ferropenia</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Ictericia</div><div class="sintoma-desc">Anemia hemolítica — por destrucción acelerada de eritrocitos</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Síntomas neurológicos</div><div class="sintoma-desc">Parestesias, ataxia, deterioro cognitivo — específico de déficit de B12</div></div>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN MORFOLÓGICA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación morfológica — primer paso diagnóstico</div>
+    <div class="hl">El <strong>VCM (volumen corpuscular medio)</strong> es el primer parámetro para clasificar la anemia y orientar el diagnóstico diferencial. Normal: 80–100 fL.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Tipo</th><th>VCM</th><th>Causas principales</th><th>Dato clave</th></tr>
+        <tr><td><strong>Microcítica</strong></td><td>&lt; 80 fL</td><td>Ferropenia (más frecuente), talasemia, anemia sideroblástica, anemia de enfermedad crónica (algunas)</td><td>RDW elevado → ferropenia · RDW normal → talasemia</td></tr>
+        <tr><td><strong>Normocítica</strong></td><td>80–100 fL</td><td>Hemorragia aguda, anemia de enfermedad crónica, ERC, hipotiroidismo, aplasia medular, hemólisis</td><td>Reticulocitos ↑ → pérdida/hemólisis · Reticulocitos ↓ → producción</td></tr>
+        <tr><td><strong>Macrocítica</strong></td><td>&gt; 100 fL</td><td>Déficit de B12 o folato (megaloblástica), hepatopatía, alcoholismo, hipotiroidismo, fármacos (metotrexato, hidroxiurea)</td><td>Neutrófilo hipersegmentado → megaloblástica</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN FISIOPATOLÓGICA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación fisiopatológica — segundo paso</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Mecanismo</th><th>Causas</th><th>Reticulocitos</th></tr>
+        <tr><td><strong>↓ Producción</strong></td><td>Ferropenia, déficit B12/folato, aplasia medular, ERC (↓ EPO), infiltración medular, anemia de enfermedad crónica</td><td>Bajos — médula no responde</td></tr>
+        <tr><td><strong>↑ Destrucción (hemólisis)</strong></td><td>Autoinmune (AHAI), hereditaria (esferocitosis, drepanocitosis, G6PD), SHU, paludismo, fármacos</td><td>Altos — médula compensa</td></tr>
+        <tr><td><strong>Pérdida de sangre</strong></td><td>Hemorragia aguda o crónica (digestiva, ginecológica, urinaria)</td><td>Altos en agudo · Bajos si ferropenia secundaria</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ANEMIA FERROPÉNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔴 Anemia ferropénica — la más frecuente</div>
+    <div class="hl-info">La anemia ferropénica es la causa más frecuente de anemia en el mundo — afecta al 25% de la población global. En Argentina, la prevalencia en menores de 2 años supera el 35%.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Parámetro</th><th>Ferropenia sin anemia</th><th>Anemia ferropénica</th></tr>
+        <tr><td>Ferritina</td><td>&lt;30 ng/ml</td><td>&lt;12 ng/ml (&lt;30 con anemia)</td></tr>
+        <tr><td>Hierro sérico</td><td>Normal o ↓</td><td>↓↓</td></tr>
+        <tr><td>Transferrina / TIBC</td><td>↑</td><td>↑↑</td></tr>
+        <tr><td>Saturación de transferrina</td><td>Normal o ↓</td><td>&lt;16%</td></tr>
+        <tr><td>VCM</td><td>Normal</td><td>&lt;80 fL (microcítica)</td></tr>
+        <tr><td>RDW</td><td>Normal o ↑</td><td>↑ (&gt;14,5%) — anisocitosis</td></tr>
+        <tr><td>Reticulocitos</td><td>Normales</td><td>Bajos o normales</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Clave diagnóstica:</strong> la ferritina es el mejor marcador de reservas de hierro. Una ferritina &lt;30 ng/ml indica ferropenia incluso con Hb normal. La ferritina es un reactante de fase aguda — puede estar falsamente normal en infección o inflamación; en ese caso, usar el índice de saturación de transferrina.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hierro oral — tratamiento de elección</div>
+      <div class="farma-clase">Sulfato ferroso · Gluconato ferroso · Hierro polimaltosado</div>
+      <div class="dosis-badge">Sulfato ferroso: 150–200 mg de hierro elemental/día VO en 2–3 tomas · en ayunas o con vitamina C para mejor absorción</div>
+      <div class="farma-detalle">El tratamiento se mantiene por <strong>3–6 meses post-normalización de la Hb</strong> para reponer reservas. La Hb sube ~1 g/dl por semana con tratamiento correcto — si no responde en 4 semanas, revisar adherencia, absorción o diagnóstico. Efectos adversos frecuentes: náuseas, constipación, heces negras (informar al paciente). Tomar con jugo de naranja mejora la absorción — evitar con té, café, lácteos.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hierro IV — carboximaltosa férrica / hierro sacarosa</div>
+      <div class="farma-clase">Hierro intravenoso · cuando el oral falla o está contraindicado</div>
+      <div class="dosis-badge">Carboximaltosa férrica: 500–1000 mg IV en dosis única · Hierro sacarosa: 200 mg IV en 30 min, repetir c/semana según déficit</div>
+      <div class="farma-detalle">Indicado en: malabsorción (EII, cirugía bariátrica), intolerancia al hierro oral, ferropenia grave con necesidad de reposición rápida, ERC en diálisis, IC con ferropenia. Repone reservas más rápido que el oral. Riesgo de reacción anafiláctica (raro con carboximaltosa).</div>
+    </div>
+  </div>
+
+  <!-- ANEMIA MEGALOBLÁSTICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔵 Anemia megaloblástica — déficit de B12 y/o folato</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Déficit de B12</th><th>Déficit de folato</th></tr>
+        <tr><td><strong>Causas</strong></td><td>Anemia perniciosa (anticuerpos anti-FI), gastrectomía, dieta vegetariana estricta, metformina crónica, gastritis atrófica</td><td>Dieta pobre, alcoholismo, embarazo, malabsorción, metotrexato, fenitoína</td></tr>
+        <tr><td><strong>Síntomas neurológicos</strong></td><td><strong>Sí</strong> — subaguda combinada medular: parestesias, ataxia, demencia, síntomas psiquiátricos</td><td><strong>No</strong> — sin compromiso neurológico</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>B12 sérica &lt;200 pg/ml · homocisteína ↑ · metilmalónico ↑</td><td>Folato sérico &lt;4 ng/ml · homocisteína ↑ · metilmalónico normal</td></tr>
+        <tr><td><strong>Frotis</strong></td><td>Macrocitos, neutrófilos hipersegmentados (&gt;5 lóbulos)</td><td>Igual que B12</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger"><span style="font-weight:500;">Nunca tratar déficit de B12 solo con folato</span> — el folato puede corregir la anemia pero NO el daño neurológico por déficit de B12, que puede volverse irreversible.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cianocobalamina (Vitamina B12)</div>
+      <div class="farma-clase">Vitamina B12 · déficit o anemia perniciosa</div>
+      <div class="dosis-badge">IM: 1000 mcg/día × 7 días → semanal × 4 → mensual de por vida (anemia perniciosa) · VO: 1000–2000 mcg/día si absorción conservada</div>
+      <div class="farma-detalle">En anemia perniciosa (déficit de factor intrínseco) la absorción oral es imposible → vía IM de por vida. En otras causas (dieta, metformina) puede usarse vía oral a dosis altas. La respuesta es rápida — reticulocitosis a los 3–5 días, mejoría neurológica en semanas a meses.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ácido fólico</div>
+      <div class="farma-clase">Vitamina B9 · déficit o prevención en embarazo</div>
+      <div class="dosis-badge">Tratamiento: 5 mg/día VO por 4 meses · Prevención en embarazo: 0,4–0,8 mg/día desde antes de la concepción · Alto riesgo (espina bífida previa): 4–5 mg/día</div>
+      <div class="farma-detalle">La suplementación con ácido fólico preconcepcional es la medida más eficaz para prevenir defectos del tubo neural. Indicada también en embarazo, alcoholismo crónico, hemólisis crónica y uso de metotrexato.</div>
+    </div>
+  </div>
+
+  <!-- ANEMIA DE ENFERMEDAD CRÓNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🟡 Anemia de enfermedad crónica (AEC) / Anemia de la inflamación</div>
+    <div class="card">
+      <p>La AEC es la segunda causa más frecuente de anemia después de la ferropénica. Se produce en enfermedades crónicas — inflamatorias, infecciosas, neoplásicas o renales.</p>
+      <p><strong>Mecanismo:</strong> la inflamación crónica aumenta la hepcidina → bloquea la liberación de hierro de los macrófagos y la absorción intestinal → "hierro secuestrado" con depósitos normales.</p>
+      <p><strong>Laboratorio característico:</strong> Hb 8–11 g/dl, VCM normal o levemente bajo, ferritina <strong>normal o elevada</strong> (reactante de fase aguda), hierro sérico bajo, transferrina baja o normal, saturación de transferrina baja.</p>
+      <p><strong>Tratamiento:</strong> tratar la enfermedad de base. La eritropoyetina (EPO) está indicada en AEC por ERC (TFG &lt;60 ml/min). El hierro IV puede ser útil si hay ferropenia funcional concomitante.</p>
+    </div>
+    <div class="hl-warn"><strong>Diferencial clave AEC vs ferropénica:</strong> en AEC la ferritina es normal/alta y la transferrina es baja. En ferropenia la ferritina es baja y la transferrina es alta.</div>
+  </div>
+
+  <!-- ANEMIA HEMOLÍTICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🟠 Anemia hemolítica — diagnóstico diferencial</div>
+    <div class="hl-info">Sospechar hemólisis ante: anemia + reticulocitosis + bilirrubina indirecta elevada + LDH elevada + haptoglobina baja. La Coombs directa diferencia hemólisis inmune de no inmune.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Tipo</th><th>Causa</th><th>Coombs</th><th>Pista clínica</th></tr>
+        <tr><td><strong>AHAI por IgG (caliente)</strong></td><td>Idiopática, LES, LLC, fármacos (metildopa, penicilina)</td><td>Positiva</td><td>Esplenomegalia · responde a corticoides</td></tr>
+        <tr><td><strong>AHAI por IgM (fría)</strong></td><td>Idiopática, Mycoplasma, mononucleosis</td><td>Positiva (C3)</td><td>Acrocianosis con frío · aglutininas frías</td></tr>
+        <tr><td><strong>Esferocitosis hereditaria</strong></td><td>Defecto de espectrina — autosómica dominante</td><td>Negativa</td><td>Esferocitos en frotis · fragilidad osmótica ↑</td></tr>
+        <tr><td><strong>Déficit de G6PD</strong></td><td>Ligado al X — hemólisis episódica con oxidantes</td><td>Negativa</td><td>Crisis con infecciones, fármacos (primaquina, dapsona), habas</td></tr>
+        <tr><td><strong>Drepanocitosis</strong></td><td>Hb S homocigota — autosómica recesiva</td><td>Negativa</td><td>Crisis vasooclusivas, dolor, ACV, esplenomegalia</td></tr>
+        <tr><td><strong>Microangiopática (SHU/PTT)</strong></td><td>Daño endotelial → destrucción mecánica de eritrocitos</td><td>Negativa</td><td>Esquistocitos en frotis · trombocitopenia · IRA</td></tr>
+        <tr><td><strong>Paludismo</strong></td><td>Plasmodium destruye eritrocitos parasitados</td><td>Negativa</td><td>Viaje a zona endémica · fiebre periódica · gota gruesa +</td></tr>
+      </table>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Prednisona — AHAI por anticuerpos calientes</div>
+      <div class="farma-clase">Corticoide · primera línea en hemólisis autoinmune</div>
+      <div class="dosis-badge">1 mg/kg/día VO hasta remisión → reducción gradual en 3–6 meses</div>
+      <div class="farma-detalle">Primera línea en AHAI por IgG. Respuesta en 1–3 semanas en el 80% de los casos. Si recae o es corticorresistente: rituximab o esplenectomía. En AHAI por IgM (crioaglutininas): evitar el frío + rituximab — los corticoides son menos eficaces.</div>
+    </div>
+  </div>
+
+  <!-- TRANSFUSIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🩸 Transfusión de glóbulos rojos — cuándo indicarla</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Umbral de transfusión</th></tr>
+        <tr><td>Paciente estable sin cardiopatía</td><td>Hb &lt; 7 g/dl</td></tr>
+        <tr><td>Paciente con cardiopatía isquémica o IC</td><td>Hb &lt; 8 g/dl</td></tr>
+        <tr><td>Post-cirugía cardíaca</td><td>Hb &lt; 8 g/dl</td></tr>
+        <tr><td>Anemia aguda con síntomas (taquicardia, hipotensión, angina)</td><td>Independientemente del valor de Hb</td></tr>
+        <tr><td>Paciente oncológico en quimioterapia</td><td>Hb &lt; 8 g/dl o síntomas</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger"><strong>Transfundir una unidad a la vez</strong> en pacientes estables — cada unidad sube la Hb ~1 g/dl. Reevaluar clínica y laboratorio antes de decidir segunda unidad. La transfusión innecesaria aumenta el riesgo de infecciones, aloinmunización y sobrecarga de volumen.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Criterios OMS de anemia — Hb según sexo</span>
+      <span class="pill">Clasificación por VCM — micro/normo/macrocítica</span>
+      <span class="pill">Ferritina — cuándo está baja y cuándo falsamente normal</span>
+      <span class="pill">Diferencia AEC vs ferropénica — ferritina y transferrina</span>
+      <span class="pill">Pica — síntoma específico de ferropenia</span>
+      <span class="pill">Hierro oral — dosis, duración y cómo mejorar absorción</span>
+      <span class="pill">Neutrófilo hipersegmentado — qué indica</span>
+      <span class="pill">¿Por qué no dar folato solo en déficit de B12?</span>
+      <span class="pill">Anemia perniciosa — causa y tratamiento de por vida</span>
+      <span class="pill">Mecanismo de la AEC — rol de la hepcidina</span>
+      <span class="pill">Tríada de hemólisis — reticulocitos + BiliI + LDH</span>
+      <span class="pill">Coombs + → hemólisis inmune · Coombs - → no inmune</span>
+      <span class="pill">G6PD — qué desencadena las crisis</span>
+      <span class="pill">Esquistocitos — qué indica en el frotis</span>
+      <span class="pill">Umbral de transfusión — 7 g/dl estable, 8 g/dl con cardiopatía</span>
+      <span class="pill">RDW — ferropenia vs talasemia</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: OMS — Concentraciones de hemoglobina para diagnosticar la anemia · Guía de Práctica Clínica de Anemia Ferropénica — Sociedad Argentina de Pediatría 2024 · Manejo de las Anemias en Atención Primaria — SEMERGEN 2024 · Harrison's Principles of Internal Medicine 21ª ed. 2024 · Diagnóstico Clínico y Tratamiento — Papadakis & McPhee 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
