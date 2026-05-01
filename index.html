@@ -59,6 +59,8 @@
     .tag-infecto { background: #FFF3E0; color: #E65100; }
     .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
     .tag-hemato { background: #F3E5F5; color: #6A1B9A; }
+    .tag-nefro { background: #E3F2FD; color: #1565C0; }
+    .tag-ciru { background: #EBF5FB; color: #2980B9; }
     .art-arrow { color: var(--texto-ter); font-size: 16px; }
     .art-pro { font-size: 10px; background: var(--verde); color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; }
     .btn-cafecito { position: fixed; bottom: 24px; right: 24px; background: #00bb2d; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, background 0.2s; }
@@ -99,6 +101,8 @@
     <button class="esp-btn" data-filter="infecto">Infectología</button>
     <button class="esp-btn" data-filter="gastro">Gastroenterología</button>
     <button class="esp-btn" data-filter="hemato">Hematología</button>
+    <button class="esp-btn" data-filter="nefro">Nefrología</button>
+    <button class="esp-btn" data-filter="ciru">Cirugía General</button>
   </div>
 
   <div class="two-col">
@@ -169,6 +173,26 @@
           <div class="art-titulo">Tromboembolismo Pulmonar (TEP)</div>
           <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
         </a>
+        <a href="anemia.html" class="art-row" data-cat="hemato">
+          <div class="art-titulo">Anemia — Clasificación, Diagnóstico y Tratamiento</div>
+          <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="ira.html" class="art-row" data-cat="nefro">
+          <div class="art-titulo">Insuficiencia Renal Aguda (IRA)</div>
+          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="colecistitis.html" class="art-row" data-cat="gastro">
+          <div class="art-titulo">Colecistitis Aguda</div>
+          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="erc.html" class="art-row" data-cat="nefro">
+          <div class="art-titulo">Enfermedad Renal Crónica (ERC)</div>
+          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="apendicitis.html" class="art-row" data-cat="ciru">
+          <div class="art-titulo">Apendicitis Aguda</div>
+          <div class="art-meta"><span class="art-tag tag-ciru">Cirugía General</span><span class="art-arrow">→</span></div>
+        </a>
       </div>
     </div>
   </div>
@@ -209,6 +233,11 @@
     { titulo: 'Fibrilación Auricular', url: 'fa.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'fibrilacion auricular fa anticoagulacion chadsvasc warfarina naco amiodarona cardioversion betabloqueante' },
     { titulo: 'Pancreatitis Aguda', url: 'pancreatitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'pancreatitis aguda amilasa lipasa ranson apache bisap ayuno hidratacion via biliar coledocolitiasis' },
     { titulo: 'Tromboembolismo Pulmonar', url: 'tep.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'tep tromboembolismo pulmonar wells pesi anticoagulacion hbpm heparina alteplasa embolia trombosis' },
+    { titulo: 'Anemia — Clasificación, Diagnóstico y Tratamiento', url: 'anemia.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'anemia ferropenia hemoglobina hematocrito ferritina b12 folato hemolitica aplasica megaloblastica microcítica macrocítica normocítica hierro epo eritropoyetina' },
+    { titulo: 'Insuficiencia Renal Aguda', url: 'ira.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'ira insuficiencia renal aguda creatinina urea kdigo prerenal intrinseca postrenal oliguria diuresis necrosis tubular contrast nefrotoxicidad' },
+    { titulo: 'Colecistitis Aguda', url: 'colecistitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'colecistitis vesicula biliar colelitiasis calculo murphy ecografia antibiotico cirugia colecistectomia laparoscopica fiebre dolor abdominal' },
+    { titulo: 'Enfermedad Renal Crónica', url: 'erc.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'erc enfermedad renal cronica creatinina tfg proteinuria albumina kdigo dialisis trasplante iecas ara2 anemia renal hiperkalemia hiperfosfatemia' },
+    { titulo: 'Apendicitis Aguda', url: 'apendicitis.html', tag: 'Cirugía General', clase: 'tag-ciru', keywords: 'apendicitis apendice alvarado mcburney blumberg rovsing fecalito fid fosa iliaca apendicectomia laparoscopica peritonitis wses' },
   ];
 
   const input = document.getElementById('search-input');
