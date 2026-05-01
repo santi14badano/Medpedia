@@ -5,166 +5,283 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apendicitis Aguda — Medpedia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { 
-      --verde: #1D9E75; 
-      --verde-claro: #E1F5EE; 
-      --verde-oscuro: #0F6E56; 
-      --ciru: #2980b9; 
-      --ciru-claro: #ebf5fb; 
-      --texto: #1a1a1a; 
-      --texto-sec: #555; 
-      --texto-ter: #888; 
-      --borde: #e8e8e8; 
-      --fondo: #fafaf8; 
-      --blanco: #ffffff; 
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ciru: #2980b9; --ciru-claro: #EBF5FB;
+      --texto: #1a1a1a; --texto-secundario: #555; --texto-terciario: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
-    
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
     nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; font-weight: 500; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
     .logo span { color: var(--verde); }
-    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 14px; color: var(--texto-secundario); text-decoration: none; }
 
     .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-terciario); margin-bottom: 1rem; }
     .breadcrumb a { color: var(--verde); text-decoration: none; }
-
     .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
-    
     .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
     .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
-    .tag-esp { background: var(--ciru-claro); color: var(--ciru); }
-    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .tag-ciru { background: var(--ciru-claro); color: var(--ciru); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-terciario); border: 1px solid var(--borde); }
 
-    .seccion { margin-bottom: 2.5rem; }
-    .sec-titulo { font-size: 18px; font-weight: 500; color: var(--texto); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-    
-    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; color: var(--texto-sec); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-secundario); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
     .card strong { color: var(--texto); }
+    .card ul { margin-left: 20px; margin-top: 8px; }
+    .card li { margin-bottom: 4px; }
 
-    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 14px; margin-bottom: 15px; color: var(--texto); }
-    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 14px; margin-bottom: 15px; color: var(--texto); }
-    .hl-danger { border-left: 3px solid #e74c3c; background: #fdedec; padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 14px; margin-bottom: 15px; color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #E24B4A; background: #FCEBEB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
 
-    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow-x: auto; margin: 15px 0; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th { text-align: left; padding: 12px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
-    td { padding: 12px; border-bottom: 1px solid var(--borde); color: var(--texto); }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-secundario); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
 
-    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 12px; }
-    .farma-nombre { font-size: 15px; font-weight: 600; color: var(--texto); }
-    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin: 5px 0; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-secundario); line-height: 1.65; }
 
-    .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .pill { font-size: 12px; padding: 6px 14px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); font-weight: 500; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-terciario); line-height: 1.4; }
 
-    .fuente { font-size: 11px; color: var(--texto-ter); margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--borde); line-height: 1.4; }
-    footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--borde); font-size: 12px; color: var(--texto-ter); }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--ciru); color: white; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { font-size: 14px; line-height: 1.6; flex: 1; }
+
+    .badge-no { background: #FCEBEB; color: #A32D2D; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-secundario); }
+
+    .fuente { font-size: 11px; color: var(--texto-terciario); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-terciario); }
+    footer a { color: var(--verde); text-decoration: none; }
   </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="logo">Med<span>pedia</span></a>
-  <a href="index.html" class="nav-back">← Volver</a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="#">Especialidades</a>
+  </div>
 </nav>
 
 <div class="contenido">
-  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía General</a> › Apendicitis</div>
-  <h1 class="titulo">Apendicitis Aguda</h1>
-  
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía General</a> › Apendicitis Aguda</div>
+  <div class="titulo">Apendicitis Aguda</div>
   <div class="meta">
-    <span class="tag tag-esp">Cirugía General</span>
-    <span class="tag tag-fuente">Guías WSES 2022 · Consenso Jerusalén</span>
+    <span class="tag tag-ciru">Cirugía General</span>
+    <span class="tag tag-fuente">Guías WSES 2022 · Consenso Jerusalén · Asociación Argentina de Cirugía</span>
   </div>
 
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La apendicitis aguda es la <strong>urgencia quirúrgica abdominal más frecuente</strong> a nivel mundial. Consiste en la inflamación aguda del apéndice vermiforme, secundaria a la obstrucción de su luz.</p>
+      <p>Sin tratamiento, la progresión es hacia la <strong>gangrena y perforación</strong>, con peritonitis localizada o difusa. La mortalidad es baja con diagnóstico y tratamiento oportunos, pero se eleva significativamente ante la perforación.</p>
+      <p>Tiene una incidencia máxima entre los <strong>10 y 30 años</strong>, con leve predominio en varones. El riesgo acumulado a lo largo de la vida es del 7–8%.</p>
+    </div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
   <div class="seccion">
     <div class="sec-titulo">🧬 Fisiopatología y Etiología</div>
-    <div class="card">
-      <p>La causa primaria es la <strong>obstrucción de la luz apendicular</strong>. Esto provoca aumento de la presión intraluminal, isquemia de la mucosa y sobrecrecimiento bacteriano.</p>
-      <ul style="margin-left: 20px; margin-top: 10px;">
-        <li><strong>Adultos:</strong> Fecalitos (causa más común).</li>
-        <li><strong>Niños:</strong> Hiperplasia linfoide (secundaria a infecciones virales).</li>
-        <li><strong>Otros:</strong> Parásitos (Oxyurus), tumores (Carcinoide).</li>
-      </ul>
+    <div class="hl">La causa primaria es la <strong>obstrucción de la luz apendicular</strong>, que genera aumento de la presión intraluminal, isquemia de la mucosa y sobrecrecimiento bacteriano con flora colónica mixta.</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Fecalito</div><div class="sintoma-desc">Causa más frecuente en adultos. Masa calcificada que obstruye la luz</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Hiperplasia linfoide</div><div class="sintoma-desc">Causa más frecuente en niños, secundaria a infecciones virales</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Parásitos</div><div class="sintoma-desc">Oxyurus vermicularis — más frecuente en población pediátrica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Tumores</div><div class="sintoma-desc">Tumor carcinoide — causa infrecuente a considerar en adultos mayores</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Cuerpo extraño</div><div class="sintoma-desc">Semillas, huesos de frutas — causa ocasional</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Idiopática</div><div class="sintoma-desc">Sin causa identificable — especialmente en formas no complicadas</div></div>
     </div>
   </div>
 
+  <!-- CLÍNICA -->
   <div class="seccion">
-    <div class="sec-titulo">📋 Presentación Clínica</div>
-    <div class="hl"><strong>Cronología de Murphy (60% de los casos):</strong> Dolor epigástrico que migra a Fosa Ilíaca Derecha (FID) acompañado de náuseas/vómitos y fiebre.</div>
-    <div class="card">
-      <strong>Signos del Examen Físico:</strong>
-      <ul style="margin-left: 20px; margin-top: 10px;">
-        <li><strong>McBurney:</strong> Dolor a la presión en la unión del 1/3 externo con los 2/3 internos.</li>
-        <li><strong>Blumberg:</strong> Dolor a la descompresión (indica irritación peritoneal).</li>
-        <li><strong>Rovsing:</strong> Dolor en FID al presionar la Fosa Ilíaca Izquierda.</li>
-        <li><strong>Psoas/Obturador:</strong> Sugieren apéndice en posición retrocecal o pélvica.</li>
-      </ul>
+    <div class="sec-titulo">🩺 Presentación Clínica</div>
+    <div class="hl-danger">El síntoma cardinal es la <strong>migración del dolor</strong>: inicia en epigastrio o periumbilical y se localiza en la Fosa Ilíaca Derecha (FID) en horas. Se acompaña de anorexia, náuseas y fiebre baja.</div>
+    <div class="sintoma-grid" style="margin-bottom:10px;">
+      <div class="sintoma-item"><div class="sintoma-nombre">Dolor en FID</div><div class="sintoma-desc">Punto de McBurney — unión del 1/3 externo con los 2/3 internos de la línea espino-umbilical</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Signo de Blumberg</div><div class="sintoma-desc">Dolor a la descompresión brusca — indica irritación peritoneal</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Signo de Rovsing</div><div class="sintoma-desc">Dolor en FID al comprimir la Fosa Ilíaca Izquierda — sugiere peritonismo</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Signo del Psoas</div><div class="sintoma-desc">Dolor al extender la cadera derecha — sugiere apéndice retrocecal</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Signo del Obturador</div><div class="sintoma-desc">Dolor al rotar internamente la cadera — sugiere apéndice pélvico</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Anorexia y náuseas</div><div class="sintoma-desc">Presentes en más del 80% de los casos — anorexia con alto valor diagnóstico</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fiebre</div><div class="sintoma-desc">Generalmente baja al inicio (&lt;38°C). Fiebre alta sugiere perforación</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Presentación atípica</div><div class="sintoma-desc">En embarazadas, ancianos e inmunocomprometidos — el dolor puede no localizarse en FID</div></div>
     </div>
+    <div class="hl-info">En embarazadas el apéndice se desplaza hacia arriba — el dolor puede localizarse en flanco derecho o hipocondrio. Mantener alto índice de sospecha ante dolor abdominal derecho en el segundo y tercer trimestre.</div>
   </div>
 
+  <!-- ALVARADO -->
   <div class="seccion">
-    <div class="sec-titulo">📊 Escala de Alvarado</div>
+    <div class="sec-titulo">📊 Escala de Alvarado (MANTRELS)</div>
+    <div class="hl" style="margin-bottom:12px;">Herramienta de estratificación clínica. Combina síntomas, signos y laboratorio para estimar la probabilidad diagnóstica de apendicitis.</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Criterio</th><th>Valor</th><th>Puntos</th></tr>
-        <tr><td><strong>M</strong>igración del dolor</td><td>Sí</td><td>1</td></tr>
-        <tr><td><strong>A</strong>norexia</td><td>Sí</td><td>1</td></tr>
-        <tr><td><strong>N</strong>áuseas / Vómitos</td><td>Sí</td><td>1</td></tr>
-        <tr><td><strong>T</strong>ernura (Dolor FID)</td><td>Sí</td><td>2</td></tr>
-        <tr><td><strong>R</strong>ebote (Blumberg)</td><td>Sí</td><td>1</td></tr>
-        <tr><td><strong>E</strong>levación Temp (>37.3°)</td><td>Sí</td><td>1</td></tr>
-        <tr><td><strong>L</strong>eucocitosis (>10.000)</td><td>Sí</td><td>2</td></tr>
-        <tr><td><strong>S</strong>hift (Neutrofilia)</td><td>Sí</td><td>1</td></tr>
+        <tr><th>Letra</th><th>Criterio</th><th>Puntos</th></tr>
+        <tr><td><strong>M</strong></td><td>Migración del dolor (epigastrio → FID)</td><td>1</td></tr>
+        <tr><td><strong>A</strong></td><td>Anorexia</td><td>1</td></tr>
+        <tr><td><strong>N</strong></td><td>Náuseas / Vómitos</td><td>1</td></tr>
+        <tr><td><strong>T</strong></td><td>Ternura (dolor a la palpación en FID)</td><td>2</td></tr>
+        <tr><td><strong>R</strong></td><td>Rebote positivo (Blumberg)</td><td>1</td></tr>
+        <tr><td><strong>E</strong></td><td>Elevación de temperatura (&gt;37,3°C)</td><td>1</td></tr>
+        <tr><td><strong>L</strong></td><td>Leucocitosis (&gt;10.000/mm³)</td><td>2</td></tr>
+        <tr><td><strong>S</strong></td><td>Shift a la izquierda (neutrofilia)</td><td>1</td></tr>
+        <tr><td colspan="2"><strong>Puntaje máximo</strong></td><td><strong>10</strong></td></tr>
       </table>
     </div>
-    <div class="hl-warn">Interpretación: <strong><4</strong> Riesgo bajo; <strong>5-6</strong> Posible (observación); <strong>≥7</strong> Alta probabilidad (quirúrgico).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Puntaje</th><th>Probabilidad</th><th>Conducta</th></tr>
+        <tr><td><strong>1 – 4</strong></td><td>Riesgo bajo</td><td>Alta con instrucciones de retorno. Considerar observación</td></tr>
+        <tr><td><strong>5 – 6</strong></td><td>Posible apendicitis</td><td>Observación hospitalaria, reevaluación clínica y estudios por imágenes</td></tr>
+        <tr><td><strong>7 – 8</strong></td><td>Probable apendicitis</td><td>Preparar para cirugía — confirmar con imágenes si es posible</td></tr>
+        <tr><td><strong>9 – 10</strong></td><td>Apendicitis muy probable</td><td>Indicación quirúrgica directa sin esperar imágenes</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Alvarado ≥ 7</strong> tiene una sensibilidad del 83% y especificidad del 90% para apendicitis aguda. En puntajes intermedios (5–6), las imágenes son mandatorias antes de decidir la cirugía.</div>
   </div>
 
+  <!-- DIAGNÓSTICO -->
   <div class="seccion">
-    <div class="sec-titulo">🔍 Diagnóstico por Imágenes</div>
-    <div class="card">
-      <p><strong>Ecografía:</strong> De elección en niños y embarazadas. Signos: diámetro >6mm, pared >2mm, no compresible.</p>
-      <p style="margin-top: 10px;"><strong>Tomografía (TAC) con contraste:</strong> Gold Standard en adultos. Sensibilidad >95%. Útil para descartar complicaciones (abscesos, flemones).</p>
+    <div class="sec-titulo">🔬 Diagnóstico por imágenes y laboratorio</div>
+    <div class="hl">El diagnóstico es fundamentalmente <strong>clínico</strong>. Las imágenes confirman o descartan en casos dudosos y detectan complicaciones como abscesos o flemones.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo</th><th>Observación</th></tr>
+        <tr><td><strong>Ecografía abdominal</strong></td><td>Apéndice no compresible, diámetro &gt;6mm, pared &gt;2mm, signo de la diana</td><td>Primera línea en niños y embarazadas. Operador dependiente. Sensibilidad 75–90%</td></tr>
+        <tr><td><strong>TAC con contraste</strong></td><td>Engrosamiento de la pared apendicular, densificación de la grasa periapendicular, apendicolito</td><td>Gold standard en adultos. Sensibilidad &gt;95%. Útil para detectar abscesos y flemones</td></tr>
+        <tr><td><strong>Resonancia Magnética</strong></td><td>Similar a TAC sin radiación ionizante</td><td>Segunda línea en embarazadas cuando ecografía es no diagnóstica</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>Leucocitosis con neutrofilia. PCR elevada (&gt;10 mg/L)</td><td>Leucocitosis en el 70–80% de los casos. PCR se eleva más tarde (6–12 hs) pero aumenta especificidad</td></tr>
+        <tr><td><strong>Rx simple de abdomen</strong></td><td>Apendicolito calcificado (15–20%), íleo localizado</td><td>Baja sensibilidad. Útil solo para descartar perforación de víscera hueca</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">En mujeres en edad fértil con dolor en FID siempre descartar <strong>embarazo ectópico</strong> (β-HCG) y patología ovárica. La ecografía ginecológica es mandatoria en este grupo etario antes de indicar cirugía.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento</div>
+    <div class="hl-danger">El tratamiento definitivo es la <strong>apendicectomía laparoscópica</strong> — abordaje de elección por menor dolor postoperatorio, menor tasa de infección de herida y recuperación más rápida.</div>
+
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Evaluación y preparación:</strong> hidratación IV, analgesia (no contraindicada — no enmascara el cuadro), ayuno y consentimiento informado.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Antibióticoterapia profiláctica:</strong> administrar 30–60 minutos antes de la incisión. En apendicitis no complicada, suspender tras la cirugía.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Cirugía:</strong> apendicectomía laparoscópica de urgencia. Convertir a cirugía abierta si hay dificultad técnica o peritonitis difusa con inestabilidad hemodinámica.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Flemón o absceso apendicular:</strong> manejo inicial médico (ATB + drenaje percutáneo si corresponde), con apendicectomía diferida a las 6–8 semanas (conducta debatida según guías WSES 2022).</div></div>
+
+    <div style="margin-top:16px;">
+      <div class="farma-card">
+        <div class="farma-nombre">Cefazolina + Metronidazol</div>
+        <div class="farma-clase">Antibióticoterapia profiláctica · primera línea</div>
+        <div class="dosis-badge">Cefazolina 2g EV + Metronidazol 500mg EV · 30–60 min antes de la incisión</div>
+        <div class="farma-detalle">Esquema estándar de profilaxis quirúrgica. Cubre flora gramnegativa y anaeróbica colónica. En alérgicos a betalactámicos: Clindamicina 600mg + Gentamicina 1,5mg/kg. En apendicitis no perforada, <strong>no continuar antibióticos en el postoperatorio</strong>.</div>
+      </div>
+
+      <div class="farma-card">
+        <div class="farma-nombre">Ampicilina-Sulbactam</div>
+        <div class="farma-clase">Antibióticoterapia terapéutica · apendicitis complicada (perforada o gangrenosa)</div>
+        <div class="dosis-badge">3g EV cada 6 horas · duración 3–5 días según evolución clínica</div>
+        <div class="farma-detalle">Indicado en apendicitis gangrenosa o perforada con peritonitis. Cubre amplio espectro incluyendo anaerobios. Alternativa: Piperacilina-Tazobactam 4,5g EV cada 8h en casos con sospecha de flora nosocomial. Continuar hasta normalización clínica y de parámetros inflamatorios (PCR, fiebre, leucocitosis).</div>
+      </div>
+
+      <div class="farma-card">
+        <div class="farma-nombre">Analgesia — Ketorolac / Morfina</div>
+        <div class="farma-clase">Manejo del dolor · no contraindicados en apendicitis</div>
+        <div class="dosis-badge">Ketorolac 30mg EV · Morfina 0,05–0,1 mg/kg EV titulada</div>
+        <div class="farma-detalle">Contrario al mito histórico, la analgesia en apendicitis aguda <strong>no enmascara el diagnóstico</strong> ni aumenta el riesgo de perforación — demostrado en múltiples estudios y avalado por las guías WSES 2022. Su administración es un acto humanitario que no debe demorarse. Los AINE son de primera línea; los opioides se reservan para dolor severo o refractario.</div>
+      </div>
     </div>
   </div>
 
+  <!-- COMPLICACIONES -->
   <div class="seccion">
-    <div class="sec-titulo">💊 Manejo y Tratamiento</div>
-    <div class="hl-danger">El tratamiento definitivo es la <strong>Apendicectomía</strong> (Laparoscópica de preferencia).</div>
-    
-    <div class="farma-card">
-      <div class="farma-nombre">Antibioticoterapia Profiláctica</div>
-      <div class="dosis-badge">Cefazolina 2g + Metronidazol 500mg EV</div>
-      <div class="farma-detalle">Administrar 30-60 min antes de la incisión. En casos no perforados, se suspende tras la cirugía. En peritonitis, se mantiene por 3-5 días.</div>
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Descripción</th><th>Dato clave</th></tr>
+        <tr><td><strong>Perforación</strong></td><td>Necrosis transmural con liberación del contenido apendicular</td><td>Ocurre en el 20–30% de los casos. Más frecuente en niños y ancianos por diagnóstico tardío</td></tr>
+        <tr><td><strong>Peritonitis localizada</strong></td><td>Inflamación peritoneal circunscripta a la FID</td><td>Controlable quirúrgicamente con lavado y drenaje</td></tr>
+        <tr><td><strong>Peritonitis difusa</strong></td><td>Contaminación peritoneal generalizada</td><td>Requiere lavado peritoneal extenso — mortalidad significativa</td></tr>
+        <tr><td><strong>Flemón apendicular</strong></td><td>Masa inflamatoria que engloba el apéndice y estructuras vecinas</td><td>Manejo inicial médico — cirugía diferida 6–8 semanas</td></tr>
+        <tr><td><strong>Absceso periapendicular</strong></td><td>Colección purulenta localizada</td><td>Drenaje percutáneo guiado por imagen + ATB + cirugía diferida</td></tr>
+        <tr><td><strong>Infección de herida</strong></td><td>Complicación postoperatoria más frecuente</td><td>Riesgo mayor en apendicitis perforada. Reducida por profilaxis antibiótica adecuada</td></tr>
+        <tr><td><strong>Pileflebitis</strong></td><td>Tromboflebitis séptica de la vena porta</td><td>Complicación grave y poco frecuente. Fiebre en agujas, ictericia y abscesos hepáticos</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">El <strong>diagnóstico tardío</strong> es el principal factor de riesgo para perforación. En pacientes con síntomas de más de 36–48 horas el riesgo de perforación supera el 65%.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔄 Diagnóstico Diferencial</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Condición</th><th>Claves para diferenciar</th></tr>
+        <tr><td><strong>Embarazo ectópico</strong></td><td>Mujer en edad fértil — β-HCG positiva, ecografía sin saco intrauterino. Urgencia obstétrica</td></tr>
+        <tr><td><strong>Quiste ovárico / torsión</strong></td><td>Mujer, dolor tipo cólico intenso de inicio brusco, masa anexial en ecografía</td></tr>
+        <tr><td><strong>Adenitis mesentérica</strong></td><td>Niños y adolescentes, infección viral reciente, ganglios mesentéricos en eco, sin fiebre alta</td></tr>
+        <tr><td><strong>Diverticulitis de Meckel</strong></td><td>Clínica indistinguible de apendicitis — diagnóstico intraoperatorio</td></tr>
+        <tr><td><strong>Ileítis terminal (Crohn)</strong></td><td>Antecedentes de diarrea crónica, lesiones skip en TAC, compromiso ileal extenso</td></tr>
+        <tr><td><strong>Cólico ureteral derecho</strong></td><td>Dolor cólico irradiado a genitales, hematuria, sin defensa muscular voluntaria</td></tr>
+        <tr><td><strong>Psoas absceso</strong></td><td>Dolor insidioso, fiebre prolongada, posición antálgica en flexión de cadera</td></tr>
+      </table>
     </div>
   </div>
 
+  <!-- EXAMEN -->
   <div class="seccion">
-    <div class="sec-titulo">🔥 Lo que te preguntan en el examen</div>
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
     <div class="pill-list">
-      <span class="pill">Causa más frecuente en adultos: Fecalito</span>
-      <span class="pill">Signo de Blumberg: Indica peritonitis</span>
-      <span class="pill">Punto de McBurney: Localización exacta</span>
-      <span class="pill">Alvarado ≥7: Conducta quirúrgica</span>
-      <span class="pill">Embarazada: Ecografía (1° línea) y RM (2° línea)</span>
-      <span class="pill">Apendicitis retrocecal: Psoas positivo / Clínica atípica</span>
-      <span class="pill">Complicación más frecuente: Infección de herida quirúrgica</span>
-      <span class="pill">Flemón apendicular: Manejo inicial médico (ATB)</span>
+      <span class="pill">Urgencia quirúrgica más frecuente del mundo</span>
+      <span class="pill">Causa más frecuente en adultos: fecalito</span>
+      <span class="pill">Causa más frecuente en niños: hiperplasia linfoide</span>
+      <span class="pill">Cronología de Murphy: epigastrio → FID</span>
+      <span class="pill">Punto de McBurney: 1/3 externo – 2/3 internos</span>
+      <span class="pill">Blumberg: indica irritación peritoneal</span>
+      <span class="pill">Psoas (+): apéndice retrocecal</span>
+      <span class="pill">Obturador (+): apéndice pélvico</span>
+      <span class="pill">Alvarado ≥7: conducta quirúrgica</span>
+      <span class="pill">Alvarado 5–6: imágenes obligatorias</span>
+      <span class="pill">Gold standard en adultos: TAC con contraste</span>
+      <span class="pill">Primera línea en niños y embarazadas: ecografía</span>
+      <span class="pill">Embarazada sin eco diagnóstica: RMN (no TAC)</span>
+      <span class="pill">La analgesia NO enmascara el cuadro clínico</span>
+      <span class="pill">Profilaxis: Cefazolina + Metronidazol prequirúrgico</span>
+      <span class="pill">Flemón apendicular: manejo médico inicial</span>
+      <span class="pill">Complicación postop más frecuente: infección de herida</span>
+      <span class="pill">Pileflebitis: trombosis séptica de la porta</span>
     </div>
   </div>
 
   <div class="fuente">
-    Fuentes: Di Saverio S, et al. Diagnosis and treatment of acute appendicitis: 2020/2022 update of the WSES Jerusalem guidelines · Sabiston Textbook of Surgery, 21st Edition · Guía de Práctica Clínica de la Asociación Argentina de Cirugía.
+    Fuentes: Di Saverio S, et al. Diagnosis and treatment of acute appendicitis: 2020/2022 update of the WSES Jerusalem guidelines · Sabiston Textbook of Surgery, 21st Edition · Guía de Práctica Clínica de la Asociación Argentina de Cirugía · Ministerio de Salud de la Nación Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
   </div>
 </div>
 
 <footer>
-  <p>Medpedia 2026 · Información para estudiantes de medicina</p>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
 </footer>
 
 </body>
