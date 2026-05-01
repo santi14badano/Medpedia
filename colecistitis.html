@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colecistitis Aguda: Guía Clínica — Medpedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-med: #0F6E56;
+      --texto: #1a1a1a; --texto-sec: #5F5E5A; --borde: #e8e8e8;
+      --fondo: #fafaf8; --blanco: #ffffff;
+      --rojo: #FCEBEB; --rojo-text: #A32D2D; --rojo-border: #F09595;
+      --amber: #FAEEDA; --amber-text: #854F0B;
+      --azul: #E6F1FB; --azul-text: #185FA5;
+      --gris: #F1EFE8; --gris-text: #5F5E5A;
+      --cir: #7B3F00; --cir-claro: #FDF3E7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
+
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; text-decoration: none; color: var(--texto); }
+    .logo span { color: var(--verde); }
+    .nav-back { text-decoration: none; color: var(--verde); font-weight: 500; font-size: 14px; }
+
+    main { max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem 4rem; }
+
+    .page-header { display: flex; align-items: center; gap: 14px; margin-bottom: 2rem; }
+    .page-icon { background: var(--cir-claro); border-radius: 12px; padding: 10px 14px; font-size: 22px; }
+    .page-title { font-family: 'Fraunces', serif; font-size: 32px; line-height: 1.2; }
+    .page-sub { font-size: 13px; color: var(--texto-sec); margin-top: 2px; }
+
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--borde); margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab { padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--texto-sec); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; border-radius: 4px 4px 0 0; }
+    .tab:hover { color: var(--texto); background: var(--fondo); }
+    .tab.active { color: var(--cir); border-bottom-color: var(--cir); }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .card-title { font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+    .badge-teal { background: var(--verde-claro); color: var(--verde-med); }
+    .badge-amber { background: var(--amber); color: var(--amber-text); }
+    .badge-red { background: var(--rojo); color: var(--rojo-text); }
+    .badge-blue { background: var(--azul); color: var(--azul-text); }
+    .badge-gray { background: var(--gris); color: var(--gris-text); }
+    .badge-brown { background: var(--cir-claro); color: var(--cir); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+
+    h3 { font-size: 14px; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--texto); }
+    h3:first-child { margin-top: 0; }
+    p { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.2rem; }
+    li { font-size: 13px; color: var(--texto-sec); line-height: 1.7; }
+    strong { color: var(--texto); }
+
+    .drug-header { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 8px; padding: 6px 0 8px; font-size: 11px; font-weight: 700; color: var(--texto-sec); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--borde); }
+    .drug-row { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); align-items: start; font-size: 13px; }
+    .drug-row:last-child { border-bottom: none; }
+    .drug-name { font-weight: 600; color: var(--texto); }
+    .drug-dose { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    /* Grado cards */
+    .grado-card { border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .grado-card.g1 { border-top: 3px solid #1D9E75; }
+    .grado-card.g2 { border-top: 3px solid #EF9F27; }
+    .grado-card.g3 { border-top: 3px solid #E24B4A; }
+    .grado-label { font-size: 18px; font-weight: 700; font-family: 'Fraunces', serif; margin-bottom: 4px; }
+
+    .stat { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .stat-label { font-size: 12px; color: var(--texto-sec); }
+    .stat-val { font-size: 18px; font-weight: 700; margin-top: 2px; color: var(--texto); }
+    .stat-sub { font-size: 11px; color: var(--texto-sec); margin-top: 2px; }
+
+    .info-box { background: var(--cir-claro); border-left: 3px solid var(--cir); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 13px; color: var(--cir); }
+    .alerta { background: var(--rojo); border: 1px solid var(--rojo-border); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .alerta-title { font-size: 12px; font-weight: 700; color: var(--rojo-text); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+
+    .scenario-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stab { padding: 7px 14px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-sec); border-radius: 8px; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .stab:hover { background: var(--fondo); }
+    .stab.active { background: var(--cir-claro); color: var(--cir); border-color: #C49A6C; }
+    .scenario { display: none; }
+    .scenario.active { display: block; }
+
+    .timeline-item { display: flex; gap: 14px; margin-bottom: 14px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 4px; }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--cir); flex-shrink: 0; }
+    .tl-line { width: 2px; background: var(--borde); flex: 1; margin-top: 4px; min-height: 20px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--texto); }
+    .tl-body { font-size: 13px; color: var(--texto-sec); margin-top: 3px; line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      main { padding: 0 1rem 3rem; }
+      .page-title { font-size: 24px; }
+      .drug-header, .drug-row { grid-template-columns: 1fr 1fr; }
+      .drug-header span:last-child, .drug-row > *:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-icon">🫀</div>
+    <div>
+      <div class="page-title">Colecistitis Aguda</div>
+      <div class="page-sub">Guía clínica completa · Cirugía / Gastroenterología · Tokyo Guidelines 2018 · AACS</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('clinica', this)">Clínica y diagnóstico</button>
+    <button class="tab" onclick="showTab('severidad', this)">Clasificación de severidad</button>
+    <button class="tab" onclick="showTab('tratamiento', this)">Tratamiento</button>
+    <button class="tab" onclick="showTab('antibioticos', this)">Antibióticos</button>
+    <button class="tab" onclick="showTab('complicaciones', this)">Complicaciones</button>
+    <button class="tab" onclick="showTab('especiales', this)">Situaciones especiales</button>
+  </div>
+
+  <!-- CLÍNICA Y DIAGNÓSTICO -->
+  <div class="section active" id="sec-clinica">
+    <div class="card">
+      <div class="card-title">Criterios diagnósticos — Tokyo Guidelines 2018</div>
+      <p>El diagnóstico requiere <strong>al menos 1 criterio de A + 1 de B + 1 de C</strong>.</p>
+      <div class="grid-2">
+        <div>
+          <h3>A — Signos locales de inflamación</h3>
+          <ul>
+            <li>Signo de Murphy positivo</li>
+            <li>Masa, dolor o sensibilidad en hipocondrio derecho</li>
+          </ul>
+          <h3 style="margin-top:12px;">B — Signos sistémicos de inflamación</h3>
+          <ul>
+            <li>Fiebre &gt; 38°C</li>
+            <li>PCR elevada</li>
+            <li>Leucocitosis &gt; 10.000/mm³</li>
+          </ul>
+        </div>
+        <div>
+          <h3>C — Imágenes</h3>
+          <ul>
+            <li>Hallazgos ecográficos de colecistitis aguda:</li>
+            <li>— Litiasis vesicular o barro biliar</li>
+            <li>— Engrosamiento de pared &gt; 4 mm</li>
+            <li>— Líquido perivesicular</li>
+            <li>— Signo de Murphy ecográfico</li>
+            <li>— Distensión vesicular &gt; 8 cm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:1rem;">
+        <strong>Diagnóstico sospechoso:</strong> 1 ítem de A + 1 de B. <strong>Diagnóstico definitivo:</strong> A + B + C.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Presentación clínica</div>
+      <div class="grid-2">
+        <div>
+          <h3>Síntomas típicos</h3>
+          <ul>
+            <li><strong>Dolor en hipocondrio derecho</strong> — intenso, continuo (a diferencia del cólico biliar)</li>
+            <li>Inicio frecuente postprandial (comida grasa)</li>
+            <li>Irradiación al hombro derecho o escápula</li>
+            <li>Náuseas y vómitos</li>
+            <li>Fiebre (38–39°C)</li>
+            <li>Anorexia</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Examen físico</h3>
+          <ul>
+            <li><strong>Signo de Murphy:</strong> detención de la inspiración al palpar hipocondrio derecho</li>
+            <li>Defensa o rigidez en HD (peritonismo)</li>
+            <li>Masa palpable (plastrón vesicular)</li>
+            <li>Ictericia leve (&lt; 20%) — si hay coledocolitiasis asociada</li>
+            <li>Taquicardia, taquipnea en formas severas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Laboratorio</div>
+      <div class="drug-header"><span>Estudio</span><span>Hallazgo esperado</span><span>Interpretación</span></div>
+      <div class="drug-row"><span>Leucocitos</span><span>&gt; 10.000–18.000/mm³</span><span>Inflamación activa. &gt; 18.000 sugiere complicación.</span></div>
+      <div class="drug-row"><span>PCR</span><span>Elevada (frecuentemente &gt; 30 mg/L)</span><span>Marcador de inflamación y severidad.</span></div>
+      <div class="drug-row"><span>Bilirrubina total</span><span>Normal o levemente elevada</span><span>Si &gt; 3 mg/dL: descartar coledocolitiasis.</span></div>
+      <div class="drug-row"><span>Transaminasas (AST/ALT)</span><span>Leve elevación posible</span><span>Elevación marcada → hepatitis o coledoco.</span></div>
+      <div class="drug-row"><span>FAL / GGT</span><span>Puede estar elevada</span><span>Patrón colestásico → coledoco o colangitis.</span></div>
+      <div class="drug-row"><span>Amilasa / lipasa</span><span>Normal (salvo pancreatitis asociada)</span><span>Si elevadas → pancreatitis biliar concomitante.</span></div>
+      <div class="drug-row"><span>Hemocultivos</span><span>En fiebre alta o sepsis</span><span>Tomar antes del ATB en Grado II–III.</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Imágenes — algoritmo diagnóstico</div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-title">1º — Ecografía abdominal (de elección)</div>
+          <div class="tl-body">Sensibilidad 80–85%, especificidad 95%. Disponible, rápida, sin radiación. Evalúa vesícula, vía biliar y páncreas.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-title">2º — TC de abdomen con contraste</div>
+          <div class="tl-body">Si ecografía no concluyente, sospecha de complicación (gangrena, perforación, absceso perivesicular) o diagnóstico diferencial con otras causas de abdomen agudo.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-title">3º — Colangio-RMN (CRMN)</div>
+          <div class="tl-body">Si sospecha de coledocolitiasis o estenosis de la vía biliar sin querer irradiar (embarazo, jóvenes).</div>
+        </div>
+      </div>
+      <div class="timeline-item" style="margin-bottom:0;">
+        <div class="tl-left"><div class="tl-dot"></div></div>
+        <div>
+          <div class="tl-title">4º — CPRE diagnóstico-terapéutica</div>
+          <div class="tl-body">Si confirmación de coledocolitiasis con necesidad de tratamiento endoscópico inmediato.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEVERIDAD -->
+  <div class="section" id="sec-severidad">
+    <div class="grado-card g1">
+      <div class="grado-label" style="color:#1D9E75;">Grado I — Leve</div>
+      <div style="margin-bottom:8px;"><span class="badge badge-teal">Sin disfunción orgánica</span></div>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios</h3>
+          <ul>
+            <li>No cumple criterios de Grado II o III</li>
+            <li>Inflamación vesicular leve</li>
+            <li>Sin comorbilidades significativas</li>
+            <li>Leucocitos &lt; 18.000/mm³</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Conducta</h3>
+          <ul>
+            <li>Colecistectomía laparoscópica temprana (dentro de 72 hs)</li>
+            <li>ATB por 24 hs perioperatorio</li>
+            <li>Bajo riesgo quirúrgico</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grado-card g2">
+      <div class="grado-label" style="color:#BA7517;">Grado II — Moderado</div>
+      <div style="margin-bottom:8px;"><span class="badge badge-amber">Sin disfunción orgánica + factores de riesgo local</span></div>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios (≥ 1)</h3>
+          <ul>
+            <li>Leucocitos &gt; 18.000/mm³</li>
+            <li>Masa palpable dolorosa en HD</li>
+            <li>Duración de síntomas &gt; 72 horas</li>
+            <li>Inflamación local marcada: gangrena localizada, absceso perivesicular, colecistitis enfisematosa, peritonitis biliar localizada</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Conducta</h3>
+          <ul>
+            <li>ATB EV + soporte</li>
+            <li>Colecistectomía laparoscópica temprana si cirujano experimentado</li>
+            <li>Si alto riesgo: drenaje percutáneo primero → cirugía diferida</li>
+            <li>Control estrecho en internación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grado-card g3">
+      <div class="grado-label" style="color:#A32D2D;">Grado III — Grave</div>
+      <div style="margin-bottom:8px;"><span class="badge badge-red">Disfunción orgánica</span></div>
+      <div class="grid-2">
+        <div>
+          <h3>Criterios (≥ 1 disfunción orgánica)</h3>
+          <ul>
+            <li>Hipotensión (requiere vasopresores)</li>
+            <li>Alteración del sensorio</li>
+            <li>PaO₂/FiO₂ &lt; 300</li>
+            <li>Creatinina &gt; 2 mg/dL</li>
+            <li>Bilirrubina &gt; 4 mg/dL</li>
+            <li>Plaquetas &lt; 100.000/mm³</li>
+            <li>INR &gt; 1.5</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Conducta</h3>
+          <ul>
+            <li>UTI o área de alta complejidad</li>
+            <li>ATB EV de amplio espectro</li>
+            <li>Drenaje percutáneo urgente (colecistostomía)</li>
+            <li>Cirugía diferida una vez estabilizado</li>
+            <li>Soporte de órganos afectados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Factores que aumentan el riesgo quirúrgico</div>
+      <div class="grid-2">
+        <div>
+          <h3>Score ASA ≥ III / comorbilidades</h3>
+          <ul>
+            <li>Edad &gt; 75 años</li>
+            <li>Diabetes mellitus descompensada</li>
+            <li>Insuficiencia renal crónica</li>
+            <li>Cirrosis hepática</li>
+            <li>Inmunosupresión (corticoides, quimioterapia)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Factores técnicos</h3>
+          <ul>
+            <li>Cirugías abdominales previas múltiples</li>
+            <li>Obesidad mórbida</li>
+            <li>Embarazo (tercer trimestre)</li>
+            <li>Coagulopatía severa</li>
+            <li>Síndrome de Mirizzi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="section" id="sec-tratamiento">
+    <div class="scenario-tabs">
+      <button class="stab active" onclick="showScenario('medico', this)">Tratamiento médico inicial</button>
+      <button class="stab" onclick="showScenario('cirugia', this)">Cirugía</button>
+      <button class="stab" onclick="showScenario('drenaje', this)">Drenaje percutáneo</button>
+      <button class="stab" onclick="showScenario('colangitis', this)">Colangitis aguda</button>
+    </div>
+
+    <div class="scenario active" id="sc-medico">
+      <div class="card">
+        <div class="card-title">Medidas generales — ingreso hospitalario</div>
+        <div class="grid-2">
+          <div>
+            <h3>Soporte inmediato</h3>
+            <ul>
+              <li>Ayuno (nada por boca)</li>
+              <li>Hidratación EV: SF 0.9% o Ringer Lactato</li>
+              <li>Sonda nasogástrica si vómitos incoercibles</li>
+              <li>Monitoreo de signos vitales</li>
+              <li>Control de diuresis</li>
+              <li>Hemograma + bioquímica + hemocultivos</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Analgesia</h3>
+            <ul>
+              <li><strong>Ketorolac</strong> 30 mg EV c/8 hs — primera línea si función renal normal</li>
+              <li><strong>Diclofenac</strong> 75 mg IM c/12 hs — alternativa</li>
+              <li><strong>Metamizol</strong> 1–2 g EV c/8 hs — útil para espasmo</li>
+              <li><strong>Morfina</strong> 2–4 mg EV c/4–6 hs si dolor severo</li>
+              <li>Evitar AINEs si ERC, coagulopatía o riesgo GI alto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Antibióticos empíricos — ver pestaña Antibióticos</div>
+        <ul>
+          <li>Iniciar ATB EV en todos los Grado I con fiebre, Grado II y Grado III</li>
+          <li>En Grado I sin fiebre ni leucocitosis: ATB perioperatorio es suficiente</li>
+          <li>Duración: 24 hs en Grado I · 3–5 días en Grado II · 5–7 días en Grado III</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-cirugia">
+      <div class="card">
+        <div class="card-title">Colecistectomía laparoscópica — estándar de tratamiento</div>
+        <div class="info-box">
+          La <strong>colecistectomía laparoscópica temprana</strong> (dentro de las primeras 72 hs del inicio de síntomas) es el tratamiento definitivo de elección en Grado I y Grado II seleccionado. Reduce complicaciones, estancia y costos vs. cirugía diferida.
+        </div>
+        <div class="drug-header"><span>Momento quirúrgico</span><span>Indicación</span><span>Evidencia</span></div>
+        <div class="drug-row">
+          <div><div class="drug-name">Temprana — dentro de 72 hs</div><div class="drug-dose">Estándar actual (TOKYO 2018)</div></div>
+          <div>Grado I y II con bajo riesgo quirúrgico</div>
+          <div>Menor conversión a abierta, menor estancia, mismas complicaciones</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Diferida — 6–8 semanas</div><div class="drug-dose">Si alto riesgo o tardía (&gt; 72 hs con plastrón)</div></div>
+          <div>Grado II de alto riesgo · Grado III estabilizado</div>
+          <div>Mayor riesgo de conversión a abierta si inflamación activa</div>
+        </div>
+        <div class="drug-row">
+          <div><div class="drug-name">Abierta (laparotomía)</div><div class="drug-dose">Conversión o indicación primaria</div></div>
+          <div>Peritonitis generalizada · Conversión por dificultad técnica · Sospecha de cáncer de vesícula</div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Consideraciones técnicas — puntos críticos de seguridad</div>
+        <ul>
+          <li><strong>Vista crítica de seguridad (CVS):</strong> identificar claramente el conducto cístico y la arteria cística antes de cortar</li>
+          <li>Colangiografía intraoperatoria si: ictericia, dilatación de vía biliar, anatomía poco clara</li>
+          <li>Conversión a abierta sin hesitar si visión insegura, sangrado o sospecha de lesión de vía biliar</li>
+          <li>Drenaje subhepático si espacio contaminado o hemostasia dudosa</li>
+          <li>Muestra de bilis para cultivo en Grado II–III</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Coledocolitiasis asociada — manejo</div>
+        <ul>
+          <li>Sospecha: bilirrubina &gt; 3 mg/dL, dilatación de VBP en eco (&gt; 6 mm), cálculo visible</li>
+          <li><strong>CPRE preoperatoria</strong> → colecistectomía laparoscópica en el mismo ingreso (secuencial)</li>
+          <li><strong>Exploración laparoscópica de vía biliar</strong> si centro con experiencia</li>
+          <li>Colangio-RMN preoperatoria si sospecha sin certeza para evitar CPRE innecesaria</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-drenaje">
+      <div class="card">
+        <div class="card-title">Colecistostomía percutánea transhepática (CPT)</div>
+        <div class="info-box">
+          Indicada como <strong>puente hacia la cirugía</strong> en pacientes de alto riesgo quirúrgico o como tratamiento definitivo en aquellos que no pueden operarse.
+        </div>
+        <h3>Indicaciones</h3>
+        <ul>
+          <li>Grado III con disfunción orgánica no mejorable con ATB</li>
+          <li>Grado II con alto riesgo quirúrgico (ASA IV, cirrosis Child B/C)</li>
+          <li>Colecistitis acalculosa grave en UTI</li>
+          <li>Falla al tratamiento médico en las primeras 24–48 hs</li>
+        </ul>
+        <h3 style="margin-top:12px;">Técnica y cuidados</h3>
+        <ul>
+          <li>Guiada por ecografía o TC</li>
+          <li>Abordaje transhepático preferido (menor riesgo de fuga biliar)</li>
+          <li>Drenaje externo con bolsa colectora</li>
+          <li>Mantener el catéter al menos 3–4 semanas</li>
+          <li>Verificar resolución con colangiografía percutánea antes de retirar</li>
+          <li>Colecistectomía diferida (6–12 semanas) si el paciente mejora y es operable</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scenario" id="sc-colangitis">
+      <div class="card">
+        <div class="card-title">Colangitis aguda — diagnóstico (Criterios de Tokyo)</div>
+        <p>Entidad diferente a la colecistitis. Infección de la vía biliar principal, generalmente por coledocolitiasis.</p>
+        <div class="grid-2">
+          <div>
+            <h3>Tríada de Charcot</h3>
+            <ul>
+              <li>Fiebre / escalofríos</li>
+              <li>Ictericia</li>
+              <li>Dolor en hipocondrio derecho</li>
+            </ul>
+            <h3 style="margin-top:12px;">Péntada de Reynolds (forma grave)</h3>
+            <ul>
+              <li>Tríada de Charcot +</li>
+              <li>Hipotensión / shock</li>
+              <li>Alteración del sensorio</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Manejo urgente</h3>
+            <ul>
+              <li>ATB EV de amplio espectro (igual que Grado III)</li>
+              <li>Fluidoterapia agresiva</li>
+              <li><strong>CPRE urgente</strong> dentro de las primeras 24–48 hs</li>
+              <li>Esfinterotomía + extracción de cálculos + colocación de stent biliar si necesario</li>
+              <li>UTI si Péntada de Reynolds</li>
+              <li>Colecistectomía diferida después de la CPRE</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANTIBIÓTICOS -->
+  <div class="section" id="sec-antibioticos">
+    <div class="card">
+      <div class="card-title">Gérmenes más frecuentes en colecistitis / colangitis</div>
+      <div class="grid-2">
+        <div>
+          <h3>Bacterias gramnegativas</h3>
+          <ul>
+            <li><strong>Escherichia coli</strong> — más frecuente (50–70%)</li>
+            <li>Klebsiella pneumoniae</li>
+            <li>Pseudomonas aeruginosa (nosocomial/biliar)</li>
+            <li>Enterobacter spp.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Otros</h3>
+          <ul>
+            <li><strong>Enterococcus spp.</strong> — grampositivo frecuente</li>
+            <li>Bacteroides fragilis — anaerobio (biliar crónico)</li>
+            <li>Clostridium spp.</li>
+            <li>Streptococcus spp.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Esquemas antibióticos según grado — Tokyo 2018</div>
+      <div class="drug-header"><span>Grado / Contexto</span><span>Esquema de elección</span><span>Duración</span></div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Grado I — leve, adquirida en comunidad</div><div class="drug-dose">Sin factores de riesgo para gérmenes resistentes</div></div>
+        <div>Ampicilina/Sulbactam 3 g c/6 hs EV<br><em>o</em> Ceftriaxona 1–2 g c/24 hs EV</div>
+        <div>24–48 hs (perioperatorio)</div>
+      </div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Grado II — moderado, comunidad</div><div class="drug-dose"></div></div>
+        <div>Ampicilina/Sulbactam 3 g c/6 hs EV<br><em>o</em> Ceftriaxona + Metronidazol 500 mg c/8 hs EV</div>
+        <div>3–5 días</div>
+      </div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Grado III — grave, o biliar nosocomial</div><div class="drug-dose">Riesgo de gérmenes resistentes</div></div>
+        <div>Piperacilina/Tazobactam 4.5 g c/6–8 hs EV<br><em>o</em> Meropenem 1 g c/8 hs EV si alta resistencia local</div>
+        <div>5–7 días</div>
+      </div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Colangitis aguda Grado II–III</div><div class="drug-dose">Mayor riesgo de bacteriemia</div></div>
+        <div>Piperacilina/Tazobactam 4.5 g c/6 hs EV<br><em>o</em> Meropenem 1 g c/8 hs EV + Vancomicina si Enterococcus</div>
+        <div>Hasta resolución + 3–5 días post-CPRE</div>
+      </div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Alergia a betalactámicos</div><div class="drug-dose"></div></div>
+        <div>Ciprofloxacino 400 mg c/12 hs EV + Metronidazol 500 mg c/8 hs EV</div>
+        <div>Según grado</div>
+      </div>
+
+      <div class="drug-row">
+        <div><div class="drug-name">Paso a vía oral</div><div class="drug-dose">Si mejoría clínica y tolerancia</div></div>
+        <div>Amoxicilina/Clavulánico 875/125 mg c/8 hs VO<br><em>o</em> Ciprofloxacino 500 mg c/12 hs VO</div>
+        <div>Completar 5–7 días total</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Factores de riesgo para gérmenes resistentes</div>
+      <ul>
+        <li>Hospitalización reciente (&lt; 90 días)</li>
+        <li>Procedimientos biliares previos (CPRE, cirugías)</li>
+        <li>Uso previo de antibióticos de amplio espectro</li>
+        <li>Residencia en geriátrico</li>
+        <li>Inmunosupresión</li>
+        <li>Stent biliar previo</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="section" id="sec-complicaciones">
+    <div class="card">
+      <div class="card-title">Colecistitis gangrenosa</div>
+      <div class="grid-2">
+        <div>
+          <h3>Diagnóstico</h3>
+          <ul>
+            <li>Sospecha clínica: dolor que mejora paradójicamente (necrosis de nervios)</li>
+            <li>TC: gas intraluminal, ausencia de refuerzo de pared, líquido perivesicular</li>
+            <li>Pacientes diabéticos, adultos mayores, inmunocomprometidos</li>
+            <li>Leucocitosis marcada (&gt; 20.000)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Manejo</h3>
+          <ul>
+            <li>Cirugía urgente o colecistostomía de urgencia</li>
+            <li>ATB de amplio espectro con cobertura anaerobia</li>
+            <li>Alta mortalidad si se demora la intervención</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Perforación vesicular</div>
+      <div class="grid-2">
+        <div>
+          <h3>Tipos</h3>
+          <ul>
+            <li><strong>Tipo I:</strong> Perforación libre → peritonitis biliar generalizada</li>
+            <li><strong>Tipo II:</strong> Perforación cubierta → absceso perivesicular</li>
+            <li><strong>Tipo III:</strong> Fístula colecistoentérica (íleo biliar)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Manejo</h3>
+          <ul>
+            <li>Tipo I: laparotomía de urgencia + lavado peritoneal</li>
+            <li>Tipo II: drenaje percutáneo + cirugía diferida</li>
+            <li>Tipo III: cirugía electiva (extraer cálculo + cerrar fístula)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Colecistitis enfisematosa</div>
+      <ul>
+        <li>Gas en pared vesicular por gérmenes productores de gas (Clostridium, E. coli)</li>
+        <li>Más frecuente en diabéticos y adultos mayores</li>
+        <li>Diagnóstico: TC (superior a eco para detectar gas)</li>
+        <li>Alta mortalidad — cirugía urgente o colecistostomía + ATB con cobertura anaerobia</li>
+        <li>Incluir Metronidazol o Piperacilina/Tazobactam en el esquema</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Síndrome de Mirizzi</div>
+      <ul>
+        <li>Cálculo impactado en el conducto cístico o cuello vesicular que comprime el colédoco externamente</li>
+        <li>Causa ictericia obstructiva sin cálculo intracoledociano</li>
+        <li>Diagnóstico: CRMN o CPRE</li>
+        <li>Tratamiento: cirugía abierta (mayor dificultad técnica — no laparoscópica estándar)</li>
+      </ul>
+    </div>
+
+    <div class="alerta">
+      <div class="alerta-title">Señales de alarma — reevaluar de inmediato</div>
+      <ul style="padding-left:1.2rem;">
+        <li style="color:#791F1F;">Fiebre persistente o en aumento a las 48–72 hs de ATB</li>
+        <li style="color:#791F1F;">Deterioro hemodinámico o signos de sepsis</li>
+        <li style="color:#791F1F;">Dolor que mejora súbitamente seguido de peritonismo difuso (perforación)</li>
+        <li style="color:#791F1F;">Ictericia progresiva (coledocolitiasis o colangitis)</li>
+        <li style="color:#791F1F;">Masa abdominal en crecimiento</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SITUACIONES ESPECIALES -->
+  <div class="section" id="sec-especiales">
+    <div class="card">
+      <div class="card-title">Colecistitis acalculosa</div>
+      <p>10% de las colecistitis agudas. Ocurre en pacientes críticos sin litiasis. Alta mortalidad (30–50%).</p>
+      <div class="grid-2">
+        <div>
+          <h3>Factores de riesgo</h3>
+          <ul>
+            <li>Pacientes en UTI con ventilación mecánica</li>
+            <li>Nutrición parenteral total prolongada</li>
+            <li>Cirugías mayores recientes</li>
+            <li>Traumatismos graves, quemaduras</li>
+            <li>Sepsis de otro foco</li>
+            <li>Inmunodepresión (HIV, trasplantados)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Manejo</h3>
+          <ul>
+            <li>Diagnóstico difícil (paciente sedado, sin signos locales claros)</li>
+            <li>Ecografía a pie de cama</li>
+            <li>Colecistostomía percutánea: tratamiento de elección (evitar cirugía en críticos)</li>
+            <li>ATB de amplio espectro (igual Grado III)</li>
+            <li>Colecistectomía diferida si sobrevive y mejora</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Colecistitis en el embarazo</div>
+      <ul>
+        <li>Segunda causa de abdomen quirúrgico en embarazo (después de apendicitis)</li>
+        <li>Ecografía: método diagnóstico de elección (sin radiación)</li>
+        <li>ATB seguras: ampicilina/sulbactam, cefalosporinas, azitromicina</li>
+        <li>Evitar: fluoroquinolonas, tetraciclinas, metronidazol en 1er trimestre</li>
+        <li>Colecistectomía laparoscópica: segura en 2do trimestre (mejor momento)</li>
+        <li>En 3er trimestre: manejo conservador si posible → cirugía posparto</li>
+        <li>Riesgo de parto prematuro si cirugía en 3er trimestre</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Colecistitis en el adulto mayor (&gt; 75 años)</div>
+      <ul>
+        <li>Presentación atípica frecuente: fiebre y leucocitosis pueden estar ausentes</li>
+        <li>Mayor riesgo de gangrena y perforación</li>
+        <li>Evaluar riesgo quirúrgico con ASA y score de fragilidad</li>
+        <li>Colecistostomía percutánea como primera opción en frágiles o ASA IV</li>
+        <li>Si se opera: mismos principios, menor umbral para conversión a abierta</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cólico biliar simple — diagnóstico diferencial</div>
+      <ul>
+        <li>Dolor en HD intermitente, autolimitado (&lt; 6 hs), sin fiebre ni leucocitosis</li>
+        <li>Litiasis vesicular sin inflamación aguda</li>
+        <li>No requiere internación ni ATB</li>
+        <li>Tratamiento: analgesia ambulatoria (AINE o espasmolítico)</li>
+        <li>Derivación a cirugía para colecistectomía electiva programada</li>
+        <li>No demorar: 30–50% recidivan en el primer año</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fuentes de referencia</div>
+      <ul>
+        <li>Tokyo Guidelines 2018 (TG18) — Acute Cholecystitis / Acute Cholangitis</li>
+        <li>WSES — World Society of Emergency Surgery Guidelines 2020</li>
+        <li>AACS — Asociación Argentina de Cirugía</li>
+        <li>SAGES — Society of American Gastrointestinal and Endoscopic Surgeons</li>
+        <li>Yokoe M et al. J Hepatobiliary Pancreat Sci. 2018</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+  function showScenario(id, el) {
+    document.querySelectorAll('.scenario').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+    document.getElementById('sc-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
