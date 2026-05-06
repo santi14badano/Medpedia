@@ -61,6 +61,8 @@
     .tag-hemato { background: #F3E5F5; color: #6A1B9A; }
     .tag-nefro { background: #E3F2FD; color: #1565C0; }
     .tag-ciru { background: #EBF5FB; color: #2980B9; }
+    .tag-reuma { background: #F0E6FF; color: #6B21A8; }
+    .tag-gineco { background: #FDE8F0; color: #9D174D; }
     .art-arrow { color: var(--texto-ter); font-size: 16px; }
     .art-pro { font-size: 10px; background: var(--verde); color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; }
     .btn-cafecito { position: fixed; bottom: 24px; right: 24px; background: #00bb2d; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, background 0.2s; }
@@ -103,6 +105,8 @@
     <button class="esp-btn" data-filter="hemato">Hematología</button>
     <button class="esp-btn" data-filter="nefro">Nefrología</button>
     <button class="esp-btn" data-filter="ciru">Cirugía General</button>
+    <button class="esp-btn" data-filter="reuma">Reumatología</button>
+    <button class="esp-btn" data-filter="gineco">Obstetricia</button>
   </div>
 
   <div class="two-col">
@@ -115,6 +119,8 @@
         <a href="#" class="cat-card"><div class="cat-icon">🧬</div><div class="cat-nombre">Endocrinología</div><div class="cat-desc">Diabetes, tiroides</div></a>
         <a href="#" class="cat-card"><div class="cat-icon">🦠</div><div class="cat-nombre">Infectología</div><div class="cat-desc">Dengue, NAC</div></a>
         <a href="#" class="cat-card"><div class="cat-icon">💊</div><div class="cat-nombre">Farmacología</div><div class="cat-desc">Mecanismos, dosis</div></a>
+        <a href="#" class="cat-card"><div class="cat-icon">🦴</div><div class="cat-nombre">Reumatología</div><div class="cat-desc">AR, vasculitis</div></a>
+        <a href="#" class="cat-card"><div class="cat-icon">🤰</div><div class="cat-nombre">Obstetricia</div><div class="cat-desc">Preeclampsia</div></a>
       </div>
     </div>
 
@@ -193,6 +199,34 @@
           <div class="art-titulo">Apendicitis Aguda</div>
           <div class="art-meta"><span class="art-tag tag-ciru">Cirugía General</span><span class="art-arrow">→</span></div>
         </a>
+        <a href="cirrosis.html" class="art-row" data-cat="gastro">
+          <div class="art-titulo">Cirrosis Hepática</div>
+          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="eap.html" class="art-row" data-cat="cardio">
+          <div class="art-titulo">Edema Agudo de Pulmón</div>
+          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="artritis-reumatoidea.html" class="art-row" data-cat="reuma">
+          <div class="art-titulo">Artritis Reumatoidea</div>
+          <div class="art-meta"><span class="art-tag tag-reuma">Reumatología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="vasculitis.html" class="art-row" data-cat="reuma">
+          <div class="art-titulo">Vasculitis Sistémicas</div>
+          <div class="art-meta"><span class="art-tag tag-reuma">Reumatología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="cad.html" class="art-row" data-cat="endo">
+          <div class="art-titulo">Cetoacidosis Diabética (CAD)</div>
+          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="itu.html" class="art-row" data-cat="infecto nefro">
+          <div class="art-titulo">Infección del Tracto Urinario (ITU)</div>
+          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
+        </a>
+        <a href="preeclampsia.html" class="art-row" data-cat="gineco">
+          <div class="art-titulo">Preeclampsia y Eclampsia</div>
+          <div class="art-meta"><span class="art-tag tag-gineco">Obstetricia</span><span class="art-arrow">→</span></div>
+        </a>
       </div>
     </div>
   </div>
@@ -238,6 +272,13 @@
     { titulo: 'Colecistitis Aguda', url: 'colecistitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'colecistitis vesicula biliar colelitiasis calculo murphy ecografia antibiotico cirugia colecistectomia laparoscopica fiebre dolor abdominal' },
     { titulo: 'Enfermedad Renal Crónica', url: 'erc.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'erc enfermedad renal cronica creatinina tfg proteinuria albumina kdigo dialisis trasplante iecas ara2 anemia renal hiperkalemia hiperfosfatemia' },
     { titulo: 'Apendicitis Aguda', url: 'apendicitis.html', tag: 'Cirugía General', clase: 'tag-ciru', keywords: 'apendicitis apendice alvarado mcburney blumberg rovsing fecalito fid fosa iliaca apendicectomia laparoscopica peritonitis wses' },
+    { titulo: 'Cirrosis Hepática', url: 'cirrosis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'cirrosis higado fibrosis ascitis child pugh meld varices encefalopatia pbe peritonitis bacteriana espontanea shr hepatorenal terlipresina albumina trasplante lactulosa rifaximina espironolactona furosemida hepatitis alcohol mafeh' },
+    { titulo: 'Edema Agudo de Pulmón', url: 'eap.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'edema agudo pulmon eap insuficiencia cardiaca aguda furosemida nitroglicerina cpap vmni morfina forrester crepitantes ortopnea disnea bnp lmnop dobutamina inotroopico' },
+    { titulo: 'Artritis Reumatoidea', url: 'artritis-reumatoidea.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'artritis reumatoidea ar metotrexato mtx anti ccp factor reumatoideo dmard biologico anti tnf etanercept adalimumab rituximab tocilizumab baricitinib das28 rigidez matutina sinovitis mcf ifp muñecas erosiones pannus' },
+    { titulo: 'Vasculitis Sistémicas', url: 'vasculitis.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'vasculitis anca gpa wegener poliangeitis microscopica pam gepa churg strauss arteritis celulas gigantes horton takayasu poliarteritis nodosa pan kawasaki purpura schonlein henoch psh crioglobulinemia canca panca anti pr3 anti mpo ciclofosfamida rituximab glucocorticoides' },
+    { titulo: 'Cetoacidosis Diabética', url: 'cad.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'cetoacidosis diabetica cad insulina hidratacion potasio bicarbonato glucosa cetonas anion gap acidosis metabolica diabetes tipo 1' },
+    { titulo: 'Infección del Tracto Urinario', url: 'itu.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'itu infeccion urinaria cistitis pielonefritis urocultivo e coli nitrofurantoina trimetoprima fosfomicina ciprofloxacina ceftriaaxona bacteriuria leucocituria disuria polaquiuria fiebre' },
+    { titulo: 'Preeclampsia y Eclampsia', url: 'preeclampsia.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'preeclampsia eclampsia hipertension embarazo proteinuria sulfato magnesio labetalol nifedipina convulsiones hellp trombocitopenia parto prematuro magnesio criterios severidad' },
   ];
 
   const input = document.getElementById('search-input');
