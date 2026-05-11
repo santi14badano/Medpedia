@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meningitis y Encefalitis — Medpedia</title>
+  <meta name="description" content="Meningitis bacteriana, viral y encefalitis: diagnóstico, punción lumbar, antibióticos empíricos y manejo en urgencias. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --infecto: #E65100; --infecto-claro: #FFF3E0;
+      /* colores diferenciadores: azul para encefalitis, naranja/rojo para meningitis */
+      --mening: #C0392B; --mening-claro: #FDEDEC;
+      --encef: #1A5E9A; --encef-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--infecto-claro); color: var(--infecto); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-mening { border-left: 3px solid var(--mening); background: var(--mening-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-encef { border-left: 3px solid var(--encef); background: var(--encef-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+
+    /* === BLOQUE COMPARATIVO PRINCIPAL === */
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.mening { background: var(--mening-claro); border: 1.5px solid #e8b4b0; }
+    .versus-block.encef  { background: var(--encef-claro);  border: 1.5px solid #a8c8e8; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .versus-titulo.mening { color: var(--mening); }
+    .versus-titulo.encef  { color: var(--encef); }
+    .versus-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 12px; }
+    .versus-fila { display: flex; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.45; }
+    .versus-fila:last-child { margin-bottom: 0; }
+    .versus-icon { flex-shrink: 0; width: 18px; }
+    .versus-fila strong { color: var(--texto); }
+
+    /* === BADGE DE ENTIDAD === */
+    .badge-mening { display: inline-block; background: var(--mening); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: 0.04em; vertical-align: middle; margin-right: 4px; }
+    .badge-encef  { display: inline-block; background: var(--encef); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: 0.04em; vertical-align: middle; margin-right: 4px; }
+    .badge-ambas  { display: inline-block; background: #555; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: 0.04em; vertical-align: middle; margin-right: 4px; }
+
+    /* === SINTOMA GRID === */
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-item.sm { border-color: #e8b4b0; }
+    .sintoma-item.se { border-color: #a8c8e8; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+
+    .timeline { display: flex; flex-direction: column; gap: 6px; }
+    .tl-item { display: flex; gap: 12px; align-items: flex-start; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; font-size: 13px; }
+    .tl-hora { font-weight: 700; color: var(--infecto); min-width: 60px; font-size: 12px; padding-top: 2px; }
+    .tl-texto { color: var(--texto-sec); line-height: 1.5; }
+    .tl-texto strong { color: var(--texto); }
+
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+
+    /* separador de sección con color */
+    .sec-titulo-mening { font-size: 16px; font-weight: 500; color: var(--mening); margin-bottom: 12px; }
+    .sec-titulo-encef  { font-size: 16px; font-weight: 500; color: var(--encef);  margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › Meningitis y Encefalitis</div>
+  <div class="titulo">Meningitis y Encefalitis</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag" style="background:var(--mening-claro);color:var(--mening);">Neurología</span>
+    <span class="tag tag-fuente">IDSA 2017 · ESCMID 2016 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- ▸ DIFERENCIA CENTRAL — PRIMER BLOQUE -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 ¿Meningitis o encefalitis? — la diferencia que siempre preguntan</div>
+    <div class="versus-wrap">
+      <div class="versus-block mening">
+        <div class="versus-titulo mening">🔴 Meningitis</div>
+        <div class="versus-sub">Inflamación de las <em>meninges</em> (piamadre + aracnoides) y del LCR</div>
+        <div class="versus-fila"><span class="versus-icon">🧠</span><span>Parénquima cerebral <strong>preservado</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">🌡️</span><span>Fiebre + <strong>cefalea intensa</strong> + rigidez de nuca</span></div>
+        <div class="versus-fila"><span class="versus-icon">👁️</span><span>Fotofobia, fonofobia, signos de Kernig y Brudzinski</span></div>
+        <div class="versus-fila"><span class="versus-icon">🧩</span><span>Sensorio <strong>conservado o levemente alterado</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span>Convulsiones presentes en el 20–40% (bacteriana)</span></div>
+        <div class="versus-fila"><span class="versus-icon">🦠</span><span>Causa más frecuente: <strong>bacteriana o viral</strong></span></div>
+      </div>
+      <div class="versus-block encef">
+        <div class="versus-titulo encef">🔵 Encefalitis</div>
+        <div class="versus-sub">Inflamación del <em>parénquima cerebral</em></div>
+        <div class="versus-fila"><span class="versus-icon">🧠</span><span>Parénquima cerebral <strong>directamente afectado</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">🌡️</span><span>Fiebre + <strong>alteración del sensorio</strong> (confusión, desorientación, coma)</span></div>
+        <div class="versus-fila"><span class="versus-icon">🎯</span><span><strong>Signos focales</strong>: afasia, déficit motor, alucinaciones</span></div>
+        <div class="versus-fila"><span class="versus-icon">🧩</span><span>Sensorio <strong>comprometido — signo cardinal</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span>Convulsiones frecuentes y a menudo <strong>focales</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">🦠</span><span>Causa más frecuente: <strong>viral (HSV-1)</strong> o autoinmune</span></div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Meningoencefalitis:</strong> afectación simultánea de meninges y parénquima. Frecuente en HSV-1, VVZ, y en inmunodeprimidos. Combina signos de ambas entidades.</div>
+    <div class="hl-danger" style="margin-top:8px;">La <strong>meningitis bacteriana aguda</strong> es una emergencia médica. Cada hora de retraso en los antibióticos aumenta la mortalidad. Regla de oro: <strong>antibióticos primero → TAC si hay indicación → punción lumbar.</strong></div>
+  </div>
+
+  <!-- ETIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Etiología según edad y contexto</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Grupo</th><th>Gérmenes más frecuentes</th></tr>
+        <tr><td><strong>Neonatos (&lt;1 mes)</strong></td><td>Streptococcus agalactiae (GBS), E. coli, Listeria monocytogenes</td></tr>
+        <tr><td><strong>Lactantes y niños (1 m – 5 años)</strong></td><td>N. meningitidis, S. pneumoniae, H. influenzae (vacunados: raro)</td></tr>
+        <tr><td><strong>Adultos jóvenes (15–50 años)</strong></td><td>N. meningitidis, S. pneumoniae</td></tr>
+        <tr><td><strong>Adultos mayores y embarazadas</strong></td><td>S. pneumoniae, Listeria monocytogenes, gramnegativos</td></tr>
+        <tr><td><strong>Inmunocomprometidos (VIH, trasplante)</strong></td><td>Cryptococcus neoformans, Listeria, TBC, CMV, Toxoplasma</td></tr>
+        <tr><td><strong>Postneuroquirúrgicos / TCE</strong></td><td>S. aureus, Klebsiella, Pseudomonas, Acinetobacter</td></tr>
+        <tr><td><strong>Encefalitis — cualquier edad</strong></td><td><span class="badge-encef">ENCEF</span> HSV-1 (#1 esporádica), VVZ, CMV, VEB; autoinmune (anti-NMDA)</td></tr>
+        <tr><td><strong>Meningitis viral — cualquier edad</strong></td><td><span class="badge-mening">MENING</span> Enterovirus (#1 global), parotiditis, HSV-2</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLÍNICA DIFERENCIADA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica — síntomas diferenciados por entidad</div>
+    <div class="hl-mening"><strong>🔴 Meningitis bacteriana — tríada clásica:</strong> fiebre + cefalea intensa + rigidez de nuca. Presente completa en solo el 44% — no descartarla si falta un elemento.</div>
+    <div class="sintoma-grid" style="margin-bottom:14px;">
+      <div class="sintoma-item sm"><div class="sintoma-nombre"><span class="badge-mening">M</span> Rigidez de nuca</div><div class="sintoma-desc">Resistencia a la flexión pasiva del cuello. Signo meníngeo cardinal</div></div>
+      <div class="sintoma-item sm"><div class="sintoma-nombre"><span class="badge-mening">M</span> Fotofobia / fonofobia</div><div class="sintoma-desc">Irritación meníngea — muy frecuente en viral, presente en bacteriana</div></div>
+      <div class="sintoma-item sm"><div class="sintoma-nombre"><span class="badge-mening">M</span> Rash petequial</div><div class="sintoma-desc">Característico de meningococcemia — no palidece a la vitropresión → emergencia absoluta</div></div>
+      <div class="sintoma-item sm"><div class="sintoma-nombre"><span class="badge-mening">M</span> Kernig / Brudzinski</div><div class="sintoma-desc">Baja sensibilidad (~50%) pero alta especificidad para meningismo</div></div>
+    </div>
+    <div class="hl-encef"><strong>🔵 Encefalitis — tríada clásica:</strong> fiebre + <strong>alteración del sensorio</strong> + signos neurológicos focales. La alteración de conciencia es el signo que la distingue de la meningitis pura.</div>
+    <div class="sintoma-grid" style="margin-bottom:14px;">
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Alteración del sensorio</div><div class="sintoma-desc">Confusión, desorientación, somnolencia hasta coma — signo cardinal diferenciador</div></div>
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Signos focales</div><div class="sintoma-desc">Afasia, déficit motor, paresias — sugieren compromiso del parénquima</div></div>
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Alucinaciones olfativas</div><div class="sintoma-desc">Clásico de encefalitis herpética por HSV-1 — afecta lóbulo temporal</div></div>
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Convulsiones focales</div><div class="sintoma-desc">Frecuentes y a menudo de inicio focal — reflejan daño cortical directo</div></div>
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Cambios de conducta</div><div class="sintoma-desc">Agitación, psicosis, cambios de personalidad — especialmente en encefalitis anti-NMDA</div></div>
+      <div class="sintoma-item se"><div class="sintoma-nombre"><span class="badge-encef">E</span> Afasia</div><div class="sintoma-desc">Por compromiso temporal — HSV-1 tiene predilección por lóbulos temporoparietales</div></div>
+    </div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre"><span class="badge-ambas">M+E</span> Fiebre</div><div class="sintoma-desc">Alta y de inicio rápido en bacteriana. Puede estar ausente en ancianos e inmunodeprimidos</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre"><span class="badge-ambas">M+E</span> Cefalea intensa</div><div class="sintoma-desc">"La peor de la vida" — presente en ambas. En encefalitis puede ser leve o estar ausente</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre"><span class="badge-ambas">M+E</span> Náuseas / vómitos</div><div class="sintoma-desc">Por irritación meníngea o hipertensión endocraneana</div></div>
+    </div>
+  </div>
+
+  <!-- SIGNOS MENINGEOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Signos meníngeos en el examen físico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Signo</th><th>Técnica</th><th>Positivo cuando...</th></tr>
+        <tr><td><strong>Kernig</strong></td><td>Paciente en decúbito: flexionar cadera y rodilla a 90°, luego intentar extender la rodilla</td><td>Dolor o resistencia al extender la rodilla</td></tr>
+        <tr><td><strong>Brudzinski</strong></td><td>Paciente en decúbito: flexión pasiva del cuello hacia el pecho</td><td>Flexión involuntaria de caderas y rodillas</td></tr>
+        <tr><td><strong>Jolt accentuation</strong></td><td>Pedir al paciente que mueva la cabeza horizontalmente 2–3 veces por segundo</td><td>Empeoramiento de la cefalea — sensibilidad 97% para meningitis</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">Kernig y Brudzinski tienen <strong>baja sensibilidad (~50%)</strong> — su ausencia no descarta meningitis. El <strong>jolt accentuation</strong> es más sensible pero menos conocido. Siempre evaluar los tres.</div>
+  </div>
+
+  <!-- PUNCION LUMBAR Y LCR -->
+  <div class="seccion">
+    <div class="sec-titulo">💉 Punción lumbar — cuándo y análisis del LCR</div>
+    <div class="hl-danger"><strong>¿Cuándo hacer TAC ANTES de la punción lumbar?</strong> Presencia de alguno de: papileedema, déficit neurológico focal, convulsiones de reciente inicio, alteración del estado mental, inmunocompromiso severo, sospecha de HSA. Si hay cualquiera → TAC primero → luego PL.</div>
+    <div class="hl-warn" style="margin-top:8px;"><strong>Regla fundamental:</strong> si hay sospecha de meningitis bacteriana y la TAC demora → iniciar antibióticos y dexametasona ANTES de la PL. No retrasar los antibióticos por los estudios diagnósticos.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Parámetro LCR</th><th>Normal</th><th><span style="color:var(--mening)">Bacteriana</span></th><th>Viral</th><th>TBC / Fúngica</th><th><span style="color:var(--encef)">Encefalitis HSV</span></th></tr>
+        <tr><td><strong>Aspecto</strong></td><td>Cristal de roca</td><td>Turbio / purulento</td><td>Claro</td><td>Claro / xantocrómico</td><td>Claro o levemente turbio</td></tr>
+        <tr><td><strong>Leucocitos</strong></td><td>&lt;5/mm³</td><td>1000–10.000 (PMN)</td><td>100–1000 (linfocitos)</td><td>100–500 (linfocitos)</td><td>10–500 (linfocitos)</td></tr>
+        <tr><td><strong>Proteínas</strong></td><td>15–45 mg/dl</td><td>Muy elevadas (&gt;200)</td><td>Leve ↑ (50–100)</td><td>Elevadas (100–500)</td><td>Leve-moderado ↑</td></tr>
+        <tr><td><strong>Glucosa LCR/glucemia</strong></td><td>&gt;0,6</td><td>Muy baja (&lt;0,4)</td><td>Normal</td><td>Baja (&lt;0,5)</td><td>Normal</td></tr>
+        <tr><td><strong>Diagnóstico específico</strong></td><td>—</td><td>Gram + cultivo (70–85%)</td><td>PCR enterovirus</td><td>BAAR, ADA, cultivo Löwenstein</td><td><strong>PCR HSV — gold standard</strong></td></tr>
+      </table>
+    </div>
+    <div class="hl-info" style="margin-top:8px;"><strong>Lactato en LCR:</strong> &gt;3,5 mmol/L es muy sugestivo de meningitis bacteriana. Muy útil si el paciente ya recibió antibióticos (el cultivo puede negativizarse, el lactato permanece elevado).</div>
+    <div class="hl-encef" style="margin-top:8px;"><strong>🔵 Encefalitis herpética — LCR:</strong> pleocitosis linfocitaria + eritrocitos (por necrosis hemorrágica temporal) + glucosa normal. El LCR puede ser normal en las primeras 24–72 h. La <strong>PCR HSV en LCR</strong> tiene sensibilidad 98% y es el gold standard — pero no esperarla para iniciar aciclovir.</div>
+  </div>
+
+  <!-- TRATAMIENTO MENINGITIS -->
+  <div class="seccion">
+    <div class="sec-titulo-mening">🔴 Tratamiento — meningitis bacteriana</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-hora">T = 0</div><div class="tl-texto"><strong>Dexametasona IV</strong> (0,15 mg/kg c/6 h × 4 días) + hemocultivos × 2 + <strong>inicio inmediato de antibiótico empírico.</strong> No demorar el ATB bajo ninguna circunstancia.</div></div>
+      <div class="tl-item"><div class="tl-hora">0–30 min</div><div class="tl-texto"><strong>TAC de cráneo</strong> si hay indicación (ver arriba). Si no hay indicación → proceder directamente a PL sin esperar.</div></div>
+      <div class="tl-item"><div class="tl-hora">30–60 min</div><div class="tl-texto"><strong>Punción lumbar:</strong> citoquímico, Gram, cultivo, lactato, glucosa, proteínas. Ag capsulares y PCR según sospecha clínica.</div></div>
+      <div class="tl-item"><div class="tl-hora">A las 48 h</div><div class="tl-texto"><strong>Ajustar ATB</strong> según cultivo y antibiograma. Suspender dexametasona si el cultivo no confirma bacteria o si no es S. pneumoniae.</div></div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div class="farma-card">
+        <div class="farma-nombre">Ceftriaxona</div>
+        <div class="farma-clase">Cefalosporina 3ª generación · antibiótico empírico de elección</div>
+        <div class="dosis-badge">2 g IV c/12 h (adultos) · 100 mg/kg/día (niños)</div>
+        <div class="farma-detalle">Cubre S. pneumoniae y N. meningitidis. Penetración excelente en LCR inflamado. Duración: 10–14 días para neumococo, 5–7 días para meningococo.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Ampicilina</div>
+        <div class="farma-clase">Aminopenicilina · cobertura de Listeria</div>
+        <div class="dosis-badge">2 g IV c/4 h</div>
+        <div class="farma-detalle">Agregar a la ceftriaxona en: <strong>mayores de 50 años, embarazadas, inmunodeprimidos, alcohólicos.</strong> Las cefalosporinas NO cubren Listeria. Duración 21 días si se confirma Listeria.</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Vancomicina</div>
+        <div class="farma-clase">Glucopéptido · cobertura de neumococo resistente</div>
+        <div class="dosis-badge">15–20 mg/kg IV c/8–12 h · guiar por niveles</div>
+        <div class="farma-detalle">Agregar en contextos de alta prevalencia de S. pneumoniae resistente, o en postneuroquirúrgicos (también cubre SAMR). Postneuroquirúrgico: vancomicina + cefepime o meropenem (cobertura de Pseudomonas).</div>
+      </div>
+      <div class="farma-card">
+        <div class="farma-nombre">Dexametasona</div>
+        <div class="farma-clase">Corticoide · reducción de inflamación meníngea</div>
+        <div class="dosis-badge">0,15 mg/kg IV c/6 h × 4 días · iniciar con o antes del ATB</div>
+        <div class="farma-detalle">Beneficio demostrado en meningitis por S. pneumoniae (reduce mortalidad y secuelas auditivas). En meningococo el beneficio es menor. <span class="badge-no">No usar en postneuroquirúrgica.</span> Suspender si el cultivo no confirma bacteria.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO ENCEFALITIS -->
+  <div class="seccion">
+    <div class="sec-titulo-encef">🔵 Tratamiento — encefalitis (HSV y autoinmune)</div>
+    <div class="hl-encef"><strong>Encefalitis herpética (HSV-1):</strong> iniciar aciclovir IV empírico ante <em>toda sospecha</em> de encefalitis. No esperar la PCR del LCR — el retraso en el tratamiento aumenta la mortalidad del 10% al 70%. La presentación clásica es: fiebre + confusión + convulsiones + signos temporales (afasia, alucinaciones olfativas) + LCR con pleocitosis linfocitaria ± eritrocitos.</div>
+
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">Aciclovir</div>
+      <div class="farma-clase">Antiviral · análogo de nucleósido · de elección en HSV y VVZ</div>
+      <div class="dosis-badge">10 mg/kg IV c/8 h × 14–21 días · ajustar en insuficiencia renal</div>
+      <div class="farma-detalle">Tratamiento de elección para encefalitis por HSV-1, HSV-2 y VVZ. Hidratación adecuada para prevenir nefrotoxicidad (cristalización tubular). Reducción de mortalidad del ~70% (sin tratamiento) al 20–30%. Durar 21 días en inmunodeprimidos.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Encefalitis autoinmune — anti-NMDA</div>
+      <div class="farma-clase">Encefalitis por anticuerpos anti-receptor NMDA · entidad cada vez más frecuente</div>
+      <div class="dosis-badge">Tratamiento inmunomodulador: corticoides + IGIV o plasmaféresis</div>
+      <div class="farma-detalle">
+        <strong>Sospechar cuando:</strong> joven (mujer predominantemente) con psicosis aguda + convulsiones + movimientos anormales (discinesias orofaciales) + disautonomía. Puede asociarse a <strong>teratoma ovárico</strong> (buscar en mujeres jóvenes).<br><br>
+        <strong>Diagnóstico:</strong> Ac anti-GluN1 (anti-NR1) en LCR y suero. LCR puede ser normal o con pleocitosis leve.<br><br>
+        <strong>Tratamiento:</strong> (1) metilprednisolona IV 1 g/día × 5 días o IGIV 0,4 g/kg/día × 5 días, (2) si no respuesta en 10–14 días: rituximab o ciclofosfamida. Resección del teratoma si se encuentra — mejora el pronóstico de forma significativa.
+      </div>
+    </div>
+  </div>
+
+  <!-- MENINGITIS VIRAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Meningitis viral — manejo</div>
+    <div class="card">
+      <p>La causa más frecuente son los <strong>enterovirus</strong> (Coxsackievirus, Echovirus). Generalmente benigna y autolimitada. El LCR es claro con pleocitosis linfocitaria y glucosa normal.</p>
+      <p><strong>Tratamiento:</strong> sintomático — analgésicos, antitérmicos, hidratación. Hospitalización según gravedad. No requiere antibióticos (salvo que no se pueda descartar meningitis bacteriana con certeza).</p>
+      <p><strong>¿Cuándo agregar aciclovir?</strong> Siempre que haya cualquier sospecha de HSV o VVZ: alteración del sensorio, convulsiones, signos focales, o LCR con eritrocitos.</p>
+    </div>
+  </div>
+
+  <!-- MENINGITIS TBC Y CRIPTOCOCO -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Meningitis TBC y Cryptococcus — puntos clave</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Meningitis tuberculosa</th><th>Meningitis por Cryptococcus</th></tr>
+        <tr><td><strong>Contexto</strong></td><td>TBC previa, contacto, inmunodepresión, VIH (cualquier CD4)</td><td>VIH con CD4 &lt;100, trasplante, corticoides crónicos</td></tr>
+        <tr><td><strong>Inicio</strong></td><td>Subagudo (días a semanas)</td><td>Subagudo / crónico</td></tr>
+        <tr><td><strong>Diagnóstico</strong></td><td>LCR: BAAR, ADA elevada (&gt;10 U/L), PCR TBC, cultivo Löwenstein</td><td>LCR: tinta india + Ag criptocócico sérico/LCR (sensibilidad 99%)</td></tr>
+        <tr><td><strong>Tratamiento</strong></td><td>RIPE × 2 meses → RI × 10 meses + dexametasona × 8 semanas</td><td>Anfotericina B liposomal + 5-fluocitosina (2 sem inducción) → fluconazol (consolidación)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Entidad</th><th>Manejo</th></tr>
+        <tr><td><strong>Hiponatremia (SIADH)</strong></td><td><span class="badge-mening">M</span></td><td>Restricción hídrica leve, monitoreo de Na sérico c/8–12 h</td></tr>
+        <tr><td><strong>Hipertensión endocraneana</strong></td><td><span class="badge-ambas">M+E</span></td><td>Cabecera 30°, manitol, dexametasona, derivación ventricular si grave</td></tr>
+        <tr><td><strong>Hidrocefalia comunicante</strong></td><td><span class="badge-mening">M</span></td><td>Derivación ventriculoperitoneal</td></tr>
+        <tr><td><strong>Sordera neurosensorial</strong></td><td><span class="badge-mening">M</span></td><td>Dexametasona reduce incidencia; audiometría al alta</td></tr>
+        <tr><td><strong>Púrpura fulminans / CID</strong></td><td><span class="badge-mening">M</span></td><td>UCI, plasma fresco, proteína C concentrada en casos graves</td></tr>
+        <tr><td><strong>Epilepsia post-infecciosa</strong></td><td><span class="badge-encef">E</span></td><td>Antiepilépticos a largo plazo — frecuente secuela de HSV y autoinmune</td></tr>
+        <tr><td><strong>Déficit cognitivo / amnesia</strong></td><td><span class="badge-encef">E</span></td><td>Rehabilitación neuropsicológica — HSV afecta hipocampo y temporal</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PROFILAXIS -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Profilaxis de contactos — meningococo</div>
+    <div class="hl">Indicada en contactos cercanos (&lt;1 metro durante más de 1 hora) dentro de las <strong>24–48 h del diagnóstico.</strong> El caso índice también debe recibirla si fue tratado con penicilina o ampicilina (no erradican portación nasofaríngea).</div>
+    <div class="farma-card" style="margin-top:8px;">
+      <div class="farma-nombre">Rifampicina</div>
+      <div class="farma-clase">Primera línea en Argentina · erradicación de portación nasofaríngea</div>
+      <div class="dosis-badge">600 mg c/12 h × 2 días (adultos) · 10 mg/kg c/12 h × 2 días (niños &gt;1 mes)</div>
+      <div class="farma-detalle">Alternativas: ciprofloxacina 500 mg dosis única (adultos, no embarazadas) o ceftriaxona 250 mg IM dosis única (embarazadas y cuando rifampicina no está disponible).</div>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Diferencia meningitis vs encefalitis — signo clave</span>
+      <span class="pill">Tríada clásica de meningitis bacteriana</span>
+      <span class="pill">Tríada clásica de encefalitis</span>
+      <span class="pill">Gérmenes según edad — especialmente neonatos y &gt;50 años</span>
+      <span class="pill">¿Cuándo hacer TAC antes de la PL?</span>
+      <span class="pill">Diferencia LCR bacteriana vs viral vs TBC vs HSV</span>
+      <span class="pill">¿Por qué agregar ampicilina? — cobertura de Listeria</span>
+      <span class="pill">¿Por qué iniciar ATB antes de la PL?</span>
+      <span class="pill">Dexametasona — cuándo usar y cuándo suspender</span>
+      <span class="pill">Encefalitis herpética — presentación clínica típica</span>
+      <span class="pill">Aciclovir — dosis y por qué iniciar sin esperar PCR</span>
+      <span class="pill">Rash petequial — diagnóstico diferencial</span>
+      <span class="pill">Profilaxis de meningococo — quién y con qué</span>
+      <span class="pill">Meningitis criptocócica — diagnóstico (tinta india + Ag)</span>
+      <span class="pill">ADA en LCR — para qué sirve</span>
+      <span class="pill">Sordera post-meningitis — cómo prevenirla</span>
+      <span class="pill">Lactato en LCR — utilidad cuando ya se dieron ATB</span>
+      <span class="pill">Encefalitis anti-NMDA — sospechar en mujer joven con psicosis + discinesias</span>
+      <span class="pill">¿Con qué se asocia encefalitis anti-NMDA? — teratoma ovárico</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: IDSA Clinical Practice Guidelines for Bacterial Meningitis 2017 · ESCMID Guidelines Meningitis/Encephalitis 2016 · Harrison Principios de Medicina Interna, 21ª ed. · Graus F et al. A clinical approach to diagnosis of autoimmune encephalitis — Lancet Neurology 2016 · Consenso SADI Argentina · Ministerio de Salud de la Nación — Guías de TBC y enfermedades meningocócicas.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
