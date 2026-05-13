@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hipokalemia e Hiperkalemia — Medpedia</title>
+  <meta name="description" content="Trastornos del potasio: hipokalemia e hiperkalemia. Diagnóstico, ECG, corrección y manejo. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hipo: #1A5E9A; --hipo-claro: #E6F1FB; --hipo-oscuro: #154E82;
+      --hiper: #C0392B; --hiper-claro: #FDEDEC; --hiper-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-nefro { background: #EEF2FF; color: #3730A3; }
+    .tag-cardio { background: #FEF3C7; color: #92400E; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hipo { font-size: 16px; font-weight: 500; color: var(--hipo); margin-bottom: 12px; }
+    .sec-titulo-hiper { font-size: 16px; font-weight: 500; color: var(--hiper); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hipo  { border-left: 3px solid var(--hipo); background: var(--hipo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hiper { border-left: 3px solid var(--hiper); background: var(--hiper-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num-hipo { width: 28px; height: 28px; border-radius: 50%; background: var(--hipo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-hiper { width: 28px; height: 28px; border-radius: 50%; background: var(--hiper); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.hipo { background: var(--hipo-claro); border: 1.5px solid #a8c8e8; }
+    .versus-block.hiper { background: var(--hiper-claro); border: 1.5px solid #e8b4b0; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .versus-titulo.hipo { color: var(--hipo); }
+    .versus-titulo.hiper { color: var(--hiper); }
+    .versus-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 12px; }
+    .versus-fila { display: flex; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.45; }
+    .versus-fila:last-child { margin-bottom: 0; }
+    .versus-icon { flex-shrink: 0; width: 18px; }
+    .versus-fila strong { color: var(--texto); }
+    .ecg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .ecg-grid { grid-template-columns: 1fr; } }
+    .ecg-card { border-radius: 12px; padding: 1rem; }
+    .ecg-card.hipo { background: var(--hipo-claro); border: 1px solid #a8c8e8; }
+    .ecg-card.hiper { background: var(--hiper-claro); border: 1px solid #e8b4b0; }
+    .ecg-titulo { font-weight: 600; font-size: 13px; margin-bottom: 8px; }
+    .ecg-titulo.hipo { color: var(--hipo); }
+    .ecg-titulo.hiper { color: var(--hiper); }
+    .ecg-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; }
+    .ecg-nivel { font-size: 11px; color: var(--texto-ter); margin-bottom: 2px; font-weight: 500; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Medio Interno</a> › Trastornos del Potasio</div>
+  <div class="titulo">Hipokalemia e Hiperkalemia</div>
+  <div class="meta">
+    <span class="tag tag-nefro">Nefrología</span>
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag" style="background:#EEF2FF;color:#3730A3;">Medio Interno</span>
+    <span class="tag" style="background:var(--hiper-claro);color:var(--hiper-oscuro);">Emergencias</span>
+    <span class="tag tag-fuente">Harrison 21ª ed. · Goldman-Cecil 27ª · TRAPS · Rozman 20ª ed.</span>
+  </div>
+
+  <!-- CONCEPTO CENTRAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Lo esencial antes de arrancar</div>
+    <div class="hl">K⁺ normal: <strong>3,5–5,0 mEq/L</strong>. El 98% del potasio es intracelular → el K⁺ sérico refleja mal el potasio total del organismo. El pH altera la distribución: acidosis → ↑K sérico (sale de la célula); alcalosis → ↓K sérico (entra a la célula). <strong>Por cada 0,1 unidad de pH: K cambia ~0,6 mEq/L en sentido inverso.</strong></div>
+    <div class="versus-wrap">
+      <div class="versus-block hipo">
+        <div class="versus-titulo hipo">🔵 Hipokalemia</div>
+        <div class="versus-sub">K⁺ <strong>&lt; 3,5 mEq/L</strong></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Leve:</strong> 3,0–3,4</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Moderada:</strong> 2,5–2,9</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Grave:</strong> &lt;2,5 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">💪</span><span>Debilidad muscular, calambres, íleo paralítico</span></div>
+        <div class="versus-fila"><span class="versus-icon">❤️</span><span>ECG: onda U, aplanamiento T, ST deprimido, TV/FV</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚠️</span><span>Potencia la toxicidad de <strong>digoxina</strong></span></div>
+      </div>
+      <div class="versus-block hiper">
+        <div class="versus-titulo hiper">🔴 Hiperkalemia</div>
+        <div class="versus-sub">K⁺ <strong>&gt; 5,0 mEq/L</strong></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Leve:</strong> 5,0–5,9</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Moderada:</strong> 6,0–6,4</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Grave:</strong> ≥6,5 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">💪</span><span>Parestesias, debilidad ascendente, parálisis flácida</span></div>
+        <div class="versus-fila"><span class="versus-icon">❤️</span><span>ECG: T picuda, QRS ancho, onda sinusoidal, FV, asistolia</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚠️</span><span>Principal causa de muerte: <strong>arritmia fatal</strong></span></div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Siempre descartar pseudohiperkalemia:</strong> hemólisis en el tubo de muestra (causa más común), trombocitosis extrema (&gt;1.000.000), leucocitosis extrema. Repetir la muestra antes de tratar si el paciente está asintomático y sin cambios en el ECG.</div>
+  </div>
+
+  <!-- ECG -->
+  <div class="seccion">
+    <div class="sec-titulo">❤️ ECG — cambios por nivel de K⁺</div>
+    <div class="hl-info">El ECG es la herramienta más importante para evaluar el riesgo inmediato. <strong>Los cambios ECG no son proporcionales al K⁺ sérico</strong> — un paciente con K 6,0 puede tener T picudas mientras otro con K 7,0 puede tenerlas mínimas. El ECG manda.</div>
+    <div class="ecg-grid">
+      <div class="ecg-card hipo">
+        <div class="ecg-titulo hipo">🔵 Hipokalemia — ECG progresivo</div>
+        <div class="ecg-nivel">K 3,0–3,5:</div>
+        <div class="ecg-item">📈 Aplanamiento de onda T</div>
+        <div class="ecg-item">📈 Aparición de <strong>onda U</strong> (positiva, mayor en V2–V3)</div>
+        <div class="ecg-nivel" style="margin-top:6px;">K 2,5–3,0:</div>
+        <div class="ecg-item">📉 Depresión del segmento ST</div>
+        <div class="ecg-item">📈 Onda U más prominente que T (fusión TU)</div>
+        <div class="ecg-nivel" style="margin-top:6px;">K &lt;2,5:</div>
+        <div class="ecg-item">⚡ QT aparente prolongado (en realidad QU)</div>
+        <div class="ecg-item">⚡ TV, torsades de pointes, FV</div>
+      </div>
+      <div class="ecg-card hiper">
+        <div class="ecg-titulo hiper">🔴 Hiperkalemia — ECG progresivo</div>
+        <div class="ecg-nivel">K 5,5–6,5:</div>
+        <div class="ecg-item">📈 <strong>Onda T picuda</strong>, simétrica, alta, base estrecha (V1–V4)</div>
+        <div class="ecg-nivel" style="margin-top:6px;">K 6,5–7,0:</div>
+        <div class="ecg-item">📉 Aplanamiento de onda P (luego desaparece)</div>
+        <div class="ecg-item">📈 PR prolongado</div>
+        <div class="ecg-nivel" style="margin-top:6px;">K &gt;7,0:</div>
+        <div class="ecg-item">⚡ <strong>QRS ancho</strong>, bloqueo de rama</div>
+        <div class="ecg-item">⚡ Ritmo sinoventricular, onda sinusoidal</div>
+        <div class="ecg-item">⚡ FV, asistolia → paro cardíaco</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAUSAS HIPOKALEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo-hipo">🔵 Hipokalemia — causas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Mecanismo</th><th>Causa</th><th>Clave diagnóstica</th></tr>
+        <tr><td><strong>↓ Ingesta</strong></td><td>Malnutrición, ayuno prolongado</td><td>Poco frecuente como causa única</td></tr>
+        <tr><td rowspan="3"><strong>Pérdidas renales</strong></td><td>Diuréticos de asa y tiazidas <em>(causa #1)</em></td><td>K urinario &gt;20 mEq/día · hipertensión frecuente</td></tr>
+        <tr><td>Hiperaldosteronismo (primario o secundario)</td><td>HTA + hipokalemia + alcalosis metabólica</td></tr>
+        <tr><td>Síndrome de Bartter / Gitelman</td><td>Joven + hipokalemia + TA normal + alcalosis</td></tr>
+        <tr><td rowspan="2"><strong>Pérdidas digestivas</strong></td><td>Vómitos, aspiración gástrica</td><td>Alcalosis metabólica, K urinario &lt;20</td></tr>
+        <tr><td>Diarrea severa, fístulas</td><td>Acidosis metabólica, K urinario &lt;20</td></tr>
+        <tr><td><strong>Shift al intracelular</strong></td><td>Insulina, β2 agonistas (salbutamol), alcalosis, hipotermia</td><td>Caída rápida sin pérdidas reales</td></tr>
+        <tr><td><strong>Otras</strong></td><td>Hipomagnesemia (impide reposición de K), parálisis periódica hipocalémica</td><td>Siempre reponer Mg si hay hipokalemia refractaria</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 K urinario &gt;20 mEq/día (o &gt;20 mEq/L en orina aleatoria) → <strong>pérdida renal</strong>. K urinario &lt;20 mEq/día → pérdida extrarrenal o shift.</div>
+  </div>
+
+  <!-- MANEJO HIPOKALEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo-hipo">🔵 Hipokalemia — manejo</div>
+    <div class="step">
+      <div class="step-num-hipo">1</div>
+      <div class="step-content">
+        <strong>Reponer magnesio primero si hay hipomagnesemia</strong><br>
+        La hipomagnesemia bloquea la reabsorción renal de K → hace refractaria la hipokalemia. Sulfato de magnesio 1–2 g IV en 30–60 min. Sin corregir el Mg, el K no sube.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">2</div>
+      <div class="step-content">
+        <strong>Hipokalemia leve-moderada (K 2,5–3,4), asintomática</strong><br>
+        → <strong>Cloruro de potasio (KCl) oral:</strong> 40–100 mEq/día en 2–4 dosis (comprimidos de 600 mg = 8 mEq). Preparar solución oral: KCl granulado o solución líquida. Bien tolerado, seguro, de elección si el paciente come.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">3</div>
+      <div class="step-content">
+        <strong>Hipokalemia grave (K &lt;2,5) o sintomática (arritmias, debilidad severa)</strong><br>
+        → <strong>KCl IV:</strong> velocidad máxima <strong>10–20 mEq/h por vía periférica</strong> (máx 40 mEq/h por vía central con monitoreo continuo). Concentración máx periférica: 40 mEq/100 ml para evitar flebitis. Nunca en bolo directo → FV.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">4</div>
+      <div class="step-content">
+        <strong>Estimar el déficit</strong><br>
+        Cada 0,3 mEq/L de caída en K sérico ≈ déficit de 100 mEq de K corporal total (aproximación). Para reponer de K 2,5 a 3,5: déficit ≈ 300–400 mEq. En la práctica, reponer y remonitorear c/4–6 h.
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ KCl IV — reglas que siempre preguntan</div>
+      Velocidad máxima periférica: <strong>10 mEq/h</strong>. Concentración máx periférica: <strong>40 mEq/100 ml</strong>. Máx por vía central con monitor: 40 mEq/h. Nunca mezclar con dextrosa pura (libera insulina → empeora la hipokalemia). Usar SF 0,9% como diluyente.
+    </div>
+  </div>
+
+  <!-- CAUSAS HIPERKALEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo-hiper">🔴 Hiperkalemia — causas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Mecanismo</th><th>Causa</th><th>Clave diagnóstica</th></tr>
+        <tr><td><strong>↓ Excreción renal</strong></td><td>IRA / IRC avanzada (FG &lt;20 ml/min) — <em>causa #1</em></td><td>↑creatinina, oliguria</td></tr>
+        <tr><td><strong>Fármacos</strong></td><td>IECA / ARA II, espironolactona / eplerenona, AINEs, trimetoprim, heparina</td><td>Revisar medicación en TODA hiperkalemia</td></tr>
+        <tr><td><strong>Hipoaldosteronismo</strong></td><td>Enfermedad de Addison, hipoaldosteronismo hiporreninémico (DM + nefropatía)</td><td>Na ↓ + K ↑ + cortisol ↓ / aldosterona ↓</td></tr>
+        <tr><td><strong>Shift al extracelular</strong></td><td>Acidosis metabólica / respiratoria, lisis celular masiva (rabdomiólisis, hemólisis, síndrome de lisis tumoral)</td><td>K sube rápido · CK ↑ en rabdomiólisis</td></tr>
+        <tr><td><strong>↑ Ingesta</strong></td><td>Suplementos de K, sustitutos de sal (KCl), transfusiones masivas</td><td>Contexto evidente</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MANEJO HIPERKALEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo-hiper">🔴 Hiperkalemia — manejo urgente (los 3 pasos)</div>
+    <div class="hl-danger"><span class="badge-urgente">URGENTE</span> Si hay <strong>cambios en el ECG</strong> (T picudas, QRS ancho, onda sinusoidal) o K ≥6,5 mEq/L → iniciar tratamiento de inmediato. Los 3 pasos son secuenciales pero se solapan en la urgencia.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Paso 1 — Estabilizar la membrana cardíaca</div>
+      <div class="farma-clase">Acción: inmediata (1–3 minutos) · No baja el K sérico</div>
+      <div class="dosis-badge">Gluconato de calcio 10% — 10 ml IV en 2–3 minutos</div>
+      <div class="farma-detalle">
+        Antagoniza directamente el efecto del K sobre la membrana cardíaca → reduce el riesgo de FV. <strong>Indicación: siempre que haya cambios en el ECG o K ≥6,5</strong>. Efecto dura 30–60 min → repetir si el ECG no mejora. Si el paciente recibe digoxina: infundir lento (en 20–30 min) para evitar hipercalcemia + toxicidad digitálica.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Paso 2 — Redistribuir el K al intracelular</div>
+      <div class="farma-clase">Acción: 15–30 minutos · Efecto transitorio (2–4 h) · No elimina el K del organismo</div>
+      <div class="dosis-badge">Insulina regular 10 UI IV + Dextrosa 50% 50 ml (25 g)</div>
+      <div class="farma-detalle">
+        La insulina activa la Na/K-ATPasa → entra K a la célula (↓ 0,5–1,2 mEq/L en 60 min). Siempre acompañar con dextrosa para prevenir hipoglucemia. Monitorear glucemia a los 30, 60 y 120 min.<br><br>
+        <strong>Salbutamol nebulizado 10–20 mg</strong> (dosis alta) → efecto β2 → activa Na/K-ATPasa → ↓K 0,5–1 mEq/L. Complemento útil, inicio en 30 min. <strong>No usar como único agente en insuficiencia cardíaca grave.</strong>
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Paso 3 — Eliminar el K del organismo</div>
+      <div class="farma-clase">Acción: horas · Efecto definitivo · Elección según función renal y situación clínica</div>
+      <div class="dosis-badge">Opciones: Furosemida · Resinas · Diálisis</div>
+      <div class="farma-detalle">
+        <strong>Furosemida IV:</strong> si hay función renal residual → aumenta la excreción urinaria de K. 40–80 mg IV.<br><br>
+        <strong>Resinas de intercambio:</strong> patiromer (Veltassa) o ciclosilicato de sodio y circonio (SZC / Lokelma) — de elección en hiperkalemia crónica (IRC). El SZC actúa más rápido (1–6 h) vs patiromer (7–12 h). En Argentina la disponibilidad puede ser limitada; el <strong>poliestireno sulfonato de sodio (Kayexalate)</strong> es el disponible históricamente, aunque con menor evidencia y riesgo de necrosis intestinal si se usa con sorbitol.<br><br>
+        <strong>Hemodiálisis urgente:</strong> K ≥6,5 con cambios ECG que no responden, oligoanuria, acidosis grave, o contexto de IRA sin respuesta al tratamiento médico. Método más rápido y efectivo.
+      </div>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>Bicarbonato de sodio:</strong> históricamente usado para redistribuir K en acidosis. La evidencia actual muestra efecto modesto y lento en hiperkalemia aislada. Útil solo si hay acidosis metabólica severa (pH &lt;7,1) concomitante. No es de primera línea para la hiperkalemia per se.</div>
+  </div>
+
+  <!-- COMPARACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Comparación rápida Hipokalemia vs Hiperkalemia</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th><span style="color:var(--hipo)">Hipokalemia</span></th><th><span style="color:var(--hiper)">Hiperkalemia</span></th></tr>
+        <tr><td><strong>Valor</strong></td><td>&lt;3,5 mEq/L</td><td>&gt;5,0 mEq/L</td></tr>
+        <tr><td><strong>Causa #1</strong></td><td>Diuréticos (tiazidas/asa)</td><td>IRA / IRC</td></tr>
+        <tr><td><strong>ECG precoz</strong></td><td>Onda U, aplanamiento T</td><td>Onda T picuda, simétrica</td></tr>
+        <tr><td><strong>ECG tardío</strong></td><td>TV, torsades de pointes, FV</td><td>QRS ancho, onda sinusoidal, asistolia</td></tr>
+        <tr><td><strong>Fármaco que empeora</strong></td><td>Digoxina (potencia toxicidad)</td><td>IECA, ARA II, espironolactona</td></tr>
+        <tr><td><strong>Tratamiento urgente</strong></td><td>KCl IV 10–20 mEq/h</td><td>Gluconato Ca → Insulina+Dextrosa → Eliminar K</td></tr>
+        <tr><td><strong>Trampa</strong></td><td>Reponer Mg antes si es refractaria</td><td>Descartar pseudohiperkalemia primero</td></tr>
+        <tr><td><strong>Relacionado con pH</strong></td><td>Alcalosis → ↓K / acidosis → ↑K sérico</td><td>Acidosis → ↑K sérico (aunque K total normal)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">K normal: 3,5–5,0 mEq/L</span>
+      <span class="pill">98% del K es intracelular</span>
+      <span class="pill">Acidosis → K sube · Alcalosis → K baja (0,6 mEq/L por 0,1 pH)</span>
+      <span class="pill">Hipokalemia causa #1: diuréticos</span>
+      <span class="pill">Hiperkalemia causa #1: IRA / IRC</span>
+      <span class="pill">Onda U en hipokalemia — qué es y dónde se ve</span>
+      <span class="pill">T picuda simétrica → primera manifestación ECG de hiperkalemia</span>
+      <span class="pill">Gluconato de calcio: estabiliza membrana, NO baja el K</span>
+      <span class="pill">Insulina + Dextrosa: redistribuye K al intracelular</span>
+      <span class="pill">Salbutamol en hiperkalemia: dosis alta (10–20 mg)</span>
+      <span class="pill">Diálisis urgente: K ≥6,5 + cambios ECG refractarios</span>
+      <span class="pill">KCl IV máx 10 mEq/h periférico · 40 mEq/h central con monitor</span>
+      <span class="pill">Nunca KCl en bolo → FV</span>
+      <span class="pill">Hipomagnesemia: hace refractaria la hipokalemia</span>
+      <span class="pill">Hipokalemia + hipertensión → hiperaldosteronismo primario</span>
+      <span class="pill">Síndrome de Bartter/Gitelman: joven + hipokalemia + TA normal</span>
+      <span class="pill">Pseudohiperkalemia: hemólisis de la muestra</span>
+      <span class="pill">IECA/ARA II + espironolactona + IRC = riesgo de hiperkalemia grave</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil Tratado de Medicina Interna 27ª ed. Elsevier; 2020 · Rozman C, Cardellach F, Farreras-Rozman. Medicina Interna 20ª ed. Elsevier; 2020 · TRAPS Fascículo 1. Enfermedades crónicas no transmisibles. Ministerio de Salud de la Nación Argentina · Clase IM: Approach to the Patient with Electrolyte Disorders. UpToDate 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
