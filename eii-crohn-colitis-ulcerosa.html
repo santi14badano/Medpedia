@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfermedad Inflamatoria Intestinal — Medpedia</title>
+  <meta name="description" content="Enfermedad de Crohn y Colitis Ulcerosa: diagnóstico, clasificación, actividad y tratamiento. Para estudiantes de medicina argentina. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --crohn: #7B3FA0; --crohn-claro: #F3E8FC; --crohn-oscuro: #5C2D78;
+      --cu: #D4730A; --cu-claro: #FEF0DC; --cu-oscuro: #A85608;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo       { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-crohn { font-size: 16px; font-weight: 500; color: var(--crohn); margin-bottom: 12px; }
+    .sec-titulo-cu    { font-size: 16px; font-weight: 500; color: var(--cu); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-crohn { border-left: 3px solid var(--crohn); background: var(--crohn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-cu    { border-left: 3px solid var(--cu); background: var(--cu-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num-crohn { width: 28px; height: 28px; border-radius: 50%; background: var(--crohn); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-cu { width: 28px; height: 28px; border-radius: 50%; background: var(--cu); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.crohn { background: var(--crohn-claro); border: 1.5px solid #d4a8e8; }
+    .versus-block.cu    { background: var(--cu-claro); border: 1.5px solid #f0c080; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .versus-titulo.crohn { color: var(--crohn); }
+    .versus-titulo.cu    { color: var(--cu); }
+    .versus-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 12px; }
+    .versus-fila { display: flex; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.45; }
+    .versus-fila:last-child { margin-bottom: 0; }
+    .versus-icon { flex-shrink: 0; width: 18px; }
+    .versus-fila strong { color: var(--texto); }
+    .badge-crohn { display: inline-block; background: var(--crohn); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-cu    { display: inline-block; background: var(--cu); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-ambas { display: inline-block; background: #555; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .score-puntos { font-size: 11px; color: var(--texto-ter); line-height: 1.5; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Gastroenterología</a> › EII</div>
+  <div class="titulo">Enfermedad Inflamatoria Intestinal</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag" style="background:var(--crohn-claro);color:var(--crohn-oscuro);">Crohn</span>
+    <span class="tag" style="background:var(--cu-claro);color:var(--cu-oscuro);">Colitis Ulcerosa</span>
+    <span class="tag tag-fuente">ECCO 2023 · AGA 2024 · Harrison 21ª · Goldman-Cecil 27ª</span>
+  </div>
+
+  <!-- CONCEPTO CENTRAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Crohn vs Colitis Ulcerosa — la diferencia que siempre preguntan</div>
+    <div class="hl">Ambas son enfermedades inflamatorias crónicas del intestino de causa multifactorial (autoinmune + genética + ambiental + microbiota). El diagnóstico se basa en la clínica + endoscopía + histología + imágenes. <strong>El 10–15% de los casos son "colitis indeterminada"</strong> cuando no es posible distinguirlas.</div>
+    <div class="versus-wrap">
+      <div class="versus-block crohn">
+        <div class="versus-titulo crohn">🟣 Enfermedad de Crohn</div>
+        <div class="versus-sub">Inflamación <strong>transmural</strong> — todo el espesor de la pared</div>
+        <div class="versus-fila"><span class="versus-icon">📍</span><span><strong>Localización:</strong> cualquier segmento boca-ano · más frecuente: <strong>íleon terminal + colon derecho</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">🔬</span><span><strong>Distribución:</strong> discontinua — "skip lesions" con áreas respetadas entre zonas inflamadas</span></div>
+        <div class="versus-fila"><span class="versus-icon">🩺</span><span><strong>Clínica:</strong> dolor abdominal (FID), diarrea no siempre sanguinolenta, pérdida de peso, fiebre</span></div>
+        <div class="versus-fila"><span class="versus-icon">🔭</span><span><strong>Endoscopía:</strong> úlceras aftosas → serpiginosas → "empedrado" (cobblestone), fisuras</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span><strong>Complicaciones:</strong> fístulas, abscesos, estenosis, malabsorción, megacolon (raro)</span></div>
+        <div class="versus-fila"><span class="versus-icon">🏥</span><span>Cirugía: <strong>no cura</strong> — recurrencia frecuente posoperatoria</span></div>
+      </div>
+      <div class="versus-block cu">
+        <div class="versus-titulo cu">🟠 Colitis Ulcerosa</div>
+        <div class="versus-sub">Inflamación <strong>mucosa y submucosa</strong> — superficial</div>
+        <div class="versus-fila"><span class="versus-icon">📍</span><span><strong>Localización:</strong> recto siempre comprometido · se extiende en forma <strong>continua y proximal</strong></span></div>
+        <div class="versus-fila"><span class="versus-icon">🔬</span><span><strong>Distribución:</strong> continua, sin saltos — desde recto hasta colitis extensa</span></div>
+        <div class="versus-fila"><span class="versus-icon">🩺</span><span><strong>Clínica:</strong> <strong>diarrea con sangre y moco</strong>, tenesmo, urgencia defecatoria, cólicos</span></div>
+        <div class="versus-fila"><span class="versus-icon">🔭</span><span><strong>Endoscopía:</strong> mucosa eritematosa, granular, frágil, pseudopólipos inflamatorios</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span><strong>Complicaciones:</strong> megacolon tóxico, hemorragia masiva, displasia / cáncer colorrectal</span></div>
+        <div class="versus-fila"><span class="versus-icon">🏥</span><span>Cirugía: <strong>curativa</strong> (colectomía total)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA HISTOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diferencias histológicas y endoscópicas clave</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th><span style="color:var(--crohn)">Crohn</span></th><th><span style="color:var(--cu)">Colitis Ulcerosa</span></th></tr>
+        <tr><td><strong>Profundidad</strong></td><td>Transmural (toda la pared)</td><td>Mucosa + submucosa</td></tr>
+        <tr><td><strong>Distribución</strong></td><td>Discontinua (skip lesions)</td><td>Continua desde recto</td></tr>
+        <tr><td><strong>Recto comprometido</strong></td><td>50% de los casos</td><td>Siempre (100%)</td></tr>
+        <tr><td><strong>Granulomas</strong></td><td>Sí — no caseificantes (patognomónico)</td><td>No</td></tr>
+        <tr><td><strong>Fisuras y fístulas</strong></td><td>Muy frecuentes</td><td>Raras</td></tr>
+        <tr><td><strong>Afectación intestino delgado</strong></td><td>Sí (íleon terminal #1)</td><td>No (salvo "backwash ileitis")</td></tr>
+        <tr><td><strong>Afectación perianal</strong></td><td>30–40% (fístulas, abscesos)</td><td>Excepcional</td></tr>
+        <tr><td><strong>Endoscopía característica</strong></td><td>Empedrado, úlceras serpiginosas, fisuras</td><td>Mucosa granular, friable, úlceras superficiales</td></tr>
+        <tr><td><strong>Mucus / pus rectal</strong></td><td>Poco frecuente</td><td>Muy frecuente (tenesmo)</td></tr>
+        <tr><td><strong>Riesgo de CCR</strong></td><td>↑ si colitis extensa</td><td>↑↑ (8–10× a los 20 años de evolución)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MANIFESTACIONES EXTRAINTESTINALES -->
+  <div class="seccion">
+    <div class="sec-titulo">🦴 Manifestaciones extraintestinales (MEI)</div>
+    <div class="hl">Presentes en el 25–40% de los pacientes con EII. Algunas siguen la actividad de la enfermedad intestinal; otras tienen curso independiente. Son más frecuentes en Crohn que en CU.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Sistema</th><th>Manifestación</th><th><span style="color:var(--crohn)">Crohn</span></th><th><span style="color:var(--cu)">CU</span></th><th>Correlaciona con actividad</th></tr>
+        <tr><td><strong>Articular</strong></td><td>Artropatía periférica tipo 1 (oligoarticular, grandes articulaciones)</td><td><span class="badge-crohn">Crohn</span></td><td><span class="badge-cu">CU</span></td><td>Sí</td></tr>
+        <tr><td><strong>Articular</strong></td><td>Artropatía tipo 2 (poliarticular) / Espondilitis anquilosante / Sacroileítis</td><td><span class="badge-crohn">Crohn</span></td><td><span class="badge-cu">CU</span></td><td>No (independiente)</td></tr>
+        <tr><td><strong>Piel</strong></td><td>Eritema nodoso (paniculitis dolorosa en extremidades)</td><td><span class="badge-crohn">Crohn</span></td><td><span class="badge-cu">CU</span></td><td>Sí</td></tr>
+        <tr><td><strong>Piel</strong></td><td>Pioderma gangrenoso (úlceras necróticas profundas)</td><td><span class="badge-crohn">Crohn</span></td><td><span class="badge-cu">CU</span></td><td>No</td></tr>
+        <tr><td><strong>Ocular</strong></td><td>Epiescleritis / Uveítis anterior</td><td><span class="badge-crohn">Crohn</span></td><td><span class="badge-cu">CU</span></td><td>Parcial</td></tr>
+        <tr><td><strong>Hepatobiliar</strong></td><td><strong>Colangitis esclerosante primaria (CEP)</strong></td><td>Poco</td><td><span class="badge-cu">CU</span> (70% de CEP tiene CU)</td><td>No</td></tr>
+        <tr><td><strong>Renal</strong></td><td>Cálculos de oxalato (Crohn con malabsorción ileal) / amiloidosis</td><td><span class="badge-crohn">Crohn</span></td><td>—</td><td>Variable</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ CEP + CU — la asociación que siempre preguntan</div>
+      La colangitis esclerosante primaria se asocia en el 70–80% de los casos con colitis ulcerosa (generalmente pancolitis). El diagnóstico es por colangio-RMN o CPRE (estenosis en rosario). Riesgo aumentado de colangiocarcinoma y CCR. La CEP puede persistir o empeorar tras la colectomía.
+    </div>
+  </div>
+
+  <!-- EVALUACIÓN DE ACTIVIDAD CU -->
+  <div class="seccion">
+    <div class="sec-titulo-cu">🟠 Colitis Ulcerosa — clasificación de actividad (Score de Mayo)</div>
+    <div class="hl-cu">El <strong>Score de Mayo</strong> (0–12 puntos) evalúa la actividad de la CU. Es el más usado en ensayos clínicos y guías internacionales. El <strong>Mayo parcial</strong> (sin endoscopía, 0–9 pts) se usa en el seguimiento ambulatorio.</div>
+    <div class="score-grid">
+      <div class="score-item"><div class="score-variable">Frecuencia deposiciones</div><div class="score-puntos">Normal (0) · 1–2 más que lo habitual (1) · 3–4 más (2) · ≥5 más (3)</div></div>
+      <div class="score-item"><div class="score-variable">Sangre en materia fecal</div><div class="score-puntos">Sin sangre (0) · Estrías de sangre &lt;50% (1) · Sangre obvia &gt;50% (2) · Solo sangre (3)</div></div>
+      <div class="score-item"><div class="score-variable">Hallazgo endoscópico</div><div class="score-puntos">Normal (0) · Leve eritema/friabilidad (1) · Eritema marcado/erosiones (2) · Ulceración espontánea (3)</div></div>
+      <div class="score-item"><div class="score-variable">Evaluación global médico</div><div class="score-puntos">Normal (0) · Leve (1) · Moderada (2) · Grave (3)</div></div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Score de Mayo</th><th>Actividad</th><th>Conducta</th></tr>
+        <tr><td>0–2</td><td>Remisión</td><td>Mantener tratamiento de mantenimiento</td></tr>
+        <tr><td>3–5</td><td>Leve</td><td>Mesalazina oral + tópica (rectal)</td></tr>
+        <tr><td>6–10</td><td>Moderada</td><td>Corticoides ± inmunomoduladores / biológicos</td></tr>
+        <tr><td>11–12</td><td>Grave</td><td>Internación, corticoides IV, evaluar cirugía</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EVALUACIÓN DE ACTIVIDAD CROHN -->
+  <div class="seccion">
+    <div class="sec-titulo-crohn">🟣 Enfermedad de Crohn — clasificación de Montreal y actividad (CDAI simplificado)</div>
+    <div class="hl-crohn">La <strong>Clasificación de Montreal</strong> (2005) categoriza Crohn por edad de diagnóstico (A), localización (L) y comportamiento (B). El <strong>CDAI</strong> (Crohn's Disease Activity Index) es el score de actividad clásico; para la práctica clínica se usa el <strong>Harvey-Bradshaw (HBI)</strong> simplificado.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th colspan="2">Clasificación de Montreal — Crohn</th></tr>
+        <tr><td><strong>Edad (A)</strong></td><td>A1: ≤16 años · A2: 17–40 años · A3: &gt;40 años</td></tr>
+        <tr><td><strong>Localización (L)</strong></td><td>L1: íleon terminal · L2: colon · L3: ileocólica · L4: tracto alto (+modificador)</td></tr>
+        <tr><td><strong>Comportamiento (B)</strong></td><td>B1: no estenosante / no penetrante · B2: estenosante · B3: penetrante (fistulizante) · +p: afectación perianal</td></tr>
+      </table>
+    </div>
+    <div class="score-grid" style="margin-top:10px;">
+      <div class="score-item"><div class="score-variable">Estado general (HBI)</div><div class="score-puntos">Muy bien (0) · Levemente por debajo de lo normal (1) · Mal (2) · Muy mal (3) · Terrible (4)</div></div>
+      <div class="score-item"><div class="score-variable">Dolor abdominal</div><div class="score-puntos">Ninguno (0) · Leve (1) · Moderado (2) · Grave (3)</div></div>
+      <div class="score-item"><div class="score-variable">N° deposiciones líquidas/día</div><div class="score-puntos">1 punto por cada deposición líquida</div></div>
+      <div class="score-item"><div class="score-variable">Masa abdominal</div><div class="score-puntos">No (0) · Dudosa (1) · Definida (2) · Definida + sensible (3)</div></div>
+      <div class="score-item"><div class="score-variable">Complicaciones</div><div class="score-puntos">1 punto c/u: artralgia, uveítis, eritema nodoso, aftas, pioderma, fisura anal, fístula, absceso</div></div>
+    </div>
+    <div class="hl"><strong>HBI:</strong> &lt;5 remisión · 5–7 leve · 8–16 moderada · &gt;16 grave.</div>
+  </div>
+
+  <!-- TRATAMIENTO CU -->
+  <div class="seccion">
+    <div class="sec-titulo-cu">🟠 Tratamiento — Colitis Ulcerosa</div>
+    <div class="step">
+      <div class="step-num-cu">1</div>
+      <div class="step-content">
+        <strong>CU leve-moderada — Aminosalicilatos (5-ASA / mesalazina)</strong><br>
+        <strong>Mesalazina oral:</strong> 2,4–4,8 g/día (proctitis-colitis extensa). <strong>Mesalazina tópica (supositorio o enema):</strong> esencial en proctitis y colitis izquierda — la combinación oral + tópica es superior a cualquiera sola. Mantenimiento indefinido con la dosis mínima eficaz. La sulfasalazina es alternativa más económica (metabolito activo = 5-ASA).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-cu">2</div>
+      <div class="step-content">
+        <strong>Brote moderado-grave / falta de respuesta a 5-ASA</strong><br>
+        <strong>Corticoides sistémicos:</strong> prednisona 40–60 mg/día VO o metilprednisolona IV. No son tratamiento de mantenimiento — nunca usar por más de 3 meses. Si el brote responde: reducción gradual (no abrupta). Cortico-dependencia o cortico-refractariedad → escalar a inmunomoduladores o biológicos.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-cu">3</div>
+      <div class="step-content">
+        <strong>Inmunomoduladores — para mantenimiento y ahorro de corticoides</strong><br>
+        <strong>Azatioprina</strong> 2–2,5 mg/kg/día (o 6-mercaptopurina 1–1,5 mg/kg/día). Inicio de acción lento (3–6 meses). Controlar hemograma y hepatograma. Medir actividad de TPMT antes de iniciar. Metotrexato: menos usado en CU (más en Crohn).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-cu">4</div>
+      <div class="step-content">
+        <strong>Biológicos — moderada-grave o falla de inmunomoduladores</strong><br>
+        <strong>Anti-TNF:</strong> infliximab (5 mg/kg IV semanas 0, 2, 6 → c/8 sem) o adalimumab SC. Combinar con azatioprina aumenta eficacia (terapia combinada). Excluir TBC latente antes de iniciar (PPD/IGRA + Rx tórax).<br>
+        <strong>Vedolizumab</strong> (anti-α4β7 integrina, acción intestinal selectiva): buena opción en CU, especialmente en adultos mayores o con infecciones recurrentes.<br>
+        <strong>Ustekinumab</strong> (anti-IL12/23): aprobado en CU moderada-grave refractaria.<br>
+        <strong>Tofacitinib / Upadacitinib</strong> (JAK inhibidores): acción rápida, vía oral, alternativa eficaz en CU moderada-grave.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-cu">5</div>
+      <div class="step-content">
+        <strong>CU grave refractaria / megacolon tóxico — internación</strong><br>
+        Metilprednisolona IV 60 mg/día. Si no hay respuesta en <strong>3–5 días:</strong> ciclosporina IV 2–4 mg/kg/día (puente a azatioprina) o infliximab IV (5 mg/kg). Si falla médico: <strong>colectomía urgente</strong>. El megacolon tóxico (colon &gt;6 cm + síntomas sistémicos) es indicación de cirugía si no revierte en 24–72 h.
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO CROHN -->
+  <div class="seccion">
+    <div class="sec-titulo-crohn">🟣 Tratamiento — Enfermedad de Crohn</div>
+    <div class="hl-crohn">El tratamiento depende de la <strong>localización, el comportamiento (B1/B2/B3) y la actividad</strong>. La mesalazina tiene escasa eficacia en Crohn. Los corticoides y los biológicos son los pilares del brote moderado-grave.</div>
+    <div class="step">
+      <div class="step-num-crohn">1</div>
+      <div class="step-content">
+        <strong>Brote leve — ileocólico</strong><br>
+        <strong>Budesonida oral 9 mg/día</strong> × 8 semanas (corticoide tópico intestinal, baja biodisponibilidad sistémica) → de elección en Crohn ileocólico leve-moderado. Eficaz para inducir remisión, no para mantenimiento.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-crohn">2</div>
+      <div class="step-content">
+        <strong>Brote moderado-grave</strong><br>
+        Prednisona 40–60 mg/día VO o metilprednisolona IV. Igual que en CU: solo para inducción, no mantenimiento. La cortico-dependencia obliga a escalar. <strong>Nutrición enteral exclusiva</strong>: eficaz como inducción en Crohn (sobre todo en niños y adolescentes).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-crohn">3</div>
+      <div class="step-content">
+        <strong>Mantenimiento — inmunomoduladores</strong><br>
+        Azatioprina 2–2,5 mg/kg/día o 6-MP. <strong>Metotrexato 15–25 mg/semana SC o IM</strong>: alternativa válida en Crohn (más evidencia que en CU). Contraindicado en embarazo (teratogénico).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-crohn">4</div>
+      <div class="step-content">
+        <strong>Biológicos — moderado-grave o fistulizante (B3)</strong><br>
+        <strong>Infliximab:</strong> de elección en Crohn fistulizante (cierra fístulas). <strong>Adalimumab SC:</strong> alternativa práctica para ambulatorio. <strong>Ustekinumab:</strong> eficaz en Crohn moderado-grave, buena opción en falla anti-TNF. <strong>Risankizumab</strong> (anti-IL23, aprobado 2022–2023): nueva opción en Crohn moderado-grave. Vedolizumab: menor eficacia en Crohn que en CU.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-crohn">5</div>
+      <div class="step-content">
+        <strong>Enfermedad perianal / fístulas</strong><br>
+        Metronidazol + ciprofloxacina (tratamiento médico inicial). Drenaje quirúrgico de abscesos. <strong>Infliximab</strong> (terapia biológica de elección para fístulas complejas). Seton (hilo de drenaje) si hay fístula transesfinteriana. Evitar resecciones amplias — preservar longitud intestinal.
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Antes de iniciar cualquier biológico:</strong> descartar TBC latente (PPD/IGRA + Rx tórax), hepatitis B (HBsAg, anti-HBs, anti-HBc), vacunar contra neumococo, meningococo, hepatitis A y B, y virus del papiloma si corresponde. Los biológicos están contraindicados en infección activa grave.</div>
+  </div>
+
+  <!-- TABLA FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Fármacos — resumen rápido</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fármaco</th><th>Mecanismo</th><th><span style="color:var(--crohn)">Crohn</span></th><th><span style="color:var(--cu)">CU</span></th><th>Clave</th></tr>
+        <tr><td><strong>Mesalazina (5-ASA)</strong></td><td>Anti-inflamatorio tópico mucosa</td><td><span class="badge-no">No (escasa evidencia)</span></td><td><span class="badge-si">Sí (1ª línea)</span></td><td>Oral + tópica en CU izquierda</td></tr>
+        <tr><td><strong>Budesonida oral</strong></td><td>Corticoide tópico intestinal</td><td><span class="badge-si">Sí — ileocólico leve</span></td><td>Limitado</td><td>Menos efectos sistémicos</td></tr>
+        <tr><td><strong>Prednisona / MP IV</strong></td><td>Corticoide sistémico</td><td><span class="badge-si">Sí — brote</span></td><td><span class="badge-si">Sí — brote</span></td><td>Solo inducción, no mantenimiento</td></tr>
+        <tr><td><strong>Azatioprina / 6-MP</strong></td><td>Antimetabolito (inhibe proliferación linfocítica)</td><td><span class="badge-si">Sí</span></td><td><span class="badge-si">Sí</span></td><td>Controlar TPMT antes de iniciar</td></tr>
+        <tr><td><strong>Metotrexato</strong></td><td>Antimetabolito (antifolato)</td><td><span class="badge-si">Sí</span></td><td>Limitado</td><td>Contraindicado en embarazo</td></tr>
+        <tr><td><strong>Infliximab</strong></td><td>Anti-TNFα (IgG1 quimérico)</td><td><span class="badge-si">Sí — fístulas</span></td><td><span class="badge-si">Sí</span></td><td>Excluir TBC antes</td></tr>
+        <tr><td><strong>Adalimumab</strong></td><td>Anti-TNFα (IgG1 humano)</td><td><span class="badge-si">Sí</span></td><td><span class="badge-si">Sí</span></td><td>SC — más cómodo ambulatorio</td></tr>
+        <tr><td><strong>Vedolizumab</strong></td><td>Anti-α4β7 integrina (selectivo intestinal)</td><td>Moderado</td><td><span class="badge-si">Sí — buena opción</span></td><td>Mejor perfil de seguridad sistémica</td></tr>
+        <tr><td><strong>Ustekinumab</strong></td><td>Anti-IL12/23 (anti-p40)</td><td><span class="badge-si">Sí</span></td><td><span class="badge-si">Sí</span></td><td>1ª dosis IV, luego SC c/12 sem</td></tr>
+        <tr><td><strong>Ciclosporina IV</strong></td><td>Inhibidor calcineurina</td><td>No</td><td><span class="badge-si">CU grave refractaria</span></td><td>Solo puente — no mantenimiento</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- VIGILANCIA CÁNCER COLORRECTAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Vigilancia del cáncer colorrectal en EII</div>
+    <div class="hl-danger">El riesgo de CCR en CU aumenta con la extensión y duración de la enfermedad. <strong>La pancolitis de &gt;8–10 años de evolución requiere colonoscopía de vigilancia anual o bienal con biopsias.</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Frecuencia de vigilancia</th></tr>
+        <tr><td>Colitis extensa &gt;10 años, sin otros factores de riesgo</td><td>Cada 2–3 años</td></tr>
+        <tr><td>Colitis extensa + CEP, displasia previa, antecedente familiar CCR, inflamación severa</td><td>Anual</td></tr>
+        <tr><td>Proctitis aislada o colitis izquierda (&lt;25 cm)</td><td>Sin vigilancia diferencial al de la población general</td></tr>
+        <tr><td>CEP + CU (cualquier extensión)</td><td>Anual desde el diagnóstico de CEP</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Crohn: transmural · CU: mucosa/submucosa</span>
+      <span class="pill">Crohn: distribución discontinua — skip lesions</span>
+      <span class="pill">CU: siempre compromete el recto</span>
+      <span class="pill">Crohn: granulomas no caseificantes (patognomónico)</span>
+      <span class="pill">CU: diarrea con sangre y tenesmo</span>
+      <span class="pill">Crohn: dolor FID + pérdida de peso (imita apendicitis)</span>
+      <span class="pill">Fístulas y abscesos → Crohn fistulizante (B3)</span>
+      <span class="pill">Megacolon tóxico → complicación grave de CU</span>
+      <span class="pill">Mesalazina: 1ª línea en CU, ineficaz en Crohn</span>
+      <span class="pill">Budesonida oral: Crohn ileocólico leve</span>
+      <span class="pill">Corticoides: solo inducción, nunca mantenimiento</span>
+      <span class="pill">Infliximab: elección en fístulas de Crohn</span>
+      <span class="pill">TPMT: medir antes de azatioprina</span>
+      <span class="pill">Excluir TBC antes de biológico</span>
+      <span class="pill">CEP + CU: la asociación clásica</span>
+      <span class="pill">Eritema nodoso: correlaciona con actividad intestinal</span>
+      <span class="pill">Pioderma gangrenoso: no correlaciona con actividad</span>
+      <span class="pill">Cirugía cura en CU — no en Crohn</span>
+      <span class="pill">Score de Mayo: actividad CU · HBI: actividad Crohn</span>
+      <span class="pill">Clasificación de Montreal: A + L + B en Crohn</span>
+      <span class="pill">Vigilancia CCR en CU extensa: desde los 8–10 años</span>
+      <span class="pill">Colitis indeterminada: 10–15% no se puede clasificar</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ECCO Consensus on Diagnosis and Management of Crohn's Disease and Ulcerative Colitis 2023 · AGA Clinical Practice Guideline on the Management of Moderate to Severe Ulcerative Colitis 2020 · Rubin DT et al. ACG Clinical Guideline: Ulcerative Colitis in Adults. Am J Gastroenterol 2019 · Torres J et al. Crohn's disease. Lancet 2017 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil Tratado de Medicina Interna 27ª ed. Elsevier; 2020 · Rozman C, Cardellach F, Farreras-Rozman. Medicina Interna 20ª ed. Elsevier; 2020.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
