@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dislipemias — Medpedia</title>
+  <meta name="description" content="Diagnóstico y tratamiento de las dislipemias: estatinas, ezetimibe, fibratos, inhibidores PCSK9. Metas de LDL según riesgo cardiovascular. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --cardio: #d32f2f; --cardio-claro: #fdeaea; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: var(--cardio-claro); color: var(--cardio); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid var(--cardio); background: var(--cardio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .riesgo-card { border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 8px; font-size: 13px; line-height: 1.7; }
+    .riesgo-muy-alto { background: #fdeaea; border-left: 4px solid var(--cardio); }
+    .riesgo-alto { background: #FFF3E0; border-left: 4px solid #E65100; }
+    .riesgo-moderado { background: #FAEEDA; border-left: 4px solid #EF9F27; }
+    .riesgo-bajo { background: var(--verde-claro); border-left: 4px solid var(--verde); }
+    .riesgo-titulo { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Dislipemias</div>
+  <div class="titulo">Dislipemias</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-fuente">ESC/EAS 2019 · ACC/AHA 2018 · TRAPS Argentina</span>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>Las dislipemias son alteraciones en la concentración de lípidos plasmáticos (colesterol total, LDL, HDL y triglicéridos) que constituyen uno de los principales <strong>factores de riesgo cardiovascular modificables</strong>.</p>
+      <p>El <strong>LDL-colesterol</strong> es el blanco terapéutico principal — existe una relación lineal y causal entre LDL y riesgo de enfermedad cardiovascular aterosclerótica (ECVA). Reducir el LDL en 1 mmol/L (~40 mg/dL) reduce el riesgo de eventos cardiovasculares un 20–25%.</p>
+      <p><strong>Screening:</strong> perfil lipídico en ayunas a todos los adultos ≥20 años. Repetir cada 5 años si normal, o antes si hay FRCV. En Argentina se recomienda inicio en la infancia ante antecedentes de hipercolesterolemia familiar.</p>
+    </div>
+  </div>
+
+  <!-- CLASIFICACION -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Clasificación</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Alteración principal</th><th>Causas secundarias a descartar</th></tr>
+        <tr><td><strong>Hipercolesterolemia aislada</strong></td><td>LDL ↑ con TG normales</td><td>Hipotiroidismo, síndrome nefrótico, colestasis</td></tr>
+        <tr><td><strong>Hipertrigliceridemia aislada</strong></td><td>TG &gt;200 mg/dL</td><td>DM2, obesidad, alcohol, IRC, hipotiroidismo, tiazidas, betabloqueantes, estrógenos</td></tr>
+        <tr><td><strong>Dislipemia mixta</strong></td><td>LDL ↑ + TG ↑</td><td>Síndrome metabólico, DM2, hipotiroidismo</td></tr>
+        <tr><td><strong>HDL bajo aislado</strong></td><td>HDL &lt;40 (H) / &lt;50 (M)</td><td>Sedentarismo, tabaquismo, obesidad, DM2</td></tr>
+        <tr><td><strong>Hipercolesterolemia familiar (HF)</strong></td><td>LDL muy elevado desde la infancia</td><td>Mutación del receptor LDL — LDL &gt;190 mg/dL + historia familiar</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Hipercolesterolemia familiar:</strong> LDL &gt;190 mg/dL + xantomas tendinosos + arcus corneal &lt;45 años + familiar de 1er grado con ECVA prematura o LDL elevado. Criterios de Dutch Lipid Clinic. Siempre tratar con estatina de alta intensidad + considerar ezetimibe e inhibidor PCSK9.</div>
+  </div>
+
+  <!-- METAS DE LDL -->
+  <div class="seccion">
+    <div class="sec-titulo">🎯 Metas de LDL según riesgo cardiovascular — ESC/EAS 2019</div>
+
+    <div class="riesgo-card riesgo-muy-alto">
+      <div class="riesgo-titulo" style="color:var(--cardio);">🔴 Riesgo muy alto — Meta: LDL &lt;55 mg/dL (y reducción ≥50% del basal)</div>
+      ECVA establecida (IAM, ACV, angina, revascularización, EVP) · DM con daño de órgano blanco o ≥3 FRCV · ERC grave (TFG &lt;30) · HF con ECVA · Score SCORE ≥10%
+    </div>
+    <div class="riesgo-card riesgo-alto">
+      <div class="riesgo-titulo" style="color:#E65100;">🟠 Riesgo alto — Meta: LDL &lt;70 mg/dL (y reducción ≥50% del basal)</div>
+      LDL &gt;190 mg/dL (HF sin ECVA) · DM sin daño de órgano blanco con &gt;10 años de evolución · HTA severa · ERC moderada (TFG 30–59) · Score SCORE 5–10%
+    </div>
+    <div class="riesgo-card riesgo-moderado">
+      <div class="riesgo-titulo" style="color:#8B5E0A;">🟡 Riesgo moderado — Meta: LDL &lt;100 mg/dL</div>
+      Score SCORE 1–5% · DM &lt;10 años sin FRCV adicionales · tabaquismo moderado
+    </div>
+    <div class="riesgo-card riesgo-bajo">
+      <div class="riesgo-titulo" style="color:var(--verde-oscuro);">🟢 Riesgo bajo — Meta: LDL &lt;116 mg/dL</div>
+      Score SCORE &lt;1% · jóvenes sin FRCV
+    </div>
+
+    <div class="hl-info" style="margin-top:10px;">En Argentina, las guías TRAPS del Ministerio de Salud utilizan metas similares. Para riesgo muy alto se acepta también la meta de <strong>LDL &lt;70 mg/dL</strong> según el contexto institucional y disponibilidad de inhibidores PCSK9.</div>
+  </div>
+
+  <!-- TRATAMIENTO NO FARMACOLOGICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🥗 Tratamiento no farmacológico</div>
+    <div class="card">
+      <p><strong>Dieta:</strong> reducir grasas saturadas (&lt;7% de las calorías totales) y trans. Aumentar fibra soluble (avena, legumbres), esteroles vegetales y ácidos grasos omega-3. La dieta mediterránea reduce eventos cardiovasculares independientemente del LDL.</p>
+      <p><strong>Actividad física:</strong> 150 min/semana de actividad aeróbica moderada. Mejora principalmente el HDL y los TG — efecto modesto sobre LDL.</p>
+      <p><strong>Tabaquismo:</strong> dejar de fumar sube el HDL y reduce el riesgo cardiovascular global.</p>
+      <p><strong>Alcohol:</strong> reducir al mínimo — el alcohol eleva los TG de forma significativa.</p>
+      <p><strong>Reducción de LDL esperable con cambios de estilo de vida:</strong> 10–20%. Insuficiente en riesgo alto/muy alto — el tratamiento farmacológico es mandatorio.</p>
+    </div>
+  </div>
+
+  <!-- FARMACOLOGIA -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento farmacológico</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Estatinas</div>
+      <div class="farma-clase">Inhibidores de la HMG-CoA reductasa · primera línea universal</div>
+      <div class="dosis-badge">Alta intensidad: atorvastatina 40–80 mg · rosuvastatina 20–40 mg</div>
+      <div class="farma-detalle">
+        Son el tratamiento de primera línea para cualquier paciente con indicación de tratamiento hipolipemiante. Reducen el LDL un 30–55% según la molécula e intensidad.<br><br>
+        <strong>Intensidad alta (↓LDL ≥50%):</strong> atorvastatina 40–80 mg · rosuvastatina 20–40 mg → usar en riesgo muy alto y alto.<br>
+        <strong>Intensidad moderada (↓LDL 30–49%):</strong> atorvastatina 10–20 mg · rosuvastatina 5–10 mg · simvastatina 20–40 mg → riesgo moderado.<br>
+        <strong>Intensidad baja (↓LDL &lt;30%):</strong> simvastatina 10 mg · pravastatina 10–20 mg → casos seleccionados.<br><br>
+        <strong>Efectos adversos:</strong> miopatía (mialgias, miositis, raramente rabdomiólisis — monitorear CPK si síntomas) · elevación leve de transaminasas (contraindicar en hepatopatía activa) · leve aumento del riesgo de DM2 (beneficio cardiovascular ampliamente supera este riesgo).<br>
+        <strong>Interacciones importantes:</strong> simvastatina + amiodarona/amlodipino/diltiazem → riesgo de miopatía. Evitar simvastatina 80 mg.<br>
+        <strong>Contraindicadas en embarazo</strong> (categoría X).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ezetimibe</div>
+      <div class="farma-clase">Inhibidor de la absorción intestinal de colesterol · segunda línea</div>
+      <div class="dosis-badge">10 mg/día VO · en combinación con estatina</div>
+      <div class="farma-detalle">Inhibe el transportador NPC1L1 en el enterocito. Reduce el LDL un 15–20% adicional cuando se combina con estatina. Indicado cuando no se alcanza la meta de LDL con estatina sola o cuando hay intolerancia a estatinas. El estudio IMPROVE-IT demostró reducción de eventos cardiovasculares en combinación con simvastatina post-SCA. Bien tolerado — sin miopatía. Puede usarse en pacientes con intolerancia a estatinas como monoterapia (reducción modesta).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Inhibidores de PCSK9 (evolocumab / alirocumab)</div>
+      <div class="farma-clase">Anticuerpos monoclonales anti-PCSK9 · tercera línea o HF</div>
+      <div class="dosis-badge">Evolocumab: 140 mg SC c/2 semanas o 420 mg SC c/mes · Alirocumab: 75–150 mg SC c/2 semanas</div>
+      <div class="farma-detalle">Inhiben la degradación del receptor LDL → más receptores disponibles → mayor captación de LDL circulante. Reducen el LDL un 50–60% adicional sobre la estatina. Indicaciones: riesgo muy alto con LDL por encima de la meta a pesar de estatina + ezetimibe a dosis máxima · HF homocigota · intolerancia severa a estatinas. Muy bien tolerados. Disponibilidad limitada en el sistema público argentino — uso principalmente en obra social/prepaga o programas especiales.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Fibratos (fenofibrato, gemfibrozil)</div>
+      <div class="farma-clase">Agonistas PPAR-α · hipertrigliceridemia</div>
+      <div class="dosis-badge">Fenofibrato: 145 mg/día VO · Gemfibrozil: 600 mg c/12 h</div>
+      <div class="farma-detalle">Reducen los TG un 30–50% y elevan el HDL un 10–20%. Efecto modesto sobre LDL. Indicados principalmente cuando TG &gt;500 mg/dL (riesgo de pancreatitis aguda) o en dislipemia mixta con TG muy elevados. <strong>No combinar gemfibrozil con estatinas</strong> (riesgo de miopatía/rabdomiólisis). El fenofibrato es más seguro en combinación con estatinas. Ajustar dosis en insuficiencia renal.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Omega-3 a altas dosis (icosapent etil)</div>
+      <div class="farma-clase">Ácidos grasos omega-3 · hipertrigliceridemia residual</div>
+      <div class="dosis-badge">Icosapent etil 4 g/día VO (2 g c/12 h)</div>
+      <div class="farma-detalle">El estudio REDUCE-IT demostró reducción del 25% en eventos cardiovasculares en pacientes con TG ≥150 mg/dL y ECVA establecida o DM con FRCV, ya en tratamiento con estatina. Mecanismo va más allá de la reducción de TG. Importante: los omega-3 de venta libre (1 g/día) no tienen este beneficio demostrado. Aprobado por FDA — disponibilidad limitada en Argentina.</div>
+    </div>
+  </div>
+
+  <!-- ALGORITMO DE TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔄 Algoritmo de tratamiento — riesgo alto/muy alto</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Paso</th><th>Intervención</th><th>Reducción LDL esperada</th></tr>
+        <tr><td><strong>1</strong></td><td>Estatina de alta intensidad (atorvastatina 40–80 mg o rosuvastatina 20–40 mg)</td><td>50–55%</td></tr>
+        <tr><td><strong>2</strong></td><td>Agregar ezetimibe 10 mg si no alcanza la meta</td><td>+15–20% adicional</td></tr>
+        <tr><td><strong>3</strong></td><td>Agregar inhibidor PCSK9 si persiste por encima de la meta a pesar de paso 1+2</td><td>+50–60% adicional</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Intolerancia a estatinas:</strong> verificar que sea verdadera (cambiar a otra estatina, bajar dosis, días alternos). Si persiste: ezetimibe ± inhibidor PCSK9. La "intolerancia a todas las estatinas" es rara — muchas veces son mialgias inespecíficas no relacionadas con el fármaco.</div>
+  </div>
+
+  <!-- HIPERTRIGLICERIDEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Hipertrigliceridemia severa — riesgo de pancreatitis</div>
+    <div class="hl-danger">TG &gt;500 mg/dL → riesgo de pancreatitis aguda. TG &gt;1000 mg/dL → riesgo muy alto. Tratamiento urgente: ayuno, hidratación IV, fibratos o omega-3 a altas dosis. Tratar siempre las causas secundarias (DM descompensada, alcohol, hipotiroidismo).</div>
+    <div class="card" style="margin-top:8px;">
+      <p><strong>Causas de hipertrigliceridemia severa:</strong> DM2 descompensada · alcohol · hipotiroidismo · síndrome nefrótico · hipertrigliceridemia familiar (genética) · fármacos (estrógenos orales, tamoxifeno, retinoides, antirretrovirales, antipsicóticos atípicos, ciclosporina).</p>
+    </div>
+  </div>
+
+  <!-- MONITOREO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Monitoreo del tratamiento</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Cuándo</th><th>Qué pedir</th></tr>
+        <tr><td>Basal (antes de iniciar)</td><td>Perfil lipídico completo · transaminasas · CPK si hay factores de riesgo de miopatía</td></tr>
+        <tr><td>4–12 semanas post-inicio o cambio de dosis</td><td>Perfil lipídico · transaminasas si hay síntomas hepáticos</td></tr>
+        <tr><td>Una vez en meta</td><td>Perfil lipídico anual</td></tr>
+        <tr><td>Si mialgias</td><td>CPK · si CPK &gt;4× LSN → reducir dosis o suspender · si CPK &gt;10× LSN (miositis) → suspender + hidratación</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">No se recomienda monitoreo rutinario de transaminasas con estatinas (el riesgo de hepatotoxicidad clínicamente relevante es muy bajo). Solo pedir si hay síntomas o enfermedad hepática previa.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">LDL — blanco terapéutico principal</span>
+      <span class="pill">Meta de LDL según riesgo: &lt;55 / &lt;70 / &lt;100 / &lt;116</span>
+      <span class="pill">Estatina alta intensidad — atorva 40–80 / rosuva 20–40</span>
+      <span class="pill">Mecanismo estatinas — inhiben HMG-CoA reductasa</span>
+      <span class="pill">Miopatía por estatinas — CPK</span>
+      <span class="pill">Estatinas contraindicadas en embarazo</span>
+      <span class="pill">Ezetimibe — mecanismo (NPC1L1)</span>
+      <span class="pill">No combinar gemfibrozil + estatina</span>
+      <span class="pill">Fibratos → hipertrigliceridemia</span>
+      <span class="pill">TG &gt;500 → riesgo de pancreatitis</span>
+      <span class="pill">PCSK9 — indicación y mecanismo</span>
+      <span class="pill">Hipercolesterolemia familiar — LDL &gt;190 + clínica</span>
+      <span class="pill">Hipotiroidismo → hipercolesterolemia secundaria</span>
+      <span class="pill">Alcohol → hipertrigliceridemia</span>
+      <span class="pill">REDUCE-IT — omega-3 + estatina</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ESC/EAS Guidelines for the Management of Dyslipidaemias 2019 · ACC/AHA Guideline on the Management of Blood Cholesterol 2018 · TRAPS Fascículo 2 — Prevención de Enfermedad Cardiovascular, Ministerio de Salud Argentina · TRAPS Fascículo 4 — Dislipemia · Harrison Principios de Medicina Interna, 21ª ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
