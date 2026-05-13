@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linfomas — Hodgkin y No Hodgkin · Medpedia</title>
+  <meta name="description" content="Linfoma de Hodgkin y Linfoma No Hodgkin: clasificación, estadificación, diagnóstico y tratamiento. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --lh: #1A5E9A; --lh-claro: #E6F1FB; --lh-oscuro: #154E82;
+      --lnh: #7B3FA0; --lnh-claro: #F3E8FC; --lnh-oscuro: #5C2D78;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-hemato { background: #EEF2FF; color: #3730A3; }
+    .tag-onco   { background: #FFF8E1; color: #8B5E0A; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-lh  { font-size: 16px; font-weight: 500; color: var(--lh); margin-bottom: 12px; }
+    .sec-titulo-lnh { font-size: 16px; font-weight: 500; color: var(--lnh); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-lh    { border-left: 3px solid var(--lh); background: var(--lh-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-lnh   { border-left: 3px solid var(--lnh); background: var(--lnh-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num-lh  { width: 28px; height: 28px; border-radius: 50%; background: var(--lh); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-lnh { width: 28px; height: 28px; border-radius: 50%; background: var(--lnh); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.lh  { background: var(--lh-claro);  border: 1.5px solid #a8c8e8; }
+    .versus-block.lnh { background: var(--lnh-claro); border: 1.5px solid #d4a8e8; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .versus-titulo.lh  { color: var(--lh); }
+    .versus-titulo.lnh { color: var(--lnh); }
+    .versus-sub  { font-size: 11px; color: var(--texto-ter); margin-bottom: 12px; }
+    .versus-fila { display: flex; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.45; }
+    .versus-fila:last-child { margin-bottom: 0; }
+    .versus-icon { flex-shrink: 0; width: 18px; }
+    .versus-fila strong { color: var(--texto); }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .score-puntos { font-size: 11px; color: var(--texto-ter); line-height: 1.5; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-lh  { display: inline-block; background: var(--lh);  color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-lnh { display: inline-block; background: var(--lnh); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-si  { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-no  { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Hematología</a> › Linfomas</div>
+  <div class="titulo">Linfomas — Hodgkin y No Hodgkin</div>
+  <div class="meta">
+    <span class="tag tag-hemato">Hematología</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">Harrison 21ª ed. · Goldman-Cecil 27ª · WHO Classification 2022</span>
+  </div>
+
+  <!-- CONCEPTO CENTRAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Linfoma de Hodgkin vs Linfoma No Hodgkin — diferencias clave</div>
+    <div class="hl">Los linfomas son neoplasias del tejido linfoide. Se dividen en <strong>Linfoma de Hodgkin (LH)</strong> y <strong>Linfoma No Hodgkin (LNH)</strong>. La distinción es histológica: el LH se define por la presencia de la <strong>célula de Reed-Sternberg</strong>. El LNH es un grupo heterogéneo con más de 60 subtipos según la clasificación WHO 2022.</div>
+    <div class="versus-wrap">
+      <div class="versus-block lh">
+        <div class="versus-titulo lh">🔵 Linfoma de Hodgkin (LH)</div>
+        <div class="versus-sub">~10% de todos los linfomas · Curable en &gt;80% de los casos</div>
+        <div class="versus-fila"><span class="versus-icon">👤</span><span><strong>Edad:</strong> distribución bimodal — 15–35 años y &gt;55 años</span></div>
+        <div class="versus-fila"><span class="versus-icon">🔬</span><span>Célula patognomónica: <strong>Reed-Sternberg</strong> (célula gigante, bilobulada, "ojos de búho")</span></div>
+        <div class="versus-fila"><span class="versus-icon">📍</span><span>Origen: linfocito B del centro germinal · Ganglios mediastínicos y cervicales (típico)</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span>Diseminación <strong>contigua y predecible</strong> — de región a región adyacente</span></div>
+        <div class="versus-fila"><span class="versus-icon">🌡️</span><span><strong>Síntomas B:</strong> fiebre, sudoración nocturna, pérdida de peso &gt;10% en 6 meses</span></div>
+        <div class="versus-fila"><span class="versus-icon">⭐</span><span>Signo característico: <strong>dolor ganglionar con el alcohol</strong> (poco frecuente pero patognomónico)</span></div>
+        <div class="versus-fila"><span class="versus-icon">💊</span><span>Tratamiento: <strong>ABVD</strong> ± radioterapia · Pronóstico excelente</span></div>
+      </div>
+      <div class="versus-block lnh">
+        <div class="versus-titulo lnh">🟣 Linfoma No Hodgkin (LNH)</div>
+        <div class="versus-sub">~90% de todos los linfomas · Grupo muy heterogéneo</div>
+        <div class="versus-fila"><span class="versus-icon">👤</span><span><strong>Edad:</strong> aumenta con la edad · más frecuente en mayores de 50 años</span></div>
+        <div class="versus-fila"><span class="versus-icon">🔬</span><span>Sin célula de Reed-Sternberg · Origen B (85–90%) o T/NK (10–15%)</span></div>
+        <div class="versus-fila"><span class="versus-icon">📍</span><span>Puede comprometer ganglios <strong>no contiguos</strong> y sitios extraganglionares desde el inicio</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span>Diseminación <strong>no predecible</strong> · Compromiso de médula ósea frecuente</span></div>
+        <div class="versus-fila"><span class="versus-icon">🌡️</span><span>Síntomas B también presentes (menos frecuentes que en LH)</span></div>
+        <div class="versus-fila"><span class="versus-icon">⭐</span><span>Subtipos más frecuentes: <strong>DLBCL</strong> (agresivo) y <strong>Folicular</strong> (indolente)</span></div>
+        <div class="versus-fila"><span class="versus-icon">💊</span><span>Tratamiento: <strong>R-CHOP</strong> (DLBCL) · varía según subtipo · muy heterogéneo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LH SUBTIPOS -->
+  <div class="seccion">
+    <div class="sec-titulo-lh">🔵 Linfoma de Hodgkin — subtipos histológicos (OMS 2022)</div>
+    <div class="hl-lh">El LH clásico representa el 95% de los LH. El subtipo histológico tiene valor pronóstico y se define por el fondo celular que rodea a las células de Reed-Sternberg. Todos expresan <strong>CD30+</strong> y la mayoría <strong>CD15+</strong>. <strong>CD20 negativo</strong> (diferencia clave con LNH B).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Subtipo</th><th>Frecuencia</th><th>Características clave</th><th>Pronóstico</th></tr>
+        <tr><td><strong>Esclerosis nodular (EN)</strong></td><td>60–80%</td><td>Bandas de colágeno · masa mediastínica grande · mujeres jóvenes · EBV raramente asociado</td><td>Bueno</td></tr>
+        <tr><td><strong>Celularidad mixta (CM)</strong></td><td>15–30%</td><td>Muchas RS · muchos eosinófilos · estadios avanzados · asociado a VIH y EBV</td><td>Intermedio</td></tr>
+        <tr><td><strong>Depleción linfocítica (DL)</strong></td><td>&lt;5%</td><td>Pocas células reactivas · muchas RS · edad avanzada · VIH · estadio IV frecuente</td><td>Peor</td></tr>
+        <tr><td><strong>Rico en linfocitos (RL)</strong></td><td>5%</td><td>Pocas RS · muchos linfocitos · estadios tempranos · buen pronóstico</td><td>Mejor</td></tr>
+        <tr><td><strong>LH nodular con predominio linfocítico (LHNPL)</strong></td><td>5%</td><td>No clásico · RS variante "palomita de maíz" (LP) · CD20+ CD30- · riesgo de transformación a DLBCL</td><td>Bueno (pero recaídas tardías)</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Célula de Reed-Sternberg — lo que siempre preguntan</div>
+      Célula grande (15–45 μm), binucleada o bilobulada, con <strong>nucléolos prominentes basofílicos que recuerdan "ojos de búho"</strong>. Es de origen B (centro germinal) pero ha perdido el fenotipo B. Inmunohistoquímica: <strong>CD15+ CD30+ CD20− CD45−</strong>. La variante del LHNPL ("LP cell" o "popcorn cell") es CD20+ CD30−.
+    </div>
+  </div>
+
+  <!-- ESTADIFICACIÓN ANN ARBOR -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Estadificación — Ann Arbor modificada (Lugano 2014)</div>
+    <div class="hl">La estadificación de Ann Arbor (con modificación de Lugano) se aplica a ambos tipos de linfoma. Se realiza con <strong>PET-TC</strong> (estándar de oro actual — reemplazó a la TC sola). La <strong>biopsia de médula ósea</strong> puede omitirse en LH si el PET-TC es negativo en médula.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>Definición</th><th>Subclasificación</th></tr>
+        <tr><td><strong>I</strong></td><td>Una sola región ganglionar o un solo sitio extraganglionar (IE)</td><td rowspan="4">
+          <strong>A:</strong> sin síntomas B<br>
+          <strong>B:</strong> fiebre &gt;38°C, sudoración nocturna, pérdida de peso &gt;10%/6m<br>
+          <strong>E:</strong> compromiso extraganglionar contiguo<br>
+          <strong>X:</strong> masa bulky (&gt;10 cm o &gt;1/3 del diámetro torácico)
+        </td></tr>
+        <tr><td><strong>II</strong></td><td>≥2 regiones ganglionares en el <strong>mismo lado del diafragma</strong></td></tr>
+        <tr><td><strong>III</strong></td><td>Regiones ganglionares en <strong>ambos lados</strong> del diafragma</td></tr>
+        <tr><td><strong>IV</strong></td><td>Compromiso difuso de <strong>órganos extraganglionares</strong> (médula ósea, hígado, pulmón)</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 En LH: estadios I–II = <strong>enfermedad limitada</strong> (favorable o desfavorable según factores de riesgo). Estadios III–IV = <strong>enfermedad avanzada</strong>. El PET-TC interim (tras 2 ciclos) guía la intensificación o reducción del tratamiento.</div>
+  </div>
+
+  <!-- SCORE PRONÓSTICO LH -->
+  <div class="seccion">
+    <div class="sec-titulo-lh">🔵 LH avanzado — Score Internacional de Pronóstico (IPS-7)</div>
+    <div class="hl-lh">El <strong>IPS</strong> (International Prognostic Score) se aplica en LH estadio III–IV. Cada factor vale 1 punto. Puntaje 0–3: supervivencia libre de falla a 5 años ~80%. Puntaje ≥4: ~55–65%. En la era moderna con ABVD + PET guiado, el impacto del IPS disminuyó.</div>
+    <div class="score-grid">
+      <div class="score-item"><div class="score-variable">Albúmina sérica</div><div class="score-puntos">&lt;4 g/dl → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Hemoglobina</div><div class="score-puntos">&lt;10,5 g/dl → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Sexo masculino</div><div class="score-puntos">Sí → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Estadio IV</div><div class="score-puntos">Sí → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Edad</div><div class="score-puntos">≥45 años → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Leucocitosis</div><div class="score-puntos">≥15.000/mm³ → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Linfopenia</div><div class="score-puntos">&lt;600/mm³ o &lt;8% del total → 1 punto</div></div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO LH -->
+  <div class="seccion">
+    <div class="sec-titulo-lh">🔵 Tratamiento — Linfoma de Hodgkin</div>
+    <div class="farma-card">
+      <div class="farma-nombre">ABVD — esquema estándar LH clásico</div>
+      <div class="farma-clase">Enfermedad limitada (estadio I–II) y avanzada (estadio III–IV) · Quimioterapia de primera línea</div>
+      <div class="dosis-badge">Adriamicina · Bleomicina · Vinblastina · Dacarbazina — c/28 días</div>
+      <div class="farma-detalle">
+        <strong>Enfermedad limitada favorable (I–IIA sin factores de riesgo):</strong> ABVD × 2–4 ciclos + radioterapia de campo involucrado (ISRT). PET-TC guiado: si PET negativo tras 2 ciclos → omitir RT en algunos protocolos.<br><br>
+        <strong>Enfermedad limitada desfavorable (I–II con factores de riesgo: bulky, ESR elevada, ≥3 regiones, síntomas B):</strong> ABVD × 4 ciclos + RT.<br><br>
+        <strong>Enfermedad avanzada (III–IV):</strong> ABVD × 6 ciclos ± RT en sitios bulky. Alternativa: <strong>BrECADD</strong> o <strong>eBEACOPP</strong> (más intenso, mayor toxicidad, para alto riesgo según IPS).<br><br>
+        <strong>Toxicidad crítica de bleomicina:</strong> fibrosis pulmonar (dosis-acumulativa). Controlar función pulmonar periódicamente. Omitir bleomicina si PET-TC interim negativo (ABVD → AVD).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Brentuximab vedotina (BV) — anti-CD30</div>
+      <div class="farma-clase">LH recaído/refractario · Consolidación post-trasplante · Combinación con AVD en estadio avanzado</div>
+      <div class="dosis-badge">BV 1,8 mg/kg IV c/3 sem · A+AVD en 1ª línea estadio avanzado</div>
+      <div class="farma-detalle">
+        Anticuerpo conjugado anti-CD30 (siempre positivo en LH clásico). Indicado en <strong>LH recaído/refractario</strong> post-trasplante autólogo. En 1ª línea avanzado: el esquema <strong>A+AVD</strong> (BV + AVD, sin bleomicina) mostró superioridad sobre ABVD en estadio avanzado (estudio ECHELON-1). Toxicidad: neuropatía periférica.
+      </div>
+    </div>
+    <div class="hl-info">💡 <strong>Recaída de LH:</strong> quimioterapia de segunda línea (DHAP, ICE, GDP) → si responde → <strong>trasplante autólogo de células hematopoyéticas (TACH)</strong>. Refractario al trasplante: pembrolizumab o nivolumab (anti-PD1, excelente respuesta en LH por amplificación de PD-L1 en RS).</div>
+  </div>
+
+  <!-- LNH SUBTIPOS -->
+  <div class="seccion">
+    <div class="sec-titulo-lnh">🟣 Linfoma No Hodgkin — subtipos más frecuentes e importantes</div>
+    <div class="hl-lnh">El LNH se clasifica por la célula de origen (B vs T/NK), el grado de agresividad (indolente vs agresivo vs muy agresivo) y marcadores inmunohistoquímicos. Los dos subtipos más prevalentes y más preguntados son el <strong>DLBCL</strong> y el <strong>Linfoma Folicular</strong>.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Subtipo</th><th>Frecuencia</th><th>Agresividad</th><th>Marcadores</th><th>Clave clínica</th></tr>
+        <tr><td><strong>DLBCL</strong> (Linfoma difuso de células B grandes)</td><td>25–35%</td><td>Agresivo</td><td>CD20+ CD10± BCL6± MUM1±</td><td>Masa de rápido crecimiento · curable con R-CHOP · c-MYC+BCL2 = "doble hit" → peor pronóstico</td></tr>
+        <tr><td><strong>Folicular (LF)</strong></td><td>20–25%</td><td>Indolente</td><td>CD20+ CD10+ BCL2+ · t(14;18)</td><td>Lento crecimiento · incurable con tratamiento estándar · transformación a DLBCL ~30%</td></tr>
+        <tr><td><strong>MALT / Zona marginal</strong></td><td>8–10%</td><td>Indolente</td><td>CD20+ CD5− CD10−</td><td>Gástrico: asociado a H. pylori · erradicación puede remitir el linfoma</td></tr>
+        <tr><td><strong>Manto (MCL)</strong></td><td>6–8%</td><td>Agresivo-Indolente</td><td>CD20+ CD5+ ciclina D1+ · t(11;14)</td><td>Blastoides = agresivos · score MIPI · ibrutinib en recaída</td></tr>
+        <tr><td><strong>Burkitt</strong></td><td>1–2%</td><td>Muy agresivo</td><td>CD20+ CD10+ BCL6+ · t(8;14) MYC</td><td>Duplicación &lt;24h · asociado a EBV · mandíbula en África · abdomen en adultos</td></tr>
+        <tr><td><strong>Linfoma T periférico (PTCL)</strong></td><td>10–15%</td><td>Agresivo</td><td>CD3+ CD4/CD8 variable</td><td>Peor pronóstico que B · CHOP convencional inferior · anaplásico ALK+ mejor prognosis</td></tr>
+        <tr><td><strong>Anaplásico de células grandes (ALCL)</strong></td><td>2–3%</td><td>Agresivo</td><td>CD30+ ALK+ (mejor) o ALK−</td><td>ALK+ (jóvenes) → pronóstico favorable · BV en recaída</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Translocaciones que siempre preguntan</div>
+      t(14;18) → IgH-BCL2 → <strong>Linfoma Folicular</strong> (BCL2 antiapoptótico)<br>
+      t(11;14) → IgH-ciclina D1 → <strong>Linfoma de Manto</strong><br>
+      t(8;14) → IgH-MYC → <strong>Linfoma de Burkitt</strong> (proliferación máxima)<br>
+      t(2;5) → NPM-ALK → <strong>ALCL ALK+</strong>
+    </div>
+  </div>
+
+  <!-- SCORE IPI LNH -->
+  <div class="seccion">
+    <div class="sec-titulo-lnh">🟣 Score pronóstico LNH — IPI (International Prognostic Index)</div>
+    <div class="hl-lnh">El <strong>IPI</strong> se aplica principalmente al <strong>DLBCL</strong> y linfomas B agresivos. Cada factor vale 1 punto. Score 0–1: bajo riesgo · 2: bajo-intermedio · 3: alto-intermedio · 4–5: alto riesgo.</div>
+    <div class="score-grid">
+      <div class="score-item"><div class="score-variable">Edad</div><div class="score-puntos">&gt;60 años → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">LDH sérica</div><div class="score-puntos">&gt;normal → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Estado funcional (ECOG)</div><div class="score-puntos">≥2 → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Estadio Ann Arbor</div><div class="score-puntos">III o IV → 1 punto</div></div>
+      <div class="score-item"><div class="score-variable">Sitios extraganglionares</div><div class="score-puntos">&gt;1 sitio → 1 punto</div></div>
+    </div>
+    <div class="hl-info">💡 Para LF se usa el <strong>FLIPI</strong>: edad &gt;60, estadio III-IV, Hb &lt;12, LDH elevada, &gt;4 regiones ganglionares. Score 0–1 bajo · 2 intermedio · ≥3 alto riesgo.</div>
+  </div>
+
+  <!-- TRATAMIENTO LNH -->
+  <div class="seccion">
+    <div class="sec-titulo-lnh">🟣 Tratamiento — LNH más frecuentes</div>
+    <div class="farma-card">
+      <div class="farma-nombre">R-CHOP — estándar DLBCL y LNH B agresivos</div>
+      <div class="farma-clase">DLBCL · Linfoma folicular de alto grado · LNH B agresivos CD20+</div>
+      <div class="dosis-badge">Rituximab · Ciclofosfamida · Doxorrubicina · Vincristina · Prednisona — c/21 días × 6 ciclos</div>
+      <div class="farma-detalle">
+        <strong>DLBCL localizado (I–II):</strong> R-CHOP × 3–4 ciclos + RT. <strong>Avanzado (III–IV):</strong> R-CHOP × 6 ciclos ± RT en bulky. SLE a 5 años ~60–70% en DLBCL.<br><br>
+        <strong>Rituximab:</strong> anticuerpo monoclonal anti-CD20 (IgG1 quimérico). Revolucionó el tratamiento de los LNH B. Mecanismo: citotoxicidad celular dependiente de anticuerpo (ADCC) + complemento + apoptosis directa.<br><br>
+        <strong>Doble hit (MYC + BCL2 y/o BCL6):</strong> R-CHOP insuficiente → esquemas de mayor intensidad como <strong>R-DA-EPOCH</strong> o consolidación con trasplante.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Rituximab en monoterapia o R-CVP / Bendamustina-R — Linfoma Folicular</div>
+      <div class="farma-clase">LF indolente · Primera línea según FLIPI y síntomas</div>
+      <div class="dosis-badge">Watch &amp; wait si asintomático · R-CHOP o R-Bendamustina si requiere tratamiento</div>
+      <div class="farma-detalle">
+        LF asintomático, bajo tumor burden: <strong>observación activa (watch &amp; wait)</strong> — el tratamiento no prolonga la supervivencia global en estos casos.<br><br>
+        LF sintomático o alto tumor burden: <strong>R-Bendamustina</strong> (preferida sobre R-CHOP por menor toxicidad y mayor SLP) o R-CHOP. Mantenimiento con rituximab c/2 meses × 2 años post-respuesta.<br><br>
+        <strong>Transformación a DLBCL</strong> (30% en 10 años): sospecha ante crecimiento rápido de ganglio, síntomas B, LDH elevada → biopsia urgente → tratamiento como DLBCL.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Linfoma MALT gástrico — caso especial</div>
+      <div class="farma-clase">Linfoma de zona marginal extranodal gástrico · Asociado a H. pylori en &gt;90%</div>
+      <div class="dosis-badge">Primera línea: erradicación de H. pylori</div>
+      <div class="farma-detalle">
+        Si H. pylori positivo y estadio IE–IIE sin t(11;18): <strong>erradicación con triplé o cuádruple terapia</strong>. Remisión completa del linfoma en 60–80% de los casos (meses a años). Seguimiento con gastroscopía + biopsias. Si no responde o H. pylori negativo: radioterapia o rituximab.
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Síndrome de lisis tumoral (SLT):</strong> riesgo alto en Burkitt, DLBCL bulky, y al iniciar tratamiento. Prevención: hidratación agresiva + alopurinol o rasburicasa (si riesgo alto). SLT: hiperK, hiperfosfatemia, hipocalcemia, hiperuricemia, AKI. Criterios de Cairo-Bishop.</div>
+  </div>
+
+  <!-- COMPARACIÓN RÁPIDA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Comparación rápida LH vs LNH</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th><span style="color:var(--lh)">Linfoma Hodgkin</span></th><th><span style="color:var(--lnh)">Linfoma No Hodgkin</span></th></tr>
+        <tr><td><strong>Frecuencia</strong></td><td>~10% de linfomas</td><td>~90% de linfomas</td></tr>
+        <tr><td><strong>Edad típica</strong></td><td>Bimodal: 20–30 y &gt;55</td><td>Aumenta con la edad (&gt;50)</td></tr>
+        <tr><td><strong>Célula patognomónica</strong></td><td>Reed-Sternberg (CD15+ CD30+)</td><td>No hay una célula única</td></tr>
+        <tr><td><strong>Diseminación</strong></td><td>Contigua y predecible</td><td>No predecible · saltos frecuentes</td></tr>
+        <tr><td><strong>Mediastino</strong></td><td>Muy frecuente (60–80% EN)</td><td>Menos frecuente (excepto Burkitt, primario mediastínico)</td></tr>
+        <tr><td><strong>Médula ósea</strong></td><td>Rara (estadio IV)</td><td>Frecuente (folicular, manto, linfocítico)</td></tr>
+        <tr><td><strong>EBV</strong></td><td>Sí (CM, DL)</td><td>Burkitt (endémico), PTCL-NOS, anaplásico</td></tr>
+        <tr><td><strong>Score pronóstico</strong></td><td>IPS (estadio avanzado)</td><td>IPI (DLBCL) · FLIPI (folicular)</td></tr>
+        <tr><td><strong>Tratamiento 1ª línea</strong></td><td>ABVD ± RT / A+AVD</td><td>R-CHOP (B agresivos) · watch &amp; wait (folicular asintomático)</td></tr>
+        <tr><td><strong>Curabilidad</strong></td><td>Alta (&gt;80%)</td><td>Variable: DLBCL 60–70% · folicular no curable</td></tr>
+        <tr><td><strong>Anti-PD1</strong></td><td>Excelente respuesta (PD-L1 amp.)</td><td>Uso emergente en subtipos seleccionados</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">LH: Reed-Sternberg CD15+ CD30+ CD20−</span>
+      <span class="pill">LH: distribución bimodal 20–30 y &gt;55 años</span>
+      <span class="pill">LH: diseminación contigua y predecible</span>
+      <span class="pill">Síntomas B: fiebre + sudoración nocturna + pérdida de peso &gt;10%</span>
+      <span class="pill">Dolor ganglionar con alcohol → LH (patognomónico)</span>
+      <span class="pill">EN: subtipo más frecuente · masa mediastínica · mujer joven</span>
+      <span class="pill">Estadificación: Ann Arbor-Lugano · PET-TC es el estándar</span>
+      <span class="pill">ABVD: estándar LH · bleomicina → fibrosis pulmonar</span>
+      <span class="pill">LH recaído: QT 2ª línea → trasplante autólogo</span>
+      <span class="pill">LH + anti-PD1: pembrolizumab / nivolumab → excelente respuesta</span>
+      <span class="pill">DLBCL: LNH más frecuente · agresivo · R-CHOP</span>
+      <span class="pill">Linfoma Folicular: t(14;18) BCL2 · indolente · incurable</span>
+      <span class="pill">Folicular: watch &amp; wait si asintomático</span>
+      <span class="pill">Folicular → transformación a DLBCL en 30% (LDH sube, crecimiento rápido)</span>
+      <span class="pill">Burkitt: t(8;14) MYC · duplicación &lt;24h · SLT</span>
+      <span class="pill">MALT gástrico + H. pylori → erradicación como 1ª línea</span>
+      <span class="pill">IPI: edad, LDH, ECOG, estadio, sitios extraganglionares</span>
+      <span class="pill">t(11;14) ciclina D1 → Linfoma de Manto</span>
+      <span class="pill">ALCL ALK+ → buen pronóstico · BV en recaída</span>
+      <span class="pill">Rituximab: anti-CD20 · solo en LNH B (CD20+)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Swerdlow SH et al. WHO Classification of Tumours of Haematopoietic and Lymphoid Tissues 5ª ed. IARC; 2022 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil 27ª ed. Elsevier; 2020 · Cheson BD et al. Recommendations for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: Lugano Classification. J Clin Oncol 2014 · Connors JM et al. Brentuximab Vedotin plus Doxorubicin, Vinblastine, and Dacarbazine for Advanced-Stage Hodgkin Lymphoma (ECHELON-1). N Engl J Med 2018.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
