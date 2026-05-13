@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiponatremia e Hipernatremia — Medpedia</title>
+  <meta name="description" content="Trastornos del sodio: hiponatremia e hipernatremia. Diagnóstico, clasificación, corrección y manejo. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hipo: #1A5E9A; --hipo-claro: #E6F1FB; --hipo-oscuro: #154E82;
+      --hiper: #C0392B; --hiper-claro: #FDEDEC; --hiper-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-nefro { background: #EEF2FF; color: #3730A3; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hipo { font-size: 16px; font-weight: 500; color: var(--hipo); margin-bottom: 12px; }
+    .sec-titulo-hiper { font-size: 16px; font-weight: 500; color: var(--hiper); margin-bottom: 12px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hipo  { border-left: 3px solid var(--hipo); background: var(--hipo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hiper { border-left: 3px solid var(--hiper); background: var(--hiper-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num-hipo { width: 28px; height: 28px; border-radius: 50%; background: var(--hipo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-hiper { width: 28px; height: 28px; border-radius: 50%; background: var(--hiper); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.hipo { background: var(--hipo-claro); border: 1.5px solid #a8c8e8; }
+    .versus-block.hiper { background: var(--hiper-claro); border: 1.5px solid #e8b4b0; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .versus-titulo.hipo { color: var(--hipo); }
+    .versus-titulo.hiper { color: var(--hiper); }
+    .versus-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 12px; }
+    .versus-fila { display: flex; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.45; }
+    .versus-fila:last-child { margin-bottom: 0; }
+    .versus-icon { flex-shrink: 0; width: 18px; }
+    .versus-fila strong { color: var(--texto); }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .score-puntos { font-size: 12px; color: var(--texto-ter); line-height: 1.5; }
+    .badge-hipo { display: inline-block; background: var(--hipo); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-hiper { display: inline-block; background: var(--hiper); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .formula-box { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .formula-title { font-weight: 500; font-size: 13px; color: var(--texto-ter); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .formula-eq { font-size: 15px; color: var(--texto); line-height: 1.7; }
+    .formula-note { font-size: 12px; color: var(--texto-ter); margin-top: 4px; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Medio Interno</a> › Trastornos del Sodio</div>
+  <div class="titulo">Hiponatremia e Hipernatremia</div>
+  <div class="meta">
+    <span class="tag tag-nefro">Nefrología</span>
+    <span class="tag" style="background:#EEF2FF;color:#3730A3;">Medio Interno</span>
+    <span class="tag" style="background:var(--hiper-claro);color:var(--hiper-oscuro);">Emergencias</span>
+    <span class="tag tag-fuente">Harrison 21ª ed. · Goldman-Cecil 27ª ed. · TRAPS · Rozman 20ª ed.</span>
+  </div>
+
+  <!-- CONCEPTO CENTRAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Lo esencial antes de arrancar</div>
+    <div class="hl">El sodio plasmático refleja la <strong>relación entre el agua y el sodio</strong>, no el contenido total de sodio. Na⁺ normal: <strong>135–145 mEq/L</strong>. El manejo erróneo de la corrección es la causa más frecuente de complicaciones iatrogénicas graves.</div>
+    <div class="versus-wrap">
+      <div class="versus-block hipo">
+        <div class="versus-titulo hipo">🔵 Hiponatremia</div>
+        <div class="versus-sub">Na⁺ <strong>&lt; 135 mEq/L</strong></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Leve:</strong> 130–134 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Moderada:</strong> 125–129 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Grave:</strong> &lt;125 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span><strong>Aguda:</strong> &lt;48 h · crónica: ≥48 h</span></div>
+        <div class="versus-fila"><span class="versus-icon">🧠</span><span>Síntomas: náuseas, cefalea, confusión, convulsiones, coma</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚠️</span><span>Riesgo de corrección rápida: <strong>mielinólisis pontina (ODS)</strong></span></div>
+      </div>
+      <div class="versus-block hiper">
+        <div class="versus-titulo hiper">🔴 Hipernatremia</div>
+        <div class="versus-sub">Na⁺ <strong>&gt; 145 mEq/L</strong></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Leve:</strong> 146–149 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Moderada:</strong> 150–154 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">📊</span><span><strong>Grave:</strong> ≥155 mEq/L</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚡</span><span>Siempre implica <strong>hipertonicidad</strong> → deshidratación celular</span></div>
+        <div class="versus-fila"><span class="versus-icon">🧠</span><span>Síntomas: sed intensa, irritabilidad, estupor, convulsiones</span></div>
+        <div class="versus-fila"><span class="versus-icon">⚠️</span><span>Riesgo de corrección rápida: <strong>edema cerebral</strong></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIPONATREMIA: DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-hipo">🔵 Hiponatremia — abordaje diagnóstico paso a paso</div>
+    <div class="hl-hipo">Ante toda hiponatremia, el primer paso es determinar la <strong>osmolalidad plasmática</strong> para descartar pseudo-hiponatremia o hiponatremia hipertónica, y luego clasificar por <strong>volemia</strong> para orientar la causa.</div>
+
+    <div class="step">
+      <div class="step-num-hipo">1</div>
+      <div class="step-content">
+        <strong>Osmolalidad plasmática</strong> (Osm = 2×Na + glucosa/18 + urea/5,6 · normal 280–295 mOsm/kg)<br>
+        — <strong>Baja (&lt;280):</strong> hiponatremia hipotónica verdadera → continuar el algoritmo<br>
+        — <strong>Normal (280–295):</strong> pseudo-hiponatremia (hiperlipidemia, hiperproteinemia)<br>
+        — <strong>Alta (&gt;295):</strong> hiponatremia hipertónica (hiperglucemia, manitol) → el Na corrige 1,6 mEq/L por cada 100 mg/dl de glucosa sobre 100
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">2</div>
+      <div class="step-content">
+        <strong>Evaluar la volemia clínicamente</strong><br>
+        — <strong>Hipovolémica:</strong> piel turgente, mucosas secas, taquicardia, ↓PVC → pérdidas de sodio (diarrea, vómitos, diuréticos, tercer espacio)<br>
+        — <strong>Euvolémica:</strong> sin edemas, sin signos de deshidratación → SIADH, hipotiroidismo, insuficiencia suprarrenal<br>
+        — <strong>Hipervolémica:</strong> edemas, ascitis, ingurgitación yugular → ICC, cirrosis, síndrome nefrótico
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">3</div>
+      <div class="step-content">
+        <strong>Na urinario y osmolalidad urinaria</strong><br>
+        — Na urinario &lt;20 mEq/L: respuesta renal conservadora → pérdidas extrarrenales o hipervolemia (ICC, cirrosis)<br>
+        — Na urinario &gt;20 mEq/L: pérdida renal de sodio o SIADH<br>
+        — Osm urinaria &gt;100 mOsm/kg + Na urinario &gt;20 + euvolemia → <strong>SIADH hasta demostrar lo contrario</strong>
+      </div>
+    </div>
+
+    <div class="tabla-wrap" style="margin-top:14px;">
+      <table>
+        <tr><th>Volemia</th><th>Na urinario</th><th>Causa más probable</th><th>Clave diagnóstica</th></tr>
+        <tr><td><strong>Hipovolémica</strong></td><td>&lt;20</td><td>Pérdidas digestivas, 3er espacio</td><td>Diarrea, vómitos, pancreatitis</td></tr>
+        <tr><td><strong>Hipovolémica</strong></td><td>&gt;20</td><td>Diuréticos, nefropatía pierde-sal, insuficiencia suprarrenal</td><td>Uso de tiazidas (causa #1 medicamentosa)</td></tr>
+        <tr><td><strong>Euvolémica</strong></td><td>&gt;20</td><td><strong>SIADH</strong>, hipotiroidismo, insuf. suprarrenal</td><td>TSH, cortisol, buscar neoplasia/SNC/pulmonar</td></tr>
+        <tr><td><strong>Hipervolémica</strong></td><td>&lt;20</td><td>ICC, cirrosis, síndrome nefrótico</td><td>Edemas + ↑peso + JVP elevada</td></tr>
+        <tr><td><strong>Hipervolémica</strong></td><td>&gt;20</td><td>Insuficiencia renal aguda o crónica</td><td>↑creatinina, proteinuria</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ SIADH — criterios diagnósticos (Bartter & Schwartz modificados)</div>
+      Na &lt;135 + Osm plasmática &lt;275 + Osm urinaria &gt;100 mOsm/kg + Na urinario &gt;30 mEq/L + <strong>euvolemia clínica</strong> + función tiroidea, suprarrenal y renal normales. Causas: neoplasias (pulmón de células pequeñas = #1), SNC, fármacos (carbamazepina, ISRS, AINEs), infecciones pulmonares, postquirúrgico.
+    </div>
+  </div>
+
+  <!-- HIPONATREMIA: MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-hipo">🔵 Hiponatremia — manejo y corrección</div>
+    <div class="hl-danger">⚠️ <strong>Regla de oro de la corrección:</strong> no superar <strong>8–10 mEq/L en 24 h</strong> ni <strong>18 mEq/L en 48 h</strong>. La corrección demasiado rápida produce <strong>síndrome de desmielinización osmótica (ODS / mielinólisis pontina)</strong>: disartria, disfagia, cuadriparesia, síndrome de enclaustramiento. Irreversible.</div>
+
+    <div class="step">
+      <div class="step-num-hipo">1</div>
+      <div class="step-content">
+        <strong>Hiponatremia sintomática grave (convulsiones, coma, deterioro neurológico)</strong><br>
+        → <strong>Solución salina hipertónica 3% (SSH 3%)</strong> — independientemente de la cronicidad.<br>
+        Velocidad: 1–2 ml/kg/h por 1–2 h → objetivo: corregir 4–6 mEq/L rápido para revertir síntomas. Luego frenar y no superar 10 mEq/L en las primeras 24 h. Monitorear Na sérico cada 2–4 h.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">2</div>
+      <div class="step-content">
+        <strong>Hiponatremia hipovolémica sin síntomas graves</strong><br>
+        → <strong>SF 0,9%</strong> a 0,5–1 ml/kg/h. Al restaurar la volemia, la ADH baja bruscamente → riesgo de corrección excesiva. Vigilar Na c/4–6 h. Si se supera el límite, administrar dextrosa 5% + desmopresina (DDAVP) 1–2 mcg SC para frenar la corrección.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">3</div>
+      <div class="step-content">
+        <strong>SIADH (euvolemia)</strong><br>
+        — Leve-moderada crónica: <strong>restricción hídrica</strong> 500–800 ml/día + tratar causa subyacente.<br>
+        — Moderada-grave o refractaria: <strong>tolvaptán</strong> (antagonista V2 de ADH — vaptán) 15 mg/día VO. <strong>No usar en cirrosis</strong>. Iniciar solo en internación, con monitoreo estricto por riesgo de corrección rápida.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hipo">4</div>
+      <div class="step-content">
+        <strong>Hiponatremia hipervolémica (ICC, cirrosis)</strong><br>
+        → Restricción de agua + tratamiento de la causa. Furosemida + espironolactona en cirrosis. Tolvaptán discutido en ICC. <strong>No reponer sodio</strong> — empeora la retención hídrica.
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="formula-title">Fórmula de Adrogue-Madias — déficit de sodio</div>
+      <div class="formula-eq">Δ Na (mEq/L por litro de solución) = <strong>(Na solución − Na sérico actual) ÷ (ACT + 1)</strong></div>
+      <div class="formula-note">ACT = peso × 0,6 (hombre) / 0,5 (mujer) / 0,45 (anciana). Na del SF 0,9% = 154 mEq/L. Na de SSH 3% = 513 mEq/L. Usar para calcular la velocidad de infusión.</div>
+    </div>
+  </div>
+
+  <!-- HIPERNATREMIA: DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-hiper">🔴 Hipernatremia — abordaje diagnóstico</div>
+    <div class="hl-hiper">La hipernatremia siempre implica <strong>déficit relativo de agua</strong>. Casi siempre hay un defecto en la sed o en el acceso al agua (ancianos, lactantes, pacientes en UTI). Clasificar por volemia.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Volemia</th><th>Causa</th><th>Osm urinaria</th><th>Clave</th></tr>
+        <tr><td><strong>Hipovolémica</strong></td><td>Pérdidas hipotónicas: diarrea osmótica, sudoración profusa, diuréticos de asa</td><td>&gt;800 (renal concentra)</td><td>Sed + deshidratación clínica</td></tr>
+        <tr><td><strong>Euvolémica</strong></td><td><strong>Diabetes insípida</strong> (central o nefrogénica), pérdidas insensibles</td><td>&lt;300 (DI) o 300–800</td><td>Poliuria + polidipsia + Osm urinaria baja</td></tr>
+        <tr><td><strong>Hipervolémica</strong></td><td>Administración de bicarbonato hipertónico, SF hipertónico, Cushing, hiperaldosteronismo</td><td>&gt;800</td><td>Edemas + antecedente iatrogénico</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Diabetes insípida — diagnóstico diferencial</div>
+      <strong>Central:</strong> déficit de ADH (trauma, neurocirugía, tumores hipotalámicos). Osm urinaria baja (&lt;300). Responde a desmopresina (DDAVP) → Osm urinaria sube &gt;50%. <br>
+      <strong>Nefrogénica:</strong> riñón no responde a ADH (litio, hipercalcemia, hipokalemia, enfermedad tubulointersticial). No responde a DDAVP. Tratar con tiazidas + restricción sodio + amilorida (en DI nefrogénica por litio).
+    </div>
+  </div>
+
+  <!-- HIPERNATREMIA: MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-hiper">🔴 Hipernatremia — manejo y corrección</div>
+    <div class="hl-danger">⚠️ <strong>Regla de oro:</strong> no corregir más rápido que <strong>10–12 mEq/L en 24 h</strong> (aguda) ni <strong>8 mEq/L en 24 h</strong> (crónica). La corrección rápida produce <strong>edema cerebral</strong> → convulsiones, encefalopatía.</div>
+
+    <div class="step">
+      <div class="step-num-hiper">1</div>
+      <div class="step-content">
+        <strong>Calcular el déficit de agua libre</strong><br>
+        <strong>Déficit = ACT × [(Na actual ÷ 140) − 1]</strong><br>
+        ACT = peso × 0,6 (H) / 0,5 (M). Administrar la mitad del déficit en las primeras 12–24 h, el resto en 24–48 h.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hiper">2</div>
+      <div class="step-content">
+        <strong>Vía de reposición</strong><br>
+        — Preferir VO o SNG si el paciente puede tragar → agua libre pura.<br>
+        — IV: <strong>dextrosa al 5%</strong> (agua libre isotónica) o <strong>SF 0,45%</strong> si hay hipovolemia asociada.<br>
+        — Evitar SF 0,9% solo para corregir hipernatremia (tiene 154 mEq/L de Na → no aporta agua libre suficiente).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-hiper">3</div>
+      <div class="step-content">
+        <strong>Tratamiento específico según causa</strong><br>
+        — DI central: <strong>desmopresina (DDAVP)</strong> intranasal 10–20 mcg/día o SC/IV 1–2 mcg/día.<br>
+        — DI nefrogénica: tiazidas + dieta baja en sodio + amilorida si es por litio.<br>
+        — Hipovolemia: SF 0,9% primero para restaurar perfusión, luego cambiar a solución hipotónica.
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="formula-title">Fórmula de Adrogue-Madias — exceso de sodio</div>
+      <div class="formula-eq">Δ Na (por litro de solución) = <strong>(Na solución − Na sérico actual) ÷ (ACT + 1)</strong></div>
+      <div class="formula-note">El valor es negativo para soluciones hipotónicas → indica cuánto baja el Na sérico por litro infundido. Ej: D5% (Na = 0): baja aprox. 145/(60+1) = 2,4 mEq/L por litro en adulto de 70 kg.</div>
+    </div>
+  </div>
+
+  <!-- COMPARACIÓN RÁPIDA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Comparación rápida Hiponatremia vs Hipernatremia</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th><span style="color:var(--hipo)">Hiponatremia</span></th><th><span style="color:var(--hiper)">Hipernatremia</span></th></tr>
+        <tr><td><strong>Definición</strong></td><td>Na &lt;135 mEq/L</td><td>Na &gt;145 mEq/L</td></tr>
+        <tr><td><strong>Tonicidad celular</strong></td><td>↓ → entrada de agua → edema celular</td><td>↑ → salida de agua → deshidratación celular</td></tr>
+        <tr><td><strong>Causa #1</strong></td><td>SIADH / tiazidas</td><td>Pérdidas insensibles / diabetes insípida</td></tr>
+        <tr><td><strong>Síntoma más grave</strong></td><td>Convulsiones, coma (edema cerebral)</td><td>Hemorragia intracraneal (cerebro "se encoge")</td></tr>
+        <tr><td><strong>Velocidad corrección</strong></td><td>Máx 8–10 mEq/L/24h</td><td>Máx 8–12 mEq/L/24h (aguda más rápida)</td></tr>
+        <tr><td><strong>Complicación de corrección rápida</strong></td><td>Mielinólisis pontina (ODS)</td><td>Edema cerebral</td></tr>
+        <tr><td><strong>Solución de elección agudo grave</strong></td><td>SSH 3% 1–2 ml/kg/h</td><td>D5% o SF 0,45% IV / agua VO</td></tr>
+        <tr><td><strong>Antídoto corrección excesiva</strong></td><td>DDAVP + D5%</td><td>Ralentizar infusión + monitoreo estricto</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Na normal: 135–145 mEq/L</span>
+      <span class="pill">Primer paso: osmolalidad plasmática</span>
+      <span class="pill">Pseudo-hiponatremia: hiperlipidemia, hiperproteinemia</span>
+      <span class="pill">Hiponatremia por hiperglucemia → corrección: +1,6 mEq/L por cada 100 mg/dl</span>
+      <span class="pill">SIADH: causa #1 euvolémica — Na urinario &gt;30, Osm urinaria &gt;100</span>
+      <span class="pill">Cáncer de pulmón de células pequeñas → SIADH paraneoplásico</span>
+      <span class="pill">Tiazidas → hiponatremia (bloquean dilución urinaria)</span>
+      <span class="pill">Corrección máxima: 8–10 mEq/L en 24 h</span>
+      <span class="pill">Corrección rápida hiponatremia → mielinólisis pontina (ODS)</span>
+      <span class="pill">Hiponatremia sintomática grave → SSH 3% urgente</span>
+      <span class="pill">SIADH crónica leve → restricción hídrica</span>
+      <span class="pill">SIADH refractaria → tolvaptán (no en cirrosis)</span>
+      <span class="pill">Hipernatremia: siempre déficit relativo de agua</span>
+      <span class="pill">DI central vs nefrogénica — respuesta a DDAVP</span>
+      <span class="pill">DI por litio → tiazidas + amilorida</span>
+      <span class="pill">Corrección rápida hipernatremia → edema cerebral</span>
+      <span class="pill">Fórmula de Adrogue-Madias — para calcular corrección</span>
+      <span class="pill">Déficit de agua libre = ACT × [(Na/140) − 1]</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil Tratado de Medicina Interna 27ª ed. Elsevier; 2020 · Rozman C, Cardellach F, Farreras-Rozman. Medicina Interna 20ª ed. Elsevier; 2020 · Spasovski G et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Nephrol Dial Transplant 2014 · TRAPS Fascículo 1. Enfermedades crónicas no transmisibles. Ministerio de Salud de la Nación Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+
+</body>
+</html>
