@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amenaza de Parto Pretérmino — Medpedia</title>
+  <meta name="description" content="Amenaza de parto pretérmino: diagnóstico, criterios, tocolisis, corticoides y neuroprotección. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --apt: #1A5E9A; --apt-claro: #E6F1FB; --apt-oscuro: #154E82;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco  { background: #FCE4EC; color: #880E4F; }
+    .tag-neo     { background: #E8F5E9; color: #2E7D32; }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-apt { font-size: 16px; font-weight: 500; color: var(--apt); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-apt   { border-left: 3px solid var(--apt); background: var(--apt-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--apt); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .eg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin-bottom: 12px; }
+    .eg-card { border-radius: 12px; padding: 12px; text-align: center; }
+    .eg-card.termino   { background: var(--verde-claro); border: 1px solid #a8d8c0; }
+    .eg-card.tardio    { background: #FEF0DC; border: 1px solid #f0c080; }
+    .eg-card.moderado  { background: #FDEDEC; border: 1px solid #e8b4b0; }
+    .eg-card.muy       { background: #FCE4EC; border: 1px solid #e8a0b8; }
+    .eg-card.extremo   { background: #EDE7F6; border: 1px solid #c5b3e0; }
+    .eg-semanas { font-size: 17px; font-weight: 700; margin-bottom: 3px; }
+    .eg-nombre  { font-size: 11px; color: var(--texto-sec); line-height: 1.3; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-si  { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-no  { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-apt { display: inline-block; background: var(--apt); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Amenaza de Parto Pretérmino</div>
+  <div class="titulo">Amenaza de Parto Pretérmino</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Obstetricia</span>
+    <span class="tag tag-neo">Neonatología</span>
+    <span class="tag" style="background:var(--apt-claro);color:var(--apt-oscuro);">Alto riesgo obstétrico</span>
+    <span class="tag tag-fuente">ACOG 2022 · SOGC 2021 · Guía MAP Ministerio de Salud Argentina · Schwarcz 7ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación por edad gestacional</div>
+    <div class="hl-apt"><strong>Parto pretérmino:</strong> parto que ocurre antes de las <strong>37 semanas completas de gestación</strong> (259 días desde la FUM). Representa el 10–12% de los partos y es la principal causa de mortalidad y morbilidad neonatal. <strong>Amenaza de parto pretérmino (APT):</strong> contracciones uterinas regulares + modificaciones cervicales antes de las 37 semanas, sin parto establecido.</div>
+    <div class="eg-grid">
+      <div class="eg-card extremo"><div class="eg-semanas" style="color:#5C2D78;">&lt;28 sem</div><div class="eg-nombre">Extremadamente pretérmino · Mortalidad muy alta</div></div>
+      <div class="eg-card muy"><div class="eg-semanas" style="color:#C0392B;">28–31⁶</div><div class="eg-nombre">Muy pretérmino · Alta morbimortalidad</div></div>
+      <div class="eg-card moderado"><div class="eg-semanas" style="color:#D4730A;">32–33⁶</div><div class="eg-nombre">Moderadamente pretérmino</div></div>
+      <div class="eg-card tardio"><div class="eg-semanas" style="color:#8B5E0A;">34–36⁶</div><div class="eg-nombre">Pretérmino tardío · 75% de los PP</div></div>
+      <div class="eg-card termino"><div class="eg-semanas" style="color:#0F6E56;">≥37 sem</div><div class="eg-nombre">Término</div></div>
+    </div>
+    <div class="hl-warn">⚠️ El <strong>pretérmino tardío (34–36⁶ sem)</strong> representa el 75% de todos los partos pretérmino y tiene morbimortalidad significativamente mayor que el término: SDR, hipoglucemia, ictericia, dificultad para alimentarse, mayor riesgo de sepsis.</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo para parto pretérmino</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Categoría</th><th>Factor de riesgo</th><th>Riesgo relativo</th></tr>
+        <tr><td rowspan="3"><strong>Antecedente obstétrico</strong></td><td>PP espontáneo previo <em>(FR más fuerte)</em></td><td>↑ 2–4×</td></tr>
+        <tr><td>Pérdida gestacional tardía (2do trimestre)</td><td>↑ 2–3×</td></tr>
+        <tr><td>Cirugía cervical previa (conización, cerclaje previo)</td><td>↑ 2×</td></tr>
+        <tr><td rowspan="3"><strong>Cervical</strong></td><td>Cérvix corto &lt;25 mm (ecografía transvaginal)</td><td>↑ 6× si &lt;15 mm</td></tr>
+        <tr><td>Incompetencia cervical (istmico-cervical)</td><td>Alto</td></tr>
+        <tr><td>Dilatación cervical en 2do trimestre sin contracciones</td><td>Alto</td></tr>
+        <tr><td rowspan="3"><strong>Uterino / placentario</strong></td><td>Gestación múltiple</td><td>↑ 10× (gemelar)</td></tr>
+        <tr><td>Polihidramnios, malformación uterina</td><td>Moderado</td></tr>
+        <tr><td>Placenta previa, desprendimiento</td><td>Moderado</td></tr>
+        <tr><td rowspan="3"><strong>Materno / infeccioso</strong></td><td>Infección urinaria (bacteriuria asintomática → tto reduce PP)</td><td>↑ 1,5–2×</td></tr>
+        <tr><td>Vaginosis bacteriana</td><td>↑ 2×</td></tr>
+        <tr><td>Bajo nivel socioeconómico, tabaquismo, estrés</td><td>Moderado</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-apt">🔵 Diagnóstico de APT — criterios clínicos</div>
+    <div class="hl-apt">El diagnóstico de APT es <strong>clínico + ecográfico</strong>. El problema central es que la mayoría de las mujeres con síntomas de APT <strong>no parten</strong> (falso positivo). Por eso se usan predictores para evitar tratamiento innecesario.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Criterios clínicos de APT</strong><br>
+        Embarazo entre <strong>22 0/7 y 36 6/7 semanas</strong> + al menos uno de:<br>
+        — Contracciones uterinas regulares: ≥4 en 20 min o ≥8 en 60 min, palpables o registradas en cardiotocografía.<br>
+        — Modificaciones cervicales: dilatación ≥2 cm, borramiento ≥80%, o cambio progresivo en examen seriado.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Ecografía transvaginal — longitud cervical (LC)</strong><br>
+        <strong>LC &lt;25 mm:</strong> alto riesgo de parto en 7 días → indicación de tocolisis + corticoides.<br>
+        <strong>LC 25–30 mm:</strong> riesgo intermedio → vigilancia estricta.<br>
+        <strong>LC &gt;30 mm:</strong> bajo riesgo de parto inminente → muchas APT se resuelven solas. Evitar tocolisis innecesaria.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Fibronectina fetal (fFN) en secreción cervicovaginal</strong><br>
+        Proteína de adhesión feto-placentaria. Positiva si ≥50 ng/ml en semanas 22–34.<br>
+        <strong>Alto valor predictivo negativo (VPN ~99%):</strong> si negativa → parto en 7 días es muy improbable → evitar hospitalización y tocolisis innecesarias.<br>
+        Valor predictivo positivo (VPP) bajo (~15–25%) → positiva no confirma PP inminente. No usar tras tacto vaginal o relaciones sexuales recientes (falsos positivos).
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Diagnóstico diferencial — APT vs trabajo de parto pretérmino establecido</div>
+      <strong>APT:</strong> contracciones + modificaciones cervicales, pero cuello no totalmente borrado/dilatado y no hay descenso de presentación → aún es posible frenar.<br>
+      <strong>Trabajo de parto pretérmino establecido:</strong> borramiento completo + dilatación ≥4 cm progresiva → tocolisis poco eficaz, preparar nacimiento.
+    </div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-apt">🔵 Manejo de la APT — los 4 pilares</div>
+    <div class="hl-apt">El objetivo <strong>no es siempre evitar el parto</strong>, sino ganar tiempo suficiente para administrar <strong>corticoides</strong> (maduración pulmonar) y <strong>sulfato de magnesio</strong> (neuroprotección) y trasladar si es necesario. La tocolisis solo se indica en situaciones específicas.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Pilar 1 — Corticoides antenatales (maduración pulmonar)</div>
+      <div class="farma-clase">Indicados entre 24 0/7 y 34 6/7 semanas · Considerados entre 23 y 24 sem según viabilidad · ACOG 2022</div>
+      <div class="dosis-badge">Betametasona 12 mg IM · 2 dosis · c/24 h</div>
+      <div class="farma-detalle">
+        <strong>Fármaco de elección:</strong> betametasona 12 mg IM c/24 h × 2 dosis (total 24 mg en 48 h). Alternativa: dexametasona 6 mg IM c/12 h × 4 dosis.<br><br>
+        <strong>Efectos:</strong> estimula producción de surfactante → maduración pulmonar → reduce SDR, HIV intraventricular, ECN, mortalidad neonatal. Efecto máximo entre 24 h y 7 días post-primera dosis.<br><br>
+        <strong>Indicación de rescate (segunda tanda):</strong> si el primer ciclo fue dado hace &gt;14 días y el parto sigue siendo inminente antes de las 34 sem → una segunda tanda es segura y beneficiosa.<br><br>
+        <strong>Contraindicaciones relativas:</strong> diabetes mal controlada (hiperglucemia transitoria), infección materna activa grave (evaluar riesgo-beneficio).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Pilar 2 — Sulfato de magnesio (neuroprotección fetal)</div>
+      <div class="farma-clase">Indicado entre 24 y 32 semanas · Si el parto es inminente en las próximas 24 h</div>
+      <div class="dosis-badge">4–6 g IV en 20–30 min → mantenimiento 1–2 g/h hasta el parto o 24 h</div>
+      <div class="farma-detalle">
+        El sulfato de magnesio <strong>reduce el riesgo de parálisis cerebral y disfunción motora grave</strong> en prematuros extremos (evidencia sólida en &lt;32 semanas). Mecanismo no completamente aclarado: antagonismo NMDA → neuroprotección.<br><br>
+        <strong>Monitoreo obligatorio:</strong> diuresis horaria (debe ser ≥25 ml/h), frecuencia respiratoria (debe ser &gt;12/min), reflejos rotulianos (debe estar presentes). Si desaparecen reflejos → toxicidad inminente → suspender.<br><br>
+        <strong>Antídoto:</strong> gluconato de calcio 1 g IV lento → en toxicidad por magnesio (depresión respiratoria, pérdida de reflejos).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Pilar 3 — Tocolisis (inhibición de las contracciones)</div>
+      <div class="farma-clase">Objetivo: ganar 48 h para corticoides · NO prolongar indefinidamente · No usar después de 34 semanas</div>
+      <div class="dosis-badge">Atosibán (1ª línea) · Nifedipina · Indometacina</div>
+      <div class="farma-detalle">
+        <strong>¿Cuándo indicar tocolisis?</strong> APT con LC &lt;25 mm o fFN positivo, entre 24 0/7 y 34 0/7 semanas, sin contraindicaciones (corioamnionitis, compromiso fetal, placenta previa sangrante activa, preeclampsia grave).<br><br>
+        <strong>Atosibán (antagonista de receptores de oxitocina y vasopresina):</strong> de elección en Europa y Argentina por su perfil de seguridad materno-fetal. Bolo 6,75 mg IV → infusión 18 mg/h × 3 h → 6 mg/h hasta 45 h. Pocos efectos adversos, no atraviesa bien la barrera placentaria.<br><br>
+        <strong>Nifedipina (bloqueante del Ca):</strong> 10–20 mg VO cada 6 h. Efectiva, económica, disponible en todos los niveles. Efectos adversos maternos: hipotensión, rubor, taquicardia. Combinación con MgSO₄ aumenta riesgo de hipotensión → vigilar.<br><br>
+        <strong>Indometacina (inhibidor de prostaglandinas):</strong> 50–100 mg VR o 25–50 mg VO c/6 h. Solo usar antes de las <strong>32 semanas</strong> — después del cierre del ductus arterioso → oligohidramnios, constricción ductal. Duración máx 48 h.<br><br>
+        <strong>β2-agonistas (ritodrina, terbutalina):</strong> en desuso como tocolíticos de primera línea por efectos cardiovasculares maternos (taquicardia, hipotensión, HipoK, edema pulmonar). Solo usar si no hay alternativas disponibles.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Pilar 4 — Profilaxis de SGB y manejo del cerclaje</div>
+      <div class="farma-clase">Antibióticos · Cerclaje de emergencia</div>
+      <div class="dosis-badge">Penicilina G 5 MUI IV → 2,5 MUI c/4 h hasta el parto (si SGB desconocido)</div>
+      <div class="farma-detalle">
+        <strong>Profilaxis intraparto de Streptococcus grupo B (SGB):</strong> si el parto pretérmino ocurre y el resultado de cultivo vagino-rectal es desconocido o positivo → penicilina G IV. Alternativa: ampicilina. Si alergia grave a penicilina: clindamicina (si sensible) o vancomicina.<br><br>
+        <strong>Cerclaje de emergencia (rescate):</strong> en cérvix corto &lt;25 mm o dilatación cervical asintomática en 2do trimestre (15–24 semanas) con membranas íntegras y sin infección ni contracciones. Puede ganar semanas de gestación. Contraindicado si hay infección o contracciones activas. El cerclaje profiláctico (electivo) se indica antes de las 14–16 semanas en pacientes con antecedente de ≥3 pérdidas en 2do trimestre o parto pretérmino previo + cuello corto.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRAINDICACIONES DE TOCOLISIS -->
+  <div class="seccion">
+    <div class="sec-titulo">🚫 Contraindicaciones de la tocolisis</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Contraindicación</th><th>Razón</th></tr>
+        <tr><td><strong>Corioamnionitis</strong></td><td>Frenar el parto en presencia de infección pone en riesgo a la madre y al feto</td></tr>
+        <tr><td><strong>Compromiso fetal agudo</strong> (DPPNI, pérdida de bienestar fetal)</td><td>El feto está mejor afuera que adentro</td></tr>
+        <tr><td><strong>Placenta previa con sangrado activo</strong></td><td>Riesgo hemorrágico materno grave</td></tr>
+        <tr><td><strong>Preeclampsia grave / eclampsia</strong></td><td>El parto es el tratamiento definitivo</td></tr>
+        <tr><td><strong>≥34 semanas completas</strong></td><td>Riesgo de la prematuridad ya es menor al riesgo de la tocolisis</td></tr>
+        <tr><td><strong>Malformación fetal letal</strong></td><td>No hay beneficio neonatal</td></tr>
+        <tr><td><strong>Trabajo de parto avanzado</strong> (≥4 cm + borramiento completo)</td><td>Ineficaz</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN PRIMARIA -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención del parto pretérmino en pacientes de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Intervención</th><th>Indicación</th><th>Evidencia</th></tr>
+        <tr><td><strong>Progesterona vaginal</strong> (200 mg/noche)</td><td>LC &lt;25 mm entre 16–24 sem en gestación única sin PP previo</td><td>Alta — reduce PP &lt;33 sem en 45%</td></tr>
+        <tr><td><strong>Progesterona IM</strong> (17-OHPC, 250 mg/semana)</td><td>Antecedente de PP espontáneo previo</td><td>Moderada (resultados mixtos en últimos ensayos)</td></tr>
+        <tr><td><strong>Cerclaje electivo</strong></td><td>Incompetencia cervical + antecedente de ≥3 pérdidas tardías</td><td>Alta en indicación correcta</td></tr>
+        <tr><td><strong>Pesario cervical</strong></td><td>LC &lt;25 mm — alternativa al cerclaje en algunos centros</td><td>Moderada · no disponible universalmente</td></tr>
+        <tr><td><strong>Tratar bacteriuria asintomática</strong></td><td>Todo embarazo con urocultivo positivo</td><td>Alta — reduce PP y pielonefritis</td></tr>
+        <tr><td><strong>Tratar vaginosis bacteriana</strong></td><td>Gestantes con antecedente de PP + VB positiva</td><td>Moderada</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 La progesterona vaginal micronizada NO está indicada en gestación múltiple (no reduce PP en gemelares — el EMBRACE trial y meta-análisis lo confirmaron). Tampoco el cerclaje en gemelares con cuello corto (puede aumentar el riesgo).</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Parto pretérmino: &lt;37 semanas (259 días)</span>
+      <span class="pill">APT: contracciones regulares + modificaciones cervicales &lt;37 sem</span>
+      <span class="pill">Pretérmino tardío 34–36⁶: 75% de todos los PP</span>
+      <span class="pill">FR #1: antecedente de PP espontáneo previo</span>
+      <span class="pill">LC &lt;25 mm: alto riesgo · indicar tocolisis + corticoides</span>
+      <span class="pill">fFN negativa: VPN ~99% · descarta parto en 7 días</span>
+      <span class="pill">Corticoides: betametasona 12 mg IM c/24h × 2 dosis</span>
+      <span class="pill">Indicación corticoides: 24 0/7 – 34 6/7 semanas</span>
+      <span class="pill">MgSO4: neuroprotección fetal &lt;32 semanas</span>
+      <span class="pill">MgSO4 antídoto: gluconato de calcio 1 g IV</span>
+      <span class="pill">Tocolisis: solo hasta las 34 semanas</span>
+      <span class="pill">Atosibán: 1ª línea · antagonista oxitocina/vasopresina</span>
+      <span class="pill">Nifedipina: alternativa efectiva y económica</span>
+      <span class="pill">Indometacina: solo &lt;32 semanas · max 48h → riesgo ductal</span>
+      <span class="pill">Corioamnionitis: contraindicación absoluta de tocolisis</span>
+      <span class="pill">Progesterona vaginal: indicada en LC &lt;25mm (único embarazo)</span>
+      <span class="pill">Progesterona: NO indicada en gemelares</span>
+      <span class="pill">Cerclaje: incompetencia cervical + antecedente de pérdidas tardías</span>
+      <span class="pill">Profilaxis SGB: penicilina G intraparto</span>
+      <span class="pill">Bacteriuria asintomática → tratar para reducir PP</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACOG Practice Bulletin No. 234: Prediction and Prevention of Preterm Birth. Obstet Gynecol 2021 · ACOG Practice Bulletin No. 171: Management of Preterm Labor. Obstet Gynecol 2016 (reafirmado 2022) · SOGC Clinical Practice Guideline No. 398: Antenatal Corticosteroid Therapy for Improving Neonatal Outcomes. J Obstet Gynaecol Can 2021 · Recomendaciones para la Prevención, Diagnóstico y Tratamiento de Amenaza de Parto Pretérmino, Atención del Parto Pretérmino Espontáneo y Rotura Prematura de Membranas. Ministerio de Salud de la Nación Argentina (Referencia 17 del temario) · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo; 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
