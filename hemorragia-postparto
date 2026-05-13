@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemorragia Postparto — Medpedia</title>
+  <meta name="description" content="Hemorragia postparto: definición, las 4T, manejo escalonado y uterotónicos. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco  { background: #FCE4EC; color: #880E4F; }
+    .tag-emergencia { background: var(--hpp-claro); color: var(--hpp-oscuro); }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hpp  { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hpp   { border-left: 3px solid var(--hpp); background: var(--hpp-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--hpp); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .cuatro-t { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .cuatro-t { grid-template-columns: 1fr; } }
+    .t-card { border-radius: 14px; padding: 1.2rem; }
+    .t-card.tono   { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .t-card.trauma { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .t-card.tejido { background: #E6F1FB; border: 1.5px solid #a8c8e8; }
+    .t-card.trombo { background: #F3E8FC; border: 1.5px solid #d4a8e8; }
+    .t-titulo { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .t-titulo.tono   { color: #C0392B; }
+    .t-titulo.trauma { color: #D4730A; }
+    .t-titulo.tejido { color: #1A5E9A; }
+    .t-titulo.trombo { color: #7B3FA0; }
+    .t-sub    { font-size: 11px; color: var(--texto-ter); margin-bottom: 8px; }
+    .t-item   { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; }
+    .t-item strong { color: var(--texto); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Hemorragia Postparto</div>
+  <div class="titulo">Hemorragia Postparto</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Obstetricia</span>
+    <span class="tag tag-emergencia">Emergencia obstétrica</span>
+    <span class="tag tag-fuente">FIGO 2022 · WHO 2023 · Guía AIPEO Ministerio de Salud Argentina · Schwarcz 7ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y magnitud del problema</div>
+    <div class="hl-hpp"><strong>Hemorragia postparto (HPP):</strong> pérdida de sangre ≥500 ml en las primeras 24 h después de un parto vaginal, o ≥1000 ml después de una cesárea. <strong>HPP grave:</strong> pérdida ≥1000 ml con signos de shock o que compromete la estabilidad hemodinámica.</div>
+    <div class="hl-danger">⚠️ La HPP es la <strong>principal causa de mortalidad materna en el mundo</strong> (~25% de las muertes maternas) y en Argentina. La mayoría de las muertes son PREVENIBLES con manejo activo del alumbramiento y respuesta rápida escalonada.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Momento</th><th>Causa más frecuente</th></tr>
+        <tr><td><strong>HPP primaria (precoz)</strong></td><td>Primeras 24 h post-parto</td><td>Atonía uterina (80% de los casos)</td></tr>
+        <tr><td><strong>HPP secundaria (tardía)</strong></td><td>24 h hasta 12 semanas post-parto</td><td>Retención de restos placentarios, endometritis, dehiscencia de cicatriz</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LAS 4T -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Las 4T — causas de HPP (siempre memorizar)</div>
+    <div class="hl-hpp">El 80% de las HPP se debe a una sola causa: atonía uterina (Tono). El resto se distribuye entre las otras 3T. <strong>En toda HPP buscar activamente las 4T simultáneamente.</strong></div>
+    <div class="cuatro-t">
+      <div class="t-card tono">
+        <div class="t-titulo tono">🔴 Tono — 80%</div>
+        <div class="t-sub">Falla de contracción uterina post-alumbramiento</div>
+        <div class="t-item"><span>⚡</span><span><strong>Atonía uterina</strong> = causa #1 de HPP</span></div>
+        <div class="t-item"><span>⚡</span><span>Útero blando, grande, sin contracción al palpar</span></div>
+        <div class="t-item"><span>📋</span><span>FR: sobredistensión (gemelar, polihi-dramnios, macrosomia), multípara, parto prolongado, infección, uso de oxitocina prolongada</span></div>
+        <div class="t-item"><span>💊</span><span>Tratamiento: masaje + uterotónicos → cirugía</span></div>
+      </div>
+      <div class="t-card trauma">
+        <div class="t-titulo trauma">🟠 Trauma — 10–20%</div>
+        <div class="t-sub">Lesión del canal de parto o útero</div>
+        <div class="t-item"><span>⚡</span><span>Desgarros perineales, vaginales, cervicales</span></div>
+        <div class="t-item"><span>⚡</span><span>Rotura uterina (cicatriz cesárea anterior, parto obstruido)</span></div>
+        <div class="t-item"><span>⚡</span><span>Inversión uterina (tracción excesiva de cordón)</span></div>
+        <div class="t-item"><span>⚡</span><span>Hematoma retroperitoneal o vulvar</span></div>
+        <div class="t-item"><span>💊</span><span>Tratamiento: sutura + cirugía</span></div>
+      </div>
+      <div class="t-card tejido">
+        <div class="t-titulo tejido">🔵 Tejido — 5–10%</div>
+        <div class="t-sub">Retención de productos de la concepción</div>
+        <div class="t-item"><span>⚡</span><span><strong>Retención placentaria</strong> (placenta no expulsada en 30 min)</span></div>
+        <div class="t-item"><span>⚡</span><span>Restos placentarios o membranas retenidas</span></div>
+        <div class="t-item"><span>⚡</span><span>Placenta acreta / increta / percreta (invasión anormal)</span></div>
+        <div class="t-item"><span>💊</span><span>Tratamiento: extracción manual + legrado/aspiración</span></div>
+      </div>
+      <div class="t-card trombo">
+        <div class="t-titulo trombo">🟣 Trombina — 1–5%</div>
+        <div class="t-sub">Coagulopatía adquirida o preexistente</div>
+        <div class="t-item"><span>⚡</span><span>CID (desprendimiento, HELLP, embolia de líquido amniótico)</span></div>
+        <div class="t-item"><span>⚡</span><span>Enfermedad de von Willebrand · hemofilia A portadora</span></div>
+        <div class="t-item"><span>⚡</span><span>Trombocitopenia gestacional o por preeclampsia</span></div>
+        <div class="t-item"><span>💊</span><span>Tratamiento: PFC, plaquetas, crioprecipitados, ácido tranexámico</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo para HPP</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Momento</th><th>Factor de riesgo</th><th>T asociada</th></tr>
+        <tr><td rowspan="4"><strong>Anteparto</strong></td><td>Placenta previa, placenta acreta</td><td>Tejido</td></tr>
+        <tr><td>Preeclampsia / HELLP</td><td>Trombina</td></tr>
+        <tr><td>Gemelar, polihidramnios, macrosomía</td><td>Tono</td></tr>
+        <tr><td>Anemia, coagulopatía preexistente</td><td>Trombina</td></tr>
+        <tr><td rowspan="4"><strong>Intraparto</strong></td><td>Parto prolongado o precipitado</td><td>Tono / Trauma</td></tr>
+        <tr><td>Instrumentación (fórceps, ventosa)</td><td>Trauma</td></tr>
+        <tr><td>Cesárea de urgencia</td><td>Tono / Trauma</td></tr>
+        <tr><td>Corioamnionitis</td><td>Tono</td></tr>
+        <tr><td rowspan="2"><strong>Postparto</strong></td><td>Retención placentaria &gt;30 min</td><td>Tejido</td></tr>
+        <tr><td>Multiparidad (≥5 partos)</td><td>Tono</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN: MATEP -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención — Manejo Activo del Tercer Período (MATEP)</div>
+    <div class="hl"><strong>El MATEP reduce la incidencia de HPP en un 60%.</strong> Debe realizarse en todos los partos. Consta de 3 componentes que se aplican simultáneamente tras el parto del feto.</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Uterotónico profiláctico — administrar en el primer minuto post-nacimiento</strong><br>
+        <strong>Oxitocina 10 UI IM</strong> (de elección — siempre disponible, bajo costo, efectiva). Alternativa en entorno sin refrigeración: <strong>misoprostol 600 mcg sublingual o 400 mcg oral</strong>. En cesárea: oxitocina 5 UI IV lenta (en 1–2 min) + infusión 10–20 UI en 1L SF × 6–8 h.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Tracción controlada del cordón (TCC)</strong><br>
+        Tras signo de desprendimiento placentario (ascenso del fondo, alargamiento del cordón, flujo de sangre) → tracción suave y sostenida del cordón mientras se ejerce contrapresión suprapúbica. No realizar tracción sin contrapresión → riesgo de inversión uterina.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Masaje uterino post-alumbramiento</strong><br>
+        Tras expulsión de la placenta: masaje bimanual del fondo uterino para estimular contracción y reducir sangrado. Verificar que el útero esté contraído y globoso.
+      </div>
+    </div>
+  </div>
+
+  <!-- MANEJO ESCALONADO -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Manejo de la HPP establecida — respuesta escalonada</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> Activar <strong>código rojo obstétrico</strong>. Llamar ayuda, asignar roles (líder, circulante, farmacia, banco de sangre). Tiempo desde diagnóstico a estabilización: &lt;30 minutos.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Medidas generales simultáneas</strong><br>
+        2 vías periféricas gruesas (≥18G). Extracción de sangre: hemograma, coagulograma, fibrinógeno, grupo y factor, pruebas cruzadas. SF 0,9% o Ringer lactato 1–2 L rápido. <strong>No retrasar uterotónicos por esperar laboratorio.</strong> Posición de Trendelenburg leve. Catéter vesical (control de diuresis).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Uterotónicos escalonados (si atonía)</strong><br>
+        Oxitocina → carbetocina → metilergonovina → misoprostol → carboprost → ácido tranexámico. Ver sección de fármacos abajo. Masaje uterino bimanual simultáneo.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Transfusión y corrección de coagulopatía</strong><br>
+        Transfundir GR si Hb &lt;8 g/dl o inestabilidad hemodinámica. <strong>Protocolo de transfusión masiva:</strong> GR:PFC:plaquetas = 1:1:1. Fibrinógeno si &lt;2 g/L → crioprecipitados (10 U elevan ~1 g/L). <strong>Ácido tranexámico 1 g IV en 10 min → repetir a la hora si sangrado continúa</strong> (administrar dentro de las 3 h del parto — WOMAN trial).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Medidas mecánicas (si atonía refractaria a fármacos)</strong><br>
+        — <strong>Balón de taponamiento intrauterino</strong> (balón de Bakri): insuflar 300–500 ml → tamponada mecánica. Si cede el sangrado: "prueba del balón" positiva → mantener 12–24 h.<br>
+        — <strong>Compresión bimanual uterina</strong> (mano abdominal + mano intravaginal) como puente.<br>
+        — Empaquetamiento uterino con gasa si no hay balón disponible.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Cirugía conservadora (si falla mecánico)</strong><br>
+        — <strong>Suturas de compresión uterina:</strong> B-Lynch (sutura en "arnés"), Hayman, Cho.<br>
+        — <strong>Ligadura de arterias uterinas</strong> (técnica de O'Leary) y/o arterias ilíacas internas (hipogástricas).<br>
+        — <strong>Embolización arterial selectiva</strong> (si centro con radiología intervencionista disponible y paciente estable).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <strong>Histerectomía obstétrica — última línea, salva la vida</strong><br>
+        Indicada cuando fallan todas las medidas previas. No demorar si la vida de la paciente está en riesgo. <strong>Histerectomía subtotal</strong> (más rápida) de elección. Histerectomía total si hay acretismo del segmento o sangrado de muñón.
+      </div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Uterotónicos — detalle farmacológico</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Oxitocina</div>
+      <div class="farma-clase">Análogo sintético de hormona neurohipofisaria · Uterotónico de primera línea</div>
+      <div class="dosis-badge">Profilaxis: 10 UI IM · HPP: 10–20 UI en 1L SF IV · Nunca en bolo IV rápido</div>
+      <div class="farma-detalle">
+        Actúa sobre receptores de oxitocina del miometrio → contracción uterina rítmica. Inicio: 3–5 min IM, 1 min IV. Duración: 30–60 min. <strong>No dar bolo IV directo</strong> → hipotensión grave, arritmias. Taquifilaxia con uso prolongado (receptores bajan con oxitocina continua prolongada → menos respuesta).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Carbetocina</div>
+      <div class="farma-clase">Análogo de oxitocina de acción prolongada · Profilaxis en cesárea</div>
+      <div class="dosis-badge">100 mcg IV lento (1 min) · Dosis única</div>
+      <div class="farma-detalle">
+        Vida media más larga que oxitocina (40 min vs 4–10 min) → efecto uterotónico sostenido. Indicada como profilaxis en cesárea (reduce necesidad de uterotónicos adicionales). No requiere refrigeración en formulaciones recientes. <strong>Efectos adversos:</strong> rubor, náuseas, hipotensión leve.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Misoprostol</div>
+      <div class="farma-clase">Análogo de PGE1 · Uterotónico oral/sublingual/rectal · No requiere frío</div>
+      <div class="dosis-badge">Profilaxis: 600 mcg SL o 400 mcg VO · HPP: 800 mcg rectal o 600 mcg SL</div>
+      <div class="farma-detalle">
+        De elección cuando no hay oxitocina disponible (nivel primario, partos domiciliarios). Inicio más lento (10–20 min SL). Causa contracción uterina sostenida tipo tetanizante. <strong>Efectos adversos frecuentes:</strong> fiebre, escalofríos, diarrea (dosis-dependientes, más con dosis altas). Estable a temperatura ambiente → ideal para zonas sin cadena de frío.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Metilergonovina (ergonovina)</div>
+      <div class="farma-clase">Alcaloide del ergot · Uterotónico de 2ª línea</div>
+      <div class="dosis-badge">0,2 mg IM (nunca IV directa) · Repetir c/2–4 h si necesario</div>
+      <div class="farma-detalle">
+        Produce contracción uterina sostenida ("tónica"). <strong>Contraindicada en hipertensión, preeclampsia y enfermedad cardiovascular</strong> (vasoconstricción sistémica → HTA grave). No usar IV directa → HTA severa, convulsiones. Conservar en frío.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Carboprost (15-metil-PGF2α)</div>
+      <div class="farma-clase">Prostaglandina F2α · Uterotónico de 2ª-3ª línea</div>
+      <div class="dosis-badge">250 mcg IM c/15–90 min · Máximo 8 dosis (2 mg total)</div>
+      <div class="farma-detalle">
+        Potente uterotónico para atonía refractaria. <strong>Contraindicado en asma</strong> (broncoespasmo). Efectos adversos: diarrea, vómitos, fiebre, broncoespasmo. No disponible en todos los centros de Argentina — verificar disponibilidad local.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ácido tranexámico (ATX)</div>
+      <div class="farma-clase">Antifibrinolítico · Reduce mortalidad por HPP · WOMAN trial 2017</div>
+      <div class="dosis-badge">1 g IV en 10 min → repetir a la hora si sangrado continúa · Usar dentro de las 3 h del parto</div>
+      <div class="farma-detalle">
+        Inhibe la activación del plasminógeno → frena la fibrinólisis → estabiliza el coágulo. El ensayo WOMAN (20.000 mujeres) demostró que su uso precoz <strong>reduce la mortalidad por hemorragia en un 19%</strong> sin aumentar eventos trombóticos. <strong>Administrar siempre dentro de las 3 h del parto</strong> — después de ese tiempo pierde eficacia. Indicado en toda HPP que requiere tratamiento médico, independientemente de la causa.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Acretismo placentario — espectro</div>
+      <strong>Placenta acreta:</strong> vellosidades adheridas al miometrio sin penetrarlo (75%). <strong>Increta:</strong> penetra el miometrio (15%). <strong>Percreta:</strong> atraviesa la serosa → puede invadir vejiga o recto (5–10%). FR: cesárea anterior + placenta previa (riesgo 25% con 1 cesárea previa, hasta 67% con ≥3). Diagnóstico prenatal: ecografía + Doppler color → RMN si duda. Manejo: parto en centro de alta complejidad, equipo multidisciplinario, posible histerectomía planificada.
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">HPP: ≥500 ml (vaginal) o ≥1000 ml (cesárea)</span>
+      <span class="pill">Causa #1 de mortalidad materna en el mundo</span>
+      <span class="pill">Causa #1 de HPP: atonía uterina (80%)</span>
+      <span class="pill">Las 4T: Tono · Trauma · Tejido · Trombina</span>
+      <span class="pill">MATEP: oxitocina + TCC + masaje = prevención</span>
+      <span class="pill">Oxitocina profilaxis: 10 UI IM en primer minuto</span>
+      <span class="pill">Misoprostol: sin cadena de frío · alternativa a oxitocina</span>
+      <span class="pill">Metilergonovina: contraindicada en HTA y preeclampsia</span>
+      <span class="pill">Carboprost: contraindicado en asma</span>
+      <span class="pill">ATX: 1 g IV · dentro de las 3 horas · WOMAN trial</span>
+      <span class="pill">Balón de Bakri: taponamiento intrauterino mecánico</span>
+      <span class="pill">B-Lynch: sutura de compresión uterina</span>
+      <span class="pill">Histerectomía obstétrica: última línea, salva la vida</span>
+      <span class="pill">Transfusión masiva: GR:PFC:plaquetas = 1:1:1</span>
+      <span class="pill">Fibrinógeno &lt;2 g/L → crioprecipitados</span>
+      <span class="pill">Placenta acreta: FR = cesárea anterior + placenta previa</span>
+      <span class="pill">Inversión uterina → causa de trauma (4T)</span>
+      <span class="pill">CID → causa de trombina (4T) en HPP grave</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: FIGO Safe Motherhood and Newborn Health Committee. Prevention and treatment of postpartum haemorrhage. Int J Gynaecol Obstet 2022 · WHO Recommendations for the Prevention and Treatment of Postpartum Haemorrhage. Geneva: WHO; 2023 · Guía para la prevención, diagnóstico y tratamiento de las hemorragias postparto. Ministerio de Salud de la Nación Argentina (AIPEO) · WOMAN Trial Collaborators. Effect of early tranexamic acid administration on mortality, hysterectomy, and other morbidities in women with post-partum haemorrhage. Lancet 2017 · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo; 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
