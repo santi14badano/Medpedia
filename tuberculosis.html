@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuberculosis — Medpedia</title>
+  <meta name="description" content="Tuberculosis pulmonar y extrapulmonar: diagnóstico, tratamiento RIPE, TBC latente, resistencia y situaciones especiales. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --tbc: #37474F; --tbc-claro: #ECEFF1; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--tbc-claro); color: var(--tbc); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .ripe-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 10px; }
+    @media(max-width:560px){ .ripe-grid { grid-template-columns: 1fr; } }
+    .ripe-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .ripe-letra { font-size: 22px; font-weight: 700; color: var(--verde); line-height: 1; margin-bottom: 4px; }
+    .ripe-nombre { font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 4px; }
+    .ripe-dosis { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; }
+    .ripe-efecto { font-size: 11px; color: var(--texto-ter); line-height: 1.4; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › Tuberculosis</div>
+  <div class="titulo">Tuberculosis</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-fuente">OPS/OMS 2022 · Pautas TBC Argentina · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La tuberculosis (TBC) es una enfermedad infecciosa causada por <strong>Mycobacterium tuberculosis</strong>, bacilo ácido-alcohol resistente (BAAR), de transmisión aérea por gotitas de Flügge. Es la principal causa infecciosa de muerte en el mundo después del COVID-19.</p>
+      <p>La infección puede quedar en estado <strong>latente</strong> (90% de los infectados: sin síntomas, no contagiosa, PPD/IGRA positivos, Rx normal) o progresar a <strong>enfermedad activa</strong> (10% a lo largo de la vida, riesgo mayor en los primeros 2 años y en inmunodeprimidos).</p>
+      <p>En Argentina: ~11.000 casos nuevos/año, con mayor incidencia en el NOA, NEA y AMBA. La TBC sigue siendo un problema de salud pública prioritario.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica</div>
+    <div class="subtitulo-bloque">TBC pulmonar (85% de los casos)</div>
+    <div class="card">
+      <p><strong>Síntomas constitucionales:</strong> fiebre vespertina, sudores nocturnos, pérdida de peso (&gt;10% del peso corporal), astenia — la tríada clásica.</p>
+      <p><strong>Síntomas respiratorios:</strong> tos persistente (&gt;2–3 semanas), expectoración mucopurulenta, hemoptisis (erosión de vasos — signo de enfermedad avanzada), disnea.</p>
+      <p><strong>Rx de tórax:</strong> infiltrados en lóbulos superiores (segmentos apicales y posteriores), cavidades, adenopatías hiliares en primoinfección, derrame pleural. En VIH puede ser atípica o normal.</p>
+    </div>
+
+    <div class="subtitulo-bloque">TBC extrapulmonar</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización</th><th>Presentación característica</th><th>Diagnóstico</th></tr>
+        <tr><td><strong>Pleural</strong></td><td>Derrame pleural unilateral, exudado linfocitario. Dolor pleurítico</td><td>LCR pleural: ADA &gt;40 U/L, biopsia pleural (cultivo + histología)</td></tr>
+        <tr><td><strong>Ganglionar (escrófuloderma)</strong></td><td>Adenopatías cervicales indoloras que pueden fistulizar</td><td>PAAF o biopsia → BAAR + cultivo + histología (granuloma caseificante)</td></tr>
+        <tr><td><strong>Meníngea</strong></td><td>Inicio subagudo, fiebre, cefalea, meningismo, pares craneales</td><td>LCR: linfocitosis, proteínas muy elevadas, glucosa muy baja, ADA &gt;10 U/L, BAAR (40%), PCR TBC</td></tr>
+        <tr><td><strong>Miliar</strong></td><td>Diseminación hematógena. Fiebre, hepatoesplenomegalia. Rx: patrón miliar (granos de mijo)</td><td>Hemocultivos · biopsia (MO, hígado) · fondo de ojo (tubérculos coroideos)</td></tr>
+        <tr><td><strong>Renal</strong></td><td>Piuria estéril, hematuria, disuria. Leucocitos sin germen en urocultivo convencional</td><td>Urocultivo en medio de Löwenstein × 3 muestras matinales</td></tr>
+        <tr><td><strong>Osteoarticular (Mal de Pott)</strong></td><td>Dolor vertebral, deformidad cifótica, absceso paravertebral "en reloj de arena"</td><td>RMN columna + biopsia guiada</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico de TBC activa</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Método</th><th>Utilidad</th><th>Clave</th></tr>
+        <tr><td><strong>BAAR en esputo (baciloscopia)</strong></td><td>Screening rápido, bajo costo. 3 muestras matinales en días consecutivos</td><td>Sensibilidad 50–80%. Positivo: confirma TBC y define contagiosidad</td></tr>
+        <tr><td><strong>Cultivo en Löwenstein-Jensen</strong></td><td>Gold standard. Permite antibiograma</td><td>Lento: 3–8 semanas. Sensibilidad 80–90%. Obligatorio en todo caso sospechoso</td></tr>
+        <tr><td><strong>Xpert MTB/RIF (GeneXpert)</strong></td><td>Diagnóstico molecular rápido (2 horas). Detecta TBC y resistencia a rifampicina</td><td>S 89% / E 99%. Primera línea en Argentina para diagnóstico inicial. No requiere bioseguridad especial</td></tr>
+        <tr><td><strong>PPD (Mantoux)</strong></td><td>Diagnóstico de TBC latente. No diagnóstica de TBC activa</td><td>≥5 mm en VIH/inmunodeprimidos · ≥10 mm en población general · ≥15 mm en vacunados con BCG. Puede ser negativa en anergia (VIH avanzado, desnutrición, TBC diseminada)</td></tr>
+        <tr><td><strong>IGRA (QuantiFERON-TB Gold)</strong></td><td>TBC latente. Más específico que PPD (no se afecta por BCG)</td><td>No diferencia latente de activa. Positivo = exposición previa o infección latente</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Piuria estéril</strong> (leucocitos en orina sin germen en urocultivo convencional) → siempre pensar en TBC renal. Solicitar urocultivo en Löwenstein.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento — Esquema RIPE</div>
+    <div class="hl"><strong>Esquema estándar:</strong> Fase intensiva RIPE × 2 meses → Fase de continuación RI × 4 meses. Total: <strong>6 meses</strong> para TBC pulmonar. Administración supervisada (DOTS — Directly Observed Treatment Short-course).</div>
+
+    <div class="ripe-grid" style="margin-top:10px;">
+      <div class="ripe-item">
+        <div class="ripe-letra">R</div>
+        <div class="ripe-nombre">Rifampicina</div>
+        <div class="ripe-dosis">10 mg/kg/día (máx 600 mg) VO en ayunas</div>
+        <div class="ripe-efecto">Bactericida potente. Inductor enzimático CYP450 → interacciones múltiples. Orina/secreciones naranjas. Hepatotóxica. Contraindicada con inhibidores de proteasa del VIH.</div>
+      </div>
+      <div class="ripe-item">
+        <div class="ripe-letra">I</div>
+        <div class="ripe-nombre">Isoniacida (INH)</div>
+        <div class="ripe-dosis">5 mg/kg/día (máx 300 mg) VO</div>
+        <div class="ripe-efecto">Bactericida. Principal efecto adverso: hepatotoxicidad y neuropatía periférica (dar Piridoxina/B6 10–25 mg/día de forma concomitante). Acetiladores rápidos metabolizan más rápido.</div>
+      </div>
+      <div class="ripe-item">
+        <div class="ripe-letra">P</div>
+        <div class="ripe-nombre">Pirazinamida (PZA)</div>
+        <div class="ripe-dosis">25 mg/kg/día (máx 2 g) VO</div>
+        <div class="ripe-efecto">Bactericida en medio ácido (macrófagos). Solo en fase intensiva (2 meses). Hiperuricemia (puede desencadenar gota). Hepatotóxica. Artralgia frecuente.</div>
+      </div>
+      <div class="ripe-item">
+        <div class="ripe-letra">E</div>
+        <div class="ripe-nombre">Etambutol</div>
+        <div class="ripe-dosis">15–20 mg/kg/día (máx 1,6 g) VO</div>
+        <div class="ripe-efecto">Bacteriostático. Incluido para prevenir resistencia. Principal efecto adverso: <strong>neuritis óptica retrobulbar</strong> (disminución de agudeza visual y discriminación del color verde-rojo). Contraindicado en niños &lt;5 años y en insuficiencia renal grave.</div>
+      </div>
+    </div>
+
+    <div class="hl-warn" style="margin-top:4px;"><strong>Hepatotoxicidad por RIPE:</strong> suspender si TGO/TGP &gt;3× LSN con síntomas o &gt;5× LSN sin síntomas. Reintroducir de a uno (INH → R → PZA) tras normalización.</div>
+
+    <div class="subtitulo-bloque">Duración del tratamiento según localización</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización</th><th>Duración total</th><th>Esquema</th></tr>
+        <tr><td>Pulmonar sin cavidades, BAAR negativo al 2° mes</td><td>6 meses</td><td>RIPE × 2 m → RI × 4 m</td></tr>
+        <tr><td>Pulmonar con cavidades o BAAR positivo al 2° mes</td><td>9 meses</td><td>RIPE × 2 m → RI × 7 m</td></tr>
+        <tr><td>Meníngea</td><td>12 meses + dexametasona × 8 sem</td><td>RIPE × 2 m → RI × 10 m</td></tr>
+        <tr><td>Osteoarticular</td><td>9–12 meses</td><td>RIPE × 2 m → RI × 7–10 m</td></tr>
+        <tr><td>TBC + VIH</td><td>6–9 meses según respuesta</td><td>Igual esquema. Iniciar TAR 2–8 sem después del inicio de TBC (antes si CD4 &lt;50)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔒 TBC latente — tratamiento</div>
+    <div class="card">
+      <p><strong>Indicación:</strong> PPD ≥5 mm (VIH, trasplante, anti-TNF, corticoides crónicos) o ≥10 mm (contacto estrecho, trabajador de salud, migrante de zona endémica, diabetes, silicosis) o IGRA positivo — siempre descartando TBC activa primero.</p>
+      <p><strong>Esquemas aprobados en Argentina:</strong></p>
+      <p>→ <strong>INH 300 mg/día × 6–9 meses</strong> (más usado) + Piridoxina 25 mg/día<br>
+      → <strong>INH + Rifapentina 1 vez/semana × 12 semanas</strong> (3HP — supervisado, muy buena adherencia)<br>
+      → <strong>Rifampicina 600 mg/día × 4 meses</strong> (alternativa si intolerancia a INH)</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ TBC resistente</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Definición</th><th>Tratamiento</th></tr>
+        <tr><td><strong>TBC-R (monorresistente)</strong></td><td>Resistencia a 1 fármaco de primera línea</td><td>Ajustar según antibiograma</td></tr>
+        <tr><td><strong>TBC-MDR</strong> (multidrogorresistente)</td><td>Resistencia a INH + Rifampicina (al menos)</td><td>Esquema de segunda línea: bedaquilina + pretomanid + linezolid (BPaL) × 6 meses o esquemas más prolongados</td></tr>
+        <tr><td><strong>TBC-XDR</strong> (extensamente resistente)</td><td>MDR + resistencia a fluoroquinolonas + al menos 1 inyectable de segunda línea</td><td>Esquemas individualizados según antibiograma. Centro de referencia</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">Sospechar TBC-MDR en: fracaso terapéutico, contacto con caso MDR conocido, retratamiento, VIH con mala respuesta, procedente de zona de alta prevalencia MDR (Europa del Este, Sudeste Asiático). Xpert MTB/RIF detecta resistencia a rifampicina como proxy de MDR.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">TBC latente vs activa — diferencia clave</span>
+      <span class="pill">BAAR × 3 muestras matinales</span>
+      <span class="pill">Xpert MTB/RIF — diagnóstico rápido + resistencia R</span>
+      <span class="pill">Cultivo Löwenstein — gold standard</span>
+      <span class="pill">PPD: 5 mm en VIH / 10 mm en población general</span>
+      <span class="pill">IGRA — más específico que PPD (no afectado por BCG)</span>
+      <span class="pill">RIPE × 2 meses → RI × 4 meses = 6 meses total</span>
+      <span class="pill">Rifampicina — inductor CYP450, orina naranja</span>
+      <span class="pill">INH → neuropatía periférica → dar piridoxina</span>
+      <span class="pill">Etambutol → neuritis óptica retrobulbar</span>
+      <span class="pill">Pirazinamida → hiperuricemia</span>
+      <span class="pill">Meningitis TBC → 12 meses + dexametasona</span>
+      <span class="pill">TBC + VIH → iniciar TAR 2–8 sem post-ATB</span>
+      <span class="pill">Piuria estéril → TBC renal</span>
+      <span class="pill">ADA en líquidos (pleural, LCR) — diagnóstico TBC</span>
+      <span class="pill">MDR: resistencia INH + Rifampicina</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Pautas técnicas para el diagnóstico y tratamiento de la Tuberculosis en Argentina — Ministerio de Salud de la Nación · Guía práctica para el diagnóstico y tratamiento de personas con TBC en el PNA · OPS/OMS Guías de TBC 2022 · Harrison 21ª ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
