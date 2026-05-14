@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfermedades Exantemáticas Pediátricas — Medpedia</title>
+  <meta name="description" content="Sarampión, rubéola, varicela, escarlatina, roseola, eritema infeccioso y más. Diagnóstico diferencial, clínica y manejo. Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ped: #C0392B; --ped-claro: #FDEDEC; --ped-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ped    { background: #E8F5E9; color: #2E7D32; }
+    .tag-infecto { background: #EEF2FF; color: #3730A3; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2.5rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+
+    /* EXANTEMA CARDS */
+    .exantema-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .ex-card { background: var(--blanco); border-radius: 16px; border: 1.5px solid var(--borde); overflow: hidden; }
+    .ex-header { padding: 1rem 1.25rem 0.75rem; display: flex; align-items: flex-start; gap: 12px; }
+    .ex-numero { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; flex-shrink: 0; line-height: 1; }
+    .ex-titulo-wrap { flex: 1; }
+    .ex-nombre { font-size: 17px; font-weight: 600; line-height: 1.2; }
+    .ex-alias  { font-size: 12px; color: var(--texto-ter); margin-top: 2px; }
+    .ex-agente { font-size: 12px; font-weight: 500; margin-top: 4px; padding: 2px 10px; border-radius: 10px; display: inline-block; }
+    .ex-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--borde); }
+    @media (max-width: 600px) { .ex-body { grid-template-columns: 1fr; } }
+    .ex-col { padding: 1rem 1.25rem; border-right: 1px solid var(--borde); }
+    .ex-col:last-child { border-right: none; }
+    .ex-col-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--texto-ter); margin-bottom: 8px; }
+    .ex-row { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; display: flex; gap: 6px; line-height: 1.45; }
+    .ex-row strong { color: var(--texto); flex-shrink: 0; }
+    .ex-footer { padding: 0.75rem 1.25rem; background: var(--fondo); border-top: 1px solid var(--borde); font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .ex-footer strong { color: var(--texto); }
+
+    /* colores por enfermedad */
+    .ex1 .ex-header { background: #FFF8E1; border-bottom: 2px solid #F4B400; }
+    .ex1 .ex-numero { color: #8B5E0A; }
+    .ex1 .ex-agente { background: #FFF8E1; color: #8B5E0A; border: 1px solid #F9C74F; }
+
+    .ex2 .ex-header { background: #FCE4EC; border-bottom: 2px solid #E91E63; }
+    .ex2 .ex-numero { color: #880E4F; }
+    .ex2 .ex-agente { background: #FCE4EC; color: #880E4F; border: 1px solid #F48FB1; }
+
+    .ex3 .ex-header { background: #EDE7F6; border-bottom: 2px solid #7B3FA0; }
+    .ex3 .ex-numero { color: #5C2D78; }
+    .ex3 .ex-agente { background: #EDE7F6; color: #5C2D78; border: 1px solid #CE93D8; }
+
+    .ex4 .ex-header { background: #FDEDEC; border-bottom: 2px solid #C0392B; }
+    .ex4 .ex-numero { color: #922B21; }
+    .ex4 .ex-agente { background: #FDEDEC; color: #922B21; border: 1px solid #F1948A; }
+
+    .ex5 .ex-header { background: #E8F5E9; border-bottom: 2px solid #1D9E75; }
+    .ex5 .ex-numero { color: #0F6E56; }
+    .ex5 .ex-agente { background: #E8F5E9; color: #0F6E56; border: 1px solid #81C784; }
+
+    .ex6 .ex-header { background: #E3F2FD; border-bottom: 2px solid #1565C0; }
+    .ex6 .ex-numero { color: #1565C0; }
+    .ex6 .ex-agente { background: #E3F2FD; color: #1565C0; border: 1px solid #90CAF9; }
+
+    .exK .ex-header { background: #FFF3E0; border-bottom: 2px solid #E65100; }
+    .exK .ex-numero { color: #E65100; }
+    .exK .ex-agente { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC80; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría</a> › Enfermedades Exantemáticas</div>
+  <div class="titulo">Enfermedades Exantemáticas Pediátricas</div>
+  <div class="meta">
+    <span class="tag tag-ped">Pediatría</span>
+    <span class="tag tag-infecto">Infectología pediátrica</span>
+    <span class="tag tag-fuente">Nelson 21ª · SAP · Calendario Nacional Vacunación 2026 · CDC · WHO</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto general</div>
+    <div class="hl">Las <strong>enfermedades exantemáticas</strong> son infecciones que cursan con erupción cutánea (exantema) como manifestación principal. En pediatría se agrupan históricamente como las "enfermedades numeradas" (1ª a 6ª) aunque el sistema es en parte anacrónico. La clave diagnóstica es el <strong>tipo de exantema + cronología + síntomas asociados + edad + estado vacunal</strong>.</div>
+    <div class="hl-warn">⚠️ <strong>Antes de empezar:</strong> en Argentina el Calendario Nacional de Vacunación 2026 incluye vacunas contra sarampión/rubéola/varicela/parotiditis (SRP + varicela). Un niño correctamente inmunizado tiene baja probabilidad de tener estas enfermedades — siempre preguntar el estado vacunal.</div>
+  </div>
+
+  <!-- TABLA RÁPIDA DE DIFERENCIACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Tabla comparativa rápida — las 6 enfermedades + Kawasaki</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr>
+          <th>N°</th><th>Nombre</th><th>Agente</th><th>Exantema</th><th>Distribución</th><th>Fiebre y exantema</th><th>Signo clave</th>
+        </tr>
+        <tr>
+          <td><strong>1ª</strong></td><td>Sarampión</td><td>Paramyxovirus (ARN)</td><td>Maculopapular, confluente, rojo oscuro</td><td>Cara → tronco → extremidades (céfalo-caudal)</td><td>Fiebre ANTES y DURANTE el exantema</td><td><strong>Manchas de Koplik</strong> (patognomónico)</td>
+        </tr>
+        <tr>
+          <td><strong>2ª</strong></td><td>Escarlatina</td><td>S. pyogenes (SBHA) — exotoxina</td><td>Micropapular, "piel de gallina" o "lija", eritematoso, palidece a la presión</td><td>Tronco → extremidades · respeta palmas y plantas · área perioral pálida</td><td>Fiebre con el exantema</td><td><strong>Signo de Pastia</strong> (axila/pliegues) · lengua en fresa</td>
+        </tr>
+        <tr>
+          <td><strong>3ª</strong></td><td>Rubéola</td><td>Rubivirus (ARN)</td><td>Maculopapular fino, rosado, no confluente</td><td>Cara → tronco → extremidades (rápido, 1–3 días)</td><td>Fiebre leve o ausente</td><td><strong>Adenopatías retroauriculares y suboccipitales</strong></td>
+        </tr>
+        <tr>
+          <td><strong>4ª</strong></td><td>Enfermedad de Filatov-Dukes</td><td>S. aureus (exotoxina — síndrome estafilocócico)</td><td>Similar a escarlatina pero más fino</td><td>Generalizado</td><td>Variable</td><td>Hoy considerada parte del síndrome de piel escaldada (SSSS)</td>
+        </tr>
+        <tr>
+          <td><strong>5ª</strong></td><td>Eritema infeccioso (megaloeritema)</td><td>Parvovirus B19</td><td>Mejillas rojas "bofetada" → encaje reticulado en extremidades</td><td>Mejillas → brazos → piernas</td><td>Fiebre mínima o ausente</td><td><strong>Aspecto de "mejillas abofeteadas"</strong></td>
+        </tr>
+        <tr>
+          <td><strong>6ª</strong></td><td>Roseola infantum / Exantema súbito</td><td>HHV-6 (herpesvirus humano 6)</td><td>Maculopapular rosado, fino, no pruriginoso</td><td>Tronco → cuello → extremidades</td><td>Fiebre alta 3–5 días → CEDE → aparece el exantema</td><td><strong>Fiebre que desaparece cuando brota el rash</strong></td>
+        </tr>
+        <tr>
+          <td><strong>—</strong></td><td>Varicela</td><td>VZV (herpesvirus)</td><td>Vesicular polimórfico ("cielo estrellado")</td><td>Tronco → cara → extremidades · mucosas</td><td>Fiebre con el exantema</td><td>Lesiones en distintos estadíos simultáneos</td>
+        </tr>
+        <tr>
+          <td><strong>—</strong></td><td>Kawasaki</td><td>Causa desconocida (vasculitis)</td><td>Polimorfo (maculopapular, escarlatiniforme, urticarial)</td><td>Generalizado · descamación en dedos tardía</td><td>Fiebre ≥5 días persistente</td><td>5 criterios diagnósticos + riesgo aneurisma coronario</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CARDS POR ENFERMEDAD -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Cada enfermedad en detalle</div>
+    <div class="exantema-grid">
+
+      <!-- SARAMPIÓN -->
+      <div class="ex-card ex1">
+        <div class="ex-header">
+          <div class="ex-numero">1ª</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Sarampión</div>
+            <div class="ex-alias">Morbilli · "Measles"</div>
+            <span class="ex-agente">Paramyxovirus (ARN) — virus del sarampión</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica</div>
+            <div class="ex-row"><strong>Pródromo (2–4d):</strong> fiebre alta (&gt;39°C), tos perruna, coriza, conjuntivitis (las 3 C)</div>
+            <div class="ex-row"><strong>Manchas de Koplik:</strong> puntos blancos/grisáceos en mucosa bucal frente a los molares — PATOGNOMÓNICAS, aparecen 1–2 días ANTES del exantema</div>
+            <div class="ex-row"><strong>Exantema:</strong> día 3–4 de fiebre · maculopapular confluente · inicio retroauricular y frente → cara → cuello → tronco → extremidades (cefalo-caudal) · dura 5–6 días</div>
+            <div class="ex-row"><strong>Fiebre:</strong> persiste durante el exantema · baja cuando empieza la descamación furfurácea</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Manejo y complicaciones</div>
+            <div class="ex-row"><strong>Transmisión:</strong> aérea · período de contagio: 4 días antes a 4 días después del exantema · muy contagioso (R₀ ~12–18)</div>
+            <div class="ex-row"><strong>Aislamiento:</strong> respiratorio estricto</div>
+            <div class="ex-row"><strong>Tratamiento:</strong> soporte · <strong>vitamina A</strong> (reduce mortalidad y complicaciones): 200.000 UI/día × 2 días en menores de 2 años o desnutridos o inmunocomprometidos</div>
+            <div class="ex-row"><strong>Complicaciones:</strong> otitis media (más frecuente), neumonía (1ª causa de muerte), encefalitis (1:1000), PEES (panencefalitis esclerosante subaguda — tardía, fatal)</div>
+            <div class="ex-row"><strong>Prevención:</strong> vacuna SRP (triple viral) · 2 dosis (12 m y 5–6 años) en el Calendario Nacional</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Regla nemotécnica:</strong> Sarampión = las 3C (Tos/Cough, Coriza, Conjuntivitis) + Koplik antes + exantema cefalo-caudal + fiebre que no cede con el rash.</div>
+      </div>
+
+      <!-- ESCARLATINA -->
+      <div class="ex-card ex4">
+        <div class="ex-header">
+          <div class="ex-numero">2ª</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Escarlatina</div>
+            <div class="ex-alias">Fiebre escarlata</div>
+            <span class="ex-agente">Streptococcus pyogenes (SBHA) — exotoxinas pirógenas A, B, C</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica</div>
+            <div class="ex-row"><strong>Inicio:</strong> fiebre brusca + faringitis + vómitos · 1–2 días después aparece el exantema</div>
+            <div class="ex-row"><strong>Exantema:</strong> micropapular eritematoso, textura de "lija" o "piel de gallina" · blanquea a la presión · inicio en cuello/axilas → generalización rápida</div>
+            <div class="ex-row"><strong>Signo de Pastia:</strong> líneas petequiales en pliegues (axilas, codos, ingles) — patognomónico</div>
+            <div class="ex-row"><strong>Triángulo de Filatov:</strong> palidez perioral que contrasta con mejillas eritematosas</div>
+            <div class="ex-row"><strong>Lengua:</strong> "lengua en fresa blanca" (día 1–2) → "lengua en fresa roja" (día 4–5)</div>
+            <div class="ex-row"><strong>Descamación:</strong> furfurácea en cara, en láminas en manos y pies (1–2 semanas después)</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Manejo y complicaciones</div>
+            <div class="ex-row"><strong>Diagnóstico:</strong> clínico + hisopado faríngeo (cultivo o test rápido de SBHA)</div>
+            <div class="ex-row"><strong>Tratamiento:</strong> <strong>penicilina V oral × 10 días</strong> (de elección) · Alternativa: amoxicilina 50 mg/kg/día × 10 días · Alérgicos: azitromicina × 5 días o clindamicina</div>
+            <div class="ex-row"><strong>Importancia del tratamiento completo:</strong> previene fiebre reumática (FR) · no previene glomerulonefritis post-estreptocócica</div>
+            <div class="ex-row"><strong>Complicaciones supurativas:</strong> absceso periamigdalino, otitis, sinusitis</div>
+            <div class="ex-row"><strong>Complicaciones no supurativas:</strong> fiebre reumática (2–4 sem post-faringitis), GNAPE (1–3 sem post-faringitis o pioderma)</div>
+            <div class="ex-row"><strong>Aislamiento:</strong> respiratorio · retorno a la escuela tras 24 h de ATB</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Clave:</strong> única enfermedad exantemática de causa bacteriana. Penicilina 10 días para prevenir fiebre reumática. Si el niño no mejora con penicilina → pensar resistencia o diagnóstico alternativo.</div>
+      </div>
+
+      <!-- RUBÉOLA -->
+      <div class="ex-card ex2">
+        <div class="ex-header">
+          <div class="ex-numero">3ª</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Rubéola</div>
+            <div class="ex-alias">Sarampión alemán · "German measles"</div>
+            <span class="ex-agente">Rubivirus (Togaviridae, ARN)</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica</div>
+            <div class="ex-row"><strong>Pródromo (1–5d):</strong> fiebre baja o ausente, cefalea, conjuntivitis leve, coriza</div>
+            <div class="ex-row"><strong>Adenopatías:</strong> retroauriculares, suboccipitales y cervicales posteriores — aparecen ANTES del exantema · dolorosas · CLAVE diagnóstica</div>
+            <div class="ex-row"><strong>Exantema:</strong> maculopapular rosado, fino, no confluente · inicio en cara → tronco → extremidades · dura solo 3 días (desaparece en el orden que apareció)</div>
+            <div class="ex-row"><strong>Signo de Forchheimer:</strong> manchas petequiales en paladar blando (no patognomónico)</div>
+            <div class="ex-row"><strong>Artralgia/artritis:</strong> frecuente en adolescentes y adultos, especialmente mujeres</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Manejo — énfasis en el embarazo</div>
+            <div class="ex-row"><strong>En niños:</strong> enfermedad benigna y autolimitada · solo tratamiento sintomático</div>
+            <div class="ex-row"><strong>Transmisión:</strong> aérea · contagioso desde 7 días antes hasta 7 días después del exantema</div>
+            <div class="ex-row"><strong>Aislamiento:</strong> de embarazadas NO INMUNIZADAS durante todo el período de contagio</div>
+            <div class="ex-row"><strong>Rubéola congénita (RC):</strong> 1er trimestre → cataratas, cardiopatía (PCA, estenosis pulmonar), sordera, microcefalia, retraso mental — la "tríada de Gregg"</div>
+            <div class="ex-row"><strong>Riesgo de RC:</strong> 85% si infección en semana 1–12 · 25% en semana 13–16 · mínimo después de semana 20</div>
+            <div class="ex-row"><strong>Prevención:</strong> vacuna SRP · contraindicada en embarazadas (virus vivo) · esperar 1 mes post-vacuna para embarazo</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Clave del examen:</strong> rubéola en la embarazada → síndrome de rubéola congénita (cataratas + sordera + cardiopatía). La rubéola en el niño es leve — el peligro es en el feto.</div>
+      </div>
+
+      <!-- ERITEMA INFECCIOSO -->
+      <div class="ex-card ex5">
+        <div class="ex-header">
+          <div class="ex-numero">5ª</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Eritema Infeccioso</div>
+            <div class="ex-alias">Megaloeritema · "Enfermedad de la bofetada"</div>
+            <span class="ex-agente">Parvovirus B19 (ADN, no envuelto)</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica — en 3 fases</div>
+            <div class="ex-row"><strong>Fase 1:</strong> mejillas rojas brillantes, "abofeteadas" · zona perioral pálida · dura 2–4 días</div>
+            <div class="ex-row"><strong>Fase 2:</strong> exantema reticulado (encaje) eritematoso en extremidades y tronco · aparece cuando desaparecen las mejillas</div>
+            <div class="ex-row"><strong>Fase 3:</strong> exantema recurrente durante semanas con el calor, el ejercicio, el baño caliente o el estrés emocional</div>
+            <div class="ex-row"><strong>Fiebre:</strong> ausente o leve · el niño está en buen estado general</div>
+            <div class="ex-row"><strong>Contagio:</strong> período de contagio es el PRÓDROMO virémico → cuando aparece el exantema, ya no es contagioso (el rash es inmunomediado)</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Grupos de riesgo especiales</div>
+            <div class="ex-row"><strong>Anemia hemolítica crónica</strong> (drepanocitosis, esferocitosis, talasemia): Parvovirus B19 infekta los precursores eritroides → <strong>crisis aplástica transitoria</strong> (anemia grave, reticulocitopenia) — EMERGENCIA</div>
+            <div class="ex-row"><strong>Inmunocomprometidos:</strong> viremia crónica → anemia crónica grave · pueden requerir IgG IV</div>
+            <div class="ex-row"><strong>Embarazo:</strong> riesgo de hydrops fetalis (anemia fetal grave) y muerte fetal · mayor riesgo en 1er y 2do trimestre. Notificar al obstetra.</div>
+            <div class="ex-row"><strong>Artritis:</strong> adultos (especialmente mujeres) → artritis simétrica de pequeñas articulaciones, autolimitada</div>
+            <div class="ex-row"><strong>Tratamiento:</strong> sintomático en niños sanos · IgG IV en inmunocomprometidos · en embarazadas: seguimiento ecográfico</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Clave:</strong> Parvovirus B19 en paciente con anemia hemolítica = crisis aplástica (emergencia). Exantema en mejillas = ya no contagioso. En el embarazo = hydrops fetalis.</div>
+      </div>
+
+      <!-- ROSEOLA -->
+      <div class="ex-card ex6">
+        <div class="ex-header">
+          <div class="ex-numero">6ª</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Roseola Infantum / Exantema Súbito</div>
+            <div class="ex-alias">Sexta enfermedad · "Three-day fever"</div>
+            <span class="ex-agente">HHV-6 (herpesvirus humano tipo 6) · rara vez HHV-7</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica — el patrón más llamativo</div>
+            <div class="ex-row"><strong>Edad:</strong> 6 meses – 2 años (pico a los 9 meses) · casi exclusiva del lactante</div>
+            <div class="ex-row"><strong>Fase febril (3–5 días):</strong> fiebre alta (39–40°C) con buen estado general · sin foco evidente · niño irritable pero sin aspecto tóxico</div>
+            <div class="ex-row"><strong>Defervescencia:</strong> la fiebre cae bruscamente</div>
+            <div class="ex-row"><strong>Exantema (aparece al ceder la fiebre):</strong> maculopapular rosado, 2–3 mm, no pruriginoso · tronco → cuello → extremidades · dura 1–3 días · desaparece solo</div>
+            <div class="ex-row"><strong>Hallazgo adicional:</strong> manchas de Nagayama (úlceras en el paladar blando y úvula) · adenopatías cervicales y occipitales</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Manejo y complicaciones</div>
+            <div class="ex-row"><strong>Diagnóstico:</strong> clínico — la confirmación serológica rara vez es necesaria</div>
+            <div class="ex-row"><strong>Tratamiento:</strong> sintomático (antitérmicos) · benigna y autolimitada</div>
+            <div class="ex-row"><strong>Complicación más frecuente:</strong> <strong>convulsión febril</strong> (5–10% de los casos) → la fiebre alta brusca es el desencadenante. Es la causa más frecuente de convulsión febril simple en menores de 2 años en Argentina</div>
+            <div class="ex-row"><strong>Inmunocomprometidos:</strong> HHV-6 puede reactivarse → encefalitis, neumonitis, hepatitis</div>
+            <div class="ex-row"><strong>Clave diagnóstica:</strong> el patrón de "fiebre alta 3–5 días → cede → aparece el rash" es prácticamente diagnóstico de roseola</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Clave del examen:</strong> fiebre alta en lactante → cede → rash. Causa más frecuente de convulsión febril en &lt;2 años. No confundir el exantema con alergia o sarampión.</div>
+      </div>
+
+      <!-- VARICELA -->
+      <div class="ex-card ex3">
+        <div class="ex-header">
+          <div class="ex-numero">—</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Varicela</div>
+            <div class="ex-alias">Chickenpox · Herpes zoster (reactivación)</div>
+            <span class="ex-agente">Virus Varicela-Zoster (VZV) — Herpesvirus</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Clínica</div>
+            <div class="ex-row"><strong>Pródromo (1–2d):</strong> fiebre, malestar, anorexia</div>
+            <div class="ex-row"><strong>Exantema:</strong> comienza en cuero cabelludo y tronco → generaliza · lesiones pruriginosas que evolucionan: mácula → pápula → vesícula ("gota de rocío") → costra en 24–48 h</div>
+            <div class="ex-row"><strong>Polimorfismo:</strong> lesiones en DISTINTOS estadíos simultáneos en la misma zona ("cielo estrellado") — clave diagnóstica</div>
+            <div class="ex-row"><strong>Mucosas:</strong> lesiones en mucosa oral, vaginal, conjuntival</div>
+            <div class="ex-row"><strong>Contagio:</strong> aéreo + contacto directo · desde 2 días ANTES hasta que todas las lesiones son costras · período de incubación 14–21 días</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Manejo y complicaciones</div>
+            <div class="ex-row"><strong>Niño sano:</strong> tratamiento sintomático · antipruriginosos (loratadina) · higiene de las lesiones · cortar uñas</div>
+            <div class="ex-row"><strong>Aciclovir oral:</strong> indicado en adolescentes &gt;12 años, adultos, embarazadas, inmunocomprometidos, neonatos, varicela grave · dosis: 20 mg/kg c/6 h (máx 800 mg/dosis) × 5 días · iniciar en las primeras 24 h del exantema</div>
+            <div class="ex-row"><strong>NO dar aspirina</strong> → síndrome de Reye</div>
+            <div class="ex-row"><strong>NO dar ibuprofeno</strong> en varicela → ↑riesgo de fascitis necrotizante por SBHA</div>
+            <div class="ex-row"><strong>Complicaciones:</strong> sobreinfección bacteriana (S. aureus, SBHA) · neumonía varicelosa (adultos) · cerebelitis (ataxia post-varicela, benigna) · encefalitis</div>
+            <div class="ex-row"><strong>Herpes zoster:</strong> reactivación del VZV en ganglio dorsal · dermatoma único · tratamiento: aciclovir/valaciclovir</div>
+            <div class="ex-row"><strong>Prevención:</strong> vacuna varicela (virus vivo atenuado) · 2 dosis en el Calendario Nacional (15 meses y 5 años)</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Reglas clave:</strong> polimorfismo = distintos estadíos simultáneos. NO aspirina (Reye). NO ibuprofeno (fascitis). Aciclovir solo en grupos de riesgo. Contagioso hasta que TODAS las lesiones son costras.</div>
+      </div>
+
+      <!-- KAWASAKI -->
+      <div class="ex-card exK">
+        <div class="ex-header">
+          <div class="ex-numero">K</div>
+          <div class="ex-titulo-wrap">
+            <div class="ex-nombre">Enfermedad de Kawasaki</div>
+            <div class="ex-alias">Síndrome ganglionar mucocutáneo · Síndrome febril con vasculitis</div>
+            <span class="ex-agente">Etiología desconocida — vasculitis de vasos medianos · posible trigger infeccioso</span>
+          </div>
+        </div>
+        <div class="ex-body">
+          <div class="ex-col">
+            <div class="ex-col-title">Criterios diagnósticos (≥5 días de fiebre + ≥4 de 5)</div>
+            <div class="ex-row"><strong>1. Conjuntivitis bilateral no purulenta</strong> (respeta el limbo corneal)</div>
+            <div class="ex-row"><strong>2. Cambios en labios y cavidad oral:</strong> labios eritematosos y fisurados, lengua en fresa, eritema de la faringe</div>
+            <div class="ex-row"><strong>3. Exantema polimorfo</strong> (maculopapular, urticarial, escarlatiniforme) · no vesicular · generalizado</div>
+            <div class="ex-row"><strong>4. Cambios en extremidades:</strong> eritema y edema de palmas y plantas (fase aguda) → descamación periungueal (fase subaguda, días 10–21)</div>
+            <div class="ex-row"><strong>5. Adenopatía cervical</strong> ≥1,5 cm · unilateral · no supurativa</div>
+            <div class="ex-row" style="margin-top:6px;"><em>Kawasaki incompleto (o atípico):</em> fiebre ≥5 días + &lt;4 criterios pero con aneurismas coronarios confirmados. Más frecuente en lactantes &lt;6 meses.</div>
+          </div>
+          <div class="ex-col">
+            <div class="ex-col-title">Diagnóstico y tratamiento — urgencia cardiológica</div>
+            <div class="ex-row"><strong>Laboratorio:</strong> leucocitosis (neutrofilia), ↑PCR y VSG, ↑plaquetas (fase subaguda — trombocitosis &gt;450.000), anemia normocítica, piuria estéril, ↑transaminasas</div>
+            <div class="ex-row"><strong>Ecocardiograma:</strong> obligatorio al diagnóstico y a los 2 y 6 semanas · buscar aneurismas de arterias coronarias (AAC)</div>
+            <div class="ex-row"><strong>Riesgo de AAC sin tratamiento:</strong> 20–25% · con tratamiento: &lt;5%</div>
+            <div class="ex-row"><strong>Tratamiento de elección (urgente, antes del día 10):</strong></div>
+            <div class="ex-row">→ <strong>IGIV 2 g/kg IV en dosis única</strong> (infusión lenta 10–12 h)</div>
+            <div class="ex-row">→ <strong>AAS 80–100 mg/kg/día</strong> (dosis antiinflamatoria) hasta 48–72 h afebril → reducir a dosis antiagregante 3–5 mg/kg/día × 6–8 semanas (o hasta que las coronarias normalicen)</div>
+            <div class="ex-row"><strong>Resistencia a IGIV (15–20%):</strong> segunda dosis de IGIV o corticoides (metilprednisolona) o infliximab</div>
+            <div class="ex-row"><strong>Seguimiento:</strong> cardiología pediátrica a largo plazo si hay AAC</div>
+          </div>
+        </div>
+        <div class="ex-footer"><strong>Regla de oro:</strong> fiebre ≥5 días + 4 criterios = Kawasaki → ecocardiograma + IGIV + AAS. No esperar — cada día de retraso aumenta el riesgo de aneurisma coronario. Es la única enfermedad pediátrica donde AAS está INDICADO.</div>
+      </div>
+
+    </div><!-- /exantema-grid -->
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL EXANTEMA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diagnóstico diferencial por tipo de exantema</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo de exantema</th><th>Pensar en…</th></tr>
+        <tr><td><strong>Maculopapular cefalo-caudal</strong></td><td>Sarampión (con Koplik, 3C, fiebre persiste) · Rubéola (adenopatías retroauriculares, fiebre leve, 3 días)</td></tr>
+        <tr><td><strong>Micropapular "lija" con faringitis</strong></td><td>Escarlatina (Pastia, triángulo de Filatov, lengua en fresa, SBHA)</td></tr>
+        <tr><td><strong>Vesicular polimórfico pruriginoso</strong></td><td>Varicela (distintos estadíos simultáneos, cuero cabelludo, "cielo estrellado")</td></tr>
+        <tr><td><strong>Mejillas rojas + encaje reticulado</strong></td><td>Eritema infeccioso / Parvovirus B19 (bofetada + encaje)</td></tr>
+        <tr><td><strong>Rash rosado tras 3–5 días de fiebre alta</strong></td><td>Roseola infantum / HHV-6 (&lt;2 años, fiebre cede antes del rash)</td></tr>
+        <tr><td><strong>Exantema polimorfo + fiebre ≥5 días + conjuntivitis + mucosas</strong></td><td>Kawasaki (ecocardiograma urgente)</td></tr>
+        <tr><td><strong>Petequias / púrpura con fiebre</strong></td><td>Meningococcemia (emergencia), PTI, vasculitis de Schönlein-Henoch</td></tr>
+        <tr><td><strong>Urticaria con fiebre</strong></td><td>Reacción alérgica/medicamentosa, infección viral inespecífica, enfermedad de Still</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- VACUNAS -->
+  <div class="seccion">
+    <div class="sec-titulo">💉 Calendario Nacional de Vacunación 2026 — vacunas relevantes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Vacuna</th><th>Enfermedades</th><th>Esquema (Calendario Argentina 2026)</th><th>Tipo</th></tr>
+        <tr><td><strong>Triple viral (SRP)</strong></td><td>Sarampión + Rubéola + Parotiditis</td><td>12 meses + refuerzo 5–6 años</td><td>Virus vivo atenuado</td></tr>
+        <tr><td><strong>Varicela</strong></td><td>Varicela</td><td>15 meses + refuerzo 5 años</td><td>Virus vivo atenuado</td></tr>
+        <tr><td><strong>Doble viral (SR)</strong></td><td>Sarampión + Rubéola</td><td>Adultos no inmunizados · puérperas · embarazadas susceptibles (post-parto)</td><td>Virus vivo atenuado</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Contraindicaciones de vacunas de virus vivos (SRP, Varicela):</strong> embarazo (rubéola y varicela son teratogénicas), inmunodeficiencia grave (HIV sintomático, corticoides &gt;2 mg/kg/día × &gt;14 días), alergia grave a componentes. En HIV asintomático con buena función inmune pueden aplicarse.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Koplik = patognomónico de sarampión (antes del rash)</span>
+      <span class="pill">Sarampión: 3C = Tos + Coriza + Conjuntivitis</span>
+      <span class="pill">Sarampión: exantema cefalo-caudal · fiebre persiste</span>
+      <span class="pill">Vitamina A en sarampión: &lt;2 años o desnutridos</span>
+      <span class="pill">Complicación #1 sarampión: otitis · muerte: neumonía</span>
+      <span class="pill">PEES: complicación tardía fatal del sarampión</span>
+      <span class="pill">Escarlatina: única exantemática BACTERIANA (SBHA)</span>
+      <span class="pill">Signo de Pastia: petequias en pliegues → escarlatina</span>
+      <span class="pill">Escarlatina: penicilina 10 días → previene fiebre reumática</span>
+      <span class="pill">Rubéola: adenopatías retroauriculares antes del rash</span>
+      <span class="pill">Rubéola congénita: cataratas + sordera + cardiopatía (Gregg)</span>
+      <span class="pill">Riesgo RC: 85% en 1er trimestre</span>
+      <span class="pill">Parvovirus B19: mejillas abofeteadas + encaje en extremidades</span>
+      <span class="pill">B19 + anemia hemolítica = crisis aplástica (emergencia)</span>
+      <span class="pill">B19 + embarazo = hydrops fetalis</span>
+      <span class="pill">Roseola: fiebre alta → cede → rash en lactante</span>
+      <span class="pill">Roseola: causa más frecuente de CF en &lt;2 años</span>
+      <span class="pill">Varicela: polimorfismo = distintos estadíos simultáneos</span>
+      <span class="pill">Varicela: NO aspirina (Reye) · NO ibuprofeno (fascitis)</span>
+      <span class="pill">Aciclovir varicela: &gt;12 años, embarazadas, inmuno, neonatos</span>
+      <span class="pill">Kawasaki: fiebre ≥5 días + ≥4 criterios</span>
+      <span class="pill">Kawasaki: aneurisma coronario en 20–25% sin tto</span>
+      <span class="pill">Kawasaki: IGIV 2 g/kg + AAS antiinflamatorio</span>
+      <span class="pill">AAS en pediatría: SOLO en Kawasaki y algunas cardiopatías</span>
+      <span class="pill">SRP + varicela: virus vivos → contraindicado en embarazo</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Kliegman RM, St Geme JW et al. Nelson Tratado de Pediatría 21ª ed. Elsevier España; 2020 · McCrindle BW et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease: A Scientific Statement for Health Professionals (AHA 2017) · Ministerio de Salud de la Nación Argentina. Calendario Nacional de Vacunación 2026 · CDC. Epidemiology and Prevention of Vaccine-Preventable Diseases (Pink Book) 2023 · WHO. Measles vaccines: WHO position paper. Weekly Epidemiological Record 2023 · Sociedad Argentina de Pediatría (SAP). Guías de práctica clínica en pediatría.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
