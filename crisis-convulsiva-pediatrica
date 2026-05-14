@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crisis Convulsiva Pediátrica — Medpedia</title>
+  <meta name="description" content="Crisis convulsiva en pediatría: convulsión febril, estatus epiléptico, manejo escalonado con benzodiacepinas y antiepilépticos. Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ped: #7B3FA0; --ped-claro: #F3E8FC; --ped-oscuro: #5C2D78;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ped    { background: #E8F5E9; color: #2E7D32; }
+    .tag-neuro  { background: #EDE7F6; color: #4527A0; }
+    .tag-emerg  { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ped { font-size: 16px; font-weight: 500; color: var(--ped); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ped   { border-left: 3px solid var(--ped); background: var(--ped-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ped); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-red { width: 28px; height: 28px; border-radius: 50%; background: #C0392B; color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .timeline { border-left: 3px solid var(--ped); padding-left: 1.25rem; margin-bottom: 12px; }
+    .tl-item { margin-bottom: 14px; position: relative; }
+    .tl-item:before { content: ''; position: absolute; left: -1.5rem; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--ped); }
+    .tl-time { font-size: 11px; font-weight: 700; color: var(--ped); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    .tl-content { font-size: 14px; color: var(--texto-sec); line-height: 1.6; }
+    .tl-content strong { color: var(--texto); }
+    .tl-item.red:before { background: #C0392B; }
+    .tl-time.red { color: #C0392B; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.simple { background: var(--verde-claro); border: 1.5px solid #a8d8c0; }
+    .versus-block.compleja { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .versus-titulo { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .versus-titulo.simple { color: var(--verde-oscuro); }
+    .versus-titulo.compleja { color: #C0392B; }
+    .versus-fila { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; }
+    .versus-fila strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría</a> › Crisis Convulsiva</div>
+  <div class="titulo">Crisis Convulsiva Pediátrica</div>
+  <div class="meta">
+    <span class="tag tag-ped">Pediatría</span>
+    <span class="tag tag-neuro">Neurología pediátrica</span>
+    <span class="tag tag-emerg">Emergencias</span>
+    <span class="tag tag-fuente">ILAE 2015 · AAP · SAP · Nelson 21ª · NICE 2022</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definiciones clave</div>
+    <div class="hl-ped"><strong>Crisis convulsiva (CC):</strong> actividad neuronal excesiva y sincrónica que produce manifestaciones clínicas transitorias (motoras, sensitivas, autonómicas o cognitivas). La mayoría ceden espontáneamente en &lt;2–3 minutos. La CC activa por &gt;5 minutos tiene baja probabilidad de ceder sola → actuar.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Término</th><th>Definición ILAE 2015</th></tr>
+        <tr><td><strong>Crisis epiléptica</strong></td><td>Ocurrencia transitoria de signos y/o síntomas por actividad neuronal excesiva o sincrónica anormal</td></tr>
+        <tr><td><strong>Epilepsia</strong></td><td>≥2 crisis no provocadas con &gt;24 h de diferencia · O 1 crisis + riesgo de recurrencia &gt;60% · O síndrome epiléptico</td></tr>
+        <tr><td><strong>Estatus epiléptico (EE)</strong></td><td>Crisis continua &gt;5 min, o ≥2 crisis sin recuperación completa entre ellas. <strong>EE refractario:</strong> no cede tras 2 líneas de tratamiento. <strong>EE superrefractario:</strong> no cede tras anestesia general por 24 h</td></tr>
+        <tr><td><strong>Convulsión febril</strong></td><td>Crisis convulsiva asociada a fiebre ≥38°C en niño de 6 meses a 5 años, sin enfermedad del SNC</td></tr>
+        <tr><td><strong>Período postictal</strong></td><td>Estado de somnolencia/confusión tras la crisis · Dura minutos a horas · Ausente en crisis de ausencia</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CONVULSIÓN FEBRIL -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟣 Convulsión Febril — Simple vs Compleja</div>
+    <div class="hl-ped">La convulsión febril (CF) es la causa más frecuente de CC en pediatría (2–5% de los niños de 6 meses a 5 años). La distinción simple/compleja define el pronóstico y el manejo.</div>
+    <div class="versus-wrap">
+      <div class="versus-block simple">
+        <div class="versus-titulo simple">🟢 Simple (80%)</div>
+        <div class="versus-fila"><strong>Duración:</strong> &lt;15 minutos</div>
+        <div class="versus-fila"><strong>Tipo:</strong> tónico-clónica generalizada</div>
+        <div class="versus-fila"><strong>Frecuencia:</strong> única en 24 h</div>
+        <div class="versus-fila"><strong>Post-ictal:</strong> breve, se recupera solo</div>
+        <div class="versus-fila"><strong>Focalidad:</strong> ninguna</div>
+        <div class="versus-fila" style="margin-top:8px;"><strong>Pronóstico:</strong> excelente. Sin riesgo aumentado de epilepsia (&lt;2% vs 1% población general)</div>
+      </div>
+      <div class="versus-block compleja">
+        <div class="versus-titulo compleja">🔴 Compleja (20%)</div>
+        <div class="versus-fila"><strong>Duración:</strong> ≥15 minutos (o llega como EE)</div>
+        <div class="versus-fila"><strong>Tipo:</strong> focal o con generalización secundaria</div>
+        <div class="versus-fila"><strong>Frecuencia:</strong> ≥2 en 24 h</div>
+        <div class="versus-fila"><strong>Post-ictal:</strong> prolongado, déficit focal (parálisis de Todd)</div>
+        <div class="versus-fila"><strong>Focalidad:</strong> presente</div>
+        <div class="versus-fila" style="margin-top:8px;"><strong>Pronóstico:</strong> mayor riesgo de epilepsia (4–10%), requiere estudio más completo</div>
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Punción lumbar en convulsión febril — cuándo SÍ y cuándo NO</div>
+      <strong>NO de rutina</strong> en toda CF simple en niño mayor de 18 meses, inmunizado y sin signos meníngeos.<br>
+      <strong>SÍ considerar:</strong> &lt;12 meses (aún con CF simple — meningitis puede presentarse como CF en lactante pequeño), &lt;18 meses con sospecha de meningitis, CF compleja o CF con recuperación lenta, sin vacunas completas, uso previo de ATB que puedan enmascarar meningitis.
+    </div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Pregunta</th><th>CF Simple</th><th>CF Compleja</th></tr>
+        <tr><td>EEG de urgencia</td><td>No</td><td>Sí si dura o focalidad</td></tr>
+        <tr><td>Neuroimagen</td><td>No de rutina</td><td>Sí (RMN preferida)</td></tr>
+        <tr><td>Laboratorio</td><td>No de rutina (tratar la fiebre)</td><td>Glucemia, electrolitos, hemograma</td></tr>
+        <tr><td>Antiepiléptico profiláctico</td><td><strong>No indicado</strong></td><td>Evaluar según contexto</td></tr>
+        <tr><td>Recurrencia</td><td>30–50% (pero benigna)</td><td>Mayor riesgo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAUSAS CC NO FEBRIL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Causas de CC no febril en pediatría — por edad</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Edad</th><th>Causas más frecuentes</th></tr>
+        <tr><td><strong>Neonato</strong></td><td>Encefalopatía hipóxico-isquémica, hipoglucemia, hipocalcemia, hiponatremia, hemorragia intracraneal, infección del SNC, malformaciones cerebrales, errores innatos del metabolismo</td></tr>
+        <tr><td><strong>Lactante/preescolar</strong></td><td>Convulsión febril (causa #1), hipoglucemia, hiponatremia, trauma, meningitis/encefalitis, espasmos infantiles (síndrome de West), Dravet</td></tr>
+        <tr><td><strong>Escolar/adolescente</strong></td><td>Epilepsia idiopática (ausencia, JME), trauma craneal, tumor cerebral, intoxicación, privación de sueño, hiponatremia, suspensión de AE</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Siempre descartar causas tratables urgentes:</strong> hipoglucemia (glucemia al lado de la cama — tratar si &lt;60 mg/dl), hiponatremia (Na &lt;125), hipocalcemia, hipoxia. Un bolo de glucosa empírico (dextrosa 10% 2–5 ml/kg IV) está indicado si no hay glucemia disponible en crisis activa.</div>
+  </div>
+
+  <!-- MANEJO AGUDO — TIMELINE -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟣 Manejo de la crisis activa — protocolo por tiempo</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> La CC activa por más de <strong>5 minutos</strong> debe tratarse farmacológicamente. No esperar que "ceda sola". El riesgo de daño neuronal aumenta con el tiempo — cada minuto cuenta.</div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">0–5 minutos — Soporte</div>
+        <div class="tl-content">
+          Posición lateral de seguridad (evitar aspiración). Proteger de lesiones — NO forzar la boca abierta, NO colocar objetos entre los dientes. <strong>Oxígeno a alto flujo</strong> si hay hipoxia. Acceso venoso si es posible (sin interrumpir). <strong>Glucemia capilar</strong> inmediata — tratar hipoglucemia.
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">5 minutos — Primera línea: Benzodiacepinas</div>
+        <div class="tl-content">
+          Si la crisis dura &gt;5 min → <strong>benzodiacepina de inmediato.</strong><br><br>
+          <strong>Sin acceso IV:</strong><br>
+          — <strong>Midazolam intranasal (IN): 0,2 mg/kg</strong> (máx 10 mg) — de elección sin vía · administrar con atomizador nasal · inicio en 2–3 min<br>
+          — Midazolam bucal (bucal/gingival): 0,3 mg/kg · igual eficacia que diazepam rectal<br>
+          — Diazepam rectal: 0,5 mg/kg (máx 10 mg) · inicio en 5–10 min<br><br>
+          <strong>Con acceso IV:</strong><br>
+          — <strong>Midazolam IV: 0,1–0,2 mg/kg</strong> (máx 10 mg) en bolo lento · inicio en 1–2 min<br>
+          — Diazepam IV: 0,2–0,3 mg/kg (máx 10 mg) lento (1 mg/min) · depresión respiratoria<br>
+          — Lorazepam IV: 0,05–0,1 mg/kg (máx 4 mg) — superior en algunos protocolos · más duradero
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">15–20 minutos — Segunda línea: si no cedió con BZD</div>
+        <div class="tl-content">
+          Si la crisis no cede tras 1–2 dosis de BZD → <strong>antiepiléptico de segunda línea IV:</strong><br><br>
+          — <strong>Ácido valproico IV: 20–40 mg/kg</strong> en 10 min (máx 3 g) → de elección en epilepsia conocida o sospecha de Lennox-Gastaut. Contraindicado en &lt;2 años con sospecha de hepatopatía mitocondrial.<br>
+          — <strong>Levetiracetam IV: 20–60 mg/kg</strong> (máx 4,5 g) en 15 min → excelente perfil de seguridad, sin depresión respiratoria, sin interacciones significativas. Actualmente primera opción en muchos centros para EE en pediatría.<br>
+          — <strong>Fenitoína/fosfenitoína IV: 20 mg/kg</strong> en 20 min (máx 1 g) → monitoreo ECG por riesgo de arritmias y bloqueo AV · no diluir en dextrosa.
+        </div>
+      </div>
+
+      <div class="tl-item red">
+        <div class="tl-time red">30–40 minutos — Estatus refractario: tercera línea</div>
+        <div class="tl-content">
+          Si no cedió con 2 líneas → <strong>EE refractario → internación en UTI pediátrica + anestesia general:</strong><br><br>
+          — <strong>Midazolam IV en infusión continua:</strong> 0,05–0,4 mg/kg/h · titular según EEG<br>
+          — <strong>Propofol IV:</strong> solo en &gt;3 años · cuidado con síndrome de infusión de propofol (PRIS) si &gt;48 h o dosis altas<br>
+          — <strong>Tiopental / pentobarbital:</strong> en EE superrefractario · supresión burst en EEG como objetivo<br>
+          — <strong>Ketamina IV:</strong> alternativa emergente en EE refractario · antagonista NMDA · no deprime la respiración significativamente<br>
+          Monitoreo continuo con EEG (videoEEG si disponible). Buscar y tratar la causa subyacente.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS DETALLE -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Fármacos antiepilépticos — detalle de dosis pediátricas</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Midazolam — BZD de elección en urgencias pediátricas</div>
+      <div class="farma-clase">Benzodiacepina · Potencia GABA-A · Primera línea</div>
+      <div class="dosis-badge">IN: 0,2 mg/kg · IV: 0,1–0,2 mg/kg · Bucal: 0,3 mg/kg · Máx 10 mg</div>
+      <div class="farma-detalle">
+        Vía <strong>intranasal</strong>: tan eficaz como diazepam IV en múltiples RCTs, sin necesidad de acceso venoso. Administrar mitad en cada fosa nasal con atomizador. Vida media corta (1–3 h) → riesgo de recurrencia si la causa subyacente no se trata. Depresión respiratoria posible (especialmente IV rápido) → tener ambu disponible. <strong>Antídoto:</strong> flumazenil 0,01 mg/kg IV (máx 0,2 mg) — raramente necesario.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Levetiracetam IV — segunda línea preferida en muchos centros</div>
+      <div class="farma-clase">Antiepiléptico de amplio espectro · Mecanismo: SV2A (vesículas sinápticas) · Sin interacciones citocromo P450</div>
+      <div class="dosis-badge">20–60 mg/kg IV en 15 min · Máx 4,5 g</div>
+      <div class="farma-detalle">
+        Ventajas: no deprime la respiración, no produce hipotensión, sin metabolismo hepático significativo, no afecta el nivel de conciencia basal. Puede causar agitación o irritabilidad en algunos pacientes. Evidencia creciente como primera opción de 2ª línea en EE pediátrico (ECLIPSE trial, Cochrane 2022).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Ácido valproico IV</div>
+      <div class="farma-clase">Antiepiléptico de amplio espectro · Mecanismo: canales Na, ↑GABA, ↓T-Ca</div>
+      <div class="dosis-badge">20–40 mg/kg IV en 10 min · Dosis mantenimiento: 1–2 mg/kg/h</div>
+      <div class="farma-detalle">
+        De elección en epilepsias generalizadas conocidas. <strong>Contraindicaciones pediátricas importantes:</strong> &lt;2 años con sospecha de enfermedad mitocondrial o hepatopatía (riesgo de fallo hepático fulminante). Hepatotoxicidad, hiperamonemia, trombocitopenia. Teratogénico (no relevante en emergencias pediátricas agudas).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Fenitoína / Fosfenitoína IV</div>
+      <div class="farma-clase">Antiepiléptico · Bloqueante de canales de Na voltaje-dependientes</div>
+      <div class="dosis-badge">Fenitoína: 20 mg/kg IV a 1 mg/kg/min (máx 50 mg/min) · Fosfenitoína: 20 mg EFT/kg</div>
+      <div class="farma-detalle">
+        En desuso progresivo en pediatría frente a levetiracetam (más efectos adversos). Monitoreo ECG continuo: riesgo de bradicardia, hipotensión y bloqueo AV. Diluir en SF 0,9% (no en dextrosa → precipita). Fosfenitoína es el profármaco hidrosoluble: puede administrarse más rápido y por vía IM si es necesario. No eficaz en crisis de ausencia ni espasmos infantiles.
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍNDROMES EPILÉPTICOS PEDIÁTRICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🧠 Síndromes epilépticos pediátricos — los que preguntan</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síndrome</th><th>Edad inicio</th><th>Clínica característica</th><th>EEG</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Espasmos infantiles (Síndrome de West)</strong></td><td>3–12 meses</td><td>Espasmos en flexión (salaam), regresión del desarrollo, encefalopatía</td><td>Hipsarritmia (caótico)</td><td>ACTH + vigabatrina · ácido valproico</td></tr>
+        <tr><td><strong>Síndrome de Lennox-Gastaut</strong></td><td>1–8 años</td><td>Crisis múltiples tipos (tónicas, atónicas, ausencias atípicas), discapacidad intelectual, caídas frecuentes</td><td>Punta-onda lenta &lt;2,5 Hz</td><td>Valproato, lamotrigina, rufinamida, canabidiol</td></tr>
+        <tr><td><strong>Epilepsia de ausencias infantiles</strong></td><td>4–10 años</td><td>Ausencias breves (5–30 seg), inicio y fin brusco, sin período postictal, frecuentes (hasta 100/día)</td><td>Punta-onda a 3 Hz generalizada</td><td>Etosuximida (1ª línea) · valproato · lamotrigina</td></tr>
+        <tr><td><strong>Epilepsia mioclónica juvenil (JME)</strong></td><td>12–18 años</td><td>Mioclonías matutinas (tirar las cosas), CTCG, ausencias. Desencadenado por privación de sueño y alcohol</td><td>Punta-onda a 3–6 Hz + polipuntas</td><td>Valproato (1ª línea) · levetiracetam · lamotrigina</td></tr>
+        <tr><td><strong>Síndrome de Dravet</strong></td><td>6–12 meses</td><td>CC febriles prolongadas en lactante sano → epilepsia refractaria. Mutación SCN1A</td><td>Variable</td><td>Valproato + clobazam · evitar carbamazepina/fenitoína (empeoran)</td></tr>
+        <tr><td><strong>BECTS (Rolándica benigna)</strong></td><td>3–13 años</td><td>Crisis focales nocturnas con semiología orofaríngea (babeo, dificultad para hablar), generalización secundaria frecuente</td><td>Punta-onda centrotemporal</td><td>Observación o carbamazepina · remite en la adolescencia</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CC activa &gt;5 min → tratar farmacológicamente ya</span>
+      <span class="pill">Estatus epiléptico: crisis &gt;5 min o 2 crisis sin recuperación</span>
+      <span class="pill">CF simple: &lt;15 min, generalizada, única en 24 h, sin focalidad</span>
+      <span class="pill">CF compleja: ≥15 min o focal o ≥2 en 24 h</span>
+      <span class="pill">CF: edad 6 meses – 5 años, fiebre ≥38°C, sin SNC</span>
+      <span class="pill">CF simple: NO requiere EEG, Rx, PL ni antiepiléptico profiláctico</span>
+      <span class="pill">PL en CF: solo &lt;12 meses o sospecha meningitis o CF compleja</span>
+      <span class="pill">1ª línea: midazolam intranasal 0,2 mg/kg (sin vía)</span>
+      <span class="pill">1ª línea IV: midazolam o diazepam o lorazepam</span>
+      <span class="pill">2ª línea: levetiracetam IV 20–60 mg/kg (perfil seguro)</span>
+      <span class="pill">2ª línea alternativa: valproato IV 20–40 mg/kg</span>
+      <span class="pill">Fenitoína: monitoreo ECG · no en dextrosa · en desuso</span>
+      <span class="pill">3ª línea (EE refractario): midazolam en infusión continua · UTI</span>
+      <span class="pill">Siempre descartar: hipoglucemia, hiponatremia, hipocalcemia</span>
+      <span class="pill">West: espasmos + hipsarritmia + regresión → ACTH + vigabatrina</span>
+      <span class="pill">Dravet: SCN1A · evitar carbamazepina y fenitoína</span>
+      <span class="pill">JME: valproato 1ª línea · desencadenado por privación de sueño</span>
+      <span class="pill">Ausencias infantiles: etosuximida 1ª línea · EEG punta-onda 3 Hz</span>
+      <span class="pill">Rolándica benigna: nocturna, orofaríngea, remite sola</span>
+      <span class="pill">Parálisis de Todd: déficit focal postictal transitorio → no indica lesión permanente</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Trinka E et al. A definition and classification of status epilepticus. Epilepsia 2015 (ILAE) · Glauser T et al. Evidence-based guideline: Treatment of convulsive status epilepticus in children and adults. Epilepsy Currents 2016 · Kliegman RM, St Geme JW et al. Nelson Tratado de Pediatría 21ª ed. Elsevier; 2020 · NICE Guideline NG217: Epilepsies in children, young people and adults. 2022 · Kapur J et al. Randomized Trial of Three Anticonvulsant Medications for Status Epilepticus (ESETT). N Engl J Med 2019 · Sociedad Argentina de Pediatría (SAP). Consenso de epilepsia en pediatría.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
