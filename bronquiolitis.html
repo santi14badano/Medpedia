@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bronquiolitis — Medpedia</title>
+  <meta name="description" content="Bronquiolitis aguda en lactantes: diagnóstico clínico, scores de gravedad, tratamiento basado en evidencia y criterios de internación. Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ped: #1A5E9A; --ped-claro: #E6F1FB; --ped-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ped    { background: #E8F5E9; color: #2E7D32; }
+    .tag-neumo  { background: #E3F2FD; color: #1565C0; }
+    .tag-emerg  { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ped { font-size: 16px; font-weight: 500; color: var(--ped); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ped   { border-left: 3px solid var(--ped); background: var(--ped-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ped); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-bottom: 12px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .score-puntos { font-size: 12px; color: var(--texto-ter); line-height: 1.5; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 11px; padding: 2px 10px; border-radius: 10px; font-weight: 600; display: inline-block; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 10px; border-radius: 10px; font-weight: 600; display: inline-block; }
+    .gravedad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .gravedad-grid { grid-template-columns: 1fr; } }
+    .grav-card { border-radius: 14px; padding: 1rem; }
+    .grav-card.leve     { background: var(--verde-claro); border: 1.5px solid #a8d8c0; }
+    .grav-card.moderada { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .grav-card.grave    { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .grav-titulo { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .grav-titulo.leve     { color: var(--verde-oscuro); }
+    .grav-titulo.moderada { color: #D4730A; }
+    .grav-titulo.grave    { color: #C0392B; }
+    .grav-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; display: flex; gap: 5px; }
+    .grav-item strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría</a> › Bronquiolitis</div>
+  <div class="titulo">Bronquiolitis Aguda</div>
+  <div class="meta">
+    <span class="tag tag-ped">Pediatría</span>
+    <span class="tag tag-neumo">Neumología pediátrica</span>
+    <span class="tag tag-emerg">Emergencias</span>
+    <span class="tag tag-fuente">AAP 2014/2021 · SAP 2014 · Kliegman Nelson 21ª · NICE 2021</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-ped"><strong>Bronquiolitis aguda:</strong> infección viral del tracto respiratorio inferior que afecta a menores de <strong>2 años</strong>, caracterizada por inflamación, edema y necrosis del epitelio de los bronquiolos, con acumulación de moco → obstrucción → hiperinsuflación y atelectasias. <strong>Cuadro clínico:</strong> pródromo catarral (2–3 días) → dificultad respiratoria progresiva, sibilancias y crepitantes.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Dato</th><th>Valor</th></tr>
+        <tr><td><strong>Agente etiológico #1</strong></td><td>VSR (Virus Sincicial Respiratorio) — 50–80% de los casos</td></tr>
+        <tr><td><strong>Otros agentes</strong></td><td>Rinovirus, metapneumovirus, parainfluenza, adenovirus, influenza, coronavirus</td></tr>
+        <tr><td><strong>Estacionalidad</strong></td><td>Invierno — pico entre junio y agosto en Argentina (hemisferio sur)</td></tr>
+        <tr><td><strong>Edad más frecuente</strong></td><td>2–6 meses · casi todos los niños se infectan antes de los 2 años</td></tr>
+        <tr><td><strong>Hospitalización</strong></td><td>1–3% de los casos · principal causa de internación en lactantes</td></tr>
+        <tr><td><strong>Mortalidad</strong></td><td>&lt;1% en niños sanos · hasta 3–5% en grupos de riesgo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🔵 Diagnóstico — criterios clínicos</div>
+    <div class="hl-ped">El diagnóstico de bronquiolitis es <strong>exclusivamente clínico</strong>. No requiere laboratorio ni Rx de tórax de rutina. La radiografía y el hemograma solo están indicados si hay duda diagnóstica o sospecha de complicación.</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Criterios diagnósticos (AAP 2014)</strong><br>
+        Niño menor de 2 años + primer episodio de dificultad respiratoria + clínica compatible:<br>
+        — Pródromo catarral de 2–3 días (coriza, tos, fiebre baja)<br>
+        — Taquipnea, tiraje intercostal, subcostal o supraesternal<br>
+        — Sibilancias espiratorias y/o crepitantes (roncus) en la auscultación<br>
+        — Hiperinsuflación (tórax en tonel, horizontalización de costillas)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Saturación de O₂ (SpO₂)</strong><br>
+        Medir con oxímetro de pulso en toda consulta. <strong>SpO₂ ≥95%</strong> = adecuada en niños con bronquiolitis. SpO₂ &lt;90% = criterio de internación urgente. Entre 90–94%: evaluar contexto, FR de riesgo y respuesta al tratamiento.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>¿Cuándo hacer Rx de tórax?</strong><br>
+        Solo si: fiebre alta persistente (&gt;38,5°C por más de 3–4 días), deterioro brusco, asimetría en la auscultación, SpO₂ &lt;90%, o duda diagnóstica. La Rx típica muestra <strong>hiperinsuflación + atelectasias laminares</strong> — no indica neumonía bacteriana per se.
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Diagnóstico diferencial</div>
+      <strong>Crisis asmática:</strong> niño mayor de 2 años, antecedente personal/familiar de atopia, respuesta a broncodilatadores.<br>
+      <strong>Neumonía bacteriana:</strong> fiebre alta, consolidación en Rx, aspecto tóxico.<br>
+      <strong>Insuficiencia cardíaca:</strong> soplo, hepatomegalia, cardiomegalia en Rx.<br>
+      <strong>Cuerpo extraño:</strong> inicio brusco sin pródromo catarral, atrapamiento aéreo asimétrico.
+    </div>
+  </div>
+
+  <!-- GRAVEDAD -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación de gravedad — Score de Wood-Downes modificado (Ferrés)</div>
+    <div class="hl">El score de Wood-Downes-Ferrés evalúa 5 parámetros. <strong>0–3: leve · 4–7: moderada · 8–14: grave.</strong> Es el más usado en Argentina y en los servicios de urgencias pediátricas.</div>
+    <div class="score-grid">
+      <div class="score-item">
+        <div class="score-variable">Frecuencia respiratoria</div>
+        <div class="score-puntos">&lt;30/min (0) · 31–45 (1) · 46–60 (2) · &gt;60 (3)</div>
+      </div>
+      <div class="score-item">
+        <div class="score-variable">Sibilancias</div>
+        <div class="score-puntos">No (0) · Final espiración (1) · Toda espiración (2) · Inspiración + espiración (3)</div>
+      </div>
+      <div class="score-item">
+        <div class="score-variable">Tiraje</div>
+        <div class="score-puntos">No (0) · Subcostal/intercostal (1) · Previo + supraclavicular (2) · Previo + supraesternal (3)</div>
+      </div>
+      <div class="score-item">
+        <div class="score-variable">Entrada de aire</div>
+        <div class="score-puntos">Normal (0) · Disminuida (1) · Muy disminuida (2) · Abolida (3)</div>
+      </div>
+      <div class="score-item">
+        <div class="score-variable">Cianosis / SpO₂</div>
+        <div class="score-puntos">No / ≥95% (0) · Perioral con llanto / 91–94% (1) · Perioral en reposo / ≤90% (2)</div>
+      </div>
+    </div>
+    <div class="gravedad-grid">
+      <div class="grav-card leve">
+        <div class="grav-titulo leve">🟢 Leve (0–3)</div>
+        <div class="grav-item"><span>✓</span><span>SpO₂ ≥95%</span></div>
+        <div class="grav-item"><span>✓</span><span>FR &lt;50/min</span></div>
+        <div class="grav-item"><span>✓</span><span>Tiraje mínimo o ausente</span></div>
+        <div class="grav-item"><span>✓</span><span>Come y se hidrata bien</span></div>
+        <div class="grav-item"><span>🏠</span><span><strong>Manejo ambulatorio</strong></span></div>
+      </div>
+      <div class="grav-card moderada">
+        <div class="grav-titulo moderada">🟡 Moderada (4–7)</div>
+        <div class="grav-item"><span>⚠️</span><span>SpO₂ 90–94%</span></div>
+        <div class="grav-item"><span>⚠️</span><span>FR 50–70/min</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Tiraje moderado</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Dificultad para alimentarse</span></div>
+        <div class="grav-item"><span>🏥</span><span><strong>Evaluar internación</strong></span></div>
+      </div>
+      <div class="grav-card grave">
+        <div class="grav-titulo grave">🔴 Grave (8–14)</div>
+        <div class="grav-item"><span>🚨</span><span>SpO₂ &lt;90%</span></div>
+        <div class="grav-item"><span>🚨</span><span>FR &gt;70/min o apneas</span></div>
+        <div class="grav-item"><span>🚨</span><span>Tiraje severo, quejido</span></div>
+        <div class="grav-item"><span>🚨</span><span>Cianosis, somnolencia</span></div>
+        <div class="grav-item"><span>🏥</span><span><strong>Internación urgente</strong></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO GRAVEDAD -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo para enfermedad grave</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Por qué importa</th></tr>
+        <tr><td><strong>Edad &lt;3 meses</strong></td><td>Riesgo de apneas, patrón respiratorio inmaduro</td></tr>
+        <tr><td><strong>Prematuridad &lt;35 semanas</strong></td><td>Pulmón inmaduro, menor reserva respiratoria</td></tr>
+        <tr><td><strong>Cardiopatía congénita hemodinámicamente significativa</strong></td><td>Menor tolerancia a la hipoxemia</td></tr>
+        <tr><td><strong>Enfermedad pulmonar crónica</strong> (displasia broncopulmonar)</td><td>Reserva pulmonar reducida</td></tr>
+        <tr><td><strong>Inmunodeficiencia</strong></td><td>Infección grave y prolongada</td></tr>
+        <tr><td><strong>Enfermedad neuromuscular</strong></td><td>Mal manejo de secreciones, tos ineficaz</td></tr>
+        <tr><td><strong>Síndrome de Down</strong></td><td>Mayor riesgo de hipoxemia y apneas</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🔵 Tratamiento — basado en evidencia (AAP 2014/2021)</div>
+    <div class="hl-danger">⚠️ La bronquiolitis es una enfermedad <strong>viral y autolimitada</strong>. El tratamiento es de <strong>soporte</strong>. Múltiples intervenciones farmacológicas NO tienen evidencia de beneficio y están contraindicadas de rutina.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Posición y permeabilidad de la vía aérea</strong><br>
+        Posición semiincorporada (30–45°). <strong>Lavado nasal con SF 0,9%</strong> antes de cada toma → mejora la alimentación y reduce la obstrucción. Aspiración nasal suave si hay secreciones que obstruyen. No aspirar profundo de rutina.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Oxigenoterapia</strong><br>
+        Indicada si SpO₂ &lt;90–92% en reposo. Objetivo: mantener SpO₂ ≥95%. Vía: cánula nasal (máx 2 L/min en lactantes), máscara facial. Si no responde o SpO₂ persiste &lt;90% → <strong>OAF (oxígeno de alto flujo)</strong> como primer nivel de soporte avanzado antes del CPAP.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Hidratación y alimentación</strong><br>
+        Mantener la lactancia materna o alimentación oral si el lactante puede comer sin dificultad. Si la taquipnea es marcada (&gt;60/min) o SpO₂ cae con la alimentación → <strong>SNG o hidratación IV</strong>. Solución de mantenimiento: SF 0,9% + glucosa → evitar hipotónicas (riesgo de hiponatremia en contexto viral con ↑ADH).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Solución salina hipertónica nebulizada (SSH 3%)</strong><br>
+        Puede considerarse en pacientes internados con bronquiolitis moderada-grave. La evidencia es moderada — algunos metaanálisis muestran reducción de la estadía hospitalaria (~0,5 días). No recomendada en ambulatorio. <strong>No usar si hay broncoespasmo severo sin broncodilatador previo.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE NO SE USA -->
+  <div class="seccion">
+    <div class="sec-titulo">🚫 Lo que NO tiene indicación en bronquiolitis (evidencia clara)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Intervención</th><th>Evidencia</th><th>Excepción</th></tr>
+        <tr><td><strong>Broncodilatadores (salbutamol)</strong></td><td><span class="badge-no">Sin beneficio</span> — no mejoran SpO₂ ni reducen hospitalizaciones (AAP/Cochrane). El bronquioespasmo no es el mecanismo principal.</td><td>Pueden intentarse como prueba terapéutica única; suspender si no responden</td></tr>
+        <tr><td><strong>Corticoides sistémicos</strong></td><td><span class="badge-no">Sin beneficio</span> — múltiples RCTs no muestran reducción en duración o gravedad</td><td>Solo si se sospecha solapamiento con asma</td></tr>
+        <tr><td><strong>Antibióticos</strong></td><td><span class="badge-no">No indicados</span> — enfermedad viral. La coinfección bacteriana es rara (&lt;1–2%)</td><td>Otitis media aguda asociada, neumonía bacteriana confirmada</td></tr>
+        <tr><td><strong>Adrenalina nebulizada</strong></td><td><span class="badge-no">Sin beneficio sostenido</span> — mejora transitoria en urgencias pero no reduce internación</td><td>Puede usarse en urgencias como puente mientras se evalúa</td></tr>
+        <tr><td><strong>Fisioterapia respiratoria convencional</strong></td><td><span class="badge-no">Sin beneficio</span> — no reduce estadía ni gravedad</td><td>—</td></tr>
+        <tr><td><strong>Mucolíticos, antitusivos, antihistamínicos</strong></td><td><span class="badge-no">No indicados</span></td><td>—</td></tr>
+        <tr><td><strong>Heliox</strong></td><td>Evidencia insuficiente para uso rutinario</td><td>Algunos centros en casos severos</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CRITERIOS INTERNACIÓN Y ALTA -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Criterios de internación y de alta</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterios de internación</th><th>Criterios de alta</th></tr>
+        <tr>
+          <td>
+            SpO₂ &lt;90% persistente<br>
+            FR &gt;70/min o apneas<br>
+            Dificultad para alimentarse / deshidratación<br>
+            Score Wood-Downes ≥4<br>
+            Edad &lt;3 meses con cualquier dificultad respiratoria<br>
+            Factores de riesgo + enfermedad moderada<br>
+            Contexto social desfavorable
+          </td>
+          <td>
+            SpO₂ ≥95% en aire ambiente por ≥4 h<br>
+            FR normal para la edad<br>
+            Come ≥75% de su alimentación habitual<br>
+            Sin tiraje significativo<br>
+            Padres comprenden signos de alarma<br>
+            Acceso a control médico en 24–48 h
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PROFILAXIS VSR -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención — Palivizumab y Nirsevimab</div>
+    <div class="hl-info"><strong>Palivizumab</strong> (anticuerpo monoclonal anti-VSR): profilaxis en grupos de riesgo alto durante la temporada de VSR. Indicaciones: prematuros &lt;29 semanas, cardiopatías congénitas hemodinámicamente significativas, displasia broncopulmonar que requirió tratamiento en los 6 meses previos. Dosis: 15 mg/kg IM mensual durante 5 meses (temporada invernal).</div>
+    <div class="hl-info"><strong>Nirsevimab (Beyfortus):</strong> nuevo anticuerpo monoclonal de vida media larga (anti-VSR prefusión) aprobado en 2023. Dosis única IM para todos los recién nacidos antes de la primera temporada de VSR — no solo grupos de riesgo. Reemplazaría al palivizumab en países donde esté disponible. En Argentina en proceso de incorporación al Calendario Nacional.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Bronquiolitis: &lt;2 años · 1er episodio · diagnóstico clínico</span>
+      <span class="pill">Agente #1: VSR (50–80%)</span>
+      <span class="pill">Pico invernal: junio–agosto en Argentina</span>
+      <span class="pill">SpO₂ &lt;90% = criterio de internación urgente</span>
+      <span class="pill">Score Wood-Downes-Ferrés: 0–3 leve · 4–7 moderada · 8–14 grave</span>
+      <span class="pill">Rx tórax: NO de rutina</span>
+      <span class="pill">Salbutamol: SIN evidencia — no indicado de rutina</span>
+      <span class="pill">Corticoides: SIN beneficio en bronquiolitis</span>
+      <span class="pill">Antibióticos: NO indicados (viral)</span>
+      <span class="pill">Tratamiento: soporte — O₂ + lavado nasal + hidratación</span>
+      <span class="pill">SSH 3% nebulizada: solo en internados, evidencia moderada</span>
+      <span class="pill">FR &gt;60/min: suspender alimentación oral → SNG o IV</span>
+      <span class="pill">Hidratación IV: SF 0,9% con glucosa (no hipotónicas)</span>
+      <span class="pill">Riesgo de apneas: &lt;3 meses · prematuros</span>
+      <span class="pill">Palivizumab: profilaxis en prematuros &lt;29 sem y cardiopatías</span>
+      <span class="pill">Nirsevimab: dosis única · todos los RN antes de la temporada</span>
+      <span class="pill">Alta: SpO₂ ≥95% en aire ambiente ≥4h + come bien</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Academy of Pediatrics (AAP). Clinical Practice Guideline: The Diagnosis, Management, and Prevention of Bronchiolitis. Pediatrics 2014 (reafirmado 2021) · NICE Guideline NG9: Bronchiolitis in children. 2021 · Kliegman RM, St Geme JW et al. Nelson Tratado de Pediatría 21ª ed. Elsevier; 2020 · Sociedad Argentina de Pediatría (SAP). Guía de diagnóstico y tratamiento de bronquiolitis aguda. Arch Argent Pediatr 2014 · Hammitt LL et al. Nirsevimab for Prevention of RSV in Healthy Late-Preterm and Term Infants. N Engl J Med 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
