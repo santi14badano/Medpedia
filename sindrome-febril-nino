@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome Febril en el Niño — Medpedia</title>
+  <meta name="description" content="Síndrome febril pediátrico: fiebre sin foco, lactante febril, algoritmos de Rochester y Philadelphia, manejo por edad. Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ped: #D4730A; --ped-claro: #FEF0DC; --ped-oscuro: #A85608;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ped    { background: #E8F5E9; color: #2E7D32; }
+    .tag-infecto { background: #EEF2FF; color: #3730A3; }
+    .tag-emerg  { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ped { font-size: 16px; font-weight: 500; color: var(--ped); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ped   { border-left: 3px solid var(--ped); background: var(--ped-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ped); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .edad-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+    .edad-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; }
+    .edad-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .edad-badge { font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 20px; }
+    .edad-badge.menor28 { background: #FDEDEC; color: #922B21; }
+    .edad-badge.d28_90  { background: #FEF0DC; color: #8B5E0A; }
+    .edad-badge.m3_36   { background: #E6F1FB; color: #154E82; }
+    .edad-badge.mayor36 { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .edad-titulo { font-size: 14px; font-weight: 500; }
+    .edad-body { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .edad-body strong { color: var(--texto); }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .score-puntos { font-size: 12px; color: var(--texto-ter); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría</a> › Síndrome Febril</div>
+  <div class="titulo">Síndrome Febril en el Niño</div>
+  <div class="meta">
+    <span class="tag tag-ped">Pediatría</span>
+    <span class="tag tag-infecto">Infectología pediátrica</span>
+    <span class="tag tag-emerg">Urgencias</span>
+    <span class="tag tag-fuente">AAP 2021 · SAP · Nelson 21ª · NICE 2013/2021</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y conceptos clave</div>
+    <div class="hl-ped"><strong>Fiebre:</strong> temperatura axilar ≥38°C (rectal ≥38°C, oral ≥37,8°C, timpánica ≥38°C). En la práctica pediátrica argentina se usa <strong>axilar ≥38°C</strong> como punto de corte. La fiebre es un síntoma — no una enfermedad — y en la mayoría de los niños es autolimitada y de causa viral.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Concepto</th><th>Definición</th></tr>
+        <tr><td><strong>Fiebre sin foco (FSF)</strong></td><td>Fiebre aguda (&lt;72 h) sin causa identificable tras la anamnesis y el examen físico completo. Es el escenario más frecuente en urgencias pediátricas.</td></tr>
+        <tr><td><strong>Bacteriemia oculta</strong></td><td>Bacteria en hemocultivo de un niño con buen estado general y sin foco clínico. Principalmente Streptococcus pneumoniae (en la era post-vacunal, muy reducida).</td></tr>
+        <tr><td><strong>Infección bacteriana grave (IBG)</strong></td><td>Meningitis, sepsis, neumonía bacteriana, artritis séptica, osteomielitis, ITU febril, gastroenteritis bacteriana con bacteriemia.</td></tr>
+        <tr><td><strong>Fiebre de origen desconocido (FOD)</strong></td><td>Fiebre &gt;38,3°C documentada durante ≥3 semanas sin diagnóstico tras 1 semana de internación o 3 visitas ambulatorias. Diferente a FSF.</td></tr>
+        <tr><td><strong>Fiebre sin foco + aspecto tóxico</strong></td><td>Emergencia → sepsis hasta demostrar lo contrario. Ver signos de alarma.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SIGNOS DE ALARMA -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Signos de alarma (semáforo NICE — "señales de alerta roja")</div>
+    <div class="hl-danger"><span class="badge-urgente">URGENTE</span> Cualquier señal roja = manejo como sepsis. No esperar resultados para iniciar tratamiento.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Sistema</th><th>🔴 Señal roja — riesgo alto</th><th>🟡 Señal amarilla — riesgo intermedio</th></tr>
+        <tr><td><strong>Color</strong></td><td>Palidez, moteado, cianosis, grisáceo</td><td>Palidez referida por los padres</td></tr>
+        <tr><td><strong>Actividad</strong></td><td>No responde a estímulos, no despertable, llanto débil o ausente</td><td>No sonríe, disminución de actividad</td></tr>
+        <tr><td><strong>Respiración</strong></td><td>FR &gt;60/min, quejido, aleteo nasal, cianosis</td><td>Taquipnea, saturación 95–96%</td></tr>
+        <tr><td><strong>Hidratación</strong></td><td>Piel pastosa/moteada, mucosas secas, ojos hundidos, fontanela deprimida</td><td>Sequedad mucosas, ojos ligeramente hundidos</td></tr>
+        <tr><td><strong>Piel</strong></td><td>Petequias / púrpura (¡meningococcemia!), rash no blanqueable</td><td>Mucosa seca, turgencia reducida</td></tr>
+        <tr><td><strong>Neurológico</strong></td><td>Fontanela abombada, rigidez de nuca, convulsiones, signos meníngeos</td><td>Irritabilidad, llanto consolable</td></tr>
+        <tr><td><strong>Temperatura</strong></td><td>&lt;3 meses con T ≥38°C · &gt;5 días de fiebre</td><td>3–6 meses con T ≥39°C · sin foco evidente</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MANEJO POR EDAD -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟠 Manejo según edad — el punto crítico del examen</div>
+    <div class="hl-ped">El enfoque de la FSF varía radicalmente según la edad. Los lactantes menores tienen mayor riesgo de IBG y menor capacidad de montarlo visible: su respuesta inflamatoria es inmadura y pueden estar graves con examen aparentemente "normal".</div>
+
+    <div class="edad-grid">
+      <div class="edad-card">
+        <div class="edad-header">
+          <span class="edad-badge menor28">&lt;28 días (neonato)</span>
+        </div>
+        <div class="edad-body">
+          <strong>Riesgo de IBG: muy alto (hasta 10–15%).</strong> La fiebre en el neonato es una emergencia hasta demostrar lo contrario — incluso con buen estado general.<br><br>
+          <strong>Manejo mandatorio:</strong><br>
+          → <strong>Internación</strong> siempre<br>
+          → <strong>Hemograma + hemocultivo + urocultivo + punción lumbar</strong> (LCR: citoquímico, cultivo)<br>
+          → <strong>Antibióticos empíricos IV inmediatos</strong> antes de resultados: ampicilina + gentamicina (o ampicilina + cefotaxima si hay sospecha de meningitis)<br>
+          → No esperar resultados para iniciar ATB en &lt;28 días
+        </div>
+      </div>
+
+      <div class="edad-card">
+        <div class="edad-header">
+          <span class="edad-badge d28_90">28–90 días</span>
+        </div>
+        <div class="edad-body">
+          <strong>Riesgo de IBG: 5–10%.</strong> Grupo más complejo: pueden tener buen aspecto y aun así tener IBG. Se usan criterios de estratificación de riesgo.<br><br>
+          <strong>Criterios de Rochester (bajo riesgo — TODOS deben cumplirse):</strong><br>
+          — Buen estado general, sin aspecto tóxico<br>
+          — Sin foco bacteriano en el examen (excepto OMA)<br>
+          — Previamente sano (sin enfermedad crónica, sin ATB previos)<br>
+          — Leucocitos 5.000–15.000/mm³ · Bandas &lt;1.500/mm³<br>
+          — Orina sin leucocituria · Heces sin leucocitos (si hay diarrea)<br><br>
+          <strong>Si cumple Rochester → bajo riesgo:</strong> considerar manejo ambulatorio con hemocultivo + urocultivo + control en 24 h (sin ATB empírico). Algunos protocolos incluyen ceftriaxona IM si no hay seguimiento garantizado.<br><br>
+          <strong>Si NO cumple Rochester → internación + evaluación completa + ATB empírico IV.</strong> Punción lumbar indicada en este grupo.
+        </div>
+      </div>
+
+      <div class="edad-card">
+        <div class="edad-header">
+          <span class="edad-badge m3_36">3–36 meses</span>
+        </div>
+        <div class="edad-body">
+          <strong>Riesgo de bacteriemia oculta: &lt;1–2% en era post-vacunal</strong> (vacuna antineumocócica conjugada redujo drásticamente el riesgo). El principal patógeno era S. pneumoniae.<br><br>
+          <strong>Estratificación:</strong><br>
+          — T &lt;39°C + buen estado general → manejo sintomático, sin laboratorio de rutina<br>
+          — T ≥39°C + buen estado general + inmunizado completo → evaluar foco. Si no hay foco: observar. Urocultivo si niña &lt;24 meses o varón &lt;12 meses no circuncidado (riesgo de ITU)<br>
+          — T ≥39°C + aspecto tóxico o factores de riesgo → hemograma + hemocultivo + urocultivo + PCR/PCT<br><br>
+          <strong>Leucocitos &gt;15.000/mm³ o PCT &gt;0,5 ng/ml o PCR &gt;40 mg/L:</strong> aumentan probabilidad de IBG → ampliar estudio y considerar tratamiento empírico.
+        </div>
+      </div>
+
+      <div class="edad-card">
+        <div class="edad-header">
+          <span class="edad-badge mayor36">&gt;36 meses</span>
+        </div>
+        <div class="edad-body">
+          <strong>Menor riesgo de IBG.</strong> El examen físico es más confiable. En general identificar el foco clínicamente.<br><br>
+          Manejo dirigido al foco identificado. Si no hay foco: observación con antitérmicos y control según evolución. Laboratorio solo si fiebre alta persistente, aspecto tóxico o sospecha específica (artritis, neumonía oculta, etc.).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIOMARCADORES -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Biomarcadores de infección bacteriana</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Biomarcador</th><th>Normal</th><th>Sugestivo de IBG</th><th>Utilidad clínica</th></tr>
+        <tr><td><strong>Leucocitos</strong></td><td>5.000–15.000/mm³</td><td>&gt;15.000 o &lt;5.000</td><td>Sensible pero poco específico · Leucopenia = riesgo alto</td></tr>
+        <tr><td><strong>Neutrófilos absolutos</strong></td><td>&lt;10.000/mm³</td><td>&gt;10.000/mm³</td><td>Mejor que leucocitos totales</td></tr>
+        <tr><td><strong>PCR (Proteína C reactiva)</strong></td><td>&lt;10–20 mg/L</td><td>&gt;40–80 mg/L</td><td>Sube a las 6–12 h, pico a 36–48 h · Buen VPN si negativa desde el inicio</td></tr>
+        <tr><td><strong>Procalcitonina (PCT)</strong></td><td>&lt;0,5 ng/ml</td><td>&gt;0,5–2 ng/ml (sepsis &gt;2, sepsis grave &gt;10)</td><td>Sube más precoz que PCR (2–4 h) · Muy útil en &lt;90 días · Mejor especificidad para IBG</td></tr>
+        <tr><td><strong>Urocultivo</strong></td><td>—</td><td>Cualquier crecimiento &gt;10⁵ UFC/ml (catéter &gt;10⁴)</td><td>Indispensable en &lt;3 meses y niñas &lt;24 meses con FSF</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Orina en el lactante con FSF — trampa frecuente del examen</div>
+      La ITU es la IBG más frecuente en lactantes de 3–36 meses con FSF (3–5% de las niñas, 1% de los varones). El sedimento urinario puede ser <strong>falsamente negativo</strong>. El diagnóstico definitivo es el <strong>urocultivo</strong>. Recolectar por cateterismo vesical o punción suprapúbica (no por bolsa perineal — alto índice de contaminación). Tratar con amoxicilina-clavulánico o cefalexina VO si no hay aspecto tóxico, ceftriaxona IV si hay compromiso sistémico.
+    </div>
+  </div>
+
+  <!-- ANTITÉRMICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Antitérmicos — uso racional</div>
+    <div class="hl">El objetivo del antitérmico es el <strong>confort del niño</strong>, no la normalización de la temperatura. La fiebre por sí sola no daña al cerebro (la lesión neurológica ocurre a temperaturas &gt;41–42°C, no a 38–39°C). No es necesario tratar fiebre baja si el niño está en buen estado general.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fármaco</th><th>Dosis</th><th>Intervalo</th><th>Consideraciones</th></tr>
+        <tr><td><strong>Paracetamol (acetaminofén)</strong></td><td>15 mg/kg/dosis VO o VR</td><td>c/4–6 h · máx 5 dosis/día</td><td>De elección a cualquier edad · incluido &lt;3 meses. Sin riesgo de síndrome de Reye. Hepático en sobredosis.</td></tr>
+        <tr><td><strong>Ibuprofeno</strong></td><td>10 mg/kg/dosis VO</td><td>c/6–8 h</td><td>Solo ≥6 meses · más duradero que paracetamol. Contraindicado en varicela (fascitis necrotizante), deshidratación, nefropatía.</td></tr>
+        <tr><td><strong>Metamizol (dipirona)</strong></td><td>15–20 mg/kg/dosis VO o IV</td><td>c/6–8 h</td><td>Usado en Argentina. Riesgo de agranulocitosis (infrecuente). No recomendado en &lt;3 meses. Útil en fiebre alta refractaria.</td></tr>
+        <tr><td><strong>Aspirina</strong></td><td>—</td><td>—</td><td><strong>CONTRAINDICADA</strong> en &lt;18 años con enfermedades virales → Síndrome de Reye (encefalopatía + falla hepática). Excepción: Kawasaki.</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Alternancia paracetamol-ibuprofeno:</strong> práctica común pero no recomendada rutinariamente por las guías (riesgo de confusión de dosis, mayor carga de fármacos). Solo considerar si fiebre alta muy persistente y molestia significativa, con instrucciones muy claras a los padres.</div>
+  </div>
+
+  <!-- FIEBRE + PETEQUIAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Fiebre + petequias — siempre emergencia</div>
+    <div class="hl-danger"><strong>Fiebre + petequias o púrpura</strong> = meningococcemia hasta demostrar lo contrario. <strong>No demorar el tratamiento</strong> — mortalidad de 20–40% sin tratamiento precoz. Actuar en los primeros minutos.</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Evaluación inmediata:</strong> si el niño está inestable → 2 vías periféricas, expansión con SF 20 ml/kg, <strong>ceftriaxona 100 mg/kg IV/IM</strong> (máx 4 g) SIN ESPERAR cultivos. Hemocultivo si es posible antes, pero no retrasar el ATB.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Si el niño está estable con petequias:</strong> evaluar distribución (petequias en línea de presión — cara por llanto — son menos preocupantes). Hemograma + hemocultivo + coagulograma. Si PCT &gt;2 o leucocitos &gt;15.000 o aspecto deteriora → iniciar ceftriaxona y observación mínima 4–6 h.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Antibiótico de elección:</strong> ceftriaxona 100 mg/kg/día IV (máx 4 g/día) ÷ 1–2 dosis. Alternativa en alérgicos graves a beta-lactámicos: cloranfenicol. Corticoides (dexametasona 0,15 mg/kg c/6 h × 4 días) en meningitis bacteriana confirmada → reducen secuelas neurológicas, especialmente en H. influenzae.</div>
+    </div>
+  </div>
+
+  <!-- CONVULSIÓN FEBRIL (breve) -->
+  <div class="seccion">
+    <div class="sec-titulo">ℹ️ Convulsión febril — concepto clave</div>
+    <div class="hl-info">Convulsión febril simple: niño 6 meses–5 años, convulsión tónico-clónica generalizada &lt;15 min, única en 24 h, sin focalidad neurológica post-ictal. Es benigna — no requiere punción lumbar de rutina (salvo en &lt;12–18 meses o signos meníngeos). No usar antiepilépticos profilácticos. Riesgo de recurrencia: 30–50% pero sin secuelas. Ver tema específico para manejo completo.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Fiebre: axilar ≥38°C en pediatría argentina</span>
+      <span class="pill">FSF: fiebre &lt;72 h sin causa tras examen completo</span>
+      <span class="pill">&lt;28 días: siempre internar + PL + ATB empírico inmediato</span>
+      <span class="pill">28–90 días: criterios de Rochester para estratificar riesgo</span>
+      <span class="pill">Rochester: leucocitos 5.000–15.000 + bandas &lt;1.500 + sano</span>
+      <span class="pill">3–36 meses: bacteriemia oculta &lt;1% en era post-vacunal</span>
+      <span class="pill">S. pneumoniae: principal patógeno de bacteriemia oculta (era pre-vacunal)</span>
+      <span class="pill">PCT: sube en 2–4 h · más específica que PCR para IBG</span>
+      <span class="pill">ITU: causa más frecuente de IBG en 3–36 meses</span>
+      <span class="pill">Orina: cateterismo o PSP · no bolsa perineal</span>
+      <span class="pill">Paracetamol: 15 mg/kg c/4–6 h · cualquier edad</span>
+      <span class="pill">Ibuprofeno: solo ≥6 meses · contraindicado en varicela</span>
+      <span class="pill">Aspirina: CONTRAINDICADA &lt;18 años (síndrome de Reye)</span>
+      <span class="pill">Fiebre + petequias = meningococcemia → ceftriaxona urgente</span>
+      <span class="pill">Ceftriaxona meningococcemia: 100 mg/kg IV (máx 4 g)</span>
+      <span class="pill">Dexametasona en meningitis: reduce secuelas (H. influenzae)</span>
+      <span class="pill">FOD: fiebre &gt;38,3°C por ≥3 semanas sin diagnóstico</span>
+      <span class="pill">Aspecto tóxico: tratar como sepsis sin importar el número</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Academy of Pediatrics (AAP). Febrile Infants — Clinical Practice Guideline. Pediatrics 2021 · NICE Clinical Guideline CG160: Fever in under 5s. 2013 (updated 2021) · Kliegman RM, St Geme JW et al. Nelson Tratado de Pediatría 21ª ed. Elsevier; 2020 · Pantell RH et al. Management of Febrile Infants 8-60 Days Old. Pediatrics 2021 · Sociedad Argentina de Pediatría (SAP). Guías de práctica clínica en pediatría. Arch Argent Pediatr.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
