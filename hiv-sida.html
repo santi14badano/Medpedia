@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIV / SIDA — Medpedia</title>
+  <meta name="description" content="HIV/SIDA: diagnóstico, estadificación, TAR, infecciones oportunistas y profilaxis. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --infecto: #6A1B9A; --infecto-claro: #F3E5F5; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--infecto-claro); color: var(--infecto); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .cd4-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 10px; overflow: hidden; border: 1px solid var(--borde); margin-bottom: 10px; font-size: 12px; }
+    .cd4-zona { padding: 10px 12px; line-height: 1.5; }
+    .cd4-zona strong { display: block; font-size: 13px; margin-bottom: 4px; }
+    .zona-verde { background: #E8F5E9; }
+    .zona-amarilla { background: #FFFDE7; }
+    .zona-naranja { background: #FFF3E0; }
+    .zona-roja { background: #FFEBEE; }
+    @media(max-width:600px){ .cd4-bar { grid-template-columns: 1fr 1fr; } }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › HIV / SIDA</div>
+  <div class="titulo">HIV / SIDA</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-fuente">DHHS 2024 · Guía Argentina PNA VIH 2023</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>El <strong>VIH</strong> es un retrovirus ARN que infecta principalmente los <strong>linfocitos T CD4+</strong>. La pérdida progresiva de CD4 lleva a la inmunodeficiencia que define el <strong>SIDA</strong>: CD4 &lt;200/mm³ OR presencia de una enfermedad definitoria de SIDA, independientemente del recuento de CD4.</p>
+      <p>Con el TAR moderno, una persona que inicia tratamiento precozmente tiene una esperanza de vida similar a la población general. <strong>U=U (Undetectable = Untransmittable)</strong>: con carga viral indetectable el riesgo de transmisión sexual es prácticamente cero.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Historia natural — infecciones oportunistas según CD4</div>
+    <div class="cd4-bar">
+      <div class="cd4-zona zona-verde"><strong>&gt;500 CD4</strong>Asintomático o síndrome retroviral agudo. Sin IO.</div>
+      <div class="cd4-zona zona-amarilla"><strong>200–500 CD4</strong>Candidiasis oral, leucoplasia vellosa, herpes zóster, anemia, trombocitopenia.</div>
+      <div class="cd4-zona zona-naranja"><strong>100–200 CD4</strong>PCP, TBC pulmonar, toxoplasmosis cerebral.</div>
+      <div class="cd4-zona zona-roja"><strong>&lt;100 CD4</strong>CMV, Criptococo, MAC, LMP (JC virus), Histoplasma, Sarcoma de Kaposi avanzado.</div>
+    </div>
+    <div class="hl-info"><strong>Síndrome retroviral agudo:</strong> 2–4 semanas post-exposición. Fiebre + adenopatías + faringitis + rash maculopapular + mialgias. Similar a mononucleosis. ELISA puede ser negativo — diagnosticar con carga viral plasmática.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🧪 Diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Test</th><th>Uso</th><th>Clave</th></tr>
+        <tr><td><strong>ELISA 4ª generación (Ag/Ac)</strong></td><td>Screening de elección</td><td>Detecta Ag p24 + Ac anti-VIH 1 y 2. Ventana: 18–45 días. Si reactivo → confirmar con Western Blot</td></tr>
+        <tr><td><strong>Western Blot / INNO-LIA</strong></td><td>Confirmación</td><td>Positivo si ≥2 bandas. Indeterminado: repetir en 4–6 semanas</td></tr>
+        <tr><td><strong>Carga viral (PCR ARN)</strong></td><td>Diagnóstico agudo · monitoreo TAR</td><td>Detectable desde los 10–11 días. Meta del TAR: &lt;50 copias/mL</td></tr>
+        <tr><td><strong>Recuento CD4</strong></td><td>Estadificación · profilaxis · monitoreo</td><td>Normal: 500–1500/mm³. &lt;200 define SIDA. &lt;100: IO graves</td></tr>
+        <tr><td><strong>Test rápido</strong></td><td>Urgencias, maternidad, PEP</td><td>Alta sensibilidad. Siempre confirmar si reactivo</td></tr>
+      </table>
+    </div>
+    <div class="hl">En Argentina el <strong>ELISA es gratuito</strong> en todos los centros de salud públicos (Ley 23.798). Se ofrece a toda persona que lo solicite, embarazadas, personas con FRCV para VIH y ante toda ITS diagnosticada.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento antirretroviral (TAR)</div>
+    <div class="hl-danger"><strong>TAR indicado en TODOS los pacientes con VIH, independientemente del CD4.</strong> Iniciar idealmente en la misma visita del diagnóstico ("same-day start").</div>
+
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">BIC/TAF/FTC — Bictegravir / Tenofovir alafenamida / Emtricitabina</div>
+      <div class="farma-clase">INSTI + 2 ITIAN · régimen preferido de primera línea en Argentina 2023</div>
+      <div class="dosis-badge">1 comprimido VO 1 vez al día</div>
+      <div class="farma-detalle">Alta barrera genética a la resistencia, excelente tolerabilidad, 1 comprimido/día. TAF tiene menor nefrotoxicidad y menor impacto óseo que TDF. Disponible en el sistema público argentino.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">DTG/ABC/3TC — Dolutegravir / Abacavir / Lamivudina</div>
+      <div class="farma-clase">INSTI + 2 ITIAN · alternativa de primera línea</div>
+      <div class="dosis-badge">1 comprimido VO 1 vez al día</div>
+      <div class="farma-detalle">Requiere <strong>HLA-B*5701</strong> negativo antes de iniciar (reacción de hipersensibilidad grave si positivo). Evitar DTG en <strong>1er trimestre del embarazo</strong> (riesgo de defectos del tubo neural).</div>
+    </div>
+
+    <div class="subtitulo-bloque">Clases de antirretrovirales</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Clase</th><th>Mecanismo</th><th>Ejemplos</th></tr>
+        <tr><td><strong>ITIAN</strong></td><td>Terminadores de cadena — inhiben transcriptasa inversa</td><td>Tenofovir (TDF/TAF), Abacavir, Lamivudina, Emtricitabina, Zidovudina</td></tr>
+        <tr><td><strong>ITINAN</strong></td><td>Bloqueo alostérico de la transcriptasa inversa</td><td>Efavirenz, Rilpivirina, Doravirina, Nevirapina</td></tr>
+        <tr><td><strong>IP</strong></td><td>Bloquean maduración viral</td><td>Darunavir, Lopinavir, Atazanavir (+ ritonavir o cobicistat como booster)</td></tr>
+        <tr><td><strong>INSTI</strong></td><td>Bloquean integración del ADN viral</td><td>Dolutegravir, Bictegravir, Raltegravir, Elvitegravir</td></tr>
+        <tr><td><strong>Inhibidores de entrada</strong></td><td>Bloquean fusión o correceptor CCR5</td><td>Maraviroc (anti-CCR5), Enfuvirtida</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Infecciones oportunistas — diagnóstico y tratamiento</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>IO</th><th>CD4</th><th>Presentación / Dx</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Neumonía por P. jirovecii (PCP)</strong></td><td>&lt;200</td><td>Tos seca, disnea progresiva, fiebre, hipoxemia. Rx: infiltrado intersticial bilateral. Dx: LBA + PCR · β-D-glucano ↑</td><td>TMP-SMX 15–20 mg/kg/día (TMP) × 21 días. <strong>Corticoides si PaO₂ &lt;70 mmHg</strong></td></tr>
+        <tr><td><strong>Toxoplasmosis cerebral</strong></td><td>&lt;100–200</td><td>Cefalea, fiebre, déficit focal, convulsiones. RMN: lesiones en anillo múltiples con edema. IgG Toxoplasma+</td><td>Pirimetamina + Sulfadiazina + Leucovorina × 6 sem → mantenimiento</td></tr>
+        <tr><td><strong>Meningitis criptocócica</strong></td><td>&lt;100</td><td>Cefalea subaguda, presión apertura muy elevada. LCR: tinta india + Ag criptocócico (S &gt;99%)</td><td>Anfotericina B liposomal + 5-fluocitosina × 2 sem → Fluconazol</td></tr>
+        <tr><td><strong>Retinitis por CMV</strong></td><td>&lt;50</td><td>Pérdida visual, moscas volantes. Fondo de ojo: aspecto de "pizza". PCR CMV</td><td>Valganciclovir VO o Ganciclovir IV × 2–3 sem → mantenimiento</td></tr>
+        <tr><td><strong>TBC (cualquier localización)</strong></td><td>Cualquier CD4</td><td>Fiebre, sudores, pérdida de peso, tos. PPD puede ser negativa. Xpert MTB/RIF</td><td>RIPE × 2 m → RI × 4–7 m. Iniciar TAR 2–8 sem post-inicio ATB</td></tr>
+        <tr><td><strong>Histoplasmosis diseminada</strong></td><td>&lt;100</td><td>Fiebre, hepatoesplenomegalia, lesiones cutáneas. Ag urinario Histoplasma</td><td>Anfotericina B liposomal → Itraconazol VO</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Profilaxis de infecciones oportunistas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>CD4</th><th>IO a prevenir</th><th>Droga de elección</th></tr>
+        <tr><td>&lt;200</td><td>PCP primaria</td><td>TMP-SMX 1 comp (160/800 mg) diario o 3×/semana</td></tr>
+        <tr><td>&lt;100 + IgG Toxo+</td><td>Toxoplasmosis</td><td>TMP-SMX (misma dosis — cubre PCP y Toxo)</td></tr>
+        <tr><td>&lt;50</td><td>MAC</td><td>Azitromicina 1200 mg/semana</td></tr>
+        <tr><td>Cualquier CD4</td><td>TBC latente (PPD ≥5 mm o IGRA+)</td><td>Isoniacida 300 mg/día × 6–9 meses + Piridoxina</td></tr>
+      </table>
+    </div>
+    <div class="hl">Las profilaxis pueden <strong>suspenderse</strong> cuando el CD4 se recupera por encima del umbral durante ≥3–6 meses con TAR efectivo.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💉 PEP y PrEP</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>PEP (post-exposición)</th><th>PrEP (pre-exposición)</th></tr>
+        <tr><td><strong>Indicación</strong></td><td>Exposición de riesgo en VIH negativo</td><td>VIH negativo con alto riesgo sostenido</td></tr>
+        <tr><td><strong>Inicio</strong></td><td>Dentro de las <strong>72 h</strong> (idealmente &lt;2 h)</td><td>Antes de la exposición</td></tr>
+        <tr><td><strong>Duración</strong></td><td>28 días</td><td>Continua o "on demand" (2-1-1)</td></tr>
+        <tr><td><strong>Régimen</strong></td><td>TDF/FTC + Dolutegravir</td><td>TDF/FTC diario</td></tr>
+        <tr><td><strong>Argentina</strong></td><td>Gratuita en hospitales públicos</td><td>Disponible en sistema público desde 2022</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SIDA: CD4 &lt;200 O enfermedad definitoria</span>
+      <span class="pill">Síndrome retroviral agudo — similar a mono</span>
+      <span class="pill">ELISA 4ª gen — screening de elección</span>
+      <span class="pill">Carga viral — diagnóstico en fase aguda</span>
+      <span class="pill">TAR en todos, independientemente del CD4</span>
+      <span class="pill">U=U: indetectable = intransmisible</span>
+      <span class="pill">PCP: TMP-SMX + corticoides si PaO₂ &lt;70</span>
+      <span class="pill">Toxo: lesiones en anillo múltiples en RMN</span>
+      <span class="pill">Criptococo: tinta india + Ag criptocócico</span>
+      <span class="pill">CMV retinitis: CD4 &lt;50 → valganciclovir</span>
+      <span class="pill">TMP-SMX: profilaxis PCP + Toxoplasma</span>
+      <span class="pill">PEP: dentro de las 72 h, 28 días</span>
+      <span class="pill">HLA-B*5701 antes de abacavir</span>
+      <span class="pill">DTG evitar en 1er trimestre embarazo</span>
+      <span class="pill">TBC + VIH: iniciar TAR 2–8 sem post-ATB</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: DHHS Guidelines for Antiretroviral Agents in Adults and Adolescents 2024 · Guía para la Atención Integral de Personas con VIH en el PNA — Ministerio de Salud Argentina 2023 · WHO Consolidated Guidelines on HIV 2021 · Harrison 21ª ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
