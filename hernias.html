@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hernias de la Pared Abdominal — Medpedia</title>
+  <meta name="description" content="Hernias inguinal, crural, umbilical, eventración y Spiegel. Diagnóstico, clasificación y tratamiento quirúrgico. EU y Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --cir: #1A5E9A; --cir-claro: #E6F1FB; --cir-oscuro: #154E82;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cir    { background: #E3F2FD; color: #1565C0; }
+    .tag-emerg  { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-cir { font-size: 16px; font-weight: 500; color: var(--cir); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-cir   { border-left: 3px solid var(--cir); background: var(--cir-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--cir); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-r { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+
+    /* HERNIA CARDS */
+    .hernia-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .h-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 16px; overflow: hidden; }
+    .h-header { padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--borde); }
+    .h-nombre { font-size: 17px; font-weight: 600; color: var(--texto); margin-bottom: 2px; }
+    .h-sub    { font-size: 12px; color: var(--texto-ter); }
+    .h-body   { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 640px) { .h-body { grid-template-columns: 1fr; } }
+    .h-col    { padding: 1rem 1.25rem; border-right: 1px solid var(--borde); font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .h-col:last-child { border-right: none; }
+    .h-col-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texto-ter); margin-bottom: 8px; }
+    .h-col strong { color: var(--texto); }
+    .h-footer { padding: 0.75rem 1.25rem; background: var(--fondo); border-top: 1px solid var(--borde); font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .h-footer strong { color: var(--texto); }
+
+    /* color accent por hernia */
+    .h-inguinal  .h-header { background: #EEF2FF; border-bottom-color: #C7D2FE; }
+    .h-inguinal  .h-nombre { color: #3730A3; }
+    .h-crural    .h-header { background: #FEF0DC; border-bottom-color: #FCD29F; }
+    .h-crural    .h-nombre { color: #D4730A; }
+    .h-umbilical .h-header { background: var(--verde-claro); border-bottom-color: #a8d8c0; }
+    .h-umbilical .h-nombre { color: var(--verde-oscuro); }
+    .h-spiegel   .h-header { background: #EDE7F6; border-bottom-color: #CE93D8; }
+    .h-spiegel   .h-nombre { color: #5C2D78; }
+    .h-eventracion .h-header { background: var(--rojo-claro); border-bottom-color: #F1948A; }
+    .h-eventracion .h-nombre { color: #922B21; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Hernias de la Pared Abdominal</div>
+  <div class="titulo">Hernias de la Pared Abdominal</div>
+  <div class="meta">
+    <span class="tag tag-cir">Cirugía general</span>
+    <span class="tag tag-emerg">Complicaciones urgentes</span>
+    <span class="tag tag-fuente">Schwartz 11ª ed. · Giménez 2ª ed. · Brunicardi Schwartz 11ª · NIDDK</span>
+  </div>
+
+  <!-- CONCEPTO GENERAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto general y componentes de toda hernia</div>
+    <div class="hl-cir"><strong>Hernia:</strong> protrusión de un órgano o tejido a través de un defecto o zona débil de la pared que normalmente lo contiene. Toda hernia tiene: <strong>saco herniario</strong> (peritoneo parietal que forma el saco), <strong>contenido</strong> (intestino, epiplón, ovario, vejiga) y <strong>orificio herniario</strong> (defecto por donde protruye).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Término</th><th>Definición</th></tr>
+        <tr><td><strong>Hernia reductible</strong></td><td>El contenido puede volver a la cavidad abdominal espontáneamente o con maniobra manual. Sin urgencia inmediata.</td></tr>
+        <tr><td><strong>Hernia irreductible (encarcelada)</strong></td><td>El contenido no puede reducirse pero no hay compromiso vascular aún. Indicación quirúrgica electiva urgente.</td></tr>
+        <tr><td><strong>Hernia estrangulada</strong></td><td>Compromiso vascular del contenido → isquemia → necrosis → <strong>urgencia quirúrgica absoluta</strong>. Clínica: dolor intenso, signos de obstrucción, fiebre, leucocitosis.</td></tr>
+        <tr><td><strong>Hernia de Richter</strong></td><td>Solo se estrangula una parte de la circunferencia del intestino (borde antimesentérico) → puede haber necrosis sin obstrucción completa → diagnóstico difícil</td></tr>
+        <tr><td><strong>Hernia de Littre</strong></td><td>El contenido del saco es un divertículo de Meckel</td></tr>
+        <tr><td><strong>Deslizamiento herniario</strong></td><td>La pared de un órgano (colon, vejiga) forma parte de la pared del saco herniario</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger"><span class="badge-urgente">URGENCIA</span> <strong>Hernia estrangulada = cirugía de urgencia.</strong> Signos de alarma: dolor irreductible de aparición brusca, eritema y calor sobre la hernia, fiebre, vómitos, ausencia de gases. No reducir manualmente una hernia con signos de estrangulación → riesgo de reducir intestino necrótico.</div>
+  </div>
+
+  <!-- HERNIAS EN DETALLE -->
+  <div class="seccion">
+    <div class="sec-titulo-cir">🔵 Tipos de hernia — anatomía, diagnóstico y tratamiento</div>
+    <div class="hernia-grid">
+
+      <!-- INGUINAL -->
+      <div class="h-card h-inguinal">
+        <div class="h-header">
+          <div class="h-nombre">Hernia Inguinal</div>
+          <div class="h-sub">La más frecuente de todas — 75% de las hernias abdominales · Predomina en varones (♂:♀ = 9:1)</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Anatomía y tipos</div>
+            <strong>Triángulo de Hesselbach:</strong> límites: ligamento inguinal (inf), vasos epigástricos inferiores (lat), borde lateral del recto abdominal (med).<br><br>
+            <strong>Hernia indirecta (oblicua externa):</strong> pasa por el <strong>orificio inguinal interno</strong> (lateral a los vasos epigástricos) → sigue el canal inguinal → puede llegar al escroto. Más frecuente en <strong>jóvenes y niños</strong>. Causa: persistencia del conducto peritoneo-vaginal.<br><br>
+            <strong>Hernia directa:</strong> protruye a través del <strong>triángulo de Hesselbach</strong> (medial a los vasos epigástricos) → debilidad adquirida de la fascia transversalis. Más frecuente en <strong>adultos mayores</strong>. Riesgo de estrangulación menor que la indirecta.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica y diagnóstico</div>
+            Tumoración inguinal que aparece con maniobras de Valsalva (tos, esfuerzo, defecación) y se reduce en decúbito.<br><br>
+            <strong>Exploración:</strong> con el paciente de pie y toser → el examinador introduce el dedo por el escroto hacia el canal inguinal.<br>
+            — Impulso en la punta del dedo → hernia <strong>indirecta</strong><br>
+            — Impulso en la yema del dedo → hernia <strong>directa</strong><br><br>
+            <strong>Diagnóstico:</strong> clínico en la mayoría. <strong>Eco</strong> si duda o hernia no palpable. <strong>TC</strong> en hernias complicadas o recidivadas.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Cirugía electiva</strong> en toda hernia inguinal sintomática o con riesgo de complicación.<br><br>
+            <strong>Técnicas sin tensión (tension-free) — estándar actual:</strong><br>
+            → <strong>Lichtenstein</strong> (abierta): malla de polipropileno sobre el suelo del canal inguinal. De elección en adultos. Recidiva &lt;1%.<br>
+            → <strong>TEP / TAPP</strong> (laparoscópica): menor dolor postop, retorno precoz al trabajo, preferida en hernias bilaterales o recidivadas.<br><br>
+            <strong>Técnicas con tensión (históricas, menos usadas):</strong> Bassini, Shouldice (mejor entre las con tensión).<br><br>
+            <strong>Urgencia:</strong> estrangulación → laparotomía exploradora → resección intestinal si necrosis.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave del examen:</strong> indirecta = lateral a epigástricos = más frecuente = jóvenes. Directa = medial = triángulo de Hesselbach = adultos mayores. Lichtenstein = técnica estándar actual. Hernia inguinal → el contenido más frecuente es el intestino delgado (y el epiplón).</div>
+      </div>
+
+      <!-- CRURAL -->
+      <div class="h-card h-crural">
+        <div class="h-header">
+          <div class="h-nombre">Hernia Crural (Femoral)</div>
+          <div class="h-sub">10% de las hernias · Mayor riesgo de estrangulación que la inguinal · Predomina en mujeres (♀:♂ = 4:1)</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Anatomía</div>
+            Protruye a través del <strong>anillo femoral</strong> → canal femoral → cara anterior del muslo, debajo del ligamento inguinal y <strong>medial a los vasos femorales</strong>.<br><br>
+            El anillo femoral es naturalmente estrecho → <strong>mayor riesgo de estrangulación</strong> que la hernia inguinal.<br><br>
+            <strong>Triángulo femoral (de Scarpa):</strong> ligamento inguinal (sup), sartorio (lat), aductor largo (med). La hernia aparece en el vértice.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica y diagnóstico</div>
+            Tumoración pequeña, dura, en la región inguinal <strong>por debajo del ligamento inguinal</strong> y medial a la vena femoral.<br><br>
+            Frecuentemente <strong>asintomática hasta que se estrangula</strong> → muchas se diagnostican como urgencia.<br><br>
+            Puede confundirse con: ganglio inguinal, lipoma, aneurisma femoral, várices safenas.<br><br>
+            <strong>Hernia de Richter</strong> es especialmente frecuente en la hernia crural (anillo pequeño, solo pellizca parte del intestino).
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Cirugía siempre</strong> — incluso en hernias asintomáticas por el alto riesgo de estrangulación.<br><br>
+            <strong>Vías de abordaje:</strong><br>
+            → <strong>Vía inguinal (de McVay/Cooper):</strong> acceso al ligamento de Cooper para cierre del anillo femoral. Más común.<br>
+            → <strong>Vía crural (infrainguinal):</strong> acceso directo al anillo. Más simple, mayor tasa de recidiva.<br>
+            → <strong>Vía preperitoneal (Nyhus):</strong> buen acceso al anillo femoral, preferida en urgencias.<br>
+            → <strong>Laparoscópica (TEP/TAPP):</strong> de elección en centros con experiencia.<br><br>
+            <strong>Urgencia:</strong> resección intestinal si necrosis.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave del examen:</strong> crural = debajo del ligamento inguinal + medial a la vena femoral. Mayor riesgo de estrangulación que la inguinal. Más frecuente en mujeres. Cirugía siempre aunque sea asintomática.</div>
+      </div>
+
+      <!-- UMBILICAL -->
+      <div class="h-card h-umbilical">
+        <div class="h-header">
+          <div class="h-nombre">Hernia Umbilical</div>
+          <div class="h-sub">Frecuente en lactantes y adultos · En niños habitualmente cierra sola</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Fisiopatología y tipos</div>
+            Defecto en el <strong>anillo umbilical</strong>.<br><br>
+            <strong>En lactantes/niños:</strong> muy frecuente (especialmente en prematuros y raza negra). La mayoría cierra espontáneamente antes de los 4 años. Cirugía si no cerró a los 4–5 años o si el defecto es &gt;1,5 cm.<br><br>
+            <strong>En adultos:</strong> adquirida por aumento de presión intraabdominal: obesidad, embarazo, ascitis, multiparidad. Mayor riesgo de incarceración que en niños.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica</div>
+            Tumoración en el ombligo, reductible, que aumenta con el llanto (niños) o con esfuerzo (adultos).<br><br>
+            Contenido habitual: epiplón mayor (adultos) · intestino delgado (niños y adultos en hernias grandes).<br><br>
+            En pacientes con <strong>ascitis por cirrosis</strong>: la hernia umbilical puede ulcerarse y romperse → peritonitis → emergencia.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Niños:</strong> observación hasta los 4–5 años → cirugía si no cierra o defecto &gt;1,5 cm (rafia umbilical simple).<br><br>
+            <strong>Adultos:</strong> cirugía electiva en toda hernia umbilical sintomática.<br>
+            → Defectos pequeños (&lt;3 cm): rafia primaria (Mayo — técnica en "chaleco sobre pantalón").<br>
+            → Defectos grandes (&gt;3 cm): malla (menor recidiva).<br><br>
+            <strong>Contraindicación relativa:</strong> ascitis no controlada → tratar primero la causa (cirrosis) antes de operar.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave:</strong> en niños cierra sola antes de los 4 años. En adultos con cirrosis y ascitis: riesgo de rotura → urgencia. Técnica de Mayo = rafia en chaleco para defectos pequeños.</div>
+      </div>
+
+      <!-- SPIEGEL -->
+      <div class="h-card h-spiegel">
+        <div class="h-header">
+          <div class="h-nombre">Hernia de Spiegel</div>
+          <div class="h-sub">Hernia rara · Frecuentemente oculta · Alta tasa de estrangulación</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Anatomía</div>
+            Protruye a través de la <strong>línea semilunar de Spiegel</strong> (borde lateral de la vaina del recto abdominal) en la zona donde termina la vaina posterior del recto (por debajo de la línea arqueada de Douglas).<br><br>
+            Localización más frecuente: entre el ombligo y la espina ilíaca anterosuperior derecha.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica y diagnóstico</div>
+            <strong>Hernia intersticial o interparietal</strong>: el saco queda atrapado entre las capas musculares → no forma una tumoración visible → <strong>difícil de palpar</strong>.<br><br>
+            Dolor lateral abdominal que aumenta con el esfuerzo, sin tumoración evidente.<br><br>
+            <strong>Diagnóstico:</strong> <strong>ecografía</strong> o <strong>TC abdominal</strong> → de elección por ser hernia oculta. Alta tasa de diagnóstico tardío.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Cirugía siempre</strong> dado el alto riesgo de incarceración y estrangulación.<br><br>
+            → Abordaje abierto: rafia o malla según tamaño del defecto.<br>
+            → Abordaje laparoscópico: de elección por ser hernia no palpable (difícil localizar el defecto por vía abierta sin laparoscopía).
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave:</strong> Spiegel = línea semilunar = hernia oculta entre capas musculares = diagnóstico por eco/TC. Alta tasa de estrangulación. Siempre operar.</div>
+      </div>
+
+      <!-- EVENTRACIÓN -->
+      <div class="h-card h-eventracion">
+        <div class="h-header">
+          <div class="h-nombre">Eventraciones y Evisceración</div>
+          <div class="h-sub">Complicación de laparotomías previas</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Definición y diferencias</div>
+            <strong>Eventración (hernia incisional):</strong> herniación de contenido abdominal a través de la cicatriz de una laparotomía previa. El saco está cubierto por piel.<br><br>
+            <strong>Dehiscencia de la herida:</strong> apertura de los planos profundos de la herida quirúrgica sin herniación (puede progresar a evisceración).<br><br>
+            <strong>Evisceración:</strong> salida de vísceras a través de una herida abierta (sin cobertura peritoneal ni de piel) → <strong>urgencia quirúrgica absoluta</strong>.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Factores de riesgo</div>
+            Relacionados con el paciente: obesidad, desnutrición, DM, inmunosupresión, corticoides, EPOC (tos crónica → aumento de PIA), anemia.<br><br>
+            Relacionados con la cirugía: infección de herida (FR más importante), cierre deficiente de la aponeurosis, sutura a tensión, hematoma de pared, reoperación precoz.<br><br>
+            Incidencia de eventración post-laparotomía: 10–15% en general, hasta 30% en pacientes obesos o con infección de herida.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Eventración:</strong><br>
+            → Pequeña (&lt;4 cm): rafia primaria puede intentarse.<br>
+            → Mediana-grande (&gt;4 cm): <strong>malla siempre</strong> (recidiva del 50% sin malla vs 10–15% con malla).<br>
+            → Posición de la malla: onlay (sobre la aponeurosis), sublay/retromuscular (preperitoneal, mejor), inlay (en el defecto).<br>
+            → Laparoscópica (IPOM): malla intraperitoneal con tackers → menor morbilidad de herida.<br><br>
+            <strong>Evisceración aguda:</strong><br>
+            → Cubrir con gasas húmedas estériles → cirugía urgente → lavado + cierre.<br>
+            → NO intentar reducir manualmente las vísceras en guardia sin condiciones quirúrgicas.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave:</strong> eventracion = hernia por cicatriz de laparotomía. FR #1 = infección de herida. Malla siempre en defectos &gt;4 cm. Evisceración = urgencia absoluta → cubrir + cirugía inmediata.</div>
+      </div>
+
+      <!-- EPIGÁSTRICA -->
+      <div class="h-card" style="border-top:3px solid #7B3FA0;">
+        <div class="h-header" style="background:#F3E8FC; border-bottom-color:#CE93D8;">
+          <div class="h-nombre" style="color:#5C2D78;">Hernia Epigástrica</div>
+          <div class="h-sub">3–5% de las hernias · Línea alba entre ombligo y xifoides · Contenido habitual: grasa preperitoneal</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Anatomía y fisiopatología</div>
+            Defecto en la <strong>línea alba</strong> entre el apéndice xifoides y el ombligo. Suelen ser defectos pequeños (1–2 cm) que permiten la salida de grasa preperitoneal (lipoma herniario) y raramente de epiplón o intestino.<br><br>
+            Más frecuente en hombres de 20–50 años. Pueden ser <strong>múltiples</strong> (20% de los casos).
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica y diagnóstico</div>
+            Dolor epigástrico que empeora con el esfuerzo y la palpación. Puede simular patología gástrica, biliar o cardíaca.<br><br>
+            La tumoración es pequeña y puede no ser visible — <strong>palpar la línea alba en toda su extensión</strong> con el paciente en contracción abdominal.<br><br>
+            Diagnóstico: <strong>clínico</strong> en la mayoría · Eco o TC si hay duda.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            Cirugía electiva: rafia simple del defecto (sutura) en defectos pequeños (&lt;2 cm). Malla si el defecto es mayor.<br><br>
+            Riesgo de estrangulación: moderado (el contenido graso se necrosa con más facilidad que el intestino, pero produce dolor intenso).<br><br>
+            <strong>Importante:</strong> siempre descartar patología subyacente (úlcera, colecistitis) antes de atribuir el dolor a la hernia.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave:</strong> hernia epigástrica = línea alba, entre xifoides y ombligo. Contenido habitual: grasa preperitoneal (no intestino). Puede ser múltiple. Simula patología digestiva alta.</div>
+      </div>
+
+      <!-- OBTURATRIZ -->
+      <div class="h-card" style="border-top:3px solid #1A5E9A;">
+        <div class="h-header" style="background:#E6F1FB; border-bottom-color:#a8c8e8;">
+          <div class="h-nombre" style="color:#1A5E9A;">Hernia Obturatriz</div>
+          <div class="h-sub">Rara pero peligrosa · Más frecuente en mujeres delgadas de edad avanzada · Alta tasa de estrangulación</div>
+        </div>
+        <div class="h-body">
+          <div class="h-col">
+            <div class="h-col-title">Anatomía</div>
+            Protruye a través del <strong>canal obturador</strong> (forámen obturador, pared lateral de la pelvis). El canal contiene el nervio, arteria y vena obturatriz.<br><br>
+            Perfil típico: mujer delgada, anciana, multiípara con pérdida de peso → reducción del tejido graso perineal → ampliación del canal obturador.
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Clínica y diagnóstico</div>
+            <strong>Signo de Howship-Romberg:</strong> dolor en la cara interna del muslo (territorio del nervio obturador), que se agrava con la aducción, rotación externa y extensión del miembro → <strong>patognomónico</strong>.<br><br>
+            Frecuentemente se presenta directamente como <strong>obstrucción intestinal de causa no identificada</strong> en mujer anciana delgada.<br><br>
+            <strong>Diagnóstico:</strong> TAC de abdomen y pelvis (la hernia no es palpable externamente).
+          </div>
+          <div class="h-col">
+            <div class="h-col-title">Tratamiento</div>
+            <strong>Cirugía urgente</strong> en la mayoría de los casos (se diagnostica tarde, con obstrucción o estrangulación).<br><br>
+            Abordaje: laparotomía de urgencia o laparoscopía. Resección intestinal si hay necrosis.<br><br>
+            Cierre del defecto con sutura o malla.<br><br>
+            Mortalidad elevada (20–40%) por diagnóstico tardío y edad avanzada de las pacientes.
+          </div>
+        </div>
+        <div class="h-footer"><strong>Clave:</strong> signo de Howship-Romberg = dolor cara interna del muslo = hernia obturatriz. Mujer anciana delgada + obstrucción intestinal sin causa aparente → pensar en hernia obturatriz. Diagnóstico por TAC.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Complicaciones — manejo quirúrgico urgente</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Clínica</th><th>Conducta</th></tr>
+        <tr><td><strong>Incarceración (encarcelamiento)</strong></td><td>Tumoración irreductible, dolorosa. Sin signos sistémicos aún. Sin compromiso vascular.</td><td>Intentar reducción manual (taxis) suave bajo analgesia si &lt;6–8 h de evolución y sin signos de isquemia. Si no reduce → cirugía urgente.</td></tr>
+        <tr><td><strong>Estrangulación</strong></td><td>Dolor intenso e irreductible, eritema/calor sobre la hernia, fiebre, leucocitosis, vómitos, ausencia de gases. Signos peritoneales.</td><td><strong>Cirugía de urgencia inmediata.</strong> No intentar reducción. Resección intestinal si necrosis + anastomosis primaria o colostomía según estado del paciente.</td></tr>
+        <tr><td><strong>Obstrucción intestinal</strong></td><td>Cólicos, distensión, ausencia de gases, náuseas, vómitos. La hernia es la causa más frecuente de obstrucción en pacientes sin cirugía previa.</td><td>Cirugía urgente si no cede o hay signos de isquemia.</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Reducción de urgencia (taxis) — cuándo NO hacerla</div>
+      Contraindicada si: signos de peritonitis, fiebre, leucocitosis, eritema/calor local, más de 8–12 h de evolución de la incarceración, sospecha de hernia de Richter (puede reducir intestino necrótico sin saberlo). Si hay duda → cirugía directa.
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Comparación rápida de hernias</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Hernia</th><th>Localización</th><th>Predominio</th><th>Riesgo estrangulación</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Inguinal indirecta</strong></td><td>Lateral a epigástricos, por orificio inguinal interno</td><td>♂, jóvenes</td><td>Moderado</td><td>Lichtenstein / laparoscópica</td></tr>
+        <tr><td><strong>Inguinal directa</strong></td><td>Triángulo de Hesselbach</td><td>♂, adultos mayores</td><td>Bajo</td><td>Lichtenstein / laparoscópica</td></tr>
+        <tr><td><strong>Crural (femoral)</strong></td><td>Debajo ligamento inguinal, medial a vena femoral</td><td>♀</td><td><strong>Alto</strong></td><td>Cirugía siempre (McVay/Cooper)</td></tr>
+        <tr><td><strong>Umbilical</strong></td><td>Anillo umbilical</td><td>Niños, obesas, embarazadas</td><td>Moderado (alto en cirrosis)</td><td>Obs. en niños · cirugía en adultos</td></tr>
+        <tr><td><strong>Spiegel</strong></td><td>Línea semilunar, lateral al recto</td><td>Adultos</td><td><strong>Alto</strong></td><td>Cirugía siempre (laparoscópica)</td></tr>
+        <tr><td><strong>Eventración</strong></td><td>Cicatriz de laparotomía previa</td><td>Post-quirúrgico</td><td>Variable</td><td>Malla si &gt;4 cm</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Hernia más frecuente: inguinal indirecta</span>
+      <span class="pill">Hernia más frecuente en mujeres: inguinal (no crural, aunque crural predomina en ♀)</span>
+      <span class="pill">Mayor riesgo de estrangulación: crural y Spiegel</span>
+      <span class="pill">Triángulo de Hesselbach: recto + epigástricos + lig. inguinal</span>
+      <span class="pill">Indirecta: lateral a epigástricos · puede llegar al escroto</span>
+      <span class="pill">Directa: medial a epigástricos · adultos mayores</span>
+      <span class="pill">Crural: debajo del ligamento inguinal · medial a la vena femoral</span>
+      <span class="pill">Crural: cirugía siempre aunque sea asintomática</span>
+      <span class="pill">Spiegel: hernia oculta · diagnóstico por eco/TC</span>
+      <span class="pill">Lichtenstein: técnica con malla sin tensión · estándar actual</span>
+      <span class="pill">Hernia de Richter: solo parte de la circunferencia intestinal</span>
+      <span class="pill">Hernia de Littre: contenido = divertículo de Meckel</span>
+      <span class="pill">Estrangulación: cirugía urgente · no intentar taxis</span>
+      <span class="pill">Eventración: FR #1 = infección de herida</span>
+      <span class="pill">Eventración: malla si defecto &gt;4 cm</span>
+      <span class="pill">Evisceración: cubrir con gasa húmeda + cirugía urgente</span>
+      <span class="pill">Umbilical en niños: cierra sola antes de los 4 años</span>
+      <span class="pill">Umbilical en cirrosis + ascitis: riesgo de rotura → cirugía</span>
+      <span class="pill">Causa #1 de obstrucción en no operados: hernia incarcerada</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Brunicardi FC, Andersen DK, Billiar TR et al. Schwartz Principios de Cirugía 11ª ed. McGraw-Hill; 2020 · Giménez M. Fundamentos para la práctica clínico-quirúrgica 2ª ed. Panamericana; 2025 · Kingsnorth A, LeBlanc K. Hernias: inguinal and incisional. Lancet 2003 · HerniaSurge Group. International guidelines for groin hernia management. Hernia 2018.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
