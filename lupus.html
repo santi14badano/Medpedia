@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupus Eritematoso Sistémico (LES) — Medpedia</title>
+  <meta name="description" content="LES: criterios diagnósticos, manifestaciones, anticuerpos, tratamiento con hidroxicloroquina, corticoides e inmunosupresores. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --reuma: #880E4F; --reuma-claro: #FCE4EC; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-reuma { background: var(--reuma-claro); color: var(--reuma); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .ac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .ac-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .ac-nombre { font-size: 13px; font-weight: 600; color: var(--reuma); margin-bottom: 4px; }
+    .ac-sens { font-size: 11px; color: var(--texto-ter); margin-bottom: 4px; }
+    .ac-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.4; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+    .criterio-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; margin-bottom: 6px; font-size: 13px; display: flex; gap: 10px; align-items: flex-start; }
+    .criterio-pts { font-weight: 700; color: var(--reuma); min-width: 28px; font-size: 14px; }
+    .criterio-texto { color: var(--texto-sec); line-height: 1.5; }
+    .criterio-texto strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Reumatología</a> › Lupus Eritematoso Sistémico</div>
+  <div class="titulo">Lupus Eritematoso Sistémico (LES)</div>
+  <div class="meta">
+    <span class="tag tag-reuma">Reumatología</span>
+    <span class="tag tag-fuente">ACR/EULAR 2019 · SLICC 2012 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>El <strong>lupus eritematoso sistémico (LES)</strong> es una enfermedad autoinmune sistémica crónica caracterizada por la producción de autoanticuerpos (especialmente anti-ADN nativo y anti-Sm) y el depósito de complejos inmunes en múltiples órganos, con activación del complemento y daño tisular.</p>
+      <p>Afecta predominantemente a <strong>mujeres en edad fértil</strong> (relación M:H = 9:1) entre los 15 y 45 años. Prevalencia en Argentina: ~50 casos/100.000 habitantes. Mayor prevalencia e intensidad en personas afrodescendientes y de origen hispano.</p>
+      <p>El curso es <strong>brotes y remisiones</strong>. La mortalidad se debe principalmente a la nefritis lúpica, infecciones (por la inmunosupresión), y enfermedad cardiovascular acelerada (los pacientes con LES tienen un riesgo cardiovascular 5–10 veces mayor que la población general).</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Criterios diagnósticos — ACR/EULAR 2019</div>
+    <div class="hl-info">Los criterios ACR/EULAR 2019 requieren <strong>ANA positivo (≥1/80) como criterio de entrada</strong> + puntaje ≥10 en los dominios adicionales. Reemplazaron a los criterios ACR 1997 (11 criterios, ≥4 positivos). Son más sensibles y específicos.</div>
+
+    <div class="subtitulo-bloque">Dominios y puntajes (selección de los más importantes)</div>
+    <div class="criterio-item"><div class="criterio-pts">6</div><div class="criterio-texto"><strong>Nefritis lúpica clase III o IV</strong> en biopsia (o clase V + anti-ADNn o complemento bajo)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">6</div><div class="criterio-texto"><strong>Anti-dsDNA (anti-ADN nativo)</strong> positivo en técnica de inmunofluorescencia (Crithidia)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">6</div><div class="criterio-texto"><strong>Anti-Sm</strong> positivo</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Complemento bajo:</strong> C3 bajo + C4 bajo (4 pts) · C3 o C4 bajo (3 pts)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Rash malar</strong> (eritema en "alas de mariposa" sobre mejillas y dorso nasal, respeta el pliegue nasolabial)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Lupus discoide</strong> (lesiones eritematosas con descamación y cicatriz, más frecuente en cuero cabelludo y cara)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Alopecia no cicatrizal</strong> difusa</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Úlceras orales</strong> (paladar duro — indoloras, a diferencia del aftas virales)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">4</div><div class="criterio-texto"><strong>Artritis</strong> ≥2 articulaciones (sinovitis con derrame o sensibilidad + rigidez matinal ≥30 min)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">3</div><div class="criterio-texto"><strong>Serositis:</strong> pleuritis (4 pts) · pericarditis (3 pts)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">3</div><div class="criterio-texto"><strong>Hematológico:</strong> leucopenia &lt;4000 (3 pts) · trombocitopenia &lt;100.000 (4 pts) · anemia hemolítica (4 pts)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">2</div><div class="criterio-texto"><strong>Neuropsiquiátrico:</strong> convulsiones (5 pts) · psicosis (3 pts) · confusión aguda (2 pts) · mielitis (2 pts)</div></div>
+    <div class="criterio-item"><div class="criterio-pts">2</div><div class="criterio-texto"><strong>Anticuerpos antifosfolipídicos</strong> (anti-cardiolipina, anti-β2GPI, anticoagulante lúpico)</div></div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Anticuerpos — guía rápida</div>
+    <div class="ac-grid">
+      <div class="ac-item">
+        <div class="ac-nombre">ANA (antinucleares)</div>
+        <div class="ac-sens">S: 95–99% · E: baja</div>
+        <div class="ac-desc">Screening de entrada. Positivo en muchas otras enfermedades. Negativo prácticamente descarta LES activo.</div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-nombre">Anti-dsDNA (anti-ADN nativo)</div>
+        <div class="ac-sens">S: 70% · E: 95%</div>
+        <div class="ac-desc"><strong>Altamente específico para LES.</strong> Sus títulos se correlacionan con la actividad de la enfermedad (sube en brotes, especialmente nefritis lúpica).</div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-nombre">Anti-Sm</div>
+        <div class="ac-sens">S: 25% · E: 99%</div>
+        <div class="ac-desc"><strong>Más específico de LES.</strong> No se correlaciona con actividad. Diagnóstico cuando está presente.</div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-nombre">Anti-Ro (SSA) / Anti-La (SSB)</div>
+        <div class="ac-sens">S: 30–40% / 15%</div>
+        <div class="ac-desc">Asociados a lupus neonatal y bloqueo cardíaco congénito. Lupus cutáneo subagudo. También en Sjögren.</div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-nombre">Anti-histona</div>
+        <div class="ac-sens">S: 95% en lupus inducido por fármacos</div>
+        <div class="ac-desc"><strong>Lupus inducido por fármacos</strong> (hidralazina, procainamida, isoniacida, minociclina, anti-TNF). ANA+ anti-histona+ pero anti-dsDNA negativo.</div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-nombre">Anticuerpos antifosfolipídicos</div>
+        <div class="ac-sens">S: 30–40%</div>
+        <div class="ac-desc">Anticoagulante lúpico + anti-cardiolipina + anti-β2GPI. Asociados a trombosis arterial/venosa y pérdidas fetales recurrentes (Síndrome antifosfolipídico).</div>
+      </div>
+    </div>
+    <div class="hl"><strong>Complemento (C3, C4):</strong> se consumen en el LES activo por depósito de complejos inmunes. C3 y C4 bajos + anti-dsDNA alto = brote activo, especialmente nefritis lúpica. Útiles para monitorear la actividad de la enfermedad.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Manifestaciones clínicas</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Rash malar ("alas de mariposa")</div><div class="sintoma-desc">Eritema sobre mejillas y dorso nasal, respeta el pliegue nasolabial. Empeora con la exposición solar</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fotosensibilidad</div><div class="sintoma-desc">Rash tras exposición solar — muy frecuente. Usar protector solar siempre</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Alopecia</div><div class="sintoma-desc">Difusa, no cicatrizal. Se recupera con el tratamiento. La alopecia del lupus discoide es cicatrizal</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Úlceras orales</div><div class="sintoma-desc">Paladar duro, indoloras. Hallazgo frecuente en brotes</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Artritis / artralgia</div><div class="sintoma-desc">Poliartritis simétrica, no erosiva. Similar a AR pero sin destrucción articular. Artropatía de Jaccoud (deformidad reducible)</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Serositis</div><div class="sintoma-desc">Pleuritis (dolor pleurítico + derrame) y pericarditis. Frecuente en brotes</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Nefritis lúpica</div><div class="sintoma-desc">La manifestación más grave. Proteinuria, hematuria, cilindros. Biopsia renal para estadificar (clases I–VI ISN/RPS)</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Manifestaciones neuropsiquiátricas</div><div class="sintoma-desc">Convulsiones, psicosis, cefalea, ACV (por vasculitis o SAF), mielopatía, neuropatía periférica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Hematológicas</div><div class="sintoma-desc">Anemia hemolítica (Coombs+), leucopenia, linfopenia, trombocitopenia — frecuentes en brotes</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Fenómeno de Raynaud</div><div class="sintoma-desc">Palidez → cianosis → eritema de dedos por frío o estrés. En 20–30% de los pacientes</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Cardiovascular</div><div class="sintoma-desc">Endocarditis de Libman-Sacks (vegetaciones en válvula mitral, indolentes). Pericarditis. ↑ riesgo aterosclerosis</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Síndrome antifosfolipídico (SAF)</div><div class="sintoma-desc">Trombosis (TVP, TEP, ACV) + abortos recurrentes + anticuerpos antifosfolipídicos. Puede ser primario o secundario a LES</div></div>
+    </div>
+
+    <div class="subtitulo-bloque">Nefritis lúpica — clasificación ISN/RPS</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Clase</th><th>Histología</th><th>Clínica</th><th>Tratamiento</th></tr>
+        <tr><td><strong>I</strong></td><td>Mesangial mínima</td><td>Sedimento normal, proteinuria leve</td><td>No específico</td></tr>
+        <tr><td><strong>II</strong></td><td>Mesangial proliferativa</td><td>Hematuria, proteinuria leve</td><td>Corticoides si sintomático</td></tr>
+        <tr><td><strong>III</strong></td><td>Focal (&lt;50% glomérulos)</td><td>Proteinuria, hematuria, HTA, ↑creatinina</td><td>Corticoides + MMF o ciclofosfamida</td></tr>
+        <tr><td><strong>IV</strong></td><td>Difusa (≥50% glomérulos) — <strong>la más grave y frecuente</strong></td><td>Síndrome nefrítico/nefrótico, HTA, IRC progresiva</td><td>Corticoides + ciclofosfamida (NIH) o MMF (inducción) → MMF o azatioprina (mantenimiento)</td></tr>
+        <tr><td><strong>V</strong></td><td>Membranosa</td><td>Síndrome nefrótico</td><td>Corticoides + MMF · si con III/IV: tratar como III/IV</td></tr>
+        <tr><td><strong>VI</strong></td><td>Esclerosante avanzada (&gt;90%)</td><td>IRC terminal</td><td>Trasplante renal (buen pronóstico post-trasplante)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento</div>
+    <div class="hl"><strong>Principios generales:</strong> fotoprotección estricta (protector solar FPS ≥50 diario) · evitar tabaquismo · vacunación (neumococo, influenza, hepatitis B — vacunas vivas contraindicadas si inmunosuprimidos) · anticoncepción (preferir gestágenos o DIU — los estrógenos pueden exacerbar el LES y están contraindicados en SAF) · monitoreo del riesgo cardiovascular.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hidroxicloroquina (HCQ)</div>
+      <div class="farma-clase">Antipalúdico · tratamiento de base en TODOS los pacientes con LES</div>
+      <div class="dosis-badge">5 mg/kg/día (máx 400 mg/día) VO · dosis única diaria</div>
+      <div class="farma-detalle">
+        Indicada en <strong>todos los pacientes con LES</strong>, independientemente de la actividad de la enfermedad. Reduce la frecuencia de brotes, el daño orgánico acumulado, el riesgo cardiovascular, las trombosis y la mortalidad a largo plazo. Reduce el riesgo de nefritis lúpica y de lupus neonatal.<br><br>
+        <strong>Efecto adverso principal:</strong> <strong>toxicidad retiniana</strong> (maculopatía — puede ser irreversible). Riesgo bajo con dosis ≤5 mg/kg/día. Fondo de ojo basal y luego cada 5 años (anual si factores de riesgo: IRC, uso &gt;5 años, tamoxifeno concomitante).<br><br>
+        Inicio de efecto: 2–3 meses. Segura en el embarazo — <strong>NO suspender durante el embarazo</strong> (protege al feto del lupus neonatal).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Corticoides (prednisona / metilprednisolona)</div>
+      <div class="farma-clase">Antiinflamatorio · control de brotes agudos</div>
+      <div class="dosis-badge">Brote leve-moderado: prednisona 0,5–1 mg/kg/día → reducir progresivamente · Brote grave: metilprednisolona 1 g/día IV × 3 días ("pulsos")</div>
+      <div class="farma-detalle">
+        Pilar del tratamiento de los brotes. El objetivo es siempre llegar a la dosis mínima efectiva (idealmente ≤5–7,5 mg/día de prednisona equivalente) para minimizar los efectos adversos a largo plazo.<br><br>
+        <strong>Efectos adversos del uso crónico:</strong> osteoporosis (dar siempre calcio + vitamina D + bifosfonatos si ≥3 meses de uso) · infecciones · diabetes corticoidea · HTA · obesidad · cataratas · necrosis avascular de la cabeza femoral · síndrome de Cushing.<br><br>
+        La meta es usar corticoides para controlar el brote y luego mantener con inmunosupresores ahorradores de corticoides.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Micofenolato mofetilo (MMF)</div>
+      <div class="farma-clase">Inmunosupresor · primera línea en nefritis lúpica clase III/IV/V</div>
+      <div class="dosis-badge">2–3 g/día VO en 2 tomas · titular según tolerabilidad</div>
+      <div class="farma-detalle">Inhibe la síntesis de purinas → bloquea la proliferación de linfocitos T y B. Primera línea para inducción y mantenimiento de la nefritis lúpica en la mayoría de los centros (equivalente a ciclofosfamida con mejor perfil de seguridad). <strong>Absolutamente contraindicado en el embarazo</strong> (teratogénico — categoría D). Efectos adversos: infecciones, leucopenia, diarrea, náuseas.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Ciclofosfamida</div>
+      <div class="farma-clase">Agente alquilante · nefritis grave, manifestaciones neuropsiquiátricas severas</div>
+      <div class="dosis-badge">Protocolo NIH: 0,5–1 g/m² IV mensual × 6 meses · o pulsos IV quincenales (protocolo Euro-Lupus, dosis bajas)</div>
+      <div class="farma-detalle">Muy potente — reservar para nefritis lúpica clase IV severa, vasculitis, manifestaciones neuropsiquiátricas graves, hemorragia pulmonar. Efectos adversos: infertilidad (criopreservación de óvulos/esperma antes del tratamiento en pacientes en edad fértil) · cistitis hemorrágica (prevenir con hidratación + mesna) · leucopenia · infecciones · riesgo de neoplasias a largo plazo.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Azatioprina</div>
+      <div class="farma-clase">Inmunosupresor · mantenimiento y embarazo</div>
+      <div class="dosis-badge">1–2,5 mg/kg/día VO</div>
+      <div class="farma-detalle">Ahorrador de corticoides para mantenimiento. <strong>El inmunosupresor más seguro en el embarazo</strong> (junto con HCQ) — se puede usar si la paciente necesita inmunosupresión durante la gestación. Verificar actividad de TPMT antes de iniciar (enzima que metaboliza la azatioprina — si actividad baja: riesgo de mielotoxicidad severa). Interacción importante con alopurinol (toxicidad grave — reducir dosis de azatioprina al 25% si se combinan).</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Belimumab</div>
+      <div class="farma-clase">Anticuerpo monoclonal anti-BLyS (anti-BAFF) · terapia biológica</div>
+      <div class="dosis-badge">200 mg SC semanal o 10 mg/kg IV mensual</div>
+      <div class="farma-detalle">Primer biológico aprobado específicamente para LES (2011). Inhibe BLyS (factor de supervivencia de linfocitos B) → reduce la proliferación de linfocitos B autorreactivos. Indicado en LES activo serológicamente positivo con respuesta insuficiente al tratamiento estándar (HCQ + corticoides ± inmunosupresor). Reduce los brotes y el daño orgánico. También aprobado para nefritis lúpica activa (en combinación con MMF). Disponibilidad limitada en el sistema público argentino.</div>
+    </div>
+
+    <div class="subtitulo-bloque">Síndrome antifosfolipídico (SAF) en LES</div>
+    <div class="card">
+      <p><strong>Diagnóstico:</strong> clínica (trombosis arterial o venosa, o abortos recurrentes ≥3 antes de la semana 10 o ≥1 con morfología fetal normal después de la semana 10) + anticuerpos antifosfolipídicos positivos en 2 determinaciones separadas por ≥12 semanas (anticoagulante lúpico, anti-cardiolipina IgG/IgM, anti-β2GPI IgG/IgM).</p>
+      <p><strong>Tratamiento antitrombótico:</strong> trombosis venosa → anticoagulación con heparina luego warfarina (RIN 2–3) de forma indefinida · trombosis arterial o SAF triple positivo → warfarina con RIN 3–4 · embarazo con SAF → heparina de bajo peso molecular + aspirina 100 mg/día.</p>
+      <p><strong>Importante:</strong> el anticoagulante lúpico alarga el KPTT in vitro (no indica que el paciente sangra — al contrario, es protrombótico). El KPTT elevado en un paciente con LES hace pensar en SAF, no en déficit de factores.</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🤰 LES y embarazo</div>
+    <div class="card">
+      <p>El embarazo en el LES es de <strong>alto riesgo</strong>: mayor frecuencia de brotes (especialmente nefritis), pérdidas fetales, preeclampsia, RCIU y parto pretérmino. Planificar el embarazo en período de remisión ≥6 meses.</p>
+      <p><strong>Fármacos seguros en el embarazo:</strong> hidroxicloroquina (continuar siempre) · corticoides a dosis bajas · azatioprina · heparina de bajo peso molecular.</p>
+      <p><strong>Contraindicados en el embarazo:</strong> MMF (teratogénico) · ciclofosfamida · metotrexato · belimumab · warfarina (teratogénica en 1er trimestre).</p>
+      <p><strong>Lupus neonatal:</strong> causado por el pasaje transplacentario de anti-Ro y anti-La. Manifestaciones: rash cutáneo (transitorio, desaparece a los 6 meses) · <strong>bloqueo cardíaco congénito completo</strong> (permanente, puede requerir marcapasos). Monitorear con ecocardiograma fetal en madres con anti-Ro+.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">LES: mujer en edad fértil (M:H = 9:1)</span>
+      <span class="pill">ANA: screening (S 99%) pero poco específico</span>
+      <span class="pill">Anti-dsDNA: específico + se correlaciona con actividad</span>
+      <span class="pill">Anti-Sm: el más específico de LES</span>
+      <span class="pill">Complemento bajo (C3, C4) en brote activo</span>
+      <span class="pill">Rash malar: respeta el pliegue nasolabial</span>
+      <span class="pill">Úlceras orales en paladar duro — indoloras</span>
+      <span class="pill">Artritis lúpica: no erosiva (≠ AR)</span>
+      <span class="pill">Nefritis lúpica clase IV — la más grave — ciclofosfamida o MMF</span>
+      <span class="pill">HCQ en todos los pacientes — reduce brotes y mortalidad</span>
+      <span class="pill">HCQ: toxicidad retiniana — fondo de ojo anual</span>
+      <span class="pill">MMF: contraindicado en embarazo</span>
+      <span class="pill">Azatioprina: segura en embarazo</span>
+      <span class="pill">Anti-histona: lupus inducido por fármacos</span>
+      <span class="pill">Anti-Ro: lupus neonatal + bloqueo cardíaco congénito</span>
+      <span class="pill">SAF: KPTT largo in vitro = protrombótico (no sangra)</span>
+      <span class="pill">SAF + trombosis venosa → warfarina RIN 2–3 indefinido</span>
+      <span class="pill">Estrógenos contraindicados en LES con SAF</span>
+      <span class="pill">Endocarditis Libman-Sacks — válvula mitral</span>
+      <span class="pill">Vacunas vivas contraindicadas en inmunosuprimidos</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACR/EULAR Classification Criteria for SLE 2019 · SLICC Classification Criteria 2012 · ACR Guidelines on Lupus Nephritis 2024 · EULAR Recommendations for SLE Management 2023 · Harrison Principios de Medicina Interna, 21ª ed. · Sociedad Argentina de Reumatología.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
