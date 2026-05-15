@@ -72,6 +72,18 @@
     .btn-cafecito:hover { transform: scale(1.05); background: #00a327; }
     footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); margin-top: 2rem; line-height: 1.8; }
     footer a { color: var(--verde); text-decoration: none; }
+
+    /* Layout agrupado por especialidad */
+    .grupos-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .grupo { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; overflow: hidden; transition: box-shadow 0.15s; }
+    .grupo:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .grupo-header { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--borde); background: var(--fondo); }
+    .grupo-icon { font-size: 18px; line-height: 1; }
+    .grupo-titulo { font-size: 14px; font-weight: 600; color: var(--texto); }
+    .grupo-links { display: flex; flex-direction: column; }
+    .grupo-links a { font-size: 13px; color: var(--texto-sec); text-decoration: none; padding: 9px 16px; border-bottom: 1px solid var(--borde); transition: background 0.1s, color 0.1s; line-height: 1.4; }
+    .grupo-links a:last-child { border-bottom: none; }
+    .grupo-links a:hover { background: var(--verde-claro); color: var(--verde-oscuro); }
   </style>
 </head>
 <body>
@@ -96,247 +108,187 @@
 </div>
 
 <main>
-  <div id="especialidades" class="section-label">Especialidades</div>
-  <div class="especialidades">
-    <button class="esp-btn activo" data-filter="all">Todas</button>
-    <button class="esp-btn" data-filter="cardio">Cardiología</button>
-    <button class="esp-btn" data-filter="neuro">Neurología</button>
-    <button class="esp-btn" data-filter="neumo">Neumonología</button>
-    <button class="esp-btn" data-filter="endo">Endocrinología</button>
-    <button class="esp-btn" data-filter="infecto">Infectología</button>
-    <button class="esp-btn" data-filter="gastro">Gastroenterología</button>
-    <button class="esp-btn" data-filter="hemato">Hematología</button>
-    <button class="esp-btn" data-filter="nefro">Nefrología</button>
-    <button class="esp-btn" data-filter="ciru">Cirugía General</button>
-    <button class="esp-btn" data-filter="reuma">Reumatología</button>
-    <button class="esp-btn" data-filter="gineco">Obstetricia</button>
-  </div>
+  <div id="especialidades" style="display:none"></div>
+  <div id="articulos" style="display:none"><div class="articulos-lista">
+  </div></div>
 
-  <div class="two-col">
-    <div>
-      <div class="section-label">Categorías</div>
-      <div class="categorias-grid">
-        <a href="#" class="cat-card"><div class="cat-icon">🫀</div><div class="cat-nombre">Cardiología</div><div class="cat-desc">IAM, HTA, IC</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-nombre">Neurología</div><div class="cat-desc">ACV, epilepsia</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🫁</div><div class="cat-nombre">Neumonología</div><div class="cat-desc">Asma, EPOC, NAC</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🧬</div><div class="cat-nombre">Endocrinología</div><div class="cat-desc">Diabetes, tiroides</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🦠</div><div class="cat-nombre">Infectología</div><div class="cat-desc">Dengue, NAC</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">💊</div><div class="cat-nombre">Farmacología</div><div class="cat-desc">Mecanismos, dosis</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🦴</div><div class="cat-nombre">Reumatología</div><div class="cat-desc">AR, vasculitis</div></a>
-        <a href="#" class="cat-card"><div class="cat-icon">🤰</div><div class="cat-nombre">Obstetricia</div><div class="cat-desc">Preeclampsia</div></a>
+  <div class="grupos-wrap">
+
+    <!-- CARDIOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🫀</span>
+        <span class="grupo-titulo">Cardiología</span>
+        <span class="grupo-count tag-cardio"></span>
+      </div>
+      <div class="grupo-links">
+        <a href="iam.html">Infarto Agudo de Miocardio (SCACEST)</a>
+        <a href="hta.html">Hipertensión Arterial</a>
+        <a href="ic.html">Insuficiencia Cardíaca</a>
+        <a href="fa.html">Fibrilación Auricular</a>
+        <a href="eap.html">Edema Agudo de Pulmón</a>
+        <a href="tep.html">TEP</a>
+        <a href="dislipemias.html">Dislipemias</a>
+        <a href="endocarditis.html">Endocarditis Infecciosa</a>
       </div>
     </div>
 
-    <div id="articulos">
-      <div class="section-label">Artículos</div>
-      <div class="articulos-lista">
-        <a href="iam.html" class="art-row" data-cat="cardio">
-          <div class="art-titulo">Infarto Agudo de Miocardio (SCACEST)</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hta.html" class="art-row" data-cat="cardio">
-          <div class="art-titulo">Hipertensión Arterial</div>
-          <div class="art-meta"><span class="art-pro">PRO</span><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="ic.html" class="art-row" data-cat="cardio">
-          <div class="art-titulo">Insuficiencia Cardíaca (IC)</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="acv.html" class="art-row" data-cat="neuro">
-          <div class="art-titulo">ACV Isquémico Agudo</div>
-          <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="asma-epoc.html" class="art-row" data-cat="neumo">
-          <div class="art-titulo">Asma y EPOC (GINA/GOLD 2024)</div>
-          <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="neumonia.html" class="art-row" data-cat="neumo infecto">
-          <div class="art-titulo">Neumonía Adquirida en la Comunidad (NAC)</div>
-          <div class="art-meta"><span class="art-tag tag-neumo">Neumonología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="dm2.html" class="art-row" data-cat="endo">
-          <div class="art-titulo">Diabetes Mellitus Tipo 2</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="obesidad.html" class="art-row" data-cat="endo">
-          <div class="art-titulo">Obesidad y Manejo Metabólico</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="dengue.html" class="art-row" data-cat="infecto">
-          <div class="art-titulo">Dengue — Manejo Clínico</div>
-          <div class="art-meta"><span class="art-pro">PRO</span><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="sepsis.html" class="art-row" data-cat="infecto">
-          <div class="art-titulo">Sepsis y Shock Séptico</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="fa.html" class="art-row" data-cat="cardio">
-          <div class="art-titulo">Fibrilación Auricular</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="pancreatitis.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Pancreatitis Aguda</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="tep.html" class="art-row" data-cat="hemato neumo">
-          <div class="art-titulo">Tromboembolismo Pulmonar (TEP)</div>
-          <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="anemia.html" class="art-row" data-cat="hemato">
-          <div class="art-titulo">Anemia — Clasificación, Diagnóstico y Tratamiento</div>
-          <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="ira.html" class="art-row" data-cat="nefro">
-          <div class="art-titulo">Insuficiencia Renal Aguda (IRA)</div>
-          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="colecistitis.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Colecistitis Aguda</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="erc.html" class="art-row" data-cat="nefro">
-          <div class="art-titulo">Enfermedad Renal Crónica (ERC)</div>
-          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="apendicitis.html" class="art-row" data-cat="ciru">
-          <div class="art-titulo">Apendicitis Aguda</div>
-          <div class="art-meta"><span class="art-tag tag-ciru">Cirugía General</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="cirrosis.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Cirrosis Hepática</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="eap.html" class="art-row" data-cat="cardio">
-          <div class="art-titulo">Edema Agudo de Pulmón</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="artritis-reumatoidea.html" class="art-row" data-cat="reuma">
-          <div class="art-titulo">Artritis Reumatoidea</div>
-          <div class="art-meta"><span class="art-tag tag-reuma">Reumatología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="vasculitis.html" class="art-row" data-cat="reuma">
-          <div class="art-titulo">Vasculitis Sistémicas</div>
-          <div class="art-meta"><span class="art-tag tag-reuma">Reumatología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="cad.html" class="art-row" data-cat="endo">
-          <div class="art-titulo">Cetoacidosis Diabética (CAD)</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="itu.html" class="art-row" data-cat="infecto nefro">
-          <div class="art-titulo">Infección del Tracto Urinario (ITU)</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="preeclampsia.html" class="art-row" data-cat="gineco">
-          <div class="art-titulo">Preeclampsia y Eclampsia</div>
-          <div class="art-meta"><span class="art-tag tag-gineco">Obstetricia</span><span class="art-arrow">→</span></div>
-        </a>
-
-        <a href="meningitis-encefalitis.html" class="art-row" data-cat="infecto neuro">
-          <div class="art-titulo">Meningitis y Encefalitis</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hemorragia-digestiva.html" class="art-row" data-cat="gastro ciru">
-          <div class="art-titulo">Hemorragia Digestiva Alta y Baja</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hipotiroidismo-hipertiroidismo.html" class="art-row" data-cat="endo">
-          <div class="art-titulo">Hipotiroidismo e Hipertiroidismo</div>
-          <div class="art-meta"><span class="art-tag tag-endo">Endocrinología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="trastornos-sodio.html" class="art-row" data-cat="nefro">
-          <div class="art-titulo">Trastornos del Sodio — Hipo e Hipernatremia</div>
-          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="trastornos-potasio.html" class="art-row" data-cat="nefro">
-          <div class="art-titulo">Trastornos del Potasio — Hipo e Hiperkalemia</div>
-          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="dislipemias.html" class="art-row" data-cat="cardio endo">
-          <div class="art-titulo">Dislipemias</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="linfomas.html" class="art-row" data-cat="hemato">
-          <div class="art-titulo">Linfomas — Hodgkin y No Hodgkin</div>
-          <div class="art-meta"><span class="art-tag tag-hemato">Hematología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="eii-crohn-colitis-ulcerosa.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Enfermedad Inflamatoria Intestinal — Crohn y Colitis Ulcerosa</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="amenaza-parto-pretermino.html" class="art-row" data-cat="gineco">
-          <div class="art-titulo">Amenaza de Parto Pretérmino</div>
-          <div class="art-meta"><span class="art-tag tag-gineco">Obstetricia</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hemorragia-postparto.html" class="art-row" data-cat="gineco">
-          <div class="art-titulo">Hemorragia Posparto</div>
-          <div class="art-meta"><span class="art-tag tag-gineco">Obstetricia</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="ulcera-peptica.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Úlcera Péptica y H. pylori</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hiv-sida.html" class="art-row" data-cat="infecto">
-          <div class="art-titulo">HIV / SIDA</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="tuberculosis.html" class="art-row" data-cat="infecto neumo">
-          <div class="art-titulo">Tuberculosis</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="enfermedades-exantematicas.html" class="art-row" data-cat="infecto pediatria">
-          <div class="art-titulo">Enfermedades Exantemáticas</div>
-          <div class="art-meta"><span class="art-tag tag-infecto">Infectología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="sindrome-febril-nino.html" class="art-row" data-cat="pediatria infecto">
-          <div class="art-titulo">Síndrome Febril en el Niño</div>
-          <div class="art-meta"><span class="art-tag tag-pediatria">Pediatría</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="crisis-convulsiva-pediatrica.html" class="art-row" data-cat="pediatria neuro">
-          <div class="art-titulo">Crisis Convulsiva Pediátrica</div>
-          <div class="art-meta"><span class="art-tag tag-pediatria">Pediatría</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="bronquiolitis.html" class="art-row" data-cat="pediatria neumo">
-          <div class="art-titulo">Bronquiolitis Aguda</div>
-          <div class="art-meta"><span class="art-tag tag-pediatria">Pediatría</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="trastornos-calcio.html" class="art-row" data-cat="nefro endo">
-          <div class="art-titulo">Trastornos del Calcio — Hipo e Hipercalcemia</div>
-          <div class="art-meta"><span class="art-tag tag-nefro">Nefrología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="demencias.html" class="art-row" data-cat="neuro">
-          <div class="art-titulo">Demencias y Enfermedad de Alzheimer</div>
-          <div class="art-meta"><span class="art-tag tag-neuro">Neurología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="lupus.html" class="art-row" data-cat="reuma">
-          <div class="art-titulo">Lupus Eritematoso Sistémico (LES)</div>
-          <div class="art-meta"><span class="art-tag tag-reuma">Reumatología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="embarazo-ectopico.html" class="art-row" data-cat="gineco">
-          <div class="art-titulo">Embarazo Ectópico</div>
-          <div class="art-meta"><span class="art-tag tag-gineco">Obstetricia</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="hernias.html" class="art-row" data-cat="cirugia">
-          <div class="art-titulo">Hernias de la Pared Abdominal</div>
-          <div class="art-meta"><span class="art-tag tag-cirugia">Cirugía</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="colangitis.html" class="art-row" data-cat="gastro cirugia">
-          <div class="art-titulo">Colangitis y Colecistitis</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="peritonitis.html" class="art-row" data-cat="cirugia gastro">
-          <div class="art-titulo">Peritonitis</div>
-          <div class="art-meta"><span class="art-tag tag-cirugia">Cirugía</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="pancreatitis-cronica.html" class="art-row" data-cat="gastro">
-          <div class="art-titulo">Pancreatitis Crónica</div>
-          <div class="art-meta"><span class="art-tag tag-gastro">Gastroenterología</span><span class="art-arrow">→</span></div>
-        </a>
-        <a href="endocarditis.html" class="art-row" data-cat="cardio infecto">
-          <div class="art-titulo">Endocarditis Infecciosa</div>
-          <div class="art-meta"><span class="art-tag tag-cardio">Cardiología</span><span class="art-arrow">→</span></div>
-        </a>
+    <!-- NEUROLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🧠</span>
+        <span class="grupo-titulo">Neurología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="acv.html">ACV Isquémico Agudo</a>
+        <a href="meningitis-encefalitis.html">Meningitis y Encefalitis</a>
+        <a href="demencias.html">Demencias y Alzheimer</a>
+        <a href="crisis-convulsiva-pediatrica.html">Crisis Convulsiva</a>
       </div>
     </div>
+
+    <!-- NEUMONOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🫁</span>
+        <span class="grupo-titulo">Neumonología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="asma-epoc.html">Asma y EPOC</a>
+        <a href="neumonia.html">Neumonía Adquirida en la Comunidad</a>
+        <a href="tuberculosis.html">Tuberculosis</a>
+      </div>
+    </div>
+
+    <!-- ENDOCRINOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🧬</span>
+        <span class="grupo-titulo">Endocrinología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="dm2.html">Diabetes Mellitus Tipo 2</a>
+        <a href="cad.html">Cetoacidosis Diabética</a>
+        <a href="obesidad.html">Obesidad y Manejo Metabólico</a>
+        <a href="hipotiroidismo-hipertiroidismo.html">Hipotiroidismo e Hipertiroidismo</a>
+        <a href="trastornos-calcio.html">Trastornos del Calcio</a>
+      </div>
+    </div>
+
+    <!-- INFECTOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🦠</span>
+        <span class="grupo-titulo">Infectología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="sepsis.html">Sepsis y Shock Séptico</a>
+        <a href="dengue.html">Dengue</a>
+        <a href="hiv-sida.html">HIV / SIDA</a>
+        <a href="itu.html">Infección del Tracto Urinario</a>
+        <a href="enfermedades-exantematicas.html">Enfermedades Exantemáticas</a>
+      </div>
+    </div>
+
+    <!-- GASTROENTEROLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🫃</span>
+        <span class="grupo-titulo">Gastroenterología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="hemorragia-digestiva.html">Hemorragia Digestiva Alta y Baja</a>
+        <a href="ulcera-peptica.html">Úlcera Péptica y H. pylori</a>
+        <a href="pancreatitis-aguda.html">Pancreatitis Aguda</a>
+        <a href="pancreatitis-cronica.html">Pancreatitis Crónica</a>
+        <a href="cirrosis.html">Cirrosis Hepática</a>
+        <a href="eii-crohn-colitis-ulcerosa.html">Enfermedad Inflamatoria Intestinal</a>
+        <a href="colangitis.html">Colangitis y Colecistitis</a>
+      </div>
+    </div>
+
+    <!-- NEFROLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🫘</span>
+        <span class="grupo-titulo">Nefrología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="trastornos-sodio.html">Trastornos del Sodio</a>
+        <a href="trastornos-potasio.html">Trastornos del Potasio</a>
+        <a href="trastornos-calcio.html">Trastornos del Calcio</a>
+      </div>
+    </div>
+
+    <!-- REUMATOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🦴</span>
+        <span class="grupo-titulo">Reumatología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="artritis-reumatoidea.html">Artritis Reumatoidea</a>
+        <a href="lupus.html">Lupus Eritematoso Sistémico</a>
+        <a href="vasculitis.html">Vasculitis Sistémicas</a>
+        <a href="gota.html">Gota</a>
+      </div>
+    </div>
+
+    <!-- HEMATOLOGÍA / ONCOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🩸</span>
+        <span class="grupo-titulo">Hematología / Oncología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="anemias.html">Anemias</a>
+        <a href="linfomas.html">Linfomas — Hodgkin y No Hodgkin</a>
+        <a href="leucemias.html">Leucemias</a>
+      </div>
+    </div>
+
+    <!-- CIRUGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🔪</span>
+        <span class="grupo-titulo">Cirugía General</span>
+      </div>
+      <div class="grupo-links">
+        <a href="abdomen-agudo.html">Abdomen Agudo</a>
+        <a href="apendicitis.html">Apendicitis Aguda</a>
+        <a href="hernias.html">Hernias de la Pared Abdominal</a>
+        <a href="peritonitis.html">Peritonitis</a>
+      </div>
+    </div>
+
+    <!-- OBSTETRICIA / GINECOLOGÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">🤰</span>
+        <span class="grupo-titulo">Obstetricia / Ginecología</span>
+      </div>
+      <div class="grupo-links">
+        <a href="preeclampsia.html">Preeclampsia y Eclampsia</a>
+        <a href="amenaza-parto-pretermino.html">Amenaza de Parto Pretérmino</a>
+        <a href="hemorragia-postparto.html">Hemorragia Posparto</a>
+        <a href="embarazo-ectopico.html">Embarazo Ectópico</a>
+      </div>
+    </div>
+
+    <!-- PEDIATRÍA -->
+    <div class="grupo">
+      <div class="grupo-header">
+        <span class="grupo-icon">👶</span>
+        <span class="grupo-titulo">Pediatría</span>
+      </div>
+      <div class="grupo-links">
+        <a href="bronquiolitis.html">Bronquiolitis Aguda</a>
+        <a href="sindrome-febril-nino.html">Síndrome Febril en el Niño</a>
+        <a href="crisis-convulsiva-pediatrica.html">Crisis Convulsiva Pediátrica</a>
+        <a href="enfermedades-exantematicas.html">Enfermedades Exantemáticas</a>
+      </div>
+    </div>
+
   </div>
 </main>
 
