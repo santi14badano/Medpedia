@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pancreatitis Crónica — Medpedia</title>
+  <meta name="description" content="Pancreatitis crónica: etiología, diagnóstico, insuficiencia pancreática exocrina y endocrina, manejo del dolor y cirugía. EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --pan: #D4730A; --pan-claro: #FEF0DC; --pan-oscuro: #A85608;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
+    .tag-cir    { background: #E3F2FD; color: #1565C0; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-pan { font-size: 16px; font-weight: 500; color: var(--pan); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-pan   { border-left: 3px solid var(--pan); background: var(--pan-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--pan); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .score-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .score-variable { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .score-puntos { font-size: 12px; color: var(--texto-ter); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Gastroenterología / Cirugía</a> › Pancreatitis Crónica</div>
+  <div class="titulo">Pancreatitis Crónica</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-cir">Cirugía</span>
+    <span class="tag tag-fuente">Harrison 21ª · Goldman-Cecil 27ª · AGA/ACG Guidelines · Schwartz 11ª</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y concepto</div>
+    <div class="hl-pan"><strong>Pancreatitis crónica (PC):</strong> proceso inflamatorio progresivo e irreversible del páncreas que destruye el parénquima exocrino y endocrino, reemplazándolo por fibrosis. A diferencia de la aguda, el daño es permanente. El resultado final es la <strong>insuficiencia pancreática exocrina</strong> (malabsorción de grasas → esteatorrea) y/o <strong>endocrina</strong> (diabetes pancreatogénica tipo 3c).</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Etiología — TIGAR-O</div>
+    <div class="hl">La clasificación etiológica más usada es <strong>TIGAR-O</strong>. En Argentina y Latinoamérica, la causa #1 es el <strong>alcohol</strong> (70–80% de los casos), seguida de la idiopática.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Letra</th><th>Categoría</th><th>Ejemplos</th></tr>
+        <tr><td><strong>T</strong></td><td>Tóxico-metabólica</td><td><strong>Alcohol (causa #1)</strong> · tabaco · hipercalcemia · hiperlipidemia · IRC · fármacos</td></tr>
+        <tr><td><strong>I</strong></td><td>Idiopática</td><td>Forma juvenil (inicio &lt;20 años, dolor intenso) · forma senil (inicio &gt;60 años, indolora, esteatorrea)</td></tr>
+        <tr><td><strong>G</strong></td><td>Genética</td><td>Mutaciones PRSS1 (pancreatitis hereditaria) · SPINK1 · CFTR (fibrosis quística) · CTRC</td></tr>
+        <tr><td><strong>A</strong></td><td>Autoinmune</td><td>PC autoinmune tipo 1 (IgG4) · tipo 2 · asociada a EII, CEP, Sjögren</td></tr>
+        <tr><td><strong>R</strong></td><td>Recurrente / Severa</td><td>Pancreatitis aguda necrotizante severa recurrente → evolución a crónica</td></tr>
+        <tr><td><strong>O</strong></td><td>Obstructiva</td><td>Páncreas divisum · tumor · estenosis del Wirsung · trauma · disfunción del esfínter de Oddi</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Pancreatitis autoinmune tipo 1 (PAI-1) — no confundir con cáncer de páncreas</div>
+      Presenta ictericia obstructiva + masa pancreática + ↑IgG4 sérica (&gt;2× el límite superior normal). En la imagen: páncreas "en salchicha" con halo periférico. <strong>Responde dramáticamente a corticoides</strong> (prednisona 40 mg/día) → si no responde, replantear el diagnóstico. Puede asociarse a colangitis esclerosante IgG4, nefritis intersticial, fibrosis retroperitoneal.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-pan">🟠 Clínica — la tríada clásica</div>
+    <div class="hl-pan">La tríada clásica de la pancreatitis crónica avanzada es: <strong>dolor abdominal crónico + esteatorrea + diabetes</strong>. En la práctica, muchos pacientes solo tienen dolor durante años antes de desarrollar insuficiencia pancreática.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Manifestación</th><th>Mecanismo</th><th>Características</th></tr>
+        <tr><td><strong>Dolor abdominal</strong></td><td>Hipertensión ductal, inflamación perineural, isquemia</td><td>Epigástrico, irradiado en faja hacia la espalda ("en cinturón"), postprandial, alivia con la flexión anterior del tronco. Puede ser episódico (brotes) o continuo. Principal causa de consulta e internación.</td></tr>
+        <tr><td><strong>Esteatorrea</strong></td><td>Insuficiencia exocrina: lipasa &lt;10% de lo normal → malabsorción de grasas</td><td>Heces voluminosas, grasosas, malolientes, que flotan. Aparece tarde (cuando se pierde &gt;90% de la función exocrina). Déficit de vitaminas liposolubles (A, D, E, K) → osteoporosis, coagulopatía.</td></tr>
+        <tr><td><strong>Diabetes (tipo 3c)</strong></td><td>Destrucción de islotes de Langerhans (células β y α)</td><td>Aparece tardíamente. Característica: hipoglucemia frecuente (también déficit de glucagón). Difícil de manejar. No es autoinmune → anticuerpos negativos (diferencia con DM tipo 1).</td></tr>
+        <tr><td><strong>Ictericia obstructiva</strong></td><td>Estenosis del colédoco intrapancreático por fibrosis o seudoquiste</td><td>Presente en ~10% · colestasis prolongada → cirrosis biliar secundaria si no se trata</td></tr>
+        <tr><td><strong>Seudoquiste pancreático</strong></td><td>Acumulación de jugo pancreático fuera del conducto</td><td>Colección encapsulada sin epitelio. Puede ser asintomático o causar dolor, compresión gástrica o infectarse.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Imágenes — primera línea</strong><br>
+        — <strong>TAC de abdomen con contraste:</strong> calcificaciones pancreáticas (patognomónicas de PC alcohólica), dilatación del Wirsung (&gt;3 mm), atrofia del parénquima, seudoquistes, litiasis ductal.<br>
+        — <strong>RMN + colangio-RMN (CPRM):</strong> mejor que TAC para evaluar el ducto pancreático, litiasis pequeñas y cambios ductales precoces. Estudio de elección cuando se sospecha PC sin calcificaciones.<br>
+        — <strong>Ecoendoscopía (USE):</strong> mayor sensibilidad para cambios precoces · gold standard diagnóstico en casos dudosos · permite biopsiar lesiones sospechosas.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Laboratorio</strong><br>
+        — Amilasa y lipasa: pueden ser <strong>normales o levemente elevadas</strong> en la PC (el páncreas ya tiene poco parénquima funcional) — no son útiles para el diagnóstico de PC.<br>
+        — <strong>Elastasa fecal-1:</strong> marcador de insuficiencia exocrina · &lt;200 μg/g = insuficiencia moderada · &lt;100 μg/g = grave. No invasivo, útil para indicar enzimas de reemplazo.<br>
+        — Glucemia + HbA1c (diabetes), vitaminas liposolubles, coagulación (déficit vit K).<br>
+        — IgG4 si se sospecha pancreatitis autoinmune.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Criterios diagnósticos de Cambridge (imagen)</strong><br>
+        Clasifican la PC en 4 grados (normal, equívoco, leve, moderado, severo) según los cambios morfológicos en el Wirsung y el parénquima. Grado severo: Wirsung &gt;6 mm + ramas secundarias dilatadas + calcificaciones + atrofia.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-pan">🟠 Tratamiento — manejo escalonado</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">1 — Medidas generales (siempre)</div>
+      <div class="farma-clase">Base del tratamiento · Modificación del estilo de vida</div>
+      <div class="dosis-badge">Abstinencia alcohólica absoluta · Cese del tabaquismo</div>
+      <div class="farma-detalle">
+        <strong>Alcohol:</strong> la abstinencia enlentece la progresión y puede mejorar el dolor en algunos pacientes. Es la medida más importante en PC alcohólica.<br>
+        <strong>Tabaco:</strong> factor independiente de progresión de la fibrosis y riesgo de cáncer pancreático — obligatorio el cese.<br>
+        <strong>Dieta:</strong> fraccionada (5–6 comidas pequeñas/día), baja en grasas (si hay esteatorrea), normo/hipercalórica. Suplementos de vitaminas liposolubles (A, D, E, K) y vitamina B12.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">2 — Manejo del dolor</div>
+      <div class="farma-clase">Principal desafío clínico de la PC · Escalonado según intensidad</div>
+      <div class="dosis-badge">Paracetamol → AINEs → tramadol → opioides · Adyuvantes</div>
+      <div class="farma-detalle">
+        <strong>Escalera analgésica OMS:</strong><br>
+        1°) Paracetamol ± AINEs (con gastroprotección)<br>
+        2°) Tramadol 50–100 mg c/6–8 h<br>
+        3°) Opioides mayores (morfina, oxicodona) — con precaución por riesgo de dependencia<br><br>
+        <strong>Adyuvantes:</strong> pregabalina o gabapentina → reducen la hipersensibilización central (dolor neuropático). Antidepresivos tricíclicos en dosis bajas (amitriptilina).<br><br>
+        <strong>Enzimas pancreáticas orales:</strong> en algunos pacientes reducen el dolor por mecanismo de retroalimentación negativa (inhiben la secreción pancreática exocrina). Evidencia moderada.<br><br>
+        <strong>Bloqueo del plexo celíaco:</strong> guiado por ecoendoscopía o TAC → en dolor refractario a opioides · efecto temporal (3–6 meses) · puede repetirse.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">3 — Insuficiencia exocrina: Terapia de Reemplazo Enzimático (TRE)</div>
+      <div class="farma-clase">Indicada cuando elastasa fecal &lt;200 μg/g o esteatorrea clínica</div>
+      <div class="dosis-badge">Pancreatina (Creon®) 40.000–80.000 UI de lipasa por comida principal · 20.000–40.000 UI en colaciones</div>
+      <div class="farma-detalle">
+        Las enzimas deben tomarse <strong>durante la comida</strong> (no antes ni después) — para mezclarse con el quimo. Usar <strong>cápsulas con microesferas entéricas</strong> (resisten el ácido gástrico y se liberan en el duodeno). Si la respuesta es insuficiente: agregar <strong>IBP</strong> (omeprazol 20–40 mg) para reducir la acidez y mejorar la actividad enzimática. Evaluar respuesta por: aumento de peso, mejoría de la esteatorrea, elastasa fecal post-tratamiento.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">4 — Diabetes pancreatogénica (tipo 3c)</div>
+      <div class="farma-clase">Insulinopenia + déficit de glucagón → hipoglucemias frecuentes</div>
+      <div class="dosis-badge">Insulina basal ± bolos · Metformina si hay resistencia · Vigilancia estrecha</div>
+      <div class="farma-detalle">
+        La DM tipo 3c es frágil: el déficit de glucagón impide la respuesta contrarreguladora → hipoglucemias graves con dosis pequeñas de insulina. Evitar sulfonilureas (hipoglucemia). La metformina puede usarse si hay IR acompañante. Objetivo HbA1c: 7–8% (no demasiado estricto por riesgo de hipoglucemia).
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Tratamiento endoscópico y quirúrgico</div>
+    <div class="hl-info">Las indicaciones de intervención son: <strong>dolor refractario al tratamiento médico, dilatación ductal significativa con litiasis, seudoquiste complicado, sospecha de cáncer, obstrucción biliar o duodenal.</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Indicación</th><th>Abordaje endoscópico</th><th>Abordaje quirúrgico</th></tr>
+        <tr><td><strong>Litiasis + dilatación ductal</strong></td><td>CPRE + esfinterotomía + extracción de cálculos · Litotripsia extracorpórea (LEOC) para cálculos grandes</td><td><strong>Pancreaticoyeyunostomía lateral (Puestow-Gillesby):</strong> cuando CPRE falla · "abre" el ducto y lo drena hacia un asa de yeyuno</td></tr>
+        <tr><td><strong>Seudoquiste sintomático</strong></td><td>Drenaje endoscópico transmural (quistogastrostomía o quistoyeyunostomía guiado por USE) · de elección si &gt;6 cm o sintomático</td><td>Drenaje quirúrgico si endoscopía falla o no está disponible</td></tr>
+        <tr><td><strong>Cabeza pancreática inflamatoria ("masa inflamatoria")</strong></td><td>No es endoscópico</td><td><strong>Procedimiento de Beger</strong> (resección duodeno-preservadora de cabeza) o <strong>Whipple modificado</strong> si no se puede excluir malignidad</td></tr>
+        <tr><td><strong>PC difusa refractaria</strong></td><td>No indicado</td><td><strong>Pancreatectomía total ± autotrasplante de islotes</strong> (TPIAT): reseca todo el páncreas y trasplanta los islotes al hígado → preserva función endocrina en ~60% de los casos</td></tr>
+        <tr><td><strong>Obstrucción biliar</strong></td><td>CPRE + stent biliar (puente o definitivo)</td><td>Derivación biliodigestiva (hepaticoyeyunostomía) si estenosis larga o falla endoscópica</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Riesgo de cáncer de páncreas en PC</div>
+      La pancreatitis crónica aumenta el riesgo de adenocarcinoma de páncreas <strong>×5–10 veces</strong> (especialmente la PC hereditaria ×50 veces). Vigilancia con RMN/TAC anual en pacientes con PC de larga evolución. Ante cualquier cambio morfológico nuevo (masa, estenosis ductal asimétrica, CA 19-9 elevado) → descartar malignidad agresivamente con EUS + biopsia.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Causa #1 PC: alcohol (70–80%)</span>
+      <span class="pill">Tríada clásica: dolor + esteatorrea + diabetes</span>
+      <span class="pill">Calcificaciones pancreáticas: patognomónicas de PC alcohólica</span>
+      <span class="pill">Esteatorrea: lipasa &lt;10% de lo normal (&gt;90% pérdida exocrina)</span>
+      <span class="pill">Diabetes tipo 3c: pancreatogénica · déficit glucagón → hipoglucemias</span>
+      <span class="pill">TIGAR-O: clasificación etiológica</span>
+      <span class="pill">PAI tipo 1: IgG4↑ + "páncreas en salchicha" + responde a corticoides</span>
+      <span class="pill">Amilasa/lipasa: pueden ser NORMALES en PC (no sirven para diagnóstico)</span>
+      <span class="pill">Elastasa fecal &lt;200 μg/g → insuficiencia exocrina</span>
+      <span class="pill">TRE: pancreatina durante la comida + IBP si falla</span>
+      <span class="pill">Bloqueo plexo celíaco: dolor refractario a opioides</span>
+      <span class="pill">Puestow: pancreaticoyeyunostomía lateral (ducto dilatado)</span>
+      <span class="pill">Beger: resección duodeno-preservadora de cabeza pancreática</span>
+      <span class="pill">Pancreatectomía total + autotrasplante islotes (TPIAT): PC difusa refractaria</span>
+      <span class="pill">Riesgo CCR: PC aumenta ×5–10 · PC hereditaria ×50</span>
+      <span class="pill">Abstinencia alcohólica: medida más importante en PC alcohólica</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil 27ª ed. Elsevier; 2020 · Brunicardi FC et al. Schwartz Principios de Cirugía 11ª ed. McGraw-Hill; 2020 · Löhr JM et al. United European Gastroenterology evidence-based guidelines for the diagnosis and therapy of chronic pancreatitis (HaPanEU) 2017 · Yadav D et al. AGA Clinical Practice Update on the Diagnosis and Management of Chronic Pancreatitis. Gastroenterology 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
