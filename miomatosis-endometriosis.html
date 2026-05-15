@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miomatosis Uterina y Endometriosis — Medpedia</title>
+  <meta name="description" content="Miomatosis uterina y endometriosis: clasificación, diagnóstico, tratamiento médico y quirúrgico. Ginecología para el EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --mio: #880E4F; --mio-claro: #FCE4EC; --mio-oscuro: #560027;
+      --endo: #7B3FA0; --endo-claro: #F3E8FC; --endo-oscuro: #5C2D78;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gin   { background: #FCE4EC; color: #880E4F; }
+    .tag-endo  { background: #F3E8FC; color: #7B3FA0; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-mio  { font-size: 16px; font-weight: 500; color: var(--mio); margin-bottom: 12px; }
+    .sec-titulo-endo { font-size: 16px; font-weight: 500; color: var(--endo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-mio   { border-left: 3px solid var(--mio); background: var(--mio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-endo  { border-left: 3px solid var(--endo); background: var(--endo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num-mio  { width: 28px; height: 28px; border-radius: 50%; background: var(--mio); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-endo { width: 28px; height: 28px; border-radius: 50%; background: var(--endo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .divider { border: none; border-top: 2px solid var(--borde); margin: 2.5rem 0; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.mio  { background: var(--mio-claro);  border: 1.5px solid #f48fb1; }
+    .versus-block.endo { background: var(--endo-claro); border: 1.5px solid #ce93d8; }
+    .versus-titulo { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .versus-titulo.mio  { color: var(--mio); }
+    .versus-titulo.endo { color: var(--endo); }
+    .versus-fila { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; display: flex; gap: 6px; line-height: 1.45; }
+    .versus-fila strong { color: var(--texto); }
+    .tipo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .tipo-grid { grid-template-columns: 1fr; } }
+    .tipo-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; text-align: center; }
+    .tipo-icon { font-size: 24px; margin-bottom: 4px; }
+    .tipo-nombre { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .tipo-desc { font-size: 11px; color: var(--texto-ter); line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Miomatosis y Endometriosis</div>
+  <div class="titulo">Miomatosis Uterina y Endometriosis</div>
+  <div class="meta">
+    <span class="tag tag-gin">Ginecología</span>
+    <span class="tag tag-endo">Endometriosis</span>
+    <span class="tag tag-fuente">ACOG · ESHRE 2022 · Harrison 21ª · Schwarcz 7ª ed.</span>
+  </div>
+
+  <!-- ══════════════ MIOMATOSIS ══════════════ -->
+  <div class="seccion">
+    <div class="sec-titulo-mio">🩷 MIOMATOSIS UTERINA</div>
+    <div class="hl-mio"><strong>Mioma uterino (leiomioma / fibroma):</strong> tumor benigno más frecuente del aparato genital femenino. Origen en el músculo liso uterino (miometrio). Estrógeno-dependiente → crece durante la edad reproductiva, involuciona en la menopausia. Presente en el 25–50% de las mujeres en edad reproductiva; asintomático en el 50–70% de los casos.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📍 Clasificación FIGO (sistema PALM-COEIN) — por localización</div>
+    <div class="tipo-grid">
+      <div class="tipo-card">
+        <div class="tipo-icon">🔴</div>
+        <div class="tipo-nombre">Submucoso (tipo 0–2)</div>
+        <div class="tipo-desc">Protruye hacia la cavidad uterina. Causa hemorragia uterina anormal. Infertilidad. El más sintomático.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-icon">🟡</div>
+        <div class="tipo-nombre">Intramural (tipo 3–4)</div>
+        <div class="tipo-desc">En el espesor del miometrio. El más frecuente. Menorragia, dismenorrea, presión pelviana.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-icon">🟢</div>
+        <div class="tipo-nombre">Subseroso (tipo 5–7)</div>
+        <div class="tipo-desc">Protruye hacia la serosa. Síntomas compresivos (vejiga, recto). Pediculado → riesgo de torsión.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-icon">🔵</div>
+        <div class="tipo-nombre">Cervical</div>
+        <div class="tipo-desc">Raro. Puede obstruir el canal cervical → distocia.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-icon">🟣</div>
+        <div class="tipo-nombre">Intraligamentario (parásito)</div>
+        <div class="tipo-desc">Entre los ligamentos anchos. Compresión ureteral.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-icon">⚫</div>
+        <div class="tipo-nombre">Pediculado (subseroso o submucoso)</div>
+        <div class="tipo-desc">Con tallo vascular. Puede torcerse (necrobiosis aséptica) → dolor agudo → cirugía urgente.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-mio">🩷 Clínica y diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma</th><th>Tipo de mioma</th><th>Mecanismo</th></tr>
+        <tr><td><strong>Hemorragia uterina anormal</strong> (menorragia, metrorragia)</td><td>Submucoso &gt; Intramural</td><td>Aumento de la superficie endometrial, distorsión de la cavidad, alteración de la contracción uterina</td></tr>
+        <tr><td><strong>Dismenorrea</strong></td><td>Todos</td><td>Compresión e inflamación local</td></tr>
+        <tr><td><strong>Presión pelviana</strong>, sensación de pesadez</td><td>Subseroso grande</td><td>Compresión de órganos adyacentes</td></tr>
+        <tr><td><strong>Síntomas urinarios</strong> (polaquiuria, retención)</td><td>Anterior / Subseroso anterior</td><td>Compresión vesical o uretral</td></tr>
+        <tr><td><strong>Constipación</strong></td><td>Posterior / Subseroso posterior</td><td>Compresión rectal</td></tr>
+        <tr><td><strong>Infertilidad</strong></td><td>Submucoso (principal) · Intramural grande</td><td>Distorsión de la cavidad, interferencia con implantación o transporte espermático</td></tr>
+        <tr><td><strong>Complicaciones en el embarazo</strong></td><td>Todos</td><td>Aborto, parto pretérmino, distocia, separación placentaria, hemorragia postparto</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Diagnóstico:</strong> Ecografía transvaginal (ETV) → 1ª línea · Sonohisterografía (inyección de SF en cavidad) → mejor para submucosos · Histeroscopía → gold standard para submucosos (diagnóstica y terapéutica) · RMN → mapeo completo antes de miomectomía o embolización.</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Degeneración del mioma — tipos y cuándo preguntan</div>
+      <strong>Degeneración hialina:</strong> más frecuente (65%) · asintomática · fibrosis y hialinización del tejido.<br>
+      <strong>Degeneración roja (necrobiosis aséptica):</strong> típica del embarazo · dolor agudo intenso · fiebre · leucocitosis → puede simular abdomen agudo. Manejo conservador (reposo, AINEs, hidratación).<br>
+      <strong>Degeneración cálcica:</strong> en menopausia · calcificaciones en Rx.<br>
+      <strong>Degeneración sarcomatosa (leiomiosarcoma):</strong> &lt;0,5% de los miomas · sospecha ante crecimiento rápido en posmenopausia → cirugía.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-mio">🩷 Tratamiento</div>
+    <div class="hl-mio">El tratamiento depende de: <strong>síntomas, tamaño, número, localización, deseo de fertilidad y situación hormonal</strong>. Las opciones van desde la observación hasta la histerectomía.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Tratamiento médico — control hormonal</div>
+      <div class="farma-clase">Objetivo: reducir síntomas y tamaño · No cura definitiva · Efecto temporal</div>
+      <div class="farma-detalle">
+        <strong>DIU-LNG (Mirena):</strong> primera línea para control de la hemorragia · reduce el sangrado en &gt;80% · no reduce el tamaño del mioma. Contraindicado si distorsión de la cavidad por mioma submucoso.<br><br>
+        <strong>Agonistas de GnRH</strong> (leuprolide, triptorelina): inducen hipoestrogenismo → reducen el tamaño del mioma hasta 50% en 3 meses. <strong>Uso preoperatorio</strong> (3–6 meses antes de cirugía) para reducir el tamaño y la vascularización, corregir anemia. No son tratamiento definitivo: los miomas reaparecen al suspender. Efectos adversos: sofocos, osteoporosis (no usar &gt;6 meses sin "add-back therapy").<br><br>
+        <strong>Ulipristal acetato (modulador del receptor de progesterona):</strong> reduce el sangrado y el tamaño. Actualmente con restricciones por hepatotoxicidad grave reportada. Uso limitado.<br><br>
+        <strong>AINEs + antifibrinolíticos (ácido tranexámico):</strong> para control sintomático del sangrado sin efecto sobre el tamaño.<br><br>
+        <strong>Anticonceptivos orales combinados:</strong> controlan el sangrado pero no reducen el tamaño.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Embolización de arterias uterinas (EAU)</div>
+      <div class="farma-clase">Radiología intervencionista · Alternativa a la cirugía · Conserva el útero</div>
+      <div class="dosis-badge">Cateterismo femoral → microesferas en arterias uterinas</div>
+      <div class="farma-detalle">
+        Oclusión de las arterias uterinas → isquemia del mioma → necrosis y reducción de tamaño (30–40%). Muy efectiva para el control de la menorragia (&gt;85%). <strong>Candidatas:</strong> mujeres sin deseo de fertilidad futura, contraindicación quirúrgica, rechazo de cirugía. <strong>Contraindicaciones:</strong> deseo de embarazo (riesgo de insuficiencia ovárica), infección activa, pediculado subseroso (riesgo de expulsión necrótica). Alta hospitalaria en 24–48 h.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Miomectomía — cirugía conservadora</div>
+      <div class="farma-clase">Extirpación del mioma conservando el útero · De elección con deseo de fertilidad</div>
+      <div class="dosis-badge">Histeroscópica · Laparoscópica · Laparotómica</div>
+      <div class="farma-detalle">
+        <strong>Histeroscópica:</strong> gold standard para miomas submucosos (tipo 0–1–2). Resección con asa de resectoscopio. Sin incisiones. Ambulatoria.<br>
+        <strong>Laparoscópica:</strong> miomas intramurales o subserosos &lt;8–10 cm, pocos miomas (&lt;3–4). Menor recuperación que laparotomía. Riesgo de rotura uterina en embarazo posterior (cicatriz).<br>
+        <strong>Laparotómica:</strong> miomas muy grandes, múltiples, intraligamentarios. Mayor acceso pero mayor morbimortalidad. La tasa de recurrencia tras miomectomía es del 15–30% a 10 años.<br>
+        <strong>Importante:</strong> en embarazos post-miomectomía laparoscópica → cesárea electiva (riesgo de rotura uterina).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Histerectomía — tratamiento definitivo</div>
+      <div class="farma-clase">Única cura definitiva · Sin deseo de fertilidad</div>
+      <div class="dosis-badge">Laparoscópica · Vaginal · Abdominal</div>
+      <div class="farma-detalle">
+        De elección en: síntomas graves sin deseo de fertilidad, fracaso de otros tratamientos, sospecha de malignidad, útero muy aumentado de tamaño. Vía laparoscópica de elección (menor morbilidad, recuperación más rápida). Vía vaginal si hay descenso uterino. Laparotomía si útero muy grande o adherencias.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════ ENDOMETRIOSIS ══════════════ -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">🟣 ENDOMETRIOSIS</div>
+    <div class="hl-endo"><strong>Endometriosis:</strong> presencia de tejido endometrial funcionante (glándulas + estroma) fuera de la cavidad uterina. Estrógeno-dependiente. Produce inflamación crónica, adherencias y fibrosis. Afecta al 10% de las mujeres en edad reproductiva y al 35–50% de las mujeres con infertilidad. La causa exacta se desconoce — teoría más aceptada: <strong>menstruación retrógrada de Sampson</strong>.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📍 Localización y clasificación (estadios ASRM)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización</th><th>Frecuencia</th><th>Forma clínica</th></tr>
+        <tr><td><strong>Ovario</strong> (endometrioma / "quiste de chocolate")</td><td>Muy frecuente</td><td>Masa ovárica con contenido hemático pardo. Eco: imagen homogénea "vidrio esmerilado"</td></tr>
+        <tr><td><strong>Peritoneo pélvico</strong> (fondo de saco, ligamentos uterosacros)</td><td>Muy frecuente</td><td>Implantes superficiales o profundos. Dolor crónico pelviano</td></tr>
+        <tr><td><strong>Endometriosis profunda</strong> (tabique rectovaginal, vejiga, uréter)</td><td>15–30%</td><td>La más grave. Disquecia, disuria, hematuria cíclica, obstrucción ureteral</td></tr>
+        <tr><td><strong>Trompa</strong></td><td>Frecuente</td><td>Adherencias → infertilidad tubaria</td></tr>
+        <tr><td><strong>Extragenital</strong> (intestino, cicatriz umbilical, pulmón)</td><td>Rara</td><td>Hemoptisis, dolor umbilical cíclico con la menstruación</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">La <strong>clasificación de la ASRM</strong> (estadios I–IV) evalúa la extensión de los implantes, adherencias y endometriomas: I (mínima) · II (leve) · III (moderada) · IV (severa). <strong>El estadio NO correlaciona bien con los síntomas</strong> — una endometriosis estadio I puede dar dolor invalidante y una estadio IV puede ser asintomática.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-endo">🟣 Clínica — la tríada clásica</div>
+    <div class="hl-endo">La tríada clásica de la endometriosis es: <strong>dismenorrea + dispareunia + infertilidad</strong>. El dolor es típicamente <strong>cíclico</strong> (coincide con la menstruación) y progresivo. El retraso diagnóstico es de 7–10 años en promedio (síntomas normalizados o atribuidos a otras causas).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma</th><th>Características</th><th>Estructura afectada</th></tr>
+        <tr><td><strong>Dismenorrea</strong></td><td>Progresiva, invalidante, comienza días antes de la menstruación. No responde bien a AINEs.</td><td>Implantes peritoneales, endometriomas</td></tr>
+        <tr><td><strong>Dispareunia profunda</strong></td><td>Dolor con la penetración profunda. Típica de tabique rectovaginal y ligamentos uterosacros</td><td>Endometriosis profunda posterior</td></tr>
+        <tr><td><strong>Infertilidad</strong></td><td>35–50% de las mujeres infértiles tienen endometriosis. Multifactorial: adherencias, distorsión anatómica, toxicidad del líquido peritoneal, alteración de la ovulación</td><td>Trompas, ovarios, peritoneo</td></tr>
+        <tr><td><strong>Dolor pelviano crónico</strong></td><td>Continuo o cíclico, no solo menstrual</td><td>Cualquier localización</td></tr>
+        <tr><td><strong>Disquecia</strong></td><td>Dolor al defecar, especialmente durante la menstruación</td><td>Tabique rectovaginal, colon sigmoideo</td></tr>
+        <tr><td><strong>Disuria / hematuria cíclica</strong></td><td>Dolor al orinar o sangre en orina con la menstruación</td><td>Vejiga, uréter</td></tr>
+        <tr><td><strong>Menorragia / sangrado irregular</strong></td><td>Puede asociarse a adenomiosis concomitante</td><td>Endometriosis + adenomiosis</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num-endo">1</div>
+      <div class="step-content">
+        <strong>Clínica — sospecha diagnóstica</strong><br>
+        Mujer en edad reproductiva con dismenorrea progresiva + dispareunia + infertilidad. El diagnóstico clínico tiene alta especificidad para endometriosis profunda. No esperar confirmación quirúrgica para iniciar tratamiento empírico.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-endo">2</div>
+      <div class="step-content">
+        <strong>Ecografía transvaginal (ETV)</strong><br>
+        Identifica endometriomas (imagen "en vidrio esmerilado" con contenido homogéneo pardo, paredes gruesas). Puede detectar endometriosis profunda (intestinal, vesical) en manos expertas. Sensibilidad limitada para implantes superficiales.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-endo">3</div>
+      <div class="step-content">
+        <strong>RMN de pelvis</strong><br>
+        Mejor que la eco para endometriosis profunda, tabique rectovaginal, afectación ureteral o intestinal. No reemplaza la laparoscopía pero orienta la planificación quirúrgica.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-endo">4</div>
+      <div class="step-content">
+        <strong>Laparoscopía + biopsia — gold standard diagnóstico</strong><br>
+        Visualización directa de los implantes + confirmación histológica (glándulas + estroma endometrial fuera del útero). Permite estadificar y tratar en el mismo acto. <strong>La ausencia de lesiones visibles no descarta endometriosis microscópica.</strong>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-endo">5</div>
+      <div class="step-content">
+        <strong>CA-125</strong><br>
+        Elevado en endometriosis avanzada (estadios III–IV) pero no específico (también en ovario, peritonitis, embarazo, EPI). <strong>No es útil para screening ni diagnóstico</strong> — tiene valor en el seguimiento de endometriomas y respuesta al tratamiento.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-endo">🟣 Tratamiento</div>
+    <div class="hl-endo">El tratamiento depende de: <strong>síntomas predominantes (dolor vs infertilidad), deseo de fertilidad, estadio y edad</strong>. No hay cura definitiva (salvo menopausia quirúrgica). La enfermedad recurre en el 40–50% a los 5 años tras la cirugía.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Tratamiento médico — supresión hormonal</div>
+      <div class="farma-clase">Objetivo: crear ambiente hipogénico → regresión de los implantes · No restaura la fertilidad per se</div>
+      <div class="farma-detalle">
+        <strong>AINEs:</strong> primera línea para el dolor leve · no actúan sobre los implantes · útiles como analgesia.<br><br>
+        <strong>Anticonceptivos orales combinados (AOC) continuos:</strong> primera línea farmacológica · supresión del ciclo → amenorrea → regresión de implantes · muy efectivos para dismenorrea y dolor pélvico. No restauran la fertilidad mientras se toman.<br><br>
+        <strong>Progestágenos (dienogest, medroxiprogesterona, noretisterona):</strong> muy efectivos · dienogest 2 mg/día VO es el de mayor evidencia específica para endometriosis · induces atrofia de los implantes. DIU-LNG (Mirena) para dolor pélvico asociado.<br><br>
+        <strong>Agonistas de GnRH</strong> (leuprolide, triptorelina): hipoestrogenismo → regresión completa. Efectos adversos: sofocos, osteoporosis, atrofia vaginal (add-back therapy obligatoria si &gt;6 meses). Reservados para endometriosis grave o previo a cirugía.<br><br>
+        <strong>Danazol:</strong> andrógeno débil → atrofia endometrial. Muy efectivo pero efectos adversos androgénicos inaceptables (acné, hirsutismo, voz grave). En desuso.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Tratamiento quirúrgico</div>
+      <div class="farma-clase">Laparoscopía conservadora · Cirugía radical</div>
+      <div class="farma-detalle">
+        <strong>Laparoscopía conservadora (con deseo de fertilidad):</strong> extirpación o fulguración de implantes, quistectomía de endometriomas (mejor que el drenaje → menor recurrencia), adhesiolisis, resección de endometriosis profunda. Mejora la fertilidad y el dolor. Recurrencia 40–50% a 5 años → tratamiento médico postoperatorio obligatorio para retrasar la recidiva.<br><br>
+        <strong>Quistectomía de endometrioma vs aspiración:</strong> la quistectomía (extirpación de la cápsula) es superior a la aspiración-fenestración para reducir la recurrencia (30% vs 80%). Riesgo de reducción de la reserva ovárica → cuidado en endometriomas bilaterales o repetidos.<br><br>
+        <strong>Histerectomía + ooforectomía bilateral (tratamiento definitivo):</strong> sin deseo de fertilidad + síntomas graves refractarios. Cura definitiva. Con terapia hormonal sustitutiva post-ooforectomía si la paciente es joven. Recurrencia es posible incluso tras ooforectomía si quedan implantes pélvicos.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Comparación rápida — Miomatosis vs Endometriosis</div>
+    <div class="versus-wrap">
+      <div class="versus-block mio">
+        <div class="versus-titulo mio">🩷 Miomatosis</div>
+        <div class="versus-fila"><strong>Tejido:</strong> músculo liso (miometrio)</div>
+        <div class="versus-fila"><strong>Síntoma #1:</strong> hemorragia uterina anormal</div>
+        <div class="versus-fila"><strong>Diagnóstico:</strong> ecografía transvaginal</div>
+        <div class="versus-fila"><strong>Manejo conservative:</strong> DIU-LNG + agonistas GnRH</div>
+        <div class="versus-fila"><strong>Cirugía conservadora:</strong> miomectomía</div>
+        <div class="versus-fila"><strong>Cura definitiva:</strong> histerectomía</div>
+        <div class="versus-fila"><strong>Maligna:</strong> &lt;0,5% (leiomiosarcoma)</div>
+        <div class="versus-fila"><strong>Menopausia:</strong> involucionan</div>
+      </div>
+      <div class="versus-block endo">
+        <div class="versus-titulo endo">🟣 Endometriosis</div>
+        <div class="versus-fila"><strong>Tejido:</strong> endometrio ectópico</div>
+        <div class="versus-fila"><strong>Síntoma #1:</strong> dismenorrea progresiva</div>
+        <div class="versus-fila"><strong>Diagnóstico:</strong> laparoscopía + biopsia (gold standard)</div>
+        <div class="versus-fila"><strong>Manejo médico:</strong> AOC continuos + dienogest</div>
+        <div class="versus-fila"><strong>Cirugía conservadora:</strong> laparoscopía + quistectomía</div>
+        <div class="versus-fila"><strong>Cura definitiva:</strong> histerectomía + ooforectomía bilateral</div>
+        <div class="versus-fila"><strong>Maligna:</strong> rara (carcinoma sobre endometrioma)</div>
+        <div class="versus-fila"><strong>Menopausia:</strong> regresión (pero puede persistir)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Mioma: tumor benigno más frecuente del aparato genital</span>
+      <span class="pill">Mioma: estrógeno-dependiente → involuciona en menopausia</span>
+      <span class="pill">Submucoso: más sintomático → hemorragia + infertilidad</span>
+      <span class="pill">Subseroso pediculado: riesgo de torsión → dolor agudo</span>
+      <span class="pill">Degeneración roja: embarazo + dolor agudo → conservador (AINEs)</span>
+      <span class="pill">Degeneración sarcomatosa: &lt;0,5% · crecimiento rápido en menopausia</span>
+      <span class="pill">Diagnóstico mioma: ecografía transvaginal</span>
+      <span class="pill">Submucoso: histeroscopía (diagnóstica + terapéutica)</span>
+      <span class="pill">GnRH agonistas: reducen mioma 50% en 3 meses · preoperatorio</span>
+      <span class="pill">EAU: embolización → conserva útero · sin deseo de fertilidad</span>
+      <span class="pill">Miomectomía laparoscópica: cesárea electiva en embarazo posterior</span>
+      <span class="pill">Endometriosis: 10% de mujeres · 50% de infértiles</span>
+      <span class="pill">Teoría de Sampson: menstruación retrógrada</span>
+      <span class="pill">Tríada: dismenorrea + dispareunia + infertilidad</span>
+      <span class="pill">El estadio ASRM no correlaciona con los síntomas</span>
+      <span class="pill">Endometrioma: "quiste de chocolate" · eco en vidrio esmerilado</span>
+      <span class="pill">Gold standard diagnóstico: laparoscopía + biopsia</span>
+      <span class="pill">CA-125: no sirve para screening ni diagnóstico</span>
+      <span class="pill">Tratamiento 1ª línea: AOC continuos o dienogest</span>
+      <span class="pill">Quistectomía &gt; aspiración: menor recurrencia de endometrioma</span>
+      <span class="pill">Recurrencia endometriosis: 40–50% a 5 años post-cirugía</span>
+      <span class="pill">Cura definitiva: histerectomía + ooforectomía bilateral</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ESHRE Endometriosis Guideline Development Group. Endometriosis guideline 2022 · ACOG Practice Bulletin No. 228: Management of Symptomatic Uterine Leiomyomas. Obstet Gynecol 2021 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Schwarcz R, Fescina R, Duverges C. Obstetricia 7ª ed. El Ateneo; 2016 · Gori JR, Lorusso A. Ginecología de Gori 3ª ed. Editorial Médica Panamericana; 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
