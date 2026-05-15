@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peritonitis Aguda — Medpedia</title>
+  <meta name="description" content="Peritonitis aguda: clasificación, diagnóstico, manejo quirúrgico y antibióticos. Cirugía general para el EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --cir: #C0392B; --cir-claro: #FDEDEC; --cir-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cir   { background: #E3F2FD; color: #1565C0; }
+    .tag-emerg { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-cir { font-size: 16px; font-weight: 500; color: var(--cir); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-cir   { border-left: 3px solid var(--cir); background: var(--cir-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--cir); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-v { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .causa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 12px; }
+    .causa-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .causa-titulo { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--texto); }
+    .causa-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; display: flex; gap: 5px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.p1 { background: #E6F1FB; border: 1.5px solid #a8c8e8; }
+    .versus-block.p2 { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .versus-block.p3 { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .versus-titulo { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .versus-titulo.p1 { color: #1A5E9A; }
+    .versus-titulo.p2 { color: #C0392B; }
+    .versus-titulo.p3 { color: #D4730A; }
+    .versus-fila { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; line-height: 1.45; }
+    .versus-fila strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Peritonitis Aguda</div>
+  <div class="titulo">Peritonitis Aguda</div>
+  <div class="meta">
+    <span class="tag tag-cir">Cirugía general</span>
+    <span class="tag tag-emerg">Emergencia quirúrgica</span>
+    <span class="tag tag-fuente">Schwartz 11ª ed. · Giménez 2ª ed. · WSES Guidelines 2020</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y fisiopatología</div>
+    <div class="hl-cir"><strong>Peritonitis:</strong> inflamación del peritoneo (membrana serosa que tapiza la cavidad abdominal y los órganos abdominales) secundaria a infección, irritación química o lesión mecánica. Es una emergencia quirúrgica con mortalidad del 10–40% dependiendo de la causa, el tiempo de evolución y el estado del paciente.</div>
+    <div class="hl-info">El peritoneo reacciona a la agresión con: vasodilatación → exudado → fibrina → formación de absceso o peritonitis generalizada. El secuestro de líquido en la cavidad peritoneal (tercer espacio) puede superar los 4–6 L → hipovolemia grave → shock distributivo/séptico.</div>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación de las peritonitis</div>
+    <div class="versus-wrap" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="versus-block p1">
+        <div class="versus-titulo p1">🔵 Primaria</div>
+        <div class="versus-fila"><strong>Sin perforación visceral</strong> identificable</div>
+        <div class="versus-fila"><strong>PBE:</strong> Peritonitis Bacteriana Espontánea en cirróticos con ascitis · S&lt; 1g/dl de proteínas</div>
+        <div class="versus-fila"><strong>Peritonitis del diálisis peritoneal:</strong> contaminación por catéter</div>
+        <div class="versus-fila"><strong>Peritonitis primaria en niños:</strong> S. pneumoniae · rara</div>
+        <div class="versus-fila"><strong>Cirugía:</strong> no siempre indicada · ATB primero en PBE</div>
+      </div>
+      <div class="versus-block p2">
+        <div class="versus-titulo p2">🔴 Secundaria (95%)</div>
+        <div class="versus-fila"><strong>La más frecuente</strong> — perforación o necrosis visceral</div>
+        <div class="versus-fila">Apendicitis perforada · Úlcera péptica perforada · Perforación de colon (diverticulitis, cáncer, isquemia)</div>
+        <div class="versus-fila">Colecistitis gangrenosa · Traumatismo abdominal · Dehiscencia de anastomosis</div>
+        <div class="versus-fila"><strong>Cirugía:</strong> siempre indicada · urgente</div>
+      </div>
+      <div class="versus-block p3">
+        <div class="versus-titulo p3">🟠 Terciaria</div>
+        <div class="versus-fila"><strong>Peritonitis persistente</strong> tras tratamiento adecuado de una peritonitis secundaria</div>
+        <div class="versus-fila">Microorganismos resistentes o poco virulentos (hongos, enterococo, estafilococo coagulasa negativo)</div>
+        <div class="versus-fila">Paciente inmunocomprometido · UTI · fallo multiorgánico</div>
+        <div class="versus-fila"><strong>Pronóstico muy grave</strong> · manejo en UTI</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAUSAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Causas de peritonitis secundaria — por frecuencia</div>
+    <div class="causa-grid">
+      <div class="causa-card">
+        <div class="causa-titulo">🦠 Tracto digestivo bajo</div>
+        <div class="causa-item"><span>1.</span><span>Apendicitis perforada (causa #1 en jóvenes)</span></div>
+        <div class="causa-item"><span>2.</span><span>Diverticulitis perforada (adultos mayores)</span></div>
+        <div class="causa-item"><span>3.</span><span>Perforación de colon por cáncer, vólvulo, isquemia</span></div>
+        <div class="causa-item"><span>4.</span><span>Dehiscencia de anastomosis colorrectal</span></div>
+      </div>
+      <div class="causa-card">
+        <div class="causa-titulo">🫀 Tracto digestivo alto</div>
+        <div class="causa-item"><span>1.</span><span>Úlcera péptica perforada (duodenal &gt; gástrica)</span></div>
+        <div class="causa-item"><span>2.</span><span>Perforación esofágica (Boerhaave)</span></div>
+        <div class="causa-item"><span>3.</span><span>Dehiscencia de anastomosis esofagogástrica</span></div>
+      </div>
+      <div class="causa-card">
+        <div class="causa-titulo">🫐 Biliopancreática</div>
+        <div class="causa-item"><span>1.</span><span>Colecistitis gangrenosa / perforada</span></div>
+        <div class="causa-item"><span>2.</span><span>Pancreatitis necrotizante infectada</span></div>
+        <div class="causa-item"><span>3.</span><span>Fístula biliar traumática o postqx</span></div>
+      </div>
+      <div class="causa-card">
+        <div class="causa-titulo">🏥 Iatrógena / Trauma</div>
+        <div class="causa-item"><span>1.</span><span>Perforación iatrogénica en endoscopía</span></div>
+        <div class="causa-item"><span>2.</span><span>Trauma abdominal contuso o penetrante</span></div>
+        <div class="causa-item"><span>3.</span><span>Dehiscencia de herida laparotómica</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-cir">🔴 Diagnóstico — clínico + imágenes</div>
+    <div class="hl-cir">El diagnóstico de peritonitis es <strong>clínico</strong>. Los estudios confirman la causa. Un abdomen con signos peritoneales en un paciente con repercusión sistémica es indicación de cirugía aunque la imagen no sea concluyente.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Síntomas y signos peritoneales</strong><br>
+        — <strong>Dolor abdominal generalizado</strong> de inicio agudo, intenso, continuo — el más importante<br>
+        — <strong>Defensa muscular involuntaria</strong> (contractura en tabla): rigidez de la pared abdominal a la palpación — signo de Blumberg positivo (dolor a la descompresión brusca)<br>
+        — <strong>Silencio abdominal</strong>: ausencia de ruidos hidroaéreos (íleo paralítico por irritación peritoneal)<br>
+        — <strong>Posición antiálgica:</strong> paciente en decúbito con rodillas flexionadas, inmóvil<br>
+        — Fiebre, taquicardia, hipotensión, oliguria → signos de sepsis/shock
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Laboratorio</strong><br>
+        Hemograma (leucocitosis con desviación a la izquierda), PCR, procalcitonina, bioquímica completa, coagulación, lactato (marcador de hipoperfusión → valor pronóstico), hemocultivos × 2, gasometría arterial.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Imágenes</strong><br>
+        — <strong>Rx simple de abdomen + tórax (de pie):</strong> neumoperitoneo (gas libre subdiafragmático) → perforación de víscera hueca. Sensibilidad ~70–80% para neumoperitoneo.<br>
+        — <strong>TAC de abdomen y pelvis con contraste IV:</strong> estudio de elección — identifica la causa, localiza el origen, detecta abscesos, evalúa extensión. Realizar si el paciente está estable.<br>
+        — <strong>Ecografía:</strong> útil en inestabilidad (FAST), colecistitis, apendicitis. Operador-dependiente.
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Neumoperitoneo en Rx — lo que preguntan</div>
+      Gas libre subdiafragmático en Rx de tórax o abdomen de pie → <strong>perforación de víscera hueca</strong> hasta demostrar lo contrario → indicación de cirugía urgente. Causas de neumoperitoneo SIN perforación: postoperatorio reciente (&lt;7 días), neumoperitoneo diagnóstico, laparoscopía reciente, DPCA. Si el paciente está asintomático y hay cirugía reciente → observar.
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Peritonitis Bacteriana Espontánea (PBE) — diagnóstico específico</strong><br>
+        En cirrótico con ascitis: <strong>paracentesis diagnóstica</strong> → PMN en líquido ascítico <strong>≥250 células/mm³</strong> → diagnóstico de PBE (aunque el cultivo sea negativo). Gérmenes más frecuentes: E. coli, Klebsiella, S. pneumoniae. Tratamiento: cefotaxima 2 g IV c/8 h × 5 días + albúmina IV (1,5 g/kg día 1, 1 g/kg día 3) para prevenir síndrome hepatorrenal.
+      </div>
+    </div>
+  </div>
+
+  <!-- MANEJO QUIRÚRGICO -->
+  <div class="seccion">
+    <div class="sec-titulo-cir">🔴 Manejo — resucitación y cirugía urgente</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> Peritonitis secundaria = cirugía urgente. La resucitación y los ATB NO reemplazan la cirugía — son un puente para estabilizar al paciente. El control del foco (source control) es el pilar del tratamiento.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Resucitación inicial (simultánea con la preparación quirúrgica)</strong><br>
+        2 vías periféricas gruesas o vía central. <strong>Expansión con cristaloides:</strong> SF 0,9% o Ringer lactato 20–30 ml/kg en 1–2 h. Objetivo: PAM &gt;65 mmHg, diuresis &gt;0,5 ml/kg/h, lactato en descenso. SNG para descompresión gástrica. Sonda vesical. Monitoreo continuo. Hemocultivos antes de ATB.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Antibióticos empíricos — iniciar dentro de la primera hora</strong><br>
+        Ver sección de ATB más abajo. El inicio precoz reduce la mortalidad. No demorar por esperar resultados de cultivo.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Cirugía — control del foco (source control)</strong><br>
+        Objetivo: eliminar la fuente de contaminación + limpiar la cavidad peritoneal.<br><br>
+        <strong>Vía de abordaje:</strong> laparotomía de urgencia (estándar) o laparoscopía según experiencia del centro y estado del paciente.<br><br>
+        <strong>Procedimientos según causa:</strong><br>
+        — <strong>Úlcera perforada:</strong> sutura simple (técnica de Graham con epiplón) ± erradicación H. pylori diferida · gastrectomía parcial si sospecha de malignidad o falla de sutura<br>
+        — <strong>Apendicitis perforada:</strong> apendicectomía + lavado peritoneal<br>
+        — <strong>Perforación de colon:</strong> resección del segmento comprometido · anastomosis primaria (si colon bien preparado, paciente estable) o <strong>operación de Hartmann</strong> (colostomía + cierre del recto) en contaminación fecal grave, inestabilidad, inmunosupresión<br>
+        — <strong>Colecistitis gangrenosa:</strong> colecistectomía de urgencia (laparoscópica si es posible) o colecistostomía percutánea si muy alto riesgo quirúrgico
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Lavado peritoneal intraoperatorio</strong><br>
+        Irrigación abundante con suero fisiológico tibio (3–10 L) para reducir la carga bacteriana y los depósitos de fibrina. La evidencia es moderada pero es práctica estándar. <strong>No agregar antisépticos al líquido de lavado</strong> (betadine intraabdominal → toxicidad peritoneal).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Abdomen abierto (laparostomía) — cuándo y por qué</strong><br>
+        En peritonitis grave con inestabilidad, síndrome compartimental abdominal, o cuando se anticipa reintervención (damage control surgery). Se coloca un sistema de cierre asistido por vacío (VAC abdominal). Permite reintervenciones programadas cada 24–48 h hasta lograr el cierre definitivo.
+      </div>
+    </div>
+  </div>
+
+  <!-- ANTIBIÓTICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Antibióticos empíricos — esquemas por situación clínica</div>
+    <div class="hl">El tratamiento ATB debe cubrir <strong>gramnegativos entéricos</strong> (E. coli, Klebsiella) y <strong>anaerobios</strong> (Bacteroides fragilis). En infecciones nosocomiales o pacientes con factores de riesgo: cubrir también Pseudomonas y enterococo. Ajustar según cultivos intraoperatorios.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Peritonitis secundaria comunitaria — sin shock séptico</div>
+      <div class="farma-clase">Cobertura: gramnegativos + anaerobios · Duración: 4–7 días post-control del foco</div>
+      <div class="dosis-badge">Ceftriaxona 2 g IV c/24 h + Metronidazol 500 mg IV c/8 h</div>
+      <div class="farma-detalle">
+        Alternativas equivalentes: amoxicilina-clavulánico 2,2 g IV c/8 h · ertapenem 1 g IV c/24 h (en pacientes con factores de riesgo de resistencia). La duración depende del control del foco: si la fuente fue controlada adecuadamente, 4 días son suficientes (STOP-IT trial).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Peritonitis grave / shock séptico / nosocomial</div>
+      <div class="farma-clase">Cobertura ampliada: Pseudomonas + BLEE + anaerobios · Ajustar con hemocultivos</div>
+      <div class="dosis-badge">Piperacilina-tazobactam 4,5 g IV c/6 h ± Metronidazol</div>
+      <div class="farma-detalle">
+        Alternativa: meropenem 1 g IV c/8 h (en sospecha de BLEE o infección nosocomial grave) · imipenem-cilastatina. Si sospecha de Candida (cirugías previas, inmunodepresión, nutrición parenteral): agregar fluconazol 400 mg/día IV o equinocandina. Agregar vancomicina si sospecha de SAMR (infección nosocomial, catéteres).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Peritonitis Bacteriana Espontánea (PBE)</div>
+      <div class="farma-clase">Cirrótico con PMN ≥250/mm³ en ascitis · Tratamiento médico — no quirúrgico</div>
+      <div class="dosis-badge">Cefotaxima 2 g IV c/8 h × 5 días + Albúmina IV</div>
+      <div class="farma-detalle">
+        <strong>Albúmina:</strong> 1,5 g/kg IV en el día 1 (máx 150 g) + 1 g/kg en el día 3 (máx 100 g) → previene síndrome hepatorrenal (↓mortalidad). Alternativa ambulatoria en PBE sin criterios de gravedad: ciprofloxacina 400 mg IV c/12 h o norfloxacina 400 mg VO c/12 h. <strong>Profilaxis secundaria:</strong> norfloxacina 400 mg/día VO indefinida (o ciprofloxacina 500 mg/día) para prevenir recurrencia.
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN DE HAMBURGO / MANNHEIM -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Score de Mannheim (MPI) — valor pronóstico</div>
+    <div class="hl">El <strong>Índice de Peritonitis de Mannheim (MPI)</strong> predice la mortalidad postoperatoria. Evalúa 8 factores. <strong>MPI &lt;21: mortalidad ~0% · MPI 21–29: ~22% · MPI &gt;29: ~59%</strong>.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Puntos</th></tr>
+        <tr><td>Edad &gt;50 años</td><td>5</td></tr>
+        <tr><td>Sexo femenino</td><td>5</td></tr>
+        <tr><td>Insuficiencia orgánica (renal, hepática, cardíaca)</td><td>7</td></tr>
+        <tr><td>Neoplasia</td><td>7</td></tr>
+        <tr><td>Duración de peritonitis &gt;24 h antes de cirugía</td><td>4</td></tr>
+        <tr><td>Origen no colónico</td><td>4</td></tr>
+        <tr><td>Peritonitis generalizada (difusa)</td><td>6</td></tr>
+        <tr><td>Exudado fecal o purulento difuso</td><td>6 (fecal) / 2 (turbio)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones postoperatorias</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Momento</th><th>Manejo</th></tr>
+        <tr><td><strong>Absceso intraabdominal residual</strong></td><td>3–7 días postop</td><td>Drenaje percutáneo guiado por TAC (de elección) + ATB dirigida</td></tr>
+        <tr><td><strong>Fístula anastomótica / dehiscencia</strong></td><td>3–7 días</td><td>Reintervención o drenaje + nutrición enteral distal / parenteral</td></tr>
+        <tr><td><strong>Íleo paralítico prolongado</strong></td><td>2–5 días</td><td>Reposo digestivo, deambulación precoz, neostigmina si refractario</td></tr>
+        <tr><td><strong>Síndrome compartimental abdominal</strong></td><td>Postop precoz</td><td>Laparostomía descompresiva urgente si PIA &gt;20 mmHg + disfunción orgánica</td></tr>
+        <tr><td><strong>Sepsis / shock séptico</strong></td><td>Cualquier momento</td><td>Protocolo Surviving Sepsis · ATB + control foco + expansión + vasopresores</td></tr>
+        <tr><td><strong>Fallo multiorgánico (FMO)</strong></td><td>Días–semanas</td><td>Soporte en UTI · factor pronóstico más importante de mortalidad</td></tr>
+        <tr><td><strong>Oclusión intestinal (bridas)</strong></td><td>Semanas–años</td><td>Descompresión + cirugía si no revierte</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Peritonitis primaria: sin perforación visceral · PBE en cirrótico</span>
+      <span class="pill">Peritonitis secundaria: 95% · perforación visceral · siempre cirugía</span>
+      <span class="pill">PBE: PMN ≥250/mm³ en ascitis → diagnóstico</span>
+      <span class="pill">PBE tratamiento: cefotaxima + albúmina IV (previene SHR)</span>
+      <span class="pill">Profilaxis PBE: norfloxacina 400 mg/día indefinida</span>
+      <span class="pill">Causa #1 peritonitis secundaria en jóvenes: apendicitis perforada</span>
+      <span class="pill">Causa #1 en adultos mayores: diverticulitis perforada</span>
+      <span class="pill">Neumoperitoneo: gas libre subdiafragmático → perforación visceral</span>
+      <span class="pill">Rx de pie: detección de neumoperitoneo (70–80% sens.)</span>
+      <span class="pill">TAC: estudio de elección para identificar causa</span>
+      <span class="pill">Signo de Blumberg: dolor a la descompresión brusca</span>
+      <span class="pill">Abdomen en tabla: contractura muscular involuntaria = peritonismo</span>
+      <span class="pill">ATB comunitaria: ceftriaxona + metronidazol</span>
+      <span class="pill">ATB grave/nosocomial: pip-tazo o meropenem</span>
+      <span class="pill">STOP-IT trial: 4 días de ATB suficientes si control del foco</span>
+      <span class="pill">Úlcera perforada: sutura de Graham + epiplón</span>
+      <span class="pill">Perforación colon + contaminación fecal: operación de Hartmann</span>
+      <span class="pill">Hartmann: colostomía + cierre del recto (sin anastomosis)</span>
+      <span class="pill">Lavado peritoneal: SF tibio · sin antisépticos</span>
+      <span class="pill">MPI &gt;29: mortalidad ~59%</span>
+      <span class="pill">Absceso residual: drenaje percutáneo guiado por TAC</span>
+      <span class="pill">SCA (síndrome compartimental abdominal): PIA &gt;20 mmHg + disfunción orgánica → laparostomía</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Brunicardi FC, Andersen DK, Billiar TR et al. Schwartz Principios de Cirugía 11ª ed. McGraw-Hill; 2020 · Giménez M. Fundamentos para la práctica clínico-quirúrgica 2ª ed. Editorial Médica Panamericana; 2025 · Sartelli M et al. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting · Sawyer RG et al. Trial of Short-Course Antimicrobial Therapy for Intraabdominal Infection (STOP-IT). N Engl J Med 2015 · EASL Clinical Practice Guidelines on the management of ascites, spontaneous bacterial peritonitis, and hepatorenal syndrome in cirrhosis. J Hepatol 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
