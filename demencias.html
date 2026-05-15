@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demencias y Enfermedad de Alzheimer — Medpedia</title>
+  <meta name="description" content="Demencias: Alzheimer, vascular, Lewy, frontotemporal. Diagnóstico, criterios, tratamiento y deterioro cognitivo leve. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --neuro: #4A148C; --neuro-claro: #EDE7F6; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .demencia-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .demencia-nombre { font-size: 15px; font-weight: 600; color: var(--neuro); margin-bottom: 4px; }
+    .demencia-freq { font-size: 11px; color: var(--texto-ter); margin-bottom: 8px; }
+    .demencia-body { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Demencias y Alzheimer</div>
+  <div class="titulo">Demencias y Enfermedad de Alzheimer</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-fuente">NIA-AA 2011/2023 · DSM-5 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La <strong>demencia</strong> (o trastorno neurocognitivo mayor en DSM-5) es un síndrome caracterizado por el <strong>deterioro adquirido y progresivo de dos o más dominios cognitivos</strong> (memoria, lenguaje, función ejecutiva, praxias, gnosias, atención) con intensidad suficiente para interferir con las actividades de la vida diaria, y que no se explica por delirium ni trastorno psiquiátrico.</p>
+      <p>El <strong>deterioro cognitivo leve (DCL / MCI)</strong> es el estado intermedio entre el envejecimiento normal y la demencia: deterioro objetivo de un dominio cognitivo sin afectación de las actividades de la vida diaria. El 10–15% por año progresa a demencia.</p>
+      <p>La <strong>Enfermedad de Alzheimer (EA)</strong> es la causa más frecuente de demencia (60–70% de los casos). Le siguen la demencia vascular, la demencia por cuerpos de Lewy y la frontotemporal.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Causas reversibles de demencia — siempre descartar</div>
+    <div class="hl-warn">Antes de diagnosticar una demencia degenerativa, descartar causas tratables. Representan el 5–10% de los casos pero son completamente reversibles si se tratan a tiempo.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa reversible</th><th>Test diagnóstico</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Hipotiroidismo</strong></td><td>TSH</td><td>Levotiroxina</td></tr>
+        <tr><td><strong>Déficit de vitamina B12</strong></td><td>Vitamina B12 sérica · homocisteína · ácido metilmalónico</td><td>Vitamina B12 IM o VO a altas dosis</td></tr>
+        <tr><td><strong>Déficit de ácido fólico</strong></td><td>Folato sérico y eritrocitario</td><td>Ácido fólico VO</td></tr>
+        <tr><td><strong>Neurosífilis</strong></td><td>VDRL/TPHA sérico · LCR: VDRL + FTA-ABS</td><td>Penicilina G IV × 14 días</td></tr>
+        <tr><td><strong>Hidrocefalia normotensiva (HNT)</strong></td><td>TAC/RMN: hidrocefalia sin atrofia proporcional · test de tap (mejoría post-PL evacuadora)</td><td>Derivación ventriculoperitoneal</td></tr>
+        <tr><td><strong>Depresión mayor (pseudodemencia)</strong></td><td>Tests cognitivos + escalas de depresión (GDS, Hamilton) · "no sé" frecuente</td><td>Antidepresivos · la función cognitiva mejora con el tratamiento</td></tr>
+        <tr><td><strong>Hematoma subdural crónico</strong></td><td>TAC de cráneo sin contraste</td><td>Drenaje quirúrgico</td></tr>
+        <tr><td><strong>Fármacos</strong></td><td>Revisión del listado (benzodiacepinas, anticolinérgicos, opioides, antipsicóticos)</td><td>Suspender o reducir el fármaco causante</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🧠 Principales tipos de demencia</div>
+
+    <div class="demencia-card">
+      <div class="demencia-nombre">Enfermedad de Alzheimer (EA)</div>
+      <div class="demencia-freq">60–70% de las demencias · causa más frecuente</div>
+      <div class="demencia-body">
+        <strong>Fisiopatología:</strong> acumulación de placas de amiloide-β extracelulares y ovillos de proteína tau hiperfosforilada intracelulares → pérdida neuronal progresiva que comienza en el hipocampo y la corteza entorrinal.<br><br>
+        <strong>Inicio:</strong> insidioso, progresión lenta (años). Comienzo típico con falla de la memoria episódica reciente (olvida eventos recientes, repite preguntas, pierde objetos).<br><br>
+        <strong>Progresión:</strong> leve → moderada → grave. En fases avanzadas: afasia (dificultad para encontrar palabras), apraxia (no sabe cómo usar objetos cotidianos), agnosia (no reconoce personas o lugares), desorientación temporo-espacial, alteraciones conductuales (agitación, psicosis, deambulación nocturna), dependencia total para las AVD.<br><br>
+        <strong>Factores de riesgo:</strong> edad (&gt;65 años: principal FRCV) · alelo APOE ε4 (↑ riesgo 3× heterocigota, 8–12× homocigota) · historia familiar · síndrome de Down · factores cardiovasculares (HTA, DM, dislipemia, obesidad, sedentarismo).<br><br>
+        <strong>Diagnóstico:</strong> clínico — criterios NIA-AA. Neuroimagen (RMN): atrofia hipocampal y del lóbulo temporal medial. Biomarcadores en LCR: ↓ Aβ42, ↑ tau total y tau fosforilada. PET amiloide (alta sensibilidad, muy caro). El diagnóstico definitivo es anatomopatológico.
+      </div>
+    </div>
+
+    <div class="demencia-card">
+      <div class="demencia-nombre">Demencia Vascular</div>
+      <div class="demencia-freq">15–20% de las demencias · segunda causa más frecuente</div>
+      <div class="demencia-body">
+        <strong>Fisiopatología:</strong> lesiones cerebrovasculares (infartos múltiples, enfermedad de pequeño vaso, leucoaraiosis) que dañan circuitos cognitivos.<br><br>
+        <strong>Clínica:</strong> inicio brusco o escalonado (empeora con cada evento vascular) · déficits focales (hemiparesia, disartria, alteraciones de la marcha) · predomina la afectación de funciones ejecutivas sobre la memoria episódica · puede tener signos piramidales y extrapiramidales.<br><br>
+        <strong>Diagnóstico:</strong> relación temporal entre evento vascular y deterioro cognitivo · neuroimagen (TAC/RMN): infartos, leucoaraiosis, lesiones de sustancia blanca.<br><br>
+        <strong>Tratamiento:</strong> control de FRCV (HTA, DM, dislipemia, tabaquismo, FA) — es el único tratamiento modificador. Antiagregación si hay enfermedad aterosclerótica. Los inhibidores de colinesterasa tienen evidencia limitada.
+      </div>
+    </div>
+
+    <div class="demencia-card">
+      <div class="demencia-nombre">Demencia por Cuerpos de Lewy (DCL)</div>
+      <div class="demencia-freq">10–15% de las demencias · tercera causa más frecuente</div>
+      <div class="demencia-body">
+        <strong>Fisiopatología:</strong> acumulación de α-sinucleína en cuerpos de Lewy corticales y subcorticales. Comparte características con la enfermedad de Parkinson.<br><br>
+        <strong>Tríada clínica característica:</strong><br>
+        1. <strong>Fluctuaciones cognitivas</strong> marcadas (lucidez alternante con confusión, día a día o dentro del mismo día)<br>
+        2. <strong>Alucinaciones visuales</strong> vívidas, detalladas y recurrentes (personas, animales pequeños)<br>
+        3. <strong>Parkinsonismo</strong> (rigidez, bradiquinesia, marcha festinante — el temblor en reposo es menos frecuente que en EP clásico)<br><br>
+        <strong>Características de soporte:</strong> hipersensibilidad severa a los antipsicóticos (pueden desencadenar síndrome neuroléptico maligno o empeorar drásticamente) · trastorno de conducta del sueño REM · hipotensión ortostática.<br><br>
+        <strong>Regla de 1 año:</strong> si el parkinsonismo precede a la demencia en más de 1 año → demencia de la Enfermedad de Parkinson. Si aparecen juntos o la demencia precede → DCL.<br><br>
+        <strong>IMPORTANTE:</strong> <strong>Evitar antipsicóticos típicos y haloperidol</strong> — riesgo de reacción severa. Usar rivastigmina para síntomas cognitivos.
+      </div>
+    </div>
+
+    <div class="demencia-card">
+      <div class="demencia-nombre">Demencia Frontotemporal (DFT)</div>
+      <div class="demencia-freq">5–10% de las demencias · causa más frecuente en &lt;65 años</div>
+      <div class="demencia-body">
+        <strong>Fisiopatología:</strong> degeneración de los lóbulos frontales y temporales por acumulación de TDP-43, tau o FUS.<br><br>
+        <strong>Variante conductual (más frecuente):</strong> cambios de personalidad, desinhibición, conductas socialmente inapropiadas, pérdida de empatía, hiperoralidad, estereotipias. La memoria puede estar relativamente preservada al inicio.<br><br>
+        <strong>Variantes lingüísticas:</strong> afasia progresiva primaria (afasia no fluente o semántica) — deterioro del lenguaje sin falla de memoria o conducta inicial.<br><br>
+        <strong>Inicio:</strong> habitualmente &lt;65 años (a diferencia del Alzheimer). Historia familiar positiva en 30–50%.<br><br>
+        <strong>Neuroimagen:</strong> atrofia frontal y/o temporal anterior (asimétrica) en RMN.<br><br>
+        <strong>Tratamiento:</strong> no hay tratamiento modificador. Los inhibidores de colinesterasa no son efectivos y pueden empeorar los síntomas conductuales. Manejo sintomático de la conducta.
+      </div>
+    </div>
+
+    <div class="demencia-card">
+      <div class="demencia-nombre">Hidrocefalia Normotensiva (HNT)</div>
+      <div class="demencia-freq">Causa tratable — no olvidar en el diferencial</div>
+      <div class="demencia-body">
+        <strong>Tríada de Hakim-Adams:</strong> <strong>demencia + alteración de la marcha (marcha magnética, a pequeños pasos, como si los pies estuvieran pegados al piso) + incontinencia urinaria</strong>. El orden de aparición suele ser: marcha → incontinencia → demencia.<br><br>
+        <strong>Diagnóstico:</strong> TAC/RMN: hidrocefalia desproporcionada respecto a la atrofia cortical · test de tap (punción lumbar evacuadora de 30–50 mL de LCR → mejoría de la marcha en las horas siguientes = predictor de respuesta a cirugía).<br><br>
+        <strong>Tratamiento:</strong> derivación ventriculoperitoneal — puede revertir los síntomas si se trata precozmente.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Evaluación diagnóstica</div>
+    <div class="subtitulo-bloque">Tests cognitivos breves</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Test</th><th>Puntaje total</th><th>Corte</th><th>Uso</th></tr>
+        <tr><td><strong>MMSE (Mini-Mental State Examination)</strong></td><td>30 puntos</td><td>&lt;24: sospecha de deterioro · &lt;10: demencia grave</td><td>El más usado en la práctica clínica. Limitado en pacientes con bajo nivel educativo o analfabetismo</td></tr>
+        <tr><td><strong>MoCA (Montreal Cognitive Assessment)</strong></td><td>30 puntos</td><td>&lt;26: anormal</td><td>Más sensible que el MMSE para DCL y disfunción ejecutiva. Preferido en la actualidad</td></tr>
+        <tr><td><strong>Test del reloj</strong></td><td>Variable</td><td>Según escala usada</td><td>Evalúa función ejecutiva, praxias constructivas y comprensión. Complementario al MMSE/MoCA</td></tr>
+        <tr><td><strong>Fluencia verbal (animales en 1 min)</strong></td><td>Variable</td><td>&lt;12 palabras: anormal</td><td>Evalúa lenguaje y función ejecutiva. Rápido y sencillo</td></tr>
+      </table>
+    </div>
+
+    <div class="subtitulo-bloque">Estudios complementarios mínimos</div>
+    <div class="card">
+      <p><strong>Laboratorio básico (causas reversibles):</strong> hemograma · función renal y hepática · glucemia · TSH · vitamina B12 y folato · VDRL · VIH en pacientes con FRCV · calcemia.</p>
+      <p><strong>Neuroimagen:</strong> TAC de cráneo sin contraste (primera línea — descarta hematoma, tumor, HNT, ACV) o RMN cerebral (superior para atrofia hipocampal, leucoaraiosis, lesiones de fosa posterior). RMN es el estudio preferido cuando se sospecha EA.</p>
+      <p><strong>Estudios especializados (segundo nivel):</strong> biomarcadores en LCR (Aβ42, tau total, tau-p) · PET amiloide o tau (muy caro, uso limitado) · SPECT cerebral · evaluación neuropsicológica completa · genotipificación APOE (solo en contexto de investigación).</p>
+      <p><strong>EEG:</strong> útil si se sospecha encefalopatía priónica (Creutzfeldt-Jakob — patrón periódico) o epilepsia.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento farmacológico</div>
+    <div class="hl-warn">No existe tratamiento modificador de la enfermedad disponible en la práctica habitual en Argentina. El tratamiento farmacológico es sintomático y produce beneficios modestos sobre la cognición y la conducta.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Donepezilo</div>
+      <div class="farma-clase">Inhibidor de la acetilcolinesterasa · tratamiento sintomático de EA leve a grave</div>
+      <div class="dosis-badge">5 mg/día nocturno × 4–6 semanas → 10 mg/día nocturno</div>
+      <div class="farma-detalle">Inhibe la degradación de acetilcolina en la sinapsis → aumenta la disponibilidad de ACh en áreas afectadas. Indicado en EA leve, moderada y grave. Es el más usado por su posología simple (1 comp/día). Efectos adversos: náuseas, vómitos, diarrea, calambres musculares, bradicardia (precaución en enfermedad del nodo sinusal, bloqueo AV). Tomar por la noche para reducir los EA gastrointestinales. También útil en DCL (rivastigmina es preferida).</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Rivastigmina</div>
+      <div class="farma-clase">Inhibidor de acetilcolinesterasa y butirilcolinesterasa · EA y Demencia de Parkinson/Lewy</div>
+      <div class="dosis-badge">Parche transdérmico: 4,6 mg/24 h → 9,5 mg/24 h · VO: 1,5 mg c/12 h → titular hasta 6 mg c/12 h</div>
+      <div class="farma-detalle">De elección en demencia por Cuerpos de Lewy y demencia de la Enfermedad de Parkinson. El parche transdérmico tiene mejor tolerabilidad gastrointestinal que la forma oral. Mismos EA que donepezilo pero mayor frecuencia de náuseas con la forma oral. En DCL: es el inhibidor de colinesterasa preferido.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Galantamina</div>
+      <div class="farma-clase">Inhibidor de acetilcolinesterasa + modulador alostérico de receptores nicotínicos</div>
+      <div class="dosis-badge">8 mg/día (liberación prolongada) × 4 semanas → 16 mg/día → 24 mg/día</div>
+      <div class="farma-detalle">Alternativa a donepezilo en EA leve a moderada. Doble mecanismo de acción. Perfil de EA similar. Menos usado en la práctica por la necesidad de titular.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Memantina</div>
+      <div class="farma-clase">Antagonista de receptores NMDA de glutamato · EA moderada a grave</div>
+      <div class="dosis-badge">5 mg/día → titular 5 mg/semana hasta 20 mg/día (10 mg c/12 h)</div>
+      <div class="farma-detalle">Mecanismo complementario al de los inhibidores de colinesterasa → se puede combinar con donepezilo o rivastigmina en EA moderada-grave. Reduce la excitotoxicidad glutamatérgica. Mejor tolerada que los IACE — pocos EA (mareo, cefalea, estreñimiento, confusión rara). Contraindicada en IRA (excreción renal).</div>
+    </div>
+
+    <div class="subtitulo-bloque">Síntomas conductuales y psicológicos de la demencia (SCPD)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma</th><th>Primera línea (no farmacológica)</th><th>Si farmacológico necesario</th></tr>
+        <tr><td><strong>Depresión</strong></td><td>Actividades placenteras, estimulación</td><td>Sertralina o escitalopram (ISRS bien tolerados). Evitar tricíclicos (anticolinérgicos)</td></tr>
+        <tr><td><strong>Ansiedad / agitación</strong></td><td>Técnicas de redirección, ambiente estructurado, musicoterapia</td><td>ISRS · memantina · lorazepam a la menor dosis posible</td></tr>
+        <tr><td><strong>Psicosis (alucinaciones, delirios)</strong></td><td>Orientación, entorno predecible, reducir estímulos</td><td>Quetiapina o risperidona a dosis bajas (antipsicóticos atípicos). <strong>Advertencia de caja negra: ↑ mortalidad en ancianos con demencia</strong></td></tr>
+        <tr><td><strong>Insomnio / deambulación nocturna</strong></td><td>Higiene del sueño, exposición a luz solar diurna, actividad física</td><td>Melatonina · trazodona a dosis bajas. Evitar benzodiacepinas</td></tr>
+        <tr><td><strong>Apatía</strong></td><td>Estimulación cognitiva, actividades significativas</td><td>Inhibidores de colinesterasa pueden mejorarla</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger"><strong>En demencia por Cuerpos de Lewy: EVITAR antipsicóticos típicos (haloperidol) y usar con extrema precaución los atípicos</strong> — riesgo de reacción neuroléptica grave (empeoramiento severo del parkinsonismo, rigidez, fiebre, alteración de conciencia con mortalidad del 50%). Si es imprescindible: quetiapina a dosis muy bajas.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔄 Diagnóstico diferencial — delirium vs demencia</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Delirium</th><th>Demencia</th></tr>
+        <tr><td><strong>Inicio</strong></td><td>Agudo (horas-días)</td><td>Insidioso (meses-años)</td></tr>
+        <tr><td><strong>Curso</strong></td><td>Fluctuante (empeora de noche)</td><td>Progresivo y estable (sin fluctuaciones marcadas — salvo DCL)</td></tr>
+        <tr><td><strong>Atención</strong></td><td>Severamente alterada</td><td>Relativamente preservada al inicio</td></tr>
+        <tr><td><strong>Conciencia</strong></td><td>Alterada (desde hipervigilancia hasta letargo)</td><td>Normal en fases iniciales</td></tr>
+        <tr><td><strong>Causa</strong></td><td>Siempre hay causa orgánica (infección, fármacos, metabólico)</td><td>Enfermedad neurodegenerativa o vascular</td></tr>
+        <tr><td><strong>Reversibilidad</strong></td><td>Reversible si se trata la causa</td><td>Irreversible (salvo causas tratables)</td></tr>
+        <tr><td><strong>Importancia</strong></td><td>La demencia es el principal FRCV para delirium — coexisten frecuentemente</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Demencia: deterioro de ≥2 dominios + afecta AVD</span>
+      <span class="pill">DCL: deterioro sin afectación de AVD</span>
+      <span class="pill">EA: causa más frecuente (60–70%)</span>
+      <span class="pill">EA: memoria episódica reciente primero</span>
+      <span class="pill">APOE ε4 — principal FRCV genético del EA</span>
+      <span class="pill">Causas reversibles — siempre descartar (B12, TSH, sífilis, HNT)</span>
+      <span class="pill">HNT — tríada de Hakim-Adams: demencia + marcha magnética + incontinencia</span>
+      <span class="pill">DCL — tríada: fluctuaciones + alucinaciones visuales + parkinsonismo</span>
+      <span class="pill">DCL — EVITAR haloperidol y antipsicóticos típicos</span>
+      <span class="pill">DFT — cambios conductuales + inicio &lt;65 años</span>
+      <span class="pill">Demencia vascular — inicio brusco o escalonado</span>
+      <span class="pill">MMSE &lt;24 / MoCA &lt;26 — deterioro cognitivo</span>
+      <span class="pill">Donepezilo — EA leve a grave</span>
+      <span class="pill">Rivastigmina — DCL y demencia de Parkinson</span>
+      <span class="pill">Memantina — EA moderada a grave (combinar con IACE)</span>
+      <span class="pill">Antipsicóticos en demencia — advertencia de caja negra</span>
+      <span class="pill">Delirium vs demencia — inicio agudo vs insidioso</span>
+      <span class="pill">Pseudodemencia depresiva — "no sé" frecuente</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: NIA-AA Criteria for Alzheimer's Disease 2011/2023 · DSM-5-TR · Harrison Principios de Medicina Interna, 21ª ed. · AAN Practice Guidelines on Dementia · Sociedad Neurológica Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
