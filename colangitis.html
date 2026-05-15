@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colangitis Aguda — Medpedia</title>
+  <meta name="description" content="Colangitis aguda: tríada de Charcot, pentada de Reynolds, clasificación de gravedad, antibióticos y drenaje biliar urgente. EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --col: #1A5E9A; --col-claro: #E6F1FB; --col-oscuro: #154E82;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
+    .tag-cir    { background: #E3F2FD; color: #1565C0; }
+    .tag-emerg  { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-col { font-size: 16px; font-weight: 500; color: var(--col); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-col   { border-left: 3px solid var(--col); background: var(--col-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--col); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-r { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .gravedad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 600px) { .gravedad-grid { grid-template-columns: 1fr; } }
+    .grav-card { border-radius: 14px; padding: 1rem; }
+    .grav-card.leve     { background: var(--verde-claro); border: 1.5px solid #a8d8c0; }
+    .grav-card.moderada { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .grav-card.grave    { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .grav-titulo { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .grav-titulo.leve     { color: var(--verde-oscuro); }
+    .grav-titulo.moderada { color: #D4730A; }
+    .grav-titulo.grave    { color: #C0392B; }
+    .grav-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; display: flex; gap: 5px; line-height: 1.4; }
+    .grav-item strong { color: var(--texto); }
+    .triada-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .triada-grid { grid-template-columns: 1fr; } }
+    .triada-card { border-radius: 14px; padding: 1.25rem; }
+    .triada-card.charcot  { background: var(--col-claro); border: 1.5px solid #a8c8e8; }
+    .triada-card.reynolds { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .triada-titulo { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .triada-titulo.charcot  { color: var(--col); }
+    .triada-titulo.reynolds { color: var(--rojo); }
+    .triada-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; line-height: 1.4; }
+    .triada-item strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía / Gastro</a> › Colangitis Aguda</div>
+  <div class="titulo">Colangitis Aguda</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-cir">Cirugía biliar</span>
+    <span class="tag tag-emerg">Emergencia</span>
+    <span class="tag tag-fuente">Tokyo Guidelines 2018 · Harrison 21ª · Schwartz 11ª · ASGE 2019</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y fisiopatología</div>
+    <div class="hl-col"><strong>Colangitis aguda (CA):</strong> infección bacteriana de la vía biliar secundaria a <strong>obstrucción biliar</strong> con colonización ascendente de la bilis. La obstrucción eleva la presión intrabiliar → bacterias del duodeno ascienden y se multiplican en la bilis estancada → bacteriemia → sepsis. Sin drenaje biliar, la mortalidad puede superar el 50%.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa de obstrucción</th><th>Frecuencia</th><th>Observación</th></tr>
+        <tr><td><strong>Coledocolitiasis</strong></td><td>Causa #1 (50–70%)</td><td>Cálculo en el colédoco, generalmente migrado desde la vesícula</td></tr>
+        <tr><td><strong>Estenosis benigna</strong></td><td>10–20%</td><td>Postquirúrgica (colecistectomía, trasplante), CEP, pancreatitis crónica</td></tr>
+        <tr><td><strong>Neoplasia</strong></td><td>10–20%</td><td>Colangiocarcinoma, cáncer de páncreas, ampuloma — colangitis sobre tumor</td></tr>
+        <tr><td><strong>Stent biliar obstruido</strong></td><td>Frecuente</td><td>Stent colocado previamente → obstrucción por barro/crecimiento tumoral</td></tr>
+        <tr><td><strong>Parásitos</strong></td><td>Variable (endémico)</td><td>Ascaris lumbricoides, Clonorchis sinensis en zonas endémicas</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-col">🔵 Diagnóstico — Tríada de Charcot y Pentada de Reynolds</div>
+    <div class="hl-col">Las dos presentaciones clínicas clásicas de la colangitis aguda son la <strong>tríada de Charcot</strong> (colangitis leve-moderada) y la <strong>pentada de Reynolds</strong> (colangitis grave/supurativa). La tríada completa solo está presente en el 50–70% de los casos — su ausencia no excluye el diagnóstico.</div>
+
+    <div class="triada-grid">
+      <div class="triada-card charcot">
+        <div class="triada-titulo charcot">🔵 Tríada de Charcot</div>
+        <div class="triada-item"><span>1.</span><strong>Fiebre</strong> con escalofríos (colangitis = infección)</div>
+        <div class="triada-item"><span>2.</span><strong>Ictericia</strong> (obstrucción biliar)</div>
+        <div class="triada-item"><span>3.</span><strong>Dolor en hipocondrio derecho</strong> (colédoco distendido)</div>
+        <div style="margin-top:10px; font-size:12px; color:var(--texto-ter);">Presente en 50–70% de los casos. El restante puede presentarse con solo 1 o 2 elementos, especialmente en ancianos o inmunocomprometidos.</div>
+      </div>
+      <div class="triada-card reynolds">
+        <div class="triada-titulo reynolds">🔴 Pentada de Reynolds</div>
+        <div class="triada-item"><span>1.</span><strong>Fiebre</strong></div>
+        <div class="triada-item"><span>2.</span><strong>Ictericia</strong></div>
+        <div class="triada-item"><span>3.</span><strong>Dolor en HD</strong></div>
+        <div class="triada-item"><span>4.</span><strong>Shock / hipotensión</strong></div>
+        <div class="triada-item"><span>5.</span><strong>Alteración del estado mental</strong> (confusión, somnolencia)</div>
+        <div style="margin-top:10px; font-size:12px; color:#922B21; font-weight:500;">= Colangitis supurativa grave → drenaje biliar urgente + UCI</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Laboratorio</strong><br>
+        Leucocitosis + neutrofilia · ↑bilirrubina directa · ↑FA y GGT (patrón colestásico) · ↑TGO/TGP (hepatitis reactiva) · ↑PCR y PCT · hemocultivos × 2 (bacteriemia en 30–50%) · coagulación (coagulopatía en casos graves).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Imágenes</strong><br>
+        — <strong>Ecografía abdominal:</strong> primera línea · detecta dilatación de vía biliar (VBP &gt;8 mm sin colecistectomía previa, &gt;10 mm si colecistectomizados) + litiasis en VB · puede no ver el cálculo en colédoco distal por gas intestinal.<br>
+        — <strong>TAC con contraste:</strong> mejor visualización del colédoco distal, neoplasias, complicaciones.<br>
+        — <strong>Colangio-RMN (CPRM):</strong> gold standard no invasivo para evaluar la vía biliar · no requiere contraste · detecta litiasis pequeñas, estenosis, tumores.<br>
+        — <strong>Ecoendoscopía (USE):</strong> alta sensibilidad para coledocolitiasis + permite CPRE terapéutica en el mismo acto.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Criterios diagnósticos de Tokyo Guidelines 2018 (TG18)</div>
+      <strong>A. Signos sistémicos de inflamación:</strong> fiebre &gt;38°C o escalofríos · leucocitos &lt;4000 o &gt;10000/mm³ · PCR &gt;1 mg/dl<br>
+      <strong>B. Colestasis:</strong> ictericia (bilirrubina ≥2 mg/dl) · alteración de pruebas hepáticas (FA, GGT, TGO, TGP &gt;1,5× LSN)<br>
+      <strong>C. Imágenes:</strong> dilatación biliar · litiasis, estenosis, stent, tumor<br>
+      → <strong>Diagnóstico sospechoso:</strong> A + B o A + C · <strong>Diagnóstico definitivo:</strong> A + B + C
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación de gravedad — Tokyo Guidelines 2018</div>
+    <div class="gravedad-grid">
+      <div class="grav-card leve">
+        <div class="grav-titulo leve">🟢 Grado I — Leve</div>
+        <div class="grav-item"><span>✓</span><span>No cumple criterios de moderada ni grave</span></div>
+        <div class="grav-item"><span>✓</span><span>Responde a ATB iniciales</span></div>
+        <div class="grav-item"><span>✓</span><span>Sin disfunción orgánica</span></div>
+        <div class="grav-item"><span>🕐</span><span><strong>Drenaje:</strong> electivo (dentro de 48–72 h) tras estabilización con ATB</span></div>
+      </div>
+      <div class="grav-card moderada">
+        <div class="grav-titulo moderada">🟡 Grado II — Moderada</div>
+        <div class="grav-item"><strong>≥2 de:</strong></div>
+        <div class="grav-item"><span>⚠️</span><span>Leucocitos &gt;12.000 o &lt;4.000</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Fiebre ≥39°C</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Edad ≥75 años</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Bilirrubina ≥5 mg/dl</span></div>
+        <div class="grav-item"><span>⚠️</span><span>Hipoalbuminemia</span></div>
+        <div class="grav-item"><span>🕐</span><span><strong>Drenaje:</strong> precoz (dentro de 24–48 h)</span></div>
+      </div>
+      <div class="grav-card grave">
+        <div class="grav-titulo grave">🔴 Grado III — Grave</div>
+        <div class="grav-item"><strong>≥1 disfunción orgánica:</strong></div>
+        <div class="grav-item"><span>🚨</span><span>Hipotensión (vasopresores)</span></div>
+        <div class="grav-item"><span>🚨</span><span>Confusión / Glasgow alterado</span></div>
+        <div class="grav-item"><span>🚨</span><span>PaO₂/FiO₂ &lt;300</span></div>
+        <div class="grav-item"><span>🚨</span><span>Creatinina &gt;2 mg/dl</span></div>
+        <div class="grav-item"><span>🚨</span><span>Plaquetas &lt;100.000</span></div>
+        <div class="grav-item"><span>🚨</span><span>INR &gt;1,5</span></div>
+        <div class="grav-item"><span>🕐</span><span><strong>Drenaje:</strong> urgente + UCI</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-col">🔵 Manejo — los 3 pilares</div>
+    <div class="hl-danger"><span class="badge-urgente">CLAVE</span> El tratamiento de la colangitis aguda tiene <strong>3 pilares simultáneos</strong>: resucitación + antibióticos + drenaje biliar. El drenaje biliar es el tratamiento definitivo — los ATB solos son insuficientes para resolver la obstrucción.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Resucitación y soporte</strong><br>
+        Internación. 2 vías periféricas. Expansión con cristaloides (SF o RL). Analgesia (metamizol, ketorolac, morfina en grado III). Suspender anticoagulantes si procedimiento biliar urgente. Corrección de coagulopatía (PFC, vitamina K). Monitoreo de diuresis, PA, saturación. Grado III → UCI.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Antibióticos empíricos — iniciar inmediatamente tras hemocultivos</strong><br>
+        Ver sección de ATB abajo. Ajustar según cultivos de bilis (obtenidos en la CPRE) y hemocultivos. Duración: 4–7 días tras el drenaje exitoso.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-r">3</div>
+      <div class="step-content">
+        <strong>Drenaje biliar — el tratamiento definitivo</strong><br>
+        <strong>CPRE (colangiopancreatografía retrógrada endoscópica):</strong> método de elección en la gran mayoría · esfinterotomía + extracción de cálculos o colocación de stent biliar · éxito en &gt;90% de los casos.<br><br>
+        <strong>Drenaje biliar percutáneo transhepático (DBPT):</strong> cuando la CPRE no es posible (anatomía alterada por cirugía previa tipo Roux-en-Y, gastrectomía, duodeno inaccesible) · o como puente en el paciente muy inestable · imagen-guiado (eco o TAC).<br><br>
+        <strong>Cirugía (coledocotomía + drenaje en T):</strong> última opción si CPRE y DBPT fallan o no están disponibles · mayor morbimortalidad · se evita en lo posible.<br><br>
+        <strong>Posterior al drenaje urgente:</strong> colecistectomía laparoscópica electiva (si la causa fue coledocolitiasis con vesícula in situ) una vez resuelto el cuadro agudo.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Antibióticos empíricos según gravedad</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Colangitis leve-moderada — origen comunitario</div>
+      <div class="farma-clase">Cobertura: enterobacterias (E. coli, Klebsiella) + anaerobios</div>
+      <div class="dosis-badge">Ceftriaxona 2 g IV c/24 h + Metronidazol 500 mg IV c/8 h</div>
+      <div class="farma-detalle">
+        Alternativas: amoxicilina-clavulánico 2,2 g IV c/8 h · piperacilina-tazobactam 4,5 g IV c/6 h (si sospecha de Pseudomonas o factores de riesgo). La cobertura de enterococo es opcional en colangitis comunitaria sin factores de riesgo (evidencia limitada para obligatoriedad).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Colangitis grave (Grado III) / nosocomial / factores de riesgo</div>
+      <div class="farma-clase">Cobertura ampliada: Pseudomonas + BLEE + enterococo + anaerobios</div>
+      <div class="dosis-badge">Piperacilina-tazobactam 4,5 g IV c/6 h · o Meropenem 1 g IV c/8 h</div>
+      <div class="farma-detalle">
+        Factores de riesgo para gérmenes resistentes: colangitis nosocomial, stent biliar previo, cirugía biliar previa, uso previo de ATB en los últimos 3 meses, viajes a zonas endémicas de BLEE. Agregar <strong>vancomicina</strong> si sospecha de SAMR o enterococo VRE. Agregar <strong>fluconazol o equinocandina</strong> si hay factores de riesgo de candidiasis biliar (cirugía biliar previa, NPT, inmunosupresión). Duración: 4–7 días post-drenaje exitoso (TG18).
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔗 Contexto clínico — colangitis en la vía biliar</div>
+    <div class="hl-info">La colangitis aguda casi siempre ocurre en el contexto de una patología biliar subyacente. Es importante conocer el espectro completo de la enfermedad litiásica de la vía biliar:</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad</th><th>Clínica característica</th><th>Laboratorio</th><th>Manejo</th></tr>
+        <tr><td><strong>Cólico biliar simple</strong></td><td>Dolor HD/epigástrico postprandial, autolimitado (&lt;6 h), sin fiebre</td><td>Normal o leve ↑transaminasas</td><td>Analgesia + colecistectomía electiva</td></tr>
+        <tr><td><strong>Colecistitis aguda</strong></td><td>Dolor HD persistente + fiebre + Signo de Murphy + masa palpable</td><td>Leucocitosis · ↑PCR · bilirrubina normal o levemente ↑</td><td>ATB + colecistectomía laparoscópica (idealmente en las primeras 72 h)</td></tr>
+        <tr><td><strong>Coledocolitiasis asintomática</strong></td><td>Sin síntomas · cálculo en colédoco hallado incidentalmente</td><td>↑FA, GGT, bilirrubina directa</td><td>CPRE electiva + colecistectomía</td></tr>
+        <tr><td><strong>Colangitis aguda</strong></td><td><strong>Tríada de Charcot</strong> (fiebre + ictericia + dolor HD)</td><td>↑↑bilirrubina + leucocitosis + ↑FA/GGT ± hemocultivos (+)</td><td>ATB + drenaje biliar urgente (CPRE)</td></tr>
+        <tr><td><strong>Síndrome de Mirizzi</strong></td><td>Ictericia obstructiva por cálculo en el bacinete vesicular que comprime el hepático común</td><td>↑↑bilirrubina directa · patrón colestásico</td><td>Cirugía (CPRE limitada) · colecistectomía + reconstrucción biliar</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Causa #1 colangitis: coledocolitiasis (50–70%)</span>
+      <span class="pill">Tríada de Charcot: fiebre + ictericia + dolor HD</span>
+      <span class="pill">Pentada de Reynolds: Charcot + shock + confusión</span>
+      <span class="pill">Pentada de Reynolds = colangitis supurativa = emergencia</span>
+      <span class="pill">Tríada completa: presente en solo 50–70% de los casos</span>
+      <span class="pill">Tokyo Guidelines: clasificación de gravedad en 3 grados</span>
+      <span class="pill">Grado III: disfunción orgánica → UCI + drenaje urgente</span>
+      <span class="pill">Diagnóstico: A (inflamación sistémica) + B (colestasis) + C (imagen)</span>
+      <span class="pill">Imagen 1ª línea: ecografía (dilatación VBP + litiasis)</span>
+      <span class="pill">Gold standard diagnóstico: colangio-RMN (no invasiva)</span>
+      <span class="pill">Drenaje biliar de elección: CPRE + esfinterotomía</span>
+      <span class="pill">DBPT: cuando CPRE no es posible (anatomía alterada)</span>
+      <span class="pill">ATB comunitario: ceftriaxona + metronidazol</span>
+      <span class="pill">ATB grave/nosocomial: pip-tazo o meropenem</span>
+      <span class="pill">ATB + drenaje: 4–7 días post-drenaje exitoso</span>
+      <span class="pill">VBP normal: &lt;8 mm (sin colecistectomía) · &lt;10 mm (poscolecistectomía)</span>
+      <span class="pill">Bacteriemia en colangitis: 30–50% → hemocultivos siempre</span>
+      <span class="pill">Síndrome de Mirizzi: cálculo bacinete → comprime hepático común → cirugía</span>
+      <span class="pill">Post-colangitis resuelta: colecistectomía electiva laparoscópica</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Kiriyama S et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholangitis. J Hepatobiliary Pancreat Sci 2018 · Miura F et al. Tokyo Guidelines 2018: initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci 2018 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Brunicardi FC et al. Schwartz Principios de Cirugía 11ª ed. McGraw-Hill; 2020 · ASGE Standards of Practice Committee. Role of endoscopy in the evaluation of suspected choledocholithiasis. Gastrointest Endosc 2019.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
