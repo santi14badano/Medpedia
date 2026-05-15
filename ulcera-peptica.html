@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Úlcera Péptica y H. pylori — Medpedia</title>
-  <meta name="description" content="Enfermedad ulcero-péptica: diagnóstico, erradicación de H. pylori, inhibidores de bomba de protones y complicaciones. Para estudiantes de medicina argentina.">
+  <meta name="description" content="Enfermedad ulcero-péptica: diagnóstico, erradicación de H. pylori, IBP, complicaciones y seguimiento. Para estudiantes de medicina argentina.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --gastro: #7B3F00; --gastro-claro: #FDF0E6; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --gastro: #7B3F00; --gastro-claro: #FDF0E6; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
     nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
@@ -49,18 +49,24 @@
     .regimen-titulo { font-size: 13px; font-weight: 700; color: var(--gastro); margin-bottom: 6px; }
     .regimen-drogas { font-size: 13px; color: var(--texto); line-height: 1.8; }
     .regimen-nota { font-size: 12px; color: var(--texto-ter); margin-top: 6px; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--verde); color: white; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { font-size: 14px; line-height: 1.6; color: var(--texto-sec); }
+    .step-content strong { color: var(--texto); }
     .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
     .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
     .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
     footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
     footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo">Med<span>pedia</span></a>
-  <a href="index.html" class="nav-back">← Volver</a>
-</nav>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
 <div class="contenido">
   <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Gastroenterología</a> › Úlcera Péptica y H. pylori</div>
   <div class="titulo">Úlcera Péptica y H. pylori</div>
@@ -72,17 +78,20 @@
   <div class="seccion">
     <div class="sec-titulo">📌 Concepto clave</div>
     <div class="card">
-      <p>La <strong>enfermedad ulcero-péptica (EUP)</strong> es la pérdida de continuidad de la mucosa gástrica o duodenal que supera la muscularis mucosae. Resulta del desequilibrio entre factores agresivos (ácido, pepsina, H. pylori, AINEs) y defensivos (moco, bicarbonato, prostaglandinas).</p>
-      <p><strong>H. pylori</strong> causa el 90% de las úlceras duodenales y el 70–80% de las gástricas. Los AINEs son la segunda causa más frecuente. La úlcera duodenal es 4 veces más común que la gástrica, pero la gástrica siempre requiere biopsia para descartar cáncer.</p>
+      <p>La <strong>enfermedad ulcero-péptica (EUP)</strong> es la pérdida de continuidad de la mucosa gástrica o duodenal que supera la muscularis mucosae. Resulta del desequilibrio entre factores agresivos (ácido, pepsina, H. pylori, AINEs) y defensivos (moco, bicarbonato, prostaglandinas, flujo sanguíneo mucoso, renovación epitelial).</p>
+      <p><strong>H. pylori</strong> causa el 90% de las úlceras duodenales y el 70–80% de las gástricas. Los AINEs son la segunda causa más importante. La úlcera duodenal es 4 veces más frecuente que la gástrica. La <strong>úlcera gástrica siempre requiere biopsia</strong> para descartar adenocarcinoma.</p>
+      <p>La <strong>dispepsia funcional</strong> (sin lesión orgánica) es mucho más frecuente que la EUP y comparte síntomas — el desafío clínico es decidir cuándo hacer endoscopía y cuándo aplicar la estrategia "test and treat".</p>
     </div>
   </div>
 
   <div class="seccion">
-    <div class="sec-titulo">🦠 Helicobacter pylori</div>
+    <div class="sec-titulo">🦠 H. pylori — fisiopatología</div>
     <div class="card">
-      <p>Bacilo gramnegativo espiralado, productor de <strong>ureasa</strong> (neutraliza el ácido local y permite su supervivencia en el estómago). Coloniza el antro gástrico y desencadena inflamación crónica que altera la secreción ácida.</p>
+      <p>Bacilo gramnegativo espiralado, microaerófilo, productor de <strong>ureasa</strong> (convierte urea en amonio → neutraliza el ácido local → permite supervivencia en el estómago). Se ancla al epitelio con adhesinas y produce citotoxinas (CagA, VacA) que dañan la mucosa directamente.</p>
+      <p><strong>Mecanismo en úlcera duodenal:</strong> H. pylori antral → ↑ gastrina → ↑ ácido → metaplasia gástrica en duodeno → colonización duodenal → úlcera.</p>
+      <p><strong>Mecanismo en úlcera gástrica:</strong> gastritis del cuerpo → destrucción de células parietales → ↓ ácido → mucosa vulnerable → úlcera.</p>
       <p><strong>Prevalencia en Argentina:</strong> ~70% de la población adulta. Transmisión fecal-oral y oral-oral, adquisición principalmente en la infancia.</p>
-      <p><strong>Enfermedades asociadas:</strong> úlcera péptica · gastritis crónica activa · <strong>adenocarcinoma gástrico</strong> (carcinógeno de grupo I según OMS) · linfoma MALT gástrico · anemia ferropénica inexplicada · PTI.</p>
+      <p><strong>Enfermedades asociadas:</strong> úlcera péptica · gastritis crónica activa · <strong>adenocarcinoma gástrico</strong> (carcinógeno grupo I — OMS) · linfoma MALT gástrico · anemia ferropénica sin causa · PTI.</p>
     </div>
   </div>
 
@@ -91,67 +100,90 @@
     <div class="tabla-wrap">
       <table>
         <tr><th></th><th>Úlcera duodenal</th><th>Úlcera gástrica</th></tr>
-        <tr><td><strong>Dolor</strong></td><td>Epigástrico, urente, rítmico</td><td>Epigástrico, puede irradiarse a dorso</td></tr>
-        <tr><td><strong>Relación con comidas</strong></td><td>Alivia con la comida, reaparece 2–3 h después y de noche ("hambre dolorosa")</td><td>Empeora con la comida ("food fear")</td></tr>
-        <tr><td><strong>Peso</strong></td><td>Estable o aumento</td><td>Pérdida de peso frecuente</td></tr>
-        <tr><td><strong>Malignidad</strong></td><td>Rara</td><td>Siempre descartar → biopsia obligatoria</td></tr>
+        <tr><td><strong>Dolor</strong></td><td>Epigástrico, urente, rítmico</td><td>Epigástrico, puede irradiarse al dorso (penetración en páncreas)</td></tr>
+        <tr><td><strong>Relación con comidas</strong></td><td>Alivia con la comida, reaparece 2–3 h después y de madrugada ("hambre dolorosa")</td><td>Empeora con la comida ("food fear") — el paciente evita comer</td></tr>
+        <tr><td><strong>Peso</strong></td><td>Estable o aumento (come para aliviar)</td><td>Pérdida de peso frecuente</td></tr>
+        <tr><td><strong>Náuseas / vómitos</strong></td><td>Poco frecuentes salvo obstrucción</td><td>Más frecuentes</td></tr>
+        <tr><td><strong>Riesgo de malignidad</strong></td><td>Muy bajo</td><td>Siempre descartar → <strong>biopsia obligatoria</strong> (6–8 muestras de borde y base)</td></tr>
       </table>
     </div>
-    <div class="hl-warn"><strong>Síntomas de alarma → endoscopía urgente:</strong> disfagia, pérdida de peso involuntaria, vómitos persistentes, hemorragia digestiva, anemia ferropénica, masa palpable, o edad &gt;45–55 años con dispepsia de inicio reciente.</div>
+
+    <div class="subtitulo-bloque">Síntomas de alarma → endoscopía urgente</div>
+    <div class="sintoma-grid">
+      <div class="sintoma-item"><div class="sintoma-nombre">Disfagia u odinofagia</div><div class="sintoma-desc">Sugestivo de neoplasia esofágica o gástrica proximal</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Pérdida de peso involuntaria</div><div class="sintoma-desc">Especialmente progresiva (&gt;10% del peso)</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Vómitos persistentes</div><div class="sintoma-desc">Pueden indicar obstrucción pilórica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Hemorragia digestiva</div><div class="sintoma-desc">Hematemesis, melena o anemia ferropénica sin causa</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Masa palpable</div><div class="sintoma-desc">Adenopatía supraclavicular (Virchow) o masa epigástrica</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Edad &gt;45–55 años</div><div class="sintoma-desc">Con dispepsia de inicio reciente — mayor riesgo de neoplasia</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Antecedente familiar</div><div class="sintoma-desc">Cáncer gástrico en familiar de 1er grado</div></div>
+      <div class="sintoma-item"><div class="sintoma-nombre">Ictericia</div><div class="sintoma-desc">Compresión biliar por tumor o adenopatía</div></div>
+    </div>
   </div>
 
   <div class="seccion">
     <div class="sec-titulo">🔬 Diagnóstico de H. pylori</div>
-    <div class="tabla-wrap">
+    <div class="hl-info"><strong>Estrategia "test and treat":</strong> en pacientes &lt;45–55 años sin síntomas de alarma, testar H. pylori (test del aliento o antígeno fecal) y erradicar si positivo, sin endoscopía previa. Es la estrategia costo-efectiva recomendada en zonas de alta prevalencia como Argentina.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
       <table>
-        <tr><th>Método</th><th>S / E</th><th>Cuándo usar</th></tr>
-        <tr><td><strong>Test del aliento con C13 (UBT)</strong></td><td>95% / 96%</td><td>Diagnóstico no invasivo de elección y control de erradicación. Suspender IBP 2 sem y ATB 4 sem antes</td></tr>
-        <tr><td><strong>Antígeno en materia fecal</strong></td><td>94% / 97%</td><td>Alternativa al aliento, útil en niños. Control de erradicación</td></tr>
-        <tr><td><strong>Serología (IgG)</strong></td><td>85% / 79%</td><td>No distingue infección activa de pasada — NO sirve para controlar erradicación</td></tr>
-        <tr><td><strong>Biopsia + histología + CLO test</strong></td><td>90–95% / 95–99%</td><td>Gold standard. Se realiza durante endoscopía. Permite cultivo y antibiograma</td></tr>
+        <tr><th>Método</th><th>S / E</th><th>Cuándo usar</th><th>Limitaciones</th></tr>
+        <tr><td><strong>Test del aliento ¹³C (UBT)</strong></td><td>95% / 96%</td><td>Diagnóstico no invasivo de elección y <strong>control de erradicación</strong></td><td>Suspender IBP 2 sem y ATB 4 sem antes</td></tr>
+        <tr><td><strong>Antígeno en materia fecal</strong></td><td>94% / 97%</td><td>Alternativa al aliento · niños · control de erradicación</td><td>Mismas precauciones con IBP y ATB</td></tr>
+        <tr><td><strong>Serología (IgG)</strong></td><td>85% / 79%</td><td>Solo epidemiología o úlcera sangrante activa (UBT falso negativo por sangre)</td><td><strong>NO sirve para controlar erradicación</strong> — permanece positiva años post-tratamiento</td></tr>
+        <tr><td><strong>Biopsia + histología (endoscopía)</strong></td><td>93% / 99%</td><td>Cuando hay indicación de endoscopía. Permite tipificar gastritis (Clasificación de Sydney)</td><td>Invasivo. Tomar biopsias de antro + cuerpo + incisura angular</td></tr>
+        <tr><td><strong>CLO test (ureasa rápida)</strong></td><td>90–95% / 95–99%</td><td>Intraendoscópico de rutina — resultado en minutos</td><td>Falso negativo si tomó IBP o ATB recientes</td></tr>
+        <tr><td><strong>Cultivo + antibiograma</strong></td><td>70–80% / 100%</td><td>Fracaso de 2do esquema de erradicación</td><td>Lento (semanas), difícil de procesar</td></tr>
       </table>
     </div>
-    <div class="hl">El <strong>control de erradicación</strong> se realiza 4–8 semanas después de terminar el tratamiento con test del aliento o antígeno fecal. Nunca con serología. Suspender IBP 2 semanas antes del control.</div>
+    <div class="hl"><strong>Control de erradicación:</strong> con test del aliento o antígeno fecal, 4–8 semanas post-tratamiento. Nunca con serología. Suspender IBP 2 semanas antes.</div>
   </div>
 
   <div class="seccion">
     <div class="sec-titulo">💊 Regímenes de erradicación de H. pylori</div>
-    <div class="hl-info">En Argentina la resistencia a claritromicina supera el 15–20%, por lo que se prefieren regímenes cuádruples. Duración recomendada: <strong>14 días</strong> (superior a 10 días en todas las guías actuales).</div>
+    <div class="hl-warn">En Argentina la <strong>resistencia a claritromicina supera el 15–20%</strong> → se prefieren esquemas cuádruples. Duración recomendada: <strong>14 días</strong> (superior a 10 días en todas las guías actuales).</div>
 
     <div class="regimen-box" style="margin-top:10px;">
       <div class="regimen-titulo">🥇 Primera línea — Cuádruple con bismuto (PBMT)</div>
-      <div class="regimen-drogas">
-        IBP dosis estándar 2×/día<br>
-        + Subcitrato de bismuto 120 mg 4×/día<br>
-        + Metronidazol 500 mg 3×/día<br>
-        + Tetraciclina 500 mg 4×/día · <strong>× 14 días</strong>
-      </div>
-      <div class="regimen-nota">Erradicación 85–95%. No depende de resistencia a claritromicina. Primera opción según Maastricht VI cuando está disponible el bismuto.</div>
+      <div class="regimen-drogas"><strong>IBP</strong> dosis estándar 2×/día + <strong>Subcitrato de bismuto</strong> 120 mg 4×/día + <strong>Metronidazol</strong> 500 mg 3×/día + <strong>Tetraciclina</strong> 500 mg 4×/día · <strong>× 14 días</strong></div>
+      <div class="regimen-nota">Erradicación 85–95%. No depende de resistencia a claritromicina. Primera opción Maastricht VI. Limitación: el bismuto no siempre está disponible en Argentina.</div>
     </div>
     <div class="regimen-box">
       <div class="regimen-titulo">🥈 Alternativa — Cuádruple concomitante (sin bismuto)</div>
-      <div class="regimen-drogas">
-        IBP 2×/día + Amoxicilina 1 g 2×/día + Claritromicina 500 mg 2×/día + Metronidazol 500 mg 2×/día · <strong>× 14 días</strong>
-      </div>
-      <div class="regimen-nota">Erradicación ~88–90%. Buena opción cuando no se dispone de bismuto en Argentina.</div>
+      <div class="regimen-drogas"><strong>IBP</strong> 2×/día + <strong>Amoxicilina</strong> 1 g 2×/día + <strong>Claritromicina</strong> 500 mg 2×/día + <strong>Metronidazol</strong> 500 mg 2×/día · <strong>× 14 días</strong></div>
+      <div class="regimen-nota">Erradicación ~88–90%. Al dar los 4 fármacos simultáneamente se supera la resistencia individual a claritromicina o metronidazol. Mejor opción cuando no hay bismuto disponible.</div>
     </div>
     <div class="regimen-box">
       <div class="regimen-titulo">🥉 Rescate — Triple con levofloxacina</div>
-      <div class="regimen-drogas">
-        IBP 2×/día + Levofloxacina 500 mg 1×/día + Amoxicilina 1 g 2×/día · <strong>× 14 días</strong>
-      </div>
-      <div class="regimen-nota">Luego de fracaso del primer esquema. Considerar antibiograma previo si se dispone de biopsia.</div>
+      <div class="regimen-drogas"><strong>IBP</strong> 2×/día + <strong>Levofloxacina</strong> 500 mg 1×/día + <strong>Amoxicilina</strong> 1 g 2×/día · <strong>× 14 días</strong></div>
+      <div class="regimen-nota">Tras fracaso del primer esquema. Considerar cultivo y antibiograma antes del 3er intento. No repetir fluoroquinolonas si ya se usaron.</div>
     </div>
+    <div class="regimen-box">
+      <div class="regimen-titulo">Alérgicos a penicilina</div>
+      <div class="regimen-drogas"><strong>IBP</strong> 2×/día + <strong>Claritromicina</strong> 500 mg 2×/día + <strong>Metronidazol</strong> 500 mg 2×/día · <strong>× 14 días</strong></div>
+      <div class="regimen-nota">Menor tasa de erradicación (~75–80%). Alternativa: régimen con bismuto usando tetraciclina en lugar de amoxicilina.</div>
+    </div>
+  </div>
 
+  <div class="seccion">
+    <div class="sec-titulo">💊 Inhibidores de bomba de protones (IBP)</div>
     <div class="farma-card">
-      <div class="farma-nombre">IBP (omeprazol, pantoprazol, lansoprazol)</div>
-      <div class="farma-clase">Inhibidores de la bomba de protones · base del tratamiento antisecretor</div>
-      <div class="dosis-badge">Omeprazol 20–40 mg VO 30 min antes del desayuno</div>
+      <div class="farma-nombre">Omeprazol / Pantoprazol / Lansoprazol / Esomeprazol</div>
+      <div class="farma-clase">Inhibidores de la H⁺/K⁺-ATPasa · antisecretores de elección</div>
+      <div class="dosis-badge">Omeprazol 20–40 mg VO 30 min antes del desayuno · 1–2 veces/día</div>
       <div class="farma-detalle">
-        Bloquean irreversiblemente la H⁺/K⁺-ATPasa de la célula parietal gástrica.<br>
-        <strong>Duración:</strong> 4 semanas en úlcera duodenal · 6–8 semanas en úlcera gástrica (hasta confirmar cicatrización).<br>
-        <strong>Profilaxis con AINEs:</strong> indicar IBP si: edad &gt;65 años, historia de úlcera, uso concomitante de corticoides o anticoagulantes, o dosis altas de AINEs.<br>
-        <strong>Riesgos del uso crónico:</strong> déficit de B12 y magnesio, mayor riesgo de C. difficile, fracturas óseas. Revisar indicación periódicamente.
+        Bloquean irreversiblemente la bomba de protones de la célula parietal gástrica. Son los antisecretores más potentes disponibles.<br><br>
+        <strong>Duración según indicación:</strong> úlcera duodenal: 4 semanas (8 semanas si no erradicó H. pylori) · úlcera gástrica: 6–8 semanas con confirmación endoscópica de cicatrización · ERGE: continuo · erradicación H. pylori: 14 días.<br><br>
+        <strong>Profilaxis gastrointestinal con AINEs — indicar IBP si:</strong> edad &gt;65 años · historia de úlcera previa · uso concomitante de corticoides o anticoagulantes · dosis altas de AINEs · múltiples AINEs simultáneos.<br><br>
+        <strong>Riesgos del uso crónico:</strong> déficit de vitamina B12 · hipomagnesemia · mayor riesgo de infección por C. difficile · fracturas óseas · nefritis intersticial (raro) · mayor riesgo de neumonía adquirida en la comunidad. Son uno de los medicamentos más sobreprescritos — <strong>revisar indicación periódicamente.</strong>
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Antiácidos / Sucralfato / Misoprostol</div>
+      <div class="farma-clase">Agentes protectores de mucosa · uso complementario</div>
+      <div class="dosis-badge">Sucralfato: 1 g 4×/día 30 min antes de comidas y al acostarse</div>
+      <div class="farma-detalle">
+        <strong>Sucralfato:</strong> forma una capa protectora sobre la úlcera. Alternativa en pacientes que no toleran IBP. Interfiere con la absorción de otros fármacos — separar 2 horas.<br>
+        <strong>Misoprostol (análogo de prostaglandina E1):</strong> protege la mucosa gástrica. Indicado para profilaxis de úlcera por AINEs en embarazadas (donde los IBP son categoría C) o cuando los IBP están contraindicados. Efectos adversos: diarrea, cólicos uterinos (evitar en embarazo por riesgo de aborto salvo uso específico).
       </div>
     </div>
   </div>
@@ -160,14 +192,44 @@
     <div class="sec-titulo">⚠️ Complicaciones</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Complicación</th><th>Clínica</th><th>Manejo</th></tr>
-        <tr><td><strong>Hemorragia digestiva alta</strong></td><td>Hematemesis, melena. Úlcera duodenal posterior → arteria gastroduodenal</td><td>Estabilización · IBP IV · endoscopía urgente → hemostasia si Forrest I–IIa/IIb</td></tr>
-        <tr><td><strong>Perforación</strong></td><td>Dolor súbito "en tabla", neumoperitoneo en Rx</td><td>Cirugía de urgencia · IBP IV · ayuno · SNG</td></tr>
-        <tr><td><strong>Penetración</strong></td><td>Dolor que cambia de carácter, irradia a espalda (páncreas)</td><td>IBP a dosis plena · evaluar cirugía</td></tr>
-        <tr><td><strong>Obstrucción pilórica</strong></td><td>Vómitos de retención, saciedad precoz</td><td>SNG · corrección hidroelectrolítica · endoscopía</td></tr>
+        <tr><th>Complicación</th><th>Clínica</th><th>Diagnóstico</th><th>Manejo inicial</th></tr>
+        <tr><td><strong>Hemorragia digestiva alta</strong></td><td>Hematemesis, melena. Hematoquecia si sangrado masivo. La úlcera duodenal posterior puede erosionar la arteria gastroduodenal</td><td>Endoscopía urgente. Clasificación de Forrest</td><td>Dos vías periféricas + SF · IBP IV 80 mg bolo + 8 mg/h · transfusión si Hb &lt;7 · endoscopía &lt;24 h (urgente si inestable)</td></tr>
+        <tr><td><strong>Perforación</strong></td><td>Dolor súbito intensísimo "en tabla", Blumberg+, taquicardia, fiebre ulterior</td><td>Rx abdomen de pie: aire subdiafragmático. TAC si duda</td><td>Cirugía urgente (cierre primario laparoscópico) · IBP IV · ayuno · SNG · ATB (ceftriaxona + metronidazol)</td></tr>
+        <tr><td><strong>Penetración</strong></td><td>Dolor que pierde el ritmo, irradia al dorso (páncreas) o HD (hígado). Amilasa puede estar elevada</td><td>Endoscopía + TAC abdominal</td><td>IBP a dosis altas · evaluar cirugía</td></tr>
+        <tr><td><strong>Obstrucción pilórica</strong></td><td>Vómitos de retención (restos alimentarios de horas previas), saciedad precoz, borborigmos. <strong>Alcalosis metabólica hipoclorémica hipocalémica</strong></td><td>Endoscopía · Rx con contraste · ionograma</td><td>SNG · SF + KCl IV · IBP IV · endoscopía diagnóstica + dilatación neumática · cirugía si refractario</td></tr>
       </table>
     </div>
-    <div class="hl-danger"><strong>Forrest:</strong> Ia (chorro activo) · Ib (sangrado en napa) · IIa (vaso visible) · IIb (coágulo) · IIc (mancha) · III (úlcera limpia). Forrest I y IIa/IIb → hemostasia endoscópica obligatoria.</div>
+
+    <div class="subtitulo-bloque">Clasificación de Forrest</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Forrest</th><th>Hallazgo</th><th>Resangrado</th><th>Conducta</th></tr>
+        <tr><td><strong>Ia</strong></td><td>Sangrado en chorro (arterial activo)</td><td>~90%</td><td>Hemostasia endoscópica obligatoria (clip + inyección + electrocoagulación)</td></tr>
+        <tr><td><strong>Ib</strong></td><td>Sangrado en napa (venoso activo)</td><td>~50%</td><td>Hemostasia endoscópica</td></tr>
+        <tr><td><strong>IIa</strong></td><td>Vaso visible sin sangrado</td><td>40–50%</td><td>Hemostasia endoscópica obligatoria</td></tr>
+        <tr><td><strong>IIb</strong></td><td>Coágulo adherido</td><td>20–30%</td><td>Intento de remoción + hemostasia si vaso visible</td></tr>
+        <tr><td><strong>IIc</strong></td><td>Mancha pigmentada plana</td><td>5–10%</td><td>IBP oral · alta precoz posible</td></tr>
+        <tr><td><strong>III</strong></td><td>Base limpia (fibrina)</td><td>&lt;5%</td><td>IBP oral · alta precoz</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">Post-hemostasia endoscópica exitosa: IBP IV en infusión continua × 72 h → IBP oral × 4–8 semanas. Erradicar H. pylori reduce el riesgo de resangrado del 30% al 3%.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔄 Indicaciones de búsqueda y erradicación de H. pylori</div>
+    <div class="card">
+      <p><strong>Indicaciones absolutas:</strong> úlcera péptica activa o cicatrizada · linfoma MALT gástrico · gastritis atrófica · post-resección de adenocarcinoma gástrico · familiares de 1er grado con cáncer gástrico.</p>
+      <p><strong>Indicaciones recomendadas:</strong> dispepsia funcional · uso crónico de AINEs o aspirina (antes de iniciar) · anemia ferropénica sin causa demostrable · PTI · estrategia "test and treat" en dispepsia sin alarma en &lt;55 años · pacientes con indicación de IBP crónico.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Seguimiento post-erradicación</div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Suspender IBP 2 semanas antes del control</strong> (o antígeno fecal si no puede suspenderlo).</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Control de erradicación a las 4–8 semanas</strong> del fin del tratamiento — test del aliento ¹³C o antígeno fecal. Nunca serología.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content">Si erradicación exitosa y <strong>úlcera duodenal no complicada:</strong> suspender IBP. Si <strong>úlcera gástrica:</strong> endoscopía de control a las 6–8 semanas con biopsias para confirmar cicatrización y descartar neoplasia.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content">Si <strong>fracaso de erradicación:</strong> cambiar a régimen de rescate (levofloxacina si no se usó, o bismuto). Antes del 3er intento: cultivo + antibiograma.</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content">Si <strong>úlcera gástrica no cicatrizada</strong> en endoscopía de control: biopsias adicionales + derivación a gastroenterólogo — descartar neoplasia resistente a tratamiento.</div></div>
   </div>
 
   <div class="seccion">
@@ -176,23 +238,27 @@
       <span class="pill">H. pylori — carcinógeno grupo I OMS</span>
       <span class="pill">Ureasa — mecanismo de supervivencia</span>
       <span class="pill">Úlcera duodenal — alivia con comida</span>
-      <span class="pill">Úlcera gástrica — biopsia obligatoria</span>
-      <span class="pill">Test del aliento C13 — elección para control</span>
+      <span class="pill">Úlcera gástrica — empeora con comida + biopsia obligatoria</span>
+      <span class="pill">Estrategia test and treat — &lt;55 años sin alarma</span>
+      <span class="pill">Test del aliento ¹³C — control de erradicación</span>
       <span class="pill">Serología NO sirve post-tratamiento</span>
-      <span class="pill">Suspender IBP 2 sem antes del aliento</span>
+      <span class="pill">Suspender IBP 2 sem antes del test del aliento</span>
+      <span class="pill">Resistencia claritromicina Argentina &gt;15%</span>
       <span class="pill">Cuádruple con bismuto — primera línea</span>
-      <span class="pill">Resistencia a claritromicina en Argentina &gt;15%</span>
       <span class="pill">14 días de erradicación</span>
       <span class="pill">IBP 4 sem duodenal / 6–8 sem gástrica</span>
-      <span class="pill">Profilaxis IBP con AINEs</span>
-      <span class="pill">Forrest Ia/IIa → hemostasia endoscópica</span>
+      <span class="pill">Profilaxis IBP con AINEs — cuándo indicar</span>
+      <span class="pill">Forrest Ia/IIa → hemostasia endoscópica obligatoria</span>
+      <span class="pill">Perforación → neumoperitoneo → cirugía urgente</span>
+      <span class="pill">Obstrucción pilórica → alcalosis hipoclorémica hipocalémica</span>
       <span class="pill">PTI + anemia ferropénica → buscar H. pylori</span>
-      <span class="pill">Linfoma MALT → erradicar H. pylori</span>
+      <span class="pill">Linfoma MALT → erradicar (puede regresar el tumor)</span>
+      <span class="pill">IBP crónico — riesgos: B12, Mg, C. difficile, fracturas</span>
     </div>
   </div>
 
   <div class="fuente">
-    Fuentes: ACG Clinical Guideline: Treatment of H. pylori Infection 2017 · Maastricht VI / Florence Consensus 2022 · SADI Argentina · Harrison Principios de Medicina Interna, 21ª ed.<br>
+    Fuentes: ACG Clinical Guideline: Treatment of H. pylori Infection 2017 · Maastricht VI / Florence Consensus Report 2022 · SADI Argentina · Sociedad Argentina de Gastroenterología (SAGE) · Harrison Principios de Medicina Interna, 21ª ed.<br>
     El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
   </div>
 </div>
