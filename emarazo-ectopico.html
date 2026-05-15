@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embarazo Ectópico — Medpedia</title>
+  <meta name="description" content="Embarazo ectópico: diagnóstico, criterios de metotrexato y cirugía. Ginecología y Obstetricia para el EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gin: #880E4F; --gin-claro: #FCE4EC; --gin-oscuro: #560027;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gin  { background: #FCE4EC; color: #880E4F; }
+    .tag-emerg { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-gin   { border-left: 3px solid var(--gin); background: var(--gin-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-r { width: 28px; height: 28px; border-radius: 50%; background: #C0392B; color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .loc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 12px; }
+    .loc-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; text-align: center; }
+    .loc-pct { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; margin-bottom: 4px; }
+    .loc-nombre { font-size: 12px; color: var(--texto-sec); line-height: 1.4; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Embarazo Ectópico</div>
+  <div class="titulo">Embarazo Ectópico</div>
+  <div class="meta">
+    <span class="tag tag-gin">Ginecología</span>
+    <span class="tag tag-emerg">Emergencia obstétrica</span>
+    <span class="tag tag-fuente">ACOG 2018 · RCOG 2016 · Harrison 21ª · Schwarcz 7ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y localización</div>
+    <div class="hl-gin"><strong>Embarazo ectópico (EE):</strong> implantación del óvulo fecundado fuera de la cavidad uterina. Representa el 1–2% de todos los embarazos. Es la <strong>principal causa de mortalidad materna en el 1er trimestre</strong> (10% de las muertes maternas) por rotura y hemorragia interna. El diagnóstico precoz es vital.</div>
+    <div class="loc-grid">
+      <div class="loc-card"><div class="loc-pct" style="color:#C0392B;">95%</div><div class="loc-nombre">Trompa de Falopio (tubario)<br><small>Ampolla 80% · Istmo 12% · Fimbria 5%</small></div></div>
+      <div class="loc-card"><div class="loc-pct" style="color:#D4730A;">2%</div><div class="loc-nombre">Intersticial (cornual)<br><small>Alta mortalidad por diagnóstico tardío</small></div></div>
+      <div class="loc-card"><div class="loc-pct" style="color:#1A5E9A;">1%</div><div class="loc-nombre">Ovárico<br><small>Difícil diagnóstico</small></div></div>
+      <div class="loc-card"><div class="loc-pct" style="color:#5C2D78;">1%</div><div class="loc-nombre">Abdominal<br><small>Raro · puede llegar al término</small></div></div>
+      <div class="loc-card"><div class="loc-pct" style="color:#0F6E56;">1%</div><div class="loc-nombre">Cervical<br><small>Hemorragia masiva al tratar</small></div></div>
+      <div class="loc-card"><div class="loc-pct" style="color:#880E4F;">0.5%</div><div class="loc-nombre">Cicatriz de cesárea<br><small>↑incidencia por ↑cesáreas</small></div></div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Riesgo relativo</th><th>Mecanismo</th></tr>
+        <tr><td><strong>EE previo</strong></td><td>↑ 8–10×</td><td>Trompa dañada, alteración del transporte</td></tr>
+        <tr><td><strong>Cirugía tubaria previa</strong> (ligadura, salpingoplastia)</td><td>↑ 4–8×</td><td>Estenosis cicatricial del lumen tubario</td></tr>
+        <tr><td><strong>Enfermedad pelviana inflamatoria (EPI)</strong></td><td>↑ 3–6×</td><td>Ciliostasis + obstrucción tubaria por adherencias</td></tr>
+        <tr><td><strong>DIU in situ</strong></td><td>↑ (relativo)</td><td>Previene EI uterino más que ectópico → proporción aumenta</td></tr>
+        <tr><td><strong>Embarazo tras FIV / reproducción asistida</strong></td><td>↑ 2–3×</td><td>Transferencia de embriones, anatomía alterada</td></tr>
+        <tr><td><strong>Tabaquismo</strong></td><td>↑ 1,5–3×</td><td>Altera la motilidad ciliar tubaria</td></tr>
+        <tr><td><strong>Infección por Chlamydia trachomatis</strong></td><td>↑ 3×</td><td>Salpingitis → daño ciliar crónico</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-gin">🩺 Clínica — presentación variable</div>
+    <div class="hl-gin">La tríada clásica es: <strong>amenorrea + dolor pelviano + sangrado genital irregular</strong>. Sin embargo, el 50% de las pacientes no tiene todos los elementos. El diagnóstico requiere alta sospecha clínica en toda mujer en edad reproductiva con dolor pelviano o amenorrea.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>EE íntegro (no roto)</th><th>EE roto (emergencia)</th></tr>
+        <tr>
+          <td>
+            Amenorrea de 4–8 semanas<br>
+            Dolor pelviano unilateral sordo o tipo cólico<br>
+            Sangrado vaginal irregular ("spotting"), marrón, escaso<br>
+            Masa anexial sensible a la palpación<br>
+            β-hCG elevada pero menor a lo esperado para la EG<br>
+            Examen ginecológico: dolor a la movilización cervical (signo de la campana)
+          </td>
+          <td>
+            <strong>Dolor pelviano brusco, intenso, lateralizado → generalizado</strong><br>
+            Hemoperitoneo: dolor referido al hombro (irritación diafragmática por sangre)<br>
+            <strong>Shock hipovolémico:</strong> taquicardia, hipotensión, lipotimia, piel fría<br>
+            Abdomen en tabla, Douglas abombado y doloroso<br>
+            <strong>EMERGENCIA QUIRÚRGICA</strong>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>β-hCG cuantitativa en sangre</strong><br>
+        Positiva (≥5 mUI/ml) → confirma embarazo. En EE, la β-hCG sube más lento de lo normal.<br>
+        <strong>Zona discriminatoria:</strong> β-hCG ≥1.500–2.000 mUI/ml → con eco transvaginal, un embarazo intrauterino (EIU) debería verse. Si β-hCG está en zona discriminatoria y la eco es negativa → EE hasta demostrar lo contrario.<br>
+        <strong>Seguimiento serial:</strong> β-hCG normal en EIU viable dobla cada 48 h (↑&gt;53%). En EE: sube lento (&lt;53% en 48 h), se meseta o baja.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Ecografía transvaginal (ETV) — estudio de elección</strong><br>
+        Visualiza: útero vacío (ausencia de saco gestacional intrauterino), masa anexial (saco ectópico ± embrión ± latido), líquido libre en la cavidad de Douglas (hemoperitoneo).<br>
+        Si se ve saco con embrión y latido cardíaco fuera del útero → diagnóstico confirmado.<br>
+        Si el útero está vacío pero no se ve masa clara → EE probable → seguimiento con β-hCG serial.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Culdocentesis (punción del fondo de saco de Douglas)</strong><br>
+        Técnica: aguja a través del fondo de saco vaginal posterior. Si sale sangre no coagulable → hemoperitoneo → EE roto. Cada vez menos usada (reemplazada por eco y laparoscopía), pero útil en guardia sin eco disponible.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Laparoscopía diagnóstica y terapéutica</strong><br>
+        Gold standard diagnóstico. Indicada cuando el diagnóstico es dudoso o hay inestabilidad hemodinámica. Permite tratamiento en el mismo acto.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-gin">🩺 Tratamiento — 3 opciones según criterios</div>
+    <div class="hl-danger"><span class="badge-urgente">REGLA DE ORO</span> EE roto con inestabilidad hemodinámica → <strong>cirugía de urgencia inmediata</strong>. No hay lugar para metotrexato en la paciente inestable.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Opción 1 — Metotrexato (MTX) médico</div>
+      <div class="farma-clase">Antimetabolito antifolato · Inhibe la síntesis de ADN del trofoblasto</div>
+      <div class="dosis-badge">50 mg/m² SC o IM — dosis única · o esquema multidosis</div>
+      <div class="farma-detalle">
+        <strong>Criterios para MTX (TODOS deben cumplirse):</strong><br>
+        ✓ Hemodinámicamente estable<br>
+        ✓ EE íntegro confirmado por eco (sin rotura)<br>
+        ✓ β-hCG &lt;5.000 mUI/ml (algunos centros aceptan hasta 10.000)<br>
+        ✓ Masa &lt;4 cm en eco (algunos &lt;3,5 cm)<br>
+        ✓ Sin latido cardíaco embrionario<br>
+        ✓ Función hepática, renal y hematológica normales<br>
+        ✓ Deseo de cumplir el seguimiento (β-hCG días 4, 7, 14, semanal hasta negativización)<br><br>
+        <strong>Contraindicaciones absolutas:</strong> lactancia, inmunodeficiencia, enfermedad hepática o renal, discrasias sanguíneas, úlcera péptica activa, EE intersticial o en cicatriz de cesárea (relativa), rechazo del seguimiento.<br><br>
+        <strong>Seguimiento tras MTX:</strong> β-hCG días 4 y 7. Éxito si cae &gt;15% entre días 4 y 7. Si cae &lt;15% → 2ª dosis de MTX. Fracaso (β-hCG no baja o la paciente se deteriora) → cirugía. β-hCG puede subir los primeros días (normal) → no alarmar.<br><br>
+        <strong>Tasa de éxito:</strong> 85–90% con β-hCG &lt;5.000 · baja a 60% con β-hCG &gt;5.000.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Opción 2 — Cirugía laparoscópica (de elección quirúrgica)</div>
+      <div class="farma-clase">Gold standard quirúrgico · Menor morbilidad que laparotomía</div>
+      <div class="dosis-badge">Salpingostomía · Salpingectomía</div>
+      <div class="farma-detalle">
+        <strong>Salpingostomía lineal:</strong> incisión sobre el EE → extracción del producto → dejar la trompa in situ. Conserva la trompa pero riesgo de EE persistente (5–20%) → seguimiento con β-hCG postop.<br><br>
+        <strong>Salpingectomía:</strong> extirpación de la trompa. De elección si la trompa está muy dañada, hay EE recurrente en la misma trompa, o la trompa contralateral es normal. No aumenta el riesgo de infertilidad respecto a la salpingostomía si la trompa opuesta es sana.<br><br>
+        <strong>Indicaciones de cirugía sobre MTX:</strong> β-hCG &gt;5.000, masa &gt;4 cm, latido embrionario presente, fracaso de MTX, contraindicación de MTX, deseo de la paciente.<br><br>
+        <strong>Manejo del Rh:</strong> administrar inmunoglobulina anti-D (300 mcg) a toda paciente Rh negativo no sensibilizada con EE, independientemente del tratamiento elegido.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Opción 3 — Laparotomía de urgencia</div>
+      <div class="farma-clase">EE roto + inestabilidad hemodinámica</div>
+      <div class="dosis-badge">Cirugía de emergencia · Resucitación simultánea</div>
+      <div class="farma-detalle">
+        Indicada en: EE roto con shock hipovolémico, fracaso de laparoscopía, laparoscopia no disponible. Salpingectomía de elección (no conservar trompa rota y sangrante). Simultáneamente: 2 vías periféricas, expansión con SF, transfusión si Hb &lt;8 g/dl, monitoreo continuo. Mortalidad &lt;0,1% con diagnóstico y tratamiento oportunos.
+      </div>
+    </div>
+
+    <div class="hl-info">💡 <strong>Expectante:</strong> en casos muy seleccionados con β-hCG muy baja (&lt;200 mUI/ml) y en descenso espontáneo, masa pequeña, asintomática y sin líquido libre abundante. Solo con seguimiento muy estrecho. Poco aplicado en la práctica.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">EE: principal causa de mortalidad materna en 1er trimestre</span>
+      <span class="pill">Localización #1: ampolla tubaria (80%)</span>
+      <span class="pill">FR #1: EE previo (↑8–10×)</span>
+      <span class="pill">Tríada: amenorrea + dolor pelviano + sangrado irregular</span>
+      <span class="pill">Signo de la campana: dolor a la movilización cervical</span>
+      <span class="pill">Dolor en hombro: sangre irrita el diafragma → hemoperitoneo</span>
+      <span class="pill">β-hCG: dobla cada 48 h en EIU viable (&gt;53%)</span>
+      <span class="pill">Zona discriminatoria: β-hCG ≥1500–2000 + útero vacío = EE probable</span>
+      <span class="pill">ETV: estudio de elección</span>
+      <span class="pill">Culdocentesis: sangre no coagulable = hemoperitoneo = EE roto</span>
+      <span class="pill">MTX: β-hCG &lt;5000 + masa &lt;4cm + sin latido + estable</span>
+      <span class="pill">MTX contraindicado en lactancia + hepatopatía + inmunodeficiencia</span>
+      <span class="pill">Seguimiento MTX: β-hCG días 4 y 7 → caída &gt;15% = éxito</span>
+      <span class="pill">Salpingectomía: de elección si trompa dañada o EE recurrente</span>
+      <span class="pill">EE roto + shock: laparotomía de urgencia</span>
+      <span class="pill">Rh negativo: inmunoglobulina anti-D siempre</span>
+      <span class="pill">DIU: no causa EE pero ↑proporción de EE vs EIU</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACOG Practice Bulletin No. 193: Tubal Ectopic Pregnancy. Obstet Gynecol 2018 · RCOG Green-top Guideline No. 21: Diagnosis and Management of Ectopic Pregnancy. 2016 · Barnhart KT. Clinical practice. Ectopic pregnancy. N Engl J Med 2009 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Schwarcz R, Fescina R, Duverges C. Obstetricia 7ª ed. El Ateneo; 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
