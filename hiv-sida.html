@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HIV / SIDA — Medpedia</title>
-  <meta name="description" content="HIV/SIDA: diagnóstico, estadificación, TAR, infecciones oportunistas y profilaxis. Para estudiantes de medicina argentina.">
+  <meta name="description" content="HIV/SIDA: diagnóstico, TAR, infecciones oportunistas, IRIS, neoplasias, PEP y PrEP. Para estudiantes de medicina argentina.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --infecto: #6A1B9A; --infecto-claro: #F3E5F5; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --infecto: #6A1B9A; --infecto-claro: #F3E5F5; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
     nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
@@ -58,13 +58,11 @@
     .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
     footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
     footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo">Med<span>pedia</span></a>
-  <a href="index.html" class="nav-back">← Volver</a>
-</nav>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
 <div class="contenido">
   <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › HIV / SIDA</div>
   <div class="titulo">HIV / SIDA</div>
@@ -76,20 +74,21 @@
   <div class="seccion">
     <div class="sec-titulo">📌 Concepto clave</div>
     <div class="card">
-      <p>El <strong>VIH</strong> es un retrovirus ARN que infecta principalmente los <strong>linfocitos T CD4+</strong>. La pérdida progresiva de CD4 lleva a la inmunodeficiencia que define el <strong>SIDA</strong>: CD4 &lt;200/mm³ OR presencia de una enfermedad definitoria de SIDA, independientemente del recuento de CD4.</p>
-      <p>Con el TAR moderno, una persona que inicia tratamiento precozmente tiene una esperanza de vida similar a la población general. <strong>U=U (Undetectable = Untransmittable)</strong>: con carga viral indetectable el riesgo de transmisión sexual es prácticamente cero.</p>
+      <p>El <strong>VIH</strong> es un retrovirus ARN (familia Retroviridae, género Lentivirus) que infecta principalmente los <strong>linfocitos T CD4+</strong>, macrófagos y células dendríticas mediante la unión a los receptores CD4 y correceptores CCR5 o CXCR4. Su ciclo replicativo incluye transcripción inversa del ARN a ADN, integración al genoma del huésped y producción de nuevos viriones maduros.</p>
+      <p><strong>SIDA</strong> se define por: CD4 &lt;200 células/mm³ OR presencia de una <strong>enfermedad definitoria de SIDA</strong> (infección oportunista o neoplasia asociada), independientemente del recuento de CD4.</p>
+      <p>Con el TAR moderno, una persona con VIH que inicia tratamiento precozmente tiene una esperanza de vida similar a la población general. <strong>U=U (Undetectable = Untransmittable):</strong> con carga viral indetectable el riesgo de transmisión sexual es prácticamente cero.</p>
     </div>
   </div>
 
   <div class="seccion">
-    <div class="sec-titulo">📊 Historia natural — infecciones oportunistas según CD4</div>
+    <div class="sec-titulo">📊 Historia natural — IO según CD4</div>
     <div class="cd4-bar">
-      <div class="cd4-zona zona-verde"><strong>&gt;500 CD4</strong>Asintomático o síndrome retroviral agudo. Sin IO.</div>
-      <div class="cd4-zona zona-amarilla"><strong>200–500 CD4</strong>Candidiasis oral, leucoplasia vellosa, herpes zóster, anemia, trombocitopenia.</div>
-      <div class="cd4-zona zona-naranja"><strong>100–200 CD4</strong>PCP, TBC pulmonar, toxoplasmosis cerebral.</div>
-      <div class="cd4-zona zona-roja"><strong>&lt;100 CD4</strong>CMV, Criptococo, MAC, LMP (JC virus), Histoplasma, Sarcoma de Kaposi avanzado.</div>
+      <div class="cd4-zona zona-verde"><strong>&gt;500 CD4</strong>Asintomático o síndrome retroviral agudo. Sin infecciones oportunistas.</div>
+      <div class="cd4-zona zona-amarilla"><strong>200–500 CD4</strong>Candidiasis oral, leucoplasia vellosa, herpes zóster, TB pulmonar, anemia, trombocitopenia, sarcoma de Kaposi cutáneo.</div>
+      <div class="cd4-zona zona-naranja"><strong>100–200 CD4</strong>PCP, toxoplasmosis cerebral, criptosporidiosis, microsporidiosis, LMP inicial.</div>
+      <div class="cd4-zona zona-roja"><strong>&lt;100 CD4</strong>CMV (retinitis, colitis), Criptococo meníngeo, MAC, histoplasmosis diseminada, LMP avanzada, linfoma primario del SNC.</div>
     </div>
-    <div class="hl-info"><strong>Síndrome retroviral agudo:</strong> 2–4 semanas post-exposición. Fiebre + adenopatías + faringitis + rash maculopapular + mialgias. Similar a mononucleosis. ELISA puede ser negativo — diagnosticar con carga viral plasmática.</div>
+    <div class="hl-info"><strong>Síndrome retroviral agudo:</strong> 2–4 semanas post-exposición. Fiebre + adenopatías + faringitis + rash maculopapular + mialgias + cefalea — similar a mononucleosis. Carga viral muy alta. ELISA puede ser negativo en esta etapa → diagnosticar con PCR de ARN VIH (carga viral).</div>
   </div>
 
   <div class="seccion">
@@ -97,57 +96,111 @@
     <div class="tabla-wrap">
       <table>
         <tr><th>Test</th><th>Uso</th><th>Clave</th></tr>
-        <tr><td><strong>ELISA 4ª generación (Ag/Ac)</strong></td><td>Screening de elección</td><td>Detecta Ag p24 + Ac anti-VIH 1 y 2. Ventana: 18–45 días. Si reactivo → confirmar con Western Blot</td></tr>
-        <tr><td><strong>Western Blot / INNO-LIA</strong></td><td>Confirmación</td><td>Positivo si ≥2 bandas. Indeterminado: repetir en 4–6 semanas</td></tr>
-        <tr><td><strong>Carga viral (PCR ARN)</strong></td><td>Diagnóstico agudo · monitoreo TAR</td><td>Detectable desde los 10–11 días. Meta del TAR: &lt;50 copias/mL</td></tr>
-        <tr><td><strong>Recuento CD4</strong></td><td>Estadificación · profilaxis · monitoreo</td><td>Normal: 500–1500/mm³. &lt;200 define SIDA. &lt;100: IO graves</td></tr>
-        <tr><td><strong>Test rápido</strong></td><td>Urgencias, maternidad, PEP</td><td>Alta sensibilidad. Siempre confirmar si reactivo</td></tr>
+        <tr><td><strong>ELISA 4ª generación (Ag/Ac)</strong></td><td>Screening de elección</td><td>Detecta Ag p24 + Ac anti-VIH 1 y 2. Ventana: 18–45 días. Si reactivo → confirmar con Western Blot o INNO-LIA</td></tr>
+        <tr><td><strong>Western Blot / INNO-LIA</strong></td><td>Confirmación de ELISA reactivo</td><td>Positivo si ≥2 bandas (env + gag o pol). Indeterminado: repetir en 4–6 semanas</td></tr>
+        <tr><td><strong>Carga viral plasmática (PCR ARN)</strong></td><td>Diagnóstico en síndrome agudo · monitoreo del TAR</td><td>Detectable desde los 10–11 días. Meta del TAR: &lt;50 copias/mL</td></tr>
+        <tr><td><strong>Recuento de CD4</strong></td><td>Estadificación · decisión de profilaxis · monitoreo</td><td>Normal: 500–1500/mm³. &lt;200: define SIDA. &lt;100: IO graves. &lt;50: IO devastadoras</td></tr>
+        <tr><td><strong>Test rápido (inmunocromatografía)</strong></td><td>Urgencias, maternidad, PEP, trabajo de parto</td><td>Alta sensibilidad. Siempre confirmar si reactivo. Disponible en salud pública argentina</td></tr>
       </table>
     </div>
     <div class="hl">En Argentina el <strong>ELISA es gratuito</strong> en todos los centros de salud públicos (Ley 23.798). Se ofrece a toda persona que lo solicite, embarazadas, personas con FRCV para VIH y ante toda ITS diagnosticada.</div>
+
+    <div class="subtitulo-bloque">Estudios iniciales en persona recién diagnosticada</div>
+    <div class="card">
+      <p><strong>Virológicos:</strong> carga viral plasmática · genotipo de resistencia basal · tropismo viral (si se considera maraviroc).</p>
+      <p><strong>Inmunológicos:</strong> recuento de CD4 y porcentaje · HLA-B*5701 (antes de usar abacavir).</p>
+      <p><strong>Serologías:</strong> Toxoplasma IgG · CMV · VHB (HBsAg, anti-HBc, anti-HBs) · VHC · sífilis (VDRL/TPHA) · Chagas · PPD o IGRA (descartar TBC latente).</p>
+      <p><strong>Laboratorio general:</strong> hemograma + función renal + hepática + lipidograma + glucemia + orina completa.</p>
+      <p><strong>Vacunas:</strong> completar esquema — neumococo, influenza, HBV, VHA, VPH (según edad y CD4).</p>
+    </div>
   </div>
 
   <div class="seccion">
     <div class="sec-titulo">💊 Tratamiento antirretroviral (TAR)</div>
-    <div class="hl-danger"><strong>TAR indicado en TODOS los pacientes con VIH, independientemente del CD4.</strong> Iniciar idealmente en la misma visita del diagnóstico ("same-day start").</div>
+    <div class="hl-danger"><strong>TAR indicado en TODOS los pacientes con VIH, independientemente del CD4.</strong> Iniciar idealmente en la misma visita del diagnóstico ("same-day start"). Iniciar siempre antes si: CD4 &lt;200 · IO activa · embarazo · nefropatía asociada al VIH · VHB coinfección.</div>
 
     <div class="farma-card" style="margin-top:10px;">
       <div class="farma-nombre">BIC/TAF/FTC — Bictegravir / Tenofovir alafenamida / Emtricitabina</div>
       <div class="farma-clase">INSTI + 2 ITIAN · régimen preferido de primera línea en Argentina 2023</div>
       <div class="dosis-badge">1 comprimido VO 1 vez al día</div>
-      <div class="farma-detalle">Alta barrera genética a la resistencia, excelente tolerabilidad, 1 comprimido/día. TAF tiene menor nefrotoxicidad y menor impacto óseo que TDF. Disponible en el sistema público argentino.</div>
+      <div class="farma-detalle">Alta barrera genética a la resistencia, excelente perfil de tolerabilidad y simplicidad posológica (1 comprimido/día). TAF tiene menor nefrotoxicidad y menor impacto sobre densidad mineral ósea que TDF. No requiere ajuste de dosis en la mayoría de los pacientes. Disponible en el sistema público argentino.</div>
     </div>
     <div class="farma-card">
       <div class="farma-nombre">DTG/ABC/3TC — Dolutegravir / Abacavir / Lamivudina</div>
       <div class="farma-clase">INSTI + 2 ITIAN · alternativa de primera línea</div>
       <div class="dosis-badge">1 comprimido VO 1 vez al día</div>
-      <div class="farma-detalle">Requiere <strong>HLA-B*5701</strong> negativo antes de iniciar (reacción de hipersensibilidad grave si positivo). Evitar DTG en <strong>1er trimestre del embarazo</strong> (riesgo de defectos del tubo neural).</div>
+      <div class="farma-detalle">Requiere <strong>HLA-B*5701 negativo</strong> antes de iniciar abacavir — si positivo: reacción de hipersensibilidad grave (fiebre, rash, síntomas constitucionales, puede ser fatal si se rechallenge). <strong>Dolutegravir: evitar en 1er trimestre del embarazo</strong> — riesgo de defectos del tubo neural. A partir del 2do trimestre es seguro.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">DRV/c/FTC/TAF — Darunavir/cobicistat/Emtricitabina/TAF</div>
+      <div class="farma-clase">IP potenciado + 2 ITIAN · alternativa o resistencia a INSTI</div>
+      <div class="dosis-badge">1 comprimido VO 1 vez al día con alimentos</div>
+      <div class="farma-detalle">Alta barrera genética. Útil en pacientes con resistencia documentada a INSTI o cuando BIC/DTG no son apropiados. Cobicistat es un potenciador farmacocinético (inhibidor de CYP3A4) — múltiples interacciones medicamentosas. Perfil metabólico menos favorable (dislipemia, resistencia a insulina).</div>
     </div>
 
     <div class="subtitulo-bloque">Clases de antirretrovirales</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Clase</th><th>Mecanismo</th><th>Ejemplos</th></tr>
-        <tr><td><strong>ITIAN</strong></td><td>Terminadores de cadena — inhiben transcriptasa inversa</td><td>Tenofovir (TDF/TAF), Abacavir, Lamivudina, Emtricitabina, Zidovudina</td></tr>
-        <tr><td><strong>ITINAN</strong></td><td>Bloqueo alostérico de la transcriptasa inversa</td><td>Efavirenz, Rilpivirina, Doravirina, Nevirapina</td></tr>
-        <tr><td><strong>IP</strong></td><td>Bloquean maduración viral</td><td>Darunavir, Lopinavir, Atazanavir (+ ritonavir o cobicistat como booster)</td></tr>
-        <tr><td><strong>INSTI</strong></td><td>Bloquean integración del ADN viral</td><td>Dolutegravir, Bictegravir, Raltegravir, Elvitegravir</td></tr>
-        <tr><td><strong>Inhibidores de entrada</strong></td><td>Bloquean fusión o correceptor CCR5</td><td>Maraviroc (anti-CCR5), Enfuvirtida</td></tr>
+        <tr><th>Clase</th><th>Mecanismo</th><th>Ejemplos clave</th><th>EA principales</th></tr>
+        <tr><td><strong>ITIAN</strong></td><td>Terminadores de cadena — inhiben transcriptasa inversa</td><td>TDF, TAF, Abacavir, Lamivudina, Emtricitabina, Zidovudina</td><td>TDF: nefrotoxicidad, ↓DMO · ABC: hipersensibilidad (HLA-B*5701) · AZT: anemia, miopatía</td></tr>
+        <tr><td><strong>ITINAN</strong></td><td>Bloqueo alostérico de la transcriptasa inversa</td><td>Efavirenz, Rilpivirina, Doravirina, Nevirapina</td><td>EFV: sueños vívidos, mareo, teratogénico · NVP: hepatotoxicidad, rash severo (Stevens-Johnson)</td></tr>
+        <tr><td><strong>IP</strong></td><td>Bloquean proteasa viral → viriones inmaduros</td><td>Darunavir, Lopinavir, Atazanavir (siempre con ritonavir o cobicistat)</td><td>Dislipemia, resistencia insulina, lipodistrofia, diarrea, ↑bilirrubina (ATV)</td></tr>
+        <tr><td><strong>INSTI</strong></td><td>Bloquean integración del ADN viral al genoma del huésped</td><td>Dolutegravir, Bictegravir, Raltegravir, Elvitegravir</td><td>Generalmente bien tolerados. DTG: insomnio, cefalea, ↑creatinina (sin deterioro real de FGe)</td></tr>
+        <tr><td><strong>Inhibidores de entrada</strong></td><td>Bloquean fusión (T20) o correceptor CCR5 (maraviroc)</td><td>Maraviroc, Enfuvirtida, Lenacapavir (cápside)</td><td>Maraviroc: solo si tropismo R5. Lenacapavir: inyectable semestral, resistencia de clase nueva</td></tr>
+      </table>
+    </div>
+
+    <div class="subtitulo-bloque">Monitoreo del paciente en TAR</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Cuándo</th><th>Qué evaluar</th></tr>
+        <tr><td>Al inicio</td><td>Carga viral · CD4 · función renal y hepática · lipidograma · estudios basales completos</td></tr>
+        <tr><td>4 semanas post-inicio</td><td>Tolerabilidad · adherencia · función renal si usa TDF</td></tr>
+        <tr><td>3 meses</td><td>Carga viral (objetivo: &lt;200 copias/mL) · CD4 · laboratorio</td></tr>
+        <tr><td>6 meses</td><td>Carga viral (objetivo: indetectable &lt;50 copias/mL) · CD4 · lipidograma</td></tr>
+        <tr><td>Cada 6–12 meses (estable)</td><td>Carga viral · CD4 · función renal · lipidograma · glucemia · Pap (en mujeres)</td></tr>
+        <tr><td>Si carga viral detectable</td><td>Evaluar adherencia antes de cambiar régimen · genotipo de resistencia si carga viral &gt;200 copias/mL</td></tr>
       </table>
     </div>
   </div>
 
   <div class="seccion">
-    <div class="sec-titulo">🦠 Infecciones oportunistas — diagnóstico y tratamiento</div>
+    <div class="sec-titulo">🦠 Infecciones oportunistas</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>IO</th><th>CD4</th><th>Presentación / Dx</th><th>Tratamiento</th></tr>
-        <tr><td><strong>Neumonía por P. jirovecii (PCP)</strong></td><td>&lt;200</td><td>Tos seca, disnea progresiva, fiebre, hipoxemia. Rx: infiltrado intersticial bilateral. Dx: LBA + PCR · β-D-glucano ↑</td><td>TMP-SMX 15–20 mg/kg/día (TMP) × 21 días. <strong>Corticoides si PaO₂ &lt;70 mmHg</strong></td></tr>
-        <tr><td><strong>Toxoplasmosis cerebral</strong></td><td>&lt;100–200</td><td>Cefalea, fiebre, déficit focal, convulsiones. RMN: lesiones en anillo múltiples con edema. IgG Toxoplasma+</td><td>Pirimetamina + Sulfadiazina + Leucovorina × 6 sem → mantenimiento</td></tr>
-        <tr><td><strong>Meningitis criptocócica</strong></td><td>&lt;100</td><td>Cefalea subaguda, presión apertura muy elevada. LCR: tinta india + Ag criptocócico (S &gt;99%)</td><td>Anfotericina B liposomal + 5-fluocitosina × 2 sem → Fluconazol</td></tr>
-        <tr><td><strong>Retinitis por CMV</strong></td><td>&lt;50</td><td>Pérdida visual, moscas volantes. Fondo de ojo: aspecto de "pizza". PCR CMV</td><td>Valganciclovir VO o Ganciclovir IV × 2–3 sem → mantenimiento</td></tr>
-        <tr><td><strong>TBC (cualquier localización)</strong></td><td>Cualquier CD4</td><td>Fiebre, sudores, pérdida de peso, tos. PPD puede ser negativa. Xpert MTB/RIF</td><td>RIPE × 2 m → RI × 4–7 m. Iniciar TAR 2–8 sem post-inicio ATB</td></tr>
-        <tr><td><strong>Histoplasmosis diseminada</strong></td><td>&lt;100</td><td>Fiebre, hepatoesplenomegalia, lesiones cutáneas. Ag urinario Histoplasma</td><td>Anfotericina B liposomal → Itraconazol VO</td></tr>
+        <tr><th>IO</th><th>CD4</th><th>Presentación / Diagnóstico</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Neumonía por P. jirovecii (PCP)</strong></td><td>&lt;200</td><td>Tos seca, disnea progresiva, fiebre, hipoxemia. Rx: infiltrado intersticial bilateral difuso "en vidrio esmerilado". β-D-glucano ↑ · LBA con IFI o PCR</td><td>TMP-SMX 15–20 mg/kg/día (de TMP) × 21 días. <strong>Prednisona si PaO₂ &lt;70 mmHg o gradiente A-a &gt;35</strong> (40 mg c/12 h × 5 d → reducción progresiva)</td></tr>
+        <tr><td><strong>Toxoplasmosis cerebral</strong></td><td>&lt;100–200</td><td>Cefalea, fiebre, déficit focal, convulsiones. RMN: lesiones en anillo múltiples, edema perilesional, efecto de masa. IgG Toxoplasma positivo en 97%</td><td>Pirimetamina 200 mg carga → 50–75 mg/día + Sulfadiazina 1–1,5 g c/6 h + Leucovorina 10–25 mg/día × 6 semanas → profilaxis secundaria</td></tr>
+        <tr><td><strong>Meningitis criptocócica</strong></td><td>&lt;100</td><td>Cefalea subaguda intensa, fiebre. Meningismo variable. Presión de apertura muy elevada. LCR: tinta india + Ag criptocócico (S &gt;99%). Ag sérico también útil</td><td>Anfotericina B liposomal 3–4 mg/kg/día + 5-fluocitosina × 2 semanas → Fluconazol 400 mg/día × 8 semanas → 200 mg/día (mantenimiento). Punción lumbar evacuadora si presión &gt;25 cmH₂O</td></tr>
+        <tr><td><strong>Retinitis por CMV</strong></td><td>&lt;50</td><td>Pérdida visual unilateral, moscas volantes, fotopsias, escotoma. Fondo de ojo: "pizza con queso" (necrosis hemorrágica periférica). PCR CMV en sangre/humor vítreo</td><td>Valganciclovir 900 mg c/12 h × 21 días (inducción) → 900 mg/día (mantenimiento hasta CD4 &gt;100 × 3–6 meses)</td></tr>
+        <tr><td><strong>TBC (cualquier CD4)</strong></td><td>Cualquier nivel, más grave &lt;200</td><td>Fiebre, sudores, pérdida de peso, tos. Presentación atípica con CD4 bajos (ausencia de cavidades, TBC diseminada). PPD puede ser negativa (anergia)</td><td>RIPE × 2 meses → RI × 4–7 meses. <strong>Iniciar TAR 2–8 semanas post-inicio de ATB</strong> (antes si CD4 &lt;50: iniciar TAR a las 2 semanas)</td></tr>
+        <tr><td><strong>Histoplasmosis diseminada</strong></td><td>&lt;100</td><td>Fiebre, hepatoesplenomegalia, adenopatías, lesiones cutáneas papulosas o ulceradas, pancitopenia. Frecuente en NOA y NEA de Argentina</td><td>Anfotericina B liposomal → Itraconazol 200 mg c/12 h × 12 meses. Ag urinario y sérico de Histoplasma: S &gt;90%</td></tr>
+        <tr><td><strong>LMP (Leucoencefalopatía multifocal progresiva)</strong></td><td>&lt;100</td><td>Déficit focal neurológico progresivo (hemiparesia, afasia, ataxia, demencia), sin fiebre ni meningismo. RMN: lesiones blancas multifocales sin efecto de masa. PCR JC en LCR</td><td>No hay tratamiento específico. <strong>Iniciar TAR urgente</strong> — la recuperación inmune es el único tratamiento. Cuidado con IRIS</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚡ Síndrome inflamatorio de reconstitución inmune (IRIS)</div>
+    <div class="hl-warn"><strong>IRIS:</strong> empeoramiento paradójico de una infección oportunista (o aparición de una nueva) en las primeras semanas de iniciar el TAR, como consecuencia de la recuperación inmune. Se produce cuando el sistema inmune "reactiva" la respuesta inflamatoria contra patógenos ya presentes.</div>
+    <div class="card">
+      <p><strong>IRIS paradójico:</strong> el paciente estaba en tratamiento para una IO y empeora al iniciar el TAR (ej. TBC que empeora con fiebre y adenopatías más grandes).</p>
+      <p><strong>IRIS desenmascarado:</strong> aparece una IO no diagnosticada previamente al iniciar el TAR (ej. meningitis criptocócica que se manifiesta después de iniciar TAR).</p>
+      <p><strong>Factores de riesgo:</strong> CD4 muy bajo al inicio del TAR · inicio muy precoz del TAR en presencia de IO activa · recuperación inmune muy rápida · micobacterias y Criptococo son las causas más frecuentes.</p>
+      <p><strong>Manejo:</strong> no suspender el TAR salvo riesgo vital · AINE o corticoides para casos moderados-graves · tratar la IO de base si no se estaba haciendo.</p>
+      <p><strong>Prevención:</strong> por eso se retrasa el inicio del TAR 2–8 semanas en TBC activa, y se hace screening de criptococo con Ag sérico antes de iniciar TAR si CD4 &lt;100.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔴 Neoplasias definitorias de SIDA</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Neoplasia</th><th>CD4 típico</th><th>Característica clave</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Sarcoma de Kaposi</strong></td><td>Cualquier CD4, más frecuente &lt;200</td><td>Lesiones cutáneas violáceas/pardas, no dolorosas. Puede afectar mucosas, pulmón, TGI. Causado por VHH-8 (HHV-8)</td><td>TAR (puede regresar con TAR solo) · quimioterapia si diseminado (liposomal doxorrubicina)</td></tr>
+        <tr><td><strong>Linfoma primario del SNC</strong></td><td>&lt;50</td><td>Lesión cerebral única (a diferencia de la toxoplasmosis que es múltiple). PET positivo. PCR EBV en LCR positivo. Asociado a EBV</td><td>Radioterapia holocraneal · quimioterapia · TAR</td></tr>
+        <tr><td><strong>Linfoma no Hodgkin sistémico</strong></td><td>&lt;100–200</td><td>Linfoma de células B, agresivo (Burkitt, difuso de células B grandes). Adenopatías, compromiso extranodal frecuente</td><td>R-CHOP u otros regímenes según subtipo + TAR</td></tr>
+        <tr><td><strong>Cáncer de cuello uterino invasor</strong></td><td>Cualquier CD4</td><td>Asociado a VPH. Las mujeres con VIH tienen mayor riesgo — Pap anual + colposcopía si alterado</td><td>Según estadio · TAR mejora pronóstico</td></tr>
       </table>
     </div>
   </div>
@@ -156,14 +209,14 @@
     <div class="sec-titulo">🛡️ Profilaxis de infecciones oportunistas</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>CD4</th><th>IO a prevenir</th><th>Droga de elección</th></tr>
-        <tr><td>&lt;200</td><td>PCP primaria</td><td>TMP-SMX 1 comp (160/800 mg) diario o 3×/semana</td></tr>
-        <tr><td>&lt;100 + IgG Toxo+</td><td>Toxoplasmosis</td><td>TMP-SMX (misma dosis — cubre PCP y Toxo)</td></tr>
-        <tr><td>&lt;50</td><td>MAC</td><td>Azitromicina 1200 mg/semana</td></tr>
-        <tr><td>Cualquier CD4</td><td>TBC latente (PPD ≥5 mm o IGRA+)</td><td>Isoniacida 300 mg/día × 6–9 meses + Piridoxina</td></tr>
+        <tr><th>CD4</th><th>IO a prevenir</th><th>Droga de elección</th><th>Cuándo suspender</th></tr>
+        <tr><td>&lt;200</td><td>PCP primaria</td><td>TMP-SMX 1 comp (160/800 mg) diario o 3×/semana</td><td>CD4 &gt;200 por ≥3 meses con TAR</td></tr>
+        <tr><td>&lt;100 + IgG Toxo+</td><td>Toxoplasmosis cerebral</td><td>TMP-SMX misma dosis (cubre PCP y Toxo simultáneamente)</td><td>CD4 &gt;200 por ≥3 meses</td></tr>
+        <tr><td>&lt;50</td><td>MAC (Mycobacterium avium complex)</td><td>Azitromicina 1200 mg/semana</td><td>CD4 &gt;100 por ≥3 meses con TAR</td></tr>
+        <tr><td>Cualquier CD4</td><td>TBC latente (PPD ≥5 mm o IGRA+)</td><td>Isoniacida 300 mg/día × 6–9 meses + Piridoxina 25 mg/día</td><td>Completar el curso</td></tr>
+        <tr><td>&lt;100 (zonas endémicas)</td><td>Histoplasmosis (NOA/NEA Argentina)</td><td>Itraconazol 200 mg/día en zonas de alta endemia</td><td>CD4 &gt;150 por ≥6 meses con TAR</td></tr>
       </table>
     </div>
-    <div class="hl">Las profilaxis pueden <strong>suspenderse</strong> cuando el CD4 se recupera por encima del umbral durante ≥3–6 meses con TAR efectivo.</div>
   </div>
 
   <div class="seccion">
@@ -171,11 +224,12 @@
     <div class="tabla-wrap">
       <table>
         <tr><th></th><th>PEP (post-exposición)</th><th>PrEP (pre-exposición)</th></tr>
-        <tr><td><strong>Indicación</strong></td><td>Exposición de riesgo en VIH negativo</td><td>VIH negativo con alto riesgo sostenido</td></tr>
-        <tr><td><strong>Inicio</strong></td><td>Dentro de las <strong>72 h</strong> (idealmente &lt;2 h)</td><td>Antes de la exposición</td></tr>
-        <tr><td><strong>Duración</strong></td><td>28 días</td><td>Continua o "on demand" (2-1-1)</td></tr>
-        <tr><td><strong>Régimen</strong></td><td>TDF/FTC + Dolutegravir</td><td>TDF/FTC diario</td></tr>
-        <tr><td><strong>Argentina</strong></td><td>Gratuita en hospitales públicos</td><td>Disponible en sistema público desde 2022</td></tr>
+        <tr><td><strong>Indicación</strong></td><td>Exposición de riesgo (sexual, accidente laboral con fluidos, uso compartido de agujas) en persona VIH negativa</td><td>Persona VIH negativa con riesgo elevado sostenido (relaciones sexuales sin preservativo, múltiples parejas, pareja seropositiva con carga viral detectable, uso de drogas IV)</td></tr>
+        <tr><td><strong>Inicio</strong></td><td>Dentro de las <strong>72 horas</strong> — idealmente &lt;2 h. Eficacia cae marcadamente después de las 72 h</td><td>Previo a la exposición. Protección plena: 7 días para exposición anal receptiva, 20 días para vaginal/anal insertiva</td></tr>
+        <tr><td><strong>Duración</strong></td><td>28 días</td><td>Continua diaria o "on demand" (2-1-1: 2 comp 2–24 h antes, 1 comp 24 h después, 1 comp 48 h después)</td></tr>
+        <tr><td><strong>Régimen preferido</strong></td><td>TDF/FTC + Dolutegravir × 28 días (o RAL o DRV/r si no hay DTG)</td><td>TDF/FTC (tenofovir 300 mg + emtricitabina 200 mg) 1 comp/día</td></tr>
+        <tr><td><strong>Controles</strong></td><td>VIH basal, a las 6 semanas y a los 3 meses. Función renal. ITS. Eval riesgo de embarazo</td><td>VIH + función renal + ITS cada 3 meses. No usar si CrCl &lt;60 mL/min</td></tr>
+        <tr><td><strong>Argentina</strong></td><td>Gratuita en hospitales públicos — Ley 26.743 y normativas del Ministerio de Salud</td><td>Disponible en el sistema de salud público desde 2022 — gratuita para personas en situación de riesgo</td></tr>
       </table>
     </div>
   </div>
@@ -184,25 +238,30 @@
     <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
     <div class="pill-list">
       <span class="pill">SIDA: CD4 &lt;200 O enfermedad definitoria</span>
-      <span class="pill">Síndrome retroviral agudo — similar a mono</span>
-      <span class="pill">ELISA 4ª gen — screening de elección</span>
-      <span class="pill">Carga viral — diagnóstico en fase aguda</span>
+      <span class="pill">Síndrome retroviral agudo — similar a mononucleosis</span>
+      <span class="pill">ELISA 4ª gen → Western Blot para confirmar</span>
+      <span class="pill">Carga viral — diagnóstico en fase aguda (ELISA negativo)</span>
       <span class="pill">TAR en todos, independientemente del CD4</span>
       <span class="pill">U=U: indetectable = intransmisible</span>
-      <span class="pill">PCP: TMP-SMX + corticoides si PaO₂ &lt;70</span>
+      <span class="pill">PCP: TMP-SMX + corticoides si PaO₂ &lt;70 mmHg</span>
       <span class="pill">Toxo: lesiones en anillo múltiples en RMN</span>
-      <span class="pill">Criptococo: tinta india + Ag criptocócico</span>
+      <span class="pill">Criptococo: tinta india + Ag criptocócico en LCR</span>
       <span class="pill">CMV retinitis: CD4 &lt;50 → valganciclovir</span>
-      <span class="pill">TMP-SMX: profilaxis PCP + Toxoplasma</span>
+      <span class="pill">LMP: virus JC — no hay tratamiento específico → TAR</span>
+      <span class="pill">IRIS — qué es y cuándo ocurre</span>
+      <span class="pill">Sarcoma de Kaposi — VHH-8, lesiones violáceas</span>
+      <span class="pill">Linfoma SNC — lesión única (vs Toxo que es múltiple)</span>
+      <span class="pill">TMP-SMX: profilaxis PCP + Toxoplasma simultánea</span>
       <span class="pill">PEP: dentro de las 72 h, 28 días</span>
+      <span class="pill">PrEP: TDF/FTC — gratuito en Argentina desde 2022</span>
       <span class="pill">HLA-B*5701 antes de abacavir</span>
-      <span class="pill">DTG evitar en 1er trimestre embarazo</span>
+      <span class="pill">DTG: evitar 1er trimestre embarazo</span>
       <span class="pill">TBC + VIH: iniciar TAR 2–8 sem post-ATB</span>
     </div>
   </div>
 
   <div class="fuente">
-    Fuentes: DHHS Guidelines for Antiretroviral Agents in Adults and Adolescents 2024 · Guía para la Atención Integral de Personas con VIH en el PNA — Ministerio de Salud Argentina 2023 · WHO Consolidated Guidelines on HIV 2021 · Harrison 21ª ed.<br>
+    Fuentes: DHHS Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents 2024 · Guía para la Atención Integral de Personas con VIH en el PNA — Ministerio de Salud Argentina 2023 · WHO Consolidated Guidelines on HIV 2021 · Harrison Principios de Medicina Interna, 21ª ed.<br>
     El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
   </div>
 </div>
