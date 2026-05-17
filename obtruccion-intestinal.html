@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obstrucción Intestinal — Medpedia</title>
+  <meta name="description" content="Obstrucción intestinal mecánica y paralítica: diagnóstico, clasificación, manejo conservador y quirúrgico. Vólvulo. EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --cir: #1A5E9A; --cir-claro: #E6F1FB; --cir-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cir   { background: #E3F2FD; color: #1565C0; }
+    .tag-emerg { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-cir { font-size: 16px; font-weight: 500; color: var(--cir); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-cir   { border-left: 3px solid var(--cir); background: var(--cir-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--cir); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-r { width: 28px; height: 28px; border-radius: 50%; background: #C0392B; color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .versus-block { border-radius: 14px; padding: 1.25rem; }
+    .versus-block.mec { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .versus-block.par { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .versus-titulo { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .versus-titulo.mec { color: #C0392B; }
+    .versus-titulo.par { color: #D4730A; }
+    .versus-fila { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; line-height: 1.45; }
+    .versus-fila strong { color: var(--texto); }
+    .rx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .rx-grid { grid-template-columns: 1fr; } }
+    .rx-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .rx-titulo { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--cir); }
+    .rx-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 5px; line-height: 1.4; }
+    .rx-item strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Obstrucción Intestinal</div>
+  <div class="titulo">Obstrucción Intestinal</div>
+  <div class="meta">
+    <span class="tag tag-cir">Cirugía General</span>
+    <span class="tag tag-emerg">Emergencias</span>
+    <span class="tag tag-fuente">Schwartz 11ª ed. · Giménez 2ª ed. · WSES Guidelines · Harrison 21ª</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación</div>
+    <div class="hl-cir"><strong>Obstrucción intestinal (OI):</strong> interrupción del tránsito intestinal normal por una causa mecánica (barrera física) o funcional (falta de peristaltismo). Es la urgencia quirúrgica abdominal más frecuente después de la apendicitis. La distinción entre mecánica y paralítica, y entre intestino delgado y grueso, define el manejo.</div>
+    <div class="versus-wrap">
+      <div class="versus-block mec">
+        <div class="versus-titulo mec">🔴 Mecánica (u obstructiva)</div>
+        <div class="versus-fila"><strong>Causa:</strong> barrera física que impide el paso del contenido intestinal</div>
+        <div class="versus-fila"><strong>Ruidos:</strong> aumentados, metálicos, en "cascada" (lucha intestinal)</div>
+        <div class="versus-fila"><strong>Dolor:</strong> cólico, intermitente, intenso</div>
+        <div class="versus-fila"><strong>Causas #1 ID:</strong> bridas/adherencias postoperatorias (75%)</div>
+        <div class="versus-fila"><strong>Causas #1 IG:</strong> cáncer colorrectal (65%), vólvulo, diverticulitis</div>
+        <div class="versus-fila"><strong>Simple vs a asa cerrada:</strong> asa cerrada = obstrucción en 2 puntos → riesgo de estrangulación muy alto</div>
+      </div>
+      <div class="versus-block par">
+        <div class="versus-titulo par">🟠 Paralítica (íleo paralítico)</div>
+        <div class="versus-fila"><strong>Causa:</strong> falta de peristaltismo por inhibición neuronal o muscular</div>
+        <div class="versus-fila"><strong>Ruidos:</strong> ausentes o muy disminuidos ("silencio abdominal")</div>
+        <div class="versus-fila"><strong>Dolor:</strong> malestar difuso, distensión, sin cólico</div>
+        <div class="versus-fila"><strong>Causas:</strong> postoperatorio (fisiológico), peritonitis, hipopotasemia, opioides, pancreatitis, trauma medular</div>
+        <div class="versus-fila"><strong>Tratamiento:</strong> siempre conservador (tratar la causa, deambulación, sonda nasogástrica)</div>
+        <div class="versus-fila"><strong>Cirugía:</strong> NO indicada en el íleo paralítico</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Causas de obstrucción mecánica — por localización</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización</th><th>Causa #1</th><th>Otras causas frecuentes</th><th>Clave</th></tr>
+        <tr><td><strong>Intestino delgado (ID)</strong></td><td>Bridas / adherencias postoperatorias (75%)</td><td>Hernias (15%), neoplasias, enfermedad de Crohn, íleo biliar, intususcepción</td><td>Antecedente de cirugía abdominal previa → pensar bridas primero</td></tr>
+        <tr><td><strong>Intestino grueso (IG)</strong></td><td>Cáncer colorrectal (65%)</td><td>Vólvulo de sigma (15%), diverticulitis, vólvulo de ciego, compresión extrínseca</td><td>Adulto mayor + cambios del hábito intestinal → descartar CCR</td></tr>
+        <tr><td><strong>Todas las edades</strong></td><td>Variable según edad</td><td>Neonatos: atresia · Niños: intususcepción, Meckel · Adultos: bridas, hernias, tumores</td><td>La causa varía mucho según la edad del paciente</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Íleo biliar — no confundir con íleo paralítico</div>
+      Obstrucción mecánica del intestino delgado por un <strong>cálculo biliar grande</strong> (&gt;2,5 cm) que migra al intestino a través de una fístula colecistoentérica (habitualmente colecistoduodenal). <strong>Tríada de Rigler:</strong> niveles hidroaéreos + aerobilia (gas en la vía biliar) + imagen de cálculo ectópico. Más frecuente en mujeres ancianas. Cirugía: enterotomía y extracción del cálculo.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-cir">🔵 Diagnóstico — clínica + imágenes</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Clínica — la tétrada clásica de obstrucción mecánica</strong><br>
+        <strong>1. Dolor abdominal cólico</strong> → intermitente, en "olas", corresponde a la lucha peristáltica contra la obstrucción.<br>
+        <strong>2. Náuseas y vómitos</strong> → precoces y fecaloideos en obstrucción alta; tardíos en obstrucción baja.<br>
+        <strong>3. Distensión abdominal</strong> → mayor en obstrucción baja o IG.<br>
+        <strong>4. Ausencia de emisión de gases y heces</strong> (constipación absoluta) → tardío; puede haber eliminación del contenido distal a la obstrucción inicialmente.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Signos de alarma — estrangulación</strong><br>
+        La estrangulación implica compromiso vascular del asa obstruida → isquemia → necrosis → perforación. Sospechar ante: <strong>dolor continuo que ya no es cólico</strong>, fiebre, taquicardia, defensa muscular, leucocitosis marcada, lactato elevado. Es una emergencia quirúrgica.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Imágenes</strong><br>
+        — <strong>Rx simple de abdomen (de pie + decúbito):</strong> primera línea. Niveles hidroaéreos ("escalera") + dilatación de asas + ausencia de gas distal a la obstrucción. En IG: dilatación del marco cólico con haustras visibles.<br>
+        — <strong>TAC de abdomen con contraste:</strong> gold standard — identifica la causa, el nivel y las complicaciones (estrangulación, neumatosis, neumoperitoneo). Signo del "remolino" (whirl sign) en vólvulo.<br>
+        — <strong>Signo del colon en omega (Ω):</strong> en la Rx simple → vólvulo de sigma.
+      </div>
+    </div>
+    <div class="rx-grid">
+      <div class="rx-card">
+        <div class="rx-titulo">Rx de OI de intestino delgado</div>
+        <div class="rx-item"><span>📷</span><span>Asas dilatadas centrales (plicas circulares visibles — valvulae conniventes)</span></div>
+        <div class="rx-item"><span>📷</span><span>Niveles hidroaéreos en "escalera"</span></div>
+        <div class="rx-item"><span>📷</span><span>Ausencia de gas en el colon</span></div>
+        <div class="rx-item"><span>📷</span><span>Asas de &lt;3 cm de diámetro normalmente — dilatadas si &gt;3 cm</span></div>
+      </div>
+      <div class="rx-card">
+        <div class="rx-titulo">Rx de OI de intestino grueso</div>
+        <div class="rx-item"><span>📷</span><span>Dilatación del marco cólico (haustras, periféricas)</span></div>
+        <div class="rx-item"><span>📷</span><span>Válvula ileocecal competente → ciego muy distendido (riesgo de perforación si &gt;12 cm)</span></div>
+        <div class="rx-item"><span>📷</span><span>Imagen en "grano de café" o "omega" → vólvulo de sigma</span></div>
+        <div class="rx-item"><span>📷</span><span>Colon &gt;6 cm = obstruido · &gt;9 cm = megacolon tóxico</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-cir">🔵 Manejo — diferencias según causa</div>
+    <div class="hl-cir">El manejo varía según: mecánica vs paralítica, ID vs IG, con o sin estrangulación. El manejo conservador inicial es válido en OI de ID por bridas sin signos de estrangulación. <strong>Cualquier signo de estrangulación = cirugía urgente sin demora.</strong></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Medidas generales — siempre en todos</strong><br>
+        Internación. Vía periférica. Expansión con cristaloides (los pacientes pueden perder 3–5 L en el tercer espacio). <strong>Sonda nasogástrica (SNG):</strong> descompresión gástrica, reduce los vómitos, previene la broncoaspiración, monitorea el débito. Sonda vesical + balance de fluidos. Analgesia (ketorolac, morfina titulada). Corregir hidroelectrolitos (hipokalemia frecuente por vómitos).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>OI de ID por bridas — manejo conservador (72 h)</strong><br>
+        El 75% de las OI de ID por bridas resuelven con tratamiento conservador en 24–72 h. Descompresión con SNG + hidratación + reposo digestivo. Evaluar cada 12–24 h clínicamente y con Rx. <strong>Criterios de fracaso del tratamiento conservador → cirugía:</strong> no mejora en 72 h, aumenta la distensión, aparecen signos de estrangulación, fiebre persistente o empeoramiento clínico.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-r">3</div>
+      <div class="step-content">
+        <strong>Cirugía urgente — indicaciones</strong><br>
+        — Estrangulación (signos de isquemia) → laparotomía inmediata<br>
+        — Asa cerrada<br>
+        — OI de IG (colon) → generalmente requiere cirugía (menos respuesta al conservador)<br>
+        — Fracaso del tratamiento conservador en OI de ID<br>
+        — Vólvulo de ciego<br>
+        — Hernia incarcerada o estrangulada
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>OI de intestino grueso — cirugía de elección</strong><br>
+        <strong>Cáncer obstructivo de colon:</strong> resección oncológica + colostomía (operación de Hartmann) o endoprótesis metálica intraluminal (SEMS) como puente a la cirugía electiva.<br>
+        <strong>Vólvulo de sigma:</strong> destorsión endoscópica (rectosigmoidoscopía) → de elección en paciente estable sin signos de isquemia. Éxito ~80%. Alto riesgo de recurrencia → sigmoidectomía electiva diferida. Si hay necrosis → cirugía urgente + Hartmann.<br>
+        <strong>Vólvulo de ciego:</strong> siempre cirugía (no responde a endoscopía) → cecostomía o hemicolectomía derecha.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🌀 Seudoobstrucción de colon aguda — Síndrome de Ogilvie</div>
+    <div class="hl-info">Dilatación masiva del colon sin obstrucción mecánica. Ocurre en pacientes hospitalizados graves (postoperatorio, trauma, infección grave, inmovilización prolongada). <strong>El colon derecho y el ciego se dilatan enormemente (ciego &gt;12 cm → riesgo de perforación).</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Paso</th><th>Intervención</th></tr>
+        <tr><td><strong>1. Medidas generales</strong></td><td>Corregir causa subyacente, suspender opioides y anticolinérgicos, reposo digestivo, SNG, movilización activa</td></tr>
+        <tr><td><strong>2. Neostigmina IV</strong></td><td>2 mg IV lento (en 3–5 min) bajo monitoreo ECG — inhibidor de la colinesterasa → estimula el peristaltismo. Respuesta en 30 min (~90% de éxito). Contraindicado en: bradicardia, broncoespasmo, ICC grave, obstrucción mecánica. Tener atropina lista.</td></tr>
+        <tr><td><strong>3. Colonoscopía descompresiva</strong></td><td>Si falla la neostigmina. Aspiración de gas + colocación de sonda descompresiva. Puede repetirse.</td></tr>
+        <tr><td><strong>4. Cirugía</strong></td><td>Si falla todo lo anterior o hay perforación → cecostomía o colostomía. Alta mortalidad en Ogilvie perforado.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Causa #1 OI de ID: bridas/adherencias (75%)</span>
+      <span class="pill">Causa #1 OI de IG: cáncer colorrectal (65%)</span>
+      <span class="pill">Mecánica: ruidos aumentados (lucha) · Paralítica: silencio</span>
+      <span class="pill">Tétrada OI: dolor cólico + vómitos + distensión + constipación absoluta</span>
+      <span class="pill">Estrangulación: dolor continuo + fiebre + defensa → cirugía urgente</span>
+      <span class="pill">Rx: niveles hidroaéreos en escalera + ausencia de gas distal</span>
+      <span class="pill">Valvulae conniventes: plicas circulares del ID (ocupan todo el diámetro)</span>
+      <span class="pill">Haustras: en el colon (no ocupan todo el diámetro)</span>
+      <span class="pill">TAC: gold standard · signo del "whirl" en vólvulo</span>
+      <span class="pill">Omega (Ω) en Rx: vólvulo de sigma</span>
+      <span class="pill">Bridas ID: conservador 72 h → cirugía si falla</span>
+      <span class="pill">OI de IG: generalmente requiere cirugía</span>
+      <span class="pill">Vólvulo de sigma: destorsión endoscópica → sigmoidectomía electiva</span>
+      <span class="pill">Vólvulo de ciego: siempre cirugía (hemicolectomía derecha)</span>
+      <span class="pill">Ciego &gt;12 cm: riesgo de perforación → urgencia</span>
+      <span class="pill">Íleo biliar: tríada de Rigler = niveles + aerobilia + cálculo ectópico</span>
+      <span class="pill">Síndrome de Ogilvie: seudoobstrucción → neostigmina IV</span>
+      <span class="pill">Neostigmina: monitoreo ECG + atropina disponible</span>
+      <span class="pill">Asa cerrada: obstrucción en 2 puntos → estrangulación inminente</span>
+      <span class="pill">SNG: descompresión siempre → reduce vómitos y distensión</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Brunicardi FC, Andersen DK, Billiar TR et al. Schwartz Principios de Cirugía 11ª ed. McGraw-Hill; 2020 · Giménez M. Fundamentos para la práctica clínico-quirúrgica 2ª ed. Editorial Médica Panamericana; 2025 · Ten Broek RPG et al. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO). World J Emerg Surg 2013 (updated WSES 2017) · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
