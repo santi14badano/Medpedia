@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gota — Medpedia</title>
+  <meta name="description" content="Gota: diagnóstico, tratamiento del ataque agudo, hipouricemiantes y prevención. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --reuma: #880E4F; --reuma-claro: #FCE4EC; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-reuma { background: var(--reuma-claro); color: var(--reuma); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
+    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+    .etapa-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 8px; }
+    .etapa-titulo { font-size: 13px; font-weight: 700; color: var(--reuma); margin-bottom: 4px; }
+    .etapa-body { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Reumatología</a> › Gota</div>
+  <div class="titulo">Gota</div>
+  <div class="meta">
+    <span class="tag tag-reuma">Reumatología</span>
+    <span class="tag tag-fuente">ACR 2020 · EULAR 2016 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>La gota es una enfermedad metabólica producida por el depósito de <strong>cristales de urato monosódico (UMS)</strong> en articulaciones y tejidos blandos, como consecuencia de la hiperuricemia crónica. Es la artritis inflamatoria más frecuente en adultos.</p>
+      <p>El <strong>ácido úrico</strong> es el producto final del catabolismo de las purinas en humanos (a diferencia de otros mamíferos que tienen uricasa). La hiperuricemia se define como ácido úrico sérico &gt;6,8 mg/dL (punto de saturación del urato a temperatura corporal y pH fisiológico).</p>
+      <p><strong>Epidemiología:</strong> afecta predominantemente a hombres adultos (M:H = 7:1) y a mujeres posmenopáusicas. Los estrógenos tienen efecto uricosúrico, por eso las mujeres premenopáusicas raramente la padecen. Prevalencia en Argentina: ~3–4% de la población adulta.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Fisiopatología</div>
+    <div class="card">
+      <p><strong>Causas de hiperuricemia:</strong></p>
+      <p>→ <strong>Reducción de la excreción renal (90% de los casos):</strong> causa más frecuente. Favorecida por insuficiencia renal, diuréticos tiazídicos y de asa, ciclosporina, alcohol (especialmente cerveza y licores — no tanto el vino), deshidratación, ayuno.</p>
+      <p>→ <strong>Aumento de la producción (10%):</strong> dieta rica en purinas (carnes rojas, vísceras, mariscos, fructosa), síndromes de lisis tumoral, enfermedades mieloproliferativas, déficit de HGPRT (síndrome de Lesch-Nyhan), déficit de glucosa-6-fosfatasa.</p>
+      <p><strong>Mecanismo del ataque agudo:</strong> los cristales de UMS precipitan en el espacio articular (favorecido por el frío, la deshidratación o cambios bruscos del uricemia) → activación del inflamasoma NLRP3 → producción masiva de IL-1β → artritis neutrofílica explosiva.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Historia natural — 4 etapas</div>
+    <div class="etapa-card">
+      <div class="etapa-titulo">1. Hiperuricemia asintomática</div>
+      <div class="etapa-body">Ácido úrico elevado sin síntomas. No es una enfermedad — la mayoría nunca desarrolla gota. No requiere tratamiento salvo niveles muy altos (&gt;9–10 mg/dL) con FRCV o en contexto de quimioterapia.</div>
+    </div>
+    <div class="etapa-card">
+      <div class="etapa-titulo">2. Artritis gotosa aguda (ataque de gota)</div>
+      <div class="etapa-body">Monoartritis de inicio brusco, nocturno o de madrugada, intensamente dolorosa, con eritema, calor y edema. El 50–70% de los primeros ataques compromete la <strong>1ª articulación metatarsofalángica (podagra)</strong>. También tobillo, rodilla, muñeca, codo. Se autolimita en 5–14 días sin tratamiento. Los factores desencadenantes más frecuentes son: alcohol, comida copiosa, trauma local, cirugía, deshidratación, inicio de hipouricemiantes.</div>
+    </div>
+    <div class="etapa-card">
+      <div class="etapa-titulo">3. Período intercrítico</div>
+      <div class="etapa-body">Intervalo asintomático entre ataques. Sin tratamiento, los ataques se vuelven más frecuentes, más prolongados y poliarticulares. El 60% tiene un segundo ataque en el primer año.</div>
+    </div>
+    <div class="etapa-card">
+      <div class="etapa-titulo">4. Gota tofácea crónica</div>
+      <div class="etapa-body">Depósito de tofos (acumulaciones de cristales de UMS rodeados de reacción granulomatosa) en hélix auricular, olécranon, tendón de Aquiles, pulpejos, articulaciones. Artritis crónica con destrucción articular. Nefropatía por uratos (nefrolitiasis por ácido úrico, nefropatía por depósito intrarrenal).</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Diagnóstico</div>
+    <div class="hl"><strong>Gold standard:</strong> visualización de cristales de UMS en el líquido sinovial o en el tofo mediante microscopía de luz polarizada. Los cristales aparecen como agujas birrefringentes negativas (amarillas cuando paralelas al eje del compensador). En la práctica clínica el diagnóstico suele ser clínico.</div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Criterio clínico</th><th>Valor diagnóstico</th></tr>
+        <tr><td><strong>Podagra</strong> (1ª MTF) con eritema, edema y dolor intenso de inicio nocturno</td><td>Alta especificidad para gota</td></tr>
+        <tr><td><strong>Ácido úrico sérico</strong></td><td>Puede ser normal durante el ataque agudo (hasta 40% de los casos). No descarta gota si es normal. No confirma gota si está elevado (muchos hiperuricémicos nunca tienen gota)</td></tr>
+        <tr><td><strong>Criterios ACR/EULAR 2015</strong></td><td>Sistema de puntuación: ≥8 puntos = gota clasificada (incluye clínica, laboratorio e imagen)</td></tr>
+        <tr><td><strong>Radiografía</strong></td><td>En gota crónica: erosiones en "sacabocado" con reborde esclerótico ("overhanging edge"), sin osteopenia periarticular (a diferencia de la AR)</td></tr>
+        <tr><td><strong>Ecografía articular</strong></td><td>"Signo del doble contorno" (depósito de urato sobre el cartílago) — muy específico de gota. También muestra tofos y depósitos en tendones</td></tr>
+        <tr><td><strong>TAC de doble energía (DECT)</strong></td><td>Detecta depósitos de urato en verde — alta sensibilidad y especificidad. No disponible en todos los centros</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Diagnóstico diferencial del ataque agudo:</strong> artritis séptica (emergencia — siempre descartar con líquido sinovial en caso de duda), pseudogota (cristales de pirofosfato de calcio — birrefringencia positiva débil), artritis reactiva, celulitis.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento del ataque agudo</div>
+    <div class="hl-danger"><strong>Regla fundamental:</strong> NO iniciar ni modificar hipouricemiantes durante el ataque agudo — puede prolongarlo o desencadenar nuevos ataques al movilizar depósitos de urato. Si el paciente ya estaba tomando alopurinol o febuxostat, mantenerlos sin cambios.</div>
+
+    <div class="farma-card" style="margin-top:10px;">
+      <div class="farma-nombre">Colchicina</div>
+      <div class="farma-clase">Antiinflamatorio · inhibidor de la migración de neutrófilos · primera línea si inicio precoz</div>
+      <div class="dosis-badge">1 mg VO al inicio → 0,5 mg 1 hora después · luego 0,5 mg c/8–12 h hasta resolución</div>
+      <div class="farma-detalle">
+        Más efectiva cuanto más precozmente se inicie (&lt;12–24 h del inicio del ataque). Mecanismo: inhibe la polimerización de tubulina → bloquea la migración de neutrófilos al espacio articular y la activación del inflamasoma NLRP3.<br><br>
+        <strong>Efectos adversos:</strong> náuseas, vómitos, diarrea (dosis-dependientes — la razón por la que se abandonó el esquema antiguo de "hasta la diarrea"). Con el esquema de dosis bajas actuales la tolerabilidad es buena.<br><br>
+        <strong>Contraindicaciones / precauciones:</strong> insuficiencia renal grave (FGe &lt;30 — ajustar dosis o evitar) · insuficiencia hepática grave · interacción con claritromicina, ciclosporina, verapamilo (↑ toxicidad por inhibición de CYP3A4/P-gp — riesgo de miopatía grave y pancitopenia).<br><br>
+        <strong>Profilaxis de ataques al iniciar hipouricemiante:</strong> 0,5 mg 1–2 veces/día × 3–6 meses (o hasta alcanzar meta de uricemia + 3 meses sin ataques).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">AINEs (indometacina, naproxeno, ibuprofeno)</div>
+      <div class="farma-clase">Antiinflamatorios no esteroideos · primera línea alternativa</div>
+      <div class="dosis-badge">Indometacina 50 mg c/8 h × 2–3 días → 25 mg c/8 h × 4–5 días · o naproxeno 500 mg c/12 h</div>
+      <div class="farma-detalle">
+        Igual de eficaces que la colchicina si se inician precozmente. Indometacina históricamente el más usado, pero naproxeno e ibuprofeno son igualmente efectivos con mejor tolerabilidad.<br><br>
+        <strong>Contraindicaciones:</strong> insuficiencia renal (↑ creatinina, retención de líquidos) · úlcera péptica activa (agregar IBP) · insuficiencia cardíaca descompensada · anticoagulación con warfarina (↑ RIN). Evitar en gota del adulto mayor con IRC — preferir colchicina o corticoides.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Corticoides (prednisona / metilprednisolona / triamcinolona)</div>
+      <div class="farma-clase">Antiinflamatorios · primera línea cuando AINEs y colchicina están contraindicados</div>
+      <div class="dosis-badge">Prednisona 30–40 mg/día VO × 3–5 días → reducir en 5–7 días · o triamcinolona intraarticular 10–40 mg</div>
+      <div class="farma-detalle">
+        De elección en pacientes con IRC avanzada, úlcera péptica activa, anticoagulados, o intolerancia a colchicina y AINEs. La inyección intraarticular de triamcinolona es muy eficaz para ataques monoarticulares accesibles. Cuidado con hiperglucemia en diabéticos.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento hipouricemiante (crónico)</div>
+    <div class="hl-info"><strong>¿Cuándo iniciar?</strong> ACR 2020 recomienda iniciar hipouricemiante en: ≥2 ataques/año · tofo clínico o por imagen · daño articular radiológico · nefrolitiasis por ácido úrico · IRC estadio ≥3. Considerar en primer ataque con uricemia muy elevada (&gt;9 mg/dL) o con comorbilidades.</div>
+    <div class="hl"><strong>Meta de uricemia:</strong> &lt;6 mg/dL en todos los pacientes con gota · &lt;5 mg/dL en gota tofácea o ataques frecuentes (para disolver los tofos más rápidamente). Monitorear cada 2–4 semanas hasta alcanzar la meta, luego cada 6 meses.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Alopurinol</div>
+      <div class="farma-clase">Inhibidor de la xantina oxidasa · hipouricemiante de primera línea</div>
+      <div class="dosis-badge">Iniciar 100 mg/día → titular 100 mg cada 2–4 semanas hasta meta · máx 900 mg/día · ajustar en IRC</div>
+      <div class="farma-detalle">
+        Inhibe la xantina oxidasa → bloquea la síntesis de ácido úrico a partir de xantina e hipoxantina.<br><br>
+        <strong>Inicio gradual:</strong> siempre comenzar a dosis baja (100 mg/día o menos en IRC) y subir lentamente — reduce el riesgo de precipitar ataques al inicio.<br><br>
+        <strong>Reacción de hipersensibilidad a alopurinol (AHS):</strong> rash que puede progresar a síndrome de Stevens-Johnson o DRESS (síndrome de hipersensibilidad con eosinofilia y síntomas sistémicos) — potencialmente fatal. Factores de riesgo: HLA-B*5801 (más frecuente en asiáticos — tamizaje recomendado antes de iniciar en esta población) · IRC · inicio a dosis alta. Suspender de inmediato ante cualquier rash.<br><br>
+        <strong>Interacciones:</strong> azatioprina y 6-mercaptopurina (↑ toxicidad grave — reducir dosis al 25% o evitar combinación) · ampicilina (↑ riesgo de rash).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Febuxostat</div>
+      <div class="farma-clase">Inhibidor selectivo de la xantina oxidasa · alternativa al alopurinol</div>
+      <div class="dosis-badge">40 mg/día VO → 80 mg/día si no se alcanza meta a las 2–4 semanas</div>
+      <div class="farma-detalle">
+        Más potente que el alopurinol a dosis estándar. No requiere ajuste de dosis en IRC leve-moderada (metabolismo principalmente hepático). Alternativa de elección en intolerancia o alergia al alopurinol.<br><br>
+        <strong>Advertencia de seguridad cardiovascular:</strong> el estudio CARES mostró mayor mortalidad cardiovascular con febuxostat vs alopurinol. La FDA incluyó una advertencia — usar con precaución en pacientes con enfermedad cardiovascular establecida. Muchos expertos cuestionan esta asociación (sesgo del estudio), pero el alopurinol sigue siendo la primera línea preferida.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Probenecid</div>
+      <div class="farma-clase">Agente uricosúrico · segunda línea o combinación</div>
+      <div class="dosis-badge">500 mg c/12 h VO → hasta 2 g/día · hidratación abundante</div>
+      <div class="farma-detalle">
+        Inhibe la reabsorción tubular de urato → ↑ excreción renal. Útil en infraexcretores (la mayoría de los pacientes) que no toleran o no responden a alopurinol/febuxostat. <strong>Contraindicado en nefrolitiasis por ácido úrico</strong> (↑ la carga de urato en orina → más cálculos) y en IRC (FGe &lt;30 — no es efectivo). Requiere hidratación abundante. Interacciones: bloquea la excreción tubular de penicilinas, metotrexato, AINEs (↑ niveles).
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🥗 Medidas no farmacológicas</div>
+    <div class="card">
+      <p><strong>Dieta:</strong> reducir carnes rojas, vísceras (hígado, riñón, mollejas) y mariscos (anchoas, sardinas, mejillones) · evitar bebidas azucaradas con fructosa (gaseosas, jugos industriales) · el café, los lácteos descremados y la vitamina C tienen efecto uricosúrico leve (protectores).</p>
+      <p><strong>Alcohol:</strong> reducir al mínimo, especialmente cerveza (alta en purinas) y licores. El vino tiene menor efecto sobre la uricemia.</p>
+      <p><strong>Hidratación:</strong> ingesta de 2–3 litros de agua/día — favorece la excreción renal de urato y previene nefrolitiasis.</p>
+      <p><strong>Pérdida de peso:</strong> la obesidad es un FRCV mayor para la gota. La pérdida gradual de peso ↓ la uricemia. Evitar ayuno prolongado (↑ uricemia por aumento del catabolismo).</p>
+      <p><strong>Fármacos a revisar:</strong> tiazidas y furosemida (↑ uricemia — considerar cambio a losartán o amlodipino, que tienen efecto uricosúrico) · aspirina a dosis bajas (↑ uricemia leve — no suspender si hay indicación cardiovascular) · ciclosporina.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Gota y comorbilidades</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Comorbilidad</th><th>Consideración especial</th></tr>
+        <tr><td><strong>Insuficiencia renal crónica</strong></td><td>Ajustar dosis de alopurinol según FGe (máx 100–200 mg/día en FGe 15–30). Evitar AINEs. Febuxostat no requiere ajuste hasta FGe &gt;15. Colchicina: reducir dosis en IRC moderada, evitar en grave</td></tr>
+        <tr><td><strong>Hipertensión</strong></td><td>Losartán tiene efecto uricosúrico — preferirlo en hipertensos con gota. Evitar tiazidas si es posible o cambiar a clortalidona (menor efecto sobre uricemia)</td></tr>
+        <tr><td><strong>Trasplante renal</strong></td><td>Ciclosporina ↑ uricemia. Evitar alopurinol si usa azatioprina (interacción grave). Febuxostat o probenecid son alternativas</td></tr>
+        <tr><td><strong>Diabetes / Síndrome metabólico</strong></td><td>La hiperuricemia se asocia a resistencia a insulina. El control metabólico mejora la uricemia. Evitar corticoides prolongados</td></tr>
+        <tr><td><strong>Uso de warfarina</strong></td><td>Evitar AINEs (↑ RIN + riesgo de sangrado GI). Preferir colchicina o corticoides. Monitorear RIN si se inicia alopurinol (puede ↑ niveles de warfarina)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Gota: depósito de cristales de UMS</span>
+      <span class="pill">Podagra — 1ª MTF, inicio nocturno</span>
+      <span class="pill">Cristales: agujas birrefringentes negativas</span>
+      <span class="pill">Hiperuricemia ≠ gota (mayoría son asintomáticos)</span>
+      <span class="pill">Ácido úrico puede ser normal durante el ataque</span>
+      <span class="pill">No iniciar hipouricemiante durante el ataque agudo</span>
+      <span class="pill">Colchicina: más efectiva si se inicia &lt;12–24 h</span>
+      <span class="pill">Colchicina + claritromicina → toxicidad grave</span>
+      <span class="pill">Alopurinol + azatioprina → toxicidad grave</span>
+      <span class="pill">HLA-B*5801 → riesgo de reacción grave a alopurinol</span>
+      <span class="pill">Meta de uricemia: &lt;6 mg/dL (&lt;5 en tofácea)</span>
+      <span class="pill">Losartán — efecto uricosúrico (preferir en hipertensos)</span>
+      <span class="pill">Tiazidas → ↑ uricemia</span>
+      <span class="pill">Probenecid contraindicado en nefrolitiasis por ácido úrico</span>
+      <span class="pill">Tofo: depósito de UMS en hélix auricular, olécranon</span>
+      <span class="pill">Signo del doble contorno en ecografía — específico de gota</span>
+      <span class="pill">Erosiones en "sacabocado" en Rx — gota crónica</span>
+      <span class="pill">Pirazinamida → hiperuricemia (efecto adverso en TBC)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACR Guideline for the Management of Gout 2020 · EULAR Evidence-Based Recommendations for Gout 2016 · Harrison Principios de Medicina Interna, 21ª ed. · Sociedad Argentina de Reumatología.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
