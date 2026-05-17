@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOP / Hiperandrogenismo Ovárico Funcional — Medpedia</title>
+  <meta name="description" content="Síndrome de ovario poliquístico (SOP) actualizado: criterios de Rotterdam, hiperandrogenismo, insulinorresistencia y tratamiento. EU 2024.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gin: #880E4F; --gin-claro: #FCE4EC; --gin-oscuro: #560027;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gin  { background: #FCE4EC; color: #880E4F; }
+    .tag-endo { background: #E1F5EE; color: #0F6E56; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-gin   { border-left: 3px solid var(--gin); background: var(--gin-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .fenotipos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .fenotipos-grid { grid-template-columns: 1fr; } }
+    .fenotipo-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .fenotipo-titulo { font-size: 13px; font-weight: 600; color: var(--gin); margin-bottom: 6px; }
+    .fenotipo-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; display: flex; gap: 5px; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600; }
+    .objetivo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .objetivo-grid { grid-template-columns: 1fr; } }
+    .objetivo-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; text-align: center; }
+    .objetivo-icon { font-size: 22px; margin-bottom: 6px; }
+    .objetivo-titulo { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .objetivo-desc { font-size: 11px; color: var(--texto-ter); line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología / Endocrinología</a> › SOP</div>
+  <div class="titulo">SOP — Síndrome de Ovario Poliquístico</div>
+  <div class="meta">
+    <span class="tag tag-gin">Ginecología</span>
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-fuente">ESHRE/ASRM 2023 · International PCOS Guideline 2023 · Harrison 21ª · Gori 3ª ed.</span>
+  </div>
+
+  <!-- NOMENCLATURA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Nomenclatura actualizada y definición</div>
+    <div class="hl-gin">El término <strong>"Síndrome de Ovario Poliquístico (SOP)"</strong> es el nombre más difundido, pero en 2023 la guía internacional ESHRE/ASRM propone el nombre preferido <strong>"Hiperandrogenismo Ovárico Funcional" (HOF)</strong> o mantener SOP como término aceptado, dado que los ovarios poliquísticos son solo un criterio más y no definen el síndrome por sí solos. Muchas mujeres con morfología ovárica poliquística no tienen SOP, y algunas SOP no tienen ovarios poliquísticos en la eco.</div>
+    <div class="hl"><strong>SOP / HOF:</strong> trastorno endocrino-metabólico más frecuente en mujeres en edad reproductiva. Afecta al <strong>8–13%</strong> de las mujeres. Se caracteriza por hiperandrogenismo + disfunción ovulatoria + morfología ovárica poliquística, en ausencia de otras causas. Su impacto va mucho más allá de la reproducción: es un factor de riesgo metabólico y cardiovascular a largo plazo.</div>
+  </div>
+
+  <!-- CRITERIOS DIAGNÓSTICOS -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🩷 Criterios diagnósticos de Rotterdam (2003 — vigentes 2023)</div>
+    <div class="hl-gin">Diagnóstico: presencia de <strong>≥2 de los 3 criterios</strong> de Rotterdam, <strong>tras excluir otras causas</strong> (hiperplasia suprarrenal congénita, hiperprolactinemia, disfunción tiroidea, síndrome de Cushing, tumores secretores de andrógenos).</div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Los 3 criterios de Rotterdam</div>
+      <strong>1. Hiperandrogenismo</strong> (clínico y/o bioquímico):<br>
+      &nbsp;&nbsp;— Clínico: hirsutismo (score de Ferriman-Gallwey ≥4–6), acné persistente, alopecia androgénica<br>
+      &nbsp;&nbsp;— Bioquímico: testosterona total elevada, índice de andrógenos libres elevado, DHEAS elevada<br><br>
+      <strong>2. Disfunción ovulatoria:</strong> oligomenorrea (&lt;8 menstruaciones/año o ciclos &gt;35 días), amenorrea o ciclos irregulares. En adolescentes: menstruación irregular &gt;2 años post-menarca.<br><br>
+      <strong>3. Morfología ovárica poliquística (MOPC) en ecografía:</strong><br>
+      &nbsp;&nbsp;— Eco transvaginal: ≥20 folículos de 2–9 mm en al menos un ovario (criterio actualizado 2023 con ecógrafos modernos), O volumen ovárico ≥10 ml<br>
+      &nbsp;&nbsp;— Eco transabdominal (en adolescentes vírgenes): solo usar volumen ovárico ≥10 ml
+    </div>
+
+    <div class="fenotipos-grid">
+      <div class="fenotipo-card">
+        <div class="fenotipo-titulo">Fenotipo A (clásico)</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Hiperandrogenismo</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Disfunción ovulatoria</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> MOPC</div>
+        <div class="fenotipo-item" style="margin-top:6px; font-size:11px; color:var(--texto-ter);">Más severo metabólicamente</div>
+      </div>
+      <div class="fenotipo-card">
+        <div class="fenotipo-titulo">Fenotipo B</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Hiperandrogenismo</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Disfunción ovulatoria</div>
+        <div class="fenotipo-item"><span class="badge-no">NO</span> MOPC</div>
+        <div class="fenotipo-item" style="margin-top:6px; font-size:11px; color:var(--texto-ter);">Alto riesgo metabólico</div>
+      </div>
+      <div class="fenotipo-card">
+        <div class="fenotipo-titulo">Fenotipo C (ovulatorio)</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Hiperandrogenismo</div>
+        <div class="fenotipo-item"><span class="badge-no">NO</span> Disfunción ovulatoria</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> MOPC</div>
+        <div class="fenotipo-item" style="margin-top:6px; font-size:11px; color:var(--texto-ter);">Menor impacto metabólico</div>
+      </div>
+      <div class="fenotipo-card">
+        <div class="fenotipo-titulo">Fenotipo D (no androgénico)</div>
+        <div class="fenotipo-item"><span class="badge-no">NO</span> Hiperandrogenismo</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> Disfunción ovulatoria</div>
+        <div class="fenotipo-item"><span class="badge-si">SÍ</span> MOPC</div>
+        <div class="fenotipo-item" style="margin-top:6px; font-size:11px; color:var(--texto-ter);">Menor riesgo · más controvertido</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Fisiopatología — el eje central</div>
+    <div class="hl">La fisiopatología del SOP es compleja y multifactorial. Los 3 ejes principales son: <strong>hiperandrogenismo ovárico + insulinorresistencia + disfunción del eje hipotálamo-hipófisis-ovario.</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Eje</th><th>Mecanismo</th><th>Consecuencia</th></tr>
+        <tr><td><strong>Hiperandrogenismo ovárico</strong></td><td>↑LH relativo respecto a FSH → estimula la producción de andrógenos en las células de la teca ovárica → ↑testosterona y androstenediona</td><td>Hirsutismo, acné, alopecia, anovulación</td></tr>
+        <tr><td><strong>Insulinorresistencia</strong></td><td>Presente en el 65–75% de las mujeres con SOP (independiente del IMC). La insulina estimula la producción de andrógenos ováricos y suprarrenales. Inhibe la síntesis hepática de SHBG → ↑andrógenos libres.</td><td>Hiperandrogenemia, anovulación, síndrome metabólico, riesgo de DM2</td></tr>
+        <tr><td><strong>Disfunción hipotálamo-hipofisaria</strong></td><td>↑frecuencia de pulsos de GnRH → ↑LH desproporcionado respecto a FSH. El cociente LH/FSH &gt;2–3 es característico (aunque no es criterio diagnóstico).</td><td>Anovulación, folículos detenidos en estadio preovulatorio (imagen poliquística)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🩷 Clínica — más allá de la reproducción</div>
+    <div class="objetivo-grid">
+      <div class="objetivo-card">
+        <div class="objetivo-icon">🩸</div>
+        <div class="objetivo-titulo">Menstrual</div>
+        <div class="objetivo-desc">Oligomenorrea, amenorrea, ciclos irregulares. Sangrado uterino disfuncional. Anovulación crónica.</div>
+      </div>
+      <div class="objetivo-card">
+        <div class="objetivo-icon">🧴</div>
+        <div class="objetivo-titulo">Hiperandrogenismo</div>
+        <div class="objetivo-desc">Hirsutismo (cara, abdomen, muslos), acné persistente, seborrea, alopecia androgénica (frontoparietal).</div>
+      </div>
+      <div class="objetivo-card">
+        <div class="objetivo-icon">🤰</div>
+        <div class="objetivo-titulo">Fertilidad</div>
+        <div class="objetivo-desc">Infertilidad anovulatoria (causa #1 de infertilidad por anovulación). Mayor riesgo de aborto espontáneo.</div>
+      </div>
+      <div class="objetivo-card">
+        <div class="objetivo-icon">📊</div>
+        <div class="objetivo-titulo">Metabólico</div>
+        <div class="objetivo-desc">Insulinorresistencia, síndrome metabólico (50%), DM2 (riesgo ×3–7), dislipidemia, NAFLD.</div>
+      </div>
+      <div class="objetivo-card">
+        <div class="objetivo-icon">❤️</div>
+        <div class="objetivo-titulo">Cardiovascular</div>
+        <div class="objetivo-desc">Mayor riesgo de HTA, aterosclerosis, eventos cardiovasculares a largo plazo.</div>
+      </div>
+      <div class="objetivo-card">
+        <div class="objetivo-icon">🧠</div>
+        <div class="objetivo-titulo">Psicológico</div>
+        <div class="objetivo-desc">Mayor prevalencia de ansiedad, depresión, trastornos de la imagen corporal. Evaluación de salud mental obligatoria.</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Riesgo de cáncer de endometrio:</strong> la anovulación crónica produce estimulación estrogénica sin oposición de progesterona → hiperplasia endometrial → adenocarcinoma de endometrio a largo plazo. Vigilar con eco transvaginal (grosor endometrial) en mujeres con amenorrea prolongada. Usar progesterona cíclica para proteger el endometrio.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diagnóstico diferencial — excluir antes de diagnosticar SOP</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Condición</th><th>Cómo excluirla</th><th>Clave diferencial</th></tr>
+        <tr><td><strong>Hiperplasia suprarrenal congénita de inicio tardío</strong> (forma no clásica, déficit de 21-OH)</td><td>17-OH progesterona basal o estimulada con ACTH</td><td>17-OHP &gt;2 ng/ml basal → estudiar · Más frecuente en ashkenazíes, hispanas</td></tr>
+        <tr><td><strong>Hiperprolactinemia</strong></td><td>Prolactina sérica</td><td>Galactorrea, cefalea, campimetría · RMN hipofisaria si prolactina elevada</td></tr>
+        <tr><td><strong>Disfunción tiroidea</strong></td><td>TSH</td><td>Hipotiroidismo puede causar oligomenorrea y anovulación</td></tr>
+        <tr><td><strong>Síndrome de Cushing</strong></td><td>Cortisol libre urinario 24 h, test de supresión con dexametasona</td><td>Obesidad centrípeta, estrías violáceas, HTA, cara de luna llena</td></tr>
+        <tr><td><strong>Tumor productor de andrógenos</strong></td><td>Testosterona total: si &gt;150–200 ng/dl → TAC/RMN urgente</td><td>Inicio brusco de hiperandrogenismo severo, virilización rápida</td></tr>
+        <tr><td><strong>Insuficiencia ovárica prematura</strong></td><td>FSH elevada + estradiol bajo</td><td>Oligomenorrea o amenorrea pero con FSH alta (menopausia precoz)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LABORATORIO -->
+  <div class="seccion">
+    <div class="sec-titulo">🧪 Laboratorio en el SOP</div>
+    <div class="hl-info">No existe un test único diagnóstico. El laboratorio sirve para confirmar el hiperandrogenismo, descartar otras causas y evaluar el riesgo metabólico.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Resultado típico en SOP</th><th>Para qué sirve</th></tr>
+        <tr><td>Testosterona total</td><td>Elevada o en límite superior normal</td><td>Confirmar hiperandrogenismo bioquímico</td></tr>
+        <tr><td>SHBG (globulina transportadora de hormonas sexuales)</td><td>Baja (la insulinorresistencia la suprime)</td><td>↑testosterona libre cuando SHBG baja</td></tr>
+        <tr><td>LH / FSH</td><td>Cociente LH/FSH &gt;2 (no es criterio diagnóstico pero es sugestivo)</td><td>Orientación fisiopatológica · no excluir si es normal</td></tr>
+        <tr><td>DHEAS</td><td>Puede estar elevada (componente suprarrenal)</td><td>Hiperandrogenismo suprarrenal</td></tr>
+        <tr><td>17-OH progesterona</td><td>Normal (&lt;2 ng/ml basal)</td><td>Excluir hiperplasia suprarrenal congénita</td></tr>
+        <tr><td>TSH + prolactina</td><td>Normales</td><td>Excluir hipotiroidismo e hiperprolactinemia</td></tr>
+        <tr><td>Glucemia en ayunas + TTOG 75 g (2 h)</td><td>Variable · puede ser normal, intolerante o DM</td><td>Evaluar resistencia a insulina y DM2</td></tr>
+        <tr><td>Perfil lipídico</td><td>↑TG, ↓HDL, ↑LDL (patrón aterogénico)</td><td>Riesgo cardiovascular</td></tr>
+        <tr><td>HOMA-IR (glucemia × insulina / 405)</td><td>&gt;2,5 = insulinorresistencia</td><td>Cuantificar la IR (no es diagnóstico por sí solo)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🩷 Tratamiento — según objetivo terapéutico</div>
+    <div class="hl-gin">El tratamiento del SOP es <strong>individualizado según el objetivo principal</strong> de la paciente: control del ciclo y hiperandrogenismo, fertilidad, o riesgo metabólico. Los cambios en el estilo de vida son la base de todo tratamiento.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Base de todo tratamiento — Cambios en el estilo de vida</div>
+      <div class="farma-clase">Primera línea en TODAS las pacientes · Evidencia de nivel A</div>
+      <div class="farma-detalle">
+        <strong>Pérdida de peso:</strong> en mujeres con sobrepeso/obesidad, una pérdida del <strong>5–10% del peso corporal</strong> mejora la regularidad menstrual, reduce el hiperandrogenismo, mejora la insulinorresistencia y puede restaurar la ovulación espontánea.<br><br>
+        <strong>Ejercicio físico:</strong> mínimo 150 min/semana de actividad aeróbica moderada. Mejora la sensibilidad a la insulina independientemente de la pérdida de peso.<br><br>
+        <strong>Dieta:</strong> no hay una dieta específica para SOP. Reducción calórica, bajo índice glucémico, mediterránea. Evitar alimentos ultraprocesados y azúcares refinados.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Objetivo 1 — Control del ciclo + hiperandrogenismo (sin deseo de fertilidad)</div>
+      <div class="farma-clase">Anticonceptivos hormonales combinados (ACO) — primera línea farmacológica</div>
+      <div class="dosis-badge">ACO con progestágeno antiandrogénico (acetato de ciproterona, drospirenona, dienogest)</div>
+      <div class="farma-detalle">
+        Los ACO regularizan el ciclo, reducen el hiperandrogenismo (↑SHBG → ↓testosterona libre, suprimen la producción ovárica de andrógenos), protegen el endometrio y tratan el hirsutismo y el acné.<br><br>
+        <strong>ACO con mayor efecto antiandrogénico:</strong> etinilestradiol + acetato de ciproterona (Diane-35) → muy efectivo para hirsutismo/acné pero con mayor riesgo tromboembólico. Etinilestradiol + drospirenona (Yasmin) → perfil más favorable.<br><br>
+        <strong>Espironolactona 50–200 mg/día:</strong> bloqueante del receptor androgénico → útil para hirsutismo y alopecia que no responden al ACO. Siempre con anticonceptivos (teratogénica → feminización del feto masculino). Monitorear kalemia.<br><br>
+        <strong>Acetato de ciproterona en dosis alta</strong> (25–100 mg/día, días 5–15 del ciclo): antiandrógeno potente para hirsutismo severo.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Objetivo 2 — Insulinorresistencia y síndrome metabólico</div>
+      <div class="farma-clase">Metformina — sensibilizador de la insulina</div>
+      <div class="dosis-badge">Metformina 500–2000 mg/día VO (titular gradualmente)</div>
+      <div class="farma-detalle">
+        Indicada en: SOP con insulinorresistencia o síndrome metabólico, intolerancia a la glucosa, alto riesgo de DM2, o como coadyuvante en la inducción de la ovulación.<br><br>
+        Beneficios: mejora la sensibilidad a la insulina, reduce la testosterona, puede restaurar ciclos espontáneos, reduce el riesgo de DM2, mejora el perfil lipídico. También reduce el riesgo de síndrome de hiperestimulación ovárica (SHO) en FIV.<br><br>
+        Efectos adversos: náuseas, diarrea, dolor abdominal (mejoran tomando con las comidas). Contraindicada en insuficiencia renal (ClCr &lt;30 ml/min).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Objetivo 3 — Fertilidad (inducción de la ovulación)</div>
+      <div class="farma-clase">Escalonado: letrozol → clomifeno → gonadotrofinas → FIV</div>
+      <div class="dosis-badge">Letrozol 2,5–7,5 mg/día · días 3–7 del ciclo</div>
+      <div class="farma-detalle">
+        <strong>Letrozol (inhibidor de aromatasa):</strong> de elección para inducción de la ovulación en SOP (superó al clomifeno en el estudio PPCOS II — mayores tasas de ovulación, embarazo y nacidos vivos). 2,5–7,5 mg/día días 3–7. Monitoreo ecográfico del folículo dominante.<br><br>
+        <strong>Citrato de clomifeno:</strong> alternativa histórica. Antagonista del receptor de estrógenos → ↑GnRH → ↑FSH. Efectivo pero inferior al letrozol. Hasta 6 ciclos. Efectos: sofocos, visión borrosa (suspender si), adelgazamiento del moco cervical.<br><br>
+        <strong>Metformina + letrozol/clomifeno:</strong> combinación mejora las tasas de ovulación en mujeres con insulinorresistencia marcada.<br><br>
+        <strong>Gonadotrofinas (FSH recombinante):</strong> si falla el tratamiento oral. Mayor riesgo de hiperestimulación ovárica (SHO) y embarazo múltiple → monitoreo ecográfico estricto.<br><br>
+        <strong>Drilling ovárico laparoscópico:</strong> electrocauterización de múltiples puntos del ovario. Reduce los andrógenos y puede restaurar la ovulación. Alternativa a gonadotrofinas cuando hay riesgo de SHO o no hay acceso a FIV. Riesgo de insuficiencia ovárica si se daña excesivamente.<br><br>
+        <strong>FIV:</strong> cuando falla todo lo anterior o hay factor masculino o tubario asociado.
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SOP / HOF: trastorno endocrino más frecuente · 8–13% mujeres</span>
+      <span class="pill">Criterios Rotterdam: 2 de 3 (hiperandrogenismo + anovulación + MOPC)</span>
+      <span class="pill">MOPC actualizado: ≥20 folículos 2–9 mm O volumen ≥10 ml</span>
+      <span class="pill">Excluir siempre: HSC tardía, hiperprolactinemia, hipotiroidismo, Cushing</span>
+      <span class="pill">17-OH progesterona: excluye HSC no clásica</span>
+      <span class="pill">Fisiopatología: hiperandrogenismo + insulinorresistencia + ↑LH</span>
+      <span class="pill">LH/FSH &gt;2: sugestivo pero NO criterio diagnóstico</span>
+      <span class="pill">SHBG baja → testosterona libre aumentada</span>
+      <span class="pill">IR en SOP: 65–75% (independiente del IMC)</span>
+      <span class="pill">HOMA-IR &gt;2,5: insulinorresistencia</span>
+      <span class="pill">Pérdida 5–10% peso: mejora ciclo, hiperandrogenismo y ovulación</span>
+      <span class="pill">ACO: 1ª línea para ciclo + hiperandrogenismo (sin deseo fertilidad)</span>
+      <span class="pill">Espironolactona: hirsutismo/alopecia refractarios + anticonceptivo siempre</span>
+      <span class="pill">Metformina: insulinorresistencia + síndrome metabólico + DM2</span>
+      <span class="pill">Letrozol: 1ª línea inducción ovulación (superior al clomifeno)</span>
+      <span class="pill">Clomifeno: alternativa · hasta 6 ciclos</span>
+      <span class="pill">Drilling ovárico: alternativa a gonadotrofinas · laparoscópico</span>
+      <span class="pill">Riesgo cáncer endometrio: anovulación crónica → estrógenos sin progesterona</span>
+      <span class="pill">Riesgo DM2 en SOP: ×3–7 respecto a la población general</span>
+      <span class="pill">Salud mental: evaluar ansiedad/depresión en TODAS las pacientes con SOP</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Teede HJ et al. Recommended Weight Gain in Pregnancy for Women Who Are Overweight or Obese: An Updated International Evidence-Based Guideline — International PCOS Network 2023 · Teede HJ et al. International evidence-based guideline for the assessment and management of polycystic ovary syndrome. Monash University 2023 · ESHRE/ASRM-Sponsored PCOS Consensus Workshop Group. Revised 2003 consensus on diagnostic criteria and long-term health risks related to polycystic ovary syndrome. Fertil Steril 2004 · Legro RS et al. Letrozole versus Clomiphene for Infertility in the Polycystic Ovary Syndrome (PPCOS II). N Engl J Med 2014 · Gori JR, Lorusso A. Ginecología de Gori 3ª ed. Editorial Médica Panamericana; 2016 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
