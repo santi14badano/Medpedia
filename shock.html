@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shock — Clasificación, Diagnóstico y Manejo · Medpedia</title>
+  <meta name="description" content="Shock hipovolémico, distributivo, cardiogénico y obstructivo: fisiopatología, diagnóstico diferencial y manejo. EU y Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --shock: #C0392B; --shock-claro: #FDEDEC; --shock-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-emerg { background: #FDEDEC; color: #922B21; }
+    .tag-clin  { background: #E3F2FD; color: #1565C0; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo       { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-shock { font-size: 16px; font-weight: 500; color: var(--shock); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-shock { border-left: 3px solid var(--shock); background: var(--shock-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--shock); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .tipo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 600px) { .tipo-grid { grid-template-columns: 1fr; } }
+    .tipo-card { border-radius: 14px; padding: 1.25rem; }
+    .tipo-card.hipov  { background: #E6F1FB; border: 1.5px solid #a8c8e8; }
+    .tipo-card.distr  { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .tipo-card.cardio { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .tipo-card.obstr  { background: #F3E8FC; border: 1.5px solid #d4a8e8; }
+    .tipo-titulo { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .tipo-titulo.hipov  { color: #1A5E9A; }
+    .tipo-titulo.distr  { color: #C0392B; }
+    .tipo-titulo.cardio { color: #D4730A; }
+    .tipo-titulo.obstr  { color: #7B3FA0; }
+    .tipo-fila { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; gap: 6px; line-height: 1.45; }
+    .tipo-fila strong { color: var(--texto); }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Emergencias</a> › Shock</div>
+  <div class="titulo">Shock — Clasificación, Diagnóstico y Manejo</div>
+  <div class="meta">
+    <span class="tag tag-emerg">Emergencias</span>
+    <span class="tag tag-clin">Medicina Interna</span>
+    <span class="tag tag-fuente">Surviving Sepsis 2021 · Harrison 21ª · Goldman-Cecil 27ª · Schwartz 11ª</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y fisiopatología</div>
+    <div class="hl-shock"><strong>Shock:</strong> síndrome de hipoperfusión tisular generalizada que resulta en un aporte insuficiente de oxígeno a los tejidos para satisfacer sus demandas metabólicas → metabolismo anaeróbico → acidosis láctica → disfunción orgánica → fallo multiorgánico → muerte. <strong>No es solo hipotensión</strong> — puede existir shock con PA normal (shock compensado).</div>
+    <div class="hl-info">La clave fisiológica: <strong>DO₂ = GC × CaO₂</strong> (aporte de O₂ = gasto cardíaco × contenido arterial de O₂). El shock ocurre cuando DO₂ cae por debajo del umbral crítico. <strong>Lactato &gt;2 mmol/L</strong> indica metabolismo anaeróbico → marcador de hipoperfusión.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-shock">🔴 Los 4 tipos de shock — fisiopatología y diagnóstico diferencial</div>
+    <div class="tipo-grid">
+      <div class="tipo-card hipov">
+        <div class="tipo-titulo hipov">🔵 Hipovolémico</div>
+        <div class="tipo-fila"><strong>Mecanismo:</strong> ↓ volumen intravascular → ↓ precarga → ↓ GC</div>
+        <div class="tipo-fila"><strong>Causas:</strong> hemorragia (trauma, HDA, HPP), deshidratación severa, quemaduras, tercer espacio</div>
+        <div class="tipo-fila"><strong>Hemodinámica:</strong> ↓GC · ↑RVP · ↓PVC · ↑FC · ↓PA</div>
+        <div class="tipo-fila"><strong>Piel:</strong> fría, pálida, sudorosa</div>
+        <div class="tipo-fila"><strong>Tto:</strong> expansión de volumen → controlar la fuente de sangrado</div>
+      </div>
+      <div class="tipo-card distr">
+        <div class="tipo-titulo distr">🔴 Distributivo</div>
+        <div class="tipo-fila"><strong>Mecanismo:</strong> vasodilatación masiva → ↓ RVP → maldistribución del flujo</div>
+        <div class="tipo-fila"><strong>Causas:</strong> séptico (#1), anafiláctico, neurogénico (trauma medular), insuf. suprarrenal aguda</div>
+        <div class="tipo-fila"><strong>Hemodinámica:</strong> ↑GC · ↓RVP · ↑PVC · ↑FC · ↓PA · <em>piel caliente</em></div>
+        <div class="tipo-fila"><strong>Piel:</strong> caliente, eritematosa (vasodilatación)</div>
+        <div class="tipo-fila"><strong>Tto:</strong> vasopresores + tratar la causa</div>
+      </div>
+      <div class="tipo-card cardio">
+        <div class="tipo-titulo cardio">🟠 Cardiogénico</div>
+        <div class="tipo-fila"><strong>Mecanismo:</strong> falla de la bomba → ↓ GC → hipoperfusión</div>
+        <div class="tipo-fila"><strong>Causas:</strong> IAM (#1), miocarditis, arritmia grave, IC descompensada, contusión miocárdica</div>
+        <div class="tipo-fila"><strong>Hemodinámica:</strong> ↓GC · ↑RVP · ↑PVC · ↑FC · ↓PA · ↑PCP</div>
+        <div class="tipo-fila"><strong>Piel:</strong> fría, pálida · ingurgitación yugular · estertores pulmonares</div>
+        <div class="tipo-fila"><strong>Tto:</strong> inotrópicos + revascularización urgente (IAM)</div>
+      </div>
+      <div class="tipo-card obstr">
+        <div class="tipo-titulo obstr">🟣 Obstructivo</div>
+        <div class="tipo-fila"><strong>Mecanismo:</strong> obstrucción mecánica del flujo → ↓ GC efectivo</div>
+        <div class="tipo-fila"><strong>Causas:</strong> TEP masivo, taponamiento cardíaco, neumotórax a tensión, síndrome compartimental</div>
+        <div class="tipo-fila"><strong>Hemodinámica:</strong> ↓GC · ↑RVP · ↑PVC · ↑FC · ↓PA</div>
+        <div class="tipo-fila"><strong>Piel:</strong> fría, pálida · ingurgitación yugular (taponamiento, TEP)</div>
+        <div class="tipo-fila"><strong>Tto:</strong> eliminar la obstrucción (pericardiocentesis, trombolisis, descompresión)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Tabla comparativa de parámetros hemodinámicos</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Hipovolémico</th><th>Distributivo (séptico)</th><th>Cardiogénico</th><th>Obstructivo</th></tr>
+        <tr><td><strong>Gasto cardíaco (GC)</strong></td><td>↓↓</td><td>↑↑ (fase inicial)</td><td>↓↓</td><td>↓↓</td></tr>
+        <tr><td><strong>RVP (resistencia vascular)</strong></td><td>↑↑</td><td>↓↓</td><td>↑↑</td><td>↑↑</td></tr>
+        <tr><td><strong>PVC / PCP</strong></td><td>↓↓</td><td>↓ o normal</td><td>↑↑</td><td>↑ (taponamiento: PVC = PCP)</td></tr>
+        <tr><td><strong>SvO₂ (sat. venosa mixta)</strong></td><td>↓</td><td>↑ (shunt, extracción ↓)</td><td>↓↓</td><td>↓</td></tr>
+        <tr><td><strong>Temperatura cutánea</strong></td><td>Fría</td><td>Caliente (vasodilatación)</td><td>Fría</td><td>Fría</td></tr>
+        <tr><td><strong>Ingurgitación yugular</strong></td><td>No</td><td>No</td><td>Sí</td><td>Sí (taponamiento, TEP)</td></tr>
+        <tr><td><strong>Respuesta a fluidos</strong></td><td>Sí (↑PA)</td><td>Parcial (vasopresores luego)</td><td>No (empeora)</td><td>No (empeora)</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Tríada de Beck — taponamiento cardíaco (shock obstructivo)</div>
+      <strong>1. Hipotensión</strong> · <strong>2. Ingurgitación yugular</strong> · <strong>3. Ruidos cardíacos apagados</strong><br>
+      + Pulso paradójico (caída de PA sistólica &gt;10 mmHg en inspiración) · ECG: alternancia eléctrica · Eco: colapso de cavidades derechas. Tratamiento: pericardiocentesis urgente.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Clasificación del shock hemorrágico (ATLS)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Clase</th><th>Pérdida (ml)</th><th>% volemia</th><th>FC</th><th>PA sistólica</th><th>FR</th><th>Diuresis</th><th>Estado mental</th></tr>
+        <tr><td><strong>I</strong></td><td>&lt;750</td><td>&lt;15%</td><td>&lt;100</td><td>Normal</td><td>14–20</td><td>&gt;30 ml/h</td><td>Normal, levemente ansioso</td></tr>
+        <tr><td><strong>II</strong></td><td>750–1500</td><td>15–30%</td><td>100–120</td><td>Normal o ↓</td><td>20–30</td><td>20–30 ml/h</td><td>Ansioso</td></tr>
+        <tr><td><strong>III</strong></td><td>1500–2000</td><td>30–40%</td><td>120–140</td><td>↓</td><td>30–40</td><td>5–20 ml/h</td><td>Confuso, agitado</td></tr>
+        <tr><td><strong>IV</strong></td><td>&gt;2000</td><td>&gt;40%</td><td>&gt;140</td><td>↓↓</td><td>&gt;35</td><td>Mínima o anuria</td><td>Letárgico, inconsciente</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 Volemia adulto ≈ 70 ml/kg. Reposición: clases I–II → cristaloides. Clase III → cristaloides + GR. Clase IV → transfusión masiva (GR:PFC:Plaquetas 1:1:1) + activación protocolo hemorrágico.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-shock">🔴 Manejo general del shock — los 5 pilares</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> El shock es tiempo-dependiente. El objetivo es restaurar la perfusión tisular antes del daño orgánico irreversible. Actuar en los primeros 60 minutos ("golden hour").</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Asegurar la vía aérea y la ventilación</strong><br>
+        O₂ a alto flujo (15 L/min con mascarilla con reservorio) en todos. Intubación orotraqueal (IOT) si: Glasgow ≤8, fatiga respiratoria, hipoxemia refractaria, necesidad de sedación para procedimientos. Ventilación mecánica protectora (VT 6 ml/kg peso ideal).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Acceso venoso y monitoreo</strong><br>
+        2 vías periféricas gruesas (≥16G) o vía central si no es posible. Monitoreo: ECG continuo, PA (invasiva si inestable), SpO₂, capnografía si intubado. Sonda vesical (diuresis objetivo ≥0,5 ml/kg/h). Gasometría arterial + lactato seriado (normalización = meta del tratamiento).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Expansión de volumen (según el tipo de shock)</strong><br>
+        <strong>Cristaloides:</strong> SF 0,9% o Ringer lactato — de elección en hipovolémico y distributivo. Bolo 500 ml IV rápido → reevaluar respuesta. Evitar sobrecarga (↑mortalidad en séptico). <strong>Coloides</strong> (albumina 4–5%): en séptico con hipoalbuminemia grave · evitar almidones (nefrotóxicos). <strong>Hemoderivados:</strong> en shock hemorrágico clase III–IV.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Vasopresores e inotrópicos</strong><br>
+        <strong>Noradrenalina (norepinefrina):</strong> vasopresor de elección en shock séptico y distributivo. Agonista α1 predominante → vasoconstricción → ↑PA. Dosis: 0,1–3 mcg/kg/min en infusión IV continua (vía central de preferencia). <br><br>
+        <strong>Dobutamina:</strong> inotrópico de elección en shock cardiogénico sin hipotensión grave. Agonista β1 → ↑GC → ↑DO₂. Dosis: 2–20 mcg/kg/min. Si hay hipotensión: asociar noradrenalina.<br><br>
+        <strong>Adrenalina:</strong> de elección en shock anafiláctico (0,3–0,5 mg IM muslo externo) y paro cardíaco. Segunda línea en séptico refractario.<br><br>
+        <strong>Vasopresina:</strong> 0,03–0,04 UI/min → ahorra noradrenalina en shock séptico refractario.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Tratar la causa (control del foco)</strong><br>
+        El tratamiento definitivo siempre es tratar la causa subyacente:<br>
+        — Shock hemorrágico → control de la hemorragia (cirugía, embolización)<br>
+        — Shock séptico → antibióticos + drenaje del foco<br>
+        — Shock cardiogénico por IAM → reperfusión urgente (ATC primaria)<br>
+        — Shock anafiláctico → adrenalina IM + corticoides + antihistamínicos<br>
+        — Taponamiento → pericardiocentesis urgente<br>
+        — TEP masivo → trombolisis sistémica (alteplasa 100 mg IV en 2 h)<br>
+        — Neumotórax a tensión → descompresión con aguja (2° EIC línea medioclavicular) → drenaje pleural
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Shock anafiláctico — manejo específico</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> La adrenalina IM es el único tratamiento que salva la vida. No demorar por esperar acceso IV.</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Adrenalina IM — primera línea inmediata</div>
+      <div class="farma-clase">Agonista α y β — vasoconstricción + broncodilatación + ↑GC</div>
+      <div class="dosis-badge">0,3–0,5 mg IM (1:1000) en cara anterolateral del muslo · repetir c/5 min si no mejora</div>
+      <div class="farma-detalle">
+        Administrar inmediatamente ante cualquier sospecha de anafilaxia. No esperar IV. Si no hay respuesta: adrenalina IV 0,1 mg (1:10.000) lento. Posición: decúbito supino con piernas elevadas (o posición de Trendelenburg). O₂ alto flujo. Expansión con cristaloides 1–2 L rápido. <strong>Corticoides</strong> (metilprednisolona 1–2 mg/kg IV) y <strong>antihistamínicos</strong> (difenhidramina 25–50 mg IV) son tratamiento <em>adyuvante</em> — NO reemplazan a la adrenalina. Observar mínimo 4–6 h por riesgo de reacción bifásica.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Shock: hipoperfusión tisular → DO₂ insuficiente</span>
+      <span class="pill">Lactato &gt;2 mmol/L: hipoperfusión tisular</span>
+      <span class="pill">4 tipos: hipovolémico · distributivo · cardiogénico · obstructivo</span>
+      <span class="pill">Séptico: distributivo · piel caliente · ↑GC · ↓RVP</span>
+      <span class="pill">Cardiogénico: ↓GC · ↑PCP · estertores + IY</span>
+      <span class="pill">Taponamiento: tríada de Beck (hipotensión + IY + ruidos apagados)</span>
+      <span class="pill">Pulso paradójico &gt;10 mmHg: taponamiento</span>
+      <span class="pill">Alternancia eléctrica en ECG: taponamiento</span>
+      <span class="pill">Shock hemorrágico clase III–IV: transfusión masiva 1:1:1</span>
+      <span class="pill">ATLS: 4 clases según % volemia perdida</span>
+      <span class="pill">Vasopresor de elección en séptico: noradrenalina</span>
+      <span class="pill">Inotrópico de elección en cardiogénico: dobutamina</span>
+      <span class="pill">Anafiláctico: adrenalina IM 0,3–0,5 mg en muslo (1ª línea)</span>
+      <span class="pill">Corticoides y antihistamínicos: adyuvantes en anafilaxia (no 1ª línea)</span>
+      <span class="pill">TEP masivo con shock: trombolisis (alteplasa 100 mg IV)</span>
+      <span class="pill">Neumotórax a tensión: aguja 2° EIC → drenaje pleural</span>
+      <span class="pill">Pericardiocentesis: taponamiento cardíaco</span>
+      <span class="pill">Diuresis objetivo: ≥0,5 ml/kg/h</span>
+      <span class="pill">Reacción bifásica en anafilaxia: observar 4–6 h post-adrenalina</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Evans L et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Intensive Care Med 2021 · American College of Surgeons. ATLS: Advanced Trauma Life Support 10th ed. 2018 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil 27ª ed. Elsevier; 2020.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
