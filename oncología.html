@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oncología — Neoplasias Frecuentes — Medpedia</title>
+  <meta name="description" content="Cáncer de pulmón, mama, colorrectal, próstata y gástrico: diagnóstico, estadificación, tratamiento y screening. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --onco: #B71C1C; --onco-claro: #FFEBEE; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-onco { background: var(--onco-claro); color: var(--onco); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .cancer-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 14px; }
+    .cancer-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .cancer-nombre { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; color: var(--texto); }
+    .cancer-stat { font-size: 11px; background: var(--onco-claro); color: var(--onco); padding: 2px 8px; border-radius: 8px; font-weight: 600; }
+    .cancer-body { font-size: 13px; color: var(--texto-sec); line-height: 1.7; }
+    .cancer-body strong { color: var(--texto); }
+    .cancer-body p { margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Oncología</a> › Neoplasias Frecuentes</div>
+  <div class="titulo">Oncología — Neoplasias Frecuentes</div>
+  <div class="meta">
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">ASCO · ESMO 2023 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Conceptos generales</div>
+    <div class="card">
+      <p><strong>Estadificación TNM:</strong> T (tumor primario, tamaño e invasión local) · N (ganglios linfáticos regionales) · M (metástasis a distancia). El estadio determina el tratamiento y el pronóstico.</p>
+      <p><strong>Marcadores tumorales:</strong> no sirven para diagnóstico inicial (baja especificidad) — sirven para <strong>monitoreo de respuesta al tratamiento y detección de recaída</strong>. Excepciones: AFP en hepatocarcinoma y tumores de células germinales, β-HCG en coriocarcinoma.</p>
+      <p><strong>Síndromes paraneoplásicos:</strong> manifestaciones a distancia del tumor no debidas a metástasis ni a la masa tumoral directamente, sino a sustancias producidas por el tumor (hormonas ectópicas, anticuerpos). Pueden preceder al diagnóstico del cáncer.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🫁 Cáncer de Pulmón</div>
+    <div class="cancer-card">
+      <div class="cancer-header">
+        <div class="cancer-nombre">Cáncer de Pulmón</div>
+        <span class="cancer-stat">1ª causa de muerte por cáncer en Argentina</span>
+      </div>
+      <div class="cancer-body">
+        <p><strong>Factor de riesgo principal:</strong> tabaquismo (responsable del 85% de los casos). Otros: radón, asbesto, arsénico, exposición laboral.</p>
+        <p><strong>Clasificación histológica:</strong></p>
+        <p>→ <strong>CPNM (carcinoma de pulmón no microcítico, 85%):</strong> adenocarcinoma (más frecuente, periférico, asociado a mutaciones EGFR, ALK, ROS1, KRAS) · carcinoma escamoso (central, hiliar, asociado a tabaquismo, produce PTHrP) · carcinoma de células grandes.</p>
+        <p>→ <strong>CPM (carcinoma microcítico — células pequeñas, 15%):</strong> central, muy agresivo, metástasis precoces. Muy asociado a síndromes paraneoplásicos (SIADH, síndrome de Cushing ectópico, síndrome de Eaton-Lambert, neuropatía).</p>
+        <p><strong>Clínica:</strong> tos persistente · hemoptisis · disnea · dolor torácico · pérdida de peso · síndrome de vena cava superior (circulación colateral, edema en esclavina, ingurgitación yugular) · síndrome de Pancoast (tumor del sulcus superior: dolor de hombro + síndrome de Horner + atrofia de músculos de la mano).</p>
+        <p><strong>Diagnóstico:</strong> Rx tórax → TC tórax-abdomen-pelvis con contraste → PET-TC para estadificación → broncoscopia o biopsia percutánea guiada por TC (diagnóstico histológico) → biopsia líquida (ADN tumoral circulante) para mutaciones.</p>
+        <p><strong>Screening:</strong> TC de baja dosis anual en fumadores 50–80 años con ≥20 paquetes-año (activos o que dejaron hace &lt;15 años) — reduce mortalidad un 20% (estudio NELSON/NLST).</p>
+        <p><strong>Tratamiento:</strong></p>
+        <p>→ CPNM localizado (estadio I-II): resección quirúrgica (lobectomía) ± quimioterapia adyuvante.</p>
+        <p>→ CPNM localmente avanzado (estadio III): quimio-radioterapia concomitante ± inmunoterapia (durvalumab de consolidación).</p>
+        <p>→ CPNM metastásico (estadio IV): si mutación EGFR → osimertinib (inhibidor de tirosina quinasa de 3ª generación) · si translocación ALK/ROS1 → alectinib o crizotinib · si PD-L1 ≥50% sin mutación conductora → pembrolizumab · resto → quimioterapia basada en platino ± inmunoterapia.</p>
+        <p>→ CPM: muy sensible a quimioterapia (etopósido + carboplatino) pero recae precozmente. Inmunoterapia (atezolizumab) en estadio extenso.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🎗️ Cáncer de Mama</div>
+    <div class="cancer-card">
+      <div class="cancer-header">
+        <div class="cancer-nombre">Cáncer de Mama</div>
+        <span class="cancer-stat">1ª causa de cáncer en mujeres · Argentina</span>
+      </div>
+      <div class="cancer-body">
+        <p><strong>Factores de riesgo:</strong> historia familiar (BRCA1/BRCA2) · menarquia precoz · menopausia tardía · nuliparidad · primer embarazo tardío · TRH prolongada · densidad mamaria alta · mutaciones genéticas (BRCA1: riesgo de vida 70%; BRCA2: 45–70%).</p>
+        <p><strong>Histología:</strong> carcinoma ductal infiltrante (75%) · carcinoma lobulillar infiltrante (15%) · tipos especiales (mucinoso, tubular, medular — mejor pronóstico).</p>
+        <p><strong>Subtipos moleculares (determinan el tratamiento):</strong></p>
+        <p>→ <strong>Luminal A</strong> (RE+/RP+, HER2−, Ki67 bajo): mejor pronóstico · tratamiento: hormonoterapia sola.</p>
+        <p>→ <strong>Luminal B</strong> (RE+/RP+, HER2− o HER2+, Ki67 alto): hormonoterapia + quimioterapia.</p>
+        <p>→ <strong>HER2 enriquecido</strong> (RE−/RP−, HER2+): trastuzumab + pertuzumab + quimioterapia.</p>
+        <p>→ <strong>Triple negativo</strong> (RE−/RP−, HER2−): peor pronóstico · quimioterapia · inmunoterapia (pembrolizumab en PD-L1+) · olaparib si BRCA mutado.</p>
+        <p><strong>Diagnóstico:</strong> mamografía → ecografía → biopsia con aguja gruesa (core biopsy) → estudio inmunohistoquímico (RE, RP, HER2, Ki67). BIRADS: categoría 0-6 (BIRADS 4-5 → biopsia).</p>
+        <p><strong>Screening:</strong> mamografía bienal entre 50–74 años (recomendación Argentina y mayoría de guías). Anual desde los 40 en mujeres de riesgo intermedio. RMN mamaria + mamografía anual en BRCA1/2.</p>
+        <p><strong>Tratamiento:</strong> cirugía (conservadora + radioterapia = mastectomía en supervivencia) · ganglio centinela → linfadenectomía si positivo · hormonoterapia (tamoxifeno en premenopáusicas, inhibidores de aromatasa en posmenopáusicas) · trastuzumab 1 año si HER2+ · quimioterapia según subtipo y estadio.</p>
+        <p><strong>Tamoxifeno:</strong> modulador selectivo del receptor de estrógenos (SERM). Efectos adversos: sofocos · tromboembolismo · cáncer de endometrio (vigilar con ecografía si sangrado).</p>
+        <p><strong>Inhibidores de aromatasa</strong> (anastrozol, letrozol, exemestano): reducen la producción periférica de estrógenos. Efectos adversos: osteoporosis (densitometría + bifosfonatos) · artralgia.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔵 Cáncer Colorrectal</div>
+    <div class="cancer-card">
+      <div class="cancer-header">
+        <div class="cancer-nombre">Cáncer Colorrectal (CCR)</div>
+        <span class="cancer-stat">2ª causa de muerte por cáncer en Argentina</span>
+      </div>
+      <div class="cancer-body">
+        <p><strong>Factores de riesgo:</strong> dieta rica en carnes rojas y procesadas · sedentarismo · obesidad · alcohol · tabaquismo · historia personal de pólipos adenomatosos · enfermedad inflamatoria intestinal (especialmente colitis ulcerosa extensa &gt;8 años) · historia familiar · síndromes hereditarios (FAP, Lynch/HNPCC).</p>
+        <p><strong>Síndromes hereditarios:</strong></p>
+        <p>→ <strong>Poliposis adenomatosa familiar (FAP):</strong> mutación APC, cientos de pólipos → transformación maligna inevitable antes de los 40 años → colectomía profiláctica.</p>
+        <p>→ <strong>Síndrome de Lynch (HNPCC):</strong> mutación en genes de reparación del ADN (MLH1, MSH2, MSH6, PMS2) → CCR + cáncer de endometrio, ovario, estómago. Criterios de Amsterdam / Bethesda.</p>
+        <p><strong>Clínica:</strong> rectorragia · cambio del hábito intestinal · síndrome anémico · dolor abdominal · masa palpable · obstrucción intestinal (presentación en CCR izquierdo). El CCR derecho se presenta más frecuentemente con anemia ferropénica sin sangrado visible.</p>
+        <p><strong>Diagnóstico:</strong> colonoscopia (gold standard — diagnóstica y terapéutica para pólipos) → biopsia → TC tórax-abdomen-pelvis + RMN de pelvis (recto) para estadificación → CEA basal (para seguimiento, no diagnóstico).</p>
+        <p><strong>Screening:</strong> colonoscopia cada 10 años desde los 45 años (ACS 2018) o 50 años (Argentina) en riesgo promedio. Si riesgo elevado (familiar de 1er grado con CCR o pólipo avanzado): iniciar 10 años antes o a los 40. Alternativas: sangre oculta en materia fecal anual + colonoscopia si positivo.</p>
+        <p><strong>Tratamiento:</strong> colon → cirugía (hemicolectomía) ± quimioterapia adyuvante (FOLFOX — oxaliplatino + leucovorin + 5-FU) si estadio III o II de alto riesgo · recto → neoadyuvancia con quimio-radioterapia → cirugía → quimioterapia adyuvante · metastásico → FOLFOX o FOLFIRI + bevacizumab (anti-VEGF) o cetuximab/panitumumab si KRAS/RAS nativo · pembrolizumab si inestabilidad de microsatélites (dMMR/MSI-H).</p>
+        <p><strong>CEA:</strong> si elevado preoperatorio → útil para seguimiento (elevación posoperatoria sugiere recaída). No usar para diagnóstico.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔵 Cáncer de Próstata</div>
+    <div class="cancer-card">
+      <div class="cancer-header">
+        <div class="cancer-nombre">Cáncer de Próstata</div>
+        <span class="cancer-stat">1ª causa de cáncer en hombres · Argentina</span>
+      </div>
+      <div class="cancer-body">
+        <p><strong>Epidemiología:</strong> el más frecuente en hombres argentinos. La mayoría son adenocarcinomas de la zona periférica. Crecimiento lento en la mayoría de los casos — muchos son clínicamente insignificantes.</p>
+        <p><strong>Clínica:</strong> en estadios iniciales es asintomático (diagnóstico por screening). Síntomas urinarios obstructivos (similares a HBP) en estadios avanzados. Dolor óseo y fracturas patológicas en metástasis óseas (osteoblásticas — fosfatasa alcalina elevada).</p>
+        <p><strong>Screening — controversia:</strong> PSA + tacto rectal anual. La decisión debe ser compartida con el paciente (PSA tiene alta tasa de falsos positivos → sobrediagnóstico y sobretratamiento). ACS: iniciar conversación a los 50 años (riesgo promedio) · 45 años (afrodescendientes o familiar 1er grado) · 40 años (≥2 familiares de 1er grado).</p>
+        <p><strong>Diagnóstico:</strong> PSA elevado o TR anormal → biopsia transrectal guiada por ecografía (o por fusión con RMN) → score de Gleason/ISUP (diferenciación histológica: 1 bien diferenciado → 5 indiferenciado).</p>
+        <p><strong>Estadificación:</strong> TC abdomen-pelvis + centellograma óseo si PSA &gt;10 o Gleason alto.</p>
+        <p><strong>Tratamiento según riesgo:</strong></p>
+        <p>→ <strong>Muy bajo / bajo riesgo:</strong> vigilancia activa (monitoreo con PSA + biopsia seriada sin tratar) — para tumores de crecimiento lento en pacientes con expectativa de vida &lt;10–15 años.</p>
+        <p>→ <strong>Riesgo intermedio/alto localizado:</strong> prostatectomía radical (laparoscópica/robótica) o radioterapia externa ± braquiterapia ± bloqueo androgénico neoadyuvante.</p>
+        <p>→ <strong>Metastásico:</strong> bloqueo androgénico (castración química: agonistas de LHRH — leuprolide, goserelina — o antagonistas: degarelix) ± enzalutamida/apalutamida/darolutamida (antiandrogénicos de nueva generación) ± docetaxel/cabazitaxel. Resistente a la castración: enzalutamida, abiraterona, olaparib (si BRCA), Ra-223 (metástasis óseas).</p>
+        <p><strong>PSA nadir</strong> tras tratamiento: el punto más bajo alcanzado. Elevación posterior sugiere recaída bioquímica.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🟡 Cáncer Gástrico</div>
+    <div class="cancer-card">
+      <div class="cancer-header">
+        <div class="cancer-nombre">Cáncer Gástrico</div>
+        <span class="cancer-stat">Alta mortalidad · diagnóstico tardío frecuente</span>
+      </div>
+      <div class="cancer-body">
+        <p><strong>Factores de riesgo:</strong> H. pylori (carcinógeno grupo I OMS — erradicación reduce el riesgo) · dieta rica en sal, ahumados y nitratos · tabaquismo · gastrectomía previa · gastritis atrófica · anemia perniciosa · metaplasia intestinal · historia familiar · mutación CDH1 (cáncer gástrico difuso hereditario).</p>
+        <p><strong>Clasificación de Lauren:</strong> intestinal (bien diferenciado, más frecuente, asociado a H. pylori y ambiente) vs difuso (células en anillo de sello, más agresivo, mal pronóstico, asociado a CDH1, linitis plástica).</p>
+        <p><strong>Clínica:</strong> epigastralgia · pérdida de peso · anorexia · disfagia (cardias) · vómitos (píloro) · masa palpable epigástrica · anemia ferropénica. Signos de diseminación: ganglio de Virchow (supraclavicular izquierdo) · nódulo de la Hermana María José (umbilical) · tumor de Krukenberg (metástasis ovárica) · signo de Blumer (metástasis en fondo de saco de Douglas).</p>
+        <p><strong>Diagnóstico:</strong> endoscopía digestiva alta con biopsias (≥6 muestras) → TC tórax-abdomen-pelvis + ecoendoscopía para estadificación local → laparoscopía de estadificación si se considera resección (descartar carcinomatosis peritoneal).</p>
+        <p><strong>Tratamiento:</strong> cirugía (gastrectomía total o subtotal + linfadenectomía D2) con intención curativa si estadio I–III resecable · quimioterapia perioperatoria (FLOT: docetaxel + oxaliplatino + leucovorin + 5-FU — estándar actual en Europa y Argentina) · metastásico: quimioterapia paliativa ± trastuzumab si HER2+ ± nivolumab si CPS ≥5.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Screening y marcadores tumorales — resumen</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Cáncer</th><th>Screening recomendado</th><th>Marcador tumoral</th><th>Uso del marcador</th></tr>
+        <tr><td><strong>Pulmón</strong></td><td>TC baja dosis anual · fumadores 50–80 años · ≥20 paquetes-año</td><td>No tiene marcador útil</td><td>—</td></tr>
+        <tr><td><strong>Mama</strong></td><td>Mamografía bienal 50–74 años · anual en riesgo alto</td><td>CA 15-3 · CA 27.29</td><td>Monitoreo de respuesta y recaída. NO diagnóstico</td></tr>
+        <tr><td><strong>Colorrectal</strong></td><td>Colonoscopia c/10 años desde 45–50 años · SOMF anual</td><td>CEA</td><td>Seguimiento posoperatorio · detección de recaída. NO diagnóstico</td></tr>
+        <tr><td><strong>Próstata</strong></td><td>PSA + TR anual desde 50 años (decisión compartida)</td><td>PSA</td><td>Screening (limitado) · monitoreo de tratamiento · recaída bioquímica</td></tr>
+        <tr><td><strong>Cuello uterino</strong></td><td>Pap cada 3 años (o co-test VPH + Pap c/5 años) desde 21–25 años</td><td>No tiene marcador útil</td><td>—</td></tr>
+        <tr><td><strong>Hepático (HCC)</strong></td><td>Ecografía abdominal c/6 meses en cirrosis o VHB portador crónico</td><td>AFP (alfafetoproteína)</td><td>Screening en cirrosis · diagnóstico si AFP &gt;400 + imagen típica</td></tr>
+        <tr><td><strong>Ovario</strong></td><td>No hay screening efectivo en la población general</td><td>CA-125</td><td>Monitoreo de respuesta · NO diagnóstico ni screening</td></tr>
+        <tr><td><strong>Testículo</strong></td><td>Autoexamen</td><td>AFP · β-HCG · LDH</td><td>Diagnóstico y estadificación · respuesta al tratamiento</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚡ Urgencias oncológicas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Urgencia</th><th>Causa frecuente</th><th>Clínica</th><th>Manejo inicial</th></tr>
+        <tr><td><strong>Síndrome de vena cava superior</strong></td><td>Cáncer de pulmón · linfoma mediastínico</td><td>Edema en esclavina · ingurgitación yugular · circulación colateral · disnea · cefalea</td><td>Decúbito elevado · corticoides · radioterapia urgente o stent vascular · quimioterapia si sensitivo</td></tr>
+        <tr><td><strong>Compresión medular</strong></td><td>Metástasis vertebrales (mama, pulmón, próstata)</td><td>Dolor de espalda + debilidad de MMII + alteración esfinteriana → emergencia neurológica</td><td>Dexametasona 10 mg IV (carga) → 4 mg c/6 h · RMN urgente · radioterapia o cirugía descompresiva</td></tr>
+        <tr><td><strong>Hipercalcemia maligna</strong></td><td>PTHrP · mieloma · metástasis óseas</td><td>Náuseas · confusión · poliuria · constipación · arritmia</td><td>Hidratación SF · furosemida · zoledronato IV · calcitonina</td></tr>
+        <tr><td><strong>Síndrome de lisis tumoral</strong></td><td>Linfoma de Burkitt · leucemias · post-quimioterapia</td><td>Hiperuricemia · hiperkalemia · hiperfosfatemia · hipocalcemia → IRA · arritmia</td><td>Hidratación agresiva · alopurinol o rasburicasa · monitoreo renal y electrolítico</td></tr>
+        <tr><td><strong>Neutropenia febril</strong></td><td>Post-quimioterapia (neutrófilos &lt;500/mm³ + fiebre &gt;38,3°C)</td><td>Fiebre · sin foco · mal estado general</td><td>Hemocultivos × 2 → antibióticos de amplio espectro inmediatos (piperacilina-tazobactam o cefepime) · G-CSF</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Marcadores tumorales — monitoreo, no diagnóstico</span>
+      <span class="pill">AFP — hepatocarcinoma y tumores germinales</span>
+      <span class="pill">CEA — CCR (seguimiento posoperatorio)</span>
+      <span class="pill">CA-125 — ovario (monitoreo, no screening)</span>
+      <span class="pill">CPM — SIADH, Cushing ectópico, Eaton-Lambert</span>
+      <span class="pill">Escamoso pulmonar — PTHrP → hipercalcemia</span>
+      <span class="pill">Pancoast — dolor hombro + Horner + atrofia mano</span>
+      <span class="pill">EGFR mutado — osimertinib</span>
+      <span class="pill">ALK/ROS1 — alectinib / crizotinib</span>
+      <span class="pill">Triple negativo — peor pronóstico en mama</span>
+      <span class="pill">HER2+ mama — trastuzumab</span>
+      <span class="pill">Tamoxifeno — riesgo de cáncer de endometrio</span>
+      <span class="pill">Lynch/HNPCC — MLH1, MSH2 — CCR + endometrio</span>
+      <span class="pill">FAP — APC — colectomía profiláctica</span>
+      <span class="pill">Virchow — ganglios supraclaviculares izquierdos</span>
+      <span class="pill">Cáncer gástrico difuso — células en anillo de sello</span>
+      <span class="pill">Compresión medular — dexametasona urgente + RMN</span>
+      <span class="pill">Neutropenia febril — antibióticos inmediatos sin esperar cultivo</span>
+      <span class="pill">Lisis tumoral — hidratación + rasburicasa</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ASCO Guidelines · ESMO Clinical Practice Guidelines 2023 · NCCN Guidelines 2024 · Instituto Nacional del Cáncer Argentina · Harrison Principios de Medicina Interna, 21ª ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
