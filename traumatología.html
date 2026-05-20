@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traumatología — Fracturas y Esguinces — Medpedia</title>
+  <meta name="description" content="Fracturas y esguinces: clasificación, diagnóstico, tratamiento ortopédico y quirúrgico, complicaciones. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --trauma: #E65100; --trauma-claro: #FFF3E0; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-trauma { background: var(--trauma-claro); color: var(--trauma); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .fractura-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .fractura-nombre { font-size: 15px; font-weight: 600; color: var(--texto); margin-bottom: 2px; }
+    .fractura-tipo { font-size: 12px; color: var(--trauma); margin-bottom: 8px; }
+    .fractura-body { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .fractura-body strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Traumatología</a> › Fracturas y Esguinces</div>
+  <div class="titulo">Traumatología — Fracturas y Esguinces</div>
+  <div class="meta">
+    <span class="tag tag-trauma">Traumatología</span>
+    <span class="tag tag-fuente">AO Foundation · Harrison 21ª ed. · Rockwood & Green</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Conceptos generales</div>
+    <div class="card">
+      <p>Una <strong>fractura</strong> es la pérdida de continuidad del tejido óseo. Puede ser <strong>completa</strong> (interrumpe todo el diámetro del hueso) o <strong>incompleta</strong> (en rama verde, en torus — frecuentes en niños cuyo hueso es más flexible).</p>
+      <p><strong>Clasificación general:</strong></p>
+      <p>→ <strong>Cerrada:</strong> piel íntegra sobre el foco de fractura.</p>
+      <p>→ <strong>Expuesta (abierta):</strong> comunicación del foco de fractura con el exterior. Riesgo de infección — emergencia ortopédica. Clasificación de Gustilo-Anderson (I, II, IIIA, IIIB, IIIC) según el tamaño de la herida y el grado de contaminación/compromiso vascular.</p>
+      <p>→ <strong>Patológica:</strong> fractura sobre hueso previamente enfermo (metástasis, osteoporosis, Paget, quiste óseo). Sospechar ante fractura con trauma mínimo o sin trauma.</p>
+      <p><strong>Signos clínicos:</strong> dolor · impotencia funcional · deformidad · edema · equimosis · crepitación (no buscarla activamente — dolorosa y puede desplazar fragmentos) · movilidad anormal.</p>
+      <p><strong>Diagnóstico:</strong> Rx en 2 proyecciones perpendiculares (AP y lateral) de la articulación proximal y distal a la fractura. TC para fracturas complejas, articulares, de columna o cuando la Rx es dudosa. RMN para fracturas por estrés, ocultas y compromiso medular.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🦴 Fracturas frecuentes por localización</div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura de Colles</div>
+      <div class="fractura-tipo">Radio distal · la fractura más frecuente en adultos mayores</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> caída sobre la mano extendida (FOOSH — fall on outstretched hand) en extensión de la muñeca. Frecuente en mujeres posmenopáusicas con osteoporosis.<br><br>
+        <strong>Clínica:</strong> deformidad en "dorso de tenedor" (desplazamiento posterior y radial del fragmento distal) · dolor en muñeca · equimosis.<br><br>
+        <strong>Tratamiento:</strong> reducción cerrada + yeso braquiopalmar × 4–6 semanas (fractura no desplazada o reducible estable) · fijación quirúrgica con placa volar si inestable, muy desplazada, o fractura articular conminuta. Evaluar densitometría ósea — puede ser la primera manifestación de osteoporosis.
+      </div>
+    </div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura de escafoides</div>
+      <div class="fractura-tipo">Hueso del carpo · la más frecuente de los huesos del carpo</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> FOOSH en extensión y desviación radial. Frecuente en adultos jóvenes.<br><br>
+        <strong>Clínica:</strong> dolor en la tabaquera anatómica (entre el tendón del extensor pollicis longus y el extensor pollicis brevis) · dolor a la compresión axial del pulgar. La Rx inicial puede ser <strong>normal</strong> en el 20% de los casos.<br><br>
+        <strong>Importante:</strong> la irrigación del escafoides es retrógrada (desde el polo distal al proximal) → las fracturas del tercio proximal tienen alto riesgo de necrosis avascular del polo proximal si no se tratan adecuadamente.<br><br>
+        <strong>Tratamiento:</strong> si Rx negativa pero alta sospecha clínica → yeso e inmovilización + RMN o TC para confirmar. Fractura no desplazada del tercio distal/medio: yeso espica del pulgar × 8–12 semanas. Fractura desplazada o del polo proximal: cirugía (tornillo de Herbert percutáneo).
+      </div>
+    </div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura de clavícula</div>
+      <div class="fractura-tipo">Tercio medio (80%) · la fractura más frecuente en el recién nacido (parto)</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> caída sobre el hombro o sobre la mano extendida. La más frecuente en el RN por distocia de hombro durante el parto.<br><br>
+        <strong>Clínica:</strong> dolor a la palpación de la clavícula · posición antiálgica (brazo pegado al cuerpo) · deformidad o crepitación.<br><br>
+        <strong>Tratamiento:</strong> inmovilización con cabestrillo × 3–6 semanas en la mayoría de los casos. Cirugía (placa) si: fractura del tercio distal con desplazamiento marcado · compromiso neurovascular · fractura expuesta · acortamiento &gt;2 cm (riesgo de pseudoartrosis y secuelas funcionales).
+      </div>
+    </div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura de cadera (fémur proximal)</div>
+      <div class="fractura-tipo">Adultos mayores · alta mortalidad · cirugía precoz</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> caída desde la propia altura en adultos mayores con osteoporosis. Puede ser también espontánea (fractura patológica).<br><br>
+        <strong>Clasificación:</strong> <strong>intracapsular</strong> (subcapital, transcervical) — riesgo de necrosis avascular de la cabeza femoral por compromiso de los vasos capsulares · <strong>extracapsular</strong> (intertrocantérica, subtrocantérica) — menor riesgo de necrosis, pero más sangrado.<br><br>
+        <strong>Clínica:</strong> dolor en ingle o cadera · imposibilidad para caminar · miembro inferior rotado externamente y acortado · dolor a la palpación del trocánter mayor.<br><br>
+        <strong>Tratamiento:</strong> cirugía dentro de las primeras 24–48 h (reduce mortalidad y complicaciones). Fractura intracapsular desplazada en &gt;70 años → prótesis parcial (hemiartroplastia) o total. Fractura extracapsular → clavo endomedular cefalocervical (DHS o clavo gamma). La inmovilización prolongada se asocia a trombosis, úlceras por presión, neumonía y deterioro cognitivo → movilización precoz posoperatoria.<br><br>
+        <strong>Mortalidad al año:</strong> 20–30% — conviene aprovechar la hospitalización para tratar la osteoporosis subyacente (bifosfonatos, calcio, vitamina D).
+      </div>
+    </div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura de tobillo</div>
+      <div class="fractura-tipo">Peroné distal + posiblemente tibia y ligamentos</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> torsión del tobillo (inversión o eversión). Clasificación de Lauge-Hansen (mecanismo) y Weber (nivel de la fractura de peroné respecto a la sindesmosis).<br><br>
+        <strong>Weber A:</strong> fractura por debajo de la sindesmosis · sindesmosis íntegra → tratamiento conservador (yeso).<br><br>
+        <strong>Weber B:</strong> a nivel de la sindesmosis · sindesmosis puede estar comprometida → evaluar estabilidad con stress Rx → conservador si estable, cirugía si inestable.<br><br>
+        <strong>Weber C:</strong> por encima de la sindesmosis → sindesmosis generalmente lesionada → cirugía.<br><br>
+        <strong>Reglas de Ottawa:</strong> Rx de tobillo indicada si: dolor en la zona maleolar + incapacidad para apoyar 4 pasos inmediatamente después del trauma Y al momento de la consulta, o dolor en el borde posterior o punta del maléolo lateral o medial.
+      </div>
+    </div>
+
+    <div class="fractura-card">
+      <div class="fractura-nombre">Fractura vertebral osteoporótica</div>
+      <div class="fractura-tipo">Vértebras dorsales y lumbares · frecuente en adultos mayores</div>
+      <div class="fractura-body">
+        <strong>Mecanismo:</strong> trauma mínimo o espontánea en pacientes con osteoporosis severa. La fractura más frecuente en la osteoporosis (más que cadera o muñeca).<br><br>
+        <strong>Clínica:</strong> dolor de espalda agudo o crónico · cifosis progresiva ("joroba de viuda") · pérdida de talla. Muchas son asintomáticas y se descubren en Rx incidental.<br><br>
+        <strong>Diagnóstico:</strong> Rx columna (acuñamiento anterior del cuerpo vertebral) · TC o RMN para evaluar compromiso del canal medular o distinguir fractura osteoporótica de metastásica.<br><br>
+        <strong>Tratamiento:</strong> analgesia · corsé de extensión · reposo relativo · tratamiento de la osteoporosis (bifosfonatos, denosumab, teriparatida en fracturas múltiples) · vertebroplastia o cifoplastia en fracturas dolorosas refractarias.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🦵 Esguinces</div>
+    <div class="card">
+      <p>Un <strong>esguince</strong> es la lesión de uno o más ligamentos articulares por un movimiento forzado que supera su elasticidad, sin luxación mantenida.</p>
+    </div>
+    <div class="tabla-wrap" style="margin-top:10px;">
+      <table>
+        <tr><th>Grado</th><th>Lesión ligamentaria</th><th>Clínica</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Grado I</strong></td><td>Distensión (microdesgarros) sin rotura macroscópica</td><td>Dolor leve · edema mínimo · sin inestabilidad</td><td>PRICE (Protection, Rest, Ice, Compression, Elevation) × 48–72 h · AINEs · deambulación precoz</td></tr>
+        <tr><td><strong>Grado II</strong></td><td>Rotura parcial del ligamento</td><td>Dolor moderado · edema · equimosis · leve inestabilidad</td><td>PRICE · inmovilización parcial (vendaje funcional o bota) × 2–3 semanas · rehabilitación propioceptiva</td></tr>
+        <tr><td><strong>Grado III</strong></td><td>Rotura completa del ligamento</td><td>Dolor intenso · edema importante · equimosis extensa · inestabilidad marcada</td><td>Inmovilización × 3–6 semanas → rehabilitación · cirugía en inestabilidades crónicas o atletas de alta demanda</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Esguince de tobillo lateral (el más frecuente):</strong> afecta al ligamento peroneoastragalino anterior (LPAA) en el 90% de los casos, por mecanismo de inversión. Aplicar reglas de Ottawa para decidir Rx. En grado III verificar integridad del ligamento sindesmótico (esguince "alto" de tobillo — más grave, recuperación más prolongada).</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones de las fracturas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Momento</th><th>Clínica</th><th>Manejo</th></tr>
+        <tr><td><strong>Síndrome compartimental agudo</strong></td><td>Horas post-fractura o inmovilización</td><td>Las 6 P: Pain (dolor desproporcionado, ↑ con extensión pasiva) · Pressure (tensión del compartimiento) · Pallor · Paresthesias · Paralysis · Pulselessness (tardío). Presión compartimental &gt;30 mmHg o dentro de 30 mmHg de la TAD</td><td><strong>Fasciotomía urgente</strong> — no demorar. Retirar vendajes o yeso. Es una emergencia quirúrgica</td></tr>
+        <tr><td><strong>Necrosis avascular</strong></td><td>Semanas a meses</td><td>Dolor articular progresivo · colapso del hueso en imagen. Frecuente en: cabeza femoral (fractura de cadera, luxación) · polo proximal del escafoides · astrágalo</td><td>Descarga · cirugía de salvamento · artroplastia</td></tr>
+        <tr><td><strong>Pseudoartrosis</strong></td><td>Meses (ausencia de consolidación a los 6 meses)</td><td>Dolor persistente · movilidad anormal · imagen: esclerosis de los extremos óseos sin callo puente</td><td>Cirugía (fresado, injerto, placa) · estimulación eléctrica</td></tr>
+        <tr><td><strong>Embolia grasa</strong></td><td>24–72 h post-fractura (fémur, pelvis, tibia)</td><td>Tríada: disnea + confusión + petequias subconjuntivales/torácicas</td><td>Soporte respiratorio · corticoides en casos graves · fijación precoz de la fractura</td></tr>
+        <tr><td><strong>TVP y TEP</strong></td><td>Días a semanas</td><td>Dolor + edema de miembro · disnea · taquicardia</td><td>Profilaxis con HBPM (enoxaparina) en fracturas de MMII · tratamiento anticoagulante</td></tr>
+        <tr><td><strong>Infección (osteomielitis)</strong></td><td>Fracturas expuestas · post-cirugía</td><td>Fiebre · signos locales de infección · supuración por herida</td><td>Desbridamiento quirúrgico · antibióticos prolongados · retiro de material si es necesario</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Fractura expuesta — manejo inicial</div>
+    <div class="hl-danger"><strong>La fractura expuesta es una emergencia ortopédica.</strong> El riesgo de osteomielitis es directamente proporcional al tiempo sin tratamiento y al grado de contaminación.</div>
+    <div class="card" style="margin-top:8px;">
+      <p><strong>Manejo inicial:</strong> cobertura con apósito estéril húmedo · no reducir manualmente en urgencias · inmovilización provisional con férula · fotografía de la herida (evitar reexposiciones innecesarias) · hemocultivos si signos de sepsis · tetanoides si vacunación incompleta.</p>
+      <p><strong>Antibióticos:</strong> iniciar en urgencias — cefalosporina de 1ª generación (cefazolina 1–2 g c/8 h) para Gustilo I-II · agregar aminoglucósido o piperacilina-tazobactam en Gustilo IIIA-IIIB · agregar penicilina si contaminación con tierra (riesgo de Clostridium).</p>
+      <p><strong>Cirugía:</strong> desbridamiento y lavado profuso (&lt;6–8 h del trauma idealmente) · estabilización de la fractura · cierre diferido de la herida o cobertura con colgajo si es necesario.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Colles — caída sobre mano extendida — deformidad en dorso de tenedor</span>
+      <span class="pill">Escafoides — tabaquera anatómica — Rx puede ser normal</span>
+      <span class="pill">Escafoides proximal — necrosis avascular</span>
+      <span class="pill">Fractura de cadera — cirugía en 24–48 h</span>
+      <span class="pill">Intracapsular → riesgo de necrosis avascular</span>
+      <span class="pill">Síndrome compartimental — dolor con extensión pasiva</span>
+      <span class="pill">Compartimental → fasciotomía urgente</span>
+      <span class="pill">Embolia grasa — disnea + confusión + petequias</span>
+      <span class="pill">Reglas de Ottawa — tobillo y pie</span>
+      <span class="pill">Weber C → cirugía (sindesmosis lesionada)</span>
+      <span class="pill">Fractura expuesta → antibióticos inmediatos + cirugía</span>
+      <span class="pill">Fractura patológica → pensar en metástasis u osteoporosis</span>
+      <span class="pill">Esguince grado III → rotura completa</span>
+      <span class="pill">TVP post-fractura MMII → profilaxis con HBPM</span>
+      <span class="pill">Fractura vertebral osteoporótica → más frecuente que cadera</span>
+      <span class="pill">Gustilo III → riesgo muy alto de osteomielitis</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: AO Foundation Fracture Classification · Rockwood & Green Fractures in Adults, 9ª ed. · Ottawa Ankle Rules (Stiell et al.) · Harrison Principios de Medicina Interna, 21ª ed. · Giménez M, Fundamentos para la práctica clínico-quirúrgica, 2ª ed. Buenos Aires: Editorial Médica Panamericana; 2025.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
