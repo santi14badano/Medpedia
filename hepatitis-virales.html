@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hepatitis Virales — Medpedia</title>
+  <meta name="description" content="Hepatitis A, B, C, D y E: serología, diagnóstico, tratamiento y prevención. EU y Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hep: #D4730A; --hep-claro: #FEF0DC; --hep-oscuro: #A85608;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro  { background: #FFF8E1; color: #8B5E0A; }
+    .tag-infecto { background: #EEF2FF; color: #3730A3; }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hep { font-size: 16px; font-weight: 500; color: var(--hep); margin-bottom: 12px; }
+    .hl      { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hep  { border-left: 3px solid var(--hep); background: var(--hep-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .hep-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; overflow: hidden; margin-bottom: 14px; }
+    .hep-header { padding: 1rem 1.25rem 0.75rem; display: flex; align-items: center; gap: 14px; }
+    .hep-letra { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 500; flex-shrink: 0; line-height: 1; }
+    .hep-titulo-wrap { flex: 1; }
+    .hep-nombre { font-size: 16px; font-weight: 600; }
+    .hep-virus  { font-size: 12px; color: var(--texto-ter); margin-top: 2px; }
+    .hep-body { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--borde); }
+    @media (max-width:600px){ .hep-body { grid-template-columns: 1fr; } }
+    .hep-col { padding: 1rem 1.25rem; border-right: 1px solid var(--borde); }
+    .hep-col:last-child { border-right: none; }
+    .hep-col-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--texto-ter); margin-bottom: 8px; }
+    .hep-row { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; display: flex; gap: 6px; line-height: 1.45; }
+    .hep-row strong { color: var(--texto); flex-shrink: 0; }
+    .hep-footer { padding: 0.75rem 1.25rem; background: var(--fondo); border-top: 1px solid var(--borde); font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .hep-footer strong { color: var(--texto); }
+    .hA .hep-header { background: #FFF3E0; border-bottom: 2px solid #FF9800; }
+    .hA .hep-letra { color: #E65100; }
+    .hB .hep-header { background: #E3F2FD; border-bottom: 2px solid #1565C0; }
+    .hB .hep-letra { color: #1565C0; }
+    .hC .hep-header { background: #F3E5F5; border-bottom: 2px solid #7B1FA2; }
+    .hC .hep-letra { color: #7B1FA2; }
+    .hD .hep-header { background: #FDEDEC; border-bottom: 2px solid #C0392B; }
+    .hD .hep-letra { color: #C0392B; }
+    .hE .hep-header { background: #E8F5E9; border-bottom: 2px solid #2E7D32; }
+    .hE .hep-letra { color: #2E7D32; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600; display: inline-block; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600; display: inline-block; }
+    .badge-var { background: #FEF0DC; color: #8B5E0A; font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600; display: inline-block; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología / Gastro</a> › Hepatitis Virales</div>
+  <div class="titulo">Hepatitis Virales</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-fuente">EASL 2017–2022 · WHO 2023 · Harrison 21ª · Goldman-Cecil 27ª</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Conceptos generales</div>
+    <div class="hl-hep">Las hepatitis virales son infecciones del parénquima hepático por virus hepatotropos. Clínicamente pueden ser asintomáticas, agudas con ictericia, o progresar a hepatitis fulminante. Las formas crónicas (B y C principalmente) son las más relevantes por su asociación con cirrosis y hepatocarcinoma. <strong>La serología es clave para distinguir el tipo, la fase y el estado inmune.</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>VHA</th><th>VHB</th><th>VHC</th><th>VHD</th><th>VHE</th></tr>
+        <tr><td><strong>Tipo viral</strong></td><td>ARN (Picornavirus)</td><td>ADN (Hepadnavirus)</td><td>ARN (Flavivirus)</td><td>ARN defectuoso (requiere VHB)</td><td>ARN (Hepevirus)</td></tr>
+        <tr><td><strong>Transmisión</strong></td><td>Fecal-oral</td><td>Parenteral, sexual, vertical</td><td>Parenteral (drogas IV, transfusiones)</td><td>Parenteral (co o sobreinfección con VHB)</td><td>Fecal-oral (zoonosis en países ricos)</td></tr>
+        <tr><td><strong>Incubación</strong></td><td>2–6 sem</td><td>6 sem–6 meses</td><td>2–26 sem</td><td>Variable</td><td>2–9 sem</td></tr>
+        <tr><td><strong>Cronicidad</strong></td><td><span class="badge-no">No</span></td><td><span class="badge-si">Sí (5–10%)</span></td><td><span class="badge-si">Sí (75–85%)</span></td><td><span class="badge-si">Sí (en sobreinfección)</span></td><td><span class="badge-no">No (salvo inmunocomp.)</span></td></tr>
+        <tr><td><strong>Vacuna disponible</strong></td><td><span class="badge-si">Sí</span></td><td><span class="badge-si">Sí</span></td><td><span class="badge-no">No</span></td><td>Prevención con VHB</td><td><span class="badge-var">Sí (China, no global)</span></td></tr>
+        <tr><td><strong>Hepatitis fulminante</strong></td><td>0,1–0,3%</td><td>0,1–1%</td><td>Raro</td><td>↑ en sobreinfección</td><td>20% en embarazadas</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Hepatitis en detalle</div>
+
+    <!-- HEPATITIS A -->
+    <div class="hep-card hA">
+      <div class="hep-header">
+        <div class="hep-letra">A</div>
+        <div class="hep-titulo-wrap">
+          <div class="hep-nombre">Hepatitis A</div>
+          <div class="hep-virus">Virus ARN · Picornaviridae · Transmisión fecal-oral</div>
+        </div>
+      </div>
+      <div class="hep-body">
+        <div class="hep-col">
+          <div class="hep-col-title">Clínica y diagnóstico</div>
+          <div class="hep-row"><strong>Pródromo:</strong> fiebre, malestar, náuseas, anorexia, dolor en HD (1–2 semanas)</div>
+          <div class="hep-row"><strong>Fase ictérica:</strong> ictericia + coluria + acolia + prurito · dura 1–3 semanas</div>
+          <div class="hep-row"><strong>Lab:</strong> ↑↑TGO/TGP (pico &gt;1000 UI/L) · ↑bilirrubina directa · ↑FA · TP puede prolongarse en casos graves</div>
+          <div class="hep-row"><strong>Diagnóstico: IgM anti-VHA</strong> → infección aguda activa (positiva desde el inicio hasta 3–6 meses)</div>
+          <div class="hep-row"><strong>IgG anti-VHA:</strong> infección pasada o vacunación → inmunidad permanente</div>
+        </div>
+        <div class="hep-col">
+          <div class="hep-col-title">Tratamiento y prevención</div>
+          <div class="hep-row"><strong>Tratamiento:</strong> soporte · reposo · hidratación · no requiere antiviral. Autolimitada en &gt;99% de los casos.</div>
+          <div class="hep-row"><strong>No cronifica</strong> nunca (excepción: hepatitis colestásica prolongada, rara)</div>
+          <div class="hep-row"><strong>Hepatitis fulminante:</strong> 0,1–0,3% · mayor riesgo en adultos y pacientes con hepatopatía previa</div>
+          <div class="hep-row"><strong>Vacuna (calendario Argentina):</strong> 1 dosis a los 18 meses · muy efectiva (&gt;95%)</div>
+          <div class="hep-row"><strong>Profilaxis postexposición:</strong> IgG normal o vacuna en las primeras 2 semanas</div>
+          <div class="hep-row"><strong>Aislamiento entérico:</strong> 2 semanas desde el inicio de los síntomas</div>
+        </div>
+      </div>
+      <div class="hep-footer"><strong>Clave del examen:</strong> IgM anti-VHA = hepatitis A aguda. Siempre autolimitada. Transmisión fecal-oral (agua/alimentos contaminados, viajes a zonas endémicas, instituciones). Vacuna en el calendario a los 18 meses.</div>
+    </div>
+
+    <!-- HEPATITIS B -->
+    <div class="hep-card hB">
+      <div class="hep-header">
+        <div class="hep-letra">B</div>
+        <div class="hep-titulo-wrap">
+          <div class="hep-nombre">Hepatitis B</div>
+          <div class="hep-virus">Virus ADN · Hepadnavirus · Parenteral · Sexual · Vertical (perinatal)</div>
+        </div>
+      </div>
+      <div class="hep-body">
+        <div class="hep-col">
+          <div class="hep-col-title">Serología — la más importante del examen</div>
+          <div class="hep-row"><strong>HBsAg (antígeno de superficie):</strong> marker de infección activa (aguda o crónica). Positivo desde antes de los síntomas. Si persiste &gt;6 meses → hepatitis crónica.</div>
+          <div class="hep-row"><strong>Anti-HBs (anticuerpo contra HBsAg):</strong> marcador de inmunidad. Positivo tras vacunación (solo anti-HBs) o tras infección resuelta (anti-HBs + anti-HBc IgG).</div>
+          <div class="hep-row"><strong>HBcAg (antígeno del core):</strong> no detectable en suero (solo en hepatocitos).</div>
+          <div class="hep-row"><strong>Anti-HBc IgM:</strong> infección aguda reciente (primeros 6 meses). Marca el "periodo ventana" (HBsAg puede ser negativo pero IgM positiva).</div>
+          <div class="hep-row"><strong>Anti-HBc IgG:</strong> infección pasada (resuelta o crónica). Persiste de por vida.</div>
+          <div class="hep-row"><strong>HBeAg:</strong> marcador de replicación activa y alta infectividad. Si persiste → peor pronóstico.</div>
+          <div class="hep-row"><strong>Anti-HBe:</strong> seroconversión → reducción de la replicación (buen pronóstico en general).</div>
+          <div class="hep-row"><strong>ADN-VHB (carga viral):</strong> cuantifica la replicación → guía el tratamiento.</div>
+        </div>
+        <div class="hep-col">
+          <div class="hep-col-title">Fases, tratamiento y prevención</div>
+          <div class="hep-row"><strong>Aguda:</strong> 90–95% resuelve espontáneamente · 5–10% cronifica (mayor en neonatos: 90%)</div>
+          <div class="hep-row"><strong>Crónica (HBsAg &gt;6 meses):</strong> fases — inmunotolerante · inmunoactiva · portador inactivo · reactivación</div>
+          <div class="hep-row"><strong>Indicación de tratamiento:</strong> ADN-VHB elevado + ALT elevada + fibrosis significativa (F≥2). O cualquier cirrosis con VHB detectable.</div>
+          <div class="hep-row"><strong>Fármacos 1ª línea:</strong> tenofovir (TDF o TAF) o entecavir · supresión viral sostenida · rarísima resistencia</div>
+          <div class="hep-row"><strong>Interferón pegilado:</strong> alternativa en jóvenes sin cirrosis · duración definida (48 sem) · mayor tasa de seroconversión HBeAg</div>
+          <div class="hep-row"><strong>Vacuna:</strong> 3 dosis (0-1-6 meses) · Recién nacido de madre HBsAg+: vacuna + IgHB en las primeras 12 h</div>
+          <div class="hep-row"><strong>Complicaciones:</strong> cirrosis → hepatocarcinoma (vigilancia eco + AFP cada 6 meses)</div>
+        </div>
+      </div>
+      <div class="hep-footer">
+        <strong>Interpretación rápida:</strong> HBsAg+ + IgM anti-HBc = aguda · HBsAg+ + IgG anti-HBc = crónica · Anti-HBs+ solo = vacunado · Anti-HBs+ + anti-HBc IgG = resuelta · Anti-HBc IgG+ solo (sin HBsAg ni anti-HBs) = "core solo" = infección previa, ADN-VHB puede ser detectable.
+      </div>
+    </div>
+
+    <!-- HEPATITIS C -->
+    <div class="hep-card hC">
+      <div class="hep-header">
+        <div class="hep-letra">C</div>
+        <div class="hep-titulo-wrap">
+          <div class="hep-nombre">Hepatitis C</div>
+          <div class="hep-virus">Virus ARN · Flaviviridae · Parenteral (drogas IV, transfusiones pre-1993) · Sexual (bajo riesgo)</div>
+        </div>
+      </div>
+      <div class="hep-body">
+        <div class="hep-col">
+          <div class="hep-col-title">Diagnóstico y serología</div>
+          <div class="hep-row"><strong>Anti-VHC (ELISA):</strong> screening · detecta exposición previa. Positivo desde las 4–10 semanas de la infección. <span style="color:#C0392B;font-weight:500;">No distingue infección activa de resuelta.</span></div>
+          <div class="hep-row"><strong>ARN-VHC (PCR cualitativa):</strong> confirma infección activa. De elección si anti-VHC positivo o si se sospecha infección reciente (inmunocomprometidos).</div>
+          <div class="hep-row"><strong>ARN-VHC cuantitativo (carga viral):</strong> antes y durante el tratamiento → mide la respuesta.</div>
+          <div class="hep-row"><strong>Genotipo VHC (1–6):</strong> orienta la duración y esquema de tratamiento. Genotipo 1 es el más frecuente en Argentina.</div>
+          <div class="hep-row"><strong>Cronicidad:</strong> 75–85% de los infectados cronifican (la mayoría son asintomáticos durante décadas)</div>
+          <div class="hep-row"><strong>Fibrosis hepática:</strong> elastografía (Fibroscan) o biopsia → determina el estadio y la urgencia del tratamiento</div>
+        </div>
+        <div class="hep-col">
+          <div class="hep-col-title">Tratamiento — revolución de los AADs</div>
+          <div class="hep-row"><strong>Antivirales de acción directa (AADs):</strong> curan el VHC en &gt;95% de los casos. Revolución terapéutica desde 2014. Pangenotípicos: no requieren genotipo previo para elegir el esquema.</div>
+          <div class="hep-row"><strong>Esquemas pangenotípicos (de elección):</strong></div>
+          <div class="hep-row">→ <strong>Sofosbuvir/velpatasvir</strong> (Epclusa) 1 comp/día × 12 sem</div>
+          <div class="hep-row">→ <strong>Glecaprevir/pibrentasvir</strong> (Mavyret) × 8–12 sem</div>
+          <div class="hep-row"><strong>Objetivo:</strong> ARN-VHC indetectable a las 12 semanas post-tratamiento = <strong>Respuesta Virológica Sostenida (RVS) = curación</strong></div>
+          <div class="hep-row"><strong>NO hay vacuna</strong> contra el VHC. Prevención: reducción de daños, jeringas estériles, screening de bancos de sangre.</div>
+          <div class="hep-row"><strong>Post-curación:</strong> vigilar cirrosis y hepatocarcinoma aunque logre RVS (el riesgo no desaparece en F3-F4)</div>
+        </div>
+      </div>
+      <div class="hep-footer"><strong>Clave:</strong> anti-VHC positivo → confirmar con ARN-VHC. Sin vacuna. AADs curan en &gt;95%. RVS 12 semanas = curación. En Argentina: sofosbuvir/velpatasvir financiado por el Estado (Ley 27.159).</div>
+    </div>
+
+    <!-- HEPATITIS D -->
+    <div class="hep-card hD">
+      <div class="hep-header">
+        <div class="hep-letra">D</div>
+        <div class="hep-titulo-wrap">
+          <div class="hep-nombre">Hepatitis D (Delta)</div>
+          <div class="hep-virus">Virus ARN defectuoso · Solo infecta con VHB · Más grave que VHB solo</div>
+        </div>
+      </div>
+      <div class="hep-body">
+        <div class="hep-col">
+          <div class="hep-col-title">Epidemiología y formas</div>
+          <div class="hep-row"><strong>Requiere el HBsAg del VHB</strong> para su envoltura → solo puede infectar a personas con VHB activo</div>
+          <div class="hep-row"><strong>Coinfección VHB+VHD simultánea:</strong> hepatitis aguda más grave. Alta tasa de hepatitis fulminante. Pero la mayoría resuelve (la resolución del VHB elimina también el VHD).</div>
+          <div class="hep-row"><strong>Sobreinfección VHD en portador crónico de VHB:</strong> mucho más grave. Alta tasa de cronicidad (80%) y rápida progresión a cirrosis.</div>
+          <div class="hep-row"><strong>Diagnóstico:</strong> anti-VHD IgM/IgG + ARN-VHD</div>
+        </div>
+        <div class="hep-col">
+          <div class="hep-col-title">Tratamiento y prevención</div>
+          <div class="hep-row"><strong>Tratamiento:</strong> interferón pegilado alfa × 48 semanas → respuesta limitada. Bulevirtida (nueva, aprobada en Europa 2020) → bloqueante de entrada del VHD. Tenofovir/entecavir controlan el VHB pero no el VHD.</div>
+          <div class="hep-row"><strong>Prevención:</strong> la vacuna contra el VHB previene también el VHD (sin VHB no hay VHD).</div>
+        </div>
+      </div>
+      <div class="hep-footer"><strong>Regla nemotécnica:</strong> VHD = "el parásito del parásito" — necesita al VHB para existir. Sobreinfección = peor pronóstico. Vacunar contra VHB = prevenir VHD.</div>
+    </div>
+
+    <!-- HEPATITIS E -->
+    <div class="hep-card hE">
+      <div class="hep-header">
+        <div class="hep-letra">E</div>
+        <div class="hep-titulo-wrap">
+          <div class="hep-nombre">Hepatitis E</div>
+          <div class="hep-virus">Virus ARN · Hepevirus · Fecal-oral · Zoonosis (cerdo) en países desarrollados</div>
+        </div>
+      </div>
+      <div class="hep-body">
+        <div class="hep-col">
+          <div class="hep-col-title">Epidemiología y clínica</div>
+          <div class="hep-row"><strong>Genotipo 1 y 2:</strong> endémico en Asia, África, América Central · agua contaminada · similar al VHA</div>
+          <div class="hep-row"><strong>Genotipo 3 y 4:</strong> zoonótico (cerdo, ciervo) en Europa, USA, Argentina · carne mal cocida · autolimitado en inmunocompetentes</div>
+          <div class="hep-row"><strong>Riesgo especial:</strong> embarazadas (genotipo 1) → mortalidad hasta 20% por hepatitis fulminante · riesgo de parto pretérmino y muerte fetal</div>
+          <div class="hep-row"><strong>Diagnóstico:</strong> anti-VHE IgM (aguda) · ARN-VHE (especialmente en inmunocomprometidos que pueden no seroconvertir)</div>
+        </div>
+        <div class="hep-col">
+          <div class="hep-col-title">Tratamiento</div>
+          <div class="hep-row"><strong>Inmunocompetentes:</strong> soporte, autolimitada · no requiere antiviral</div>
+          <div class="hep-row"><strong>Inmunocomprometidos (trasplantados, HIV):</strong> puede cronificar → ribavirina 600 mg/día × 3 meses</div>
+          <div class="hep-row"><strong>No hay vacuna disponible globalmente</strong> (aprobada en China únicamente)</div>
+          <div class="hep-row"><strong>Prevención:</strong> agua potable, cocción adecuada de carnes</div>
+        </div>
+      </div>
+      <div class="hep-footer"><strong>Clave:</strong> VHE en embarazada = mortalidad hasta 20% (hepatitis fulminante). En inmunocompetentes: autolimitada. Zoonosis en Argentina: genotipos 3/4 por consumo de carne de cerdo mal cocida.</div>
+    </div>
+  </div>
+
+  <!-- SEROLOGÍA VHB RESUMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Interpretación serológica VHB — tabla maestra</div>
+    <div class="hl-hep">La serología de la hepatitis B es la más preguntada en los exámenes. Memorizar este esquema.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>HBsAg</th><th>Anti-HBs</th><th>Anti-HBc IgM</th><th>Anti-HBc IgG</th><th>HBeAg</th><th>Interpretación</th></tr>
+        <tr><td>−</td><td>−</td><td>−</td><td>−</td><td>−</td><td>Susceptible (nunca infectado, no vacunado)</td></tr>
+        <tr><td>−</td><td><strong>+</strong></td><td>−</td><td>−</td><td>−</td><td><strong>Vacunado</strong> (inmune por vacuna)</td></tr>
+        <tr><td>−</td><td><strong>+</strong></td><td>−</td><td><strong>+</strong></td><td>−</td><td><strong>Infección resuelta</strong> (inmune natural)</td></tr>
+        <tr><td><strong>+</strong></td><td>−</td><td><strong>+</strong></td><td>−</td><td>±</td><td><strong>Hepatitis B aguda</strong></td></tr>
+        <tr><td><strong>+</strong></td><td>−</td><td>−</td><td><strong>+</strong></td><td>±</td><td><strong>Hepatitis B crónica</strong> (HBsAg &gt;6 meses)</td></tr>
+        <tr><td>−</td><td>−</td><td>−</td><td><strong>+</strong></td><td>−</td><td>"Core solo" → infección previa / ADN-VHB puede ser +</td></tr>
+        <tr><td>−</td><td>−</td><td><strong>+</strong></td><td>−</td><td>−</td><td>Período ventana (HBsAg ya negativo, anti-HBs aún −)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- HEPATITIS FULMINANTE -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Hepatitis fulminante (falla hepática aguda)</div>
+    <div class="hl-danger">Encefalopatía hepática + TP prolongado (INR &gt;1,5) que aparece en &lt;26 semanas de una hepatitis aguda en paciente sin hepatopatía previa conocida. Mortalidad &gt;80% sin trasplante. <strong>Criterios de King's College</strong> orientan la indicación de trasplante urgente.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa</th><th>Frecuencia</th><th>Particularidad</th></tr>
+        <tr><td>Paracetamol (sobredosis)</td><td>Causa #1 en países anglosajones</td><td>Antídoto: N-acetilcisteína (NAC) IV</td></tr>
+        <tr><td>VHB ± VHD</td><td>Frecuente en no vacunados</td><td>Anti-HBc IgM positivo · HBsAg puede ser negativo</td></tr>
+        <tr><td>VHE en embarazo</td><td>Alta mortalidad (20%) en gestantes</td><td>Genotipo 1 en zonas endémicas</td></tr>
+        <tr><td>VHA</td><td>0,1–0,3%</td><td>Mayor riesgo en adultos y hepatopatía previa</td></tr>
+        <tr><td>Drogas/tóxicos (Amanita phalloides)</td><td>Variable</td><td>NAC + trasplante urgente</td></tr>
+        <tr><td>Autoinmune, Wilson, Budd-Chiari</td><td>Menos frecuentes</td><td>Buscar en jóvenes sin causa clara</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">VHA: IgM anti-VHA = aguda · IgG = inmunidad pasada/vacuna</span>
+      <span class="pill">VHA: fecal-oral · autolimitada · nunca cronifica</span>
+      <span class="pill">Vacuna VHA: 1 dosis a los 18 meses (Calendario Argentina)</span>
+      <span class="pill">HBsAg: infección activa (aguda o crónica)</span>
+      <span class="pill">Anti-HBs solo: vacunado</span>
+      <span class="pill">Anti-HBs + anti-HBc IgG: infección resuelta</span>
+      <span class="pill">IgM anti-HBc: hepatitis B aguda</span>
+      <span class="pill">Período ventana VHB: HBsAg− + anti-HBs− + IgM anti-HBc+</span>
+      <span class="pill">HBeAg: replicación activa + alta infectividad</span>
+      <span class="pill">VHB crónica: HBsAg+ por más de 6 meses</span>
+      <span class="pill">VHB tratamiento 1ª línea: tenofovir o entecavir</span>
+      <span class="pill">Neonato de madre HBsAg+: vacuna + IgHB en primeras 12 h</span>
+      <span class="pill">VHC: anti-VHC screening → confirmar con ARN-VHC</span>
+      <span class="pill">VHC cronifica: 75–85% de los casos</span>
+      <span class="pill">AADs: curan VHC en &gt;95% · RVS 12 sem = curación</span>
+      <span class="pill">VHC: SIN vacuna disponible</span>
+      <span class="pill">VHD: solo con VHB · sobreinfección = peor pronóstico</span>
+      <span class="pill">VHE + embarazada: mortalidad 20% (hepatitis fulminante)</span>
+      <span class="pill">Hepatitis fulminante: encefalopatía + INR &gt;1,5 en &lt;26 semanas</span>
+      <span class="pill">Paracetamol: causa #1 de hepatitis fulminante en países anglosajones</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: EASL Clinical Practice Guidelines on hepatitis B virus infection. J Hepatol 2017 · EASL Recommendations on Treatment of Hepatitis C. J Hepatol 2022 · WHO Guidelines on Hepatitis B and C Testing 2017 · Harrison JL, Fauci AS, Kasper DL et al. Principios de Medicina Interna 21ª ed. McGraw-Hill; 2022 · Goldman L, Schafer AI. Goldman-Cecil 27ª ed. Elsevier; 2020 · Ley 27.159 Argentina: Programa Nacional para el Control de la Hepatitis Viral.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
