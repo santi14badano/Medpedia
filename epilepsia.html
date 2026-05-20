@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epilepsia — Medpedia</title>
+  <meta name="description" content="Epilepsia: clasificación de crisis, diagnóstico, antiepilépticos y estado epiléptico. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --neuro: #4A148C; --neuro-claro: #EDE7F6; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .timeline { display: flex; flex-direction: column; gap: 6px; }
+    .tl-item { display: flex; gap: 12px; align-items: flex-start; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; font-size: 13px; }
+    .tl-hora { font-weight: 700; color: var(--neuro); min-width: 70px; font-size: 12px; padding-top: 2px; }
+    .tl-texto { color: var(--texto-sec); line-height: 1.5; }
+    .tl-texto strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Epilepsia</div>
+  <div class="titulo">Epilepsia</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-fuente">ILAE 2017 · AAN 2018 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>Una <strong>crisis epiléptica</strong> es la manifestación clínica de una descarga neuronal sincrónica, anormal y excesiva en el cerebro. La <strong>epilepsia</strong> (ILAE 2014) se define por cualquiera de estas condiciones: ≥2 crisis no provocadas separadas por &gt;24 h · 1 crisis no provocada con riesgo de recurrencia ≥60% en los próximos 10 años · diagnóstico de síndrome epiléptico.</p>
+      <p>Una <strong>crisis provocada</strong> (o aguda sintomática) es aquella que ocurre en estrecha relación temporal con una causa identificable: hipoglucemia, hiponatremia, hipocalcemia, fiebre, alcohol, fármacos, ACV agudo, TCE, encefalitis. No define epilepsia y no siempre requiere tratamiento antiepiléptico crónico.</p>
+      <p><strong>Postictal:</strong> período de confusión, somnolencia o déficit neurológico transitorio que sigue a la crisis. El <strong>signo de Todd</strong> (paresia postictal unilateral) dura minutos a horas y sugiere crisis de inicio focal.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Clasificación ILAE 2017</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo de crisis</th><th>Descripción</th><th>Características clave</th></tr>
+        <tr><td><strong>Focal con conciencia conservada</strong> (antes: parcial simple)</td><td>Descarga confinada a una red neuronal de un hemisferio</td><td>El paciente está consciente y puede recordar la crisis. Puede tener síntomas motores, sensitivos, autonómicos o psíquicos (aura)</td></tr>
+        <tr><td><strong>Focal con alteración de la conciencia</strong> (antes: parcial compleja)</td><td>Afecta la conciencia/responsividad</td><td>Automatismos (masticar, frotarse las manos), mirada fija, confusión postictal. Foco temporal frecuente</td></tr>
+        <tr><td><strong>Focal a bilateral tónico-clónica</strong> (antes: secundariamente generalizada)</td><td>Crisis focal que se generaliza</td><td>Inicio focal detectable antes de la generalización — importante distinguir de generalizada primaria</td></tr>
+        <tr><td><strong>Generalizada tónico-clónica</strong> (gran mal)</td><td>Ambos hemisferios desde el inicio</td><td>Fase tónica (rigidez) → clónica (sacudidas rítmicas) → postictal. Mordedura de lengua, cianosis, incontinencia</td></tr>
+        <tr><td><strong>Ausencia típica</strong> (pequeño mal)</td><td>Pérdida brusca y breve de la conciencia</td><td>3–20 segundos. Sin caída. Mirada fija, parpadeo. EEG: punta-onda 3 Hz generalizada. Epilepsia de ausencia de la infancia</td></tr>
+        <tr><td><strong>Mioclónica</strong></td><td>Sacudidas musculares breves, bruscas</td><td>Bilaterales, sin pérdida de conciencia. Matutinas (al despertar). Epilepsia mioclónica juvenil</td></tr>
+        <tr><td><strong>Atónica</strong> (drop attack)</td><td>Pérdida brusca del tono muscular</td><td>Caída al suelo sin aviso. Riesgo de traumatismo. Síndrome de Lennox-Gastaut</td></tr>
+        <tr><td><strong>Espasmos epilépticos</strong></td><td>Flexión/extensión brusca del tronco y extremidades</td><td>En salvas, al despertar. Síndrome de West (lactantes). EEG: hipsarritmia</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diagnóstico</div>
+    <div class="card">
+      <p>El diagnóstico de epilepsia es fundamentalmente <strong>clínico</strong>, basado en la historia detallada de los episodios (del paciente y de testigos). Los estudios complementan pero no reemplazan la clínica.</p>
+      <p><strong>Historia:</strong> descripción detallada del episodio · factores desencadenantes · síntomas prodrómicos/aura · duración · período postictal · antecedentes (TCE, meningitis, ACV, historia familiar, febriles en la infancia).</p>
+      <p><strong>Diagnóstico diferencial:</strong> síncope (pródromos, palidez, recuperación rápida sin confusión prolongada) · pseudocrisis (PNES — movimientos asincrónicas, ojos cerrados, sin postictal) · AIT · migraña con aura · hipoglucemia · trastornos del sueño (parasomnias, narcolepsia).</p>
+    </div>
+
+    <div class="subtitulo-bloque">Estudios complementarios</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Indicación</th><th>Hallazgo clave</th></tr>
+        <tr><td><strong>EEG (electroencefalograma)</strong></td><td>Siempre ante sospecha de epilepsia. Idealmente dentro de las 24 h de la primera crisis (mayor rendimiento)</td><td>Normal en el 50% de los epilépticos fuera de la crisis. Punta-onda 3 Hz en ausencias · punta focal en epilepsia focal · polipunta en mioclónica. Un EEG normal NO descarta epilepsia</td></tr>
+        <tr><td><strong>RMN cerebral</strong></td><td>Primera crisis en adultos · epilepsia focal · epilepsia refractaria · cualquier déficit neurológico focal</td><td>Esclerosis mesial temporal (la causa más frecuente de epilepsia focal en adultos) · tumores · malformaciones · ACV · displasia cortical</td></tr>
+        <tr><td><strong>TAC de cráneo</strong></td><td>Urgencia (TCE, sospecha de hemorragia) cuando la RMN no está disponible</td><td>Menor sensibilidad que RMN para lesiones corticales</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>Toda primera crisis · buscar causas provocadas</td><td>Glucemia · sodio · calcio · magnesio · función renal · hemograma · tóxicos en orina · alcohol</td></tr>
+        <tr><td><strong>LCR (punción lumbar)</strong></td><td>Sospecha de meningitis/encefalitis · fiebre + primera crisis</td><td>Pleocitosis, proteínas elevadas en infecciosas. PCR de virus (HSV)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Antiepilépticos — primera línea</div>
+    <div class="hl-info">La elección del antiepiléptico depende del <strong>tipo de crisis</strong>, el <strong>síndrome epiléptico</strong>, el sexo (teratogenicidad), la edad, las comorbilidades y las interacciones. No todos los fármacos son eficaces para todos los tipos de crisis.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Levetiracetam</div>
+      <div class="farma-clase">Antiepiléptico de amplio espectro · primera línea actual en muchos contextos</div>
+      <div class="dosis-badge">500 mg c/12 h → hasta 3000 mg/día · VO o IV</div>
+      <div class="farma-detalle">Mecanismo: se une a la proteína SV2A de las vesículas sinápticas → modula la liberación de neurotransmisores. Eficaz en crisis focales y generalizadas. Disponible en formulación IV (útil en urgencias). No tiene interacciones farmacocinéticas significativas (no induce ni inhibe el CYP450). <strong>Efecto adverso principal:</strong> irritabilidad, agresividad, cambios conductuales ("leve-irritaciónam") — monitorear en pacientes con antecedentes psiquiátricos. Requiere ajuste en insuficiencia renal.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Ácido valproico / Valproato</div>
+      <div class="farma-clase">Antiepiléptico de amplio espectro · primera línea en generalizadas</div>
+      <div class="dosis-badge">500–2000 mg/día VO en 2–3 tomas · niveles terapéuticos: 50–100 mcg/mL</div>
+      <div class="farma-detalle">Mecanismo múltiple: bloqueo de canales de Na⁺ + ↑ GABA + bloqueo de canales de Ca²⁺ tipo T. Eficaz en todos los tipos de crisis generalizadas (ausencias, mioclónicas, tónico-clónicas) y en crisis focales. De elección en epilepsia mioclónica juvenil.<br><br>
+      <strong>Efectos adversos:</strong> hepatotoxicidad (monitorear TGO/TGP — raro en adultos, mayor riesgo en niños &lt;2 años con politerapia) · temblor · ganancia de peso · alopecia · hiperamonemia (encefalopatía) · trombocitopenia.<br><br>
+      <strong>Teratogenicidad severa:</strong> riesgo de espina bífida (1–2%), malformaciones cardíacas y déficit cognitivo en el feto. <strong>Contraindicado en embarazo y en mujeres en edad fértil sin anticoncepción efectiva</strong> (PRAC/EMA 2018). Si no hay alternativa: dosis mínima + ácido fólico 5 mg/día + consentimiento informado.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Lamotrigina</div>
+      <div class="farma-clase">Antiepiléptico de amplio espectro · primera línea en mujeres en edad fértil</div>
+      <div class="dosis-badge">Iniciar 25 mg/día → titular lentamente (riesgo de rash) → mantenimiento 100–400 mg/día</div>
+      <div class="farma-detalle">Mecanismo: bloqueo de canales de Na⁺ voltaje-dependientes + ↓ liberación de glutamato. Eficaz en crisis focales y generalizadas (excepto mioclónicas — puede empeorarlas). <strong>Primera opción en mujeres en edad fértil</strong> (menor teratogenicidad que valproato, aunque no inocuo — riesgo de paladar hendido). Titular lentamente para evitar el síndrome de Stevens-Johnson (riesgo mayor si se combina con valproato o si se sube rápido). El valproato duplica los niveles de lamotrigina (reducir dosis de lamotrigina a la mitad).</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Carbamazepina / Oxcarbazepina</div>
+      <div class="farma-clase">Antiepiléptico · primera línea en crisis focales</div>
+      <div class="dosis-badge">Carbamazepina: 200 mg c/12 h → hasta 1200 mg/día · Oxcarbazepina: 300 mg c/12 h → hasta 2400 mg/día</div>
+      <div class="farma-detalle">Mecanismo: bloqueo de canales de Na⁺. Eficaz en crisis focales y tónico-clónicas secundariamente generalizadas. <strong>No usar en ausencias ni mioclónicas</strong> (puede agravarlas). Carbamazepina es inductor potente del CYP3A4 → múltiples interacciones (anticonceptivos orales, warfarina, otros AEPs). Oxcarbazepina tiene menos interacciones. Riesgo de hiponatremia (especialmente en adultos mayores). HLA-B*1502 (asiáticos): riesgo de Stevens-Johnson con carbamazepina.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Fenitoína / Fosfenitoína</div>
+      <div class="farma-clase">Antiepiléptico clásico · uso agudo IV en urgencias</div>
+      <div class="dosis-badge">IV: 15–20 mg/kg (carga) a no más de 50 mg/min · mantenimiento 300–400 mg/día VO</div>
+      <div class="farma-detalle">Mecanismo: bloqueo de canales de Na⁺. Útil principalmente en urgencias (segunda línea IV en estado epiléptico). Como tratamiento crónico ha sido desplazada por fármacos más modernos. <strong>Ventana terapéutica estrecha</strong> — monitorear niveles (10–20 mcg/mL). Efectos adversos crónicos: hiperplasia gingival, hirsutismo, ataxia, nistagmo, neuropatía periférica, osteoporosis. Cinética de saturación (no lineal) — pequeños aumentos de dosis pueden causar toxicidad importante.</div>
+    </div>
+
+    <div class="subtitulo-bloque">Elección según tipo de crisis</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo de epilepsia</th><th>Primera línea</th><th>Alternativas</th><th>Evitar</th></tr>
+        <tr><td>Crisis focales</td><td>Levetiracetam · Lamotrigina · Oxcarbazepina</td><td>Carbamazepina · Lacosamida · Zonisamida</td><td>—</td></tr>
+        <tr><td>Generalizada tónico-clónica</td><td>Valproato · Levetiracetam · Lamotrigina</td><td>Topiramato · Perampanel</td><td>Carbamazepina (puede agravar ausencias coexistentes)</td></tr>
+        <tr><td>Ausencias típicas</td><td>Valproato · Etosuximida · Lamotrigina</td><td>Levetiracetam</td><td>Carbamazepina · Oxcarbazepina · Fenitoína (agravan ausencias)</td></tr>
+        <tr><td>Mioclónicas (EMJ)</td><td>Valproato · Levetiracetam</td><td>Topiramato · Clonazepam</td><td>Carbamazepina · Lamotrigina · Fenitoína (agravan mioclonías)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Estado epiléptico — manejo por fases</div>
+    <div class="hl-danger"><strong>Estado epiléptico (EE):</strong> crisis que dura &gt;5 minutos O ≥2 crisis sin recuperación completa de la conciencia entre ellas. Emergencia neurológica — mortalidad del 10–40% según etiología y duración. Cada minuto sin tratamiento aumenta la refractariedad.</div>
+
+    <div class="timeline" style="margin-top:10px;">
+      <div class="tl-item">
+        <div class="tl-hora">0–5 min</div>
+        <div class="tl-texto"><strong>Estabilización:</strong> posición lateral de seguridad · vía aérea · O₂ · acceso IV · glucemia capilar (si &lt;60 mg/dL: dextrosa 50% 50 mL IV) · monitoreo ECG y SatO₂ · laboratorio urgente.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hora">5–20 min</div>
+        <div class="tl-texto"><strong>Primera línea — benzodiacepinas:</strong> <strong>Midazolam 10 mg IM</strong> (o intranasal/bucal si no hay acceso IV — tan eficaz como lorazepam IV) · <strong>Lorazepam 4 mg IV</strong> (si disponible) · Diazepam 10 mg IV o 10–20 mg rectal. Repetir una vez si no cede a los 5 min.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hora">20–40 min</div>
+        <div class="tl-texto"><strong>Segunda línea:</strong> <strong>Levetiracetam 60 mg/kg IV</strong> (máx 4500 mg) en 10 min — primera opción en la mayoría de los centros · <strong>Ácido valproico 40 mg/kg IV</strong> en 10 min · <strong>Fosfenitoína 20 mg/kg IV</strong> a 150 mg/min. Los tres tienen eficacia similar (estudio ESETT).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hora">40–60 min</div>
+        <div class="tl-texto"><strong>Estado epiléptico refractario — anestesia general:</strong> Midazolam IV en infusión continua · Propofol IV · Tiopental IV. Intubación + UCI + EEG continuo para monitoreo del burst-suppression.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hora">Siempre</div>
+        <div class="tl-texto"><strong>Tratar la causa:</strong> glucosa si hipoglucemia · tiamina 100 mg IV si hay sospecha de déficit (alcoholismo, desnutrición) — siempre antes de la glucosa · antibióticos si sospecha de meningitis · aciclovir si sospecha de encefalitis herpética.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🤰 Epilepsia y embarazo</div>
+    <div class="card">
+      <p>La epilepsia no controlada durante el embarazo es más peligrosa para el feto que la mayoría de los antiepilépticos. <strong>No suspender el tratamiento durante el embarazo sin supervisión neurológica.</strong></p>
+      <p><strong>Antiepilépticos más seguros:</strong> Lamotrigina · Levetiracetam (riesgo de malformaciones similar a la población general, aunque con cautela). <strong>Evitar:</strong> valproato (alto riesgo) · topiramato (labio leporino) · fenobarbital (sedación neonatal).</p>
+      <p><strong>Ácido fólico 5 mg/día</strong> desde al menos 3 meses antes de la concepción y durante el 1er trimestre — todos los antiepilépticos aumentan el riesgo de defectos del tubo neural.</p>
+      <p>Los niveles de lamotrigina caen significativamente durante el embarazo (↑ aclaramiento renal) — monitorear y ajustar dosis.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🚗 Conducción vehicular</div>
+    <div class="card">
+      <p>En Argentina, la legislación varía por provincia, pero la recomendación médica general es <strong>no conducir hasta estar libre de crisis durante al menos 12 meses</strong> con tratamiento estable. Informar al paciente sobre esta restricción es obligación médico-legal.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Epilepsia: ≥2 crisis no provocadas o 1 con riesgo ≥60%</span>
+      <span class="pill">Crisis provocada vs no provocada — diferencia clave</span>
+      <span class="pill">Signo de Todd — paresia postictal focal</span>
+      <span class="pill">Ausencias: punta-onda 3 Hz en EEG</span>
+      <span class="pill">EEG normal no descarta epilepsia</span>
+      <span class="pill">Esclerosis mesial temporal — causa más frecuente de epilepsia focal en adultos</span>
+      <span class="pill">Valproato contraindicado en embarazo</span>
+      <span class="pill">Lamotrigina — primera línea en mujeres en edad fértil</span>
+      <span class="pill">Carbamazepina/fenitoína agravan ausencias y mioclónicas</span>
+      <span class="pill">Valproato + lamotrigina → ↑ niveles de lamotrigina</span>
+      <span class="pill">Estado epiléptico: crisis &gt;5 min</span>
+      <span class="pill">EE primera línea: midazolam IM o lorazepam IV</span>
+      <span class="pill">EE segunda línea: levetiracetam IV · valproato IV · fosfenitoína</span>
+      <span class="pill">Tiamina antes de glucosa en alcohólicos</span>
+      <span class="pill">Levetiracetam: irritabilidad como EA principal</span>
+      <span class="pill">HLA-B*1502 → Stevens-Johnson con carbamazepina</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ILAE Classification of Seizures 2017 · AAN/AES Guidelines Status Epilepticus 2016 · ESETT Trial 2019 · Harrison Principios de Medicina Interna, 21ª ed. · Sociedad Neurológica Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
