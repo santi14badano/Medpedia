@@ -4,337 +4,394 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACV Isquémico Agudo — Medpedia</title>
+  <title>ACV Isquémico vs Hemorrágico — Medpedia</title>
+  <meta name="description" content="Comparación ACV isquémico vs hemorrágico: diagnóstico diferencial, tratamiento y manejo. Para el Concurso de Residencias.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --neuro: #2c3e50; --neuro-claro: #ebedef; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --isq: #2874A6; --isq-claro: #D6EAF8; --isq-oscuro: #1A5276;
+      --hem: #C0392B; --hem-claro: #FDEDEC; --hem-oscuro: #922B21;
+      --neuro: #2c3e50; --neuro-claro: #ebedef;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
     nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
     .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
     .logo span { color: var(--verde); }
     .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
-
-    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .contenido { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
     .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
     .breadcrumb a { color: var(--verde); text-decoration: none; }
-    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
     .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
     .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
     .tag-neuro { background: var(--neuro-claro); color: var(--neuro); }
     .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
-
+    .tipo-header { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+    .tipo-card { border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .tipo-card.isq { background: var(--isq-claro); border: 1.5px solid #a8cce4; }
+    .tipo-card.hem { background: var(--hem-claro); border: 1.5px solid #e8b4b0; }
+    .tipo-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .tipo-label.isq { color: var(--isq); }
+    .tipo-label.hem { color: var(--hem); }
+    .tipo-titulo { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+    .tipo-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    @media (max-width: 600px) { .tipo-header { grid-template-columns: 1fr; } }
     .seccion { margin-bottom: 2rem; }
     .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
-    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); margin-bottom: 10px; }
     .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
     .card strong { color: var(--texto); }
-
-    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-danger { border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
-
     .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    th.isq { background: var(--isq-claro); color: var(--isq-oscuro); }
+    th.hem { background: var(--hem-claro); color: var(--hem-oscuro); }
     td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
     tr:last-child td { border-bottom: none; }
-
     .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
     .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
     .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .farma-clase.isq { color: var(--isq); }
+    .farma-clase.hem { color: var(--hem); }
     .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .dosis-badge.isq { background: var(--isq-claro); color: var(--isq-oscuro); }
+    .dosis-badge.hem { background: var(--hem-claro); color: var(--hem-oscuro); }
     .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
-
-    .sintoma-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
-    .sintoma-item { background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px; }
-    .sintoma-nombre { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-    .sintoma-desc { font-size: 12px; color: var(--texto-ter); line-height: 1.4; }
-
-    .score-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
-    .score-header { background: var(--neuro); color: white; padding: 10px 14px; font-size: 14px; font-weight: 500; }
-    .score-body { padding: 0; }
-
+    .badge-no  { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si  { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-isq { background: var(--isq-claro); color: var(--isq-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-hem { background: var(--hem-claro); color: var(--hem-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
     .tiempo-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--borde); }
     .tiempo-row:last-child { border-bottom: none; }
     .tiempo-badge { background: #fff5f5; color: #e74c3c; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
     .tiempo-desc { font-size: 13px; color: var(--texto); }
-
-    .badge-no { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
-    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
-
     .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
     .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
-
     .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
     footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
     footer a { color: var(--verde); text-decoration: none; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 620px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-isq { background: var(--isq-claro); border: 1.5px solid #a8cce4; border-radius: 12px; padding: 1rem; }
+    .col-hem { background: var(--hem-claro); border: 1.5px solid #e8b4b0; border-radius: 12px; padding: 1rem; }
+    .col-titulo { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+    .col-titulo.isq { color: var(--isq); }
+    .col-titulo.hem { color: var(--hem); }
+    .col-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.5; }
+    .col-item strong { color: var(--texto); }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="../index.html" class="logo">Med<span>pedia</span></a>
-  <a href="../index.html" class="nav-back">← Volver</a>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
 </nav>
 
 <div class="contenido">
-  <div class="breadcrumb"><a href="../index.html">Inicio</a> › <a href="#">Neurología</a> › ACV Isquémico Agudo</div>
-  <div class="titulo">ACV Isquémico Agudo</div>
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › ACV Isquémico vs Hemorrágico</div>
+  <div class="titulo">ACV Isquémico vs Hemorrágico</div>
   <div class="meta">
     <span class="tag tag-neuro">Neurología</span>
     <span class="tag tag-neuro">Emergencias</span>
-    <span class="tag tag-fuente">Protocolo Nacional Argentina · Consenso SNA/SAC/SATI</span>
+    <span class="tag tag-fuente">Protocolo Nacional Argentina · Consenso SNA/SAC/SATI · AHA/ASA 2022–2023</span>
   </div>
 
-  <!-- CONCEPTO -->
   <div class="seccion">
-    <div class="sec-titulo">📌 Concepto clave</div>
-    <div class="card">
-      <p>El ACV isquémico ocurre cuando la <strong>oclusión de una arteria cerebral</strong> interrumpe el flujo sanguíneo, generando necrosis del tejido privado de oxígeno. Representa el <strong>80% de todos los ACV</strong>. Es la <strong>primera causa de discapacidad</strong> y la tercera causa de muerte en Argentina.</p>
-      <p>El concepto fundamental es <strong>"tiempo es cerebro"</strong> — se estima que por cada minuto sin reperfusión se pierden aproximadamente 1,9 millones de neuronas.</p>
+    <div class="tipo-header">
+      <div class="tipo-card isq">
+        <div class="tipo-label isq">🟦 80% de los ACV</div>
+        <div class="tipo-titulo">ACV Isquémico</div>
+        <div class="tipo-desc">Oclusión arterial → necrosis por falta de oxígeno. Mecanismos: trombótico, embólico, lacunar. <strong>Tiempo es cerebro:</strong> 1,9 millones de neuronas por minuto sin reperfusión.</div>
+      </div>
+      <div class="tipo-card hem">
+        <div class="tipo-label hem">🟥 20% de los ACV</div>
+        <div class="tipo-titulo">ACV Hemorrágico</div>
+        <div class="tipo-desc">Ruptura vascular → sangrado intraparenquimatoso (HIC) o subaracnoideo (HSA). Mayor mortalidad aguda (~40% a 30 días). <strong>No hay reperfusión: el objetivo es control del hematoma y PIC.</strong></div>
+      </div>
     </div>
+    <div class="hl-danger"><strong>Regla de oro:</strong> TAC de cerebro sin contraste en los primeros <strong>25 minutos</strong> — es el único estudio que diferencia isquémico de hemorrágico y determina TODO el tratamiento. <strong>Nunca tratar antes de tener la TAC.</strong></div>
   </div>
 
-  <!-- SIGNOS Y SÍNTOMAS -->
   <div class="seccion">
-    <div class="sec-titulo">🩺 Signos y síntomas — reconocimiento prehospitalario</div>
-    <div class="hl-danger"><strong>MECES</strong> — sigla para reconocimiento rápido prehospitalario: <strong>M</strong>ovimiento (debilidad), <strong>E</strong>quilibrio, <strong>C</strong>ara (asimetría), <strong>E</strong>xpresión (lenguaje), <strong>S</strong>úbito (inicio brusco). Ante cualquier síntoma de inicio brusco → llamar al SAME/107 inmediatamente.</div>
-    <div class="sintoma-grid" style="margin-top:10px;">
-      <div class="sintoma-item"><div class="sintoma-nombre">Hemiparesia/plejia</div><div class="sintoma-desc">Debilidad o parálisis de un lado del cuerpo — signo más frecuente</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Parálisis facial</div><div class="sintoma-desc">Desviación de la comisura bucal, asimetría facial — pedir que sonría</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Afasia</div><div class="sintoma-desc">Dificultad para hablar, entender o nombrar objetos — territorio ACM izquierda</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Disartria</div><div class="sintoma-desc">Habla pastosa sin alteración del contenido del lenguaje</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Hemianopsia</div><div class="sintoma-desc">Pérdida visual de un campo visual — frecuente en territorio posterior</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Desviación ocular</div><div class="sintoma-desc">Los ojos "miran hacia la lesión" en ACV de hemisferio</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Ataxia / vértigo</div><div class="sintoma-desc">Inestabilidad, caídas, vértigo — territorio posterior (cerebelo, tronco)</div></div>
-      <div class="sintoma-item"><div class="sintoma-nombre">Alteración sensitiva</div><div class="sintoma-desc">Hemihipoestesia contralateral a la lesión</div></div>
-    </div>
-    <div class="hl-info" style="margin-top:10px;">El <strong>AIT (Accidente Isquémico Transitorio)</strong> tiene los mismos síntomas pero se resuelven en menos de 24h (habitualmente en minutos). El manejo debe ser idéntico al ACV — no minimizarlo. El riesgo de ACV en los primeros 2 días post-AIT es del 3–10%.</div>
-  </div>
-
-  <!-- SCORE NIHSS -->
-  <div class="seccion">
-    <div class="sec-titulo">📊 Score NIHSS — evaluación de gravedad</div>
-    <div class="hl-neuro">El NIHSS (National Institutes of Health Stroke Scale) evalúa 11 ítems neurológicos. Es obligatorio calcularlo al ingreso y monitorizar la evolución. Puntaje de <strong>4 a 25</strong> es el rango para trombolisis IV según el protocolo argentino.</div>
+    <div class="sec-titulo">🩺 Diferenciación clínica — cómo sospechar el tipo antes de la TAC</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Puntaje NIHSS</th><th>Gravedad</th><th>Implicancia clínica</th></tr>
-        <tr><td>0</td><td>Sin déficit</td><td>ACV silente o resuelto</td></tr>
-        <tr><td>1–4</td><td>Leve</td><td>Considerar trombolisis si hay déficit discapacitante</td></tr>
-        <tr><td>5–15</td><td>Moderado</td><td>Candidato a trombolisis y/o trombectomía</td></tr>
-        <tr><td>16–20</td><td>Moderado-severo</td><td>Mayor riesgo hemorrágico con trombolisis</td></tr>
-        <tr><td>&gt; 25</td><td>Severo</td><td>Fuera del criterio de inclusión para trombolisis IV</td></tr>
+        <tr><th>Característica</th><th class="isq">🟦 Isquémico</th><th class="hem">🟥 Hemorrágico</th></tr>
+        <tr><td><strong>Inicio</strong></td><td>Brusco, a veces al despertar o en actividad moderada</td><td>Brusco, frecuentemente durante actividad física o estrés</td></tr>
+        <tr><td><strong>Cefalea</strong></td><td>Ausente o leve — no es un síntoma prominente</td><td><strong>"La peor cefalea de mi vida"</strong> — especialmente en HSA (cefalea en trueno)</td></tr>
+        <tr><td><strong>Náuseas / vómitos</strong></td><td>Infrecuentes (salvo territorio posterior)</td><td><strong>Frecuentes</strong> — por hipertensión endocraneana</td></tr>
+        <tr><td><strong>Nivel de conciencia</strong></td><td>Variable; puede estar preservado en ACV leve</td><td><strong>Compromiso precoz</strong> — Glasgow bajo desde el inicio en HIC grande</td></tr>
+        <tr><td><strong>TA al ingreso</strong></td><td>HTA reactiva moderada (fenómeno de Cushing)</td><td><strong>HTA severa muy frecuente</strong> — causa y consecuencia</td></tr>
+        <tr><td><strong>Déficit focal</strong></td><td>Presente desde el inicio, según territorio afectado</td><td>Presente; puede progresar por expansión del hematoma</td></tr>
+        <tr><td><strong>Rigidez de nuca</strong></td><td>Ausente</td><td><strong>Presente en HSA</strong> — meningismo por sangre en espacio subaracnoideo</td></tr>
+        <tr><td><strong>Antecedentes clave</strong></td><td>FA, HTA, DBT, dislipemia, tabaquismo, AIT previo</td><td>HTA mal controlada, anticoagulantes, MAV, aneurisma, cocaína</td></tr>
       </table>
     </div>
+    <div class="hl-warn">⚠️ La clínica <strong>no es suficiente</strong> para distinguir los tipos — hasta el 15% de los hemorrágicos se presentan sin cefalea prominente. La TAC sin contraste es <strong>obligatoria</strong> antes de cualquier decisión terapéutica.</div>
   </div>
 
-  <!-- SCORE ASPECTS -->
   <div class="seccion">
-    <div class="sec-titulo">📊 Score ASPECTS — extensión del infarto en TAC</div>
-    <div class="card">
-      <p>El <strong>ASPECTS (Alberta Stroke Program Early CT Score)</strong> evalúa la extensión del daño isquémico en el territorio de la arteria cerebral media en la TAC sin contraste.</p>
-      <p>Analiza <strong>10 áreas anatómicas</strong> — puntaje inicial de 10. Cada área con hipodensidad resta 1 punto.</p>
-      <p><strong>ASPECTS &gt; 7</strong> → buen pronóstico de respuesta a trombolisis IV.<br>
-      <strong>ASPECTS ≤ 7</strong> → mayor extensión del infarto — peor pronóstico funcional.</p>
+    <div class="sec-titulo">🚨 Reconocimiento prehospitalario — MECES (aplica a ambos tipos)</div>
+    <div class="hl-danger"><strong>MECES</strong> aplica a todo ACV independientemente del tipo: <strong>M</strong>ovimiento (debilidad), <strong>E</strong>quilibrio, <strong>C</strong>ara (asimetría), <strong>E</strong>xpresión (lenguaje), <strong>S</strong>úbito (inicio brusco). Ante cualquier síntoma de inicio brusco → llamar al SAME/107 inmediatamente. En hemorrágico, sumar: cefalea explosiva + vómitos + compromiso de conciencia.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 TAC sin contraste — hallazgos diagnósticos</div>
+    <div class="dos-col">
+      <div class="col-isq">
+        <div class="col-titulo isq">🟦 Isquémico</div>
+        <div class="col-item"><strong>Primeras horas:</strong> TAC puede ser <em>normal</em> (hasta 6–12 h)</div>
+        <div class="col-item"><strong>Signos precoces:</strong> borramiento de surcos, pérdida de diferenciación córtico-subcortical, signo de la arteria hiperdensa (trombo)</div>
+        <div class="col-item"><strong>Score ASPECTS:</strong> evalúa extensión del daño en territorio ACM → más de 7 es favorable para trombolisis</div>
+        <div class="col-item"><strong>Angio-TAC:</strong> detecta oclusión de gran vaso → indica trombectomía mecánica</div>
+        <div class="col-item"><strong>TAC perfusión:</strong> identifica penumbra isquémica para ventana extendida (4,5–9h)</div>
+      </div>
+      <div class="col-hem">
+        <div class="col-titulo hem">🟥 Hemorrágico</div>
+        <div class="col-item"><strong>Hiperdensidad espontánea</strong> (blanco brillante) desde los primeros minutos — nunca normal</div>
+        <div class="col-item"><strong>HIC:</strong> hematoma intraparenquimatoso — ganglios basales (HTA), lóbulos (amiloide, MAV)</div>
+        <div class="col-item"><strong>HSA:</strong> sangre en cisternas basales — patrón en estrella o difuso</div>
+        <div class="col-item"><strong>Score ABC/2:</strong> estima volumen del hematoma → más de 30 ml es alto riesgo de deterioro</div>
+        <div class="col-item"><strong>Angio-TAC:</strong> buscar MAV, aneurisma o tumor como causa subyacente</div>
+      </div>
     </div>
   </div>
 
-  <!-- DIAGNÓSTICO -->
   <div class="seccion">
-    <div class="sec-titulo">🔬 Diagnóstico — estudios urgentes</div>
-    <div class="hl-danger"><strong>Regla de oro:</strong> realizar TAC de cerebro sin contraste en los primeros <strong>25 minutos</strong> desde el ingreso. El objetivo es descartar hemorragia antes de cualquier tratamiento.</div>
-    <div class="tabla-wrap">
-      <table>
-        <tr><th>Estudio</th><th>Hallazgo / Utilidad</th><th>Observación</th></tr>
-        <tr><td><strong>TAC sin contraste</strong></td><td>Descarta hemorragia intracerebral. En isquemia aguda puede ser normal o mostrar signos precoces (borramiento de surcos, signo de la arteria hiperdensa)</td><td>Primera línea — no demorar</td></tr>
-        <tr><td><strong>RM con difusión (DWI)</strong></td><td>Más sensible que TAC — detecta isquemia desde los 35 minutos. Hiperintensa en DWI, hipointensa en ADC</td><td>De elección si disponible sin demorar reperfusión</td></tr>
-        <tr><td><strong>TAC con angiografía (Angio-TAC)</strong></td><td>Detecta oclusión de gran vaso — indica trombectomía mecánica</td><td>Esencial si NIHSS ≥6 y sospecha de oclusión de gran vaso</td></tr>
-        <tr><td><strong>TAC perfusión</strong></td><td>Identifica penumbra isquémica — útil para ventana extendida (4,5–9h)</td><td>Amplía elegibilidad para trombolisis en ventana extendida</td></tr>
-        <tr><td><strong>Glucemia</strong></td><td>Hipoglucemia puede simular ACV. Hiperglucemia empeora pronóstico</td><td>Corregir antes de trombolisis</td></tr>
-        <tr><td><strong>ECG</strong></td><td>Detectar fibrilación auricular como causa embólica</td><td>Obligatorio en todo ACV</td></tr>
-        <tr><td><strong>Laboratorio urgente</strong></td><td>Hemograma, coagulación (TP, KPTT), plaquetas, ionograma, función renal</td><td>No demorar trombolisis salvo anticoagulantes previos</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- TIEMPOS -->
-  <div class="seccion">
-    <div class="sec-titulo">⏱️ Tiempos clave — tiempo es cerebro</div>
+    <div class="sec-titulo">⏱️ Tiempos clave — ACV isquémico (tiempo es cerebro)</div>
     <div class="card">
-      <div class="tiempo-row"><span class="tiempo-badge">10 min</span><span class="tiempo-desc">Evaluación médica inicial desde llegada al servicio de urgencias</span></div>
-      <div class="tiempo-row"><span class="tiempo-badge">25 min</span><span class="tiempo-desc">TAC de cerebro realizada e interpretada</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">10 min</span><span class="tiempo-desc">Evaluación médica inicial desde llegada a urgencias</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">25 min</span><span class="tiempo-desc">TAC de cerebro realizada e interpretada — descarta hemorragia</span></div>
       <div class="tiempo-row"><span class="tiempo-badge">60 min</span><span class="tiempo-desc">Tiempo puerta-aguja máximo para inicio de trombolisis IV (rtPA)</span></div>
       <div class="tiempo-row"><span class="tiempo-badge">4,5 h</span><span class="tiempo-desc">Ventana terapéutica estándar para trombolisis IV con rtPA desde inicio de síntomas</span></div>
       <div class="tiempo-row"><span class="tiempo-badge">6 h</span><span class="tiempo-desc">Ventana para trombectomía mecánica en oclusión de gran vaso (circulación anterior)</span></div>
-      <div class="tiempo-row"><span class="tiempo-badge">24 h</span><span class="tiempo-desc">Ventana extendida para trombectomía con selección por imágenes avanzadas (DAWN/DEFUSE-3)</span></div>
+      <div class="tiempo-row"><span class="tiempo-badge">24 h</span><span class="tiempo-desc">Ventana extendida para trombectomía con selección por imágenes (DAWN/DEFUSE-3)</span></div>
     </div>
-    <div class="hl-warn" style="margin-top:10px;">En el ACV del despertar o de tiempo desconocido, la RM (DWI positivo / FLAIR negativo) permite identificar infartos hiperagudos elegibles para trombolisis hasta 9 horas del punto medio del sueño.</div>
+    <div class="hl-warn">En el ACV del despertar o de tiempo desconocido, la RM (DWI positivo / FLAIR negativo) permite identificar infartos hiperagudos elegibles para trombolisis hasta 9 horas del punto medio del sueño.</div>
   </div>
 
-  <!-- TRATAMIENTO -->
   <div class="seccion">
-    <div class="sec-titulo">💊 Tratamiento farmacológico — fármacos y dosis</div>
+    <div class="sec-titulo">💊 Tratamiento — diferencias fundamentales</div>
+    <div class="hl-neuro">La diferencia más importante de toda la neurología de urgencia: el ACV isquémico recibe <strong>reperfusión (rtPA + trombectomía)</strong>; el ACV hemorrágico tiene esas intervenciones <strong>absolutamente contraindicadas</strong>. Invertir el tratamiento puede matar al paciente.</div>
+    <div class="dos-col" style="margin-top:12px;">
+      <div class="col-isq">
+        <div class="col-titulo isq">🟦 Isquémico — reperfusión</div>
+        <div class="col-item"><strong>rtPA (alteplasa):</strong> 0,9 mg/kg IV (máx 90 mg) · 10% bolo + 90% en 60 min · ventana 4,5 h</div>
+        <div class="col-item"><strong>Trombectomía mecánica:</strong> oclusión de gran vaso · NIHSS 6 o más · ASPECTS mayor a 6 · hasta 24 h con imágenes</div>
+        <div class="col-item"><strong>TA:</strong> NO bajar salvo más de 220/120 mmHg (sin trombolisis) o más de 185/110 mmHg (antes de rtPA)</div>
+        <div class="col-item"><strong>AAS:</strong> 300 mg a las 24–48 h post-rtPA · luego 100 mg indefinido</div>
+        <div class="col-item"><strong>Anticoagulación:</strong> solo en FA · iniciar entre 4–14 días según tamaño del infarto</div>
+        <div class="col-item"><strong>Estatinas:</strong> inicio precoz en aterotrombótico · meta LDL menos de 70 mg/dl</div>
+      </div>
+      <div class="col-hem">
+        <div class="col-titulo hem">🟥 Hemorrágico — control del hematoma</div>
+        <div class="col-item"><span class="badge-no">NUNCA</span> trombolisis · <span class="badge-no">NUNCA</span> anticoagulantes · <span class="badge-no">NUNCA</span> antiagregantes en fase aguda</div>
+        <div class="col-item"><strong>TA:</strong> bajar a menos de 140 mmHg sistólica en la 1ª hora — labetalol IV o nicardipina IV</div>
+        <div class="col-item"><strong>Revertir anticoagulación:</strong> vitamina K + CCP (warfarina), idarucizumab (dabigatrán), andexanet alfa (anti-Xa)</div>
+        <div class="col-item"><strong>Cirugía:</strong> hematoma cerebeloso más de 3 cm con deterioro · hidrocefalia · HSA con aneurisma → clipado o coil</div>
+        <div class="col-item"><strong>Manitol 20%:</strong> 0,25–1 g/kg IV en herniación inminente</div>
+        <div class="col-item"><strong>PIC:</strong> cabecera a 30°, euvolemia, normoglucemia, normotermia</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo" style="color: var(--isq);">🟦 Farmacología — ACV Isquémico</div>
 
     <div class="farma-card">
       <div class="farma-nombre">Alteplasa (rtPA) — Trombolisis IV</div>
-      <div class="farma-clase">Fibrinolítico · tratamiento de reperfusión farmacológica</div>
-      <div class="dosis-badge">0,9 mg/kg IV · Dosis máxima: 90 mg · 10% en bolo en 1 min · 90% restante en infusión continua en 60 min</div>
+      <div class="farma-clase isq">Fibrinolítico · tratamiento de reperfusión farmacológica</div>
+      <div class="dosis-badge isq">0,9 mg/kg IV · Dosis máxima: 90 mg · 10% en bolo en 1 min · 90% restante en infusión continua en 60 min</div>
       <div class="farma-detalle">
-        Primera línea de reperfusión si no hay acceso a trombectomía en tiempo. Ventana estándar: hasta 4,5 horas. Requiere TA &lt;185/110 mmHg antes de administrar.<br><br>
-        <strong>Criterios de inclusión (protocolo argentino):</strong> edad ≥18 años, NIHSS 4–25, inicio de síntomas conocido &lt;4,5h, TAC sin hemorragia, consentimiento informado.<br><br>
-        <strong>Contraindicaciones absolutas:</strong> hemorragia intracraneal previa, ACV isquémico &lt;3 meses, neoplasia intracraneal, cirugía mayor &lt;14 días, sangrado activo, plaquetas &lt;100.000, uso de anticoagulantes con RIN &gt;1,7 o KPTT prolongado, glucemia &lt;50 o &gt;400 mg/dl.
+        Primera línea de reperfusión si no hay acceso a trombectomía en tiempo. Ventana estándar: hasta 4,5 horas. Requiere TA menor a 185/110 mmHg antes de administrar.<br><br>
+        <strong>Criterios de inclusión:</strong> edad 18 años o más, NIHSS 4–25, inicio de síntomas menos de 4,5h, TAC sin hemorragia, consentimiento informado.<br><br>
+        <strong>Contraindicaciones absolutas:</strong> hemorragia intracraneal previa, ACV isquémico en los últimos 3 meses, neoplasia intracraneal, cirugía mayor en los últimos 14 días, sangrado activo, plaquetas menos de 100.000, RIN mayor a 1,7, glucemia menor a 50 o mayor a 400 mg/dl.
       </div>
     </div>
 
     <div class="farma-card">
       <div class="farma-nombre">Trombectomía Mecánica (TM)</div>
-      <div class="farma-clase">Tratamiento endovascular · oclusión de gran vaso</div>
-      <div class="dosis-badge">Ventana: hasta 6h estándar · hasta 24h con selección por imágenes (DAWN/DEFUSE-3)</div>
-      <div class="farma-detalle">Indicada en oclusión de gran vaso (arteria carótida interna, ACM segmento M1/M2, arteria basilar) con ASPECTS &gt;6. Si el paciente es elegible para rtPA, administrar primero sin demorar la trombectomía. En Argentina solo disponible en centros de alta complejidad con neurointervencionismo.</div>
+      <div class="farma-clase isq">Tratamiento endovascular · oclusión de gran vaso</div>
+      <div class="dosis-badge isq">Ventana: hasta 6h estándar · hasta 24h con selección por imágenes (DAWN/DEFUSE-3)</div>
+      <div class="farma-detalle">Indicada en oclusión de gran vaso (ACI, ACM M1/M2, arteria basilar) con ASPECTS mayor a 6. Si el paciente es elegible para rtPA, administrar primero sin demorar la trombectomía. En Argentina solo disponible en centros de alta complejidad con neurointervencionismo.</div>
     </div>
 
     <div class="farma-card">
-      <div class="farma-nombre">Aspirina (AAS)</div>
-      <div class="farma-clase">Antiagregante plaquetario · tratamiento agudo y prevención secundaria</div>
-      <div class="dosis-badge">300 mg VO o SNG en las primeras 24–48h · Luego 100 mg/día indefinido</div>
-      <div class="farma-detalle">Iniciar dentro de las 24–48h del inicio del ACV — <span class="badge-no">NO</span> antes si recibió trombolisis (esperar 24h post-rtPA). En AIT y ACV menor, considerar terapia dual con clopidogrel por 21 días. Continuar indefinidamente como prevención secundaria.</div>
-    </div>
-
-    <div class="farma-card">
-      <div class="farma-nombre">Clopidogrel</div>
-      <div class="farma-clase">Antiagregante · prevención secundaria / terapia dual en AIT</div>
-      <div class="dosis-badge">AIT/ACV menor: 300 mg carga + 75 mg/día por 21 días (con AAS) · Luego monoterapia 75 mg/día</div>
-      <div class="farma-detalle">En AIT y ACV menor (NIHSS ≤3), la terapia antiplaquetaria dual (AAS + clopidogrel) por 21 días reduce el riesgo de ACV recurrente. Luego continuar con monoterapia a largo plazo. Alternativa: AAS + ticagrelor por 30 días.</div>
+      <div class="farma-nombre">Aspirina + Clopidogrel (terapia dual)</div>
+      <div class="farma-clase isq">Antiagregante · AIT y ACV menor · prevención secundaria precoz</div>
+      <div class="dosis-badge isq">AAS 300 mg + Clopidogrel 300 mg carga → AAS 100 mg + Clopidogrel 75 mg/día por 21 días</div>
+      <div class="farma-detalle">En AIT y ACV menor (NIHSS de 3 o menos), la terapia dual por 21 días reduce el riesgo de ACV recurrente hasta un 25%. <span class="badge-no">NO</span> iniciar si recibió trombolisis — esperar 24 h. Luego monoterapia indefinida.</div>
     </div>
 
     <div class="farma-card">
       <div class="farma-nombre">Anticoagulación — FA como causa</div>
-      <div class="farma-clase">ACO directos (ACOD) o warfarina · prevención secundaria en ACV cardioembólico</div>
-      <div class="dosis-badge">Apixabán: 5 mg cada 12h · Rivaroxabán: 20 mg/día · Warfarina: ajuste según RIN (objetivo 2–3)</div>
-      <div class="farma-detalle">Indicada cuando la causa del ACV es fibrilación auricular. Iniciar entre 4–14 días post-ACV según tamaño del infarto y riesgo hemorrágico. <span class="badge-no">NO</span> anticoagular en fase aguda (primeras 24h) — aumenta riesgo de transformación hemorrágica. Los ACOD son preferidos sobre warfarina en FA no valvular.</div>
+      <div class="farma-clase isq">ACOD o warfarina · prevención secundaria cardioembólica</div>
+      <div class="dosis-badge isq">Apixabán 5 mg cada 12h · Rivaroxabán 20 mg/día · iniciar entre 4–14 días post-ACV</div>
+      <div class="farma-detalle">Indicada cuando la causa es FA. <span class="badge-no">NO</span> anticoagular en fase aguda (primeras 24h) — riesgo de transformación hemorrágica. Los ACOD son preferidos en FA no valvular. En ACV extenso, diferir más hasta 14 días.</div>
     </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo" style="color: var(--hem);">🟥 Farmacología — ACV Hemorrágico</div>
 
     <div class="farma-card">
-      <div class="farma-nombre">Estatinas de alta intensidad</div>
-      <div class="farma-clase">Atorvastatina · Rosuvastatina · prevención secundaria</div>
-      <div class="dosis-badge">Atorvastatina: 40–80 mg/día · Rosuvastatina: 20–40 mg/día</div>
-      <div class="farma-detalle">Iniciar precozmente en todo ACV aterotrombótico. Reducen recurrencia y estabilizan la placa ateromatosa. Meta: LDL &lt;70 mg/dl en prevención secundaria. Mantener indefinidamente.</div>
-    </div>
-
-    <div class="farma-card">
-      <div class="farma-nombre">Antihipertensivos — manejo de la TA en agudo</div>
-      <div class="farma-clase">Labetalol · Nicardipina · manejo según contexto</div>
-      <div class="dosis-badge">Labetalol: 10–20 mg IV lento si TA &gt;185/110 antes de rtPA · Nicardipina: 5 mg/h IV (titular)</div>
+      <div class="farma-nombre">Labetalol IV / Nicardipina IV — Control de TA</div>
+      <div class="farma-clase hem">Antihipertensivos IV · reducción precoz de TA en HIC</div>
+      <div class="dosis-badge hem">Labetalol: 10–20 mg IV cada 10 min · Nicardipina: 5 mg/h IV (titular hasta 15 mg/h)</div>
       <div class="farma-detalle">
-        <strong>Si va a recibir trombolisis:</strong> mantener TA &lt;185/110 mmHg antes y &lt;180/105 mmHg las primeras 24h post-rtPA.<br>
-        <strong>Sin trombolisis:</strong> <span class="badge-no">NO</span> bajar salvo TA &gt;220/120 mmHg — la hipertensión en agudo mantiene la perfusión de la penumbra isquémica.<br>
-        Reiniciar antihipertensivos crónicos a las 24h si TA estable.
+        Meta: TA sistólica menor a 140 mmHg dentro de la primera hora (ensayos INTERACT-2 y ATACH-2) — reduce expansión del hematoma.<br>
+        <strong>En HSA con vasoespasmo:</strong> meta más conservadora — bajar TA agresivamente puede agravar la isquemia secundaria.
       </div>
     </div>
 
     <div class="farma-card">
-      <div class="farma-nombre">Medidas generales en internación</div>
-      <div class="farma-clase">Soporte clínico · unidad de ACV</div>
-      <div class="dosis-badge">Internación en Unidad de ACV reduce mortalidad y discapacidad independientemente del tratamiento</div>
+      <div class="farma-nombre">Reversión de anticoagulación</div>
+      <div class="farma-clase hem">Agentes reversores · urgencia máxima en HIC bajo anticoagulantes</div>
+      <div class="dosis-badge hem">Warfarina → Vitamina K 10 mg IV + CCP 25–50 UI/kg · Dabigatrán → Idarucizumab 5 g IV · Anti-Xa → Andexanet alfa</div>
       <div class="farma-detalle">
-        <strong>Glucemia:</strong> mantener 140–180 mg/dl — tratar hipo e hiperglucemia.<br>
-        <strong>Temperatura:</strong> tratar fiebre &gt;37,5°C con paracetamol (la fiebre empeora el daño neuronal).<br>
-        <strong>Saturación O₂:</strong> mantener ≥94% — O₂ suplementario solo si hipoxemia.<br>
-        <strong>Posición:</strong> cabecera a 0° las primeras horas (mejora perfusión cerebral) salvo riesgo de aspiración.<br>
-        <strong>Profilaxis TVP:</strong> HBPM a dosis profiláctica a partir de las 24–48h.
+        En todo ACV hemorrágico bajo anticoagulación, la reversión es la prioridad absoluta antes del control de la TA.<br>
+        <strong>CCP (complejo protrombínico):</strong> revierte warfarina en minutos — mucho más rápido que plasma fresco solo.<br>
+        <strong>Idarucizumab:</strong> anticuerpo monoclonal específico para dabigatrán — disponible en Argentina.<br>
+        <strong>Andexanet alfa:</strong> para apixabán y rivaroxabán — disponibilidad limitada, verificar en el centro.
       </div>
     </div>
 
+    <div class="farma-card">
+      <div class="farma-nombre">Manitol 20%</div>
+      <div class="farma-clase hem">Osmótico · reducción de PIC en herniación inminente</div>
+      <div class="dosis-badge hem">0,25–1 g/kg IV en bolo rápido (15–30 min) · repetir cada 4–6 h según respuesta</div>
+      <div class="farma-detalle">
+        Indicado solo con signos de herniación transtentorial inminente (anisocoria, respuesta de Cushing, extensión). No usar de rutina. Alternativa: suero salino hipertónico 3% a 150–250 ml IV.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Nimodipina — exclusivo en HSA</div>
+      <div class="farma-clase hem">Bloqueante cálcico · prevención de daño isquémico por vasoespasmo en HSA</div>
+      <div class="dosis-badge hem">60 mg VO cada 4 horas por 21 días · administrar por vía oral o SNG</div>
+      <div class="farma-detalle">
+        Indicada en <strong>toda HSA aneurismática</strong>. Reduce el daño neurológico isquémico por vasoespasmo (pico días 4–14).<br>
+        <strong>Importante:</strong> NO reduce el vasoespasmo angiográfico — su beneficio es neuroprotector. La vía IV tiene riesgo de hipotensión grave y está contraindicada.<br>
+        <span class="badge-no">NO</span> indicada en HIC espontánea — solo en HSA.
+      </div>
+    </div>
   </div>
 
-  <!-- CONTRAINDICACIONES TROMBOLISIS -->
   <div class="seccion">
-    <div class="sec-titulo">🚫 Contraindicaciones para trombolisis — resumen rápido</div>
+    <div class="sec-titulo">📊 Score NIHSS — aplica a ambos tipos</div>
+    <div class="hl-neuro">El NIHSS evalúa 11 ítems neurológicos. Es obligatorio calcularlo al ingreso. En isquémico determina elegibilidad para trombolisis (rango 4–25). En hemorrágico guía la intensidad del manejo y el pronóstico.</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Contraindicación</th><th>Tipo</th></tr>
-        <tr><td>Hemorragia intracraneal previa (cualquier tipo)</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>ACV isquémico en los últimos 3 meses</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Cirugía mayor o trauma grave en los últimos 14 días</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Neoplasia intracraneal o malformación vascular</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Sangrado activo o diátesis hemorrágica</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Plaquetas &lt;100.000 / mm³</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Anticoagulación con RIN &gt;1,7</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Glucemia &lt;50 o &gt;400 mg/dl al ingreso</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>NIHSS &gt;25 (ACV muy grave)</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>TA &gt;185/110 mmHg que no baja con tratamiento</td><td><span class="badge-no">Absoluta</span></td></tr>
-        <tr><td>Edad &gt;80 años (ventana 3–4,5h)</td><td><span class="badge-warn" style="background:#FAEEDA;color:#854F0B;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;">Relativa</span></td></tr>
-        <tr><td>Embarazo</td><td><span class="badge-warn" style="background:#FAEEDA;color:#854F0B;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;">Relativa</span></td></tr>
+        <tr><th>Puntaje NIHSS</th><th>Gravedad</th><th class="isq">En isquémico</th><th class="hem">En hemorrágico</th></tr>
+        <tr><td>0</td><td>Sin déficit</td><td>ACV silente o resuelto / AIT</td><td>Hematoma pequeño o incidental</td></tr>
+        <tr><td>1–4</td><td>Leve</td><td>Considerar trombolisis si déficit discapacitante</td><td>Tratamiento médico; monitoreo</td></tr>
+        <tr><td>5–15</td><td>Moderado</td><td>Candidato a trombolisis y/o trombectomía</td><td>UCI neurológica; control seriado con TAC</td></tr>
+        <tr><td>16–20</td><td>Moderado-severo</td><td>Mayor riesgo hemorrágico con trombolisis</td><td>Evaluar cirugía según localización y volumen</td></tr>
+        <tr><td>más de 25</td><td>Severo</td><td>Fuera del criterio de trombolisis IV</td><td>Cuidados intensivos; considerar limitación terapéutica</td></tr>
       </table>
     </div>
   </div>
 
-  <!-- COMPLICACIONES -->
   <div class="seccion">
-    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="sec-titulo">🔍 Etiologías — TOAST (isquémico) y causas del hemorrágico</div>
+    <div class="dos-col">
+      <div class="col-isq">
+        <div class="col-titulo isq">🟦 Clasificación TOAST — isquémico</div>
+        <div class="col-item"><strong>Aterotrombótico:</strong> placa en gran vaso — estenosis mayor a 50% en carótida o vertebral</div>
+        <div class="col-item"><strong>Cardioembólico:</strong> trombo cardíaco — FA la más frecuente</div>
+        <div class="col-item"><strong>Lacunar:</strong> lipohialinosis de arterias perforantes — HTA + DBT · lesión menor a 15mm</div>
+        <div class="col-item"><strong>Causa inhabitual:</strong> disección, vasculitis, trombofilias, drogas</div>
+        <div class="col-item"><strong>Criptogénico:</strong> estudio completo negativo — 30% de los casos</div>
+      </div>
+      <div class="col-hem">
+        <div class="col-titulo hem">🟥 Causas del hemorrágico</div>
+        <div class="col-item"><strong>HTA crónica (60%):</strong> lipohialinosis de arterias perforantes → ganglios basales, tálamo, cerebelo, tronco</div>
+        <div class="col-item"><strong>Angiopatía amiloide:</strong> adulto mayor, lóbulos cerebrales, puede ser recurrente</div>
+        <div class="col-item"><strong>Anticoagulantes:</strong> warfarina y ACOD — riesgo aumentado con sobredosis</div>
+        <div class="col-item"><strong>MAV / aneurisma:</strong> más frecuente en jóvenes — HSA aneurismática</div>
+        <div class="col-item"><strong>Tumor / cavernoma:</strong> sangrado de lesión subyacente</div>
+        <div class="col-item"><strong>Drogas:</strong> cocaína, anfetaminas — vasoconstricción y HTA aguda</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones — las más importantes por tipo</div>
     <div class="tabla-wrap">
       <table>
-        <tr><th>Complicación</th><th>Dato clave</th><th>Manejo</th></tr>
-        <tr><td><strong>Transformación hemorrágica</strong></td><td>Complicación más temida post-trombolisis (5–7% sintomática)</td><td>Suspender rtPA, TAC urgente, soporte</td></tr>
-        <tr><td><strong>Edema cerebral maligno</strong></td><td>Infarto ACM extenso — deterioro a las 48–96h</td><td>Craniectomía descompresiva reduce mortalidad en &lt;60 años</td></tr>
-        <tr><td><strong>Transformación en hemorrágico</strong></td><td>Más frecuente en infartos grandes y FA</td><td>TAC de control, ajuste de anticoagulación</td></tr>
-        <tr><td><strong>Crisis convulsivas</strong></td><td>3–5% en fase aguda — lorazepam IV en agudo</td><td>No profilaxis anticonvulsivante de rutina</td></tr>
-        <tr><td><strong>Neumonía aspirativa</strong></td><td>Frecuente por disfagia — evaluar deglución antes de VO</td><td>Fonoaudiología, posición, SNG si necesario</td></tr>
-        <tr><td><strong>TVP / TEP</strong></td><td>Por inmovilización — profilaxis con HBPM a las 24–48h</td><td>Enoxaparina 40 mg/día SC</td></tr>
-        <tr><td><strong>Depresión post-ACV</strong></td><td>30–40% de los pacientes — impacta en rehabilitación</td><td>Antidepresivos + rehabilitación</td></tr>
+        <tr><th>Complicación</th><th>Tipo de ACV</th><th>Manejo clave</th></tr>
+        <tr><td><strong>Transformación hemorrágica</strong></td><td><span class="badge-isq">Isquémico</span></td><td>Complicación más temida del rtPA (5–7% sintomática) — suspender, TAC urgente, soporte</td></tr>
+        <tr><td><strong>Expansión del hematoma</strong></td><td><span class="badge-hem">Hemorrágico</span></td><td>Primeras 3–6 h (20–30% de los casos) — control intensivo de TA, revertir anticoagulación</td></tr>
+        <tr><td><strong>Vasoespasmo cerebral</strong></td><td><span class="badge-hem">HSA</span></td><td>Días 4–14 post-HSA — nimodipina, euvolemia, evitar hipotensión, doppler transcraneal</td></tr>
+        <tr><td><strong>Hidrocefalia aguda</strong></td><td><span class="badge-hem">Hemorrágico</span></td><td>Por obstrucción del flujo de LCR — derivación ventricular externa (DVE) urgente</td></tr>
+        <tr><td><strong>Edema cerebral maligno</strong></td><td><span class="badge-isq">Isquémico</span></td><td>Infarto ACM extenso · 48–96h · craniectomía descompresiva si menor de 60 años</td></tr>
+        <tr><td><strong>Resangrado aneurismático</strong></td><td><span class="badge-hem">HSA</span></td><td>Hasta 15% en primeras 24 h — clipado o coil del aneurisma lo antes posible</td></tr>
+        <tr><td><strong>Crisis convulsivas</strong></td><td>Ambos</td><td>Más frecuente en hemorrágico cortical — lorazepam IV en agudo; no profilaxis de rutina en isquémico</td></tr>
+        <tr><td><strong>Neumonía aspirativa</strong></td><td>Ambos</td><td>Evaluar deglución antes de VO — SNG, fonoaudiología</td></tr>
       </table>
     </div>
   </div>
 
-  <!-- ETIOLOGÍA TOAST -->
   <div class="seccion">
-    <div class="sec-titulo">🔍 Clasificación etiológica — TOAST</div>
-    <div class="tabla-wrap">
-      <table>
-        <tr><th>Subtipo</th><th>Mecanismo</th><th>Estudio clave</th></tr>
-        <tr><td><strong>Aterotrombótico (gran vaso)</strong></td><td>Placa aterosclerótica en carótida o vertebral — estenosis &gt;50%</td><td>Eco-Doppler carotídeo / Angio-TAC</td></tr>
-        <tr><td><strong>Cardioembólico</strong></td><td>Trombo de origen cardíaco — FA la más frecuente</td><td>ECG, Holter, ecocardiograma</td></tr>
-        <tr><td><strong>Lacunar (pequeño vaso)</strong></td><td>Lipohialinosis de arterias perforantes — HTA y DBT</td><td>RM con DWI — lesión &lt;15mm en ganglios basales</td></tr>
-        <tr><td><strong>Causa inhabitual</strong></td><td>Disección arterial, vasculitis, trombofilias, drogas</td><td>Según sospecha clínica</td></tr>
-        <tr><td><strong>Criptogénico</strong></td><td>Estudio completo sin causa identificada — 30% de los casos</td><td>Holter prolongado para FA paroxística</td></tr>
-      </table>
+    <div class="sec-titulo">🏥 Medidas generales en internación — comunes a ambos tipos</div>
+    <div class="farma-card">
+      <div class="farma-detalle">
+        <strong>Glucemia:</strong> mantener 140–180 mg/dl — tratar hipo e hiperglucemia (empeoran pronóstico en ambos tipos).<br>
+        <strong>Temperatura:</strong> tratar fiebre mayor a 37,5°C con paracetamol — la fiebre aumenta el daño neuronal.<br>
+        <strong>Saturación O₂:</strong> mantener 94% o más — O₂ suplementario solo si hipoxemia.<br>
+        <strong>Posición:</strong> isquémico → cabecera a 0° las primeras horas (mejora perfusión de la penumbra); hemorrágico → a 30° (reduce PIC).<br>
+        <strong>Profilaxis TVP:</strong> isquémico → HBPM a las 24–48h; hemorrágico → medias de compresión hasta que sea seguro anticoagular.<br>
+        <strong>Unidad de ACV:</strong> la internación en unidad especializada reduce mortalidad y discapacidad en <strong>ambos tipos</strong>.
+      </div>
     </div>
   </div>
 
-  <!-- EXAMEN -->
   <div class="seccion">
     <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
     <div class="pill-list">
-      <span class="pill">¿Qué es la penumbra isquémica?</span>
-      <span class="pill">Ventana de trombolisis IV (4,5h)</span>
-      <span class="pill">Dosis de rtPA — fórmula exacta</span>
-      <span class="pill">¿Por qué no bajar la TA sin trombolisis?</span>
-      <span class="pill">NIHSS — rango para trombolisis (4–25)</span>
-      <span class="pill">ASPECTS — qué indica y punto de corte</span>
-      <span class="pill">Diferencia trombolisis vs trombectomía</span>
-      <span class="pill">Contraindicaciones absolutas del rtPA</span>
-      <span class="pill">¿Cuándo anticoagular en FA post-ACV?</span>
-      <span class="pill">Clasificación TOAST — 5 subtipos</span>
-      <span class="pill">AIT — ¿cuándo se diferencia del ACV?</span>
-      <span class="pill">¿Cuándo dar AAS post-trombolisis?</span>
-      <span class="pill">Ventana extendida para trombectomía (24h)</span>
-      <span class="pill">Complicación más temida de la trombolisis</span>
-      <span class="pill">¿Qué es el ACV del despertar?</span>
-      <span class="pill">Glucemia: ¿por qué importa en el ACV agudo?</span>
+      <span class="pill">¿Qué porcentaje son isquémicos vs hemorrágicos? (80/20)</span>
+      <span class="pill">¿Por qué la TAC es obligatoria antes de tratar?</span>
+      <span class="pill">Signo más sugestivo de hemorragia — cefalea en trueno</span>
+      <span class="pill">Ventana de trombolisis IV (4,5h) — solo isquémico</span>
+      <span class="pill">Dosis de rtPA — 0,9 mg/kg, máx 90 mg</span>
+      <span class="pill">¿Por qué NO bajar TA en isquémico sin trombolisis?</span>
+      <span class="pill">¿Por qué SÍ bajar TA en hemorrágico? — meta menos de 140 mmHg</span>
+      <span class="pill">Nimodipina: ¿en qué tipo? Solo HSA — nunca en HIC</span>
+      <span class="pill">Revertir warfarina en hemorrágico: vitamina K + CCP</span>
+      <span class="pill">Idarucizumab — para revertir dabigatrán</span>
+      <span class="pill">NIHSS rango para trombolisis (4–25)</span>
+      <span class="pill">ASPECTS — punto de corte para trombolisis (más de 7)</span>
+      <span class="pill">Clasificación TOAST — 5 subtipos del isquémico</span>
+      <span class="pill">¿Cuándo anticoagular en FA post-ACV? (4–14 días)</span>
+      <span class="pill">AIT — mismos síntomas, misma urgencia, menos de 24 h de duración</span>
+      <span class="pill">Vasoespasmo en HSA — días 4–14, nimodipina VO</span>
+      <span class="pill">Craniectomía descompresiva — infarto maligno ACM, menor de 60 años</span>
+      <span class="pill">Complicación más temida del rtPA (transformación hemorrágica)</span>
+      <span class="pill">HIC por HTA: ubicación más frecuente — ganglios basales</span>
+      <span class="pill">HSA aneurismática: arteria más afectada — comunicante anterior</span>
     </div>
   </div>
 
   <div class="fuente">
-    Fuentes: Protocolo de Manejo Inicial del ACV Isquémico Agudo · Ministerio de Salud de la Nación Argentina. Consenso sobre ACV Isquémico Agudo · Sociedad Neurológica Argentina (SNA), Sociedad Argentina de Cardiología (SAC), Sociedad Argentina de Terapia Intensiva (SATI) · Medicina Buenos Aires 2019 (Suplemento 2).<br>
+    Fuentes: Protocolo de Manejo Inicial del ACV Isquémico Agudo · Ministerio de Salud de la Nación Argentina. Consenso sobre ACV Isquémico Agudo · Sociedad Neurológica Argentina (SNA), Sociedad Argentina de Cardiología (SAC), Sociedad Argentina de Terapia Intensiva (SATI) · Medicina Buenos Aires 2019. Guías para el manejo de la Hemorragia Intracerebral Espontánea · AHA/ASA 2022. Guías para el manejo de la Hemorragia Subaracnoidea Aneurismática · AHA/ASA 2023.<br>
     El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
   </div>
 </div>
 
 <footer>
-  <p>Medpedia · <a href="../index.html">Volver al inicio</a></p>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
 </footer>
 
 </body>
