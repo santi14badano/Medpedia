@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer de Mama — Medpedia</title>
+  <meta name="description" content="Cáncer de mama: factores de riesgo, clasificación molecular, estadificación TNM, diagnóstico y tratamiento. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --onco: #6A0DAD; --onco-claro: #F3E8FC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco { background: #FCE4EC; color: #880E4F; }
+    .tag-onco   { background: var(--onco-claro); color: var(--onco); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-onco { font-size: 16px; font-weight: 500; color: var(--onco); margin-bottom: 12px; }
+    .sec-titulo-gin  { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .sec-titulo-hpp  { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-verde{ font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-onco  { border-left: 3px solid var(--onco); background: var(--onco-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--onco); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--onco); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .mol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .mol-grid { grid-template-columns: 1fr; } }
+    .mol-card { border-radius: 12px; padding: 1rem 1.2rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .mol-titulo { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+    .mol-a .mol-titulo { color: #2e7d32; }
+    .mol-b .mol-titulo { color: var(--gin); }
+    .mol-c .mol-titulo { color: var(--onco); }
+    .mol-d .mol-titulo { color: var(--hpp); }
+    .mol-a { border-color: #a8d8a8; background: #f0faf0; }
+    .mol-b { border-color: #a8c8e8; background: var(--gin-claro); }
+    .mol-c { border-color: #d4a8e8; background: var(--onco-claro); }
+    .mol-d { border-color: #e8b4b0; background: var(--hpp-claro); }
+    .mol-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .birads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .birads-grid { grid-template-columns: 1fr 1fr; } }
+    .birads-card { border-radius: 10px; padding: 0.8rem; text-align: center; background: var(--blanco); border: 1px solid var(--borde); }
+    .birads-num { font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+    .birads-desc { font-size: 11px; color: var(--texto-sec); }
+    .b0 .birads-num { color: var(--texto-sec); }
+    .b1 .birads-num { color: #2e7d32; }
+    .b2 .birads-num { color: #2e7d32; }
+    .b3 .birads-num { color: #D4730A; }
+    .b4 .birads-num { color: var(--hpp); }
+    .b5 .birads-num { color: var(--hpp-oscuro); }
+    .b6 .birads-num { color: var(--onco); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Cáncer de Mama</div>
+  <div class="titulo">Cáncer de Mama</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Ginecología</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">NCCN 2024 · ASCO 2023 · INC Argentina · Ministerio de Salud</span>
+  </div>
+
+  <!-- EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología</div>
+    <div class="hl-onco"><strong>El cáncer de mama es el tumor maligno más frecuente en la mujer</strong> y la primera causa de muerte por cáncer en mujeres en Argentina y en el mundo. Incidencia en Argentina: ~21.000 casos nuevos por año. La supervivencia a 5 años es >90% si se diagnostica en estadio I.</div>
+    <div class="hl-warn">⚠️ El 75% de los cánceres de mama ocurren en mujeres <strong>sin factores de riesgo identificables</strong>. El screening poblacional es clave porque no se puede predecir quién lo va a tener.</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Riesgo relativo / Detalle</th></tr>
+        <tr><td><strong>Mutación BRCA1/BRCA2</strong></td><td>BRCA1: riesgo acumulado de cáncer de mama 60–80%. BRCA2: 40–70%. Mayor riesgo también de cáncer de ovario</td></tr>
+        <tr><td><strong>Antecedente familiar de 1er grado</strong></td><td>RR 2–3×. Mayor si es bilateral, premenopáusico o en varón</td></tr>
+        <tr><td><strong>Antecedente personal de Ca de mama</strong></td><td>RR 3–4× para tumor contralateral</td></tr>
+        <tr><td><strong>Edad (>50 años)</strong></td><td>Principal FR no modificable. 80% de los casos en >50 años</td></tr>
+        <tr><td><strong>Densidad mamaria aumentada</strong></td><td>Mama densa: mayor riesgo y menor sensibilidad de la mamografía</td></tr>
+        <tr><td><strong>Menarquia precoz / menopausia tardía</strong></td><td>Mayor exposición acumulada a estrógenos</td></tr>
+        <tr><td><strong>Nuliparidad / primer parto tardío (>30 años)</strong></td><td>Menor efecto protector de la lactancia y los embarazos</td></tr>
+        <tr><td><strong>TRH (terapia de reemplazo hormonal)</strong></td><td>TRH combinada (estrógenos + progestágenos) por >5 años: RR ~1,5</td></tr>
+        <tr><td><strong>Obesidad postmenopáusica</strong></td><td>Tejido adiposo → aromatización → mayor producción de estrógenos</td></tr>
+        <tr><td><strong>Consumo de alcohol</strong></td><td>Dosis-dependiente. Incluso consumo moderado aumenta el riesgo</td></tr>
+        <tr><td><strong>Irradiación torácica previa</strong></td><td>Ej. radioterapia por linfoma de Hodgkin en la adolescencia</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Factores protectores:</strong> lactancia materna prolongada, multiparidad, actividad física regular, menopausia precoz, mastectomía profiláctica en BRCA+.</div>
+  </div>
+
+  <!-- CLASIFICACIÓN MOLECULAR -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">🧬 Clasificación molecular — la que importa para el tratamiento</div>
+    <div class="mol-grid">
+      <div class="mol-card mol-a">
+        <div class="mol-titulo">Luminal A</div>
+        <div class="mol-desc">RE+ y/o RP+, HER2−, Ki67 bajo. Tumor bien diferenciado. Mejor pronóstico. Solo hormonoterapia. No se beneficia de quimioterapia.</div>
+      </div>
+      <div class="mol-card mol-b">
+        <div class="mol-titulo">Luminal B</div>
+        <div class="mol-desc">RE+ y/o RP+, HER2+ o Ki67 alto. Peor pronóstico que Luminal A. Requiere hormonoterapia ± quimioterapia ± trastuzumab si HER2+.</div>
+      </div>
+      <div class="mol-card mol-c">
+        <div class="mol-titulo">HER2 enriquecido</div>
+        <div class="mol-desc">RE−, RP−, HER2+. Comportamiento agresivo. Tratamiento: quimioterapia + trastuzumab (anticuerpo anti-HER2). Buen pronóstico si recibe terapia dirigida.</div>
+      </div>
+      <div class="mol-card mol-d">
+        <div class="mol-titulo">Triple negativo (TNBC)</div>
+        <div class="mol-desc">RE−, RP−, HER2−. Más frecuente en mujeres jóvenes y portadoras de BRCA1. Peor pronóstico. Solo quimioterapia (no responde a hormonoterapia ni anti-HER2). Alta asociación con BRCA1.</div>
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Triple negativo y BRCA</div>
+      El cáncer de mama triple negativo tiene alta asociación con mutación BRCA1. Toda paciente joven (&lt;60 años) con cáncer triple negativo debe recibir consejería genética y testeo para BRCA1/2.
+    </div>
+  </div>
+
+  <!-- SCREENING -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">🔍 Screening — detección precoz</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Población</th><th>Recomendación (Argentina / INC)</th></tr>
+        <tr><td>Riesgo promedio, 40–74 años</td><td><strong>Mamografía bilateral anual o bienal</strong> (según guía; en Argentina se recomienda anual desde los 40)</td></tr>
+        <tr><td>BRCA1/2 positiva o riesgo alto</td><td>Mamografía + RMN de mama anual desde los 25–30 años</td></tr>
+        <tr><td>Antecedente de irradiación torácica ≤30 años</td><td>RMN + mamografía anual desde 8 años después de la RT</td></tr>
+        <tr><td>Autoexamen mamario</td><td>No se recomienda como método de screening (baja especificidad), pero la concientización es útil</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Sistema BI-RADS (Breast Imaging Reporting and Data System)</div>
+    <div class="birads-grid">
+      <div class="birads-card b0"><div class="birads-num">0</div><div class="birads-desc">Incompleto — necesita evaluación adicional</div></div>
+      <div class="birads-card b1"><div class="birads-num">1</div><div class="birads-desc">Negativo — sin hallazgos. Control en 12 meses</div></div>
+      <div class="birads-card b2"><div class="birads-num">2</div><div class="birads-desc">Benigno — hallazgos claramente benignos. Control en 12 meses</div></div>
+      <div class="birads-card b3"><div class="birads-num">3</div><div class="birads-desc">Probablemente benigno — &lt;2% malignidad. Control en 6 meses</div></div>
+      <div class="birads-card b4"><div class="birads-num">4</div><div class="birads-desc">Sospechoso — 2–95% malignidad. <strong>Biopsia</strong></div></div>
+      <div class="birads-card b5"><div class="birads-num">5</div><div class="birads-desc">Altamente sugestivo de malignidad — >95%. <strong>Biopsia</strong></div></div>
+      <div class="birads-card b6"><div class="birads-num">6</div><div class="birads-desc">Malignidad conocida (ya tiene biopsia positiva)</div></div>
+    </div>
+    <div class="hl-danger">🔴 BI-RADS 4 y 5 → biopsia obligatoria. <strong>Nunca operar sin confirmación histológica previa.</strong></div>
+  </div>
+
+  <!-- CLÍNICA Y DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🏥 Clínica y diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Hallazgo</th><th>Significado clínico</th></tr>
+        <tr><td><strong>Nódulo mamario duro, irregular, no doloroso, adherido</strong></td><td>Signo más frecuente de cáncer. La ausencia de dolor NO tranquiliza</td></tr>
+        <tr><td><strong>Retracción del pezón</strong></td><td>Invasión de los conductos galactóforos → tracción hacia adentro</td></tr>
+        <tr><td><strong>Piel en "piel de naranja"</strong></td><td>Edema dérmico por obstrucción linfática → aspecto naranja. Signo de afectación avanzada o cáncer inflamatorio</td></tr>
+        <tr><td><strong>Descarga por pezón sanguinolenta o serosanguinolenta unilateral</strong></td><td>Sospechosa de malignidad. La descarga bilateral lechosa es más frecuentemente benigna (galactorrea)</td></tr>
+        <tr><td><strong>Adenopatías axilares</strong></td><td>Metástasis ganglionares. Ganglio centinela como primer eslabón</td></tr>
+        <tr><td><strong>Enfermedad de Paget del pezón</strong></td><td>Eccema eritematoso del pezón/aréola que no cura → siempre carcinoma subyacente hasta demostrar lo contrario</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Estudio diagnóstico</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Mamografía bilateral:</strong> primera imagen en mujeres ≥40 años. Evaluar densidad, microcalcificaciones, nódulos, distorsión arquitectural.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Ecografía mamaria:</strong> complementaria a la mamografía. De elección en &lt;35 años (mama densa). Diferencia quiste de nódulo sólido. No reemplaza la mamografía.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>RMN de mama:</strong> mayor sensibilidad. Indicada en BRCA+, mama densa, implantes, estadificación local prequirúrgica, seguimiento post-tratamiento conservador.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Biopsia (core biopsy o BAG):</strong> confirma diagnóstico histológico. Determina tipo, grado y receptores (RE, RP, HER2, Ki67). Imprescindible antes de cualquier tratamiento.</div>
+    </div>
+  </div>
+
+  <!-- ESTADIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">📊 Estadificación TNM simplificada</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>Descripción</th><th>Supervivencia 5 años</th></tr>
+        <tr><td><strong>0</strong></td><td>In situ (DCIS o LCIS) — sin invasión</td><td>>99%</td></tr>
+        <tr><td><strong>I</strong></td><td>Tumor ≤2 cm, sin ganglios (N0)</td><td>~99%</td></tr>
+        <tr><td><strong>II</strong></td><td>Tumor 2–5 cm ± ganglios axilares móviles</td><td>~85–90%</td></tr>
+        <tr><td><strong>III</strong></td><td>Tumor >5 cm o ganglios fijos o afectación de piel/pared torácica</td><td>~50–70%</td></tr>
+        <tr><td><strong>IV</strong></td><td>Metástasis a distancia (hueso, pulmón, hígado, cerebro)</td><td>~25%</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 Las metástasis óseas son las más frecuentes en cáncer de mama (50–70% de los casos metastásicos). Le siguen pulmón, hígado y cerebro.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">💊 Tratamiento — principios generales</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cirugía</div>
+      <div class="farma-clase">Pilar del tratamiento en estadios I–III</div>
+      <div class="dosis-badge">Tumorectomía + radioterapia = mastectomía en supervivencia (estadios I-II)</div>
+      <div class="farma-detalle">
+        <strong>Cirugía conservadora (tumorectomía/cuadrantectomía):</strong> resección del tumor con márgenes libres. Requiere radioterapia postoperatoria obligatoria. Equivalent en supervivencia a la mastectomía en estadios I–II. <strong>Mastectomía:</strong> indicada si tumor grande, multicéntrico, márgenes comprometidos reiterados, contraindicación de RT o preferencia de la paciente. <strong>Ganglio centinela:</strong> biopsia del primer ganglio de drenaje axilar. Si negativo → evita la disección axilar completa y sus morbilidades (linfedema).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Radioterapia</div>
+      <div class="farma-clase">Complementaria a la cirugía conservadora · Siempre post-tumorectomía</div>
+      <div class="dosis-badge">RT sobre la mama residual ± axila ± cadenas ganglionares según estadio</div>
+      <div class="farma-detalle">
+        Reduce el riesgo de recurrencia local en un 70%. Obligatoria tras cirugía conservadora. También indicada post-mastectomía en tumores T3–T4 o con ≥4 ganglios positivos.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hormonoterapia — tumores RE+ / RP+</div>
+      <div class="farma-clase">Luminal A y B · Duración: 5–10 años</div>
+      <div class="dosis-badge">Tamoxifeno 20 mg/día (premenopáusicas) · Inhibidores de aromatasa (postmenopáusicas)</div>
+      <div class="farma-detalle">
+        <strong>Tamoxifeno:</strong> modulador selectivo del receptor estrogénico (SERM). Premenopáusicas y postmenopáusicas. Efectos adversos: sofocos, riesgo de TVP, hiperplasia endometrial (→ vigilancia endometrial). <strong>Inhibidores de aromatasa (anastrozol, letrozol, exemestano):</strong> solo en postmenopáusicas. Bloquean la conversión periférica de andrógenos a estrógenos. Superiores al tamoxifeno en postmenopáusicas. Efecto adverso: artralgia, osteoporosis.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Trastuzumab (Herceptin)</div>
+      <div class="farma-clase">Anti-HER2 · Tumores HER2+ · Anticuerpo monoclonal</div>
+      <div class="dosis-badge">IV cada 3 semanas × 12 meses (adyuvante)</div>
+      <div class="farma-detalle">
+        Anticuerpo monoclonal anti-HER2. Transforma el pronóstico de los tumores HER2+ (antes de muy mal pronóstico). <strong>Cardiotoxicidad:</strong> monitorear FEVI antes y durante el tratamiento. Contraindicado si FEVI &lt;55% o IC. No confundir con pertuzumab (anti-HER2 diferente, usado en combinación con trastuzumab en HER2+ metastásico).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia</div>
+      <div class="farma-clase">Neoadyuvante o adyuvante según estadio y subtipo molecular</div>
+      <div class="dosis-badge">Antraciclinas (AC) + Taxanos (paclitaxel/docetaxel) — esquema más usado</div>
+      <div class="farma-detalle">
+        <strong>Neoadyuvante:</strong> antes de la cirugía, para reducir el tumor (permite cirugía conservadora en tumores inicialmente grandes) y evaluar respuesta. <strong>Adyuvante:</strong> después de la cirugía, para eliminar micrometástasis. Indicada en: triple negativo, HER2+ (con trastuzumab), luminal B de alto riesgo, ganglios positivos.
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Ca de mama: tumor maligno más frecuente en la mujer</span>
+      <span class="pill">75% ocurre sin factores de riesgo identificables</span>
+      <span class="pill">BRCA1: riesgo acumulado 60–80%</span>
+      <span class="pill">Triple negativo → alta asociación con BRCA1</span>
+      <span class="pill">Triple negativo → solo quimioterapia (no hormonoterapia ni anti-HER2)</span>
+      <span class="pill">Luminal A → solo hormonoterapia (mejor pronóstico)</span>
+      <span class="pill">HER2+ → trastuzumab</span>
+      <span class="pill">Trastuzumab: cardiotoxicidad → monitorear FEVI</span>
+      <span class="pill">BI-RADS 4 y 5 → biopsia obligatoria</span>
+      <span class="pill">Nunca operar sin biopsia previa</span>
+      <span class="pill">Tumorectomía + RT = mastectomía en supervivencia (estadio I-II)</span>
+      <span class="pill">Ganglio centinela negativo → no disección axilar</span>
+      <span class="pill">Piel de naranja → cáncer inflamatorio o avanzado</span>
+      <span class="pill">Enfermedad de Paget del pezón → carcinoma subyacente siempre</span>
+      <span class="pill">Tamoxifeno: riesgo de hiperplasia endometrial</span>
+      <span class="pill">Inhibidores de aromatasa: solo postmenopáusicas → artralgia + osteoporosis</span>
+      <span class="pill">Metástasis más frecuente: hueso (50–70%)</span>
+      <span class="pill">Screening Argentina: mamografía anual desde los 40 años</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: NCCN Clinical Practice Guidelines in Oncology: Breast Cancer. Version 4.2024 · ASCO Clinical Practice Guidelines. Adjuvant Endocrine Therapy for Women with Hormone Receptor–Positive Breast Cancer 2023 · Instituto Nacional del Cáncer (INC) Argentina. Recomendaciones para el tamizaje de cáncer de mama · Ministerio de Salud de la Nación Argentina. Guía de práctica clínica de cáncer de mama · Early Breast Cancer Trialists' Collaborative Group (EBCTCG). Lancet 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
