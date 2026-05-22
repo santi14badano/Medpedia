@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endometriosis — Medpedia</title>
+  <meta name="description" content="Endometriosis: fisiopatología, clasificación, clínica, diagnóstico y tratamiento médico-quirúrgico. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco { background: #FCE4EC; color: #880E4F; }
+    .tag-cronica { background: #EDE7F6; color: #4527A0; }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin  { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .sec-titulo-verde{ font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .sec-titulo-hpp  { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .estadio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .estadio-grid { grid-template-columns: 1fr; } }
+    .estadio-card { border-radius: 12px; padding: 1rem 1.2rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .estadio-titulo { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+    .e1 .estadio-titulo { color: #2e7d32; }
+    .e2 .estadio-titulo { color: #D4730A; }
+    .e3 .estadio-titulo { color: var(--hpp); }
+    .e4 .estadio-titulo { color: var(--hpp-oscuro); }
+    .e1 { border-color: #a8d8a8; }
+    .e2 { border-color: #f0c080; }
+    .e3 { border-color: #e8b4b0; }
+    .e4 { border-color: #922B21; }
+    .estadio-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .tríada { background: #EDE7F6; border: 1.5px solid #B39DDB; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+    .tríada-title { font-weight: 700; font-size: 13px; color: #4527A0; margin-bottom: 8px; }
+    .tríada-item { font-size: 14px; color: var(--texto); margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Endometriosis</div>
+  <div class="titulo">Endometriosis</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Ginecología</span>
+    <span class="tag tag-cronica">Enfermedad crónica</span>
+    <span class="tag tag-fuente">ESHRE 2022 · ACOG 2022 · Ministerio de Salud Argentina</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl"><strong>Endometriosis:</strong> presencia de tejido endometrial funcional (glándulas y estroma) fuera de la cavidad uterina. Este tejido ectópico responde a los ciclos hormonales → sangrado cíclico local → inflamación → fibrosis → adherencias.</div>
+    <div class="hl-warn">⚠️ Afecta al <strong>6–10% de las mujeres en edad reproductiva</strong> y hasta el 35–50% de las mujeres con infertilidad. El retraso diagnóstico promedio es de <strong>7–10 años</strong> desde el inicio de los síntomas.</div>
+    <div class="hl-info">💡 <strong>Teorías etiopatogénicas:</strong> la más aceptada es la de <strong>menstruación retrógrada de Sampson</strong> (reflujo de sangre menstrual por las trompas hacia la pelvis). No explica todos los casos → también intervienen factores inmunológicos, genéticos y de alteración de la implantación.</div>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🗂️ Clasificación — estadios ASRM (American Society for Reproductive Medicine)</div>
+    <div class="estadio-grid">
+      <div class="estadio-card e1">
+        <div class="estadio-titulo">Estadio I — Mínima</div>
+        <div class="estadio-desc">Implantes superficiales aislados, sin adherencias significativas. Sin endometrioma.</div>
+      </div>
+      <div class="estadio-card e2">
+        <div class="estadio-titulo">Estadio II — Leve</div>
+        <div class="estadio-desc">Implantes superficiales y profundos, adherencias perianexiales leves. Sin endometrioma.</div>
+      </div>
+      <div class="estadio-card e3">
+        <div class="estadio-titulo">Estadio III — Moderada</div>
+        <div class="estadio-desc">Implantes profundos múltiples, endometrioma ovárico pequeño (&lt;2 cm), adherencias moderadas.</div>
+      </div>
+      <div class="estadio-card e4">
+        <div class="estadio-titulo">Estadio IV — Grave</div>
+        <div class="estadio-desc">Endometrioma grande (>2 cm), adherencias densas, afectación de recto-sigma, tabique rectovaginal. Máxima distorsión anatómica.</div>
+      </div>
+    </div>
+    <div class="hl-info">💡 El estadio ASRM no correlaciona bien con la intensidad del dolor ni con la fertilidad. Una mujer con estadio I puede tener dolor incapacitante, y una con estadio IV puede ser asintomática.</div>
+  </div>
+
+  <!-- FORMAS CLÍNICAS -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">📍 Formas clínicas y localización</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Forma</th><th>Localización / Características</th></tr>
+        <tr><td><strong>Endometriosis peritoneal superficial</strong></td><td>Implantes sobre peritoneo pelviano, ligamentos uterosacros, fondo de saco de Douglas. Forma más frecuente</td></tr>
+        <tr><td><strong>Endometriosis ovárica (endometrioma)</strong></td><td>Quiste de ovario con contenido achocolatado ("quiste de chocolate"). Típico en ecografía: quiste de pared gruesa con contenido homogéneo hipoecogénico</td></tr>
+        <tr><td><strong>Endometriosis profunda infiltrante (EPI profunda)</strong></td><td>Implantes >5 mm de profundidad. Afecta tabique rectovaginal, ligamentos uterosacros, recto-sigma, vejiga, uréteres. Forma más grave y sintomática</td></tr>
+        <tr><td><strong>Adenomiosis</strong></td><td>Endometrio dentro del miometrio (forma especial). Útero aumentado de tamaño, globoso, doloroso. Menorragia + dismenorrea severa</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🩸 Clínica — tríada clásica</div>
+    <div class="tríada">
+      <div class="tríada-title">Tríada de endometriosis</div>
+      <div class="tríada-item">1. <strong>Dismenorrea</strong> — dolor menstrual progresivo, incapacitante, no responde bien a AINEs</div>
+      <div class="tríada-item">2. <strong>Dispareunia</strong> — dolor en las relaciones sexuales, especialmente en penetración profunda (afectación del fondo de saco)</div>
+      <div class="tríada-item">3. <strong>Infertilidad</strong> — presente en 35–50% de las pacientes. Multifactorial: adherencias, disfunción ovárica, ambiente peritoneal hostil</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma</th><th>Detalle</th></tr>
+        <tr><td><strong>Dismenorrea secundaria progresiva</strong></td><td>Empieza días antes de la menstruación y persiste durante ella. A diferencia de la dismenorrea primaria (que mejora con AINEs y con el tiempo), esta empeora progresivamente con los años</td></tr>
+        <tr><td><strong>Dispareunia profunda</strong></td><td>Dolor en penetración profunda → afectación del fondo de saco de Douglas o tabique rectovaginal</td></tr>
+        <tr><td><strong>Disquecia cíclica</strong></td><td>Dolor al defecar con la menstruación → afectación recto-sigma o tabique rectovaginal</td></tr>
+        <tr><td><strong>Disuria cíclica</strong></td><td>Síntomas urinarios con la menstruación → afectación vesical</td></tr>
+        <tr><td><strong>Menorragia</strong></td><td>Sangrado abundante. Más frecuente en adenomiosis asociada</td></tr>
+        <tr><td><strong>Dolor pelviano crónico</strong></td><td>Presente fuera del período menstrual en formas avanzadas</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ La <strong>dismenorrea secundaria progresiva que no responde a AINEs ni a ACO</strong> en una mujer en edad reproductiva debe hacer sospechar endometriosis hasta demostrar lo contrario.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔍 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Clínica:</strong> historia de dismenorrea progresiva + dispareunia + infertilidad. El diagnóstico clínico es suficiente para iniciar tratamiento empírico.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Ecografía transvaginal:</strong> método de imagen de primera línea. Detecta endometriomas (quistes achocolatados con contenido homogéneo hipoecogénico de pared gruesa) y adenomiosis. Baja sensibilidad para implantes peritoneales superficiales.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>RMN de pelvis:</strong> superior para endometriosis profunda infiltrante, afectación rectosigmoidea y tabique rectovaginal. Útil para planificación quirúrgica.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>CA-125:</strong> puede estar elevado pero es inespecífico (también sube en EPI, fibromas, cáncer de ovario). Útil para seguimiento, no para diagnóstico inicial.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Laparoscopía diagnóstica:</strong> gold standard histológico. Permite ver los implantes directamente y tomar biopsia. Ya no es obligatoria para iniciar tratamiento, pero es necesaria para confirmar el diagnóstico definitivo y tratar quirúrgicamente.</div>
+    </div>
+    <div class="hl-info">💡 Las guías actuales (ESHRE 2022) recomiendan iniciar tratamiento empírico ante cuadro clínico compatible, <strong>sin necesidad de confirmación laparoscópica previa</strong> si el diagnóstico es altamente probable.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">💊 Tratamiento</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Principio fundamental</div>
+      El tratamiento depende de: <strong>severidad de los síntomas + deseo de fertilidad + edad + extensión de la enfermedad</strong>. No existe cura definitiva — el objetivo es controlar síntomas y preservar fertilidad.
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Tratamiento médico — supresión hormonal</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Anticonceptivos orales combinados (ACO)</div>
+      <div class="farma-clase">Primera línea para control del dolor · No mejora fertilidad</div>
+      <div class="dosis-badge">Uso continuo (sin placebo) para evitar menstruación · Cualquier formulación</div>
+      <div class="farma-detalle">
+        Suprimen la ovulación y reducen el volumen menstrual → menos estimulación de los implantes. Uso continuo (sin semana de descanso) es más efectivo que el cíclico. Opción a largo plazo, bien tolerada. No erradica la enfermedad — los implantes regresan al suspender.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Progestágenos</div>
+      <div class="farma-clase">Primera línea alternativa · Muy efectivos para dolor</div>
+      <div class="dosis-badge">Dienogest 2 mg/día VO · Medroxiprogesterona 150 mg IM c/3 meses · DIU-LNG</div>
+      <div class="farma-detalle">
+        Dienogest: progestágeno oral con alta afinidad por receptores progesterónicos uterinos, bajo efecto androgénico. De primera elección en muchos centros. DIU-LNG (Mirena): muy efectivo para dismenorrea y menorragia, especialmente en adenomiosis. Medroxiprogesterona IM: económica, efectiva, pero puede causar irregularidades menstruales prolongadas.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Análogos de GnRH (GnRH agonistas)</div>
+      <div class="farma-clase">Segunda línea · Menopausia médica temporal</div>
+      <div class="dosis-badge">Leuprolide 3,75 mg IM mensual · Máximo 6 meses sin add-back · Con add-back puede extenderse</div>
+      <div class="farma-detalle">
+        Suprimen el eje hipotálamo-hipofisario → caída de estrógenos → "menopausia médica". Muy efectivos para reducir implantes y dolor. <strong>Efectos adversos:</strong> sofocos, pérdida de masa ósea, sequedad vaginal. Limitar a 6 meses sin terapia add-back (estrógenos + progestágenos a dosis bajas para proteger el hueso). No usar como primera línea por costo y efectos adversos.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">AINEs</div>
+      <div class="farma-clase">Sintomático · No modifica la enfermedad</div>
+      <div class="dosis-badge">Ibuprofeno 400–600 mg c/8 h · Naproxeno 500 mg c/12 h · Iniciar 1–2 días antes de la menstruación</div>
+      <div class="farma-detalle">
+        Útiles para el manejo del dolor agudo menstrual. No actúan sobre los implantes ni modifican la progresión. Siempre como complemento, nunca como tratamiento único en endometriosis establecida.
+      </div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Tratamiento quirúrgico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Indicación</th><th>Procedimiento</th></tr>
+        <tr><td>Endometrioma ovárico ≥3–4 cm</td><td>Cistectomía laparoscópica (quistectomía con stripping de la cápsula)</td></tr>
+        <tr><td>Endometriosis profunda sintomática refractaria</td><td>Laparoscopía con resección de implantes, shaving rectal, ureterolisis</td></tr>
+        <tr><td>Infertilidad + endometriosis</td><td>Laparoscopía + resección mejora tasas de embarazo espontáneo en estadio I-II. Estadio III-IV → FIV de elección</td></tr>
+        <tr><td>Fracaso del tratamiento médico + enfermedad severa</td><td>Histerectomía + salpingooforectomía bilateral (cirugía definitiva, solo si no desea fertilidad)</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 La <strong>cistectomía ovárica</strong> por endometrioma reduce la reserva ovárica (daño al parénquima ovárico durante el stripping). Evaluar reserva ovárica antes y considerar criopreservación de óvulos en pacientes que deseen fertilidad futura.</div>
+  </div>
+
+  <!-- ENDOMETRIOSIS E INFERTILIDAD -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">👶 Endometriosis e infertilidad</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>Conducta recomendada</th></tr>
+        <tr><td>Estadio I–II (mínima/leve)</td><td>Laparoscopía + resección/fulguración mejora tasas de embarazo espontáneo. Luego expectación 6–12 meses antes de FIV</td></tr>
+        <tr><td>Estadio III–IV (moderada/grave)</td><td>FIV de primera elección. La cirugía previa puede no mejorar las tasas y reduce reserva ovárica</td></tr>
+        <tr><td>Endometrioma &lt;4 cm + FIV planificada</td><td>No operar el endometrioma antes de la FIV (no mejora resultados y daña la reserva)</td></tr>
+        <tr><td>Endometrioma ≥4 cm</td><td>Considerar cirugía previa según síntomas, acceso folicular y reserva ovárica</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Tríada: dismenorrea + dispareunia + infertilidad</span>
+      <span class="pill">Tejido endometrial fuera del útero que responde al ciclo hormonal</span>
+      <span class="pill">Teoría más aceptada: menstruación retrógrada de Sampson</span>
+      <span class="pill">Gold standard diagnóstico: laparoscopía con biopsia</span>
+      <span class="pill">Imagen de elección: ecografía transvaginal</span>
+      <span class="pill">Endometrioma = "quiste de chocolate" achocolatado</span>
+      <span class="pill">CA-125 elevado pero inespecífico</span>
+      <span class="pill">Estadio IV no correlaciona con intensidad del dolor</span>
+      <span class="pill">Primera línea de tratamiento médico: ACO continuo o dienogest</span>
+      <span class="pill">GnRH agonistas: máximo 6 meses sin add-back</span>
+      <span class="pill">Dismenorrea progresiva que no responde a AINEs → sospechar endometriosis</span>
+      <span class="pill">Dispareunia profunda → afectación fondo de saco de Douglas</span>
+      <span class="pill">Disquecia cíclica → afectación recto-sigma</span>
+      <span class="pill">Cistectomía ovárica reduce reserva ovárica</span>
+      <span class="pill">Estadio III-IV + infertilidad → FIV de elección</span>
+      <span class="pill">Retraso diagnóstico promedio: 7–10 años</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ESHRE Endometriosis Guideline Development Group. Endometriosis. European Journal of Obstetrics & Gynecology and Reproductive Biology 2022 · ACOG Practice Bulletin No. 114: Management of Endometriosis. Obstet Gynecol 2022 · Ministerio de Salud de la Nación Argentina. Guías de diagnóstico y tratamiento ginecológico · American Society for Reproductive Medicine (ASRM). Endometriosis and infertility: a committee opinion. Fertil Steril 2021.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
