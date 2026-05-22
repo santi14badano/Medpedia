@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfermedad Pélvica Inflamatoria — Medpedia</title>
+  <meta name="description" content="Enfermedad pélvica inflamatoria (EPI): etiología, criterios diagnósticos, criterios de internación y tratamiento antibiótico. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco  { background: #FCE4EC; color: #880E4F; }
+    .tag-infecto { background: #E8F5E9; color: #2E7D32; }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hpp { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .sec-titulo-verde { font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .criterio-box { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+    .criterio-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .criterio-titulo.min { color: var(--verde-oscuro); }
+    .criterio-titulo.adic { color: var(--gin); }
+    .criterio-titulo.def { color: var(--hpp); }
+    .criterio-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; padding-left: 12px; }
+    .criterio-item::before { content: "•"; color: var(--verde); margin-right: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Enfermedad Pélvica Inflamatoria</div>
+  <div class="titulo">Enfermedad Pélvica Inflamatoria</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Ginecología</span>
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-fuente">CDC 2021 · SOGIBA · Ministerio de Salud Argentina</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y espectro</div>
+    <div class="hl"><strong>Enfermedad pélvica inflamatoria (EPI):</strong> síndrome clínico causado por la infección ascendente de microorganismos desde la vagina y el cuello uterino hacia el endometrio, trompas de Falopio, ovarios y peritoneo pelviano. Incluye endometritis, salpingitis, ooforitis, absceso tubo-ovárico (ATO) y peritonitis pélvica.</div>
+    <div class="hl-warn">⚠️ La EPI afecta principalmente a mujeres <strong>en edad reproductiva sexualmente activas</strong>. Es la causa más frecuente de dolor pelviano crónico, infertilidad tubárica y embarazo ectópico en la mujer.</div>
+  </div>
+
+  <!-- ETIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Etiología — infección polimicrobiana</div>
+    <div class="hl-info">💡 La EPI es casi siempre <strong>polimicrobiana</strong>. Los gérmenes ascienden desde la flora vaginal y cervical, solos o en combinación.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Germen</th><th>Frecuencia / Rol</th></tr>
+        <tr><td><strong>Neisseria gonorrhoeae</strong></td><td>Causa clásica. EPI aguda, severa. Más común en jóvenes con ETS. Co-infección con Chlamydia frecuente</td></tr>
+        <tr><td><strong>Chlamydia trachomatis</strong></td><td>Causa más frecuente actualmente en países desarrollados. EPI subaguda, a veces silente. Mayor daño tubárico a largo plazo</td></tr>
+        <tr><td><strong>Bacterias anaerobias</strong></td><td>Prevotella, Bacteroides. Rol importante en ATO. Cubrir siempre en tratamiento</td></tr>
+        <tr><td><strong>Gardnerella vaginalis / flora vaginal</strong></td><td>Microorganismos endógenos que ascienden. Vaginosis bacteriana como factor predisponente</td></tr>
+        <tr><td><strong>Mycoplasma genitalium</strong></td><td>Causa emergente. Asociado a EPI recurrente y resistencia a antibióticos habituales</td></tr>
+        <tr><td><strong>Enterobacterias (E. coli)</strong></td><td>Menos frecuente. Más en contexto de procedimientos invasivos o ATO complicado</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Detalle</th></tr>
+        <tr><td>Múltiples parejas sexuales</td><td>Principal FR modificable</td></tr>
+        <tr><td>Antecedente de ETS o EPI</td><td>Riesgo de recurrencia: 20–25%</td></tr>
+        <tr><td>Edad &lt;25 años</td><td>Conductas de riesgo + ectropión cervical → más vulnerable</td></tr>
+        <tr><td>DIU en el primer mes post-inserción</td><td>Riesgo relativo aumentado en las primeras 3 semanas. Luego el DIU per se no es FR</td></tr>
+        <tr><td>Procedimientos intrauterinos</td><td>Legrado, histerosalpingografía, histeroscopía → siembran gérmenes</td></tr>
+        <tr><td>Vaginosis bacteriana</td><td>Desequilibrio de flora → facilita ascenso de patógenos</td></tr>
+        <tr><td>No uso de preservativo</td><td>Protección de barrera ausente</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 Los anticonceptivos orales <strong>protegen</strong> contra la EPI (espesamiento del moco cervical → barrera mecánica). El DIU de cobre en uso crónico no aumenta el riesgo significativamente.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔍 Diagnóstico — Criterios CDC 2021</div>
+    <div class="hl-info">💡 Los CDC recomiendan <strong>tratar empíricamente</strong> si hay criterios mínimos, porque el infradiagnóstico tiene consecuencias a largo plazo (infertilidad, dolor crónico, ectópico). El umbral diagnóstico debe ser bajo.</div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo min">✅ Criterios mínimos (al menos 1 de los siguientes + exclusión de otra causa)</div>
+      <div class="criterio-item">Dolor a la movilización cervical (cervical motion tenderness)</div>
+      <div class="criterio-item">Dolor uterino a la palpación</div>
+      <div class="criterio-item">Dolor anexial a la palpación</div>
+    </div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo adic">📊 Criterios adicionales (aumentan la especificidad diagnóstica)</div>
+      <div class="criterio-item">Temperatura oral &gt;38,3°C</div>
+      <div class="criterio-item">Flujo vaginal anormal o secreción cervical mucopurulenta</div>
+      <div class="criterio-item">Leucocitosis en frotis vaginal (&gt;3 leucocitos por campo de alta potencia)</div>
+      <div class="criterio-item">Leucocitosis en sangre periférica</div>
+      <div class="criterio-item">PCR o eritrosedimentación elevadas</div>
+      <div class="criterio-item">Confirmación laboratorial de N. gonorrhoeae o C. trachomatis</div>
+    </div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo def">🔬 Criterios definitivos (cuando el diagnóstico es incierto)</div>
+      <div class="criterio-item">Laparoscopía con hallazgos compatibles (eritema, edema, exudado en trompas)</div>
+      <div class="criterio-item">Ecografía/RMN con engrosamiento de trompas llenas de líquido o ATO</div>
+      <div class="criterio-item">Biopsia de endometrio con endometritis histológica</div>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>Diagnóstico diferencial:</strong> apendicitis aguda (el más importante a no confundir), embarazo ectópico, quiste de ovario complicado, endometriosis, cistitis. Siempre descartar embarazo antes de iniciar tratamiento.</div>
+  </div>
+
+  <!-- COMPLICACIÓN: ATO -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Absceso tubo-ovárico (ATO)</div>
+    <div class="hl-hpp"><strong>ATO:</strong> complicación grave de la EPI. Colección purulenta que involucra la trompa, el ovario y estructuras adyacentes. Requiere internación obligatoria y tratamiento IV. Puede romperse → peritonitis séptica → emergencia quirúrgica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica del ATO</th><th>Detalle</th></tr>
+        <tr><td>Diagnóstico</td><td>Ecografía pelviana (masa anexial compleja con líquido interno). RMN si duda</td></tr>
+        <tr><td>Tratamiento inicial</td><td>Antibióticos IV + observación. Resolución médica en 70–80% si no hay rotura</td></tr>
+        <tr><td>Criterios de cirugía</td><td>Rotura (peritonitis), falta de respuesta a AB IV en 48–72 h, ATO >8–10 cm</td></tr>
+        <tr><td>Opciones quirúrgicas</td><td>Drenaje percutáneo guiado por ecografía, laparoscopía, laparotomía</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CRITERIOS DE INTERNACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🏥 Criterios de internación</div>
+    <div class="hl-danger">Internar si alguno de los siguientes:</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><td>Absceso tubo-ovárico (ATO)</td></tr>
+        <tr><td>Embarazo (puede ser EPI + ectópico)</td></tr>
+        <tr><td>No se puede descartar emergencia quirúrgica (apendicitis, ectópico)</td></tr>
+        <tr><td>Falta de respuesta a antibióticos orales en 72 horas</td></tr>
+        <tr><td>Intolerancia a la vía oral (náuseas, vómitos)</td></tr>
+        <tr><td>Enfermedad grave (fiebre alta, vómitos, dolor severo)</td></tr>
+        <tr><td>Inmunocompromiso (HIV, corticoterapia)</td></tr>
+        <tr><td>Adolescente (mayor riesgo de incumplimiento y secuelas)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">💊 Tratamiento antibiótico — CDC 2021</div>
+    <div class="hl-info">💡 El tratamiento siempre debe cubrir <strong>N. gonorrhoeae + C. trachomatis + anaerobios</strong>, independientemente del cultivo.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Régimen A — Ambulatorio (EPI leve-moderada sin ATO)</div>
+      <div class="farma-clase">Primera línea según CDC 2021</div>
+      <div class="dosis-badge">Ceftriaxona 500 mg IM dosis única + Doxiciclina 100 mg VO c/12 h × 14 días + Metronidazol 500 mg VO c/12 h × 14 días</div>
+      <div class="farma-detalle">
+        La ceftriaxona cubre N. gonorrhoeae (incluye cepas con menor sensibilidad a quinolonas). La doxiciclina cubre Chlamydia. El metronidazol cubre anaerobios y Gardnerella. <strong>Seguimiento obligatorio en 48–72 horas</strong> para verificar respuesta. Si no mejora → internar.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Régimen B — Internación (EPI grave o ATO)</div>
+      <div class="farma-clase">Vía parenteral hasta 24–48 h de mejoría clínica, luego completar vía oral</div>
+      <div class="dosis-badge">Cefoxitina 2 g IV c/6 h + Doxiciclina 100 mg IV/VO c/12 h</div>
+      <div class="farma-detalle">
+        Cefoxitina: cefalosporina de 2ª generación con buena cobertura anaeróbica. Continuar con Doxiciclina VO hasta completar 14 días total. <strong>Alternativa:</strong> Clindamicina 900 mg IV c/8 h + Gentamicina 3–5 mg/kg/día IV o 2 mg/kg dosis de carga + 1,5 mg/kg c/8 h.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Régimen alternativo — Si alergia a betalactámicos o no disponibilidad</div>
+      <div class="farma-clase">Alternativa documentada</div>
+      <div class="dosis-badge">Clindamicina 450 mg VO c/6 h × 14 días + Metronidazol 500 mg VO c/12 h × 14 días</div>
+      <div class="farma-detalle">
+        Cobertura reducida para gonococo. Solo si se descartó gonorrea por laboratorio. Agregar azitromicina 1 g VO dosis única para Chlamydia si no se usa doxiciclina.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Tratar siempre a la pareja sexual</div>
+      Todo contacto sexual de los últimos 60 días debe ser evaluado y tratado para ETS (gonorrea y Chlamydia), independientemente de los síntomas. Sin tratamiento de la pareja → reinfección garantizada.
+    </div>
+  </div>
+
+  <!-- SECUELAS -->
+  <div class="seccion">
+    <div class="sec-titulo">📉 Secuelas a largo plazo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Secuela</th><th>Mecanismo / Incidencia</th></tr>
+        <tr><td><strong>Infertilidad tubárica</strong></td><td>Adherencias + daño ciliar. 1 episodio de EPI: ~12% de infertilidad. 3 o más episodios: hasta 50–75%</td></tr>
+        <tr><td><strong>Embarazo ectópico</strong></td><td>Cicatrización tubárica → trompa permeable pero disfuncional. Riesgo 6–10× mayor</td></tr>
+        <tr><td><strong>Dolor pelviano crónico</strong></td><td>Adherencias pelvianas post-inflamatorias. Presente en ~18% a los 2 años del episodio</td></tr>
+        <tr><td><strong>EPI recurrente</strong></td><td>Daño cervical previo + reinfección. Riesgo 20–25% si no se trata la pareja</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 Cada episodio de EPI multiplica el daño tubárico. <strong>El diagnóstico y tratamiento precoz son la única forma de reducir las secuelas a largo plazo.</strong></div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">EPI: infección ascendente polimicrobiana (gonococo + Chlamydia + anaerobios)</span>
+      <span class="pill">Criterio mínimo: dolor a movilización cervical o uterina o anexial</span>
+      <span class="pill">Umbral diagnóstico bajo → tratar empíricamente</span>
+      <span class="pill">ATO → internación obligatoria siempre</span>
+      <span class="pill">Complicación grave: rotura de ATO → peritonitis → cirugía</span>
+      <span class="pill">Tratamiento ambulatorio: ceftriaxona + doxiciclina + metronidazol × 14 días</span>
+      <span class="pill">Siempre cubrir gonococo + Chlamydia + anaerobios</span>
+      <span class="pill">Siempre tratar a la pareja sexual</span>
+      <span class="pill">ACO → protegen contra EPI (moco cervical espeso)</span>
+      <span class="pill">DIU → riesgo aumentado solo en las primeras 3 semanas post-inserción</span>
+      <span class="pill">Secuelas: infertilidad tubárica + ectópico + dolor crónico</span>
+      <span class="pill">3 episodios de EPI → hasta 50–75% de infertilidad tubárica</span>
+      <span class="pill">DD más importante: apendicitis aguda</span>
+      <span class="pill">Seguimiento ambulatorio: 48–72 h para verificar respuesta</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Centers for Disease Control and Prevention (CDC). Sexually Transmitted Infections Treatment Guidelines, 2021. MMWR Recomm Rep 2021;70(4):1–187 · Workowski KA et al. Pelvic Inflammatory Disease. CDC STI Guidelines 2021 · Ministerio de Salud de la Nación Argentina. Guías de diagnóstico y tratamiento de infecciones de transmisión sexual · Sociedad de Obstetricia y Ginecología de Buenos Aires (SOGIBA). Guías de práctica clínica.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
