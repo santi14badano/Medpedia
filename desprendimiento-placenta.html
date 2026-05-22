@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desprendimiento de Placenta — Medpedia</title>
+  <meta name="description" content="Desprendimiento de placenta normoinserta (DPPNI): fisiopatología, clínica, diagnóstico y manejo de urgencia. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco  { background: #FCE4EC; color: #880E4F; }
+    .tag-emergencia { background: var(--hpp-claro); color: var(--hpp-oscuro); }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hpp { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hpp   { border-left: 3px solid var(--hpp); background: var(--hpp-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--hpp); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .grado-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grado-grid { grid-template-columns: 1fr; } }
+    .grado-card { border-radius: 12px; padding: 1rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .grado-0 { border-color: #a8d8a8; background: #f0faf0; }
+    .grado-1 { border-color: #f0c080; background: #FEF0DC; }
+    .grado-2 { border-color: #e8b4b0; background: var(--hpp-claro); }
+    .grado-3 { border-color: #922B21; background: #f8d7d7; }
+    .grado-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .grado-0 .grado-titulo { color: #2e7d32; }
+    .grado-1 .grado-titulo { color: #D4730A; }
+    .grado-2 .grado-titulo { color: var(--hpp); }
+    .grado-3 .grado-titulo { color: var(--hpp-oscuro); }
+    .grado-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Desprendimiento de Placenta Normoinserta</div>
+  <div class="titulo">Desprendimiento de Placenta Normoinserta</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Obstetricia</span>
+    <span class="tag tag-emergencia">Emergencia obstétrica</span>
+    <span class="tag tag-fuente">ACOG 2021 · Schwarcz 7ª ed. · Ministerio de Salud Argentina</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y fisiopatología</div>
+    <div class="hl-hpp"><strong>Desprendimiento prematuro de placenta normoinserta (DPPNI / abruptio placentae):</strong> separación total o parcial de una placenta correctamente implantada antes del nacimiento del feto. Ocurre generalmente en el 3er trimestre y constituye una emergencia obstétrica con alta morbimortalidad materno-fetal.</div>
+    <div class="hl-warn">La incidencia es de ~1 en 80 embarazos. Causa el <strong>15–25% de las muertes perinatales</strong> y es una de las principales causas de CID obstétrica.</div>
+    <div class="hl-info">💡 <strong>Fisiopatología:</strong> hemorragia en la decidua basal → hematoma retroplacentario → separación mecánica de la placenta → isquemia/infarto placentario → sufrimiento fetal. La sangre puede exteriorizarse (hemorragia externa) o quedar retenida (hemorragia oculta), lo que disociación entre la clínica y la magnitud real del sangrado visible.</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Detalle</th></tr>
+        <tr><td><strong>Hipertensión / Preeclampsia</strong></td><td>Principal FR. Vasculopatía → isquemia decidual → hemorragia. Presente en ~50% de los casos graves</td></tr>
+        <tr><td><strong>Antecedente de DPPNI</strong></td><td>Riesgo de recurrencia: 10–15% (15× el riesgo basal)</td></tr>
+        <tr><td><strong>Tabaquismo</strong></td><td>Vasoconstricción → isquemia placentaria. OR ~2</td></tr>
+        <tr><td><strong>Consumo de cocaína</strong></td><td>Vasospasmo agudo → separación brusca. Factor importante a no olvidar</td></tr>
+        <tr><td><strong>Traumatismo abdominal</strong></td><td>Accidentes de tránsito, violencia doméstica → separación mecánica brusca</td></tr>
+        <tr><td><strong>Multiparidad</strong></td><td>Útero con paredes más laxas → mayor inestabilidad</td></tr>
+        <tr><td><strong>Polihidramnios</strong></td><td>Descompresión brusca al romper membranas → separación súbita</td></tr>
+        <tr><td><strong>Trombofilia materna</strong></td><td>Déficit de proteína C/S, factor V Leiden → trombosis de vasos deciduales</td></tr>
+        <tr><td><strong>Edad materna avanzada</strong></td><td>Asociación independiente</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🩸 Clínica — tríada clásica</div>
+    <div class="hl-hpp">
+      <strong>Tríada de DPPNI:</strong><br>
+      1. <strong>Dolor abdominal súbito</strong> — en puñalada, continuo, de inicio brusco<br>
+      2. <strong>Hipertonía uterina</strong> — útero "en leño" (duro, doloroso, sin relajación entre contracciones)<br>
+      3. <strong>Hemorragia vaginal oscura</strong> — puede ser escasa o ausente (hematoma oculto)
+    </div>
+    <div class="hl-danger">⚠️ La hemorragia visible NO refleja la magnitud real de la pérdida sanguínea. En la forma oculta, toda la sangre queda retroplacentaria → shock sin hemorragia externa aparente. La hipovolemia puede ser grave con sangrado externo escaso.</div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Clasificación de Sher (gravedad)</div>
+    <div class="grado-grid">
+      <div class="grado-card grado-0">
+        <div class="grado-titulo">Grado 0</div>
+        <div class="grado-desc">Asintomático. Diagnóstico retrospectivo por coágulo retroplacentario en la placenta. Sin repercusión materna ni fetal.</div>
+      </div>
+      <div class="grado-card grado-1">
+        <div class="grado-titulo">Grado 1 (leve)</div>
+        <div class="grado-desc">Hemorragia vaginal leve, útero levemente irritable, sin compromiso materno ni fetal. La mayoría de los casos.</div>
+      </div>
+      <div class="grado-card grado-2">
+        <div class="grado-titulo">Grado 2 (moderado)</div>
+        <div class="grado-desc">Hemorragia moderada, hipertonía uterina, sufrimiento fetal (FCF alterada), signos de shock leve-moderado en la madre.</div>
+      </div>
+      <div class="grado-card grado-2" style="border-color:#922B21; background:#f8d7d7">
+        <div class="grado-titulo" style="color:#922B21">Grado 3 (grave)</div>
+        <div class="grado-desc">Hipertonía severa, muerte fetal, shock materno, CID. Forma más grave. Alta mortalidad materna sin tratamiento inmediato.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔍 Diagnóstico</div>
+    <div class="hl-info">💡 El DPPNI es fundamentalmente un <strong>diagnóstico clínico</strong>. No esperes a la ecografía para actuar si el cuadro clínico es claro.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo / Utilidad</th></tr>
+        <tr><td><strong>Clínica</strong></td><td>Tríada: dolor + hipertonía + hemorragia. Es el principal método diagnóstico</td></tr>
+        <tr><td><strong>Ecografía</strong></td><td>Puede mostrar hematoma retroplacentario (hiperecogénico en agudo, hipoecogénico después de horas). Sensibilidad BAJA (~50%) → la ecografía normal NO descarta DPPNI</td></tr>
+        <tr><td><strong>CTG (cardiotocografía)</strong></td><td>Sufrimiento fetal: desaceleraciones tardías, bradicardia, pérdida de variabilidad. Esencial para evaluar estado fetal</td></tr>
+        <tr><td><strong>Hemograma + coagulación</strong></td><td>Anemia, trombocitopenia, TP/KPTT prolongados, fibrinógeno bajo → sospecha de CID</td></tr>
+        <tr><td><strong>Fibrinógeno</strong></td><td>Primer factor en caer en CID obstétrica. &lt;200 mg/dL: CID establecida. &lt;400 mg/dL: riesgo aumentado</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 <strong>Ecografía negativa no descarta DPPNI.</strong> El hematoma retroplacentario puede ser isoecogénico con la placenta en las primeras horas. La decisión clínica no puede depender de la ecografía.</div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">⚡ Complicaciones — lo que el concurso pregunta</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Mecanismo</th><th>Marcador</th></tr>
+        <tr><td><strong>CID (coagulación intravascular diseminada)</strong></td><td>Liberación masiva de tromboplastina placentaria → activación de la coagulación → consumo de factores → sangrado incoagulable</td><td>Fibrinógeno ↓↓, plaquetas ↓, TP↑</td></tr>
+        <tr><td><strong>Útero de Couvelaire</strong></td><td>Sangre infiltra el miometrio → útero violáceo, no contráctil, no responde a uterotónicos</td><td>Diagnóstico intraoperatorio</td></tr>
+        <tr><td><strong>Shock hipovolémico</strong></td><td>Hemorragia masiva retroplacentaria ± externa</td><td>Clínico</td></tr>
+        <tr><td><strong>Necrosis tubular aguda / IRA</strong></td><td>Hipoperfusión renal sostenida</td><td>Creatinina ↑, oliguria</td></tr>
+        <tr><td><strong>Muerte fetal</strong></td><td>Desprendimiento ≥50% de la superficie placentaria</td><td>CTG, ecografía</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Útero de Couvelaire</div>
+      Infiltración hemorrágica del miometrio por sangre retroplacentaria bajo presión. Macroscópicamente el útero aparece equimótico, violáceo, tenso. Puede llegar a histerectomía si no contrae ni responde a uterotónicos. Es exclusivo del DPPNI grave.
+    </div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🚨 Manejo de urgencia</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>ABC + 2 vías periféricas gruesas:</strong> hidratación agresiva con cristaloides, oxígeno, monitoreo continuo de signos vitales y diuresis.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Laboratorio urgente:</strong> hemograma completo, coagulograma, fibrinógeno, función renal, grupo y factor, pruebas cruzadas. Reserva de sangre.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>CTG continuo:</strong> evaluación del estado fetal. Si hay sufrimiento fetal → resolución inmediata independientemente de la EG.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Vía de parto:</strong> depende del grado de desprendimiento, EG y estado materno-fetal. Grado 1 estable con feto maduro: parto vaginal monitorizado. Grado 2–3 o sufrimiento fetal → <strong>cesárea de urgencia.</strong></div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Manejo de CID:</strong> plasma fresco congelado (PFC) 15–20 ml/kg, crioprecipitados si fibrinógeno &lt;200 mg/dL, plaquetas si &lt;50.000. Transfusión masiva (GR:PFC:plaquetas = 1:1:1) si hemorragia masiva.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content"><strong>Corticoides:</strong> betametasona si &lt;34 semanas y situación lo permite (paciente estable). No retrasar la resolución por completar esquema si hay compromiso materno-fetal.</div>
+    </div>
+    <div class="hl-danger">🔴 El DPPNI grave con muerte fetal y CID es una de las emergencias obstétricas más graves. La histerectomía puede ser necesaria si hay útero de Couvelaire o HPP refractaria postparto.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Tríada: dolor súbito + hipertonía + hemorragia oscura</span>
+      <span class="pill">Principal FR: HTA / preeclampsia</span>
+      <span class="pill">Cocaína → vasospasmo → DPPNI agudo</span>
+      <span class="pill">Hemorragia visible ≠ magnitud real del sangrado</span>
+      <span class="pill">Ecografía normal NO descarta DPPNI</span>
+      <span class="pill">Fibrinógeno: primer factor en caer en CID</span>
+      <span class="pill">Fibrinógeno &lt;200 mg/dL = CID establecida</span>
+      <span class="pill">Útero de Couvelaire: infiltración hemorrágica del miometrio</span>
+      <span class="pill">Grado 3: muerte fetal + shock + CID</span>
+      <span class="pill">Diferencia con previa: hay dolor, hay hipertonía, no hay sangre roja</span>
+      <span class="pill">Recurrencia en próximo embarazo: 10–15%</span>
+      <span class="pill">Transfusión masiva: GR:PFC:plaquetas = 1:1:1</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACOG Practice Bulletin No. 222: Placental Abruption. Obstet Gynecol 2021 · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo; 2016 · Ministerio de Salud de la Nación Argentina. Guía para la atención del embarazo de alto riesgo · Sher G. A prospective evaluation of fetal heart rate monitoring in patients with abruptio placentae. J Reprod Med 1978.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
