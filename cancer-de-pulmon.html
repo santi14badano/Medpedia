@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer de Pulmón — Medpedia</title>
+  <meta name="description" content="Cáncer de pulmón: clasificación histológica, estadificación TNM, síndromes paraneoplásicos, diagnóstico y tratamiento. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --onco: #6A0DAD; --onco-claro: #F3E8FC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neumo { background: #E8F5E9; color: #1B5E20; }
+    .tag-onco  { background: var(--onco-claro); color: var(--onco); }
+    .tag-fuente{ background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo       { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-onco  { font-size: 16px; font-weight: 500; color: var(--onco); margin-bottom: 12px; }
+    .sec-titulo-hpp   { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-verde { font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .sec-titulo-gin   { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-onco  { border-left: 3px solid var(--onco); background: var(--onco-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--onco); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--onco); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .histo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .histo-grid { grid-template-columns: 1fr; } }
+    .histo-card { border-radius: 12px; padding: 1rem 1.2rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .histo-titulo { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+    .h-adeno .histo-titulo { color: #1B5E20; }
+    .h-escamo .histo-titulo { color: #D4730A; }
+    .h-micro .histo-titulo { color: var(--hpp); }
+    .h-grande .histo-titulo { color: var(--onco); }
+    .h-adeno { border-color: #a8d8a8; }
+    .h-escamo { border-color: #f0c080; }
+    .h-micro  { border-color: #e8b4b0; }
+    .h-grande { border-color: #d4a8e8; }
+    .histo-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .sindrome-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 8px; }
+    .sindrome-titulo { font-size: 13px; font-weight: 700; color: var(--onco); margin-bottom: 4px; }
+    .sindrome-desc   { font-size: 13px; color: var(--texto-sec); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neumonología</a> › Cáncer de Pulmón</div>
+  <div class="titulo">Cáncer de Pulmón</div>
+  <div class="meta">
+    <span class="tag tag-neumo">Neumonología</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">NCCN 2024 · IASLC · ASCO 2023 · INC Argentina</span>
+  </div>
+
+  <!-- EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología</div>
+    <div class="hl-onco"><strong>El cáncer de pulmón es la primera causa de muerte por cáncer en el mundo</strong>, tanto en hombres como en mujeres. En Argentina representa la principal causa de mortalidad oncológica. La sobrevida global a 5 años es del 20–25% (mejorando con terapias dirigidas), pero sigue siendo muy baja porque el 70% se diagnostica en estadio avanzado.</div>
+    <div class="hl-warn">⚠️ El <strong>tabaquismo</strong> es responsable del 85% de los casos. El riesgo es dosis-dependiente (paquetes-año) y disminuye al dejar de fumar, pero nunca regresa al nivel basal.</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Detalle</th></tr>
+        <tr><td><strong>Tabaquismo activo</strong></td><td>Principal FR (85% de los casos). RR 10–30× vs no fumadores. Riesgo proporcional a paquetes-año (cigarrillos/día × años fumando / 20)</td></tr>
+        <tr><td><strong>Tabaquismo pasivo</strong></td><td>RR ~1,5×. Causa el 15–25% de los casos en no fumadores</td></tr>
+        <tr><td><strong>Radón</strong></td><td>Gas radioactivo natural, segunda causa en no fumadores. Se acumula en sótanos y espacios cerrados</td></tr>
+        <tr><td><strong>Asbesto (amianto)</strong></td><td>Silicato fibroso. Exposición laboral (construcción, astilleros). Riesgo sinérgico con tabaco (RR 50–90× si fuma + asbesto). Relacionado también con mesotelioma</td></tr>
+        <tr><td><strong>Arsénico, cromo, níquel, berilio</strong></td><td>Exposición ocupacional</td></tr>
+        <tr><td><strong>Antecedente de Ca de pulmón previo o EPOC</strong></td><td>Mayor riesgo de segundo primario o nuevo tumor</td></tr>
+        <tr><td><strong>Mutaciones genéticas (EGFR, ALK, ROS1, KRAS)</strong></td><td>Más frecuentes en adenocarcinoma, no fumadores, mujeres, origen asiático</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN HISTOLÓGICA -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">🔬 Clasificación histológica — la más importante</div>
+    <div class="hl-info">💡 La clasificación más relevante es <strong>CPCP vs CPCNP</strong>, porque determina completamente el tratamiento y el pronóstico.</div>
+
+    <div class="histo-grid">
+      <div class="histo-card h-adeno">
+        <div class="histo-titulo">Adenocarcinoma (~40%)</div>
+        <div class="histo-desc">CPCNP más frecuente. Localización periférica. Más común en no fumadores, mujeres y jóvenes. Alta frecuencia de mutaciones driver (EGFR, ALK, ROS1). Puede presentarse como nódulo pulmonar solitario. Broncorrea si es la variante mucinosa.</div>
+      </div>
+      <div class="histo-card h-escamo">
+        <div class="histo-titulo">Carcinoma de células escamosas (~25%)</div>
+        <div class="histo-desc">CPCNP. Localización central (hiliar). Fuertemente asociado al tabaco. Puede causar atelectasia por obstrucción bronquial. Produce PTHrP → hipercalcemia paraneoplásica. Cavita con frecuencia.</div>
+      </div>
+      <div class="histo-card h-micro">
+        <div class="histo-titulo">Carcinoma de células pequeñas (CPCP) (~15%)</div>
+        <div class="histo-desc">El más agresivo. Casi exclusivo de fumadores. Localización central. Células en "grano de avena". Muy alta frecuencia de síndromes paraneoplásicos. Disemina precozmente. Responde bien inicialmente a QT pero recae siempre. NO se opera.</div>
+      </div>
+      <div class="histo-card h-grande">
+        <div class="histo-titulo">Carcinoma de células grandes (~10%)</div>
+        <div class="histo-desc">CPCNP. Diagnóstico de exclusión (no escamoso, no adeno, no micro). Localización periférica. Agresivo. Sin mutaciones driver características. Escasa diferenciación.</div>
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ CPCP vs CPCNP — la distinción que define todo</div>
+      <strong>CPCP (células pequeñas):</strong> NO se opera nunca (salvo rarísimos casos T1N0). Tratamiento: quimioterapia ± radioterapia ± inmunoterapia. Respuesta inicial buena pero recaída universal.<br><br>
+      <strong>CPCNP (células no pequeñas = adeno + escamoso + células grandes):</strong> tratamiento según estadio: cirugía (estadios I–II), QT + RT (III), terapias dirigidas o inmunoterapia (IV con mutaciones o sin ellas).
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🩺 Clínica</div>
+    <div class="hl-danger">🔴 El 70% de los casos se diagnostica en estadio avanzado porque el pulmón no duele. Los síntomas suelen aparecer tarde, cuando el tumor ya comprime estructuras vecinas o hay metástasis.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma/Signo</th><th>Mecanismo / Detalle</th></tr>
+        <tr><td><strong>Tos persistente (cambio de tos)</strong></td><td>Irritación bronquial. Síntoma más frecuente. En fumador: cambio en las características de la tos habitual → alarma</td></tr>
+        <tr><td><strong>Hemoptisis</strong></td><td>Erosión de vasos por el tumor. Puede ser leve o masiva. Siempre estudiar en fumador >40 años</td></tr>
+        <tr><td><strong>Disnea</strong></td><td>Obstrucción bronquial, atelectasia, derrame pleural, linfangitis carcinomatosa</td></tr>
+        <tr><td><strong>Dolor torácico</strong></td><td>Invasión pleural o pared torácica. Signo de enfermedad avanzada</td></tr>
+        <tr><td><strong>Sibilancias o estridor unilateral</strong></td><td>Obstrucción bronquial parcial por tumor endobronquial</td></tr>
+        <tr><td><strong>Síndrome de vena cava superior (SVCS)</strong></td><td>Compresión de la VCS → edema en esclavina, ingurgitación yugular, cianosis facial, circulación colateral. Emergencia oncológica</td></tr>
+        <tr><td><strong>Disfonía</strong></td><td>Parálisis del nervio recurrente laríngeo izquierdo por tumor o adenopatías mediastínicas</td></tr>
+        <tr><td><strong>Síndrome de Horner</strong></td><td>Ptosis + miosis + anhidrosis. Invasión de la cadena simpática cervical (tumor de Pancoast)</td></tr>
+        <tr><td><strong>Síntomas de metástasis</strong></td><td>Cefalea/convulsiones (cerebro), dolor óseo (hueso), hepatomegalia (hígado), nódulos subcutáneos (piel)</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Tumor de Pancoast (tumor del sulcus superior)</div>
+      Tumor en el vértice pulmonar (lóbulo superior). Invade estructuras del opérculo torácico: plexo braquial (dolor en hombro que baja por el brazo = C8–T1–T2), costillas superiores (dolor óseo), cadena simpática cervical (síndrome de Horner). Puede no verse en Rx de tórax. Diagnóstico: TC + RMN. Tratamiento: radioquimioterapia preoperatoria + cirugía.
+    </div>
+  </div>
+
+  <!-- SÍNDROMES PARANEOPLÁSICOS -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">🧪 Síndromes paraneoplásicos — el concurso los ama</div>
+    <div class="hl-onco">Los síndromes paraneoplásicos son manifestaciones a distancia causadas por sustancias producidas por el tumor (hormonas, anticuerpos, citoquinas), no por invasión directa ni metástasis. Son más frecuentes en CPCP.</div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">SIADH — Secreción inadecuada de ADH</div>
+      <div class="sindrome-desc">Tumor produce ADH (vasopresina) → retención de agua → hiponatremia dilucional. Tumor más frecuente: <strong>CPCP</strong>. Clínica: hiponatremia + orina hipertónica + natriuria elevada + sin edema. Tratamiento: restricción hídrica, demeclociclina, tolvaptán.</div>
+    </div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">Síndrome de Cushing ectópico — ACTH ectópica</div>
+      <div class="sindrome-desc">Tumor produce ACTH → hipercortisolismo. Tumor más frecuente: <strong>CPCP</strong>. Clínica: hipocortisolismo rápido, hipopotasemia severa, hiperpigmentación, hiperglucemia. A diferencia del Cushing hipofisario, no suele haber obesidad central ni estrías porque la evolución es rápida. Dexametasona no suprime el cortisol (independiente).</div>
+    </div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">Hipercalcemia — PTHrP</div>
+      <div class="sindrome-desc">Tumor produce PTHrP (proteína relacionada con PTH) → hipercalcemia. Tumor más frecuente: <strong>carcinoma escamoso</strong>. Clínica: poliuria, polidipsia, constipación, letargo, confusión, náuseas ("bones, stones, groans, moans"). Tratamiento: hidratación IV, bifosfonatos (ácido zoledrónico), calcitonina en casos graves.</div>
+    </div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">Síndrome de Eaton-Lambert</div>
+      <div class="sindrome-desc">Anticuerpos anti-canales de calcio voltaje-dependientes (VGCC) en la unión neuromuscular presináptica → bloqueo de la liberación de acetilcolina. Tumor: <strong>CPCP</strong>. Clínica: debilidad muscular proximal que MEJORA con el ejercicio repetido (al contrario de la miastenia gravis), hiporreflexia, disfunción autonómica. EMG: potenciales que aumentan con estimulación repetitiva a alta frecuencia. Tratamiento: 3,4-diaminopiridina, IVIg, tratamiento del tumor.</div>
+    </div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">Hipocratismo digital (acropaquia)</div>
+      <div class="sindrome-desc">Proliferación del tejido subperióstico distal. Asociado principalmente a CPCNP (especialmente adenocarcinoma). También en osteoartropatía hipertrófica pulmonar (periostitis + artralgia + hipocratismo). No es exclusivo del cáncer de pulmón (también en enfermedades crónicas pulmonares y hepáticas).</div>
+    </div>
+
+    <div class="sindrome-card">
+      <div class="sindrome-titulo">Encefalomielitis paraneoplásica / Degeneración cerebelosa</div>
+      <div class="sindrome-desc">Anticuerpos anti-Hu (ANNA-1) o anti-Yo → daño neurológico autoinmune. Tumor: <strong>CPCP</strong>. Clínica: ataxia cerebelosa de rápida instalación, encefalopatía, neuropatía sensitiva. Puede preceder al diagnóstico del tumor.</div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔍 Diagnóstico y estadificación</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Radiografía de tórax:</strong> primer estudio. Puede mostrar nódulo, masa, atelectasia, derrame, ensanchamiento mediastínico. Hasta el 25% de los tumores centrales no se ven en la Rx simple.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>TC de tórax con contraste:</strong> estudio de elección para caracterizar el tumor, evaluar mediastino, ganglios y estructuras adyacentes. Siempre incluir abdomen superior (hígado, suprarrenales = sitios frecuentes de metástasis).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Fibrobroncoscopía:</strong> para tumores centrales (endobronquiales). Permite biopsia directa, lavado broncoalveolar y citología. Rendimiento del 70–80% en tumores centrales.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Biopsia transparietal (guiada por TC):</strong> para tumores periféricos. Rendimiento del 80–90%. Complicación más frecuente: neumotórax (~20%).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>PET-FDG / TC-PET:</strong> estadificación ganglionar y detección de metástasis a distancia. Superior a la TC sola para mediastino. Esencial antes de decidir cirugía.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content"><strong>Mediastinoscopía / EBUS (ultrasonido endobronquial):</strong> estadificación ganglionar mediastínica. EBUS-PAAF permite biopsia de ganglios mediastínicos sin cirugía. Gold standard para N2/N3.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content"><strong>Estudio molecular (biopsia líquida o de tejido):</strong> en CPCNP estadio III–IV: buscar mutaciones en EGFR, ALK, ROS1, BRAF, MET, RET, KRAS, NTRK. PD-L1 para inmunoterapia. Determina el tratamiento.</div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Estadificación TNM simplificada (CPCNP)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>Descripción</th><th>Tratamiento principal</th></tr>
+        <tr><td><strong>I</strong></td><td>Tumor ≤5 cm, sin ganglios, sin metástasis</td><td>Cirugía (lobectomía)</td></tr>
+        <tr><td><strong>II</strong></td><td>Tumor >5 cm o ganglios hiliares ipsilaterales (N1)</td><td>Cirugía + QT adyuvante</td></tr>
+        <tr><td><strong>IIIA</strong></td><td>Ganglios mediastínicos ipsilaterales (N2)</td><td>QT + RT concomitante ± cirugía seleccionada</td></tr>
+        <tr><td><strong>IIIB–IIIC</strong></td><td>N3 (mediastínico contralateral) o T4N2</td><td>QT + RT + inmunoterapia (durvalumab)</td></tr>
+        <tr><td><strong>IV</strong></td><td>Metástasis a distancia</td><td>Terapia dirigida (si mutación) o inmunoterapia (si PD-L1 alto) o QT</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Estadificación CPCP (simplificada)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>Descripción</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Limitado</strong></td><td>Tumor confinado a un hemitórax + ganglios mediastínicos ipsilaterales (puede incluirse en un campo de RT)</td><td>QT (carboplatino/etopósido) + RT torácica concomitante + irradiación craneal profiláctica</td></tr>
+        <tr><td><strong>Extendido</strong></td><td>Metástasis a distancia o derrame pleural maligno</td><td>QT (carboplatino/etopósido) + atezolizumab o durvalumab · RT paliativa · Irradiación craneal si respuesta</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">💊 Tratamiento — CPCNP estadio IV con mutaciones</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Inhibidores de EGFR (erlotinib, gefitinib, osimertinib)</div>
+      <div class="farma-clase">Terapia dirigida · Mutación EGFR → exones 19 (deleción) o 21 (L858R)</div>
+      <div class="dosis-badge">Osimertinib 80 mg/día VO · Primera línea si EGFR mutado</div>
+      <div class="farma-detalle">
+        EGFR mutado en ~15% de los CPCNP occidentales, hasta 40–50% en asiáticos. Osimertinib (3ª generación) es superior a erlotinib/gefitinib y cubre la mutación de resistencia T790M. Efectos adversos: rash acneiforme, diarrea, paroniquia, toxicidad pulmonar (neumonitis).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Inhibidores de ALK (crizotinib, alectinib, lorlatinib)</div>
+      <div class="farma-clase">Terapia dirigida · Reordenamiento ALK (~5% de CPCNP)</div>
+      <div class="dosis-badge">Alectinib 600 mg/12 h VO · Primera línea si ALK positivo</div>
+      <div class="farma-detalle">
+        Reordenamiento ALK más frecuente en no fumadores, jóvenes, adenocarcinoma. Alectinib es superior a crizotinib en eficacia y penetración del SNC. Excelente pronóstico si se diagnostica y trata oportunamente (SLP media >3 años).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Inmunoterapia (pembrolizumab, nivolumab, atezolizumab)</div>
+      <div class="farma-clase">Inhibidores de checkpoint · Anti-PD-1 / Anti-PD-L1</div>
+      <div class="dosis-badge">Pembrolizumab monoterapia si PD-L1 ≥50% · QT + pembrolizumab si PD-L1 &lt;50%</div>
+      <div class="farma-detalle">
+        Bloquean el eje PD-1/PD-L1 → reactivan linfocitos T contra el tumor. Indicados si no hay mutación driver. PD-L1 ≥50%: pembrolizumab en monoterapia puede dar respuestas duraderas. Efectos adversos inmunomediados: neumonitis, tiroiditis, hepatitis, colitis, dermatitis → tratamiento con corticoides.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia (platino + pemetrexed o taxol)</div>
+      <div class="farma-clase">CPCNP sin mutación driver y PD-L1 bajo · CPCP siempre</div>
+      <div class="dosis-badge">Carboplatino/cisplatino + pemetrexed (adeno) · carboplatino + paclitaxel (escamoso)</div>
+      <div class="farma-detalle">
+        Pemetrexed preferido en adenocarcinoma (antifolato con mayor actividad en no escamoso). En carcinoma escamoso usar paclitaxel o gemcitabina (pemetrexed menos eficaz). CPCP: carboplatino + etopósido.
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENING -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">🔍 Screening — detección precoz</div>
+    <div class="hl-info">💡 El único método de screening con evidencia de reducción de mortalidad es la <strong>TC de tórax de baja dosis (LDCT)</strong>. El estudio NLST demostró reducción del 20% en mortalidad por cáncer de pulmón.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Recomendación (NCCN / USPSTF)</th></tr>
+        <tr><td>Edad</td><td>50–80 años</td></tr>
+        <tr><td>Historia de tabaquismo</td><td>≥20 paquetes-año</td></tr>
+        <tr><td>Estado actual</td><td>Fumador actual o ex fumador que dejó hace &lt;15 años</td></tr>
+        <tr><td>Método</td><td>TC de baja dosis anual</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ La Rx de tórax NO es útil como método de screening (no reduce mortalidad). Solo la TC de baja dosis tiene evidencia.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Primera causa de muerte por cáncer en el mundo (ambos sexos)</span>
+      <span class="pill">85% asociado al tabaquismo</span>
+      <span class="pill">CPCP vs CPCNP: distinción que define el tratamiento</span>
+      <span class="pill">CPCP: no se opera · QT + RT · síndromes paraneoplásicos frecuentes</span>
+      <span class="pill">Adenocarcinoma: periférico · no fumadores · EGFR/ALK/ROS1</span>
+      <span class="pill">Escamoso: central · tabaco · hipercalcemia por PTHrP · cavita</span>
+      <span class="pill">SIADH paraneoplásico: CPCP → hiponatremia + orina hipertónica</span>
+      <span class="pill">ACTH ectópica: CPCP → Cushing con hipopotasemia severa</span>
+      <span class="pill">PTHrP → hipercalcemia: carcinoma escamoso</span>
+      <span class="pill">Eaton-Lambert: CPCP → debilidad que mejora con ejercicio</span>
+      <span class="pill">Tumor de Pancoast: vértice pulmonar + Horner + plexo braquial C8-T1</span>
+      <span class="pill">SVCS: edema en esclavina + ingurgitación yugular + cianosis facial</span>
+      <span class="pill">Disfonía + cáncer de pulmón → parálisis recurrente laríngeo izquierdo</span>
+      <span class="pill">Diagnóstico: TC + broncoscopía o biopsia transparietal</span>
+      <span class="pill">EGFR mutado → osimertinib</span>
+      <span class="pill">ALK positivo → alectinib</span>
+      <span class="pill">PD-L1 ≥50% → pembrolizumab monoterapia</span>
+      <span class="pill">Screening: TC de baja dosis · ≥50 años · ≥20 paquetes-año</span>
+      <span class="pill">Rx de tórax NO sirve para screening</span>
+      <span class="pill">70% se diagnostica en estadio avanzado</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer. Version 5.2024 · NCCN Clinical Practice Guidelines: Small Cell Lung Cancer. Version 3.2024 · Goldstraw P et al. The IASLC Lung Cancer Staging Project. J Thorac Oncol 2016 · Reck M et al. Pembrolizumab versus Chemotherapy for PD-L1–Positive Non–Small-Cell Lung Cancer. NEJM 2016 · National Lung Screening Trial Research Team. NEJM 2011 · Instituto Nacional del Cáncer (INC) Argentina. Recomendaciones para el manejo del cáncer de pulmón.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
