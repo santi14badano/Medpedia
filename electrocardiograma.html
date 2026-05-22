@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electrocardiograma (ECG) — Medpedia</title>
+  <meta name="description" content="ECG normal y patológico: ondas, intervalos, eje, hipertrofia, bloqueos, arritmias, isquemia. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --ecg: #1565C0; --ecg-claro: #E3F2FD;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: #E3F2FD; color: #0D47A1; }
+    .tag-basico { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ecg  { font-size: 16px; font-weight: 500; color: var(--ecg); margin-bottom: 12px; }
+    .sec-titulo-hpp  { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-verde{ font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ecg   { border-left: 3px solid var(--ecg); background: var(--ecg-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+
+    /* ECG SVG trace */
+    .ecg-trace-wrap { background: #f0f8f0; border: 1.5px solid #a8d8a8; border-radius: 12px; padding: 1rem; margin-bottom: 12px; overflow-x: auto; }
+    .ecg-label { font-size: 12px; color: var(--texto-sec); margin-bottom: 6px; font-weight: 500; }
+
+    /* onda cards */
+    .onda-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .onda-grid { grid-template-columns: 1fr 1fr; } }
+    .onda-card { border-radius: 12px; padding: 0.9rem 1rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .onda-nombre { font-size: 15px; font-weight: 700; margin-bottom: 3px; color: var(--ecg); }
+    .onda-valor  { font-size: 11px; color: var(--hpp); font-weight: 600; margin-bottom: 4px; }
+    .onda-desc   { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+
+    /* patología cards */
+    .patol-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1.1rem 1.2rem; margin-bottom: 10px; }
+    .patol-titulo { font-size: 14px; font-weight: 700; color: var(--texto); margin-bottom: 4px; }
+    .patol-mecan  { font-size: 12px; color: var(--verde-oscuro); margin-bottom: 6px; font-style: italic; }
+    .patol-hallaz { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .patol-hallaz strong { color: var(--texto); }
+    .ecg-chip { display: inline-block; background: var(--ecg-claro); color: var(--ecg); font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; margin: 2px 2px 2px 0; }
+    .ecg-chip-r { display: inline-block; background: var(--hpp-claro); color: var(--hpp); font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; margin: 2px 2px 2px 0; }
+
+    /* derivaciones diagram */
+    .deriv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .deriv-grid { grid-template-columns: 1fr; } }
+    .deriv-card { border-radius: 12px; padding: 0.9rem 1rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .deriv-titulo { font-size: 13px; font-weight: 700; color: var(--ecg); margin-bottom: 5px; }
+    .deriv-desc   { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+
+    /* mini ECG traces SVG */
+    svg.ecg { display: block; width: 100%; max-width: 700px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Electrocardiograma</div>
+  <div class="titulo">Electrocardiograma (ECG)</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-basico">Fisiología aplicada</span>
+    <span class="tag tag-fuente">Dubin · Goldberger · Marriott · ACC/AHA</span>
+  </div>
+
+  <!-- FUNDAMENTOS -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Fundamentos del ECG</div>
+    <div class="hl-ecg">El ECG registra la actividad eléctrica del corazón en el tiempo. Cada célula cardíaca tiene potencial de acción propio. La suma vectorial de todos los potenciales genera campos eléctricos que los electrodos captan desde la superficie corporal.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro técnico</th><th>Valor estándar</th></tr>
+        <tr><td>Velocidad del papel</td><td>25 mm/seg → 1 cuadrado pequeño = 0,04 seg · 1 cuadrado grande = 0,20 seg</td></tr>
+        <tr><td>Calibración</td><td>10 mm = 1 mV → 1 cuadrado pequeño en altura = 0,1 mV</td></tr>
+        <tr><td>Frecuencia cardíaca</td><td>Regla del 300: 300 ÷ nº de cuadrados grandes entre R-R · Normal: 60–100 lpm</td></tr>
+      </table>
+    </div>
+
+    <!-- ECG normal SVG -->
+    <div class="ecg-trace-wrap">
+      <div class="ecg-label">Morfología de un complejo normal (una derivación)</div>
+      <svg class="ecg" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="140" fill="#f0f8f0"/>
+        <!-- cuadrícula -->
+        <g stroke="#c8e6c8" stroke-width="0.5">
+          <line x1="0" y1="28" x2="700" y2="28"/><line x1="0" y1="56" x2="700" y2="56"/>
+          <line x1="0" y1="84" x2="700" y2="84"/><line x1="0" y1="112" x2="700" y2="112"/>
+          <line x1="140" y1="0" x2="140" y2="140"/><line x1="280" y1="0" x2="280" y2="140"/>
+          <line x1="420" y1="0" x2="420" y2="140"/><line x1="560" y1="0" x2="560" y2="140"/>
+        </g>
+        <!-- línea de base -->
+        <line x1="20" y1="84" x2="680" y2="84" stroke="#90a090" stroke-width="1" stroke-dasharray="4,4"/>
+        <!-- traza ECG normal -->
+        <polyline points="
+          30,84
+          60,84
+          70,78 75,84
+          100,84
+          115,68 120,84
+          130,84
+          138,108 142,108 145,84
+          150,84
+          165,84
+          175,20 180,84
+          185,84
+          195,75 205,84
+          220,84
+          260,84
+          270,78 275,84
+          300,84
+          315,68 320,84
+          330,84
+          338,108 342,108 345,84
+          350,84
+          365,84
+          375,20 380,84
+          385,84
+          395,75 405,84
+          450,84
+          460,78 465,84
+          490,84
+          505,68 510,84
+          520,84
+          528,108 532,108 535,84
+          540,84
+          555,84
+          565,20 570,84
+          575,84
+          585,75 595,84
+          650,84
+        " fill="none" stroke="#1565C0" stroke-width="2" stroke-linejoin="round"/>
+
+        <!-- etiquetas -->
+        <text x="68" y="70" font-size="11" fill="#880E4F" font-family="sans-serif" font-weight="bold">P</text>
+        <text x="114" y="60" font-size="11" fill="#880E4F" font-family="sans-serif" font-weight="bold">Q</text>
+        <text x="174" y="14" font-size="11" fill="#880E4F" font-family="sans-serif" font-weight="bold">R</text>
+        <text x="139" y="120" font-size="11" fill="#880E4F" font-family="sans-serif" font-weight="bold">S</text>
+        <text x="193" y="70" font-size="11" fill="#880E4F" font-family="sans-serif" font-weight="bold">T</text>
+
+        <!-- segmentos con llaves -->
+        <line x1="72" y1="130" x2="118" y2="130" stroke="#666" stroke-width="1"/>
+        <text x="82" y="140" font-size="9" fill="#555" font-family="sans-serif">PR</text>
+        <line x1="135" y1="130" x2="205" y2="130" stroke="#666" stroke-width="1"/>
+        <text x="152" y="140" font-size="9" fill="#555" font-family="sans-serif">QRS</text>
+        <line x1="118" y1="125" x2="205" y2="125" stroke="#aaa" stroke-width="0.8" stroke-dasharray="2,2"/>
+        <text x="140" y="122" font-size="8" fill="#888" font-family="sans-serif">ST</text>
+        <line x1="118" y1="132" x2="215" y2="132" stroke="#1565C0" stroke-width="0.8" stroke-dasharray="2,2"/>
+        <text x="130" y="139" font-size="8" fill="#1565C0" font-family="sans-serif">QT</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ONDAS E INTERVALOS -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">〰️ Ondas, segmentos e intervalos — valores normales</div>
+    <div class="onda-grid">
+      <div class="onda-card">
+        <div class="onda-nombre">Onda P</div>
+        <div class="onda-valor">≤0,12 seg · ≤0,25 mV</div>
+        <div class="onda-desc">Despolarización auricular. Positiva en DI, DII, aVF. Negativa en aVR. Origen: nodo sinusal.</div>
+      </div>
+      <div class="onda-card">
+        <div class="onda-nombre">Intervalo PR</div>
+        <div class="onda-valor">0,12–0,20 seg</div>
+        <div class="onda-desc">Conducción aurículo-ventricular. Incluye nodo AV (retardo fisiológico). &gt;0,20 → BAV 1°.</div>
+      </div>
+      <div class="onda-card">
+        <div class="onda-nombre">Complejo QRS</div>
+        <div class="onda-valor">≤0,12 seg</div>
+        <div class="onda-desc">Despolarización ventricular. &gt;0,12 → bloqueo de rama o conducción aberrante.</div>
+      </div>
+      <div class="onda-card">
+        <div class="onda-nombre">Segmento ST</div>
+        <div class="onda-valor">Isoeléctrico ±1 mm</div>
+        <div class="onda-desc">Período entre despolarización y repolarización ventricular. Supradesnivel → isquemia/IAM. Infradesnivel → isquemia subendocárdica.</div>
+      </div>
+      <div class="onda-card">
+        <div class="onda-nombre">Onda T</div>
+        <div class="onda-valor">Positiva DI, DII, V3–V6</div>
+        <div class="onda-desc">Repolarización ventricular. Negativa en aVR (normal). Inversión en otras derivaciones → isquemia, hipertrofia, BCRI.</div>
+      </div>
+      <div class="onda-card">
+        <div class="onda-nombre">Intervalo QT</div>
+        <div class="onda-valor">QTc ≤440 ms (H) · ≤460 ms (M)</div>
+        <div class="onda-desc">Sístole eléctrica ventricular. Corregir por FC (fórmula de Bazett: QTc = QT/√RR). QT largo → riesgo de torsade de pointes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DERIVACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">📡 Derivaciones — qué mira cada una</div>
+    <div class="deriv-grid">
+      <div class="deriv-card">
+        <div class="deriv-titulo">Derivaciones de los miembros (frontales)</div>
+        <div class="deriv-desc"><strong>DI:</strong> cara lateral izquierda · <strong>DII:</strong> cara inferior (la más usada) · <strong>DIII:</strong> cara inferior · <strong>aVR:</strong> cavidades derechas (siempre negativo) · <strong>aVL:</strong> cara lateral alta · <strong>aVF:</strong> cara inferior</div>
+      </div>
+      <div class="deriv-card">
+        <div class="deriv-titulo">Derivaciones precordiales (horizontales)</div>
+        <div class="deriv-desc"><strong>V1–V2:</strong> ventrículo derecho · <strong>V3–V4:</strong> zona de transición (septum, pared anterior) · <strong>V5–V6:</strong> cara lateral izquierda. La onda R crece progresivamente de V1 a V5 (progresión normal de R).</div>
+      </div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Territorio coronario</th><th>Derivaciones que lo ven</th><th>Arteria responsable</th></tr>
+        <tr><td>Cara anterior</td><td>V1–V4</td><td>Descendente anterior (DA)</td></tr>
+        <tr><td>Cara lateral</td><td>DI, aVL, V5–V6</td><td>Circunfleja (Cx)</td></tr>
+        <tr><td>Cara inferior</td><td>DII, DIII, aVF</td><td>Coronaria derecha (CD)</td></tr>
+        <tr><td>Cara posterior</td><td>V7–V9 (o imagen especular en V1–V2)</td><td>CD o Cx (dominancia)</td></tr>
+        <tr><td>Ventrículo derecho</td><td>V3R–V4R</td><td>Coronaria derecha (CD)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EJE ELÉCTRICO -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">🧭 Eje eléctrico del QRS</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Eje</th><th>Rango</th><th>Causa frecuente</th></tr>
+        <tr><td><strong>Normal</strong></td><td>−30° a +90°</td><td>—</td></tr>
+        <tr><td><strong>Desviación izquierda (AQRS izq)</strong></td><td>Más negativo que −30°</td><td>HVI, HBAI, IAM inferior antiguo, BCRI</td></tr>
+        <tr><td><strong>Desviación derecha (AQRS der)</strong></td><td>Más positivo que +90°</td><td>HVD, TEP, EPOC, HBPI, dextrocardia</td></tr>
+        <tr><td><strong>Eje indeterminado</strong></td><td>−90° a ±180°</td><td>Obesidad severa, EPOC avanzado</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Regla rápida del eje:</strong> si DI y aVF son positivos → eje normal. Si DI positivo y aVF negativo → eje a la izquierda. Si DI negativo y aVF positivo → eje a la derecha. Si ambos negativos → eje indeterminado.</div>
+  </div>
+
+  <!-- HIPERTROFIAS -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">📈 Hipertrofias ventriculares</div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hipertrofia ventricular izquierda (HVI)</div>
+      <div class="patol-mecan">Mayor masa miocárdica izquierda → mayor voltaje eléctrico izquierdo</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">Criterio de Sokolow-Lyon: S en V1 + R en V5 o V6 ≥35 mm</span>
+        <span class="ecg-chip">R en aVL ≥11 mm</span>
+        <span class="ecg-chip">Criterio de Cornell: R aVL + S V3 &gt;28 mm (H) / &gt;20 mm (M)</span><br>
+        Además: eje desviado a izquierda, ensanchamiento leve del QRS, "strain" = onda T negativa en V5–V6, DI, aVL (repolarización anormal por hipertrofia). <strong>Causa más frecuente:</strong> HTA crónica.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hipertrofia ventricular derecha (HVD)</div>
+      <div class="patol-mecan">Predominio eléctrico derecho → se revierte el patrón normal</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">R/S en V1 ≥1 (onda R dominante en V1)</span>
+        <span class="ecg-chip">Desviación del eje a la derecha (&gt;+90°)</span>
+        <span class="ecg-chip">S persistente en V5–V6</span><br>
+        Onda P pulmonale (P alta y picuda en DII ≥2,5 mm → hipertrofia auricular derecha). <strong>Causas:</strong> TEP masivo, EPOC, hipertensión pulmonar, valvulopatías derechas.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hipertrofia auricular izquierda (HAI)</div>
+      <div class="patol-mecan">Mayor duración de la despolarización auricular izquierda</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">Onda P ancha ≥0,12 seg ("P mitrale")</span>
+        <span class="ecg-chip">P bifásica en V1 con componente negativo tardío &gt;1 mm × 1 cuad</span><br>
+        Muesca en onda P ("P en meseta"). <strong>Causa más frecuente:</strong> estenosis mitral, HVI.
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOQUEOS DE RAMA -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">⚡ Bloqueos de rama</div>
+    <div class="hl-info">💡 En los bloqueos de rama el impulso no puede conducirse por la rama bloqueada → el ventrículo afectado se despolariza por conducción miocito a miocito → lento → QRS ancho (&gt;0,12 seg).</div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Bloqueo completo de rama derecha (BCRD)</div>
+      <div class="patol-mecan">Falla en la conducción por la rama derecha del haz de His</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">QRS &gt;0,12 seg</span>
+        <span class="ecg-chip">rSR' en V1 ("M" o "orejas de conejo") ← el más característico</span>
+        <span class="ecg-chip">S ancha y empastada en DI y V6</span>
+        <span class="ecg-chip">T negativa en V1–V3</span><br>
+        <strong>El QRS es ancho con morfología rSR' en V1.</strong> El BCRD puede ser normal en jóvenes (BCRD incompleto = QRS 0,10–0,12 seg). BCRD nuevo + síntomas → descartar TEP o IAM anterior.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Bloqueo completo de rama izquierda (BCRI)</div>
+      <div class="patol-mecan">Falla en la conducción por la rama izquierda → todo el VI se despolariza tardíamente</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">QRS &gt;0,12 seg</span>
+        <span class="ecg-chip">RR' ancha y mellada en DI, aVL, V5–V6 (onda R "en meseta")</span>
+        <span class="ecg-chip">QS o rS en V1</span>
+        <span class="ecg-chip">T negativa discordante en V5–V6</span><br>
+        <strong>BCRI nuevo en contexto de dolor torácico = IAMCEST equivalente → cateterismo urgente.</strong> El BCRI distorsiona todo el ECG → dificulta el diagnóstico de isquemia (criterios de Sgarbossa para isquemia con BCRI de base).
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hemibloqueo anterior izquierdo (HBAI)</div>
+      <div class="patol-mecan">Bloqueo de la rama anterosuperior de la rama izquierda</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">Eje desviado a la izquierda (&lt;−30°) ← clave</span>
+        <span class="ecg-chip">qR en DI y aVL</span>
+        <span class="ecg-chip">rS en DII, DIII, aVF</span>
+        <span class="ecg-chip">QRS normal o levemente ancho</span><br>
+        Causa más frecuente de desviación del eje a la izquierda. Sin ensanchamiento del QRS (a diferencia del BCRI). Causa: cardiopatía isquémica, HTA, miocardiopatías.
+      </div>
+    </div>
+  </div>
+
+  <!-- ISQUEMIA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🩸 Isquemia miocárdica en el ECG</div>
+    <div class="hl-warn">⚠️ El ECG de 12 derivaciones es el primer estudio a realizar ante dolor torácico sugestivo. La localización del cambio orienta la arteria responsable.</div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Isquemia subendocárdica (angina / IAMSEST)</div>
+      <div class="patol-mecan">Isquemia de la capa interna → la repolarización se altera sin necrosis transmural</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">Infradesnivel del ST ≥1 mm (horizontal o descendente)</span>
+        <span class="ecg-chip-r">Ondas T negativas simétricas</span><br>
+        Generalmente difuso (múltiples derivaciones). El infradesnivel del ST en aVR puede indicar oclusión del tronco de la coronaria izquierda (emergencia).
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Isquemia transmural / IAM con supradesnivel (IAMCEST)</div>
+      <div class="patol-mecan">Oclusión total aguda → necrosis transmural → corriente de lesión</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">Supradesnivel del ST ≥1 mm en ≥2 derivaciones contiguas de miembros</span>
+        <span class="ecg-chip-r">Supradesnivel ≥2 mm en ≥2 derivaciones precordiales contiguas</span>
+        <span class="ecg-chip-r">BCRI nuevo</span><br>
+        <strong>Evolución cronológica:</strong><br>
+        • Fase hiperaguda (min–horas): ondas T altas y picudas ("T hiperaguda") → primer cambio<br>
+        • Fase aguda (horas): supradesnivel del ST ("empastado", convexo hacia arriba)<br>
+        • Fase subaguda (días): aparece onda Q de necrosis + T se invierte<br>
+        • Fase crónica (semanas–meses): onda Q persiste + ST regresa a línea de base<br>
+        <strong>Onda Q de necrosis:</strong> ≥0,04 seg de duración, ≥25% de la amplitud del QRS. Indica necrosis transmural establecida.
+      </div>
+    </div>
+
+    <!-- SVG evolución IAM -->
+    <div class="ecg-trace-wrap">
+      <div class="ecg-label">Evolución ECG del IAMCEST (derivaciones que ven el infarto)</div>
+      <svg class="ecg" viewBox="0 0 700 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="110" fill="#f0f8f0"/>
+        <g stroke="#c8e6c8" stroke-width="0.5">
+          <line x1="0" y1="27" x2="700" y2="27"/><line x1="0" y1="54" x2="700" y2="54"/>
+          <line x1="0" y1="81" x2="700" y2="81"/>
+          <line x1="175" y1="0" x2="175" y2="110"/><line x1="350" y1="0" x2="350" y2="110"/>
+          <line x1="525" y1="0" x2="525" y2="110"/>
+        </g>
+        <!-- baseline -->
+        <line x1="10" y1="65" x2="690" y2="65" stroke="#90a090" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+        <!-- Normal -->
+        <polyline points="20,65 40,65 46,60 49,65 58,52 62,65 68,65 74,58 80,65 100,65" fill="none" stroke="#1565C0" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="22" y="100" font-size="10" fill="#555" font-family="sans-serif">Normal</text>
+
+        <!-- T hiperaguda -->
+        <polyline points="195,65 215,65 221,60 224,65 233,52 237,65 240,65 243,35 253,65 270,65 276,58 282,65 300,65" fill="none" stroke="#D4730A" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="197" y="100" font-size="10" fill="#D4730A" font-family="sans-serif">T hiperaguda</text>
+
+        <!-- ST elevado -->
+        <polyline points="370,65 390,65 396,60 399,65 408,40 420,40 430,65 435,65 441,55 447,65 470,65" fill="none" stroke="#C0392B" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="372" y="100" font-size="10" fill="#C0392B" font-family="sans-serif">ST elevado (agudo)</text>
+
+        <!-- Q + T invertida -->
+        <polyline points="545,65 565,65 571,80 576,65 585,40 590,65 593,65 596,72 606,65 630,65" fill="none" stroke="#880E4F" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="547" y="100" font-size="10" fill="#880E4F" font-family="sans-serif">Q + T invertida</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ARRITMIAS -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">⚡ Arritmias — reconocimiento ECG</div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Fibrilación auricular (FA)</div>
+      <div class="patol-mecan">Múltiples circuitos de reentrada en las aurículas → actividad auricular caótica</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">Ausencia de ondas P</span>
+        <span class="ecg-chip-r">Línea de base irregular (ondulaciones finas o gruesas)</span>
+        <span class="ecg-chip-r">RR irregularmente irregular ← el más característico</span>
+        <span class="ecg-chip-r">QRS estrecho (salvo aberrancia o bloqueo previo)</span><br>
+        FC ventricular variable. Si FC ventricular &gt;100 → FA con respuesta ventricular rápida. Si FC &lt;60 → FA con respuesta lenta (puede ser por bloqueo AV o fármacos).
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Flutter auricular</div>
+      <div class="patol-mecan">Circuito de macroreentrada ordenado en la aurícula derecha (istmo cavo-tricuspídeo)</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">Ondas F en "dientes de sierra" en DII, DIII, aVF a 300 lpm</span>
+        <span class="ecg-chip-r">Conducción AV regular (2:1, 3:1 o 4:1)</span>
+        <span class="ecg-chip-r">FC ventricular típica: 150 lpm (flutter 2:1)</span><br>
+        FC ventricular de 150 lpm → siempre pensar en flutter 2:1. Las ondas F pueden estar ocultas dentro del QRS o la T.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Taquicardia ventricular (TV)</div>
+      <div class="patol-mecan">Circuito de reentrada o foco ectópico ventricular → activación ventricular sin pasar por el sistema de conducción</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">QRS ancho (&gt;0,12 seg) y aberrante</span>
+        <span class="ecg-chip-r">FC 100–250 lpm</span>
+        <span class="ecg-chip-r">Disociación AV (ondas P independientes del QRS) ← diagnóstico</span>
+        <span class="ecg-chip-r">Capturas y latidos de fusión</span><br>
+        Taquicardia de QRS ancho = TV hasta demostrar lo contrario. <strong>TV sostenida (&gt;30 seg o con compromiso hemodinámico) = emergencia.</strong>
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Fibrilación ventricular (FV)</div>
+      <div class="patol-mecan">Actividad eléctrica ventricular caótica → no hay sístole efectiva → paro cardíaco</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">Ondulaciones caóticas de amplitud y frecuencia variables</span>
+        <span class="ecg-chip-r">Sin QRS reconocible</span>
+        <span class="ecg-chip-r">Sin pulso → paro cardíaco</span><br>
+        <strong>Tratamiento: desfibrilación inmediata + RCP.</strong> No cardioversión sincronizada (no hay QRS que sincronizar).
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Bloqueos AV</div>
+      <div class="patol-mecan">Trastorno de conducción a nivel del nodo AV o haz de His</div>
+      <div class="patol-hallaz">
+        <strong>BAV 1°:</strong> <span class="ecg-chip">PR &gt;0,20 seg</span> · todos los P conducen · benigno<br>
+        <strong>BAV 2° Mobitz I (Wenckebach):</strong> <span class="ecg-chip">PR se alarga progresivamente hasta que un P no conduce</span> · nivel nodal · generalmente benigno<br>
+        <strong>BAV 2° Mobitz II:</strong> <span class="ecg-chip-r">PR fijo + QRS que se bloquea súbitamente</span> · nivel infranodal · riesgo de progresión a BAV 3°<br>
+        <strong>BAV 3° (completo):</strong> <span class="ecg-chip-r">disociación AV completa</span> · ondas P y QRS sin relación · QRS de escape ancho y lento · marcapasos urgente
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Síndrome de Wolf-Parkinson-White (WPW)</div>
+      <div class="patol-mecan">Vía accesoria aurículo-ventricular (haz de Kent) → preexcitación ventricular</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">PR corto &lt;0,12 seg</span>
+        <span class="ecg-chip">Onda delta (empastamiento inicial del QRS)</span>
+        <span class="ecg-chip">QRS ancho (&gt;0,12 seg)</span>
+        <span class="ecg-chip">Alteraciones secundarias de la repolarización</span><br>
+        Riesgo de taquicardia supraventricular por reentrada AV. Si hay FA + WPW → <strong>no usar adenosina, digoxina ni verapamilo</strong> (bloquean el nodo AV → toda la conducción pasa por la vía accesoria → FV).
+      </div>
+    </div>
+  </div>
+
+  <!-- OTRAS PATOLOGÍAS -->
+  <div class="seccion">
+    <div class="sec-titulo-ecg">🔎 Otras patologías con patrón ECG característico</div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hiperpotasemia (hiperkalemia)</div>
+      <div class="patol-mecan">K+ alto → despolarización parcial del miocito → inestabilidad eléctrica</div>
+      <div class="patol-hallaz">
+        K+ 5,5–6,5: <span class="ecg-chip">ondas T altas, picudas y simétricas ("T en carpa")</span><br>
+        K+ 6,5–7,5: <span class="ecg-chip-r">PR largo · QRS ancho · P que desaparece</span><br>
+        K+ &gt;7,5: <span class="ecg-chip-r">QRS muy ancho → patrón sinusoidal → FV/asistolia</span><br>
+        <strong>Tratamiento urgente:</strong> gluconato de calcio IV (estabiliza membrana), insulina + glucosa (traslada K+ al interior), bicarbonato, kayexalato, hemodiálisis.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Hipopotasemia (hipokalemia)</div>
+      <div class="patol-mecan">K+ bajo → hiperpolarización del miocito → repolarización lenta</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">Aplanamiento de la onda T</span>
+        <span class="ecg-chip">Onda U prominente (después de T, antes del siguiente P)</span>
+        <span class="ecg-chip">Aparente QT largo (en realidad QU prolongado)</span>
+        <span class="ecg-chip-r">Riesgo de torsade de pointes</span>
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Pericarditis aguda</div>
+      <div class="patol-mecan">Inflamación del pericardio → corriente de lesión difusa (afecta todo el epicardio)</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">Supradesnivel del ST cóncavo ("en silla de montar") difuso en múltiples derivaciones</span>
+        <span class="ecg-chip">Infradesnivel del PR (muy característico)</span>
+        <span class="ecg-chip">Sin onda Q de necrosis</span><br>
+        <strong>Diferencia con IAM:</strong> en pericarditis el supradesnivel es cóncavo y difuso (todas las derivaciones excepto aVR y V1). En el IAM es convexo y localizado a territorio coronario. En pericarditis no hay onda Q ni reciprocidad.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">Tromboembolismo pulmonar (TEP)</div>
+      <div class="patol-mecan">Hipertensión pulmonar aguda → sobrecarga de presión del VD → cambios eléctricos derechos</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip">S1Q3T3 ← el más específico (pero poco sensible ~20%)</span>
+        <span class="ecg-chip">Taquicardia sinusal ← el más frecuente</span>
+        <span class="ecg-chip">BCRD nuevo</span>
+        <span class="ecg-chip">Desviación del eje a la derecha</span>
+        <span class="ecg-chip-r">Onda T negativa en V1–V4</span><br>
+        <strong>S1Q3T3:</strong> onda S en DI + onda Q en DIII + onda T negativa en DIII. El ECG normal no descarta TEP.
+      </div>
+    </div>
+
+    <div class="patol-card">
+      <div class="patol-titulo">QT largo (síndrome de QT largo)</div>
+      <div class="patol-mecan">Repolarización ventricular prolongada → ventana de vulnerabilidad → Torsade de Pointes</div>
+      <div class="patol-hallaz">
+        <span class="ecg-chip-r">QTc &gt;440 ms (H) / &gt;460 ms (M)</span><br>
+        <strong>Causas adquiridas (más frecuentes):</strong> hipokalemia, hipomagnesemia, hipocalcemia, fármacos (antiarrítmicos clase IA y III, quinolonas, macrólidos, antipsicóticos, antidepresivos tricíclicos, metadona). <strong>Causas congénitas:</strong> síndrome de Romano-Ward, Jervell-Lange-Nielsen.<br>
+        <strong>Torsade de Pointes:</strong> TV polimórfica con QRS que gira alrededor de la línea base. Puede degenerar en FV. Tratamiento: sulfato de magnesio IV.
+      </div>
+    </div>
+  </div>
+
+  <!-- MÉTODO DE LECTURA -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">📋 Método sistemático de lectura del ECG</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>#</th><th>Paso</th><th>Qué evaluar</th></tr>
+        <tr><td>1</td><td><strong>Ritmo</strong></td><td>¿Sinusal? (P antes de cada QRS, P positiva en DII). ¿Regular o irregular?</td></tr>
+        <tr><td>2</td><td><strong>Frecuencia</strong></td><td>300 ÷ cuadrados grandes entre R-R. Normal 60–100 lpm</td></tr>
+        <tr><td>3</td><td><strong>Eje</strong></td><td>DI y aVF → normal, izq, der o indeterminado</td></tr>
+        <tr><td>4</td><td><strong>Onda P</strong></td><td>¿Presente? ¿Morfología normal? ¿Relación con QRS?</td></tr>
+        <tr><td>5</td><td><strong>Intervalo PR</strong></td><td>0,12–0,20 seg. Constante o variable</td></tr>
+        <tr><td>6</td><td><strong>Complejo QRS</strong></td><td>Duración (≤0,12). Morfología. Voltaje. Onda Q patológica</td></tr>
+        <tr><td>7</td><td><strong>Segmento ST</strong></td><td>Isoeléctrico, supradesnivel, infradesnivel. Localización</td></tr>
+        <tr><td>8</td><td><strong>Onda T</strong></td><td>Positiva/negativa. Simétrica. Hiperpicuda</td></tr>
+        <tr><td>9</td><td><strong>Intervalo QT</strong></td><td>QTc normal. Buscar onda U</td></tr>
+        <tr><td>10</td><td><strong>Conclusión</strong></td><td>Integrar todos los hallazgos con la clínica</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">1 cuadrado grande = 0,20 seg · 1 cuadrado pequeño = 0,04 seg</span>
+      <span class="pill">Frecuencia: regla del 300</span>
+      <span class="pill">PR normal: 0,12–0,20 seg</span>
+      <span class="pill">QRS normal: ≤0,12 seg</span>
+      <span class="pill">QTc largo: &gt;440 ms (H) / &gt;460 ms (M)</span>
+      <span class="pill">HVI: Sokolow ≥35 mm (S V1 + R V5/V6)</span>
+      <span class="pill">BCRD: rSR' en V1 + S ancha en DI/V6</span>
+      <span class="pill">BCRI nuevo + dolor = IAMCEST equivalente</span>
+      <span class="pill">FA: RR irregularmente irregular + sin ondas P</span>
+      <span class="pill">Flutter: dientes de sierra 300 lpm + FC 150 lpm (2:1)</span>
+      <span class="pill">TV: QRS ancho + disociación AV</span>
+      <span class="pill">FV → desfibrilación inmediata</span>
+      <span class="pill">BAV 3°: disociación AV completa → marcapasos urgente</span>
+      <span class="pill">WPW: PR corto + onda delta + QRS ancho</span>
+      <span class="pill">WPW + FA: NO adenosina, NO digoxina, NO verapamilo</span>
+      <span class="pill">Hiperkalemia: T alta picuda → QRS ancho → sinusoidal → FV</span>
+      <span class="pill">Hipokalemia: onda U + aplanamiento T + riesgo de torsade</span>
+      <span class="pill">Pericarditis: ST cóncavo difuso + infradesnivel del PR</span>
+      <span class="pill">TEP: S1Q3T3 + taquicardia sinusal + BCRD nuevo</span>
+      <span class="pill">Torsade de Pointes: tratamiento → sulfato de magnesio IV</span>
+      <span class="pill">IAM inferior: cambios en DII, DIII, aVF (coronaria derecha)</span>
+      <span class="pill">IAM anterior: cambios en V1–V4 (descendente anterior)</span>
+      <span class="pill">Onda Q de necrosis: ≥0,04 seg y ≥25% del QRS</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Dubin D. Electrocardiografía Práctica. 4ª ed. · Goldberger AL. Clinical Electrocardiography: A Simplified Approach. 9th ed. Elsevier 2018 · Marriott HJL. Practical Electrocardiography. · Thygesen K et al. Fourth Universal Definition of Myocardial Infarction. JACC 2018 · ACC/AHA Guidelines for the Management of Patients with Ventricular Arrhythmias 2017.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
