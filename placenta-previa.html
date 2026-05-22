@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placenta Previa — Medpedia</title>
+  <meta name="description" content="Placenta previa: clasificación, factores de riesgo, clínica, diagnóstico y manejo. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco  { background: #FCE4EC; color: #880E4F; }
+    .tag-emergencia { background: var(--hpp-claro); color: var(--hpp-oscuro); }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hpp { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hpp   { border-left: 3px solid var(--hpp); background: var(--hpp-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--hpp); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-gin { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .vs-card { border-radius: 12px; padding: 1rem 1.2rem; }
+    .vs-card.rojo { background: var(--hpp-claro); border: 1.5px solid #e8b4b0; }
+    .vs-card.azul { background: var(--gin-claro); border: 1.5px solid #a8c8e8; }
+    .vs-titulo { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .vs-titulo.rojo { color: var(--hpp); }
+    .vs-titulo.azul { color: var(--gin); }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+    .clase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .clase-grid { grid-template-columns: 1fr; } }
+    .clase-card { border-radius: 12px; padding: 1rem 1.2rem; background: var(--blanco); border: 1.5px solid var(--borde); }
+    .clase-titulo { font-size: 13px; font-weight: 700; color: var(--hpp); margin-bottom: 4px; }
+    .clase-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Placenta Previa</div>
+  <div class="titulo">Placenta Previa</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Obstetricia</span>
+    <span class="tag tag-emergencia">Emergencia obstétrica</span>
+    <span class="tag tag-fuente">ACOG 2020 · Schwarcz 7ª ed. · Guía SOGIBA · Ministerio de Salud Argentina</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición</div>
+    <div class="hl-hpp"><strong>Placenta previa:</strong> implantación anómala de la placenta en el segmento uterino inferior, cubriendo total o parcialmente el orificio cervical interno (OCI). Es la causa más importante de hemorragia indolora en la segunda mitad del embarazo.</div>
+    <div class="hl-warn">⚠️ La placenta previa es responsable de aproximadamente el <strong>20% de las hemorragias del tercer trimestre</strong> y constituye un factor de riesgo mayor para acretismo placentario.</div>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🗂️ Clasificación</div>
+    <div class="clase-grid">
+      <div class="clase-card">
+        <div class="clase-titulo">Previa total (oclusiva total)</div>
+        <div class="clase-desc">La placenta cubre completamente el OCI. Es la forma más grave. Indica cesárea en todos los casos.</div>
+      </div>
+      <div class="clase-card">
+        <div class="clase-titulo">Previa parcial (oclusiva parcial)</div>
+        <div class="clase-desc">La placenta cubre solo parte del OCI. También indica cesárea si el borde placentario está a menos de 2 cm del OCI al término.</div>
+      </div>
+      <div class="clase-card">
+        <div class="clase-titulo">Marginal</div>
+        <div class="clase-desc">El borde placentario llega al margen del OCI pero no lo cubre. Puede intentarse parto vaginal en algunos casos seleccionados.</div>
+      </div>
+      <div class="clase-card">
+        <div class="clase-titulo">Inserción baja</div>
+        <div class="clase-desc">Borde placentario a 2–5 cm del OCI sin alcanzarlo. Bajo riesgo de hemorragia grave; seguimiento ecográfico.</div>
+      </div>
+    </div>
+    <div class="hl-info">💡 La clasificación clásica (lateral, marginal, parcial, total) fue reemplazada por la clasificación ecográfica actual basada en la distancia del borde placentario al OCI medida por ecografía transvaginal (ETV).</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Mecanismo / Detalle</th></tr>
+        <tr><td><strong>Cesárea anterior</strong></td><td>Principal FR. Riesgo aumenta con el número de cesáreas. Cicatriz → zona de menor vascularización → implantación placentaria baja</td></tr>
+        <tr><td><strong>Multiparidad</strong></td><td>Mayor riesgo con cada gestación por remodelación del endometrio</td></tr>
+        <tr><td><strong>Edad materna avanzada (>35 años)</strong></td><td>Asociación independiente; OR ~3 vs <25 años</td></tr>
+        <tr><td><strong>Antecedente de placenta previa</strong></td><td>Riesgo de recurrencia: 4–8%</td></tr>
+        <tr><td><strong>Cirugía uterina previa</strong></td><td>Legrado, miomectomía, histeroscopía → daño endometrial</td></tr>
+        <tr><td><strong>Tabaquismo</strong></td><td>Hipoxia placentaria → extensión compensatoria de la implantación</td></tr>
+        <tr><td><strong>Embarazo múltiple</strong></td><td>Mayor superficie placentaria → mayor probabilidad de alcanzar el segmento inferior</td></tr>
+        <tr><td><strong>Técnicas de reproducción asistida</strong></td><td>Implantación artificial → mayor riesgo de sitio bajo</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 <strong>Cesárea anterior + placenta previa = máximo riesgo de acretismo placentario.</strong> Con 1 cesárea previa: riesgo de acreta ~25%. Con ≥3 cesáreas: hasta 67%. Siempre descartar acretismo ante esta combinación.</div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🩸 Clínica — el dato que no te podés olvidar</div>
+    <div class="hl-hpp"><strong>Hemorragia vaginal de sangre roja rutilante, indolora, de aparición súbita, sin causa aparente, en el 3er trimestre.</strong> Es el signo cardinal de placenta previa. Cesa espontáneamente y recurre.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Placenta Previa</th><th>DPP (para comparar)</th></tr>
+        <tr><td>Hemorragia</td><td>Roja, externa, indolora</td><td>Oscura, puede ser oculta, dolorosa</td></tr>
+        <tr><td>Dolor uterino</td><td><strong>Ausente</strong></td><td>Presente, hipertonía</td></tr>
+        <tr><td>Tono uterino</td><td>Normal (blando)</td><td>Hipertónico ("útero en leño")</td></tr>
+        <tr><td>FCF</td><td>Generalmente conservada</td><td>Sufrimiento fetal frecuente</td></tr>
+        <tr><td>Tacto vaginal</td><td><strong>CONTRAINDICADO</strong></td><td>Contraindicado en dudas</td></tr>
+        <tr><td>Presentación fetal</td><td>Puede ser anómala (transversa, podálica)</td><td>Generalmente cefálica</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ Presentaciones anómalas (transversa, oblicua, podálica) en el 3er trimestre → siempre descartar placenta previa. La placenta ocupa el polo inferior y desplaza al feto.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔍 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num-gin">1</div>
+      <div class="step-content"><strong>Ecografía transvaginal (ETV):</strong> método de elección. Segura, no provoca hemorragia. Permite medir con precisión la distancia del borde placentario al OCI. Superior a la ecografía transabdominal para localización placentaria posterior y segmento inferior.</div>
+    </div>
+    <div class="step">
+      <div class="step-num-gin">2</div>
+      <div class="step-content"><strong>Ecografía transabdominal:</strong> primer paso habitual en la urgencia, pero puede fallar con placenta posterior o en pacientes obesas. No reemplaza a la ETV para diagnóstico definitivo.</div>
+    </div>
+    <div class="step">
+      <div class="step-num-gin">3</div>
+      <div class="step-content"><strong>RMN:</strong> útil para evaluar acretismo placentario, especialmente en placenta posterior. No es de primera línea para el diagnóstico de previa.</div>
+    </div>
+    <div class="step">
+      <div class="step-num-gin">4</div>
+      <div class="step-content"><strong>Tacto vaginal: ABSOLUTAMENTE CONTRAINDICADO</strong> ante sospecha de placenta previa sin confirmación ecográfica previa. Puede desencadenar hemorragia masiva incontrolable.</div>
+    </div>
+    <div class="hl-info">💡 <strong>Migración placentaria:</strong> hasta el 90% de las placentas previas diagnosticadas en el 2do trimestre "migran" y se resuelven al término. La placenta no migra — el segmento inferior crece hacia abajo y la placenta queda relativamente más alta. Controlar con ETV a las 32–34 semanas.</div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🚨 Manejo</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Principio fundamental</div>
+      El manejo depende de: <strong>edad gestacional</strong> + <strong>magnitud del sangrado</strong> + <strong>estado materno-fetal</strong>. El objetivo es llegar al término con el mayor bienestar posible o resolver la emergencia si el sangrado es masivo.
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Manejo expectante (embarazo &lt;36–37 semanas, hemorragia leve-moderada, madre y feto estables)</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Internación:</strong> toda paciente con placenta previa sintomática debe internarse. Reposo relativo.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Maduración pulmonar fetal:</strong> corticoides si &lt;34 semanas (betametasona 12 mg IM c/24 h × 2 dosis).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Tocolisis:</strong> puede considerarse para completar maduración pulmonar (nifedipina, sulfato de magnesio), no como tratamiento definitivo.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Anemia:</strong> corregir con hierro o transfusión según grado. Mantener hematocrito >30%.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Monitoreo:</strong> CTG, ecografías seriadas, perfil biofísico. Tipificación y reserva de sangre.</div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1rem">Resolución del embarazo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Vía de parto</th></tr>
+        <tr><td>Previa total u oclusiva parcial</td><td><strong>Cesárea</strong> siempre, electiva a las 36–37 semanas si estable</td></tr>
+        <tr><td>Borde placentario &lt;2 cm del OCI</td><td><strong>Cesárea</strong> recomendada</td></tr>
+        <tr><td>Borde placentario ≥2 cm del OCI</td><td>Parto vaginal puede intentarse con vigilancia estricta</td></tr>
+        <tr><td>Hemorragia masiva con inestabilidad hemodinámica</td><td><strong>Cesárea de urgencia</strong> independientemente de la EG</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 Ante hemorragia masiva: 2 vías periféricas gruesas · expansión volémica · tipificación y reserva de sangre · cesárea de urgencia · equipo multidisciplinario. Considerar histerectomía si hay acretismo.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Hemorragia roja, indolora, sin causa aparente en 3er trimestre = placenta previa hasta demostrar lo contrario</span>
+      <span class="pill">Tacto vaginal: CONTRAINDICADO en sospecha de previa</span>
+      <span class="pill">Diagnóstico: ecografía transvaginal (de elección)</span>
+      <span class="pill">Principal FR: cesárea anterior</span>
+      <span class="pill">Cesárea previa + previa = máximo riesgo de acretismo</span>
+      <span class="pill">Presentación anómala fetal → pensar en previa</span>
+      <span class="pill">Migración placentaria: 90% resuelven en el 2do trimestre</span>
+      <span class="pill">Corticoides si &lt;34 sem para maduración pulmonar</span>
+      <span class="pill">Previa total → cesárea siempre</span>
+      <span class="pill">Borde ≥2 cm del OCI → puede intentarse parto vaginal</span>
+      <span class="pill">Diferencia clave con DPP: no hay dolor, no hay hipertonía</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACOG Practice Bulletin No. 214: Placenta Previa. Obstet Gynecol 2020 · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo; 2016 · Sociedad de Obstetricia y Ginecología de Buenos Aires (SOGIBA). Guías clínicas · Ministerio de Salud de la Nación Argentina. Guía para la atención del embarazo de alto riesgo.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
