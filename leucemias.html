@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leucemias — LMA y LLA — Medpedia</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --lma: #C0392B; --lma-claro: #FDEDEC; --lma-oscuro: #922B21;
+      --lla: #2874A6; --lla-claro: #D6EAF8; --lla-oscuro: #1A5276;
+      --hemato: #6A1B9A; --hemato-claro: #F3E5F5;
+      --neuro: #2c3e50; --neuro-claro: #ebedef;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-hemato { background: var(--hemato-claro); color: var(--hemato); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hemato{ border-left: 3px solid var(--hemato); background: var(--hemato-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); margin-bottom: 10px; }
+    .card strong { color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    th.lma { background: var(--lma-claro); color: var(--lma-oscuro); }
+    th.lla { background: var(--lla-claro); color: var(--lla-oscuro); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--hemato); margin-bottom: 6px; }
+    .farma-clase.lma { color: var(--lma); }
+    .farma-clase.lla { color: var(--lla); }
+    .dosis-badge { display: inline-block; background: var(--hemato-claro); color: var(--hemato); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .dosis-badge.lma { background: var(--lma-claro); color: var(--lma-oscuro); }
+    .dosis-badge.lla { background: var(--lla-claro); color: var(--lla-oscuro); }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .badge-no  { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si  { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-lma { background: var(--lma-claro); color: var(--lma-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-lla { background: var(--lla-claro); color: var(--lla-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .tipo-header { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+    .tipo-card.lma { background: var(--lma-claro); border: 1.5px solid #e8b4b0; border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .tipo-card.lla { background: var(--lla-claro); border: 1.5px solid #a8cce4; border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .tipo-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .tipo-label.lma { color: var(--lma); }
+    .tipo-label.lla { color: var(--lla); }
+    .tipo-titulo { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+    .tipo-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    @media (max-width: 600px) { .tipo-header { grid-template-columns: 1fr; } }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 620px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-lma { background: var(--lma-claro); border: 1.5px solid #e8b4b0; border-radius: 12px; padding: 1rem; }
+    .col-lla { background: var(--lla-claro); border: 1.5px solid #a8cce4; border-radius: 12px; padding: 1rem; }
+    .col-titulo { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+    .col-titulo.lma { color: var(--lma); }
+    .col-titulo.lla { color: var(--lla); }
+    .col-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.5; }
+    .col-item strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Hematología</a> › Leucemias Agudas</div>
+  <div class="titulo">Leucemias Agudas — LMA y LLA</div>
+  <div class="meta">
+    <span class="tag tag-hemato">Hematología</span>
+    <span class="tag tag-hemato">Oncohematología</span>
+    <span class="tag tag-fuente">ELN 2022 · NCCN · Consenso SAH Argentina</span>
+  </div>
+
+  <div class="seccion">
+    <div class="tipo-header">
+      <div class="tipo-card lma">
+        <div class="tipo-label lma">🔴 Adultos · pico 60–70 años</div>
+        <div class="tipo-titulo">LMA — Leucemia Mieloide Aguda</div>
+        <div class="tipo-desc">Proliferación clonal de precursores mieloides con bloqueo de maduración. Más del 20% de blastos en médula ósea. La más frecuente en adultos. Sobrevida a 5 años 25–35% en general; mejor en t(8;21) y t(15;17).</div>
+      </div>
+      <div class="tipo-card lla">
+        <div class="tipo-label lla">🔵 Niños y adultos jóvenes</div>
+        <div class="tipo-titulo">LLA — Leucemia Linfoide Aguda</div>
+        <div class="tipo-desc">Proliferación clonal de precursores linfoides B o T. La leucemia más frecuente en niños (80% de leucemias pediátricas). En niños, curación hasta el 90%. En adultos, pronóstico más reservado.</div>
+      </div>
+    </div>
+    <div class="hl-hemato">Leucemia aguda = más del <strong>20% de blastos en médula ósea</strong> (por citometría de flujo o mielograma). Excepción: t(15;17), t(8;21), inv(16) son diagnósticas de LMA independientemente del porcentaje de blastos.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Presentación clínica — consecuencias del fallo medular</div>
+    <div class="card">
+      Los síntomas son consecuencia del <strong>desplazamiento de las líneas hematopoyéticas normales</strong> por los blastos leucémicos — "fallo medular":
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Línea afectada</th><th>Consecuencia</th><th>Síntomas</th></tr>
+        <tr><td><strong>Serie roja (anemia)</strong></td><td>Eritropoyesis insuficiente</td><td>Palidez, disnea, fatiga, taquicardia</td></tr>
+        <tr><td><strong>Plaquetas (trombocitopenia)</strong></td><td>Megacariopoyesis insuficiente</td><td>Petequias, equimosis, sangrado de mucosas, hemorragia</td></tr>
+        <tr><td><strong>Neutrófilos (neutropenia)</strong></td><td>Granulopoyesis insuficiente</td><td>Infecciones graves, fiebre sin foco claro, sepsis</td></tr>
+        <tr><td><strong>Infiltración extra-medular</strong></td><td>Blastos en tejidos</td><td>Esplenomegalia, hepatomegalia, adenopatías (más en LLA), infiltración SNC (LLA), hipertrofia gingival (LMA M5)</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">La neutropenia febril (neutrófilos menos de 500/mm³ + fiebre más de 38,3°C) es una <strong>emergencia oncológica</strong> — antibióticos IV de amplio espectro en la primera hora sin esperar cultivos.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico — estudios y hallazgos clave</div>
+    <div class="dos-col">
+      <div class="col-lma">
+        <div class="col-titulo lma">🔴 LMA — diagnóstico</div>
+        <div class="col-item"><strong>Hemograma:</strong> leucocitosis (variable), anemia, trombocitopenia. Blastos en sangre periférica</div>
+        <div class="col-item"><strong>Mielograma:</strong> más del 20% de blastos mieloides — confirma diagnóstico</div>
+        <div class="col-item"><strong>Citoquímica:</strong> MPO (mieloperoxidasa) y Sudan negro positivos en la mayoría de las LMA</div>
+        <div class="col-item"><strong>Citometría de flujo:</strong> inmunofenotipo — CD13, CD33, CD117 (c-Kit), CD34</div>
+        <div class="col-item"><strong>Citogenética:</strong> t(8;21), inv(16) = pronóstico favorable · t(15;17) = LPA (M3) · del(5q), del(7q), cariotipo complejo = desfavorable</div>
+        <div class="col-item"><strong>Biología molecular:</strong> FLT3-ITD (desfavorable), NPM1, CEBPA, IDH1/IDH2</div>
+      </div>
+      <div class="col-lla">
+        <div class="col-titulo lla">🔵 LLA — diagnóstico</div>
+        <div class="col-item"><strong>Hemograma:</strong> leucocitosis con linfoblastos, anemia, trombocitopenia</div>
+        <div class="col-item"><strong>Mielograma:</strong> más del 20% de linfoblastos — necesario para diagnóstico y fenotipo</div>
+        <div class="col-item"><strong>Citoquímica:</strong> MPO negativo — PAS positivo (gránulos)  </div>
+        <div class="col-item"><strong>Citometría de flujo:</strong> fenotipo B (CD19, CD20, CD22, CD10) o T (CD3, CD7, CD5)</div>
+        <div class="col-item"><strong>Citogenética/molecular:</strong> t(9;22) = cromosoma Filadelfia (Ph+) → el más importante — indica imatinib. Hiperdiploidía = buen pronóstico en niños. t(4;11) = mal pronóstico</div>
+        <div class="col-item"><strong>PL diagnóstica:</strong> obligatoria — evaluar infiltración del SNC (frecuente en LLA)</div>
+      </div>
+    </div>
+    <div class="hl-hemato"><strong>Cuerpos de Auer</strong> (bastones azurófilos en el citoplasma de los blastos): <strong>patognomónicos de LMA</strong> — nunca se ven en LLA. Son fácusión de gránulos lisosomales. Su presencia en la extensión de sangre periférica orienta inmediatamente.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ LPA (LMA M3) — Leucemia Promielocítica Aguda — emergencia especial</div>
+    <div class="hl-danger"><strong>La LPA es la única LMA que constituye una emergencia absoluta antes incluso de confirmar el diagnóstico.</strong> La t(15;17) genera la fusión PML-RARα → bloqueo de maduración en promielocito → acumulación de gránulos → CID fulminante. Mortalidad temprana por hemorragia del 5–10% si no se inicia ATRA de inmediato.</div>
+    <div class="farma-card">
+      <div class="farma-nombre">ATRA (ácido all-trans retinoico) — LPA</div>
+      <div class="farma-clase lma">Agente diferenciador · tratamiento específico de LPA · t(15;17)</div>
+      <div class="dosis-badge lma">45 mg/m²/día VO en 2 tomas · iniciar ante sospecha clínica SIN esperar confirmación molecular</div>
+      <div class="farma-detalle">
+        Induce la diferenciación de los promielocitos leucémicos → resuelve la CID. Combinado con trióxido de arsénico (ATO) logra remisión completa en más del 90% de los casos de LPA de bajo/intermedio riesgo — sin quimioterapia convencional.<br>
+        <strong>Síndrome de diferenciación (antes "síndrome de ATRA"):</strong> fiebre, disnea, derrame pleural/pericárdico, hipotensión — tratar con dexametasona 10 mg IV cada 12 h.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento — esquemas principales</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LMA — Inducción "7+3"</div>
+      <div class="farma-clase lma">Citarabina + Antraciclina · inducción estándar en LMA no-LPA</div>
+      <div class="dosis-badge lma">Citarabina 100–200 mg/m²/día IC × 7 días + Daunorrubicina o Idarrubicina × 3 días</div>
+      <div class="farma-detalle">
+        Esquema estándar de inducción desde hace décadas. Objetivo: remisión completa (menos del 5% de blastos en médula). Remisión completa en 60–80% de los pacientes.<br>
+        <strong>Post-remisión:</strong> consolidación con citarabina en altas dosis (HiDAC) — 2–3 ciclos. Trasplante alogénico de células madre en riesgo intermedio/alto o recaída.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LMA con FLT3+ — Midostaurina</div>
+      <div class="farma-clase lma">Inhibidor de tirosina kinasa · añadir al "7+3" en FLT3-ITD o FLT3-TKD positivo</div>
+      <div class="dosis-badge lma">50 mg cada 12h VO días 8–21 de cada ciclo (RATIFY trial)</div>
+      <div class="farma-detalle">
+        La mutación FLT3-ITD (presente en 25–30% de LMA) confiere mal pronóstico. Midostaurina + "7+3" mejora sobrevida global. Gilteritinib está indicado en recaída/refractaria FLT3+.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LLA — Inducción (esquema pediátrico adaptado a adultos)</div>
+      <div class="farma-clase lla">Vincristina + Corticoides + Asparaginasa + Antraciclina · inducción LLA</div>
+      <div class="dosis-badge lla">VPDL: Vincristina + Prednisona + Daunorrubicina + L-Asparaginasa · 4 semanas</div>
+      <div class="farma-detalle">
+        En niños, los esquemas pediátricos logran remisión completa en más del 95% y curación en 85–90%. En adultos, los esquemas pediátrico-inspirados han mejorado sustancialmente los resultados.<br>
+        <strong>Fases:</strong> inducción → consolidación → mantenimiento (6-mercaptopurina + metotrexato oral, 2 años).<br>
+        <strong>Profilaxis del SNC:</strong> metotrexato intratecal en todas las LLA — reduce la recaída meníngea.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">LLA Ph+ (cromosoma Filadelfia) — Imatinib/Dasatinib + quimioterapia</div>
+      <div class="farma-clase lla">Inhibidor de BCR-ABL · LLA Ph+ (t(9;22))</div>
+      <div class="dosis-badge lla">Dasatinib 140 mg/día VO (mayor penetración en SNC) + esquema quimioterápico · luego trasplante alogénico</div>
+      <div class="farma-detalle">
+        LLA Ph+ representa 25–30% de LLA en adultos — el subgrupo más frecuente y de peor pronóstico históricamente. Los inhibidores de BCR-ABL (imatinib, dasatinib, ponatinib) transformaron completamente el pronóstico. El trasplante alogénico en primera remisión sigue siendo estándar.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones oncológicas urgentes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Emergencia</th><th>Cuándo</th><th>Manejo</th></tr>
+        <tr><td><strong>Neutropenia febril</strong></td><td>Neutrófilos menos de 500 + fiebre — durante inducción</td><td>Ceftriaxona + amikacina (o piperacilina-tazobactam) en la 1ª hora · agregar vancomicina si inestable o catéter</td></tr>
+        <tr><td><strong>Síndrome de lisis tumoral</strong></td><td>Inicio de quimioterapia — leucocitosis muy alta</td><td>Hiperhidratación, alopurinol o rasburicasa, monitoreo electrolítico estricto</td></tr>
+        <tr><td><strong>CID</strong></td><td>LPA — infiltración masiva de promielocitos</td><td>ATRA inmediato, plasma fresco, crioprecipitados — transfusión de plaquetas para mantener más de 30.000/mm³</td></tr>
+        <tr><td><strong>Leucostasis</strong></td><td>Leucocitos más de 100.000/mm³ — hiperviscosidad</td><td>Leucoaféresis urgente, hidratación, evitar transfusión de GR (aumenta viscosidad)</td></tr>
+        <tr><td><strong>Infiltración del SNC</strong></td><td>LLA (más frecuente) — cefalea, pares craneales</td><td>Metotrexato intratecal, ara-C intratecal, radioterapia en casos seleccionados</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Diagnóstico de leucemia aguda: más del 20% de blastos en MO</span>
+      <span class="pill">Cuerpos de Auer → patognomónico de LMA</span>
+      <span class="pill">LMA más frecuente en adultos, LLA en niños</span>
+      <span class="pill">LPA = t(15;17) = PML-RARα → ATRA urgente</span>
+      <span class="pill">ATRA: iniciar ante sospecha, sin esperar confirmación</span>
+      <span class="pill">Síndrome de diferenciación: dexametasona</span>
+      <span class="pill">Inducción LMA: "7+3" — citarabina + antraciclina</span>
+      <span class="pill">FLT3-ITD: peor pronóstico → agregar midostaurina</span>
+      <span class="pill">LLA Ph+: t(9;22) → dasatinib/imatinib + quimio</span>
+      <span class="pill">LLA: profilaxis SNC con metotrexato intratecal siempre</span>
+      <span class="pill">Neutropenia febril: antibióticos en la 1ª hora</span>
+      <span class="pill">Leucostasis: leucocitos más de 100.000 → leucoaféresis urgente</span>
+      <span class="pill">Síndrome de lisis tumoral: rasburicasa + hiperhidratación</span>
+      <span class="pill">CID en LPA: causa más frecuente de muerte temprana</span>
+      <span class="pill">LLA en niños: curación hasta el 90%</span>
+      <span class="pill">t(8;21) e inv(16): pronóstico favorable en LMA</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Döhner H et al. Diagnosis and management of AML in adults: 2022 ELN recommendations. Blood 2022. NCCN Clinical Practice Guidelines in Oncology: Acute Myeloid Leukemia / Acute Lymphoblastic Leukemia. National Comprehensive Cancer Network 2024. Consenso de diagnóstico y tratamiento de leucemias agudas · Sociedad Argentina de Hematología (SAH).<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
