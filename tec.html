@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traumatismo Craneoencefálico (TEC) — Medpedia</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --tec: #D4730A; --tec-claro: #FEF0DC; --tec-oscuro: #9A5008;
+      --neuro: #2c3e50; --neuro-claro: #ebedef;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro); }
+    .tag-tec { background: var(--tec-claro); color: var(--tec-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #e74c3c; background: #fff5f5; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-tec   { border-left: 3px solid var(--tec); background: var(--tec-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); margin-bottom: 10px; }
+    .card strong { color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--tec); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--tec-claro); color: var(--tec-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .badge-no  { background: #fff5f5; color: #e74c3c; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .badge-si  { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .gcs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 620px) { .gcs-grid { grid-template-columns: 1fr; } }
+    .gcs-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .gcs-titulo { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; color: var(--neuro); }
+    .gcs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; display: flex; justify-content: space-between; }
+    .gcs-num { font-weight: 600; color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 620px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-box { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .col-titulo { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; color: var(--neuro); }
+    .col-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.5; }
+    .col-item strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Traumatismo Craneoencefálico</div>
+  <div class="titulo">Traumatismo Craneoencefálico (TEC)</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-tec">Emergencias</span>
+    <span class="tag tag-fuente">BTF Guidelines 2016 · ATLS · Protocolo Nacional Argentina</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto y clasificación por gravedad</div>
+    <div class="card">
+      El TEC es toda lesión cerebral resultante de una fuerza mecánica externa. La gravedad se clasifica según el <strong>Score de Glasgow (GCS) post-resucitación</strong> — es el parámetro más importante para decisiones terapéuticas y pronóstico.
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Gravedad</th><th>GCS</th><th>Amnesia/pérdida de conciencia</th><th>Manejo inicial</th></tr>
+        <tr><td><span class="badge-si">Leve</span></td><td>14–15</td><td>Pérdida de conciencia menos de 30 min, amnesia menos de 24h</td><td>Observación, TAC si criterios, alta con instrucciones</td></tr>
+        <tr><td><span style="background:#FAEEDA;color:#854F0B;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;">Moderado</span></td><td>9–13</td><td>Pérdida de conciencia 30 min–6h, amnesia 24h–7 días</td><td>TAC urgente, internación, monitoreo neurológico</td></tr>
+        <tr><td><span class="badge-no">Grave</span></td><td>3–8</td><td>Pérdida de conciencia más de 6h</td><td>Intubación, TAC urgente, UCI, monitoreo PIC</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger"><strong>TEC grave = GCS menor o igual a 8</strong> → intubación orotraqueal inmediata para proteger la vía aérea. Regla práctica: "si no obedece órdenes → intubar".</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Score de Glasgow (GCS) — cómo calcularlo</div>
+    <div class="gcs-grid">
+      <div class="gcs-card">
+        <div class="gcs-titulo">👁️ Apertura ocular</div>
+        <div class="gcs-item"><span>Espontánea</span><span class="gcs-num">4</span></div>
+        <div class="gcs-item"><span>Al estímulo verbal</span><span class="gcs-num">3</span></div>
+        <div class="gcs-item"><span>Al dolor</span><span class="gcs-num">2</span></div>
+        <div class="gcs-item"><span>Sin respuesta</span><span class="gcs-num">1</span></div>
+      </div>
+      <div class="gcs-card">
+        <div class="gcs-titulo">🗣️ Respuesta verbal</div>
+        <div class="gcs-item"><span>Orientada</span><span class="gcs-num">5</span></div>
+        <div class="gcs-item"><span>Confusa</span><span class="gcs-num">4</span></div>
+        <div class="gcs-item"><span>Palabras inapropiadas</span><span class="gcs-num">3</span></div>
+        <div class="gcs-item"><span>Sonidos incomprensibles</span><span class="gcs-num">2</span></div>
+        <div class="gcs-item"><span>Sin respuesta</span><span class="gcs-num">1</span></div>
+      </div>
+      <div class="gcs-card">
+        <div class="gcs-titulo">✋ Respuesta motora</div>
+        <div class="gcs-item"><span>Obedece órdenes</span><span class="gcs-num">6</span></div>
+        <div class="gcs-item"><span>Localiza dolor</span><span class="gcs-num">5</span></div>
+        <div class="gcs-item"><span>Retira al dolor</span><span class="gcs-num">4</span></div>
+        <div class="gcs-item"><span>Flexión (decorticación)</span><span class="gcs-num">3</span></div>
+        <div class="gcs-item"><span>Extensión (descerebración)</span><span class="gcs-num">2</span></div>
+        <div class="gcs-item"><span>Sin respuesta</span><span class="gcs-num">1</span></div>
+      </div>
+    </div>
+    <div class="hl-tec">GCS mínimo = 3 (sin respuesta en todo). GCS máximo = 15 (normal). La respuesta <strong>motora</strong> es el componente más predictivo del pronóstico.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 TAC de cráneo — cuándo pedirla en TEC leve (Reglas de decisión)</div>
+    <div class="dos-col">
+      <div class="col-box">
+        <div class="col-titulo">Regla canadiense de la cabeza (TEC leve, GCS 13–15)</div>
+        <div class="col-item"><strong>Alto riesgo (neurocirugía):</strong> GCS menor a 15 a las 2h, sospecha de fractura abierta/deprimida, signo de fractura de base, vómitos 2 o más veces, edad 65 o más</div>
+        <div class="col-item"><strong>Riesgo moderado (lesión en TAC):</strong> amnesia retrógrada 30 min o más, mecanismo peligroso (atropello, caída mayor de 1m)</div>
+        <div class="col-item">Si ninguno de estos: <span class="badge-si">alta segura sin TAC</span></div>
+      </div>
+      <div class="col-box">
+        <div class="col-titulo">Signos de fractura de base de cráneo</div>
+        <div class="col-item"><strong>Signo de Battle:</strong> equimosis retroauricular (fractura de peñasco)</div>
+        <div class="col-item"><strong>Ojos de mapache:</strong> equimosis periorbitaria bilateral (fractura de fosa anterior)</div>
+        <div class="col-item"><strong>Hemotímpano:</strong> sangre detrás del tímpano</div>
+        <div class="col-item"><strong>Otorraquia / rinorraquia:</strong> LCR por oído o nariz — confirma fractura de base</div>
+        <div class="col-item">Signo de Battle y ojos de mapache aparecen 24–48h post-trauma</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩸 Lesiones intracraneales — clasificación y diagnóstico diferencial</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Lesión</th><th>Mecanismo</th><th>TAC</th><th>Clínica característica</th></tr>
+        <tr><td><strong>Hematoma epidural (HED)</strong></td><td>Fractura temporal + rotura de arteria meníngea media</td><td>Lente biconvexa hiperdensa — NO cruza suturas</td><td><strong>Intervalo lúcido</strong>: pérdida de conciencia → recuperación → deterioro rápido. Anisocoria ipsilateral al hematoma</td></tr>
+        <tr><td><strong>Hematoma subdural agudo (HSD)</strong></td><td>Rotura de venas puente — trauma severo</td><td>Semiluna hiperdensa — SÍ cruza suturas, sigue la convexidad</td><td>Sin intervalo lúcido — deterioro progresivo desde el inicio. Peor pronóstico que el HED</td></tr>
+        <tr><td><strong>Hematoma subdural crónico</strong></td><td>Trauma menor o sin trauma — ancianos, anticoagulados</td><td>Semiluna hipodensa (isodensa en fase subaguda)</td><td>Cefalea, cambios cognitivos, déficit focal subagudo — semanas post-trauma</td></tr>
+        <tr><td><strong>Contusión cerebral</strong></td><td>Golpe-contragolpe — lesión del parénquima</td><td>Focos hiperdensas puntiformes (petequiales) en lóbulos frontales y temporales</td><td>Variable — déficit focal, alteración de conciencia, puede evolucionar a hematoma</td></tr>
+        <tr><td><strong>Lesión axonal difusa (LAD)</strong></td><td>Aceleración-desaceleración rotacional — TEC grave</td><td>TAC puede ser normal o con pequeñas hemorragias en cuerpo calloso, ganglios basales</td><td>Coma desde el impacto sin lesión focal evidente — la RM es más sensible</td></tr>
+      </table>
+    </div>
+    <div class="hl-tec"><strong>Clave para el examen:</strong> el intervalo lúcido es patognomónico del hematoma epidural. El HED es quirúrgico urgente — mortalidad muy baja si se opera a tiempo. El HSD agudo tiene peor pronóstico porque implica lesión cerebral subyacente mayor.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🧠 Hipertensión endocraneana (HEC) — fisiopatología y manejo</div>
+    <div class="hl-neuro">La PIC normal es 5–15 mmHg. Con más de 20 mmHg hay HEC. Con más de 25 mmHg requiere tratamiento activo. La <strong>Tríada de Cushing</strong> (HTA + bradicardia + respiración irregular) es signo tardío de herniación inminente.</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Medidas generales de control de PIC</div>
+      <div class="farma-clase">Manejo escalonado — aplica a todo TEC grave</div>
+      <div class="farma-detalle">
+        <strong>Cabecera a 30°</strong> — mejora drenaje venoso cerebral.<br>
+        <strong>Normocapnia:</strong> PaCO₂ 35–40 mmHg — hiperventilar solo si herniación inminente (transitoriamente).<br>
+        <strong>Normotermia:</strong> tratar fiebre agresivamente — la hipertermia aumenta el metabolismo cerebral.<br>
+        <strong>Normoglucemia:</strong> evitar hipo e hiperglucemia.<br>
+        <strong>Analgesia y sedación:</strong> reducir el consumo de O₂ cerebral — propofol o midazolam en UCI.<br>
+        <strong>Profilaxis convulsiva:</strong> fenitoína o levetiracetam los primeros 7 días en TEC grave.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Manitol 20% / Suero salino hipertónico 3%</div>
+      <div class="farma-clase">Agentes hiperosmolares · reducción aguda de PIC</div>
+      <div class="dosis-badge">Manitol: 0,25–1 g/kg IV en bolo · SSH 3%: 150–250 ml IV en herniación inminente</div>
+      <div class="farma-detalle">
+        Indicados ante deterioro neurológico agudo, anisocoria o signos de herniación. El manitol reduce la PIC en 15–30 min. El SSH 3% es alternativa especialmente con hiponatremia. No usar manitol si osmolaridad sérica mayor a 320 mOsm — riesgo de fallo renal.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Craniectomía descompresiva</div>
+      <div class="farma-clase">Cirugía · HEC refractaria al tratamiento médico en TEC grave</div>
+      <div class="dosis-badge">Indicada en HEC refractaria con PIC mayor a 25 mmHg sostenida · mejores resultados en menores de 60 años</div>
+      <div class="farma-detalle">
+        Reduce la mortalidad pero puede aumentar la sobrevida con discapacidad severa. La decisión requiere discusión con familia sobre objetivos de cuidado. El estudio DECRA y RESCUEicp guían la indicación.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ TEC leve — criterios de alta y señales de alarma</div>
+    <div class="hl-warn">Todo paciente con TEC leve dado de alta debe recibir instrucciones escritas. Volver inmediatamente si: cefalea progresiva, vómitos repetidos, somnolencia excesiva, confusión, debilidad en brazos o piernas, convulsiones, anisocoria.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma de alarma</th><th>Sospecha</th><th>Acción</th></tr>
+        <tr><td>Cefalea progresiva + deterioro de conciencia</td><td>Hematoma expansivo</td><td>TAC urgente, neurocirugía</td></tr>
+        <tr><td>Intervalo lúcido + anisocoria</td><td>Hematoma epidural</td><td>Cirugía urgente</td></tr>
+        <tr><td>Déficit focal nuevo</td><td>Contusión o hematoma</td><td>TAC, evaluación neuroquirúrgica</td></tr>
+        <tr><td>Convulsiones post-trauma</td><td>Irritación cortical por contusión o hematoma</td><td>Antiepilépticos, TAC</td></tr>
+        <tr><td>LCR por nariz u oído</td><td>Fractura de base de cráneo</td><td>Neurocirugía — no taponar, profilaxis antibiótica discutida</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">TEC grave = GCS menor o igual a 8 → intubar</span>
+      <span class="pill">GCS: O(4) + V(5) + M(6) = 15 normal</span>
+      <span class="pill">Intervalo lúcido → hematoma epidural</span>
+      <span class="pill">HED: biconvexa, arteria meníngea media, temporal</span>
+      <span class="pill">HSD: semiluna, venas puente, peor pronóstico</span>
+      <span class="pill">Signo de Battle + ojos de mapache → fractura de base</span>
+      <span class="pill">Rinorraquia / otorraquia → confirma fractura de base</span>
+      <span class="pill">Tríada de Cushing → herniación inminente</span>
+      <span class="pill">PIC normal: 5–15 mmHg · tratar si mayor a 25 mmHg</span>
+      <span class="pill">Cabecera a 30° en todo TEC grave</span>
+      <span class="pill">Manitol 20%: osmolaridad máxima 320 mOsm</span>
+      <span class="pill">Profilaxis anticonvulsiva: 7 días post-TEC grave</span>
+      <span class="pill">LAD: TAC normal + coma desde el impacto</span>
+      <span class="pill">Regla canadiense: cuándo NO hacer TAC en TEC leve</span>
+      <span class="pill">HSD crónico: ancianos, anticoagulados, semanas post-trauma</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury 4th Edition 2016. Advanced Trauma Life Support (ATLS) 10th edition. American College of Surgeons 2018. Protocolo de atención del TEC · Ministerio de Salud de la Nación Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
