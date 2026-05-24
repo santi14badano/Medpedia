@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1399529792870834" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome Metabólico — Medpedia</title>
+  <meta name="description" content="Síndrome metabólico: criterios diagnósticos, fisiopatología, riesgo cardiovascular y manejo. Para estudiantes de medicina argentina.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --endo: #2E7D32; --endo-claro: #E8F5E9; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: var(--endo-claro); color: var(--endo); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .subtitulo-bloque { font-size: 14px; font-weight: 600; color: var(--texto); margin: 16px 0 8px; border-left: 3px solid var(--verde); padding-left: 10px; }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; font-size: 14px; line-height: 1.75; color: var(--texto-sec); }
+    .card p { margin-bottom: 8px; } .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--texto); }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .criterio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-bottom: 10px; }
+    .criterio-card { background: var(--blanco); border: 2px solid var(--borde); border-radius: 12px; padding: 14px; }
+    .criterio-titulo { font-size: 13px; font-weight: 700; color: var(--endo); margin-bottom: 4px; }
+    .criterio-valor { font-size: 13px; color: var(--texto); font-weight: 500; margin-bottom: 4px; }
+    .criterio-nota { font-size: 11px; color: var(--texto-ter); line-height: 1.4; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">Med<span>pedia</span></a><a href="index.html" class="nav-back">← Volver</a></nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Endocrinología</a> › Síndrome Metabólico</div>
+  <div class="titulo">Síndrome Metabólico</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-fuente">IDF/AHA/NHLBI 2009 · TRAPS Argentina · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto clave</div>
+    <div class="card">
+      <p>El <strong>síndrome metabólico (SM)</strong> es un conjunto de alteraciones metabólicas y cardiovasculares que se presentan juntas con mayor frecuencia de lo esperable por el azar, y que confieren un riesgo aumentado de enfermedad cardiovascular aterosclerótica y diabetes tipo 2.</p>
+      <p>No es una enfermedad en sí misma sino un <strong>agrupamiento de factores de riesgo</strong>. El nexo fisiopatológico es la <strong>resistencia a la insulina</strong> y la <strong>obesidad visceral (central)</strong>.</p>
+      <p><strong>Prevalencia:</strong> afecta al 25–35% de la población adulta argentina. Es más frecuente con la edad, el sedentarismo y la dieta occidental.</p>
+      <p><strong>Importancia clínica:</strong> el SM multiplica por 2 el riesgo de enfermedad cardiovascular y por 5 el riesgo de diabetes tipo 2 en los siguientes 5–10 años.</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Criterios diagnósticos — IDF/AHA/NHLBI 2009 (consenso unificado)</div>
+    <div class="hl"><strong>Diagnóstico:</strong> presencia de ≥3 de los siguientes 5 criterios. No hay un criterio obligatorio (a diferencia de la definición IDF 2005 que exigía obesidad abdominal).</div>
+    <div class="criterio-grid" style="margin-top:10px;">
+      <div class="criterio-card">
+        <div class="criterio-titulo">Obesidad abdominal</div>
+        <div class="criterio-valor">CC ≥102 cm (H) · ≥88 cm (M)</div>
+        <div class="criterio-nota">Criterios para población latinoamericana: H ≥94 cm · M ≥80 cm (IDF). En Argentina se usan ambos según la guía</div>
+      </div>
+      <div class="criterio-card">
+        <div class="criterio-titulo">Hipertrigliceridemia</div>
+        <div class="criterio-valor">TG ≥150 mg/dL</div>
+        <div class="criterio-nota">O en tratamiento farmacológico para hipertrigliceridemia</div>
+      </div>
+      <div class="criterio-card">
+        <div class="criterio-titulo">HDL bajo</div>
+        <div class="criterio-valor">&lt;40 mg/dL (H) · &lt;50 mg/dL (M)</div>
+        <div class="criterio-nota">O en tratamiento farmacológico para HDL bajo</div>
+      </div>
+      <div class="criterio-card">
+        <div class="criterio-titulo">HTA</div>
+        <div class="criterio-valor">TA ≥130/85 mmHg</div>
+        <div class="criterio-nota">O en tratamiento antihipertensivo</div>
+      </div>
+      <div class="criterio-card">
+        <div class="criterio-titulo">Glucemia elevada</div>
+        <div class="criterio-valor">≥100 mg/dL en ayunas</div>
+        <div class="criterio-nota">O diagnóstico previo de DM2 o en tratamiento hipoglucemiante</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Fisiopatología</div>
+    <div class="card">
+      <p>El eje central es la <strong>resistencia a la insulina (RI)</strong>, íntimamente relacionada con la acumulación de grasa visceral (intraabdominal).</p>
+      <p><strong>Grasa visceral → RI:</strong> el tejido adiposo visceral secreta ácidos grasos libres y adipocitoquinas proinflamatorias (TNF-α, IL-6, resistina) → interfieren con la señalización del receptor de insulina en músculo, hígado y tejido adiposo → RI.</p>
+      <p><strong>Consecuencias de la RI:</strong></p>
+      <p>→ <strong>Hígado:</strong> ↑ gluconeogénesis → hiperglucemia · ↑ síntesis de VLDL → hipertrigliceridemia · NAFLD/NASH.</p>
+      <p>→ <strong>Riñón:</strong> ↑ reabsorción de Na⁺ → HTA.</p>
+      <p>→ <strong>Páncreas:</strong> hiperinsulinismo compensatorio → con el tiempo agotamiento de células β → DM2.</p>
+      <p>→ <strong>Ovario:</strong> ↑ producción de andrógenos → síndrome de ovario poliquístico (SOP) — el SM y el SOP están íntimamente relacionados.</p>
+      <p><strong>Adiponectina:</strong> adipocitoquina antiinflamatoria e insulinosensibilizante producida por el tejido adiposo. Está <strong>disminuida</strong> en la obesidad visceral y el SM (a diferencia del resto, que están aumentadas).</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Enfermedades asociadas al síndrome metabólico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Enfermedad asociada</th><th>Mecanismo</th><th>Prevalencia en SM</th></tr>
+        <tr><td><strong>Diabetes mellitus tipo 2</strong></td><td>RI + agotamiento de células β</td><td>5× mayor riesgo</td></tr>
+        <tr><td><strong>Enfermedad cardiovascular aterosclerótica</strong></td><td>HTA + dislipemia aterogénica + inflamación crónica + trombofilia</td><td>2× mayor riesgo de IAM y ACV</td></tr>
+        <tr><td><strong>NAFLD / NASH</strong> (esteatosis hepática no alcohólica)</td><td>RI → ↑ síntesis de TG hepáticos + lipotoxicidad</td><td>70–90% de los pacientes con SM</td></tr>
+        <tr><td><strong>SOP (síndrome de ovario poliquístico)</strong></td><td>RI → hiperandrogenismo</td><td>50–70% de mujeres con SOP tienen SM</td></tr>
+        <tr><td><strong>HTA</strong></td><td>RI → ↑ reabsorción de Na⁺ · activación del SRAA · disfunción endotelial</td><td>Componente diagnóstico del SM</td></tr>
+        <tr><td><strong>AOS (apnea obstructiva del sueño)</strong></td><td>Obesidad → colapso de vía aérea superior</td><td>Alta comorbilidad</td></tr>
+        <tr><td><strong>Hiperuricemia / Gota</strong></td><td>RI → ↓ excreción renal de urato + fructosa → ↑ producción</td><td>Mayor prevalencia en SM</td></tr>
+        <tr><td><strong>Cáncer</strong></td><td>Hiperinsulinemia → factor de crecimiento · inflamación crónica</td><td>↑ riesgo de cáncer de colon, mama, endometrio, hígado, riñón</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento</div>
+    <div class="hl"><strong>El tratamiento primario es el cambio del estilo de vida.</strong> No existe un fármaco específico para el "síndrome metabólico" — se trata cada componente por separado.</div>
+
+    <div class="subtitulo-bloque">Cambios del estilo de vida — primera línea universal</div>
+    <div class="card">
+      <p><strong>Reducción de peso:</strong> una pérdida del 5–10% del peso corporal reduce significativamente todos los componentes del SM. La pérdida de peso es la intervención más eficaz disponible. El objetivo es la pérdida de grasa visceral — la circunferencia de cintura es mejor indicador que el IMC de la grasa visceral.</p>
+      <p><strong>Actividad física:</strong> 150 min/semana de actividad aeróbica moderada (caminar a paso rápido, nadar, bicicleta) + ejercicio de resistencia 2×/semana. El ejercicio mejora la sensibilidad a la insulina independientemente de la pérdida de peso.</p>
+      <p><strong>Dieta:</strong> reducir carbohidratos refinados (azúcar, harinas blancas, bebidas azucaradas) y grasas saturadas · aumentar fibra (frutas, verduras, legumbres, cereales integrales) · limitar el alcohol · dieta mediterránea o DASH tienen evidencia sólida.</p>
+      <p><strong>Tabaquismo:</strong> dejar de fumar — el tabaco agrava la RI y el riesgo cardiovascular.</p>
+    </div>
+
+    <div class="subtitulo-bloque">Tratamiento farmacológico por componente</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Metformina</div>
+      <div class="farma-clase">Biguanida · insulinosensibilizante · prevención de DM2</div>
+      <div class="dosis-badge">500 mg c/12 h con comidas → hasta 2550 mg/día</div>
+      <div class="farma-detalle">Aunque no está aprobada formalmente para el SM como entidad, la metformina está indicada en prediabetes con factores de riesgo (obesidad, historia familiar, glucemia 100–125 mg/dL) para prevenir la progresión a DM2. Reduce la glucemia, mejora la RI, tiene efecto neutral o favorable sobre el peso. No causa hipoglucemia en monoterapia. Suspender si FGe &lt;30. Primera línea si ya hay DM2 establecida.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Estatinas</div>
+      <div class="farma-clase">Hipolipemiantes · primera línea para el componente lipídico de riesgo alto</div>
+      <div class="dosis-badge">Atorvastatina 10–40 mg/día · Rosuvastatina 10–20 mg/día</div>
+      <div class="farma-detalle">Indicadas cuando el riesgo cardiovascular global es alto o muy alto (no solo por el SM sino por el contexto clínico completo). En SM sin otros FRCV mayores: primero cambios del estilo de vida. Si no se alcanzan las metas de LDL o el riesgo es alto: iniciar estatina. Las estatinas pueden aumentar levemente el riesgo de DM2 (efecto clase) — el beneficio cardiovascular ampliamente supera este riesgo.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Antihipertensivos (IECA/ARA2 preferidos)</div>
+      <div class="farma-clase">Primera línea en HTA del paciente con SM o RI</div>
+      <div class="dosis-badge">Enalapril 5–40 mg/día · Losartán 25–100 mg/día</div>
+      <div class="farma-detalle">Los IECA y ARA2 son los antihipertensivos preferidos en el SM porque mejoran la sensibilidad a la insulina (a diferencia de los betabloqueantes y tiazidas que la empeoran). Losartán tiene además efecto uricosúrico (beneficio adicional en SM con hiperuricemia). Tiazidas y betabloqueantes como segunda/tercera línea — si son necesarios, elegir los metabólicamente más neutros (hidroclorotiazida &lt;25 mg, nebivolol).</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Fibratos (fenofibrato) / Omega-3 a altas dosis</div>
+      <div class="farma-clase">Para hipertrigliceridemia severa (&gt;500 mg/dL)</div>
+      <div class="dosis-badge">Fenofibrato 145 mg/día · Omega-3 (icosapent etil) 4 g/día</div>
+      <div class="farma-detalle">Los fibratos reducen los TG un 30–50% y elevan el HDL un 10–20%. Indicados principalmente cuando TG &gt;500 mg/dL (riesgo de pancreatitis) o en dislipemia mixta. No combinar gemfibrozil con estatinas (riesgo de miopatía). El fenofibrato es más seguro en combinación. Omega-3 a altas dosis (icosapent etil 4 g/día) tiene beneficio cardiovascular adicional en pacientes con TG ≥150 mg/dL en tratamiento con estatina (estudio REDUCE-IT).</div>
+    </div>
+
+    <div class="subtitulo-bloque">Fármacos para la obesidad — cuando los cambios de estilo de vida son insuficientes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fármaco</th><th>Mecanismo</th><th>Pérdida de peso esperada</th><th>Consideraciones</th></tr>
+        <tr><td><strong>Semaglutida</strong> (Ozempic/Wegovy)</td><td>Agonista GLP-1 → ↓ apetito + ↑ saciedad</td><td>12–15% del peso corporal</td><td>También reduce HbA1c, TA y eventos CV. SC semanal. Náuseas frecuentes al inicio</td></tr>
+        <tr><td><strong>Tirzepatida</strong> (Mounjaro)</td><td>Agonista dual GLP-1 + GIP</td><td>15–22% del peso corporal</td><td>La más eficaz disponible. También mejora todos los componentes del SM</td></tr>
+        <tr><td><strong>Orlistat</strong></td><td>Inhibidor de la lipasa intestinal → ↓ absorción de grasas</td><td>3–5% del peso corporal</td><td>EA gastrointestinales frecuentes (esteatorrea, flatulencia). Menos eficaz que agonistas GLP-1</td></tr>
+        <tr><td><strong>Cirugía bariátrica</strong></td><td>Restricción + malabsorción según técnica</td><td>25–40% del peso corporal</td><td>La más eficaz a largo plazo. IMC ≥40 o ≥35 con comorbilidades. Remisión de DM2 en 60–80%</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SM: ≥3 de 5 criterios IDF/AHA/NHLBI</span>
+      <span class="pill">Cintura ≥102 cm (H) / ≥88 cm (M) — latinoamericanos: 94/80</span>
+      <span class="pill">TG ≥150 · HDL &lt;40(H)/&lt;50(M) · TA ≥130/85 · glucemia ≥100</span>
+      <span class="pill">Resistencia a la insulina — nexo fisiopatológico central</span>
+      <span class="pill">Grasa visceral ≠ grasa subcutánea — la visceral es la patogénica</span>
+      <span class="pill">Adiponectina ↓ en obesidad visceral (única que baja)</span>
+      <span class="pill">SM × 2 riesgo CV · × 5 riesgo DM2</span>
+      <span class="pill">NAFLD/NASH — 70–90% en SM</span>
+      <span class="pill">SOP — íntimamente relacionado con RI y SM</span>
+      <span class="pill">Tratamiento primario: cambio del estilo de vida</span>
+      <span class="pill">Pérdida 5–10% del peso → mejora todos los componentes</span>
+      <span class="pill">IECA/ARA2 preferidos en HTA del SM (mejoran RI)</span>
+      <span class="pill">Tiazidas y betabloqueantes empeoran la RI</span>
+      <span class="pill">Losartán — efecto uricosúrico adicional</span>
+      <span class="pill">Metformina — prevención de progresión a DM2</span>
+      <span class="pill">Semaglutida/tirzepatida — mayor pérdida de peso disponible</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: IDF/AHA/NHLBI Joint Interim Statement on Metabolic Syndrome 2009 · TRAPS Fascículo 7 — Obesidad, Ministerio de Salud Argentina · ACC/AHA Guidelines on Cardiovascular Risk 2019 · Harrison Principios de Medicina Interna, 21ª ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
