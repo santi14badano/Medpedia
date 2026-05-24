@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feocromocitoma y Paraganglioma — Medpedia</title>
+  <meta name="description" content="Feocromocitoma y paraganglioma: regla del 10, clínica, diagnóstico bioquímico e imagenológico, tratamiento quirúrgico y síndromes hereditarios. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --endo: #D4730A; --endo-claro: #FEF0DC; --endo-oscuro: #A0560A;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --onco: #6B3FA0; --onco-claro: #F3EEFE;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: var(--endo-claro); color: var(--endo-oscuro); }
+    .tag-ciru { background: #FFF3E0; color: #E65100; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-endo { font-size: 16px; font-weight: 500; color: var(--endo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--endo); background: var(--endo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--endo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .regla10-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .regla10-grid { grid-template-columns: 1fr; } }
+    .r10-card { background: var(--blanco); border: 1.5px solid var(--endo); border-radius: 12px; padding: 1.1rem 1.2rem; }
+    .r10-num { font-size: 28px; font-weight: 700; color: var(--endo); line-height: 1; margin-bottom: 4px; }
+    .r10-titulo { font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 4px; }
+    .r10-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .tríada-box { background: var(--endo-claro); border: 2px solid var(--endo); border-radius: 14px; padding: 1.25rem; margin-bottom: 12px; }
+    .tríada-titulo { font-size: 15px; font-weight: 700; color: var(--endo-oscuro); margin-bottom: 10px; }
+    .tríada-item { font-size: 14px; color: var(--texto); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .badge-urgente { display: inline-block; background: var(--danger); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Endocrinología</a> › Feocromocitoma y Paraganglioma</div>
+  <div class="titulo">Feocromocitoma y Paraganglioma</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-ciru">Cirugía</span>
+    <span class="tag tag-fuente">Endocrine Society 2014 · ESE/ENSAT 2020 · Guías Endocrinología Argentina</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y concepto</div>
+    <div class="hl-warn"><strong>Feocromocitoma (FEO):</strong> tumor neuroendócrino productor de catecolaminas que se origina en las <strong>células cromafines de la médula suprarrenal</strong>. El término paraganglioma (PGL) se refiere al mismo tipo de tumor pero extraadrenal, originado en los ganglios simpáticos o parasimpáticos.</div>
+    <div class="hl">Los feocromocitomas son causa <strong>potencialmente curable</strong> de hipertensión arterial secundaria (~0,1–0,6% de los hipertensos). La identificación es crítica porque, sin tratamiento, las crisis hipertensivas pueden ser fatales. Actualmente se considera que <strong>hasta el 40% tienen mutación germinal</strong> identificable → todos deben recibir test genético.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Feocromocitoma</th><th>Paraganglioma</th></tr>
+        <tr><td>Origen</td><td>Médula suprarrenal</td><td>Extraadrenal (paravertebral, pelvis, tórax, cuello)</td></tr>
+        <tr><td>Bilateral</td><td>10% (más en hereditarios)</td><td>No aplica (son extraadrenales)</td></tr>
+        <tr><td>Producción hormonal</td><td>Epinefrina + norepinefrina</td><td>Principalmente norepinefrina (simpáticos) o no funcionantes (parasimpáticos)</td></tr>
+        <tr><td>Malignidad</td><td>~10%</td><td>~20–40% (mayor en SDH mutados, especialmente SDHB)</td></tr>
+        <tr><td>Localización más frec.</td><td>Suprarrenal</td><td>Órgano de Zuckerkandl (aorta-bifurcación), vejiga</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- REGLA DEL 10 -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">⭐ La "Regla del 10" — clásica pero desactualizada</div>
+    <div class="hl-warn">La regla clásica dice que el 10% de los FEO son malignos, bilaterales, extraadrenales, pediátricos y familiares. Los datos actuales (test genético universal) muestran que la cifra de hereditarios es mucho mayor (~40%), pero la regla sigue siendo el esquema mnemotécnico del examen.</div>
+    <div class="regla10-grid">
+      <div class="r10-card">
+        <div class="r10-num">10%</div>
+        <div class="r10-titulo">Malignos</div>
+        <div class="r10-desc">Definidos por presencia de metástasis (no por histología). Sitios: hueso, hígado, pulmón, ganglios. SDHB: mayor riesgo de malignidad.</div>
+      </div>
+      <div class="r10-card">
+        <div class="r10-num">10%</div>
+        <div class="r10-titulo">Bilaterales</div>
+        <div class="r10-desc">Más frecuentes en formas hereditarias (MEN 2A/2B, VHL, NF1). Siempre descartar herencia si bilateral.</div>
+      </div>
+      <div class="r10-card">
+        <div class="r10-num">10%</div>
+        <div class="r10-titulo">Extraadrenales</div>
+        <div class="r10-desc">Paragangliomas. Localización más frecuente: órgano de Zuckerkandl. También vejiga (hematuria + HTA al orinar).</div>
+      </div>
+      <div class="r10-card">
+        <div class="r10-num">10%</div>
+        <div class="r10-titulo">Pediátricos</div>
+        <div class="r10-desc">En niños hay mayor proporción de formas hereditarias y extraadrenales. Sospechar síndrome genético siempre.</div>
+      </div>
+      <div class="r10-card">
+        <div class="r10-num">~40%</div>
+        <div class="r10-titulo">Hereditarios (real)</div>
+        <div class="r10-desc">La cifra real actual es mucho mayor. Mutaciones en RET, VHL, SDHB/C/D, NF1, MAX, TMEM127, etc. Todo FEO/PGL → test genético.</div>
+      </div>
+      <div class="r10-card">
+        <div class="r10-num">10%</div>
+        <div class="r10-titulo">Incidentalomas</div>
+        <div class="r10-desc">Hallazgos en imágenes solicitadas por otras causas. Todo incidentaloma suprarrenal → descartar FEO con metanefrinas.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍNDROMES HEREDITARIOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🧬 Síndromes hereditarios asociados</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síndrome</th><th>Gen</th><th>Características clave</th></tr>
+        <tr><td><strong>MEN 2A</strong></td><td>RET</td><td>FEO (50%) + carcinoma medular de tiroides + hiperparatiroidismo primario. AD.</td></tr>
+        <tr><td><strong>MEN 2B</strong></td><td>RET</td><td>FEO + carcinoma medular de tiroides + neuromas mucosos + hábito marfanoide. Sin hiperPTH.</td></tr>
+        <tr><td><strong>Von Hippel-Lindau (VHL)</strong></td><td>VHL</td><td>FEO + hemangioblastomas SNC/retina + carcinoma de células renales + quistes renales/pancreáticos. FEO solo norepinefrina.</td></tr>
+        <tr><td><strong>Neurofibromatosis tipo 1 (NF1)</strong></td><td>NF1</td><td>FEO en 0.1–5,7%. Manchas café con leche, neurofibromas, nódulos de Lisch. Riesgo moderado de FEO.</td></tr>
+        <tr><td><strong>Paraganglioma familiar (SDH)</strong></td><td>SDHB/C/D</td><td>PGL múltiples. SDHB: mayor riesgo de malignidad (~30–50%). SDHD: PGL de cabeza y cuello. Imprinting materno en SDHD.</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 En el examen: MEN 2 → RET mutado → también causa carcinoma medular de tiroides → calcitonina elevada. El carcinoma medular de tiroides es el más frecuente y grave en MEN 2.</div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Manifestaciones clínicas — la tríada clásica</div>
+    <div class="tríada-box">
+      <div class="tríada-titulo">⭐ Tríada clásica de Feocromocitoma</div>
+      <div class="tríada-item">💓 <strong>Cefalea pulsátil</strong> (síntoma más frecuente — por HTA paroxística)</div>
+      <div class="tríada-item">💦 <strong>Sudoración profusa</strong> (diaforesis)</div>
+      <div class="tríada-item">💗 <strong>Palpitaciones / taquicardia</strong></div>
+    </div>
+    <div class="hl-warn">La tríada clásica + HTA (sostenida o paroxística) tiene una <strong>sensibilidad del 90%</strong> para FEO. La HTA es el signo más constante y puede ser sostenida (50%), paroxística (45%) o normotenso (5%). Las crisis paroxísticas son más sugestivas pero la HTA sostenida es igualmente común.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma / signo</th><th>Mecanismo</th><th>Frecuencia</th></tr>
+        <tr><td>HTA (sostenida o paroxística)</td><td>Norepinefrina → vasoconstricción α1</td><td>>90%</td></tr>
+        <tr><td>Cefalea pulsátil intensa</td><td>HTA paroxística</td><td>~80%</td></tr>
+        <tr><td>Sudoración profusa</td><td>Estimulación adrenérgica</td><td>~70%</td></tr>
+        <tr><td>Palpitaciones / taquicardia</td><td>Epinefrina → receptores β1</td><td>~60%</td></tr>
+        <tr><td>Palidez facial</td><td>Vasoconstricción cutánea (α1)</td><td>~40%</td></tr>
+        <tr><td>Hiperglucemia</td><td>Glucogenólisis + inhibición insulina (α2)</td><td>Frecuente</td></tr>
+        <tr><td>Pérdida de peso</td><td>Hipermetabolismo catecolaminérgico</td><td>Frecuente</td></tr>
+        <tr><td>Ortostatismo</td><td>Hipovolemia relativa + bloqueo reflejo barorreceptor</td><td>Frecuente</td></tr>
+        <tr><td>Ansiedad / pánico</td><td>Estimulación adrenérgica central</td><td>Frecuente</td></tr>
+        <tr><td>Rubor (flush)</td><td>Menos frecuente — más en PGL parasimpáticos o con serotonina</td><td>Raro</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🚨 <strong>Desencadenantes de crisis en FEO:</strong> ejercicio físico, palpación abdominal (JAMÁS palpar vigorosamente un tumor suprarrenal conocido), anestesia/cirugía, contraste iodado, micción (FEO vesical), medicamentos (β-bloqueantes solos, metoclopramida, antidepresivos tricíclicos, opioides, glucagón).</div>
+    <div class="hl-warn">⭐ <strong>FEO vesical:</strong> hematuria + crisis hipertensiva durante la micción. Pensar en paraganglioma de la vejiga.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">🔍 Diagnóstico bioquímico e imagenológico</div>
+    <div class="hl-info"><strong>Primero confirmar el exceso hormonal bioquímicamente → luego localizar con imágenes.</strong> Nunca al revés — si se encuentra un incidentaloma suprarrenal, la bioquímica confirma si es FEO secretor.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Metanefrinas fraccionadas en plasma o en orina de 24 h — estudio de elección</strong><br>
+        Las metanefrinas (metanefrina y normetanefrina) son metabolitos estables de adrenalina y noradrenalina, producidos continuamente dentro del tumor. <strong>Sensibilidad 96–98%.</strong> Las metanefrinas plasmáticas libres son ligeramente más sensibles (pero con más falsos positivos). Las metanefrinas urinarias fraccionadas en 24 h son la alternativa. Un resultado normal en paciente de baja probabilidad descarta FEO con alta seguridad.<br>
+        <strong>Interferencias (falsos positivos):</strong> antidepresivos tricíclicos, levodopa, acetaminofén, estrés agudo, insuficiencia renal. Suspender fármacos interferentes 2 semanas antes si es posible.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Catecolaminas en orina de 24 h (adrenalina, noradrenalina, dopamina) y ácido vanililmandélico (AVM)</strong><br>
+        Complementario a las metanefrinas. El AVM tiene menor sensibilidad que las metanefrinas fraccionadas → menos usado como primera línea pero disponible en Argentina. Útil como confirmación adicional.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>TC de abdomen y pelvis con contraste — localización de primera línea</strong><br>
+        Sensibilidad 90–100% para FEO suprarrenal. El FEO tiene apariencia hipervascular, heterogénea (áreas de necrosis/hemorragia), densidad >10 UH en fase sin contraste (a diferencia del adenoma que tiene &lt;10 UH por contenido lipídico). Iniciar siempre con TC de abdomen-pelvis (donde se ubica el 90% de los FEO/PGL).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>RMN — cuando hay contraindicación al contraste iodado o para PGL de cuello / extensión local</strong><br>
+        El FEO es característicamente hiperintenso en T2 ("bright on T2"). Útil también para evaluar invasión vascular y relación con estructuras adyacentes. De elección en embarazo (evitar radiación y contraste iodado).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Gammagrafía con MIBG (metayodobenzilguanidina) — para enfermedad metastásica o PGL múltiples</strong><br>
+        El MIBG es captado por tejido cromafín. Útil para detectar metástasis y PGL extraabdominales. El PET con <sup>68</sup>Ga-DOTATATE (análogo de somatostatina) tiene mayor sensibilidad y está desplazando al MIBG en centros especializados.
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">💊 Tratamiento — preparación preoperatoria y cirugía</div>
+    <div class="hl-danger"><span class="badge-urgente">CRÍTICO</span> <strong>La preparación preoperatoria con bloqueo α-adrenérgico es OBLIGATORIA antes de cualquier cirugía.</strong> Sin ella, la manipulación quirúrgica del tumor puede desencadenar una crisis hipertensiva fatal (HTA severa, arritmias, edema pulmonar, IAM).</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Fenoxibenzamina — bloqueo α de elección preoperatorio</div>
+      <div class="farma-clase">α-bloqueante no selectivo, no competitivo (irreversible) · De elección en Argentina y mundo</div>
+      <div class="dosis-badge">Iniciar 10–14 días antes de cirugía · 10 mg/día → titular hasta 1 mg/kg/día</div>
+      <div class="farma-detalle">
+        Bloquea α1 y α2 de forma no competitiva → vasodilatación sostenida y estable. Efectos adversos: hipotensión ortostática, congestión nasal, taquicardia refleja. Indicar alta ingesta de sal y líquidos para expandir el volumen intravascular (contrarrestar la hipovolemia relativa crónica). No disponible en todos los países → alternativa: doxazosina o prazosina (α-bloqueantes competitivos, más disponibles).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">β-bloqueantes — SOLO después del bloqueo α</div>
+      <div class="farma-clase">Para control de taquicardia si persiste tras el bloqueo α</div>
+      <div class="dosis-badge">Añadir solo si taquicardia (&gt;100 lpm) tras ≥3–7 días de α-bloqueo</div>
+      <div class="farma-detalle">
+        <strong>Regla fundamental: NUNCA dar β-bloqueantes solos en FEO conocido o sospechado.</strong> Sin bloqueo α previo, el β-bloqueo deja α-receptores libres → vasoconstricción paradójica grave → crisis hipertensiva potencialmente fatal. Propranolol, atenolol o metoprolol son opciones tras el bloqueo α establecido.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Adrenalectomía laparoscópica — tratamiento definitivo</div>
+      <div class="farma-clase">Cirugía · Abordaje de elección para FEO &lt;6 cm sin invasión local</div>
+      <div class="farma-detalle">
+        La adrenalectomía laparoscópica es el estándar para FEO suprarrenal. La adrenalectomía abierta se reserva para tumores grandes (&gt;6 cm), malignos o con invasión local. En FEO bilateral hereditario → adrenalectomía cortical-preservante para evitar insuficiencia suprarrenal de por vida. Los circulantes del equipo quirúrgico deben estar alertados: la manipulación del tumor puede liberar catecolaminas → monitoreo hemodinámico invasivo intraoperatorio obligatorio.
+      </div>
+    </div>
+
+    <div class="hl-info">💡 <strong>Seguimiento post-cirugía:</strong> metanefrinas en plasma/orina a las 2–6 semanas para confirmar curación bioquímica. Luego anual de por vida (riesgo de recurrencia 5–15% y desarrollo de PGL en otras localizaciones, especialmente en formas hereditarias).</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">FEO maligno / metastásico — opciones terapéuticas</div>
+      <div class="farma-clase">Enfermedad no resecable o metastásica</div>
+      <div class="farma-detalle">
+        — <strong>MIBG radioactivo terapéutico (¹³¹I-MIBG):</strong> en tumores MIBG-ávidos. Respuesta parcial en ~30%.<br>
+        — <strong>Quimioterapia:</strong> CVD (ciclofosfamida + vincristina + dacarbazina). Respuesta en ~50% pero no durable.<br>
+        — <strong>Análogos de somatostatina (DOTATATE ¹⁷⁷Lu):</strong> terapia con radio-receptor (PRRT) en tumores DOTATATE (+).<br>
+        — <strong>Sunitinib, everolimus:</strong> actividad limitada pero opciones en líneas posteriores.<br>
+        — Todos los pacientes → <strong>bloqueo α sostenido indefinidamente</strong> para control de HTA y síntomas.
+      </div>
+    </div>
+  </div>
+
+  <!-- CRISIS HIPERTENSIVA -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Crisis hipertensiva por FEO — manejo urgente</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> La crisis hipertensiva por FEO puede ocurrir espontáneamente, por palpación del tumor o intraoperatoriamente. Es una emergencia con riesgo de IAM, ACV, edema pulmonar.</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Fentolamina 2–5 mg IV en bolo → infusión continua si necesario</strong><br>
+        α-bloqueante de acción rápida para crisis aguda. Alternativa: nitroprusiato de sodio en infusión IV (vasodilatador de acción directa). Nicardipino IV (calcio-antagonista) también es efectivo.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>NO usar labetalol ni β-bloqueantes como único agente</strong><br>
+        El labetalol tiene predominio β → riesgo de vasoconstricción α paradójica. Si se usa, debe haber bloqueo α previo adecuado. El nitroprusiato es seguro en crisis si no hay otra opción.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Monitoreo invasivo continuo</strong><br>
+        Línea arterial para PA continua. Acceso venoso central. Unidad de cuidados intensivos. Preparar para manejo de arritmias (lidocaína, amiodarona según el tipo).
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Tumor cromafín de médula suprarrenal (o extraadrenal = paraganglioma)</span>
+      <span class="pill">Regla del 10: 10% maligno, bilateral, extraadrenal, pediátrico, familiar</span>
+      <span class="pill">Real: ~40% son hereditarios → test genético siempre</span>
+      <span class="pill">Tríada: cefalea + sudoración + palpitaciones + HTA</span>
+      <span class="pill">HTA sostenida o paroxística en joven: sospechar FEO</span>
+      <span class="pill">FEO vesical: crisis HTA + hematuria al orinar</span>
+      <span class="pill">Diagnóstico: metanefrinas fraccionadas en plasma u orina 24 h</span>
+      <span class="pill">Localización: TC abdomen-pelvis (1ª línea), RMN (alternativa)</span>
+      <span class="pill">RMN: FEO hiperintenso en T2</span>
+      <span class="pill">MEN 2A: RET + FEO + carcinoma medular de tiroides + hiperPTH</span>
+      <span class="pill">MEN 2B: RET + FEO + Ca medular + neuromas mucosos + hábito marfanoide</span>
+      <span class="pill">VHL: FEO + hemangioblastomas + carcinoma células renales</span>
+      <span class="pill">SDHB: mayor riesgo de malignidad en paraganglioma</span>
+      <span class="pill">Preparación preop: fenoxibenzamina (α-bloqueo) ≥10–14 días antes</span>
+      <span class="pill">NUNCA β-bloqueante solo en FEO → vasoconstricción paradójica</span>
+      <span class="pill">β-bloqueante: SOLO después de α-bloqueo establecido</span>
+      <span class="pill">Cirugía: adrenalectomía laparoscópica (de elección)</span>
+      <span class="pill">Crisis aguda: fentolamina IV o nitroprusiato</span>
+      <span class="pill">Seguimiento: metanefrinas post-op + anual de por vida</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Lenders JW et al. Pheochromocytoma and paraganglioma: an Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab 2014 · Therefore Plouin PF et al. European Society of Endocrinology Clinical Practice Guideline for long-term follow-up of patients operated on for a phaeochromocytoma or paraganglioma. Eur J Endocrinol 2016 · Elias D et al. ESE/ENSAT Clinical Practice Guidelines on pheochromocytoma and paraganglioma. Eur J Endocrinol 2020 · Sociedad Argentina de Endocrinología y Metabolismo (SAEM) — Guías de incidentaloma suprarrenal y FEO.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
