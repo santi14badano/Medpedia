@@ -1,1 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valvulopatías — Medpedia</title>
+  <meta name="description" content="Valvulopatías: estenosis mitral, insuficiencia mitral, estenosis aórtica, insuficiencia aórtica. Fisiopatología, clínica, diagnóstico, criterios quirúrgicos. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --cardio: #C0392B; --cardio-claro: #FDEDEC; --cardio-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio { background: var(--cardio-claro); color: var(--cardio-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-cardio { font-size: 16px; font-weight: 500; color: var(--cardio); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-cardio{ border-left: 3px solid var(--cardio); background: var(--cardio-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
 
+    /* Valvulopatía cards */
+    .valv-section { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; }
+    .valv-header { padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--borde); }
+    .valv-nombre { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; }
+    .valv-nombre.em { color: #1A5E9A; }
+    .valv-nombre.im { color: #0F6E56; }
+    .valv-nombre.ea { color: var(--cardio); }
+    .valv-nombre.ia { color: #7B2D8B; }
+    .valv-sub { font-size: 12px; color: var(--texto-ter); margin-top: 2px; }
+    .valv-body { padding: 1rem 1.25rem; }
+    .valv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 580px) { .valv-grid { grid-template-columns: 1fr; } }
+    .valv-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .valv-bloque-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .valv-bloque strong { color: var(--texto); }
+    .badge-soplo { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 8px; margin-bottom: 8px; }
+    .badge-soplo.em { background: #E6F1FB; color: #1A5E9A; }
+    .badge-soplo.im { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .badge-soplo.ea { background: var(--cardio-claro); color: var(--cardio-oscuro); }
+    .badge-soplo.ia { background: #F4E8FC; color: #7B2D8B; }
+    .cirugia-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 10px; padding: 10px 14px; margin-top: 10px; font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .cirugia-titulo { font-size: 12px; font-weight: 600; color: var(--cardio); margin-bottom: 5px; }
+    .fisio-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; flex-wrap: wrap; }
+    .fisio-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 8px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: var(--texto); }
+    .fisio-arrow { color: var(--cardio); font-weight: 700; font-size: 14px; }
+    .nyha-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+    @media (max-width: 580px) { .nyha-grid { grid-template-columns: repeat(2, 1fr); } }
+    .nyha-card { border-radius: 10px; padding: 10px; border: 1px solid var(--borde); text-align: center; }
+    .nyha-num { font-size: 22px; font-weight: 700; color: var(--cardio); }
+    .nyha-desc { font-size: 11px; color: var(--texto-sec); margin-top: 3px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Valvulopatías</div>
+  <div class="titulo">Valvulopatías</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-fuente">AHA/ACC 2021 · ESC 2021 · Harrison 21ª ed. · Braunwald 12ª ed.</span>
+  </div>
+
+  <!-- INTRO -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Generalidades</div>
+    <div class="hl-cardio">Las valvulopatías son enfermedades de las válvulas cardíacas que generan alteraciones hemodinámicas crónicas con mecanismos compensadores, hasta que el ventrículo falla de forma irreversible. La clave es conocer la <strong>fisiopatología</strong> de cada una, su <strong>soplo característico</strong>, los <strong>signos periféricos</strong> y los <strong>criterios para intervención</strong> antes de que el daño sea permanente.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Valvulopatía</th><th>Mecanismo central</th><th>Cámara que falla</th><th>Causa más frecuente (Argentina)</th></tr>
+        <tr><td><strong>Estenosis mitral (EM)</strong></td><td>Obstrucción al vaciado auricular</td><td>Aurícula izquierda → pulmón</td><td>Fiebre reumática</td></tr>
+        <tr><td><strong>Insuficiencia mitral (IM)</strong></td><td>Regurgitación hacia AI durante sístole</td><td>Ventrículo izquierdo</td><td>Prolapso mitral / reumática</td></tr>
+        <tr><td><strong>Estenosis aórtica (EA)</strong></td><td>Obstrucción al vaciado ventricular</td><td>Ventrículo izquierdo</td><td>Degenerativa calcificada (≥65 a) / bicúspide</td></tr>
+        <tr><td><strong>Insuficiencia aórtica (IA)</strong></td><td>Regurgitación hacia VI durante diástole</td><td>Ventrículo izquierdo</td><td>Bicúspide aórtica / endocarditis / reumática</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- NYHA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación funcional NYHA — para todas las valvulopatías</div>
+    <div class="nyha-grid">
+      <div class="nyha-card"><div class="nyha-num">I</div><div class="nyha-desc">Sin limitación. Actividad ordinaria sin síntomas</div></div>
+      <div class="nyha-card"><div class="nyha-num">II</div><div class="nyha-desc">Limitación leve. Síntomas con actividad moderada</div></div>
+      <div class="nyha-card"><div class="nyha-num">III</div><div class="nyha-desc">Limitación marcada. Síntomas con actividad mínima</div></div>
+      <div class="nyha-card"><div class="nyha-num">IV</div><div class="nyha-desc">Síntomas en reposo. Incapacidad total</div></div>
+    </div>
+    <div class="hl-info">💡 La aparición de síntomas (disnea, angina, síncope) marca un punto de inflexión crítico en la historia natural de las valvulopatías, especialmente en la estenosis aórtica. NYHA II–IV + valvulopatía grave = indicación quirúrgica en la mayoría de los casos.</div>
+  </div>
+
+  <!-- ESTENOSIS MITRAL -->
+  <div class="seccion">
+    <div class="sec-titulo-cardio">🔴 1. Estenosis Mitral (EM)</div>
+    <div class="valv-section">
+      <div class="valv-header">
+        <div class="valv-nombre em">Estenosis Mitral</div>
+        <div class="valv-sub">Área valvular normal: 4–6 cm² · EM leve: 1,5–2 cm² · EM moderada: 1–1,5 cm² · EM grave: &lt;1 cm²</div>
+      </div>
+      <div class="valv-body">
+        <div class="valv-bloque-titulo">Fisiopatología</div>
+        <div class="fisio-row"><div class="fisio-box">Fusión comisuras</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ gradiente AI→VI</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ presión AI</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ presión capilar pulmonar</div><div class="fisio-arrow">→</div><div class="fisio-box">Edema pulmonar · FA · HTP</div></div>
+        <div style="font-size:13px; color:var(--texto-sec); margin-bottom:12px; line-height:1.6;">La aurícula izquierda se dilata progresivamente → <strong>fibrilación auricular</strong> (50% de los casos) → riesgo de tromboembolismo sistémico (especialmente ACV). El ventrículo izquierdo generalmente está <strong>normal o pequeño</strong> (no sobrecargado directamente).</div>
+
+        <div class="valv-grid">
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Clínica</div>
+            ✦ <strong>Disnea de esfuerzo</strong> (síntoma cardinal) → evoluciona a ortopnea y DPN<br>
+            ✦ <strong>Hemoptisis</strong> (ruptura de venas pulmonares dilatadas)<br>
+            ✦ Palpitaciones (FA)<br>
+            ✦ <strong>Facies mitral:</strong> rubor malar bilateral (en valvulopatías reumáticas avanzadas)<br>
+            ✦ Embolia sistémica (ACV en FA)<br>
+            ✦ Disfagia (compresión de esófago por AI dilatada)
+          </div>
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Examen físico</div>
+            <div class="badge-soplo em">Soplo diastólico</div><br>
+            ✦ <strong>Soplo diastólico en arrastre</strong> (retumbo) en ápex, baja frecuencia (mejor con campana)<br>
+            ✦ Refuerzo presistólico (si ritmo sinusal)<br>
+            ✦ <strong>Chasquido de apertura</strong> mitral (cuanto más cercano a 2R → más grave)<br>
+            ✦ R1 aumentado (si válvula aún móvil)<br>
+            ✦ Signos de HTP: R2 aumentado, soplo pulmonar, hepatomegalia, edemas
+          </div>
+        </div>
+
+        <div class="valv-bloque-titulo" style="margin-top:4px;">Diagnóstico</div>
+        <div style="font-size:13px; color:var(--texto-sec); line-height:1.6; margin-bottom:10px;">
+          <strong>ECG:</strong> P mitral (onda P bifásica en V1, ancha en DI) → FA con el tiempo. <strong>Rx tórax:</strong> doble contorno derecho (AI dilatada), redistribución vascular a vértices, líneas B de Kerley. <strong>Ecocardiograma Doppler:</strong> diagnóstico definitivo → área valvular, gradiente medio, presión sistólica pulmonar. Imagen clásica: engrosamiento y calcificación de valvas, apertura en "cúpula de hockey" (doming), fusión comisural.
+        </div>
+
+        <div class="cirugia-box">
+          <div class="cirugia-titulo">🔪 Criterios de intervención</div>
+          <strong>Valvuloplastia mitral percutánea con balón (VMPB):</strong> de elección si anatomía favorable (score de Wilkins ≤8), sin calcificación severa ni regurgitación mitral significativa, sin trombo en AI. Indicada en EM grave (área &lt;1,5 cm²) con síntomas (NYHA II–IV) o HTP (PSAP &gt;50 mmHg).<br>
+          <strong>Cirugía (comisurotomía o reemplazo valvular):</strong> si anatomía desfavorable para balón, IM concomitante significativa, o fracaso de VMPB.
+        </div>
+        <div class="hl-warn" style="margin-top:10px;">⚠️ <strong>FA en EM:</strong> anticoagulación con warfarina (antagonista de vitamina K) de por vida. Los NOAC no están aprobados para FA valvular reumática. Cardioversión eléctrica solo si &lt;1 año de FA y sin trombo en AI (confirmado por ETE).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSUFICIENCIA MITRAL -->
+  <div class="seccion">
+    <div class="sec-titulo-cardio">🔴 2. Insuficiencia Mitral (IM)</div>
+    <div class="valv-section">
+      <div class="valv-header">
+        <div class="valv-nombre im">Insuficiencia Mitral</div>
+        <div class="valv-sub">Aguda (endocarditis, rotura de cuerda tendinosa) vs. Crónica (reumática, prolapso, dilatación anular)</div>
+      </div>
+      <div class="valv-body">
+        <div class="valv-bloque-titulo">Fisiopatología</div>
+        <div class="fisio-row"><div class="fisio-box">Regurgitación sistólica AI</div><div class="fisio-arrow">→</div><div class="fisio-box">Sobrecarga volumen VI</div><div class="fisio-arrow">→</div><div class="fisio-box">Dilatación + hipertrofia excéntrica VI</div><div class="fisio-arrow">→</div><div class="fisio-box">Disfunción VI + ↑ presión AI</div></div>
+        <div style="font-size:13px; color:var(--texto-sec); margin-bottom:12px; line-height:1.6;">En la IM <strong>crónica</strong>, el VI tiene tiempo de adaptarse → dilatación excéntrica → FEVI puede mantenerse falsamente normal. Operar <strong>antes</strong> de que la FEVI caiga &lt;60% o el DTSVI supere 40 mm. En la IM <strong>aguda</strong> (rotura de cuerda, IAM, endocarditis), no hay tiempo de adaptación → edema pulmonar agudo fulminante → urgencia quirúrgica.</div>
+
+        <div class="valv-grid">
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Clínica (crónica)</div>
+            ✦ Larga fase asintomática (VI se adapta)<br>
+            ✦ <strong>Disnea de esfuerzo progresiva</strong><br>
+            ✦ Palpitaciones (FA frecuente)<br>
+            ✦ Fatiga<br>
+            ✦ En fases avanzadas: síntomas de IC izquierda<br>
+            ✦ <strong>IM aguda:</strong> edema agudo de pulmón súbito sin cardiomegalia previa
+          </div>
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Examen físico</div>
+            <div class="badge-soplo im">Soplo sistólico</div><br>
+            ✦ <strong>Soplo holosistólico en ápex</strong>, irradiación a axila<br>
+            ✦ Intensidad constante durante toda la sístole (a diferencia de EA)<br>
+            ✦ R1 disminuido (valva no coapta bien al cerrar)<br>
+            ✦ R3 frecuente (llenado rápido por gran volumen)<br>
+            ✦ Ápex desplazado a izquierda (VI dilatado)<br>
+            ✦ En prolapso mitral: clic mesosistólico + soplo sistólico tardío
+          </div>
+        </div>
+
+        <div class="cirugia-box">
+          <div class="cirugia-titulo">🔪 Criterios de intervención</div>
+          Indicada en: (1) IM grave + síntomas (NYHA II–IV); (2) IM grave asintomática si <strong>FEVI ≤60%</strong> o <strong>DTSVI ≥40 mm</strong> o FA de nueva aparición o PSAP &gt;50 mmHg; (3) IM aguda grave → cirugía de urgencia.<br>
+          <strong>Reparación mitral</strong> (plastia) preferida sobre reemplazo cuando es posible: menor mortalidad operatoria, mejor función ventricular postoperatoria, sin anticoagulación de por vida si ritmo sinusal.
+        </div>
+        <div class="alerta-box" style="margin-top:10px;">
+          <div class="alerta-title">⚠️ Trampa de examen — FEVI en IM crónica</div>
+          En IM crónica, la FEVI "normal" de 60% puede enmascarar disfunción ventricular real porque el VI eyecta tanto hacia la aorta como hacia la AI (baja poscarga). Si la FEVI cae a 55–60%, ya hay disfunción ventricular significativa → no esperar que baje más para operar.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTENOSIS AORTICA -->
+  <div class="seccion">
+    <div class="sec-titulo-cardio">🔴 3. Estenosis Aórtica (EA)</div>
+    <div class="valv-section">
+      <div class="valv-header">
+        <div class="valv-nombre ea">Estenosis Aórtica</div>
+        <div class="valv-sub">Área valvular normal: 3–4 cm² · EA leve: 1,5–2 cm² · EA moderada: 1–1,5 cm² · EA grave: &lt;1 cm² · EA muy grave: &lt;0,6 cm²</div>
+      </div>
+      <div class="valv-body">
+        <div class="valv-bloque-titulo">Fisiopatología</div>
+        <div class="fisio-row"><div class="fisio-box">Obstrucción fija salida VI</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ poscarga VI</div><div class="fisio-arrow">→</div><div class="fisio-box">Hipertrofia concéntrica VI</div><div class="fisio-arrow">→</div><div class="fisio-box">Disfunción diastólica → sistólica</div><div class="fisio-arrow">→</div><div class="fisio-box">Triada sintomática</div></div>
+        <div style="font-size:13px; color:var(--texto-sec); margin-bottom:12px; line-height:1.6;">La hipertrofia concéntrica VI mantiene compensada la función durante años. La aparición de síntomas marca el colapso de los mecanismos compensadores: <strong>supervivencia media sin cirugía = 2 años con angina, 3 años con síncope, 1–2 años con disnea/IC</strong>.</div>
+
+        <div class="valv-grid">
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Triada sintomática clásica</div>
+            ✦ <strong>Angina:</strong> por demanda O₂ aumentada (hipertrofia) + flujo coronario limitado. Supervivencia media 5 años sin cirugía<br>
+            ✦ <strong>Síncope:</strong> esfuerzo → vasodilatación periférica sin poder aumentar GC → hipoperfusión cerebral. Supervivencia media 3 años<br>
+            ✦ <strong>Disnea (IC):</strong> peor pronóstico. Supervivencia media 1–2 años<br><br>
+            <em style="font-size:12px; color:var(--texto-ter);">Regla mnemotécnica: SAD → Síncope (3 a) · Angina (5 a) · Disnea (1-2 a)</em>
+          </div>
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Examen físico</div>
+            <div class="badge-soplo ea">Soplo sistólico</div><br>
+            ✦ <strong>Soplo sistólico eyectivo (romboidal)</strong> en foco aórtico (2° EID), irradiación a carótidas<br>
+            ✦ <strong>Pulso parvus et tardus</strong>: de pequeña amplitud y ascenso lento<br>
+            ✦ <strong>R2 disminuido o abolido</strong> (valvas calcificadas no cierran con ruido)<br>
+            ✦ R4 por rigidez VI<br>
+            ✦ Frémito sistólico en foco aórtico (EA severa)<br>
+            ✦ Presión diferencial disminuida
+          </div>
+        </div>
+
+        <div class="valv-bloque-titulo" style="margin-top:4px;">Diagnóstico</div>
+        <div style="font-size:13px; color:var(--texto-sec); line-height:1.6; margin-bottom:10px;">
+          <strong>ECG:</strong> HVI (Sokolow-Lyon positivo: S en V1 + R en V5/V6 ≥35 mm), bloqueo de rama izquierda en fases avanzadas. <strong>Rx tórax:</strong> silueta cardíaca normal (hipertrofia concéntrica no dilata el VI inicialmente), calcificaciones aórticas, posdilación de la aorta ascendente. <strong>Ecocardiograma Doppler:</strong> área valvular (Gorlin o ecuación de continuidad), gradiente medio (&gt;40 mmHg = grave), velocidad máxima de jet aórtico (&gt;4 m/s = grave), FEVI.
+        </div>
+
+        <div class="cirugia-box">
+          <div class="cirugia-titulo">🔪 Criterios de intervención</div>
+          <strong>Indicación clase I (AHA/ACC 2021):</strong><br>
+          (1) EA grave (<strong>área &lt;1 cm²</strong>, Vmax &gt;4 m/s, grad medio &gt;40 mmHg) + síntomas (angina, síncope, disnea)<br>
+          (2) EA grave asintomática + <strong>FEVI &lt;50%</strong><br>
+          (3) EA grave asintomática sometida a otra cirugía cardíaca<br><br>
+          <strong>TAVI (reemplazo valvular aórtico transcatéter):</strong> alternativa al reemplazo quirúrgico en pacientes de alto riesgo quirúrgico (score STS ≥4%) o inoperables. Actualmente también con evidencia en riesgo bajo-intermedio. No requiere esternotomía ni circulación extracorpórea.
+        </div>
+        <div class="hl-danger" style="margin-top:10px;">🚫 <strong>No hay tratamiento médico que modifique la historia natural de la EA.</strong> Las estatinas no detienen la calcificación (fallaron en ensayos aleatorizados). No usar vasodilatadores (nitrates, IECA) en EA grave → precipitan hipotensión grave. El único tratamiento definitivo es el reemplazo valvular.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSUFICIENCIA AORTICA -->
+  <div class="seccion">
+    <div class="sec-titulo-cardio">🔴 4. Insuficiencia Aórtica (IA)</div>
+    <div class="valv-section">
+      <div class="valv-header">
+        <div class="valv-nombre ia">Insuficiencia Aórtica</div>
+        <div class="valv-sub">Aguda (endocarditis, disección aórtica) vs. Crónica (bicúspide aórtica, reumática, dilatación anular)</div>
+      </div>
+      <div class="valv-body">
+        <div class="valv-bloque-titulo">Fisiopatología</div>
+        <div class="fisio-row"><div class="fisio-box">Regurgitación diastólica Ao→VI</div><div class="fisio-arrow">→</div><div class="fisio-box">Sobrecarga mixta VI (volumen + presión)</div><div class="fisio-arrow">→</div><div class="fisio-box">Hipertrofia excéntrica VI (VI enorme)</div><div class="fisio-arrow">→</div><div class="fisio-box">Disfunción VI irreversible</div></div>
+        <div style="font-size:13px; color:var(--texto-sec); margin-bottom:12px; line-height:1.6;">La IA crónica genera el <strong>"corazón en bota"</strong>: VI enorme que puede ser el mayor de todas las valvulopatías. La presión de pulso aumenta (PS alta + PD baja) → múltiples signos periféricos. En IA <strong>aguda grave</strong> (disección, endocarditis): colapso hemodinámico fulminante → urgencia quirúrgica.</div>
+
+        <div class="valv-grid">
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Signos periféricos característicos</div>
+            ✦ <strong>Pulso de Corrigan</strong> (pulso en martillo de agua): ascenso rápido y colapso brusco<br>
+            ✦ <strong>Signo de Musset:</strong> cabeceo con el pulso<br>
+            ✦ <strong>Signo de Quincke:</strong> latido capilar ungueal<br>
+            ✦ <strong>Soplo femoral de Duroziez</strong>: soplo diastólico en femoral con compresión<br>
+            ✦ <strong>Signo de Hill:</strong> PA poplítea &gt;20 mmHg que PA braquial<br>
+            ✦ <strong>Presión de pulso amplia</strong> (ej: 160/50 mmHg)
+          </div>
+          <div class="valv-bloque">
+            <div class="valv-bloque-titulo">Examen físico</div>
+            <div class="badge-soplo ia">Soplo diastólico</div><br>
+            ✦ <strong>Soplo proto-diastólico</strong> en decrescendo, en foco aórtico y borde esternal izquierdo (mejor con paciente sentado, inclinado hacia adelante, en espiración)<br>
+            ✦ <strong>Soplo de Austin Flint:</strong> retumbo mitral diastólico (el chorro regurgitante empuja la valva anterior mitral → falsa EM funcional)<br>
+            ✦ R2 disminuido o abolido<br>
+            ✦ Ápex desplazado y "en cúpula" (VI muy dilatado)
+          </div>
+        </div>
+
+        <div class="cirugia-box">
+          <div class="cirugia-titulo">🔪 Criterios de intervención</div>
+          <strong>Indicación clase I (AHA/ACC 2021):</strong><br>
+          (1) IA grave + síntomas (NYHA II–IV o angina)<br>
+          (2) IA grave asintomática + <strong>FEVI &lt;55%</strong><br>
+          (3) IA grave asintomática + <strong>DTSVI &gt;50 mm</strong> (o &gt;25 mm/m² de SC)<br>
+          (4) IA aguda grave → cirugía de urgencia<br><br>
+          <strong>Tratamiento médico:</strong> vasodilatadores (nifedipina, IECA) pueden retrasar la cirugía en asintomáticos con FEVI conservada, reduciendo la poscarga y el volumen regurgitante.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Resumen comparativo — las 4 valvulopatías principales</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Estenosis Mitral</th><th>Insuficiencia Mitral</th><th>Estenosis Aórtica</th><th>Insuficiencia Aórtica</th></tr>
+        <tr><td><strong>Soplo</strong></td><td>Diastólico (retumbo) en ápex</td><td>Holosistólico en ápex → axila</td><td>Sistólico eyectivo en foco Ao → carótidas</td><td>Protodiastólico en decrescendo en foco Ao</td></tr>
+        <tr><td><strong>Cámara afectada</strong></td><td>Aurícula izquierda</td><td>Ventrículo izquierdo</td><td>Ventrículo izquierdo (hipertrofia concéntrica)</td><td>Ventrículo izquierdo (hipertrofia excéntrica)</td></tr>
+        <tr><td><strong>Causa #1</strong></td><td>Fiebre reumática</td><td>Prolapso mitral</td><td>Degenerativa calcificada (≥65 a)</td><td>Válvula bicúspide aórtica</td></tr>
+        <tr><td><strong>Signo clave</strong></td><td>Chasquido de apertura + FA</td><td>R3 + ápex desplazado</td><td>Pulso parvus et tardus</td><td>Pulso de Corrigan + Austin Flint</td></tr>
+        <tr><td><strong>Eco: hallazgo típico</strong></td><td>Doming + fusión comisural</td><td>Regurgitación color Doppler + DTSVI</td><td>Área &lt;1 cm², Vmax &gt;4 m/s</td><td>VI enorme + regurgitación holodiastólica</td></tr>
+        <tr><td><strong>Complicación temida</strong></td><td>FA + tromboembolismo sistémico</td><td>Disfunción VI irreversible</td><td>Muerte súbita (con síntomas)</td><td>Disección aórtica (bicúspide)</td></tr>
+        <tr><td><strong>Intervención de elección</strong></td><td>Valvuloplastia percutánea (si apta)</td><td>Plastia mitral (preferida)</td><td>Reemplazo valvular / TAVI</td><td>Reemplazo valvular aórtico</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ENDOCARDITIS -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Profilaxis de endocarditis infecciosa</div>
+    <div class="hl-warn">La profilaxis antibiótica previa a procedimientos dentales invasivos está indicada solo en pacientes de <strong>alto riesgo</strong>: válvula protésica, endocarditis previa, cardiopatía congénita cianótica no reparada o reparada con material protésico (≤6 meses). <strong>NO está indicada de rutina</strong> en todas las valvulopatías.</div>
+    <div class="hl-info">💊 <strong>Régimen estándar:</strong> Amoxicilina 2 g VO 30–60 min antes del procedimiento. Si alergia a penicilina: clindamicina 600 mg VO.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">EM: causa #1 = fiebre reumática · soplo diastólico en ápex</span>
+      <span class="pill">EM: chasquido de apertura — cuanto más cerca de R2 más grave</span>
+      <span class="pill">EM + FA → anticoagulación con warfarina (no NOAC en valvular)</span>
+      <span class="pill">EM: VMPB si score Wilkins ≤8 y sin regurgitación mitral significativa</span>
+      <span class="pill">IM: soplo holosistólico → axila · R3 frecuente</span>
+      <span class="pill">IM crónica: FEVI 60% puede ocultar disfunción VI → operar si FEVI ≤60% o DTSVI ≥40 mm</span>
+      <span class="pill">IM aguda (IAM, endocarditis) → urgencia quirúrgica</span>
+      <span class="pill">EA: soplo sistólico eyectivo → carótidas · pulso parvus et tardus</span>
+      <span class="pill">EA: triada = angina (5 a) + síncope (3 a) + disnea (1–2 a)</span>
+      <span class="pill">EA grave: área &lt;1 cm², Vmax &gt;4 m/s, grad &gt;40 mmHg</span>
+      <span class="pill">EA: no hay tratamiento médico que modifique historia natural</span>
+      <span class="pill">EA: TAVI = opción en alto riesgo quirúrgico</span>
+      <span class="pill">IA: presión de pulso amplia · pulso de Corrigan · soplo Austin Flint</span>
+      <span class="pill">IA: signos periféricos = Musset, Quincke, Duroziez, Hill</span>
+      <span class="pill">IA: operar si FEVI &lt;55% o DTSVI &gt;50 mm</span>
+      <span class="pill">IA aguda (disección/endocarditis) → urgencia quirúrgica</span>
+      <span class="pill">Profilaxis EI: solo en alto riesgo · amoxicilina 2 g VO</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Otto CM, Nishimura RA, Bonow RO, et al. 2020 ACC/AHA Guideline for the Management of Patients with Valvular Heart Disease. JACC 2021 · Vahanian A, et al. 2021 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J 2022 · Braunwald's Heart Disease: A Textbook of Cardiovascular Medicine, 12th ed. 2022 · Harrison's Principles of Internal Medicine, 21st ed. · Consenso de Valvulopatías SAC 2019.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
