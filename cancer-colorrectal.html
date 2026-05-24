@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer Colorrectal — Medpedia</title>
+  <meta name="description" content="Cáncer colorrectal: epidemiología, factores de riesgo, diagnóstico, estadificación TNM y tratamiento. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --onco: #6B3FA0; --onco-claro: #F3EEFE; --onco-oscuro: #4A2570;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ciru { background: #FFF3E0; color: #E65100; }
+    .tag-onco { background: var(--onco-claro); color: var(--onco-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-onco { font-size: 16px; font-weight: 500; color: var(--onco); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-onco  { border-left: 3px solid var(--onco); background: var(--onco-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--onco); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .tnm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .tnm-grid { grid-template-columns: 1fr; } }
+    .tnm-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.2rem; }
+    .tnm-titulo { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .tnm-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.5; }
+    .vs-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .vs-block { grid-template-columns: 1fr; } }
+    .vs-col { border-radius: 12px; padding: 1rem 1.2rem; }
+    .vs-col.izq { background: var(--info-claro); border: 1.5px solid #a8c8e8; }
+    .vs-col.der { background: var(--onco-claro); border: 1.5px solid #c4a8e0; }
+    .vs-titulo { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+    .badge-stage { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 8px; margin-right: 4px; }
+    .s0 { background: #E8F5E9; color: #1B5E20; }
+    .s1 { background: #FFF8E1; color: #F57F17; }
+    .s2 { background: #FFF3E0; color: #E65100; }
+    .s3 { background: #FCE4EC; color: #880E4F; }
+    .s4 { background: var(--danger-claro); color: var(--danger); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía / Oncología</a> › Cáncer Colorrectal</div>
+  <div class="titulo">Cáncer Colorrectal</div>
+  <div class="meta">
+    <span class="tag tag-ciru">Cirugía</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">NCCN 2024 · ESMO 2023 · SAC / SAG Argentina</span>
+  </div>
+
+  <!-- EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología y generalidades</div>
+    <div class="hl-onco"><strong>3er cáncer más frecuente en el mundo</strong> y <strong>2da causa de muerte por cáncer</strong> a nivel global. En Argentina es el cáncer digestivo más frecuente y una de las principales causas de mortalidad oncológica. Más del <strong>95% son adenocarcinomas</strong> (origen en el epitelio glandular del colon/recto).</div>
+    <div class="hl">El recto y el colon sigmoide concentran ~50–60% de los casos. La mayoría (70%) se presenta como enfermedad localizada o regional al diagnóstico, con supervivencia a 5 años de 90% en estadio I y solo 14% en estadio IV.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización</th><th>Frecuencia relativa</th><th>Síntoma predominante</th></tr>
+        <tr><td>Colon derecho (ciego, colon ascendente)</td><td>~25%</td><td>Anemia ferropénica, masa palpable, diarrea</td></tr>
+        <tr><td>Colon transverso</td><td>~10%</td><td>Cambio en hábito evacuatorio, obstrucción</td></tr>
+        <tr><td>Colon izquierdo y sigmoide</td><td>~35%</td><td>Hematoquecia, cambio de calibre, obstrucción</td></tr>
+        <tr><td>Recto</td><td>~25%</td><td>Rectorragia, tenesmo, urgencia defecatoria</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="vs-block">
+      <div class="vs-col izq">
+        <div class="vs-titulo" style="color:var(--info)">🔵 Riesgo promedio</div>
+        <div class="vs-item">Edad ≥50 años (principal FR)</div>
+        <div class="vs-item">Dieta rica en carnes rojas y procesadas</div>
+        <div class="vs-item">Obesidad / sedentarismo</div>
+        <div class="vs-item">Tabaquismo y alcohol crónico</div>
+        <div class="vs-item">Diabetes tipo 2</div>
+      </div>
+      <div class="vs-col der">
+        <div class="vs-titulo" style="color:var(--onco)">🟣 Riesgo elevado</div>
+        <div class="vs-item">Antecedente personal de adenomas o CCR previo</div>
+        <div class="vs-item">Enfermedad inflamatoria intestinal (Crohn / CU) — riesgo × 2–5</div>
+        <div class="vs-item">Familiar de 1er grado con CCR o adenoma avanzado</div>
+        <div class="vs-item"><strong>Síndromes hereditarios:</strong> PAF, Lynch (HNPCC), Peutz-Jeghers</div>
+        <div class="vs-item">Irradiación abdominal previa</div>
+      </div>
+    </div>
+    <div class="hl-warn">⭐ <strong>Síndrome de Lynch (HNPCC):</strong> causa más frecuente de CCR hereditario (~3–5% de todos los CCR). Mutación en genes de reparación de errores de emparejamiento del ADN (MMR): MLH1, MSH2, MSH6, PMS2. Criterios de Ámsterdam II y Bethesda para sospecha. Inicio temprano (~45 años), mayor proporción en colon derecho, tumores MSI-H → mejor pronóstico y respuesta a inmunoterapia.</div>
+    <div class="hl-danger">⭐ <strong>Poliposis adenomatosa familiar (PAF):</strong> mutación APC (autosómica dominante). Cientos de pólipos a partir de la pubertad. Sin colectomía profiláctica → 100% de riesgo de CCR antes de los 40 años.</div>
+  </div>
+
+  <!-- SECUENCIA ADENOMA-CARCINOMA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Secuencia adenoma → carcinoma</div>
+    <div class="hl"><strong>La mayoría de los CCR se desarrollan a partir de pólipos adenomatosos</strong> en un proceso que tarda ~10 años. Esta secuencia es la base del screening colonoscópico: detectar y resecar adenomas previene el CCR.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo de pólipo</th><th>Riesgo de malignización</th><th>Comentario</th></tr>
+        <tr><td>Adenoma tubular</td><td>Bajo (5%)</td><td>El más frecuente. Pediculado, superficie lisa.</td></tr>
+        <tr><td>Adenoma velloso</td><td>Alto (40%)</td><td>Sésil, frondoso. Mayor tamaño al diagnóstico.</td></tr>
+        <tr><td>Adenoma tubulovelloso</td><td>Intermedio (20%)</td><td>Características mixtas.</td></tr>
+        <tr><td>Adenoma serrado (SSA/SSP)</td><td>Variable</td><td>Vía alternativa de carcinogénesis (MSI). Difícil detectar en colonoscopía.</td></tr>
+        <tr><td>Pólipo hiperplásico</td><td>Muy bajo</td><td>No es precursor directo en la mayoría de casos.</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">Características de <strong>adenoma de alto riesgo</strong> (adenoma avanzado): tamaño ≥10 mm, componente velloso ≥25%, displasia de alto grado, o ≥3 adenomas. Requieren seguimiento colonoscópico más estrecho (3 años).</div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Presentación clínica</div>
+    <div class="hl-warn">⚠️ El CCR es <strong>asintomático en etapas tempranas</strong>. Los síntomas aparecen cuando el tumor es avanzado o hay complicaciones. Por esto el <strong>screening en población asintomática es clave.</strong></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma / signo</th><th>Localización frecuente</th><th>Mecanismo</th></tr>
+        <tr><td>Anemia ferropénica inexplicada</td><td>Colon derecho</td><td>Sangrado crónico oculto — la sangre se mezcla con heces en colon proximal</td></tr>
+        <tr><td>Hematoquecia (sangre roja en heces)</td><td>Colon izquierdo / recto</td><td>Sangrado visible — menor distancia al ano</td></tr>
+        <tr><td>Cambio en hábito evacuatorio (constipación o diarrea)</td><td>Cualquier localización</td><td>Efecto masa, alteración de la motilidad</td></tr>
+        <tr><td>Cambio en calibre de heces ("heces en lápiz")</td><td>Recto / sigmoide</td><td>Estenosis luminal por tumor</td></tr>
+        <tr><td>Tenesmo / urgencia defecatoria</td><td>Recto</td><td>Irritación rectal por tumor</td></tr>
+        <tr><td>Dolor abdominal / masa palpable</td><td>Colon derecho</td><td>Tumor grande, invasión local</td></tr>
+        <tr><td>Obstrucción intestinal aguda</td><td>Colon izquierdo / sigmoide</td><td>Luz más estrecha → oclusión</td></tr>
+        <tr><td>Síndrome constitucional (astenia, baja de peso)</td><td>Cualquiera</td><td>Enfermedad avanzada</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🚨 <strong>Señales de alarma que obligan a colonoscopía urgente:</strong> rectorragia en mayores de 40 años, anemia ferropénica sin causa obvia, masa abdominal palpable, cambio del hábito evacuatorio persistente &gt;4 semanas, pérdida de peso inexplicada.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">🔍 Diagnóstico y estadificación</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Colonoscopía total con biopsia — gold standard diagnóstico</strong><br>
+        Permite visualizar el tumor, tomar biopsia para confirmación histológica y evaluar el resto del colon (10–15% tienen lesiones sincrónicas). Si el tumor obstruye la luz: completar con colonoscopía virtual (TC) o colonoscopía a los 3–6 meses post-cirugía.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>TC de tórax, abdomen y pelvis con contraste — estadificación sistémica</strong><br>
+        Evalúa extensión local (T), ganglios linfáticos regionales (N) y metástasis a distancia (M). Es el estudio de elección para estadificación preoperatoria. Hígado (sitio más frecuente de metástasis) y pulmón son los principales sitios a evaluar.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>RMN de pelvis — obligatoria en cáncer de recto</strong><br>
+        Evalúa la relación del tumor con el margen de resección circunferencial (MRC), la fascia mesorrectal, estructuras adyacentes y ganglios. Define si el paciente requiere neoadyuvancia (QRT preoperatoria) antes de la cirugía.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Marcadores tumorales: CEA (antígeno carcinoembrionario)</strong><br>
+        No útil para diagnóstico inicial (baja sensibilidad y especificidad). Sí útil para <strong>seguimiento post-resección</strong>: elevación del CEA en paciente operado → sospechar recurrencia. También útil para monitoreo de respuesta a quimioterapia en enfermedad metastásica.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Estudio molecular del tumor — imprescindible en enfermedad metastásica</strong><br>
+        <strong>RAS (KRAS / NRAS):</strong> mutado en ~50% → contraindicación de anti-EGFR (cetuximab, panitumumab).<br>
+        <strong>BRAF V600E:</strong> mutado en ~10% → mal pronóstico; target de encorafenib + cetuximab.<br>
+        <strong>MSI-H / dMMR:</strong> ~5% en metastásico → indica respuesta a inmunoterapia (pembrolizumab primera línea).<br>
+        <strong>HER2:</strong> amplificado en ~3–5% → target de trastuzumab + pertuzumab.
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTADIFICACIÓN TNM -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">📊 Estadificación TNM (AJCC 8ª edición)</div>
+    <div class="tnm-grid">
+      <div class="tnm-card">
+        <div class="tnm-titulo" style="color:var(--info)">T — Tumor primario</div>
+        <div class="tnm-item"><strong>Tis:</strong> carcinoma in situ (mucosa)</div>
+        <div class="tnm-item"><strong>T1:</strong> invasión de submucosa</div>
+        <div class="tnm-item"><strong>T2:</strong> invasión de muscular propia</div>
+        <div class="tnm-item"><strong>T3:</strong> atraviesa muscular → tejidos pericolorectales</div>
+        <div class="tnm-item"><strong>T4a:</strong> penetra al peritoneo visceral</div>
+        <div class="tnm-item"><strong>T4b:</strong> invade órganos adyacentes</div>
+      </div>
+      <div class="tnm-card">
+        <div class="tnm-titulo" style="color:var(--onco)">N — Ganglios · M — Metástasis</div>
+        <div class="tnm-item"><strong>N0:</strong> sin ganglios regionales</div>
+        <div class="tnm-item"><strong>N1:</strong> 1–3 ganglios regionales positivos</div>
+        <div class="tnm-item"><strong>N2:</strong> ≥4 ganglios regionales positivos</div>
+        <div class="tnm-item" style="margin-top:8px"><strong>M0:</strong> sin metástasis a distancia</div>
+        <div class="tnm-item"><strong>M1a:</strong> 1 órgano (hígado, pulmón, etc.)</div>
+        <div class="tnm-item"><strong>M1b:</strong> ≥2 órganos · M1c: peritoneo</div>
+      </div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>TNM</th><th>Sobrevida 5 años</th><th>Tratamiento general</th></tr>
+        <tr><td><span class="badge-stage s0">0</span> In situ</td><td>Tis N0 M0</td><td>~100%</td><td>Polipectomía / resección local</td></tr>
+        <tr><td><span class="badge-stage s1">I</span></td><td>T1-2 N0 M0</td><td>~90%</td><td>Cirugía sola</td></tr>
+        <tr><td><span class="badge-stage s2">II</span></td><td>T3-4 N0 M0</td><td>~70–85%</td><td>Cirugía ± QT adyuvante (alto riesgo)</td></tr>
+        <tr><td><span class="badge-stage s3">III</span></td><td>Cualquier T N1-2 M0</td><td>~40–70%</td><td>Cirugía + QT adyuvante (FOLFOX)</td></tr>
+        <tr><td><span class="badge-stage s4">IV</span></td><td>Cualquier T N M1</td><td>~14%</td><td>QT sistémica ± cirugía paliativa / resección de metástasis</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SCREENING -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Screening — prevención y detección temprana</div>
+    <div class="hl"><strong>La detección temprana salva vidas.</strong> El CCR tiene una de las mejores relaciones costo-beneficio en screening oncológico por su larga fase premaligna (adenoma → carcinoma ≈ 10 años).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Método</th><th>Frecuencia</th><th>Ventajas / desventajas</th></tr>
+        <tr><td><strong>Sangre oculta en heces (SOMF)</strong></td><td>Anual (guayaco) o bianual (inmunoquímica FIT)</td><td>No invasivo, económico. FIT más específico que guayaco. Positivo → colonoscopía.</td></tr>
+        <tr><td><strong>Colonoscopía</strong></td><td>Cada 10 años</td><td>Gold standard. Diagnóstica y terapéutica (polipectomía). Riesgo de perforación (0,1%).</td></tr>
+        <tr><td><strong>Sigmoidoscopía flexible</strong></td><td>Cada 5 años</td><td>Evalúa solo colon distal. Menos efectiva en colon derecho.</td></tr>
+        <tr><td><strong>Colonoscopía virtual (colon por TC)</strong></td><td>Cada 5 años</td><td>No invasiva. No permite biopsia. Requiere preparación colónica.</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">🇦🇷 En Argentina, el Ministerio de Salud recomienda iniciar el screening a los <strong>50 años en población de riesgo promedio</strong> con SOMF anual o colonoscopía cada 10 años. En familiares de 1er grado con CCR: iniciar a los 40 años o 10 años antes del caso índice.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-onco">💊 Tratamiento</div>
+    <div class="hl-onco"><strong>La cirugía es el único tratamiento curativo.</strong> El rol de la quimioterapia, radioterapia e inmunoterapia depende del estadio y de la biología molecular del tumor.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cirugía — resección con márgenes libres (R0)</div>
+      <div class="farma-clase">Pilar del tratamiento con intención curativa</div>
+      <div class="farma-detalle">
+        <strong>Colon:</strong> hemicolectomía derecha (tumores de colon derecho), hemicolectomía izquierda (colon izquierdo y sigmoide), colectomía transversa. Principios: resección en bloque con margen ≥5 cm, linfadenectomía de al menos 12 ganglios para estadificación adecuada.<br><br>
+        <strong>Recto:</strong> escisión total del mesorrecto (TME) → principio fundamental que reduce la recurrencia local. Opciones: resección anterior baja (anastomosis colorrectal o coloanal), resección abdominoperineal (tumores muy bajos → colostomía permanente). La <strong>distancia del tumor al margen anal</strong> determina la técnica. Tumores T3/T4 o N+ → neoadyuvancia con quimiorradioterapia (5-FU + RT) antes de la cirugía.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia adyuvante — Estadio III (y II de alto riesgo)</div>
+      <div class="farma-clase">Post-cirugía para reducir riesgo de recurrencia</div>
+      <div class="dosis-badge">FOLFOX: oxaliplatino + leucovorín + 5-FU · 6 meses</div>
+      <div class="farma-detalle">
+        <strong>FOLFOX</strong> (oxaliplatino + leucovorín + 5-FU en infusión) es el estándar en estadio III. Reduce el riesgo de recurrencia ~25%. <strong>CAPOX</strong> (capecitabina + oxaliplatino) es equivalente y más cómodo (oral). Estadio II de alto riesgo (T4, obstrucción, perforación, &lt;12 ganglios evaluados, invasión linfovascular, MSS): valorar QT adyuvante. Estadio II MSI-H: generalmente no se beneficia de QT.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia paliativa — Estadio IV</div>
+      <div class="farma-clase">Enfermedad metastásica no resecable</div>
+      <div class="dosis-badge">FOLFOX o FOLFIRI ± bevacizumab / cetuximab (RAS wt)</div>
+      <div class="farma-detalle">
+        <strong>Doblets de QT:</strong> FOLFOX (5-FU + oxaliplatino) o FOLFIRI (5-FU + irinotecan). Se añade un agente biológico según perfil molecular:<br>
+        — <strong>Bevacizumab</strong> (anti-VEGF): en cualquier perfil molecular. ↑ SG ~2 meses.<br>
+        — <strong>Cetuximab / panitumumab</strong> (anti-EGFR): <strong>solo en RAS/BRAF wild-type</strong>. Mayor beneficio en tumores de lado izquierdo.<br>
+        — <strong>Pembrolizumab:</strong> primera línea en MSI-H / dMMR metastásico (aprobación FDA/EMA).<br>
+        — <strong>Encorafenib + cetuximab:</strong> en BRAF V600E mutado (2ª línea).
+      </div>
+    </div>
+
+    <div class="hl-info">💡 <strong>Metástasis hepáticas resecables:</strong> hasta el 25% de los CCR tienen metástasis hepáticas, y hasta el 20–30% de estas son potencialmente resecables. La resección hepática con intención curativa → sobrevida a 5 años del 30–50%. Estrategia: QT de conversión (si inicialmente irresecables) → revaluar → cirugía.</div>
+  </div>
+
+  <!-- SEGUIMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Seguimiento post-resección curativa</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Frecuencia</th><th>Objetivo</th></tr>
+        <tr><td>CEA sérico</td><td>Cada 3–6 meses × 5 años</td><td>Detección temprana de recurrencia</td></tr>
+        <tr><td>TC tórax-abdomen-pelvis</td><td>Cada 6–12 meses × 3–5 años</td><td>Detección de metástasis (hígado, pulmón)</td></tr>
+        <tr><td>Colonoscopía</td><td>Al año, luego cada 3–5 años</td><td>Detectar lesiones metacrónicas o recurrencia local</td></tr>
+        <tr><td>RMN pelvis (cáncer de recto)</td><td>Cada 6 meses × 3 años</td><td>Recurrencia pélvica local</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">El pico de recurrencia del CCR ocurre en los primeros <strong>2–3 años</strong> post-cirugía. El 80% de las recurrencias se producen en los primeros 5 años. El seguimiento intensivo permite detectar recurrencias resecables (hígado, pulmón) con posibilidad de rescate quirúrgico.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">3er cáncer más frecuente / 2da causa de muerte por cáncer</span>
+      <span class="pill">95% son adenocarcinomas</span>
+      <span class="pill">Secuencia adenoma → carcinoma ≈ 10 años</span>
+      <span class="pill">Colon derecho: anemia ferropénica + masa</span>
+      <span class="pill">Colon izquierdo/recto: hematoquecia + obstrucción</span>
+      <span class="pill">Colonoscopía total con biopsia: gold standard diagnóstico</span>
+      <span class="pill">RMN de pelvis: obligatoria en cáncer de recto</span>
+      <span class="pill">CEA: seguimiento, no diagnóstico inicial</span>
+      <span class="pill">Screening población promedio: desde 50 años</span>
+      <span class="pill">Lynch (HNPCC): MMR (MLH1, MSH2...) — CCR hereditario más frecuente</span>
+      <span class="pill">PAF: APC mutado — 100% riesgo si no colectomía</span>
+      <span class="pill">Estadio III: cirugía + FOLFOX 6 meses</span>
+      <span class="pill">Anti-EGFR (cetuximab): solo RAS/BRAF wild-type</span>
+      <span class="pill">MSI-H/dMMR: pembrolizumab primera línea en metastásico</span>
+      <span class="pill">TME: escisión total del mesorrecto en cáncer de recto</span>
+      <span class="pill">Neoadyuvancia (5-FU + RT): cáncer de recto T3-4 o N+</span>
+      <span class="pill">Metástasis hepáticas resecables: sobrevida 5 años 30–50%</span>
+      <span class="pill">Adenoma de alto riesgo: ≥10 mm, velloso, displasia alto grado, ≥3 adenomas</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: National Comprehensive Cancer Network (NCCN). Colon Cancer / Rectal Cancer. Version 2024 · Cervantes A et al. Metastatic colorectal cancer: ESMO Clinical Practice Guideline. Ann Oncol 2023 · Bray F et al. Global cancer statistics 2022. CA Cancer J Clin 2024 · Sociedad Argentina de Coloproctología (SAC) — Guías de CCR · WOMAN Trial Collaborators. Lancet 2017.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
