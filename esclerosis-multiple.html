@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esclerosis Múltiple — Medpedia</title>
+  <meta name="description" content="Esclerosis múltiple: fisiopatología, formas clínicas, criterios de McDonald, tratamientos modificadores de la enfermedad. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --neuro: #1A5E9A; --neuro-claro: #E6F1FB; --neuro-oscuro: #154E82;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro-oscuro); }
+    .tag-autoinmune { background: #FCE4EC; color: #880E4F; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-neuro { font-size: 16px; font-weight: 500; color: var(--neuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--neuro); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .formas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .formas-grid { grid-template-columns: 1fr; } }
+    .forma-card { border-radius: 12px; padding: 1.1rem 1.2rem; }
+    .forma-rr { background: #E1F5EE; border: 1.5px solid #a0d8c0; }
+    .forma-pp { background: #FCE4EC; border: 1.5px solid #e8a0b0; }
+    .forma-sp { background: #FFF3E0; border: 1.5px solid #f0c080; }
+    .forma-pr { background: var(--neuro-claro); border: 1.5px solid #a8c8e8; }
+    .forma-titulo { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .forma-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 8px; }
+    .forma-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.5; }
+    .criterio-box { background: var(--blanco); border: 1.5px solid var(--neuro); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .criterio-titulo { font-size: 14px; font-weight: 600; color: var(--neuro); margin-bottom: 10px; }
+    .criterio-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.55; padding-left: 12px; border-left: 2px solid var(--neuro-claro); margin-left: 4px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Esclerosis Múltiple</div>
+  <div class="titulo">Esclerosis Múltiple</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-autoinmune">Autoinmune</span>
+    <span class="tag tag-fuente">Criterios de McDonald 2017 · ECTRIMS/EAN 2023</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-info"><strong>Esclerosis múltiple (EM):</strong> enfermedad inflamatoria crónica desmielinizante del SNC, mediada por mecanismos autoinmunes. Se caracteriza por placas de desmielinización diseminadas en el tiempo y en el espacio, con grados variables de daño axonal.</div>
+    <div class="hl">Es la <strong>causa más frecuente de discapacidad neurológica no traumática en adultos jóvenes</strong>. Afecta preferentemente a mujeres (relación 3:1), con un pico de inicio entre los <strong>20 y 40 años</strong>. Prevalencia global: 2–3 millones de personas. Mayor frecuencia en latitudes alejadas del ecuador (gradiente norte-sur).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor</th><th>Detalle</th></tr>
+        <tr><td>Sexo</td><td>Mujeres 3:1. La forma PP es más equitativa (1.3:1)</td></tr>
+        <tr><td>Edad de inicio</td><td>20–40 años (forma RR). PP: inicio más tardío ~40 años</td></tr>
+        <tr><td>Genética</td><td>HLA-DRB1*15:01 (alelo de mayor riesgo). Concordancia en gemelos MZ ~25% → componente ambiental importante</td></tr>
+        <tr><td>Factores ambientales</td><td>Déficit de vitamina D, tabaquismo, infección por EBV (anticuerpos anti-EBNA2 aumentan riesgo 32 veces)</td></tr>
+        <tr><td>Latitud</td><td>Mayor prevalencia lejos del ecuador (relación inversa con exposición solar / vitamina D)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Fisiopatología</div>
+    <div class="hl-info">Los linfocitos T autorreactivos (CD4+ Th1 y Th17) cruzan la barrera hematoencefálica activados y atacan la mielina del SNC. Se produce infiltración de macrófagos y linfocitos B, con destrucción de la vaina de mielina y daño axonal progresivo.</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Desmielinización</strong> → bloqueo de la conducción nerviosa → síntomas neurológicos agudos (brote). La remielinización parcial explica la recuperación parcial o total en fases iniciales.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Daño axonal</strong> → pérdida neuronal irreversible → discapacidad acumulada. Ocurre desde etapas tempranas pero se evidencia clínicamente cuando se supera la reserva funcional del SNC.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Inflamación crónica compartimentada</strong> (dentro de la BHE) → progresión independiente de la actividad de brotes. Este mecanismo explica la forma primaria progresiva y la progresión en la forma secundaria progresiva.
+      </div>
+    </div>
+    <div class="hl-warn">⭐ <strong>Fenómeno de Uhthoff:</strong> empeoramiento transitorio de los síntomas neurológicos con el calor (ejercicio, fiebre, baño caliente). NO es un brote, sino una pseudorecaída por bloqueo de la conducción en axones desmielinizados sensibles a la temperatura. Se resuelve al enfriar. Importante para no confundirlo con un brote verdadero.</div>
+  </div>
+
+  <!-- FORMAS CLÍNICAS -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">📊 Formas clínicas</div>
+    <div class="formas-grid">
+      <div class="forma-card forma-rr">
+        <div class="forma-titulo" style="color:#0F6E56">🟢 Recurrente-Remitente (RR)</div>
+        <div class="forma-sub">85% de los casos al inicio</div>
+        <div class="forma-item">Brotes con recuperación completa o parcial</div>
+        <div class="forma-item">Sin progresión entre brotes</div>
+        <div class="forma-item">La forma más tratable</div>
+        <div class="forma-item">Evoluciona a SP en ~50% a los 10–15 años sin tratamiento</div>
+      </div>
+      <div class="forma-card forma-pp">
+        <div class="forma-titulo" style="color:#880E4F">🔴 Primaria Progresiva (PP)</div>
+        <div class="forma-sub">10–15% de los casos</div>
+        <div class="forma-item">Progresión desde el inicio, sin brotes definidos</div>
+        <div class="forma-item">Inicio más tardío (~40 años), igual en ambos sexos</div>
+        <div class="forma-item">Paraparesia espástica progresiva típica</div>
+        <div class="forma-item">Menos opciones terapéuticas (ocrelizumab)</div>
+      </div>
+      <div class="forma-card forma-sp">
+        <div class="forma-titulo" style="color:#E65100">🟠 Secundaria Progresiva (SP)</div>
+        <div class="forma-sub">Evolución de la forma RR</div>
+        <div class="forma-item">Progresión sostenida tras fase RR</div>
+        <div class="forma-item">Puede tener brotes superpuestos (activa) o no</div>
+        <div class="forma-item">Difícil distinguir clínicamente de la PP tardía</div>
+        <div class="forma-item">Siponimod, cladribina aprobados en formas activas</div>
+      </div>
+      <div class="forma-card forma-pr">
+        <div class="forma-titulo" style="color:var(--neuro)">🔵 Síndrome Clínico Aislado (SCA)</div>
+        <div class="forma-sub">Primer episodio desmielinizante</div>
+        <div class="forma-item">Primer brote neurológico, aún no cumple criterios de EM</div>
+        <div class="forma-item">Si la RMN muestra lesiones: alto riesgo de conversión a EM</div>
+        <div class="forma-item">Con lesiones típicas en RMN: tratar como EM (criterios 2017)</div>
+        <div class="forma-item">Tratamiento precoz reduce conversión a EM clínica definida</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Manifestaciones clínicas</div>
+    <div class="hl-info"><strong>Diseminación en el espacio:</strong> los síntomas reflejan lesiones en distintas áreas del SNC. <strong>Diseminación en el tiempo:</strong> los episodios ocurren en momentos diferentes separados por ≥30 días. Estos dos principios son el núcleo del diagnóstico.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Localización de la placa</th><th>Manifestación clínica</th><th>Frecuencia</th></tr>
+        <tr><td>Nervio óptico</td><td><strong>Neuritis óptica:</strong> pérdida visual dolorosa unilateral, discromatopsia, DPAR. Inicio en jóvenes. Primer síntoma en 20% de EM.</td><td>Muy frecuente</td></tr>
+        <tr><td>Tronco del encéfalo / cerebelo</td><td>Diplopia, nistagmo, vértigo, disartria, disfagia, oftalmoplejia internuclear (OIN)</td><td>Frecuente</td></tr>
+        <tr><td>Médula espinal</td><td>Paraparesia / tetraparesia espástica, parestesias, signo de Lhermitte, disfunción vesical (urgencia, retención), disfunción sexual</td><td>Muy frecuente</td></tr>
+        <tr><td>Hemisferios cerebrales</td><td>Hemiparesia, alteraciones cognitivas (memoria, atención), fatiga (síntoma más frecuente y limitante), depresión</td><td>Frecuente</td></tr>
+        <tr><td>Dolor</td><td>Neuralgia del trigémino, espasmos tónicos dolorosos, disestesias</td><td>Frecuente</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⭐ <strong>Signo de Lhermitte:</strong> sensación de descarga eléctrica que desciende por la columna al flexionar el cuello. Indica lesión en médula cervical posterior. Altamente sugestivo de EM (aunque no patognomónico).</div>
+    <div class="hl-warn">⭐ <strong>Oftalmoplejia internuclear (OIN):</strong> lesión del fascículo longitudinal medial (FLM). Produce paresia de la aducción ipsilateral + nistagmo del ojo contralateral. OIN bilateral en adulto joven → EM hasta demostrar lo contrario.</div>
+  </div>
+
+  <!-- CRITERIOS DE MCDONALD -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔍 Criterios de McDonald 2017 — diagnóstico de EM</div>
+    <div class="hl-info">El diagnóstico de EM requiere demostrar <strong>diseminación en el espacio (DES)</strong> y <strong>diseminación en el tiempo (DET)</strong>, descartando diagnósticos alternativos. La RMN permite cumplir estos criterios sin necesidad de un segundo brote clínico.</div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo">Diseminación en el espacio (DES) — por RMN</div>
+      <div class="criterio-item">≥1 lesión en T2 en ≥2 de las 4 regiones típicas de EM: <strong>periventricular, cortical/yuxtacortical, infratentorial, médula espinal</strong>.</div>
+      <div class="criterio-item">Las lesiones sintomáticas no cuentan en tronco, médula o nervio óptico.</div>
+    </div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo">Diseminación en el tiempo (DET) — por RMN o clínica</div>
+      <div class="criterio-item">Lesión nueva en T2 o gadolinio (+) en RMN de seguimiento, respecto a RMN basal (independientemente del tiempo).</div>
+      <div class="criterio-item"><strong>O bien:</strong> presencia simultánea de lesiones captantes (Gd+, lesión aguda) y no captantes (lesión crónica) en la misma RMN.</div>
+      <div class="criterio-item"><strong>O bien:</strong> segundo brote clínico separado ≥30 días afectando diferente localización.</div>
+      <div class="criterio-item">Bandas oligoclonales en LCR pueden sustituir el criterio de DET.</div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Hallazgo típico en EM</th></tr>
+        <tr><td><strong>RMN cerebral con Gd</strong></td><td>Lesiones en T2/FLAIR periventriculares (perpendiculares a ventrículos = "dedos de Dawson"), yuxtacorticales, infratentoriales. Lesiones captantes = activas.</td></tr>
+        <tr><td><strong>RMN médula espinal</strong></td><td>Lesiones focales, generalmente ≤2 segmentos vertebrales de extensión (a diferencia de NMOSD: ≥3 segmentos). Localización posterior o lateral.</td></tr>
+        <tr><td><strong>LCR</strong></td><td>Bandas oligoclonales (IgG) en LCR no presentes en suero → ≥90% sensibilidad. Índice de IgG elevado. Pleocitosis leve (generalmente &lt;50 células, predominio linfocítico).</td></tr>
+        <tr><td><strong>Potenciales evocados visuales</strong></td><td>Latencia del componente P100 prolongada → evidencia desmielinización subclínica en nervio óptico.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial clave</div>
+    <div class="hl-danger">⚠️ Siempre descartar <strong>"mimickers" de EM</strong> antes de iniciar tratamiento inmunosupresor. Las bandas oligoclonales, el patrón de lesiones en RMN y el perfil clínico ayudan a diferenciar.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad</th><th>Diferencia clave con EM</th></tr>
+        <tr><td><strong>NMOSD (Neuromielitis óptica)</strong></td><td>Anti-AQP4 (+) o anti-MOG (+). Lesiones medulares extensas ≥3 segmentos. Área postrema (hipo/náuseas). Peor pronóstico por brote. No responde a TME para EM.</td></tr>
+        <tr><td><strong>Vasculitis / Behçet</strong></td><td>Lesiones meníngeas, síntomas sistémicos, ANCA/anti-dsDNA, afectación de otras órganos.</td></tr>
+        <tr><td><strong>Neurosarcoidosis</strong></td><td>Lesiones de leptomeninges, ECA elevada, lesiones en otros órganos (pulmón, piel).</td></tr>
+        <tr><td><strong>Leucodistrofias del adulto</strong></td><td>Afectación simétrica de SB, antecedente familiar, evolución progresiva desde inicio joven.</td></tr>
+        <tr><td><strong>Deficiencia de vitamina B12</strong></td><td>Degeneración combinada subaguda. Cordones posteriores + laterales. B12 baja, hipersegmentación de PMN.</td></tr>
+        <tr><td><strong>Infecciones (HIV, HTLV-1, Lyme)</strong></td><td>Serología, epidemiología, lesiones características.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO DEL BROTE -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">💊 Tratamiento del brote agudo</div>
+    <div class="hl-info">El objetivo es <strong>acortar la duración y la severidad del brote</strong>, no modificar el pronóstico a largo plazo. Solo se tratan brotes con compromiso funcional significativo.</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Metilprednisolona IV — tratamiento estándar del brote</div>
+      <div class="farma-clase">Corticoide sistémico · Anti-inflamatorio · Restaura integridad de BHE</div>
+      <div class="dosis-badge">1 g/día IV × 3–5 días · Sin taper obligatorio</div>
+      <div class="farma-detalle">
+        Reduce la inflamación aguda y restaura la barrera hematoencefálica. Acelera la recuperación del brote pero <strong>no mejora el grado de recuperación final ni modifica la progresión de la enfermedad</strong>. Los brotes leves sin impacto funcional (parestesias leves) generalmente no requieren tratamiento. Alternativa oral: metilprednisolona 500 mg/día VO × 5 días (evidencia equivalente según EBM reciente).
+      </div>
+    </div>
+  </div>
+
+  <!-- TME -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">💊 Tratamientos modificadores de la enfermedad (TME)</div>
+    <div class="hl"><strong>El objetivo del TME es reducir la frecuencia de brotes, la acumulación de lesiones en RMN y la progresión de discapacidad.</strong> Iniciar lo antes posible tras el diagnóstico — la ventana de oportunidad es en la fase inflamatoria.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Eficacia</th><th>Fármaco</th><th>Mecanismo / Vía</th><th>Indicación</th></tr>
+        <tr><td rowspan="3"><strong>Moderada</strong></td><td>Interferón beta (IFN-β 1a, 1b)</td><td>Inmunomodulador · SC o IM · semanal/trisemanal</td><td>EM-RR, SCA de alto riesgo. 1ª línea clásica.</td></tr>
+        <tr><td>Acetato de glatiramer</td><td>Péptido sintético, desvía Th1→Th2 · SC diario o 3×/sem</td><td>EM-RR. Sin monitoreo hematológico.</td></tr>
+        <tr><td>Teriflunomida</td><td>Inhibe DHODH (síntesis de pirimidinas) · VO diario</td><td>EM-RR. Teratógeno — anticoncepción obligatoria.</td></tr>
+        <tr><td rowspan="4"><strong>Alta</strong></td><td>Natalizumab</td><td>Anti-α4-integrina → bloquea migración de linfocitos al SNC · IV mensual</td><td>EM-RR activa. Riesgo de LMP (JC virus).</td></tr>
+        <tr><td>Fingolimod</td><td>Modula receptor S1P → retención de linfocitos en ganglios · VO diario</td><td>EM-RR activa. Bradicardia 1ª dosis → monitoreo.</td></tr>
+        <tr><td>Dimetilfumarato</td><td>Activa vía Nrf2 (antioxidante) · VO 2×/día</td><td>EM-RR. Flushing y síntomas GI al inicio.</td></tr>
+        <tr><td>Cladribina</td><td>Análogo de adenosina → depleción linfocitaria · VO en pulsos anuales</td><td>EM-RR activa o SP activa.</td></tr>
+        <tr><td rowspan="2"><strong>Muy alta</strong></td><td>Ocrelizumab</td><td>Anti-CD20 → depleción de linfocitos B · IV cada 6 meses</td><td>EM-RR activa + <strong>EM-PP (único aprobado en PP)</strong></td></tr>
+        <tr><td>Alemtuzumab</td><td>Anti-CD52 → depleción de linfocitos T y B · IV en pulsos</td><td>EM-RR activa con mal pronóstico. Alto riesgo de autoimmunidad secundaria.</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">⚠️ <strong>Natalizumab → riesgo de leucoencefalopatía multifocal progresiva (LMP)</strong> por reactivación del virus JC. Factores de riesgo: anticuerpos anti-JC (+), duración &gt;24 meses, inmunosupresores previos. Índice de estratificación de riesgo con anticuerpos anti-JC y su título.</div>
+    <div class="hl-warn">⭐ <strong>Ocrelizumab</strong> es el único TME aprobado para la <strong>forma primaria progresiva</strong> (en fase temprana activa). Para EM-PP sin actividad inflamatoria, las opciones son muy limitadas.</div>
+  </div>
+
+  <!-- SÍNTOMAS ESPECÍFICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🛠️ Manejo de síntomas específicos</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma</th><th>Tratamiento</th></tr>
+        <tr><td>Fatiga (síntoma más frecuente)</td><td>Amantadina 100 mg c/12h, modafinilo, higiene del sueño, ejercicio aeróbico</td></tr>
+        <tr><td>Espasticidad</td><td>Baclofeno (1ª línea), tizanidina, diazepam; fisioterapia intensiva</td></tr>
+        <tr><td>Disfunción vesical (urgencia/retención)</td><td>Oxibutinina o solifenacina (vejiga hiperactiva); cateterismo intermitente (retención)</td></tr>
+        <tr><td>Dolor neuropático / disestesias</td><td>Gabapentin, pregabalina, amitriptilina</td></tr>
+        <tr><td>Neuralgia del trigémino</td><td>Carbamazepina, oxcarbazepina</td></tr>
+        <tr><td>Depresión (prevalencia 50%)</td><td>ISRS (sertralina, fluoxetina); apoyo psicológico</td></tr>
+        <tr><td>Temblor cerebeloso</td><td>Clonazepam, propranolol (resultados modestos); estimulación cerebral profunda en casos graves</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Enfermedad desmielinizante del SNC, autoinmune</span>
+      <span class="pill">Discapacidad neurológica más frecuente en adultos jóvenes</span>
+      <span class="pill">Mujer joven, 20–40 años, relación 3:1</span>
+      <span class="pill">Forma más frecuente: recurrente-remitente (85%)</span>
+      <span class="pill">Neuritis óptica: primer síntoma en 20% de casos</span>
+      <span class="pill">OIN bilateral en joven → EM hasta demostrar lo contrario</span>
+      <span class="pill">Signo de Lhermitte: descarga eléctrica al flexionar cuello</span>
+      <span class="pill">Fenómeno de Uhthoff: empeoramiento con calor, NO es brote</span>
+      <span class="pill">Criterios McDonald 2017: DES + DET</span>
+      <span class="pill">DES: ≥1 lesión T2 en ≥2 de 4 regiones (periventricular, cortical, infratentorial, médula)</span>
+      <span class="pill">Dedos de Dawson: lesiones periventriculares perpendiculares</span>
+      <span class="pill">Bandas oligoclonales en LCR: presentes en &gt;90%</span>
+      <span class="pill">Brote agudo: metilprednisolona 1 g/día × 3–5 días</span>
+      <span class="pill">Corticoides acortan el brote, no mejoran el pronóstico</span>
+      <span class="pill">Natalizumab → riesgo de LMP por virus JC</span>
+      <span class="pill">Ocrelizumab: único TME para EM primaria progresiva</span>
+      <span class="pill">NMOSD: anti-AQP4(+), lesión medular ≥3 segmentos, no responde a TME de EM</span>
+      <span class="pill">Fatiga: síntoma más frecuente y limitante en EM</span>
+      <span class="pill">Espasticidad: baclofeno de primera línea</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Thompson AJ et al. Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria. Lancet Neurol 2018 · Montalban X et al. ECTRIMS/EAN guideline on the pharmacological treatment of people with multiple sclerosis. Eur J Neurol 2023 · Correale J et al. Multiple sclerosis in Latin America. Neurology 2021 · Lublin FD et al. Defining the clinical course of multiple sclerosis. Neurology 2014.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
