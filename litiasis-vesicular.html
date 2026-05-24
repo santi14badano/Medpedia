@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Litiasis Vesicular y Patología Biliar — Medpedia</title>
+  <meta name="description" content="Litiasis vesicular, colecistitis aguda, coledocolitiasis y colangitis: clínica, diagnóstico y manejo quirúrgico. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --ciru: #2980B9; --ciru-claro: #E8F4F8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ciru   { background: var(--ciru-claro); color: var(--ciru); }
+    .tag-gastro { background: #FFF8E1; color: #633806; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo       { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ciru  { font-size: 16px; font-weight: 500; color: var(--ciru); margin-bottom: 12px; }
+    .sec-titulo-hpp   { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-verde { font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ciru  { border-left: 3px solid var(--ciru); background: var(--ciru-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ciru); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .entidad-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 14px; padding: 1.1rem 1.2rem; margin-bottom: 10px; }
+    .entidad-titulo { font-size: 14px; font-weight: 700; color: var(--ciru); margin-bottom: 6px; }
+    .entidad-desc { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .entidad-desc strong { color: var(--texto); }
+    .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .f-grid { grid-template-columns: 1fr; } }
+    .f-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 0.9rem 1rem; }
+    .f-titulo { font-size: 13px; font-weight: 700; color: var(--texto); margin-bottom: 4px; }
+    .f-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .charcot { background: #FEF0DC; border: 1.5px solid #f0c080; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+    .reynolds { background: var(--hpp-claro); border: 1.5px solid #e8b4b0; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+    .triada-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .triada-titulo.charcot { color: #D4730A; }
+    .triada-titulo.reynolds { color: var(--hpp); }
+    .triada-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Litiasis Vesicular y Patología Biliar</div>
+  <div class="titulo">Litiasis Vesicular y Patología Biliar</div>
+  <div class="meta">
+    <span class="tag tag-ciru">Cirugía General</span>
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-fuente">Tokyo Guidelines 2018 · SAGES · ASGE · Schwartz Cirugía 11ª ed.</span>
+  </div>
+
+  <!-- INTRODUCCIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Espectro de la enfermedad biliar</div>
+    <div class="hl-ciru">La patología biliar litiásica representa un espectro continuo: desde la <strong>colelitiasis asintomática</strong> hasta la <strong>colangitis aguda grave</strong> con sepsis. El 80% de los cálculos biliares son de <strong>colesterol</strong>; el 20% son pigmentarios (bilirrubinato de calcio).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad</th><th>Descripción breve</th></tr>
+        <tr><td><strong>Colelitiasis</strong></td><td>Cálculos en la vesícula. 80% asintomática. Prevalencia: 10–15% de la población adulta</td></tr>
+        <tr><td><strong>Cólico biliar</strong></td><td>Obstrucción transitoria del cístico por cálculo → dolor sin inflamación</td></tr>
+        <tr><td><strong>Colecistitis aguda</strong></td><td>Obstrucción persistente del cístico → inflamación vesicular. Complicación más frecuente</td></tr>
+        <tr><td><strong>Coledocolitiasis</strong></td><td>Cálculo en el colédoco → ictericia obstructiva ± colangitis ± pancreatitis</td></tr>
+        <tr><td><strong>Colangitis aguda</strong></td><td>Infección bacteriana de la vía biliar obstruida → sepsis biliar. Emergencia quirúrgica</td></tr>
+        <tr><td><strong>Pancreatitis biliar</strong></td><td>Cálculo impactado en la ampolla de Vater → obstrucción del Wirsung → pancreatitis aguda</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TIPOS DE CÁLCULOS -->
+  <div class="seccion">
+    <div class="sec-titulo-ciru">🪨 Tipos de cálculos y factores de riesgo</div>
+    <div class="f-grid">
+      <div class="f-card">
+        <div class="f-titulo">Cálculos de colesterol (80%)</div>
+        <div class="f-desc">Supersaturación de colesterol en bilis → nucleación → cálculo. Generalmente únicos, grandes, amarillentos. Radiolúcidos (no se ven en Rx).</div>
+      </div>
+      <div class="f-card">
+        <div class="f-titulo">Cálculos pigmentarios (20%)</div>
+        <div class="f-desc">Bilirrubinato de calcio. <strong>Negros:</strong> hemólisis crónica (anemia falciforme, esferocitosis), cirrosis. <strong>Marrones:</strong> infección biliar (bacterias que hidrolizan bilirrubina conjugada).</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Regla de las 4F (factores de riesgo para cálculos de colesterol):</strong> Female (mujer) · Forty (>40 años) · Fat (obesidad) · Fertile (multiparidad). Agregar: pérdida de peso rápida, dieta hipercolesterolémica, anticonceptivos orales, nutrición parenteral total.</div>
+    <div class="hl-info">💡 <strong>Cálculos pigmentarios negros:</strong> hemólisis crónica es la causa más importante. En pacientes con anemia hemolítica crónica (falciforme, esferocitosis hereditaria, talasemia) → alta prevalencia de colelitiasis pigmentaria desde la infancia.</div>
+  </div>
+
+  <!-- CÓLICO BILIAR -->
+  <div class="seccion">
+    <div class="sec-titulo-ciru">🔵 Cólico biliar</div>
+    <div class="entidad-card">
+      <div class="entidad-titulo">Cólico biliar — obstrucción transitoria del cístico</div>
+      <div class="entidad-desc">
+        <strong>Clínica:</strong> dolor en hipocondrio derecho o epigastrio, de inicio brusco, intenso, tipo cólico (aunque en realidad es constante), irradiado a hombro derecho o espalda. Dura 30 min–6 horas. Desencadenado por comidas grasas. Se resuelve espontáneamente cuando el cálculo se desimpacta.<br><br>
+        <strong>Sin fiebre, sin leucocitosis</strong> → diferencia clave con colecistitis aguda.<br><br>
+        <strong>Diagnóstico:</strong> ecografía abdominal (método de elección). Sensibilidad >95% para cálculos vesiculares >5 mm.<br><br>
+        <strong>Tratamiento del cólico agudo:</strong> AINEs (ketorolac, diclofenac) ± antiespasmódicos. Analgesia endovenosa si intenso. <strong>Tratamiento definitivo:</strong> colecistectomía laparoscópica electiva.
+      </div>
+    </div>
+  </div>
+
+  <!-- COLECISTITIS AGUDA -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Colecistitis Aguda</div>
+    <div class="hl-danger">Obstrucción persistente del cístico → distensión vesicular → isquemia parietal → inflamación → sobreinfección bacteriana (E. coli, Klebsiella, Enterococcus, anaerobios).</div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Clínica</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Hallazgo</th><th>Detalle</th></tr>
+        <tr><td><strong>Dolor en HD</strong></td><td>Persistente (>6 h), más intenso que el cólico, no cede con analgesia simple</td></tr>
+        <tr><td><strong>Fiebre</strong></td><td>38–38,5°C. Alta fiebre → sospechar complicación (empiema, perforación)</td></tr>
+        <tr><td><strong>Náuseas y vómitos</strong></td><td>Frecuentes</td></tr>
+        <tr><td><strong>Signo de Murphy</strong></td><td>Dolor a la palpación profunda en hipocondrio derecho durante la inspiración → el paciente "corta" la inspiración. Sensibilidad ~65%, especificidad ~87%</td></tr>
+        <tr><td><strong>Leucocitosis</strong></td><td>10.000–15.000/mm³. Muy alta → complicación</td></tr>
+        <tr><td><strong>Laboratorio</strong></td><td>↑ leve de transaminasas y FA (por vecindad). Bilirrubina normal o levemente ↑ (si hay componente coledociano)</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Criterios diagnósticos de colecistitis aguda — Tokyo Guidelines 2018</div>
+      <strong>A. Signos locales de inflamación:</strong> Murphy +, dolor/masa/sensibilidad en HD<br>
+      <strong>B. Signos sistémicos:</strong> fiebre, ↑ PCR, ↑ leucocitos<br>
+      <strong>C. Imagen:</strong> hallazgos ecográficos de colecistitis aguda<br>
+      <strong>Diagnóstico definitivo:</strong> 1 criterio A + 1 criterio B + criterio C
+    </div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Ecografía en colecistitis aguda</div>
+    <div class="hl-info">💡 Hallazgos ecográficos: cálculos en vesícula + engrosamiento de pared vesicular (>4 mm) + líquido perivesicular + signo de Murphy ecográfico. La ecografía tiene sensibilidad del 85–90% para colecistitis aguda.</div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Complicaciones de la colecistitis aguda</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Clínica / Manejo</th></tr>
+        <tr><td><strong>Empiema vesicular</strong></td><td>Pus dentro de la vesícula. Fiebre alta, leucocitosis marcada, toxicidad sistémica. Cirugía urgente</td></tr>
+        <tr><td><strong>Perforación vesicular</strong></td><td>Libre (peritonitis biliar) o cubierta (plastrón). Mortalidad alta. Cirugía de emergencia</td></tr>
+        <tr><td><strong>Íleo biliar</strong></td><td>Fístula colecistentérica → cálculo grande migra al intestino → oclusión ileal. Triada de Rigler en Rx: aerobilia + cálculo ectópico + niveles hidroaéreos</td></tr>
+        <tr><td><strong>Síndrome de Mirizzi</strong></td><td>Cálculo impactado en el infundíbulo/cístico comprime el colédoco externamente → ictericia obstructiva</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Tratamiento de la colecistitis aguda</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Internación + ayuno + hidratación IV.</strong> Analgesia (ketorolac, metamizol, opioides si necesario).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Antibióticos IV:</strong> cubrir gram negativos y anaerobios. Ampicilina-sulbactam, piperacilina-tazobactam, o cefalosporina de 3ª generación + metronidazol.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Colecistectomía laparoscópica temprana</strong> (dentro de las primeras 72 h del inicio de síntomas) — estándar de oro. Superior a la cirugía diferida en morbilidad, estancia y conversión a laparotomía.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Colecistostomía percutánea:</strong> drenaje de la vesícula guiado por ecografía. Alternativa en pacientes de alto riesgo quirúrgico. Puente hacia la colecistectomía definitiva.</div>
+    </div>
+  </div>
+
+  <!-- COLEDOCOLITIASIS Y COLANGITIS -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🟡 Coledocolitiasis y Colangitis Aguda</div>
+
+    <div class="entidad-card">
+      <div class="entidad-titulo">Coledocolitiasis — cálculo en el colédoco</div>
+      <div class="entidad-desc">
+        <strong>Clínica:</strong> ictericia obstructiva (bilirrubina directa ↑, FA ↑, GGT ↑, acolia, coluria) ± dolor en HD ± cólico biliar previo.<br>
+        <strong>Complicaciones:</strong> colangitis aguda (infección) y pancreatitis aguda biliar (obstrucción del Wirsung).<br>
+        <strong>Diagnóstico:</strong> ecografía (dilatación del colédoco >8 mm), colangio-RMN (de elección para confirmar sin riesgo de complicación), CPRE (diagnóstica + terapéutica).<br>
+        <strong>Tratamiento:</strong> CPRE + esfinterotomía + extracción del cálculo → luego colecistectomía laparoscópica.
+      </div>
+    </div>
+
+    <div class="charcot">
+      <div class="triada-titulo charcot">Tríada de Charcot — Colangitis aguda</div>
+      <div class="triada-item">🟡 <strong>Fiebre</strong> con escalofríos (bacteriemia biliar)</div>
+      <div class="triada-item">🟡 <strong>Ictericia</strong> (obstrucción del colédoco)</div>
+      <div class="triada-item">🟡 <strong>Dolor en hipocondrio derecho</strong></div>
+      <div class="triada-item" style="margin-top:6px; font-size:12px; color:var(--texto-ter)">Presente en el 70% de las colangitis agudas</div>
+    </div>
+
+    <div class="reynolds">
+      <div class="triada-titulo reynolds">Péntada de Reynolds — Colangitis grave (sepsis biliar)</div>
+      <div class="triada-item">🔴 Tríada de Charcot + <strong>shock</strong> (hipotensión) + <strong>alteración del sensorio</strong></div>
+      <div class="triada-item" style="margin-top:6px; font-size:12px; color:var(--texto-ter)">Mortalidad >50% sin tratamiento urgente. Drenaje biliar de emergencia obligatorio</div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top: 1rem">Manejo de la colangitis aguda</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>ABC + resucitación hemodinámica:</strong> 2 vías periféricas, cristaloides IV, hemocultivos antes de antibióticos.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Antibióticos IV empíricos:</strong> piperacilina-tazobactam o carbapenems si grave. Cubrir gram negativos (E. coli, Klebsiella) y anaerobios.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Drenaje biliar urgente por CPRE</strong> (esfinterotomía + extracción de cálculo o stent). Es el tratamiento definitivo de la obstrucción. En colangitis grave (péntada de Reynolds) → drenaje en las primeras 24 h.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Colecistectomía laparoscópica</strong> diferida (4–8 semanas) para tratar la fuente de los cálculos, una vez resuelta la colangitis.</div>
+    </div>
+    <div class="hl-danger">🔴 La colangitis aguda grave (péntada de Reynolds) es una emergencia con mortalidad >50% sin drenaje biliar urgente. No demorar el drenaje endoscópico o percutáneo esperando mejoría con antibióticos solos.</div>
+  </div>
+
+  <!-- COLECISTITIS ALITIÁSICA -->
+  <div class="seccion">
+    <div class="sec-titulo-ciru">⚠️ Colecistitis Alitiásica</div>
+    <div class="entidad-card">
+      <div class="entidad-titulo">Colecistitis aguda sin cálculos</div>
+      <div class="entidad-desc">
+        Inflamación vesicular sin cálculos. Representa el 5–10% de las colecistitis agudas. <strong>Contextos típicos:</strong> paciente crítico (UTI, cirugía mayor reciente, trauma, quemados), nutrición parenteral total prolongada, sepsis por otras causas, ayuno prolongado.<br><br>
+        <strong>Fisiopatología:</strong> estasis biliar + isquemia vesicular (bajo gasto) → isquemia → inflamación → sobreinfección.<br><br>
+        <strong>Diagnóstico difícil:</strong> el paciente suele estar sedado, con múltiples diagnósticos diferenciales. Ecografía: engrosamiento de pared + líquido perivesicular sin cálculos.<br><br>
+        <strong>Alta mortalidad</strong> (30–50%) por la gravedad del paciente de base. Tratamiento: colecistostomía percutánea (drenaje) como primera opción en pacientes no operables; colecistectomía si estabiliza.
+      </div>
+    </div>
+  </div>
+
+  <!-- PANCREATITIS BILIAR -->
+  <div class="seccion">
+    <div class="sec-titulo-ciru">🔗 Pancreatitis Aguda Biliar</div>
+    <div class="hl-warn">La litiasis es la causa más frecuente de pancreatitis aguda (40–50% de los casos). Un cálculo pequeño (&lt;5 mm) impacta en la ampolla de Vater → obstrucción del conducto pancreático → activación intraglandular de enzimas → pancreatitis.</div>
+    <div class="hl-info">💡 <strong>Predictor de pancreatitis biliar:</strong> ALT >3 veces el valor normal en paciente con pancreatitis aguda → alta probabilidad de causa biliar (VPP ~95%). La ecografía confirma los cálculos. La CPRE está indicada si hay coledocolitiasis asociada o colangitis.</div>
+    <div class="hl-ciru">Tras resolver la pancreatitis biliar leve → <strong>colecistectomía laparoscópica en el mismo internamiento</strong> (antes del alta) para prevenir recurrencia. La recurrencia de pancreatitis biliar sin colecistectomía es del 30–50% en los siguientes 3 meses.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">80% cálculos de colesterol · 20% pigmentarios</span>
+      <span class="pill">4F: Female · Forty · Fat · Fertile</span>
+      <span class="pill">Cálculos negros: hemólisis crónica (falciforme, esferocitosis)</span>
+      <span class="pill">Cólico biliar: dolor sin fiebre ni leucocitosis</span>
+      <span class="pill">Colecistitis: dolor + fiebre + leucocitosis + Murphy positivo</span>
+      <span class="pill">Murphy positivo: dolor al inspirar con palpación en HD</span>
+      <span class="pill">Ecografía: método de elección para colelitiasis y colecistitis</span>
+      <span class="pill">Colecistitis aguda: colecistectomía laparoscópica temprana (&lt;72 h)</span>
+      <span class="pill">Coledocolitiasis: CPRE + extracción → luego colecistectomía</span>
+      <span class="pill">Tríada de Charcot: fiebre + ictericia + dolor HD = colangitis</span>
+      <span class="pill">Péntada de Reynolds: Charcot + shock + alteración de conciencia = colangitis grave</span>
+      <span class="pill">Colangitis grave → drenaje biliar urgente en &lt;24 h</span>
+      <span class="pill">Pancreatitis biliar: ALT >3× VN + colelitiasis</span>
+      <span class="pill">Tras pancreatitis biliar leve: colecistectomía en el mismo internamiento</span>
+      <span class="pill">Colecistitis alitiásica: paciente crítico + UTI + NPT</span>
+      <span class="pill">Íleo biliar: triada de Rigler = aerobilia + cálculo ectópico + oclusión</span>
+      <span class="pill">Síndrome de Mirizzi: cálculo en cístico comprime colédoco externamente</span>
+      <span class="pill">Colangio-RMN: diagnóstico de coledocolitiasis sin riesgo de complicación</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Miura F et al. Tokyo Guidelines 2018: Initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci 2018 · Yokoe M et al. Tokyo Guidelines 2018: Diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018 · SAGES Guidelines Committee. SAGES Clinical Spotlight Review: Intraoperative Cholangiography 2020 · Schwartz SI et al. Schwartz's Principles of Surgery. 11th ed. McGraw-Hill 2019 · Tenner S et al. American College of Gastroenterology Guideline: Management of Acute Pancreatitis. Am J Gastroenterol 2013.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
