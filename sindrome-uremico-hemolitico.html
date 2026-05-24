@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome Urémico Hemolítico — Medpedia</title>
+  <meta name="description" content="SUH: triada clásica, STEC-SUH vs atípico, fisiopatología, diagnóstico, manejo. Enfermedad endémica en Argentina. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --pediatria: #D4730A; --pediatria-claro: #FEF0DC; --pediatria-oscuro: #8B4500;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-pediatria { background: var(--pediatria-claro); color: var(--pediatria-oscuro); }
+    .tag-nefro { background: #E6F1FB; color: #1A4E7A; }
+    .tag-argentina { background: #EBF5E9; color: #1A5C2A; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ped { font-size: 16px; font-weight: 500; color: var(--pediatria); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-ped   { border-left: 3px solid var(--pediatria); background: var(--pediatria-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .triada { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .triada { grid-template-columns: 1fr; } }
+    .triada-card { border-radius: 14px; padding: 1.1rem; border: 2px solid; text-align: center; }
+    .triada-card.anemia { background: #FDEDEC; border-color: #E88080; }
+    .triada-card.plaq { background: #FEF0DC; border-color: #E0A060; }
+    .triada-card.renal { background: #E6F1FB; border-color: #80A8D8; }
+    .triada-icono { font-size: 28px; margin-bottom: 6px; }
+    .triada-titulo { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .triada-titulo.anemia { color: #C0392B; }
+    .triada-titulo.plaq { color: #D4730A; }
+    .triada-titulo.renal { color: #1A5E9A; }
+    .triada-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .fisio-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; flex-wrap: wrap; }
+    .fisio-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 8px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: var(--texto); }
+    .fisio-arrow { color: var(--pediatria); font-weight: 700; font-size: 14px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .tipo-box { border-radius: 14px; padding: 1.1rem; border: 1.5px solid; margin-bottom: 10px; }
+    .tipo-box.tipico { background: #EBF5E9; border-color: #80C890; }
+    .tipo-box.atipico { background: #F4E8FC; border-color: #C090E0; }
+    .tipo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .tipo-nombre { font-size: 15px; font-weight: 700; }
+    .tipo-nombre.tipico { color: #1A5C2A; }
+    .tipo-nombre.atipico { color: #7B2D8B; }
+    .tipo-badge { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; }
+    .tipo-badge.tipico { background: #C8EAC8; color: #1A5C2A; }
+    .tipo-badge.atipico { background: #E8C8F8; color: #7B2D8B; }
+    .tipo-content { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .tipo-content strong { color: var(--texto); }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--pediatria); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .arg-banner { background: linear-gradient(135deg, #75AADB 0%, #75AADB 33%, #FFFFFF 33%, #FFFFFF 66%, #FCBE30 66%); border-radius: 12px; padding: 1px; margin-bottom: 10px; }
+    .arg-inner { background: var(--blanco); border-radius: 11px; padding: 1rem 1.25rem; font-size: 14px; color: var(--texto-sec); line-height: 1.6; }
+    .arg-inner strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría · Nefrología</a> › Síndrome Urémico Hemolítico</div>
+  <div class="titulo">Síndrome Urémico<br>Hemolítico</div>
+  <div class="meta">
+    <span class="tag tag-pediatria">Pediatría</span>
+    <span class="tag tag-nefro">Nefrología</span>
+    <span class="tag tag-argentina">🇦🇷 Endémico Argentina</span>
+    <span class="tag tag-fuente">SAP 2023 · KDIGO · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- ARGENTINA -->
+  <div class="seccion">
+    <div class="arg-banner">
+      <div class="arg-inner">
+        <strong>Argentina: epicentro mundial del SUH.</strong> Nuestro país tiene la incidencia más alta del mundo de SUH por STEC, con aproximadamente <strong>400–500 casos nuevos por año</strong> (antes superaba los 500). El SUH es la <strong>principal causa de insuficiencia renal aguda en niños</strong> en Argentina y la segunda causa de insuficiencia renal crónica en menores de 18 años. El agente causal más frecuente es <em>E. coli</em> O157:H7, transmitida principalmente por carne vacuna mal cocida. Conocer esta enfermedad en profundidad es obligatorio para el concurso de residencias en Argentina.
+      </div>
+    </div>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición — Triada clásica</div>
+    <div class="hl-ped"><strong>SUH:</strong> síndrome caracterizado por la triada de <strong>anemia hemolítica microangiopática + trombocitopenia + insuficiencia renal aguda</strong>, causado por daño endotelial con formación de microtrombos en la microvasculatura renal.</div>
+    <div class="triada">
+      <div class="triada-card anemia">
+        <div class="triada-icono">🔴</div>
+        <div class="triada-titulo anemia">Anemia hemolítica microangiopática</div>
+        <div class="triada-desc">Hb &lt;10 g/dL · Coombs negativa · Esquistocitos en frotis (fragmentación mecánica) · LDH elevada · Haptoglobina baja</div>
+      </div>
+      <div class="triada-card plaq">
+        <div class="triada-icono">🟡</div>
+        <div class="triada-titulo plaq">Trombocitopenia</div>
+        <div class="triada-desc">Plaquetas &lt;150.000/µL (frecuente &lt;50.000) · Consumo en microtrombos · Sin CID (TP y KPTT normales)</div>
+      </div>
+      <div class="triada-card renal">
+        <div class="triada-icono">🔵</div>
+        <div class="triada-titulo renal">Insuficiencia Renal Aguda</div>
+        <div class="triada-desc">Elevación de creatinina · Oliguria o anuria · El riñón es el órgano más afectado · 50–60% requieren diálisis</div>
+      </div>
+    </div>
+    <div class="hl-info">💡 La triada puede no estar completa al inicio. Ante diarrea sanguinolenta + anemia + oliguria en un niño → pensar siempre en SUH aunque las plaquetas aún sean normales.</div>
+  </div>
+
+  <!-- TIPOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔶 Clasificación — SUH típico vs. atípico</div>
+    <div class="tipo-box tipico">
+      <div class="tipo-header">
+        <div class="tipo-nombre tipico">SUH típico (STEC-SUH)</div>
+        <div class="tipo-badge tipico">90% de los casos</div>
+      </div>
+      <div class="tipo-content">
+        <strong>Agente:</strong> <em>E. coli</em> enterohemorrágica productora de toxina Shiga (STEC), principalmente serotipo <strong>O157:H7</strong>. También O111:H8, O26, O103, O121.<br><br>
+        <strong>Transmisión:</strong> carne vacuna mal cocida (principal vía), leche no pasteurizada, agua contaminada, frutas/verduras crudas, contacto persona a persona (fecal-oral).<br><br>
+        <strong>Epidemiología:</strong> predomina en <strong>niños &lt;5 años</strong>, pico en verano/otoño (noviembre–abril en Argentina). Puede afectar adultos mayores.<br><br>
+        <strong>Pródromo:</strong> diarrea acuosa que evoluciona a <strong>diarrea sanguinolenta</strong> (colitis hemorrágica) en 1–3 días, dolor abdominal intenso, vómitos. La diarrea sanguinolenta precede al SUH en 5–10 días.<br><br>
+        <strong>Pronóstico:</strong> generalmente autolimitado. Mortalidad aguda 1–5%. 25% evoluciona a IRC o secuelas renales crónicas a largo plazo.
+      </div>
+    </div>
+    <div class="tipo-box atipico">
+      <div class="tipo-header">
+        <div class="tipo-nombre atipico">SUH atípico (aSUH)</div>
+        <div class="tipo-badge atipico">10% de los casos</div>
+      </div>
+      <div class="tipo-content">
+        <strong>Causa:</strong> desregulación de la vía alternativa del complemento por mutaciones en genes reguladores (factor H, factor I, MCP/CD46, C3, factor B) o anticuerpos anti-factor H. Sin diarrea prodrómica.<br><br>
+        <strong>Características:</strong> puede aparecer a cualquier edad · desencadenado por infecciones, embarazo, trasplante, fármacos (quimioterapia, anticonceptivos) · curso recurrente y crónico.<br><br>
+        <strong>Pronóstico:</strong> mucho peor que el típico. Hasta 50% desarrolla IRC terminal al primer episodio. Alta recurrencia postrasplante (especialmente en mutaciones de factor H).<br><br>
+        <strong>Tratamiento específico:</strong> <strong>Eculizumab</strong> (anticuerpo monoclonal anti-C5, bloquea la vía terminal del complemento) → tratamiento de elección. Cambia radicalmente el pronóstico. Requiere vacunación previa contra meningococo.
+      </div>
+    </div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟠 Fisiopatología del STEC-SUH</div>
+    <div class="fisio-row"><div class="fisio-box">Ingestión STEC</div><div class="fisio-arrow">→</div><div class="fisio-box">Colonización colon</div><div class="fisio-arrow">→</div><div class="fisio-box">Producción toxina Shiga (Stx1/Stx2)</div><div class="fisio-arrow">→</div><div class="fisio-box">Absorción sistémica</div></div>
+    <div class="fisio-row"><div class="fisio-box">Stx se une a receptor Gb3 en endotelio renal</div><div class="fisio-arrow">→</div><div class="fisio-box">Inhibición síntesis proteica</div><div class="fisio-arrow">→</div><div class="fisio-box">Apoptosis endotelial</div></div>
+    <div class="fisio-row"><div class="fisio-box">Daño endotelial</div><div class="fisio-arrow">→</div><div class="fisio-box">Activación plaquetaria + trombos de fibrina-plaquetas en microvasculatura</div><div class="fisio-arrow">→</div><div class="fisio-box">Anemia microangiopática + Trombocitopenia + IRA</div></div>
+    <div class="hl-ped">La <strong>toxina Shiga tipo 2 (Stx2)</strong> es la más virulenta y la más asociada a SUH. Los riñones son especialmente vulnerables porque sus células endoteliales expresan altas concentraciones del receptor Gb3 (globotriaosileramida).</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ ¿Por qué los niños pequeños son más susceptibles?</div>
+      Las células endoteliales renales de los niños menores de 5 años expresan mayor densidad del receptor Gb3 que los adultos → mayor captación de Stx → mayor daño renal. Además, el intestino inmaduro facilita la absorción de la toxina.
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica — fases del STEC-SUH</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fase</th><th>Tiempo</th><th>Manifestaciones</th></tr>
+        <tr><td><strong>Pródromo gastrointestinal</strong></td><td>Días 1–5</td><td>Diarrea acuosa → <strong>diarrea sanguinolenta</strong> (colitis hemorrágica) · dolor abdominal cólico intenso · vómitos · febrícula o afebril</td></tr>
+        <tr><td><strong>Período de SUH</strong></td><td>Días 5–10</td><td><strong>Palidez</strong> (anemia) · <strong>oliguria o anuria</strong> · petequias/equimosis (trombocitopenia) · edemas · hipertensión arterial</td></tr>
+        <tr><td><strong>Compromiso extrarrenal</strong></td><td>Variable</td><td><strong>SNC</strong> (10–20%): convulsiones, encefalopatía, ACV → peor pronóstico · <strong>Colon:</strong> colitis grave, necrosis, megacolon tóxico, prolapso rectal · <strong>Páncreas:</strong> pancreatitis, DBT post-SUH</td></tr>
+        <tr><td><strong>Fase de recuperación</strong></td><td>Semanas</td><td>Diuresis que reaparece · normalización progresiva de plaquetas y hemoglobina · puede quedar IRC</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 <strong>Compromiso del SNC</strong> = factor pronóstico más importante de mortalidad aguda. Sospechar ante cambio del sensorio, convulsiones o signos focales en niño con SUH. La afectación neurológica grave tiene mortalidad de hasta 30%.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Diagnóstico</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Laboratorio — hallazgos esperados</div>
+        ✦ <strong>Hemograma:</strong> anemia (Hb frecuente 6–9 g/dL) · plaquetas ↓↓<br>
+        ✦ <strong>Frotis de sangre periférica:</strong> <strong>esquistocitos</strong> (fragmentos de eritrocitos) = clave diagnóstica<br>
+        ✦ <strong>Coombs directo:</strong> negativo (diferencia de autoinmune)<br>
+        ✦ <strong>LDH:</strong> muy elevada (hemólisis)<br>
+        ✦ <strong>Haptoglobina:</strong> disminuida o indetectable<br>
+        ✦ <strong>Creatinina y urea:</strong> elevadas (IRA)<br>
+        ✦ <strong>TP/KPTT:</strong> normales (diferencia de CID)<br>
+        ✦ <strong>Ionograma:</strong> hiponatremia, hiperpotasemia<br>
+        ✦ <strong>Bilirrubina indirecta:</strong> elevada<br>
+        ✦ <strong>Sedimento urinario:</strong> hematuria, proteinuria, cilindruria
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Microbiología e imágenes</div>
+        ✦ <strong>Coprocultivo para STEC:</strong> en agar sorbitol-MacConkey (O157:H7 no fermenta sorbitol) · mayor rendimiento en los primeros 6 días de diarrea<br>
+        ✦ <strong>PCR para genes de toxina Shiga (stx1/stx2):</strong> en materia fecal → más sensible<br>
+        ✦ <strong>ELISA para Stx en materia fecal</strong><br>
+        ✦ <strong>Ecografía renal:</strong> riñones aumentados de tamaño con ecogenicidad aumentada (edema)<br>
+        ✦ <strong>TC/RMN de cráneo:</strong> ante síntomas neurológicos<br>
+        ✦ <strong>Biopsia renal:</strong> no de rutina · hallazgo: microangiopatía trombótica (MAT) con trombos en capilares glomerulares y arteriolas
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial — otras MAT</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad</th><th>Clínica distintiva</th><th>Clave diagnóstica</th></tr>
+        <tr><td><strong>STEC-SUH</strong></td><td>Pródromo diarrea sanguinolenta · niños &lt;5 a</td><td>Coprocultivo/PCR Stx positivo</td></tr>
+        <tr><td><strong>SUH atípico</strong></td><td>Sin diarrea · cualquier edad · recurrente</td><td>Mutaciones complemento · ADAMTS13 normal</td></tr>
+        <tr><td><strong>PTT (Púrpura Trombocitopénica Trombótica)</strong></td><td>Adultos · fiebre · afectación neurológica grave · IRA leve</td><td><strong>ADAMTS13 &lt;10%</strong> (déficit congénito o Ac inhibidores)</td></tr>
+        <tr><td><strong>CID</strong></td><td>Sepsis, trauma, neoplasia · sangrado generalizado</td><td>TP/KPTT prolongados · fibrinógeno ↓ · D-dímero ↑↑</td></tr>
+        <tr><td><strong>HELLP (embarazo)</strong></td><td>Mujer gestante · hipertensión · proteinuria</td><td>Contexto clínico + resolución post-parto</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>PTT vs. SUH:</strong> la regla práctica clásica es que en PTT predomina la afectación neurológica y la IRA es leve; en el SUH predomina la IRA y la neurológica es la complicación grave (no la regla). La determinación de <strong>ADAMTS13</strong> es la clave: &lt;10% = PTT. En el SUH es normal o levemente disminuida.</div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟠 Manejo del STEC-SUH</div>
+    <div class="hl-ped"><strong>No existe tratamiento específico para el STEC-SUH.</strong> El manejo es fundamentalmente de soporte: hidratación, control de hipertensión, manejo de la IRA y diálisis si es necesario. La mayoría se recupera con tratamiento de soporte.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Hidratación — intervención más importante en la fase prodrómica</strong><br>
+        La hidratación IV precoz durante la fase de diarrea (antes del desarrollo del SUH) puede reducir la gravedad de la IRA. <strong>SF 0,9% 10–20 ml/kg IV</strong> → luego ajustar según diuresis. En la fase oligúrica: restricción hídrica estricta (ingresos = pérdidas insensibles + diuresis). Evitar sobrehidratación → edema pulmonar, hipertensión intracraneal.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Control de la hipertensión arterial</strong><br>
+        Presente en 50–70% (retención de agua y Na por IRA). <strong>Bloqueantes de canales de calcio</strong> (amlodipina, nifedipina) o inhibidores del eje renina-angiotensina. Urgencia hipertensiva: nitroprusiato de sodio IV. La HTA puede contribuir a la encefalopatía → tratar agresivamente.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Manejo de la IRA — indicaciones de diálisis</strong><br>
+        50–60% de los niños con SUH requieren diálisis. <strong>Indicaciones:</strong> oligoanuria persistente (&gt;24–48 h) · hiperkalemia refractaria (K &gt;6,5 mEq/L) · acidosis metabólica grave · sobrecarga hídrica con edema pulmonar o HTA refractaria · uremia sintomática. <strong>Modalidad preferida en pediatría:</strong> diálisis peritoneal (acceso más simple, mejor tolerancia hemodinámica).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Transfusión de glóbulos rojos</strong><br>
+        Indicada si <strong>Hb &lt;6–7 g/dL</strong> o síntomas de anemia grave (taquicardia, disnea, mala perfusión). <strong>No transfundir plaquetas de rutina</strong> → las plaquetas se consumen en los microtrombos → la transfusión puede empeorar la microangiopatía. Transfundir plaquetas solo si hay sangrado grave activo o procedimiento invasivo necesario.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Compromiso del SNC</strong><br>
+        Tratamiento de soporte: control de convulsiones (benzodiacepinas + fenitoína/levetiracetam), neuroprotección. No hay tratamiento específico para el compromiso neurológico por Stx. Monitoreo continuo. Considerar neuroimagen (RMN cerebral con DWI). En SUH atípico con compromiso neurológico severo: eculizumab urgente.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">🚫 Lo que NO se debe hacer en STEC-SUH</div>
+      <strong>Antibióticos:</strong> contraindicados en la fase de diarrea por STEC. Los antibióticos lisan las bacterias → liberación masiva de toxina Shiga → mayor absorción sistémica → mayor riesgo de SUH. Estudios retrospectivos y prospectivos muestran mayor incidencia de SUH con uso de antibióticos (especialmente quinolonas, trimetoprim).<br><br>
+      <strong>Antidiarreicos (loperamida):</strong> contraindicados → enlentecen el tránsito → mayor tiempo de contacto con la bacteria → mayor absorción de toxina.<br><br>
+      <strong>AINE:</strong> evitar → nefrotóxicos en el contexto de IRA.<br><br>
+      <strong>Transfusión de plaquetas de rutina:</strong> contraindicada → pueden agravar la microangiopatía.
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención — medidas de salud pública</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Medida</th><th>Fundamento</th></tr>
+        <tr><td><strong>Cocción completa de la carne</strong></td><td>La carne picada (hamburguesas) debe cocinarse hasta que desaparezca el color rosado en el centro (≥70°C interno). La E. coli O157:H7 es eliminada por el calor.</td></tr>
+        <tr><td><strong>Lavado de manos</strong></td><td>Antes y después de manipular alimentos crudos, después del baño, cambio de pañales.</td></tr>
+        <tr><td><strong>No consumir leche/jugos no pasteurizados</strong></td><td>La pasteurización elimina STEC.</td></tr>
+        <tr><td><strong>Higiene en granjas y zoológicos de contacto</strong></td><td>Los bovinos son reservorio asintomático de STEC. Lavado de manos obligatorio post-contacto.</td></tr>
+        <tr><td><strong>Agua segura</strong></td><td>Brotes por agua de pozo o recreativa contaminada con materia fecal bovina.</td></tr>
+        <tr><td><strong>Aislamiento de contacto</strong></td><td>Transmisión fecal-oral persona a persona en guarderías y familias. Niño con SUH: aislamiento entérico y confirmación de 2 coprocultivos negativos antes del alta.</td></tr>
+      </table>
+    </div>
+    <div class="hl">💡 <strong>El SUH es de notificación obligatoria en Argentina</strong> (Resolución MS N° 1156/2018). Reportar al Sistema Nacional de Vigilancia de la Salud (SNVS) dentro de las 24 h del diagnóstico sospechoso.</div>
+  </div>
+
+  <!-- SEGUIMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">📅 Seguimiento a largo plazo</div>
+    <div class="hl-warn">⚠️ El SUH no termina con el alta hospitalaria. El 25–30% de los sobrevivientes desarrolla secuelas renales crónicas (proteinuria, hipertensión, IRC). Todos deben tener seguimiento nefrológico pediátrico a largo plazo.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Secuela</th><th>Frecuencia</th><th>Seguimiento</th></tr>
+        <tr><td>Proteinuria persistente</td><td>15–30%</td><td>Tensión arterial + proteinuria/creatinina en orina c/6–12 meses</td></tr>
+        <tr><td>Hipertensión arterial crónica</td><td>10–20%</td><td>MAPA anual</td></tr>
+        <tr><td>IRC (estadio 3–5)</td><td>5–10%</td><td>Nefrología pediátrica + TFG periódica</td></tr>
+        <tr><td>Diabetes mellitus post-SUH</td><td>2–5%</td><td>Glucemia en ayunas anual (daño pancreático por Stx)</td></tr>
+        <tr><td>Secuelas neurológicas</td><td>3–5% (en los que tuvieron compromiso SNC)</td><td>Neurología pediátrica + neurodesarrollo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SUH: triada = anemia hemolítica microangiopática + trombocitopenia + IRA</span>
+      <span class="pill">Argentina: mayor incidencia mundial de SUH por STEC</span>
+      <span class="pill">Agente: E. coli O157:H7 productora de toxina Shiga</span>
+      <span class="pill">Transmisión #1: carne vacuna mal cocida</span>
+      <span class="pill">Pródromo: diarrea sanguinolenta → SUH 5–10 días después</span>
+      <span class="pill">Esquistocitos en frotis = clave diagnóstica de microangiopatía</span>
+      <span class="pill">Coombs negativo (diferencia de anemia hemolítica autoinmune)</span>
+      <span class="pill">TP/KPTT normales (diferencia de CID)</span>
+      <span class="pill">ADAMTS13 normal (diferencia de PTT)</span>
+      <span class="pill">50–60% requiere diálisis peritoneal</span>
+      <span class="pill">NO antibióticos en STEC → liberan más toxina → empeoran SUH</span>
+      <span class="pill">NO antidiarreicos → mayor absorción de toxina</span>
+      <span class="pill">NO transfundir plaquetas de rutina → agrava microangiopatía</span>
+      <span class="pill">Complicación más grave: compromiso del SNC (convulsiones, ACV)</span>
+      <span class="pill">SUH atípico: mutaciones complemento → Eculizumab</span>
+      <span class="pill">PTT: ADAMTS13 &lt;10% + predominio neurológico + IRA leve</span>
+      <span class="pill">Notificación obligatoria en Argentina</span>
+      <span class="pill">Seguimiento a largo plazo: HTA + proteinuria + IRC + DBT post-SUH</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Sociedad Argentina de Pediatría (SAP). Síndrome Urémico Hemolítico. Guías de diagnóstico y tratamiento 2023 · Ministerio de Salud de la Nación Argentina. Boletín Epidemiológico Nacional — SUH 2023 · KDIGO Clinical Practice Guideline for Acute Kidney Injury. Kidney Int Suppl 2012 · Tarr PI. Shiga-toxin-producing Escherichia coli and hemolytic uremic syndrome. Curr Opin Pediatr. 2018 · Loirat C, Fakhouri F, Ariceta G, et al. An international consensus approach to the management of atypical hemolytic uremic syndrome in children. Pediatr Nephrol 2016 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
