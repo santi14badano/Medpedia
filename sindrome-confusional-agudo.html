@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome Confusional Agudo (Delirium) — Medpedia</title>
+  <meta name="description" content="Delirium: criterios diagnósticos DSM-5, tipos, causas AEIOU-TIPS, CAM, manejo no farmacológico y farmacológico. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --neuro: #5C35A0; --neuro-claro: #F0EBFC; --neuro-oscuro: #3D2070;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro-oscuro); }
+    .tag-emergencia { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-neuro { font-size: 16px; font-weight: 500; color: var(--neuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--neuro); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--neuro); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .tres-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .tres-col, .dos-col { grid-template-columns: 1fr; } }
+    .tipo-card { border-radius: 14px; padding: 1.1rem; border: 1.5px solid; }
+    .tipo-card.hiper { background: #FEF0DC; border-color: #f0c080; }
+    .tipo-card.hipo { background: #E6F1FB; border-color: #a8c8e8; }
+    .tipo-card.mixto { background: var(--neuro-claro); border-color: #c4a8e8; }
+    .tipo-titulo { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .tipo-titulo.hiper { color: #D4730A; }
+    .tipo-titulo.hipo { color: #1A5E9A; }
+    .tipo-titulo.mixto { color: var(--neuro); }
+    .tipo-pct { font-size: 11px; color: var(--texto-ter); margin-bottom: 6px; }
+    .tipo-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 3px; }
+    .cam-box { background: var(--blanco); border: 2px solid var(--neuro); border-radius: 14px; padding: 1.25rem; margin-bottom: 10px; }
+    .cam-titulo { font-size: 15px; font-weight: 600; color: var(--neuro); margin-bottom: 12px; }
+    .cam-item { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .cam-num { width: 26px; height: 26px; border-radius: 50%; background: var(--neuro); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cam-content { font-size: 13px; color: var(--texto-sec); line-height: 1.5; }
+    .cam-content strong { color: var(--texto); }
+    .cam-req { background: var(--neuro-claro); border-radius: 8px; padding: 8px 12px; font-size: 12px; color: var(--neuro-oscuro); margin-top: 10px; font-weight: 500; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .aeiou-grid { display: grid; grid-template-columns: 40px 1fr; gap: 6px 12px; align-items: start; margin-bottom: 8px; }
+    .aeiou-letra { font-size: 22px; font-weight: 700; color: var(--neuro); line-height: 1; }
+    .aeiou-content { font-size: 13px; color: var(--texto-sec); line-height: 1.5; padding-top: 4px; }
+    .aeiou-content strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Síndrome Confusional Agudo</div>
+  <div class="titulo">Síndrome Confusional Agudo<br><span style="font-size:0.65em; color:var(--texto-sec); font-style:italic;">Delirium</span></div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-emergencia">Emergencia médica</span>
+    <span class="tag tag-fuente">DSM-5 · Harrison 21ª ed. · UpToDate 2024 · APA Practice Guidelines</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y conceptos clave</div>
+    <div class="hl-neuro"><strong>Delirium (SCA):</strong> síndrome neuropsiquiátrico caracterizado por <strong>alteración aguda y fluctuante de la atención y la conciencia</strong>, con alteración cognitiva no explicada por demencia preexistente, causado por una condición médica subyacente, sustancia o abstinencia.</div>
+    <div class="hl-danger">⚠️ El delirium es una <strong>emergencia médica</strong>. No es un diagnóstico en sí mismo sino la <em>expresión sintomática de una causa orgánica subyacente</em> que siempre debe buscarse y tratarse. La mortalidad hospitalaria del delirium es del 10–26%, similar al IAM y la sepsis.</div>
+    <div class="hl-warn">⚠️ <strong>No confundir con demencia:</strong> la demencia es crónica, de instauración lenta, sin alteración de la conciencia y sin fluctuación horaria. El delirium puede superponerse sobre una demencia (lo que aumenta el riesgo x2–5).</div>
+  </div>
+
+  <!-- CRITERIOS DSM-5 -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Criterios diagnósticos — DSM-5</div>
+    <div class="cam-box">
+      <div class="cam-titulo">Criterios DSM-5 para Delirium (todos deben estar presentes)</div>
+      <div class="cam-item">
+        <div class="cam-num">A</div>
+        <div class="cam-content"><strong>Alteración de la atención</strong> (incapacidad de dirigir, focalizar, sostener o desviar la atención) <strong>y de la conciencia</strong> (orientación reducida al entorno)</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num">B</div>
+        <div class="cam-content"><strong>Instauración aguda</strong> (horas a días) con <strong>tendencia a fluctuar</strong> a lo largo del día</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num">C</div>
+        <div class="cam-content"><strong>Alteración cognitiva adicional</strong>: déficit de memoria, desorientación, lenguaje, visuoespacial o percepción (alucinaciones, ilusiones)</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num">D</div>
+        <div class="cam-content">Las alteraciones de A y C <strong>no se explican mejor por una demencia preexistente o establecida</strong> y no ocurren en el contexto de un nivel de conciencia muy disminuido (coma)</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num">E</div>
+        <div class="cam-content">Hay evidencia de que el trastorno es <strong>consecuencia fisiológica directa de una causa médica</strong>, intoxicación o abstinencia de sustancia, exposición a toxina, o combinación de factores</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔶 Tipos de delirium</div>
+    <div class="tres-col">
+      <div class="tipo-card hiper">
+        <div class="tipo-titulo hiper">⚡ Hiperactivo</div>
+        <div class="tipo-pct">25% de los casos · más fácil de reconocer</div>
+        <div class="tipo-item">✦ Agitación psicomotriz</div>
+        <div class="tipo-item">✦ Intentos de sacarse vías/sondas</div>
+        <div class="tipo-item">✦ Alucinaciones visuales</div>
+        <div class="tipo-item">✦ Ideas persecutorias</div>
+        <div class="tipo-item">✦ Hiperactividad autonómica</div>
+        <div class="tipo-item" style="margin-top:6px; font-style:italic; font-size:11px;">Típico de abstinencia (alcohol, BZD), anticolinérgicos</div>
+      </div>
+      <div class="tipo-card hipo">
+        <div class="tipo-titulo hipo">😴 Hipoactivo</div>
+        <div class="tipo-pct">50% de los casos · frecuentemente subdiagnosticado</div>
+        <div class="tipo-item">✦ Letargia, bradipsiquia</div>
+        <div class="tipo-item">✦ Reducción espontánea del habla</div>
+        <div class="tipo-item">✦ Mirada fija, indiferencia</div>
+        <div class="tipo-item">✦ Enlentecimiento psicomotor</div>
+        <div class="tipo-item">✦ Peor pronóstico que el hiperactivo</div>
+        <div class="tipo-item" style="margin-top:6px; font-style:italic; font-size:11px;">Típico de encefalopatía hepática, hipotiroidismo, ancianos</div>
+      </div>
+      <div class="tipo-card mixto">
+        <div class="tipo-titulo mixto">🔀 Mixto</div>
+        <div class="tipo-pct">25% de los casos</div>
+        <div class="tipo-item">✦ Fluctuación entre hiper e hipoactividad</div>
+        <div class="tipo-item">✦ El más frecuente en la práctica clínica real</div>
+        <div class="tipo-item">✦ Difícil reconocimiento en fases hipoactivas</div>
+        <div class="tipo-item" style="margin-top:6px; font-style:italic; font-size:11px;">Alterna períodos de agitación y somnolencia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAUSAS AEIOU-TIPS -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Causas — mnemotecnia AEIOU-TIPS</div>
+    <div class="hl-neuro">El delirium casi siempre tiene causa identificable. Buscar <strong>siempre múltiples causas simultáneas</strong>, especialmente en ancianos donde suelen coexistir 2–3 factores precipitantes sobre factores predisponentes.</div>
+    <div style="background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 10px;">
+      <div class="aeiou-grid">
+        <div class="aeiou-letra">A</div>
+        <div class="aeiou-content"><strong>Alcohol/Abstinencia</strong> — delirium tremens (abstinencia alcohólica grave: agitación + convulsiones + hiperactividad autonómica a las 24–72 h), abstinencia BZD, intoxicación por drogas</div>
+        <div class="aeiou-letra">E</div>
+        <div class="aeiou-content"><strong>Epilepsia / Encefalopatía</strong> — estado postictal, encefalopatía hepática (amonio ↑), encefalopatía urémica, encefalopatía de Wernicke (déficit B1: triada confusión + ataxia + oftalmoplejía)</div>
+        <div class="aeiou-letra">I</div>
+        <div class="aeiou-content"><strong>Infección</strong> — sepsis (causa #1 de delirium en UTI), meningitis/encefalitis, neumonía, ITU (especialmente en ancianos), COVID-19</div>
+        <div class="aeiou-letra">O</div>
+        <div class="aeiou-content"><strong>Oxígeno / Órganos</strong> — hipoxemia (IR, EPOC reagudizado, TEP), hipercapnia, hipotensión, IAM, IC descompensada</div>
+        <div class="aeiou-letra">U</div>
+        <div class="aeiou-content"><strong>Uremia / Metabólico</strong> — IRA/IRC descompensada, hipo/hipernatremia, hipo/hipercalcemia, hipoglucemia, hiperglucemia, hipo/hipertiroidismo, insuficiencia suprarrenal</div>
+      </div>
+      <div style="border-top: 1px solid var(--borde); margin: 10px 0;"></div>
+      <div class="aeiou-grid">
+        <div class="aeiou-letra">T</div>
+        <div class="aeiou-content"><strong>Trauma / Temperatura</strong> — TEC, hipotermia, golpe de calor, quemaduras extensas, posquirúrgico (especialmente cirugía cardíaca y ortopédica en ancianos)</div>
+        <div class="aeiou-letra">I</div>
+        <div class="aeiou-content"><strong>Intoxicación farmacológica</strong> — anticolinérgicos (atropina, difenhidramina, antipsicóticos clásicos), opiáceos, corticoides, digoxina, litio, IECA, BZD, antiepilépticos, quimioterapia</div>
+        <div class="aeiou-letra">P</div>
+        <div class="aeiou-content"><strong>Psiquiátrico / Psicógeno</strong> — diagnóstico de exclusión; estados disociativos. En la práctica, raramente el delirium es "psiquiátrico puro"</div>
+        <div class="aeiou-letra">S</div>
+        <div class="aeiou-content"><strong>Stroke / Sistema nervioso</strong> — ACV (especialmente hemisferio no dominante, tálamo, lóbulo frontal), hemorragia subaracnoidea, tumores, hidrocefalia, encefalitis autoinmune (anti-NMDA, anti-LGI1)</div>
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ No olvidar: fármacos como causa de delirium</div>
+      Los <strong>anticolinérgicos</strong> son la causa farmacológica más frecuente. En el anciano, vigilar especialmente: antihistamínicos (difenhidramina), antiespasmódicos, antidepresivos tricíclicos, antipsicóticos típicos, corticoides en dosis altas, opioides, BZD. La <strong>polifarmacia</strong> (≥5 fármacos) multiplica el riesgo.
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores predisponentes y precipitantes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Predisponentes (paciente vulnerable)</th><th>Precipitantes (desencadenante agudo)</th></tr>
+        <tr><td>Edad avanzada (≥65 años)</td><td>Cirugía mayor (especialmente cardíaca, cadera)</td></tr>
+        <tr><td>Demencia preexistente (riesgo ×2–5)</td><td>Sepsis / infección grave</td></tr>
+        <tr><td>Deterioro funcional previo</td><td>Dolor no controlado</td></tr>
+        <tr><td>Deshidratación / desnutrición</td><td>Retención urinaria / fecaloma</td></tr>
+        <tr><td>Déficit visual o auditivo</td><td>Cambio de ambiente / hospitalización</td></tr>
+        <tr><td>Polifarmacia crónica</td><td>Privación de sueño</td></tr>
+        <tr><td>Comorbilidades múltiples</td><td>Inmovilización / contencion fisica</td></tr>
+        <tr><td>Depresión / ansiedad de base</td><td>Fármacos de alto riesgo (anticolinérgicos, BZD, opioides)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAM -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Herramienta diagnóstica — CAM (Confusion Assessment Method)</div>
+    <div class="hl-neuro">El <strong>CAM</strong> es el instrumento validado más utilizado para diagnóstico de delirium. Sensibilidad 94–100%, especificidad 90–95%. Se completa en 5 minutos. Para diagnóstico de delirium se requieren los criterios 1 + 2 + (3 ó 4).</div>
+    <div class="cam-box">
+      <div class="cam-titulo">CAM — Confusion Assessment Method</div>
+      <div class="cam-item">
+        <div class="cam-num" style="background:#d32f2f;">1</div>
+        <div class="cam-content"><strong>Inicio agudo y curso fluctuante</strong> — ¿Hay evidencia de cambio agudo en el estado mental respecto al basal? ¿El comportamiento fluctúa durante el día (empeora/mejora)?</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num" style="background:#d32f2f;">2</div>
+        <div class="cam-content"><strong>Inatención</strong> — ¿Tiene dificultad para mantener la atención? (ej: no puede seguir una conversación, se distrae fácilmente, pierde el hilo). Prueba: repetir la serie de meses del año en orden inverso.</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num" style="background: var(--neuro);">3</div>
+        <div class="cam-content"><strong>Pensamiento desorganizado</strong> — ¿El pensamiento es incoherente, inconexo? ¿Tiene conversación ilógica o cambia de tema sin sentido?</div>
+      </div>
+      <div class="cam-item">
+        <div class="cam-num" style="background: var(--neuro);">4</div>
+        <div class="cam-content"><strong>Alteración del nivel de conciencia</strong> — ¿El paciente está hiperalerta, letárgico, estuporoso o en coma? (cualquier nivel distinto de "alerta")</div>
+      </div>
+      <div class="cam-req">✅ Diagnóstico de DELIRIUM = Criterio 1 + Criterio 2 + (Criterio 3 ó Criterio 4)</div>
+    </div>
+    <div class="hl-info">💡 <strong>CAM-ICU:</strong> versión adaptada para pacientes intubados/con ventilación mecánica. Usa señales visuales y respuestas motoras. Junto con la escala RASS (sedación-agitación), es el estándar en UTI.</div>
+  </div>
+
+  <!-- EVALUACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Evaluación inicial — buscar la causa</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Historia clínica y medicamentos</strong><br>
+        Tiempo de instauración · fármacos nuevos o recientes · cambios de dosis · consumo de alcohol/drogas · antecedente de demencia · síntomas infecciosos o metabólicos recientes. Interrogar a familiar/cuidador (paciente frecuentemente no coopera).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Examen físico completo</strong><br>
+        Signos vitales (fiebre, hipotensión, taquicardia, saturación O₂) · estado de hidratación · signos de focalidad neurológica · pupilas · signos meníngeos · abdomen (globo vesical, fecaloma) · piel (ictericia, asterixis).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Laboratorio inicial</strong><br>
+        Hemograma · glucemia · ionograma (Na, K, Ca) · función renal (urea, creatinina) · función hepática · TSH · sedimento urinario · hemocultivos si fiebre · gases arteriales o pulsooximetría.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Neuroimagen e interconsultas según clínica</strong><br>
+        <strong>TC de cráneo sin contraste:</strong> indicada si hay focalidad neurológica, TEC, cefalea súbita, signos meníngeos o causa no clara. <strong>Punción lumbar:</strong> si se sospecha meningitis/encefalitis (luego de TC normal). <strong>EEG:</strong> si se sospecha estado epiléptico no convulsivo.
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Encefalopatía de Wernicke — no olvidar</div>
+      Siempre sospechar en <strong>alcohólico, desnutrido, ayuno prolongado, hiperémesis gravídica o postoperatorio de cirugía bariátrica</strong>. Triada clásica: <strong>confusión + ataxia + oftalmoplejía/nistagmo</strong> (solo el 16% la tiene completa → tratar igualmente si hay sospecha). Tratamiento: <strong>tiamina (B1) 500 mg IV × 3/día × 3 días</strong> antes de cualquier glucosa IV → si se da glucosa primero puede precipitar encefalopatía de Wernicke. Diagnóstico clínico, no esperar neuroimagen.
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Delirium</th><th>Demencia</th><th>Psicosis funcional</th></tr>
+        <tr><td><strong>Instauración</strong></td><td>Aguda (horas-días)</td><td>Insidiosa (meses-años)</td><td>Variable (días-semanas)</td></tr>
+        <tr><td><strong>Fluctuación</strong></td><td>Sí, horaria</td><td>No (lenta progresión)</td><td>No (o lenta)</td></tr>
+        <tr><td><strong>Nivel de conciencia</strong></td><td>Alterado</td><td>Normal (inicial)</td><td>Normal</td></tr>
+        <tr><td><strong>Atención</strong></td><td>Muy alterada</td><td>Preservada (inicial)</td><td>Puede alterarse</td></tr>
+        <tr><td><strong>Alucinaciones</strong></td><td>Visuales (frecuentes)</td><td>Visuales (tardías)</td><td>Auditivas (frecuentes)</td></tr>
+        <tr><td><strong>Causa orgánica</strong></td><td>Siempre buscar</td><td>No (primariamente)</td><td>Diagnóstico de exclusión</td></tr>
+        <tr><td><strong>Reversibilidad</strong></td><td>Sí, si se trata la causa</td><td>No (progresiva)</td><td>Variable</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Manejo — pirámide de tratamiento</div>
+    <div class="hl-neuro"><strong>La piedra angular es tratar la causa subyacente.</strong> Las medidas no farmacológicas son primeras línea y reducen el delirium en hasta un 40%. El tratamiento farmacológico es sintomático y solo para agitación grave que pone en riesgo al paciente.</div>
+
+    <div class="sec-titulo" style="margin-top:14px;">🟢 1ª línea — Medidas no farmacológicas (SIEMPRE)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Dominio</th><th>Intervención</th></tr>
+        <tr><td><strong>Orientación y entorno</strong></td><td>Reloj y calendario visible · luz natural durante el día · reducir ruido nocturno · habitación estable (evitar traslados) · presencia de familiar conocido</td></tr>
+        <tr><td><strong>Ciclo sueño-vigilia</strong></td><td>Evitar procedimientos nocturnos innecesarios · reducir iluminación y ruido por la noche · no medicar con BZD para dormir</td></tr>
+        <tr><td><strong>Movilización</strong></td><td>Movilización precoz (levantar al sillón desde día 1 si es posible) · fisioterapia · retirar inmovilización innecesaria (vías, sondas, restricciones físicas)</td></tr>
+        <tr><td><strong>Sensorial</strong></td><td>Asegurar uso de anteojos y audífonos · buena iluminación · hablar despacio y claro, sin gritar</td></tr>
+        <tr><td><strong>Hidratación/Nutrición</strong></td><td>Hidratación adecuada · dieta oral si es posible · retirar SNG innecesaria</td></tr>
+        <tr><td><strong>Dolor</strong></td><td>Control adecuado del dolor (el dolor no tratado precipita delirium) · escala validada (EVA, CPOT en no verbal)</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:14px;">🟡 2ª línea — Tratamiento farmacológico (agitación grave)</div>
+    <div class="hl-warn">⚠️ El tratamiento farmacológico solo está indicado en <strong>delirium hiperactivo con agitación grave que pone en riesgo al paciente o al equipo</strong>, y siempre como complemento, nunca en reemplazo, de las medidas no farmacológicas.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Haloperidol</div>
+      <div class="farma-clase">Antipsicótico típico · Primera línea farmacológica para agitación en delirium</div>
+      <div class="dosis-badge">0,5–1 mg VO/IM · repetir c/4 h si necesario · titular al mínimo eficaz</div>
+      <div class="farma-detalle">
+        Bloquea receptores D2 → reduce la agitación y las alucinaciones. <strong>Dosis bajas son más seguras en ancianos</strong> (iniciar con 0,5 mg). No tiene efecto anticolinérgico significativo (ventaja sobre fenotiazinas). <strong>Contraindicado en: enfermedad de Parkinson, demencia por Cuerpos de Lewy</strong> (riesgo de síndrome neuroléptico maligno severo). Monitorear QTc (riesgo de arritmias con dosis altas). No hay evidencia de que acorte la duración del delirium, solo controla la agitación.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Quetiapina / Olanzapina / Risperidona</div>
+      <div class="farma-clase">Antipsicóticos atípicos · Alternativas al haloperidol</div>
+      <div class="dosis-badge">Quetiapina: 12,5–25 mg VO · Olanzapina: 2,5–5 mg VO/IM · Risperidona: 0,5–1 mg VO</div>
+      <div class="farma-detalle">
+        Menos efectos extrapiramidales que haloperidol. <strong>Quetiapina:</strong> útil cuando hay componente ansioso o insomnio (más sedante). <strong>Olanzapina:</strong> disponible IM → útil en agitación aguda. Todos prolongan QTc. <strong>No usar en demencia por Cuerpos de Lewy.</strong> La evidencia no es superior a haloperidol en eficacia para delirium.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Dexmedetomidina</div>
+      <div class="farma-clase">Agonista α₂ · De elección en delirium en UTI con VM</div>
+      <div class="dosis-badge">0,2–0,7 mcg/kg/h en infusión IV continua (en UTI)</div>
+      <div class="farma-detalle">
+        Proporciona sedación sin bloquear receptores colinérgicos. Permite mayor cooperación del paciente. <strong>Evidencia (ensayo MENDS2):</strong> superior a lorazepam en reducción de días con delirium en UTI. Indicada en delirium hipoactivo e hiperactivo en ventilación mecánica. Efectos adversos: bradicardia, hipotensión.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">🚫 Fármacos a EVITAR en delirium (empeoran el cuadro)</div>
+      <strong>Benzodiazepinas:</strong> contraindicadas en delirium (excepto en abstinencia alcohólica o BZD donde son el tratamiento de elección). En otros contextos aumentan la confusión, sedación y riesgo de caídas · <strong>Anticolinérgicos</strong> (difenhidramina, escopolamina): precipitan y agravan el delirium · <strong>Meperidina:</strong> metabolito activo (normeperidina) es proconvulsivante y prodelirante.
+    </div>
+
+    <div class="hl-info">💊 <strong>Excepción importante — Delirium tremens (abstinencia alcohólica):</strong> el tratamiento de elección ES lorazepam/diazepam IV (CIWA-Ar para titular dosis). En este contexto específico, las BZD son el pilar del tratamiento.</div>
+  </div>
+
+  <!-- PRONÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Pronóstico y complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Dato</th><th>Valor clínico</th></tr>
+        <tr><td>Mortalidad hospitalaria</td><td>10–26% (comparable al IAM)</td></tr>
+        <tr><td>Mayor duración de internación</td><td>+8 días promedio vs. pacientes sin delirium</td></tr>
+        <tr><td>Riesgo de institucionalización</td><td>Aumentado ×2–3 luego del episodio</td></tr>
+        <tr><td>Deterioro cognitivo posterior</td><td>30–40% con deterioro cognitivo a 12 meses (aun con causa tratada)</td></tr>
+        <tr><td>Delirium sobre demencia</td><td>Acelera la progresión de la demencia</td></tr>
+        <tr><td>Delirium hipoactivo</td><td>Peor pronóstico que hiperactivo (subdiagnóstico + más complicaciones)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Delirium = alteración aguda y fluctuante de atención + conciencia</span>
+      <span class="pill">DSM-5: instauración aguda + fluctuación + inatención + causa orgánica</span>
+      <span class="pill">50% de casos son hipoactivos → subdiagnosticados</span>
+      <span class="pill">CAM: 1+2+(3ó4) = delirium</span>
+      <span class="pill">Causa #1 en UTI: sepsis</span>
+      <span class="pill">AEIOU-TIPS: mnemotecnia de causas</span>
+      <span class="pill">Wernicke: triada confusión + ataxia + oftalmoplejía</span>
+      <span class="pill">Wernicke: tiamina IV ANTES de glucosa IV</span>
+      <span class="pill">Demencia vs delirium: conciencia alterada + fluctuación + agudo</span>
+      <span class="pill">1ª línea: medidas no farmacológicas siempre</span>
+      <span class="pill">Haloperidol: antipsicótico de elección para agitación</span>
+      <span class="pill">Haloperidol contraindicado en Parkinson y demencia por Cuerpos de Lewy</span>
+      <span class="pill">BZD contraindicadas EXCEPTO en abstinencia alcohólica/BZD</span>
+      <span class="pill">Delirium tremens: lorazepam/diazepam IV (CIWA-Ar)</span>
+      <span class="pill">Dexmedetomidina: de elección en delirium en UTI con VM</span>
+      <span class="pill">Meperidina: evitar (normeperidina prodelirante)</span>
+      <span class="pill">Factores de riesgo: anciano + demencia + polifarmacia + cirugía</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. (DSM-5). Washington DC: APA; 2013 · Inouye SK, van Dyck CH, Alessi CA, et al. Clarifying confusion: the Confusion Assessment Method. Ann Intern Med. 1990;113(12):941-8 · Barr J, Fraser GL, Puntillo K, et al. Clinical practice guidelines for the management of pain, agitation, and delirium in adult ICU patients. Crit Care Med. 2013 · Fong TG, Tulebaev SR, Inouye SK. Delirium in elderly adults: diagnosis, prevention and treatment. Nat Rev Neurol. 2009 · Harrison's Principles of Internal Medicine, 21st ed. · UpToDate: Delirium and acute confusional states: Prevention, treatment, and prognosis. 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
