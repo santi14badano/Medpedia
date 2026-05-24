@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome Nefrótico y Nefrítico — Medpedia</title>
+  <meta name="description" content="Síndrome nefrótico y nefrítico: diferencias clave, etiologías, criterios diagnósticos y tratamiento. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hpp: #C0392B; --hpp-claro: #FDEDEC; --hpp-oscuro: #922B21;
+      --gin: #1A5E9A; --gin-claro: #E6F1FB; --gin-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-nefro  { background: #E3F2FD; color: #1565C0; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin  { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .sec-titulo-hpp  { font-size: 16px; font-weight: 500; color: var(--hpp); margin-bottom: 12px; }
+    .sec-titulo-verde{ font-size: 16px; font-weight: 500; color: var(--verde-oscuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .versus-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .versus-wrap { grid-template-columns: 1fr; } }
+    .vs-card { border-radius: 14px; padding: 1.1rem 1.2rem; }
+    .vs-card.azul { background: var(--gin-claro); border: 1.5px solid #a8c8e8; }
+    .vs-card.rojo { background: var(--hpp-claro); border: 1.5px solid #e8b4b0; }
+    .vs-titulo { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+    .vs-titulo.azul { color: var(--gin); }
+    .vs-titulo.rojo { color: var(--hpp); }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.5; display: flex; gap: 6px; }
+    .vs-item strong { color: var(--texto); }
+    .enfermedad-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 8px; }
+    .enfermedad-titulo { font-size: 13px; font-weight: 700; color: var(--gin); margin-bottom: 4px; }
+    .enfermedad-desc { font-size: 13px; color: var(--texto-sec); line-height: 1.55; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Nefrología</a> › Síndrome Nefrótico y Nefrítico</div>
+  <div class="titulo">Síndrome Nefrótico y Nefrítico</div>
+  <div class="meta">
+    <span class="tag tag-nefro">Nefrología</span>
+    <span class="tag tag-fuente">KDIGO 2021 · Harrison 21ª ed. · Farreras-Rozman</span>
+  </div>
+
+  <!-- INTRO FISIOPATOLÓGICA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto fisiopatológico</div>
+    <div class="hl">La <strong>barrera de filtración glomerular</strong> tiene tres capas: endotelio fenestrado, membrana basal glomerular (MBG) y podocitos (células epiteliales con pedicelos). Las enfermedades glomerulares dañan una o más de estas capas y generan dos grandes síndromes según el tipo de daño predominante.</div>
+    <div class="versus-wrap">
+      <div class="vs-card azul">
+        <div class="vs-titulo azul">Síndrome Nefrótico</div>
+        <div class="vs-item"><strong>Daño:</strong> pérdida de la selectividad de carga (cargas negativas de la MBG) → paso masivo de proteínas</div>
+        <div class="vs-item"><strong>Resultado:</strong> proteinuria masiva → hipoalbuminemia → edema + hiperlipidemia + lipiduria</div>
+        <div class="vs-item"><strong>Sin:</strong> hematuria ni HTA en las formas puras</div>
+      </div>
+      <div class="vs-card rojo">
+        <div class="vs-titulo rojo">Síndrome Nefrítico</div>
+        <div class="vs-item"><strong>Daño:</strong> inflamación glomerular → ruptura de la MBG → paso de células y proteínas</div>
+        <div class="vs-item"><strong>Resultado:</strong> hematuria + proteinuria moderada + HTA + oliguria + edema</div>
+        <div class="vs-item"><strong>Marca:</strong> hematuria con cilindros hemáticos (patognomónicos de origen glomerular)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARACIÓN CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">⚖️ Comparación clínica — la tabla que más entra en el examen</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr>
+          <th>Característica</th>
+          <th style="color:var(--gin)">Síndrome Nefrótico</th>
+          <th style="color:var(--hpp)">Síndrome Nefrítico</th>
+        </tr>
+        <tr><td><strong>Proteinuria</strong></td><td>>3,5 g/día (masiva)</td><td>&lt;3,5 g/día (moderada)</td></tr>
+        <tr><td><strong>Hematuria</strong></td><td>Ausente o mínima</td><td><strong>Presente · cilindros hemáticos</strong></td></tr>
+        <tr><td><strong>Hipertensión</strong></td><td>Variable (puede estar)</td><td><strong>Presente · casi siempre</strong></td></tr>
+        <tr><td><strong>Edema</strong></td><td>Marcado (anasarca)</td><td>Leve a moderado (periorbital)</td></tr>
+        <tr><td><strong>Albúmina sérica</strong></td><td>&lt;3 g/dL (hipoalbuminemia)</td><td>Normal o levemente baja</td></tr>
+        <tr><td><strong>Colesterol</strong></td><td>↑↑ (hiperlipidemia)</td><td>Normal o levemente ↑</td></tr>
+        <tr><td><strong>Lipiduria</strong></td><td>Presente (cuerpos ovales grasos)</td><td>Ausente</td></tr>
+        <tr><td><strong>Función renal</strong></td><td>Puede preservarse inicialmente</td><td>Deterioro frecuente (↑ creatinina)</td></tr>
+        <tr><td><strong>Complemento (C3/C4)</strong></td><td>Normal (en causas primarias)</td><td>↓ en GNPE, LES, MPGN</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Cilindros hemáticos = origen glomerular confirmado</div>
+      Los cilindros hemáticos (eritrocitos atrapados en matriz proteica en el túbulo) son <strong>patognomónicos de glomerulonefritis</strong>. Su presencia en el sedimento urinario confirma que la hematuria es glomerular (no de vías urinarias bajas). Siempre buscarlos en el síndrome nefrítico.
+    </div>
+  </div>
+
+  <!-- SÍNDROME NEFRÓTICO — ETIOLOGÍAS -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🔵 Síndrome Nefrótico — etiologías principales</div>
+    <div class="hl-info">💡 La causa más frecuente de síndrome nefrótico varía con la edad: en niños predomina la <strong>nefrosis de cambios mínimos</strong>; en adultos, la <strong>glomeruloesclerosis focal y segmentaria (GEFS)</strong> y la <strong>nefropatía membranosa</strong>.</div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Nefrosis de cambios mínimos (NCM)</div>
+      <div class="enfermedad-desc">La más frecuente en niños (80% de los SN pediátricos). Adultos: asociada a AINEs, linfoma de Hodgkin. <strong>Microscopía óptica normal</strong> — el diagnóstico requiere microscopía electrónica (fusión de pedicelos de podocitos). Excelente respuesta a corticoides. Proteinuria selectiva (solo albúmina). Pronóstico muy bueno.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Glomeruloesclerosis focal y segmentaria (GEFS)</div>
+      <div class="enfermedad-desc">Más frecuente en adultos, especialmente afroamericanos y pacientes con HIV, obesidad, heroína IV, nefronas reducidas (RN prematuro). Esclerosis en segmentos de algunos glomérulos (focal = no todos, segmentaria = no todo el glomérulo). Proteinuria no selectiva. Respuesta variable a corticoides. Mayor riesgo de progresión a ERC.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Nefropatía membranosa (NM)</div>
+      <div class="enfermedad-desc">Causa más frecuente de SN en adultos blancos. Primaria: anticuerpos anti-PLA2R (receptor de fosfolipasa A2) en 70%. Secundaria: LES (clase V), hepatitis B, hepatitis C, neoplasias sólidas (cáncer de pulmón, colon), AINEs, penicilamina. Engrosamiento de la MBG con depósitos subepiteliales. "Spike and dome" en ME. 1/3 remisión espontánea, 1/3 estable, 1/3 progresa.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Amiloidosis renal</div>
+      <div class="enfermedad-desc">Depósito de fibrillas de amiloide en el glomérulo. Tipo AA: inflamación crónica (AR, EII, osteomielitis). Tipo AL: discrasia de células plasmáticas (mieloma múltiple). Rojo Congo + birrefringencia verde en luz polarizada. SN progresivo, mal pronóstico.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Nefropatía diabética</div>
+      <div class="enfermedad-desc">Causa más frecuente de SN en adultos a nivel global (causa secundaria). Microalbuminuria → macroalbuminuria → SN → ERC. Engrosamiento de la MBG y nódulos de Kimmelstiel-Wilson (patognomónicos). Siempre en contexto de DM de larga data + retinopatía diabética asociada.</div>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES DEL SN -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">⚡ Complicaciones del Síndrome Nefrótico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Mecanismo</th><th>Consecuencia clínica</th></tr>
+        <tr><td><strong>Trombosis</strong></td><td>Pérdida urinaria de antitrombina III, proteína C y S → estado protrombótico</td><td>TVP, TEP, trombosis de vena renal (especialmente en NM)</td></tr>
+        <tr><td><strong>Infecciones</strong></td><td>Pérdida de IgG e IgA por orina + edema como medio de cultivo</td><td>Peritonitis espontánea por neumococo (niños), celulitis</td></tr>
+        <tr><td><strong>Hiperlipidemia</strong></td><td>Hipoalbuminemia → ↑ síntesis hepática de lipoproteínas</td><td>Aterosclerosis acelerada con SN crónico</td></tr>
+        <tr><td><strong>Hipotiroidismo</strong></td><td>Pérdida de proteína transportadora de tiroxina (TBG)</td><td>T4 libre baja (transitoria)</td></tr>
+        <tr><td><strong>Desnutrición proteica</strong></td><td>Pérdida proteica masiva crónica</td><td>Desgaste muscular, retraso del crecimiento en niños</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🔴 La <strong>trombosis de la vena renal</strong> es la complicación trombótica más característica del SN, especialmente en nefropatía membranosa. Sospechar ante dolor lumbar + hematuria + deterioro brusco de función renal en paciente con SN.</div>
+  </div>
+
+  <!-- SÍNDROME NEFRÍTICO — ETIOLOGÍAS -->
+  <div class="seccion">
+    <div class="sec-titulo-hpp">🔴 Síndrome Nefrítico — etiologías principales</div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Glomerulonefritis postinfecciosa (GNPE)</div>
+      <div class="enfermedad-desc">La causa más frecuente de SN agudo, especialmente en niños. Aparece 1–3 semanas después de faringitis estreptocócica (S. pyogenes grupo A) o 3–6 semanas después de infección cutánea. Depósitos de inmunocomplejos en el glomérulo → activación del complemento (C3 ↓, C4 normal). Presenta: hematuria macroscópica ("orina color coca cola o té"), edema periorbital matutino, HTA, oliguria. <strong>Pronóstico excelente</strong> en niños (resolución espontánea en semanas). En adultos puede progresar.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Nefropatía IgA (enfermedad de Berger)</div>
+      <div class="enfermedad-desc">GN primaria más frecuente en el mundo. Depósito mesangial de IgA. Presentación clásica: <strong>hematuria macroscópica episódica coincidente con infecciones respiratorias altas</strong> (dentro de las 24–48 h, no 1–3 semanas como en GNPE). Hematuria microscópica persistente entre episodios. Puede progresar a ERC en 20–30% a los 20 años. Complemento normal. Diagnóstico: biopsia renal.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">GN rápidamente progresiva (GNRP) — Síndrome riñón-pulmón</div>
+      <div class="enfermedad-desc">Deterioro rápido de la función renal (días a semanas) → GNRP. Tres tipos: <strong>Tipo I (anti-MBG / Goodpasture):</strong> Ac anti-membrana basal glomerular → también anti-membrana basal alveolar → hemoptisis + glomerulonefritis. ANCA negativos, anti-MBG positivos. <strong>Tipo II (inmunocomplejos):</strong> LES, vasculitis, GNPE. <strong>Tipo III (pauci-inmune / ANCA+):</strong> granulomatosis con poliangeítis (Wegener), poliangeítis microscópica. ANCA positivos (c-ANCA anti-PR3 en Wegener, p-ANCA anti-MPO en PAM). Biopsia: semilunas en más del 50% de los glomérulos.</div>
+    </div>
+
+    <div class="enfermedad-card">
+      <div class="enfermedad-titulo">Nefritis lúpica</div>
+      <div class="enfermedad-desc">Compromiso renal en LES. Clasificación ISN/RPS en 6 clases (I–VI). Clase III/IV (proliferativa focal/difusa): la más grave, hematuria + proteinuria + HTA + deterioro de función renal. C3 y C4 ↓↓, anti-dsDNA ↑. Clase V: patrón nefrótico (membranosa lúpica). Diagnóstico y clasificación: biopsia renal obligatoria.</div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">🔍 Diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Utilidad</th></tr>
+        <tr><td><strong>Proteinuria en orina de 24 h o cociente prot/creat en muestra aislada</strong></td><td>Cuantificar proteinuria. SN: >3,5 g/día. SN pediátrico: >40 mg/m²/h</td></tr>
+        <tr><td><strong>Sedimento urinario</strong></td><td>Cilindros hemáticos → SN. Cilindros grasos → SN. Hematuria dismórfica (acantocitos) → origen glomerular</td></tr>
+        <tr><td><strong>Albúmina sérica, lipidograma</strong></td><td>Hipoalbuminemia + hiperlipidemia → confirman SN</td></tr>
+        <tr><td><strong>Complemento (C3, C4, CH50)</strong></td><td>↓ en GNPE, LES, MPGN, crioglobulinemia. Normal en NCM, GEFS, NM primaria, IgA</td></tr>
+        <tr><td><strong>ANCA (c-ANCA, p-ANCA)</strong></td><td>Vasculitis pauci-inmune (Wegener, PAM)</td></tr>
+        <tr><td><strong>Anti-MBG</strong></td><td>Síndrome de Goodpasture</td></tr>
+        <tr><td><strong>Anti-dsDNA, ANA</strong></td><td>LES → nefritis lúpica</td></tr>
+        <tr><td><strong>Anti-PLA2R</strong></td><td>Nefropatía membranosa primaria (positivo en 70%)</td></tr>
+        <tr><td><strong>ASLO, complemento post-infeccioso</strong></td><td>GNPE post-estreptocócica</td></tr>
+        <tr><td><strong>Biopsia renal</strong></td><td>Gold standard para diagnóstico histológico y clasificación. Indicada en: adultos con SN, SN corticorresistente, SN pediátrico atípico, toda GNRP, nefritis lúpica</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 En niños de 1–8 años con SN típico (edema + proteinuria masiva + sin hematuria ni HTA ni insuficiencia renal) se asume NCM y se trata con corticoides <strong>sin biopsia previa</strong>. Si no responde a corticoides en 8 semanas → biopsia.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-verde">💊 Tratamiento</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Corticoides — primera línea en NCM y GEFS</div>
+      <div class="farma-clase">Inmunosupresor · Base del tratamiento del SN primario</div>
+      <div class="dosis-badge">Prednisona 1 mg/kg/día (máx 80 mg) × 8 semanas → descenso gradual</div>
+      <div class="farma-detalle">
+        NCM: respuesta completa en 80–90% en 8 semanas. GEFS: respuesta en 30–50%, más lenta. Corticorresistente (sin remisión a las 8 semanas) → agregar ciclosporina, tacrolimus o micofenolato. Efectos adversos del uso prolongado: osteoporosis, hiperglucemia, inmunosupresión, cataratas, HTA.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">IECA / ARA II — tratamiento antiproteinúrico</div>
+      <div class="farma-clase">Nefroprotector · Reduce proteinuria independientemente de la causa</div>
+      <div class="dosis-badge">Enalapril, ramipril, losartán — titular dosis según proteinuria y TA</div>
+      <div class="farma-detalle">
+        Reducen la presión intraglomerular → disminuyen la proteinuria en un 30–50%. Indicados en todo paciente con proteinuria significativa, especialmente nefropatía diabética y membranosa. Objetivo: proteinuria &lt;0,5 g/día. <strong>No combinar IECA + ARA II</strong> (mayor riesgo de IRA y hiperkalemia sin beneficio adicional).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Diuréticos — manejo del edema</div>
+      <div class="farma-clase">Sintomático · No modifica la enfermedad de base</div>
+      <div class="dosis-badge">Furosemida 20–80 mg/día VO o IV · + espironolactona si edema refractario</div>
+      <div class="farma-detalle">
+        La hipoalbuminemia grave (&lt;2 g/dL) reduce la eficacia de los diuréticos de asa (la furosemida viaja unida a albúmina). En SN grave puede ser necesario infundir albúmina + furosemida juntas. Cuidado con depleción de volumen excesiva → puede empeorar la función renal.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Anticoagulación — trombosis en SN</div>
+      <div class="farma-clase">Profilaxis o tratamiento según riesgo</div>
+      <div class="dosis-badge">HBPM o anticoagulantes orales según contexto</div>
+      <div class="farma-detalle">
+        Profilaxis anticoagulante en nefropatía membranosa con albúmina &lt;2,5 g/dL (alto riesgo trombótico). Tratamiento anticoagulante pleno si hay trombosis documentada (TVR, TVP, TEP). Warfarina o HBPM (los NOAC tienen menor evidencia en SN grave por pérdida urinaria de proteínas transportadoras).
+      </div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top: 1.2rem">Tratamiento del Síndrome Nefrítico agudo (GNPE)</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Reposo relativo e internación</strong> si HTA severa, oliguria o deterioro de función renal.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Restricción de sodio y agua</strong> para control del edema e HTA. Diuréticos si necesario.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Antibióticos</strong> si la infección estreptocócica está activa (penicilina o amoxicilina 10 días). No modifica el curso de la GN pero elimina el foco.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Antihipertensivos</strong> si HTA significativa. Evitar IECA/ARA II en la fase aguda con oliguria (riesgo de hiperkalemia e IRA).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Seguimiento</strong>: la GNPE en niños resuelve espontáneamente en semanas. Verificar normalización de complemento (C3 vuelve a normal en 6–8 semanas). Hematuria microscópica puede persistir meses.</div>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SN: proteinuria >3,5 g/día + hipoalbuminemia + edema + hiperlipidemia</span>
+      <span class="pill">SNefrítico: hematuria + cilindros hemáticos + HTA + oliguria + proteinuria moderada</span>
+      <span class="pill">Cilindros hemáticos = patognomónicos de GN</span>
+      <span class="pill">NCM: niños · MO normal · fusión de pedicelos en ME · responde a corticoides</span>
+      <span class="pill">GEFS: adultos · HIV · obesidad · heroinómanos · proteinuria no selectiva</span>
+      <span class="pill">NM primaria: anti-PLA2R positivo · adultos blancos</span>
+      <span class="pill">NM secundaria: LES · hep B · hep C · neoplasias sólidas</span>
+      <span class="pill">Nefropatía diabética: nódulos de Kimmelstiel-Wilson</span>
+      <span class="pill">Trombosis de vena renal: complicación característica de la NM</span>
+      <span class="pill">GNPE: 1–3 sem post-faringitis · C3 ↓ · C4 normal · orina color té</span>
+      <span class="pill">IgA (Berger): hematuria macroscópica con infección respiratoria (24–48 h)</span>
+      <span class="pill">Goodpasture: anti-MBG + hemoptisis + GN</span>
+      <span class="pill">Wegener: c-ANCA (anti-PR3) + granulomas + riñón + pulmón + senos</span>
+      <span class="pill">GNRP: semilunas en >50% de los glomérulos en biopsia</span>
+      <span class="pill">Nefritis lúpica: C3 y C4 ↓↓ + anti-dsDNA ↑ + biopsia para clasificar</span>
+      <span class="pill">SN niños típico 1–8 años: tratar sin biopsia con corticoides</span>
+      <span class="pill">IECA/ARA II: antiproteinúrico en todo paciente con proteinuria significativa</span>
+      <span class="pill">No combinar IECA + ARA II</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: KDIGO 2021 Clinical Practice Guideline for the Management of Glomerular Diseases · Harrison TR et al. Harrison's Principles of Internal Medicine. 21st ed. McGraw-Hill 2022 · Farreras Rozman. Medicina Interna. 19ª ed. Elsevier 2020 · Jennette JC et al. 2012 Revised International Chapel Hill Consensus Conference Nomenclature of Vasculitides. Arthritis Rheum 2013.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
