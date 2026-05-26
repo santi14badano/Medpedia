@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trastornos de la Personalidad — Medpedia</title>
+  <meta name="description" content="Trastornos de la personalidad: clasificación DSM-5 por clusters, características clínicas, diagnóstico diferencial y tratamiento. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --psiq: #5C35A0; --psiq-claro: #EEE8FD; --psiq-oscuro: #3D2070;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --ca: #1B4F8A; --ca-claro: #E3EDF9;
+      --cb: #7B3FA0; --cb-claro: #F3EEFE;
+      --cc: #2E7D55; --cc-claro: #E4F4EC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-psiq { background: var(--psiq-claro); color: var(--psiq-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-psiq { font-size: 16px; font-weight: 500; color: var(--psiq); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-psiq  { border-left: 3px solid var(--psiq); background: var(--psiq-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .cluster-header { border-radius: 12px 12px 0 0; padding: 12px 16px; font-size: 14px; font-weight: 700; }
+    .cluster-a-h { background: var(--ca); color: white; }
+    .cluster-b-h { background: var(--cb); color: white; }
+    .cluster-c-h { background: var(--cc); color: white; }
+    .cluster-body { border: 1.5px solid; border-top: none; border-radius: 0 0 12px 12px; margin-bottom: 16px; }
+    .cluster-a-b { border-color: #a8c4e8; }
+    .cluster-b-b { border-color: #c4a8e0; }
+    .cluster-c-b { border-color: #a0d4b8; }
+    .tp-card { padding: 12px 16px; border-bottom: 1px solid var(--borde); }
+    .tp-card:last-child { border-bottom: none; }
+    .tp-nombre { font-size: 13.5px; font-weight: 600; color: var(--texto); margin-bottom: 4px; }
+    .tp-mnemotecnia { font-size: 11px; font-weight: 700; color: var(--psiq); background: var(--psiq-claro); padding: 2px 8px; border-radius: 8px; display: inline-block; margin-bottom: 5px; }
+    .tp-desc { font-size: 12.5px; color: var(--texto-sec); line-height: 1.6; }
+    .tp-clave { font-size: 12px; color: var(--danger); margin-top: 4px; font-weight: 500; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Psiquiatría</a> › Trastornos de la Personalidad</div>
+  <div class="titulo">Trastornos de la Personalidad</div>
+  <div class="meta">
+    <span class="tag tag-psiq">Psiquiatría</span>
+    <span class="tag tag-fuente">DSM-5-TR 2022 · CIE-11 · APA Guidelines</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y criterios generales</div>
+    <div class="hl-psiq"><strong>Trastorno de la personalidad (TP):</strong> patrón persistente de experiencia interna y comportamiento que se aparta notablemente de las expectativas de la cultura del individuo, es omnipresente e inflexible, tiene inicio en la adolescencia o adultez temprana, es estable a lo largo del tiempo y provoca malestar o deterioro significativo.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterio DSM-5</th><th>Detalle</th></tr>
+        <tr><td><strong>A.</strong> Patrón desviado</td><td>Se aparta marcadamente de las expectativas culturales en ≥2 de: cognición, afectividad, funcionamiento interpersonal, control de impulsos</td></tr>
+        <tr><td><strong>B.</strong> Omnipresente e inflexible</td><td>Presente en diversas situaciones personales y sociales</td></tr>
+        <tr><td><strong>C.</strong> Deterioro significativo</td><td>Causa malestar clínicamente significativo o deterioro social/laboral</td></tr>
+        <tr><td><strong>D.</strong> Estable y de larga duración</td><td>Inicio en la adolescencia o adultez temprana; estable en el tiempo</td></tr>
+        <tr><td><strong>E.</strong> No explicado por otro trastorno</td><td>No mejor explicado por otro trastorno mental</td></tr>
+        <tr><td><strong>F.</strong> No por sustancias / condición médica</td><td>No atribuible a efectos fisiológicos de sustancias o condición médica</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>No diagnosticar TP antes de los 18 años</strong> (excepción: TP antisocial puede diagnosticarse a partir de los 18, pero con antecedente de trastorno de conducta desde los 15). La personalidad está en desarrollo hasta la adultez temprana. El único TP que puede codificarse en menores es el TP límite, con cautela.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-psiq">📊 Clasificación por Clusters — DSM-5</div>
+    <div class="hl-info">El DSM-5 agrupa los 10 trastornos de personalidad en 3 clusters según características descriptivas. <strong>Mnemotecnia global: Cluster A = "Raro", Cluster B = "Dramático", Cluster C = "Ansioso".</strong></div>
+
+    <!-- CLUSTER A -->
+    <div class="cluster-header cluster-a-h">🔵 Cluster A — "Raros o Excéntricos" · Paranoide · Esquizoide · Esquizotípico</div>
+    <div class="cluster-body cluster-a-b">
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Paranoide de la Personalidad</div>
+        <div class="tp-mnemotecnia">SUSPECT</div>
+        <div class="tp-desc">Desconfianza y suspicacia generalizadas hacia los demás. Interpreta maliciosamente las intenciones ajenas. No alcanza el nivel de delirio (a diferencia de la esquizofrenia paranoide).<br>
+        <strong>S</strong>uspicion of partner · <strong>U</strong>nforgiving · <strong>S</strong>uspicious of others · <strong>P</strong>erceives attacks · <strong>E</strong>xploitation feared · <strong>C</strong>onfidences not kept · <strong>T</strong>hreats perceived</div>
+        <div class="tp-clave">⭐ Diferencial: esquizofrenia (alucinaciones/delirios francos), TOC (obsesiones egodistónicas)</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Esquizoide de la Personalidad</div>
+        <div class="tp-mnemotecnia">DISTANT</div>
+        <div class="tp-desc">Patrón de distanciamiento de las relaciones sociales y restricción de la expresión emocional. Prefiere la soledad. Sin deseo de relaciones íntimas. Sin psicosis. Sin lenguaje desorganizado.<br>
+        <strong>D</strong>etachment · <strong>I</strong>ndifferent to praise/criticism · <strong>S</strong>olitario · <strong>T</strong>asks solitary · <strong>A</strong>bsence of friends · <strong>N</strong>o sexual experiences · <strong>T</strong>asks emotional coldness</div>
+        <div class="tp-clave">⭐ Diferencial: esquizotípico (ideas de referencia, pensamiento mágico), autismo (inicio en la infancia)</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Esquizotípico de la Personalidad</div>
+        <div class="tp-mnemotecnia">ME PECULIAR</div>
+        <div class="tp-desc">Malestar agudo en las relaciones íntimas, distorsiones cognitivas o perceptivas y excentricidades del comportamiento. Ideas de referencia, pensamiento mágico, experiencias perceptivas inusuales, habla vaga o circumstancial, suspicacia, afecto inapropiado.<br>
+        En CIE-11 se clasifica como un trastorno del espectro esquizofrénico.</div>
+        <div class="tp-clave">⭐ Es el que más se acerca a la esquizofrenia; puede evolucionar a ella. No hay alucinaciones/delirios francos.</div>
+      </div>
+    </div>
+
+    <!-- CLUSTER B -->
+    <div class="cluster-header cluster-b-h">🟣 Cluster B — "Dramáticos, Emocionales o Impulsivos" · Antisocial · Límite · Histriónico · Narcisista</div>
+    <div class="cluster-body cluster-b-b">
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Antisocial de la Personalidad (TASP)</div>
+        <div class="tp-mnemotecnia">CORRUPT</div>
+        <div class="tp-desc">Patrón persistente de irresponsabilidad y violación de los derechos de los demás. Inicio de conductas antisociales antes de los 15 años (trastorno de conducta previo). Diagnóstico desde los 18 años.<br>
+        <strong>C</strong>onforming to laws fails · <strong>O</strong>bligations ignored · <strong>R</strong>eckless · <strong>R</strong>epeatedly lawbreaks · <strong>U</strong>nderhandedness · <strong>P</strong>lanning impaired · <strong>T</strong>emper</div>
+        <div class="tp-clave">⭐ Psicopatía ≠ TASP: la psicopatía (Hare PCL-R) incluye rasgos de frialdad emocional, falta de empatía y grandiosa que no son criterios DSM. Alta prevalencia en población carcelaria (~50%). Relación con TUS.</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Límite de la Personalidad (TLP / Borderline)</div>
+        <div class="tp-mnemotecnia">IMPULSIVE</div>
+        <div class="tp-desc">Inestabilidad de las relaciones interpersonales, la autoimagen, los afectos y notable impulsividad. El más frecuente en consulta psiquiátrica. Alta tasa de conductas autolesivas y riesgo suicida (8–10% mueren por suicidio).<br>
+        Criterios (≥5 de 9): <strong>I</strong>mpulsividad · <strong>M</strong>ood instability · <strong>P</strong>aranoid ideation (transitoria) · <strong>U</strong>nstable relationships (idealización/devaluación) · <strong>L</strong>ikelihood of self-harm · <strong>S</strong>uicidal behavior · <strong>I</strong>dentity disturbance · <strong>V</strong>oid (emptiness) · <strong>E</strong>fforts to avoid abandonment</div>
+        <div class="tp-clave">⭐ Abandono real o imaginario → crisis. Disociación transitoria. Tratamiento de elección: Terapia Dialéctico-Conductual (DBT). Alta comorbilidad con TDM, TUS, TEPT.</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Histriónico de la Personalidad</div>
+        <div class="tp-mnemotecnia">PRAISE ME</div>
+        <div class="tp-desc">Emotividad excesiva y búsqueda de atención. Se sienten incómodos cuando no son el centro de atención. Comportamiento seductor o provocador inapropiado. Emociones cambiantes y superficiales.<br>
+        <strong>P</strong>rovocative · <strong>R</strong>elationships considered intimate · <strong>A</strong>ttention-seeking · <strong>I</strong>nfluenced easily · <strong>S</strong>peech impressionistic · <strong>E</strong>motions shifting · <strong>M</strong>akeup/appearance · <strong>E</strong>xaggerated emotion</div>
+        <div class="tp-clave">⭐ Diferencial con narcisista: el histriónico busca atención emocional; el narcisista busca admiración por su grandiosidad.</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Narcisista de la Personalidad</div>
+        <div class="tp-mnemotecnia">GRANDIOSE</div>
+        <div class="tp-desc">Patrón de grandiosidad, necesidad de admiración y falta de empatía. Cree ser especial y único. Explota a los demás. Envidia a los demás o cree que los demás le envidian.<br>
+        <strong>G</strong>randiosity · <strong>R</strong>equires admiration · <strong>A</strong>rrogance · <strong>N</strong>o empathy · <strong>D</strong>reams of success · <strong>I</strong>dentity as special · <strong>O</strong>bsessed with envy · <strong>S</strong>ense of entitlement · <strong>E</strong>xploitative</div>
+        <div class="tp-clave">⭐ La "herida narcisista" (crítica) puede precipitar depresión grave o conducta agresiva. Narcisismo encubierto (hipersensible, vulnerable): presenta grandiosidad interna pero aspecto de víctima.</div>
+      </div>
+    </div>
+
+    <!-- CLUSTER C -->
+    <div class="cluster-header cluster-c-h">🟢 Cluster C — "Ansiosos o Temerosos" · Evitativo · Dependiente · Obsesivo-Compulsivo</div>
+    <div class="cluster-body cluster-c-b">
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Evitativo de la Personalidad</div>
+        <div class="tp-mnemotecnia">CRINGES</div>
+        <div class="tp-desc">Inhibición social, sentimientos de incompetencia e hipersensibilidad a la evaluación negativa. Evitan actividades interpersonales por miedo a la crítica. Desean relaciones íntimas pero temen la vergüenza.<br>
+        <strong>C</strong>riticism preoccupied · <strong>R</strong>estrained in intimacy · <strong>I</strong>nferior feeling · <strong>N</strong>ew situations avoided · <strong>G</strong>ets criticized so avoids · <strong>E</strong>mbarrassed · <strong>S</strong>hy in social</div>
+        <div class="tp-clave">⭐ Diferencial con fobia social: el TP evitativo es omnipresente (no solo en situaciones sociales específicas), más severo y con mayor disfunción basal. Pueden superponerse.</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Dependiente de la Personalidad</div>
+        <div class="tp-mnemotecnia">RELIANCE</div>
+        <div class="tp-desc">Necesidad excesiva de ser cuidado, que lleva a comportamiento sumiso y pegajoso y miedo a la separación. Dificultad para tomar decisiones cotidianas sin el consejo de otros. Busca urgentemente otra relación como fuente de cuidado cuando termina una.<br>
+        <strong>R</strong>eassurance needed · <strong>E</strong>xpresses disagreement with difficulty · <strong>L</strong>ife responsibility given to others · <strong>I</strong>nitiating projects difficulty · <strong>A</strong>lone feels helpless · <strong>N</strong>urturing seeks · <strong>C</strong>are-taking fears · <strong>E</strong>xaggerated fears of abandonment</div>
+        <div class="tp-clave">⭐ Alta comorbilidad con TDM. Riesgo de relaciones abusivas. Diferencial con TLP: en el TLP el miedo al abandono genera ira y conducta caótica; en el dependiente, genera sumisión y búsqueda de cuidado.</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-nombre">Trastorno Obsesivo-Compulsivo de la Personalidad (TOCP)</div>
+        <div class="tp-mnemotecnia">LAW FIRMS</div>
+        <div class="tp-desc">Preocupación por el orden, perfeccionismo y control mental e interpersonal, a expensas de la flexibilidad y la eficiencia. <strong>No hay obsesiones ni compulsiones verdaderas</strong> (a diferencia del TOC). El comportamiento es egosintónico.<br>
+        <strong>L</strong>ist-making · <strong>A</strong>void delegating · <strong>W</strong>orkaholic · <strong>F</strong>rugal · <strong>I</strong>nflexible on morality · <strong>R</strong>igidity · <strong>M</strong>iserly · <strong>S</strong>tuff can't discard</div>
+        <div class="tp-clave">⭐ Diferencial clave con TOC: en TOC las obsesiones son egodistónicas (causan malestar) y hay compulsiones. En TOCP el perfeccionismo y orden son egosintónicos (los valora como virtudes).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial clave</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>TP</th><th>Diferencial más importante</th><th>Clave para distinguir</th></tr>
+        <tr><td>Paranoide</td><td>Esquizofrenia paranoide</td><td>En TP: sin delirios francos ni alucinaciones</td></tr>
+        <tr><td>Esquizotípico</td><td>Esquizofrenia</td><td>En TP: sin psicosis franca (puede evolucionar)</td></tr>
+        <tr><td>Límite (TLP)</td><td>Trastorno bipolar tipo II</td><td>En TLP: inestabilidad de identidad y relaciones, no solo del humor; episodios reactivos</td></tr>
+        <tr><td>Antisocial</td><td>Trastorno de conducta en menores</td><td>TASP requiere ≥18 años + antecedente de TC desde los 15</td></tr>
+        <tr><td>TOCP</td><td>TOC</td><td>TOCP: egosintónico, sin rituales. TOC: egodistónico, con obsesiones y compulsiones</td></tr>
+        <tr><td>Evitativo</td><td>Fobia social generalizada</td><td>Evitativo: más omnipresente, mayor disfunción, menor autoestima basal</td></tr>
+        <tr><td>Narcisista</td><td>Hipomanía/manía</td><td>Narcisista: crónico, sin episodios. Manía: episódico, cambio del estado basal</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-psiq">💊 Tratamiento</div>
+    <div class="hl-psiq"><strong>La psicoterapia es el tratamiento de primera línea para todos los trastornos de la personalidad.</strong> La farmacoterapia no modifica el TP en sí, pero puede tratar síntomas específicos (impulsividad, depresión, ansiedad, desregulación emocional) y las comorbilidades.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Terapia Dialéctico-Conductual (DBT) — TLP, primera línea</div>
+      <div class="farma-clase">Psicoterapia · Marsha Linehan · Única con evidencia robusta en TLP</div>
+      <div class="farma-detalle">
+        Combina TCC con estrategias de aceptación (mindfulness budista). Módulos: mindfulness, tolerancia al malestar, regulación emocional, eficacia interpersonal. Formato: sesión individual + grupo de habilidades + coaching telefónico. Reduce hospitalizaciones, conductas autolesivas y tentativas de suicidio. Duración mínima: 1 año.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Terapia basada en mentalización (MBT) — TLP</div>
+      <div class="farma-clase">Psicoterapia psicodinámica estructurada · Bateman y Fonagy</div>
+      <div class="farma-detalle">
+        Enfocada en mejorar la capacidad de mentalización (entender los estados mentales propios y ajenos). Evidencia comparable a DBT en TLP. También eficaz en TP narcisista y antisocial.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Farmacoterapia — síntomas-target, no el TP</div>
+      <div class="farma-clase">Adyuvante · Siempre combinada con psicoterapia</div>
+      <div class="dosis-badge">No hay fármaco aprobado específicamente para ningún TP</div>
+      <div class="farma-detalle">
+        <strong>TLP — impulsividad / autolesiones:</strong> ISRS (primera línea para disforia e impulsividad), estabilizadores del humor (lamotrigina, valproato, topiramato), antipsicóticos de 2ª generación en dosis bajas (quetiapina, olanzapina) para desregulación emocional severa o ideas paranoides transitorias. <strong>Evitar benzodiacepinas</strong> en TLP (riesgo de desinhibición paradójica y dependencia).<br><br>
+        <strong>Cluster A (esquizoide, esquizotípico):</strong> antipsicóticos de 2ª generación en dosis bajas si hay síntomas psicóticos atenuados (risperidona, olanzapina).<br><br>
+        <strong>Cluster C (evitativo):</strong> ISRS (sertralina, fluoxetina) + TCC con exposición. IMAO en casos refractarios.<br><br>
+        <strong>TASP:</strong> sin tratamiento farmacológico con evidencia robusta. Psicoterapia cognitiva conductual orientada a conducta antisocial (resultados modestos).
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>Riesgo suicida en TLP:</strong> evaluar en cada consulta. El 70–75% presentan conductas parasuicidas en algún momento. Factores de riesgo de suicidio consumado en TLP: tentativas previas, comorbilidad con TDM o TUS, impulsividad severa, abandono reciente. Hospitalización según evaluación de riesgo.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Cluster A: raro/excéntrico — Paranoide, Esquizoide, Esquizotípico</span>
+      <span class="pill">Cluster B: dramático/impulsivo — Antisocial, Límite, Histriónico, Narcisista</span>
+      <span class="pill">Cluster C: ansioso/temeroso — Evitativo, Dependiente, TOCP</span>
+      <span class="pill">Diagnóstico: no antes de los 18 años (salvo TP antisocial)</span>
+      <span class="pill">TLP: inestabilidad relaciones + identidad + afecto + impulsividad, ≥5/9 criterios</span>
+      <span class="pill">TLP: miedo al abandono → conductas autolesivas, suicidio (8–10%)</span>
+      <span class="pill">TLP: tratamiento de elección = DBT (Terapia Dialéctico-Conductual)</span>
+      <span class="pill">TLP vs Bipolar II: TLP reactivo a relaciones, no episódico</span>
+      <span class="pill">TOCP vs TOC: TOCP egosintónico, sin rituales; TOC egodistónico con compulsiones</span>
+      <span class="pill">TASP: requiere antecedente de TC desde los 15 años; diagnóstico ≥18 años</span>
+      <span class="pill">Antisocial: alta prevalencia en cárceles (~50%)</span>
+      <span class="pill">Esquizotípico: el más cercano a la esquizofrenia, puede evolucionar</span>
+      <span class="pill">Evitativo vs fobia social: evitativo más omnipresente y crónico</span>
+      <span class="pill">Narcisista vs histriónico: narcisista busca admiración, histriónico busca atención</span>
+      <span class="pill">Farmacoterapia: NO modifica el TP, trata síntomas específicos</span>
+      <span class="pill">ISRS: primera línea para impulsividad y disforia en TLP</span>
+      <span class="pill">Evitar benzodiacepinas en TLP: desinhibición paradójica</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Psychiatric Association. DSM-5-TR. Washington DC: APA, 2022 · Linehan MM. Cognitive-Behavioral Treatment of Borderline Personality Disorder. Guilford Press, 1993 · Bateman A, Fonagy P. Mentalization-Based Treatment for Borderline Personality Disorder. Oxford, 2016 · National Institute for Health and Care Excellence (NICE). Borderline personality disorder: recognition and management. Clinical guideline CG78, 2009 (updated 2023) · Oldham JM. Personality disorders. Focus 2018.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
