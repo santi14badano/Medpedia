@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insuficiencia Suprarrenal — Medpedia</title>
+  <meta name="description" content="Insuficiencia suprarrenal primaria (Addison) y secundaria: diagnóstico, test de estimulación con ACTH, crisis suprarrenal, tratamiento. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --endo: #7B4F9E; --endo-claro: #F3EDFB; --endo-oscuro: #52347A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: var(--endo-claro); color: var(--endo-oscuro); }
+    .tag-emergencia { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-endo { font-size: 16px; font-weight: 500; color: var(--endo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-endo  { border-left: 3px solid var(--endo); background: var(--endo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .tipo-box { border-radius: 14px; padding: 1.2rem; border: 1.5px solid; margin-bottom: 12px; }
+    .tipo-box.primaria { background: #FEF0DC; border-color: #E0A060; }
+    .tipo-box.secundaria { background: var(--endo-claro); border-color: #C0A0E0; }
+    .tipo-box.aguda { background: #FDEDEC; border-color: #E88080; }
+    .tipo-nombre { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .tipo-nombre.primaria { color: #8B4500; }
+    .tipo-nombre.secundaria { color: var(--endo); }
+    .tipo-nombre.aguda { color: #C0392B; }
+    .tipo-content { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .tipo-content strong { color: var(--texto); }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--endo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--endo); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--endo-claro); color: var(--endo-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .eje-box { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .eje-titulo { font-size: 14px; font-weight: 600; color: var(--endo); margin-bottom: 10px; }
+    .eje-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; flex-wrap: wrap; }
+    .eje-node { background: var(--endo-claro); border: 1px solid #C0A0E0; border-radius: 8px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--endo); }
+    .eje-arrow { color: var(--endo); font-weight: 700; font-size: 16px; }
+    .eje-label { font-size: 11px; color: var(--texto-ter); }
+    .test-box { background: #F3EDFB; border: 1.5px solid #C0A0E0; border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .test-titulo { font-size: 15px; font-weight: 600; color: var(--endo); margin-bottom: 10px; }
+    .test-paso { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 6px; }
+    .test-paso strong { color: var(--texto); }
+    .resultado-ok { color: #1A5C2A; font-weight: 600; }
+    .resultado-mal { color: #C0392B; font-weight: 600; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Endocrinología</a> › Insuficiencia Suprarrenal</div>
+  <div class="titulo">Insuficiencia Suprarrenal</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-emergencia">Crisis suprarrenal = emergencia</span>
+    <span class="tag tag-fuente">Endocrine Society 2016 · Harrison 21ª ed. · UpToDate 2024</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación</div>
+    <div class="hl-endo"><strong>Insuficiencia suprarrenal (IS):</strong> incapacidad de la corteza suprarrenal de producir cantidades adecuadas de glucocorticoides (cortisol) y/o mineralocorticoides (aldosterona), con o sin deficiencia de andrógenos suprarrenales. Es una enfermedad potencialmente fatal si no se trata.</div>
+
+    <div class="eje-box">
+      <div class="eje-titulo">Eje hipotálamo–hipófisis–suprarrenal (HHS)</div>
+      <div class="eje-row">
+        <div class="eje-node">Hipotálamo</div><div class="eje-arrow">→</div>
+        <div class="eje-label">CRH</div><div class="eje-arrow">→</div>
+        <div class="eje-node">Hipófisis anterior</div><div class="eje-arrow">→</div>
+        <div class="eje-label">ACTH</div><div class="eje-arrow">→</div>
+        <div class="eje-node">Corteza suprarrenal</div><div class="eje-arrow">→</div>
+        <div class="eje-label">Cortisol · Aldosterona · Andrógenos</div>
+      </div>
+      <div style="font-size:12px; color:var(--texto-ter); margin-top:8px;">Retroalimentación negativa: el cortisol inhibe CRH e ACTH. En IS primaria: cortisol ↓ → ACTH ↑↑. En IS secundaria/terciaria: ACTH ↓ → cortisol ↓.</div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Origen del defecto</th><th>ACTH</th><th>Aldosterona</th><th>Causa más frecuente</th></tr>
+        <tr><td><strong>Primaria (Addison)</strong></td><td>Glándula suprarrenal</td><td>↑↑ (>100 pg/mL)</td><td>↓ (también afectada)</td><td>Autoinmune (80%)</td></tr>
+        <tr><td><strong>Secundaria</strong></td><td>Hipófisis (↓ ACTH)</td><td>↓ o normal bajo</td><td>Normal (SRAA intacto)</td><td>Supresión por corticoides exógenos</td></tr>
+        <tr><td><strong>Terciaria</strong></td><td>Hipotálamo (↓ CRH)</td><td>↓ o normal bajo</td><td>Normal</td><td>Corticoides exógenos crónicos</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ La causa más frecuente de IS en la práctica clínica NO es la enfermedad de Addison sino la <strong>suspensión brusca de corticoides exógenos</strong> (IS secundaria/terciaria por supresión del eje HHS). Cualquier paciente que recibió ≥20 mg/día de prednisona por ≥3 semanas puede tener supresión del eje.</div>
+  </div>
+
+  <!-- PRIMARIA VS SECUNDARIA -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">🟣 IS Primaria — Enfermedad de Addison</div>
+    <div class="tipo-box primaria">
+      <div class="tipo-nombre primaria">Causas de IS Primaria</div>
+      <div class="tipo-content">
+        <strong>Autoinmune (80%):</strong> anticuerpos anti-21-hidroxilasa. Puede ser aislada o parte de síndrome poliglandular autoinmune tipo 1 (con hipoparatiroidismo y candidiasis mucocutánea) o tipo 2 (con tiroiditis de Hashimoto y DBT tipo 1 = síndrome de Schmidt).<br><br>
+        <strong>Infecciosas:</strong> tuberculosis (clásica, calcificaciones suprarrenales en Rx) · histoplasmosis · paracoccidioidomicosis · CMV en HIV/SIDA · meningococcemia (síndrome de Waterhouse-Friderichsen: hemorragia suprarrenal bilateral aguda = emergencia)<br><br>
+        <strong>Otras:</strong> metástasis bilaterales (pulmón, mama, melanoma) · hemorragia suprarrenal bilateral (anticoagulación, sepsis, cirugía) · adrenalectomía bilateral · adrenoleucodistrofia · síndrome de POEMS
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Clínica de IS Primaria</div>
+        ✦ <strong>Fatiga crónica</strong> (síntoma más frecuente y precoz)<br>
+        ✦ <strong>Hiperpigmentación cutánea</strong> (signo patognomónico): pliegues palmares, encías, cicatrices, areolas, mucosa oral. Por ACTH ↑↑ que estimula receptores de melanocortina (MSH).<br>
+        ✦ Anorexia, náuseas, pérdida de peso<br>
+        ✦ <strong>Hipotensión ortostática</strong> (↓ aldosterona + ↓ cortisol)<br>
+        ✦ <strong>Hiponatremia + Hiperkalemia</strong> (↓ aldosterona)<br>
+        ✦ Hipoglucemia (↓ glucocorticoides)<br>
+        ✦ Dolor abdominal, diarrea<br>
+        ✦ Amenorrea / pérdida de vello pubiano y axilar (↓ andrógenos suprarrenales en mujeres)
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Diferencias clave con IS Secundaria</div>
+        <strong>Solo en IS primaria:</strong><br>
+        ✦ Hiperpigmentación (ACTH ↑)<br>
+        ✦ Hiperkalemia (aldosterona ↓)<br>
+        ✦ Hiponatremia más grave<br>
+        ✦ Hipotensión más marcada<br>
+        ✦ Mayor riesgo de crisis suprarrenal<br><br>
+        <strong>Solo en IS secundaria:</strong><br>
+        ✦ Palidez (ACTH ↓ → menos melanina)<br>
+        ✦ Kalemia normal (aldosterona conservada)<br>
+        ✦ Síntomas de hipopituitarismo concomitante (hipotiroidismo, hipogonadismo)<br>
+        ✦ Antecedente de uso crónico de corticoides o patología hipofisaria
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Diagnóstico</div>
+    <div class="test-box">
+      <div class="test-titulo">Test de estimulación con ACTH (cosyntropina) — Gold standard</div>
+      <div class="test-paso"><strong>Indicación:</strong> sospecha de IS crónica (no aplicable en IS secundaria aguda reciente). Es el test de primera elección.</div>
+      <div class="test-paso"><strong>Procedimiento:</strong><br>
+        1. Extraer cortisol basal (8 AM idealmente)<br>
+        2. Administrar <strong>250 µg de ACTH sintética (cosyntropina) IV o IM</strong><br>
+        3. Medir cortisol a los <strong>30 y 60 minutos</strong>
+      </div>
+      <div class="test-paso"><strong>Interpretación:</strong><br>
+        <span class="resultado-ok">✓ Normal (respuesta adecuada):</span> cortisol pico ≥18–20 µg/dL → descarta IS<br>
+        <span class="resultado-mal">✗ Anormal (IS confirmada):</span> cortisol pico &lt;18 µg/dL
+      </div>
+      <div class="test-paso"><strong>Limitación:</strong> en IS secundaria de corta evolución (&lt;4–6 semanas), la suprarrenal aún puede responder al ACTH exógeno → el test puede ser falsamente normal → usar test de hipoglucemia insulínica o metirapona.</div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>IS Primaria</th><th>IS Secundaria/Terciaria</th></tr>
+        <tr><td>Cortisol basal (8 AM)</td><td>↓↓ (&lt;3 µg/dL = diagnóstico, &gt;18 µg/dL descarta)</td><td>↓</td></tr>
+        <tr><td>ACTH plasmática</td><td>↑↑ (&gt;100 pg/mL)</td><td>↓ o inadecuadamente normal</td></tr>
+        <tr><td>Test de cosyntropina</td><td>Anormal (cortisol no sube)</td><td>Anormal (crónica) o normal (aguda)</td></tr>
+        <tr><td>Anticuerpos anti-21-OH</td><td>Positivos (80% de la autoinmune)</td><td>Negativos</td></tr>
+        <tr><td>Sodio</td><td>↓ (hiponatremia)</td><td>↓ (leve, por ADH)</td></tr>
+        <tr><td>Potasio</td><td>↑ (hiperkalemia)</td><td>Normal</td></tr>
+        <tr><td>Imagen suprarrenal (TC)</td><td>Glándulas atróficas (autoinmune) o calcificadas (TBC)</td><td>Normal o atrófica</td></tr>
+        <tr><td>RMN hipofisaria</td><td>Normal</td><td>Lesión hipofisaria posible</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CRISIS SUPRARRENAL -->
+  <div class="seccion">
+    <div class="sec-titulo-endo">🔴 Crisis Suprarrenal Aguda — Emergencia médica</div>
+    <div class="tipo-box aguda">
+      <div class="tipo-nombre aguda">⚡ Crisis suprarrenal = emergencia que amenaza la vida</div>
+      <div class="tipo-content">
+        <strong>Desencadenantes:</strong> infección intercurrente (causa #1) · cirugía/trauma · vómitos que impiden tomar corticoides orales · suspensión brusca de corticoides · estrés físico grave · Waterhouse-Friderichsen (sepsis meningocóccica).<br><br>
+        <strong>Clínica:</strong> hipotensión grave / shock refractario a volumen y vasopresores · náuseas/vómitos intensos · dolor abdominal (puede simular abdomen agudo) · fiebre · confusión / alteración del sensorio · hipoglucemia grave · hiponatremia · hiperkalemia.<br><br>
+        <strong>Clave diagnóstica:</strong> shock que no responde a vasopresores + contexto (paciente conocido con IS o en tratamiento con corticoides).
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>En la crisis suprarrenal: tratar PRIMERO, confirmar después.</strong> No esperar resultados de laboratorio si la sospecha clínica es alta. La demora en el tratamiento puede ser fatal.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Hidratación IV inmediata</strong><br>
+        SF 0,9% 1 litro en la primera hora → luego 1–2 L en las siguientes horas según respuesta. La deshidratación y la hiponatremia son la causa inmediata del shock.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Glucocorticoides IV — urgente</strong><br>
+        <strong>Hidrocortisona 100 mg IV en bolo</strong> → luego 50–100 mg IV c/6–8 h (o 200 mg/día en infusión continua) × 24–48 h → reducción gradual cuando el paciente esté estable. La hidrocortisona en dosis altas también tiene efecto mineralocorticoide suficiente (no necesitar fludrocortisona hasta reducir dosis).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Glucosa IV</strong><br>
+        Si hipoglucemia: dextrosa al 10–50% IV. Mantener glucemia &gt;100 mg/dL.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Tratar la causa desencadenante</strong><br>
+        Antibióticos si hay infección (hemocultivos antes si es posible, pero no demorar antibióticos). Investigar foco infeccioso.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Extracción de cortisol basal y ACTH antes del tratamiento</strong><br>
+        Si es posible (sin demorar el tratamiento), extraer una muestra para cortisol y ACTH antes del primer bolo de hidrocortisona → confirma el diagnóstico retrospectivamente.
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO CRÓNICO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento crónico de mantenimiento</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Hidrocortisona</div>
+      <div class="farma-clase">Glucocorticoide de elección en IS crónica · imita el ritmo circadiano del cortisol</div>
+      <div class="dosis-badge">15–25 mg/día VO divididos en 2–3 tomas</div>
+      <div class="farma-detalle">
+        Dosis convencional: <strong>10 mg al despertar + 5 mg a las 12–14 h</strong> (esquema de 2 tomas) o 10+5+5 mg (3 tomas). La dosis mayor por la mañana imita el pico circadiano fisiológico del cortisol. Alternativa: prednisona 5 mg/día (preferida si adherencia es problema: una sola toma). <strong>Monitoreo:</strong> clínico (fatiga, peso, tensión arterial). No hay nivel de cortisol que guíe la dosis en tratamiento crónico.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Fludrocortisona</div>
+      <div class="farma-clase">Mineralocorticoide · Solo necesario en IS PRIMARIA (aldosterona deficiente)</div>
+      <div class="dosis-badge">0,05–0,1 mg/día VO (única toma matutina)</div>
+      <div class="farma-detalle">
+        Reemplaza la aldosterona en la IS primaria. <strong>NO necesaria en IS secundaria/terciaria</strong> (el eje SRAA está intacto). Monitoreo: tensión arterial, kalemia, edemas. Aumentar dosis si: hipotensión ortostática, hiperkalemia, deseo de sal. Reducir si: hipertensión, hipokalemia, edemas.
+      </div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Regla de duplicar/triplicar dosis — "sick day rules"</div>
+      Todo paciente con IS crónica debe conocer y aplicar las siguientes reglas en situaciones de estrés:<br>
+      ✦ <strong>Enfermedad leve (fiebre &lt;38.5°C, malestar):</strong> duplicar la dosis de hidrocortisona oral × 2–3 días<br>
+      ✦ <strong>Enfermedad moderada (vómitos, fiebre alta, procedimientos):</strong> triplicar la dosis oral o usar hidrocortisona IM/IV<br>
+      ✦ <strong>Vómitos o incapacidad de tomar VO:</strong> ir a guardia para hidrocortisona IV/IM → no esperar<br>
+      ✦ <strong>Cirugía menor:</strong> hidrocortisona 25–75 mg IV el día del procedimiento<br>
+      ✦ <strong>Cirugía mayor:</strong> hidrocortisona 100 mg IV antes de la inducción + 50 mg c/8 h × 24 h → reducción gradual<br>
+      Todo paciente debe llevar <strong>tarjeta o pulsera de alerta médica</strong> y kit de emergencia (hidrocortisona IM para autoadministración).
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">IS primaria = Addison: ACTH ↑↑ + cortisol ↓</span>
+      <span class="pill">IS secundaria: ACTH ↓ + cortisol ↓ (aldosterona normal)</span>
+      <span class="pill">Causa más frecuente IS primaria: autoinmune (anti-21-OH)</span>
+      <span class="pill">Causa más frecuente IS en clínica: corticoides exógenos crónicos</span>
+      <span class="pill">Hiperpigmentación: solo en IS primaria (ACTH ↑ → MSH)</span>
+      <span class="pill">Hiperkalemia: solo en IS primaria (aldosterona ↓)</span>
+      <span class="pill">Waterhouse-Friderichsen: hemorragia suprarrenal bilateral por meningococo</span>
+      <span class="pill">Gold standard diagnóstico: test de estimulación con ACTH (cosyntropina)</span>
+      <span class="pill">Respuesta normal: cortisol pico ≥18–20 µg/dL</span>
+      <span class="pill">Crisis suprarrenal: tratar PRIMERO (hidrocortisona 100 mg IV + SF)</span>
+      <span class="pill">Tratamiento crónico IS primaria: hidrocortisona + fludrocortisona</span>
+      <span class="pill">IS secundaria: solo hidrocortisona (sin fludrocortisona)</span>
+      <span class="pill">Sick day rules: duplicar/triplicar dosis en estrés/enfermedad</span>
+      <span class="pill">Síndrome de Schmidt: IS + tiroiditis de Hashimoto + DBT tipo 1</span>
+      <span class="pill">TBC suprarrenal: calcificaciones en TC</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and Treatment of Primary Adrenal Insufficiency. J Clin Endocrinol Metab. 2016 (Endocrine Society Guidelines) · Annane D. Corticosteroids for septic shock. Crit Care Med 2020 · Charmandari E, Nicolaides NC, Chrousos GP. Adrenal insufficiency. Lancet 2014 · Harrison's Principles of Internal Medicine, 21st ed. · UpToDate: Diagnosis of adrenal insufficiency in adults; Treatment of adrenal insufficiency in adults. 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
