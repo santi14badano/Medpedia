@@ -376,11 +376,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/diarrea-aguda-pediatrica.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://medpedia-7ahi.vercel.app/esclerosis-multiple.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -391,37 +386,32 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/litiasis-vesicular.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/cancer-gastrico.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/salud-mental.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/trastornos-personalidad.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-confusional-agudo.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/its-ets.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-metabolico.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/esteatosis-hepatica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-nefrotico-nefritico.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/chagas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-uremico-hemolitico.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://medpedia-7ahi.vercel.app/valvulopatias.html</loc>
+    <loc>https://medpedia-7ahi.vercel.app/insuficiencia-suprarrenal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
