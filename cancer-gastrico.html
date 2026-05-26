@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer Gástrico — Medpedia</title>
+  <meta name="description" content="Cáncer gástrico: epidemiología, factores de riesgo, H. pylori, clasificaciones, diagnóstico endoscópico, estadificación TNM y tratamiento. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --onco: #6B3FA0; --onco-claro: #F3EEFE; --onco-oscuro: #4A2570;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: #FFF8E1; color: #7B5800; }
+    .tag-onco { background: var(--onco-claro); color: var(--onco-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-onco { font-size: 16px; font-weight: 500; color: var(--onco); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-onco  { border-left: 3px solid var(--onco); background: var(--onco-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--onco); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .vs-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .vs-block { grid-template-columns: 1fr; } }
+    .vs-col { border-radius: 12px; padding: 1rem 1.2rem; }
+    .vs-col.izq { background: var(--info-claro); border: 1.5px solid #a8c8e8; }
+    .vs-col.der { background: var(--onco-claro); border: 1.5px solid #c4a8e0; }
+    .vs-titulo { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+    .cascada { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; margin-bottom: 10px; }
+    .cascada-titulo { font-size: 13px; font-weight: 600; color: var(--onco); margin-bottom: 10px; }
+    .cascada-paso { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px; color: var(--texto-sec); }
+    .cascada-flecha { color: var(--texto-ter); font-size: 14px; }
+    .badge-stage { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 8px; margin-right: 4px; }
+    .s1 { background: #E8F5E9; color: #1B5E20; }
+    .s2 { background: #FFF8E1; color: #F57F17; }
+    .s3 { background: #FCE4EC; color: #880E4F; }
+    .s4 { background: var(--danger-claro); color: var(--danger); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía / Oncología</a> › Cáncer Gástrico</div>
+  <div class="titulo">Cáncer Gástrico</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">ESMO 2023 · JGCA 2021 · SAG Argentina</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología</div>
+    <div class="hl-onco"><strong>5to cáncer más frecuente en el mundo</strong> y <strong>4ta causa de muerte por cáncer</strong>. Mayor incidencia en Asia Oriental (Japón, Corea, China), Europa del Este y América Latina. En Argentina ocupa los primeros lugares en mortalidad por cáncer digestivo. La mayoría se diagnostica en estadios avanzados → sobrevida a 5 años global ~30%.</div>
+    <div class="hl"><strong>95% son adenocarcinomas</strong>. El resto: linfomas MALT, tumores estromales (GIST), carcinoides. El adenocarcinoma se divide en tipo intestinal (Lauren) y tipo difuso, con diferente epidemiología, patogenia y pronóstico.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Tipo intestinal</th><th>Tipo difuso</th></tr>
+        <tr><td>Epidemiología</td><td>Más frecuente; hombres >60 años</td><td>Mujeres más jóvenes; hereditario en algunos casos</td></tr>
+        <tr><td>Patogenia</td><td>Cascada de Correa (H. pylori → gastritis crónica → metaplasia → displasia → carcinoma)</td><td>Mutación CDH1 (E-cadherina) en formas hereditarias; aparición más abrupta</td></tr>
+        <tr><td>Localización</td><td>Antro y curvatura menor</td><td>Cuerpo gástrico; "linitis plástica" (infiltración difusa)</td></tr>
+        <tr><td>Pronóstico</td><td>Mejor</td><td>Peor; diseminación peritoneal frecuente</td></tr>
+        <tr><td>Marcadores</td><td>HER2 (+) en ~20%</td><td>MSI-H en subgrupo; EBV (+) en ~10%</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="hl-warn">⭐ <strong>H. pylori es el principal factor de riesgo modificable</strong> — clasificado por la OMS como carcinógeno de clase I. Aumenta el riesgo de cáncer gástrico ×3–6. La erradicación reduce el riesgo en población de riesgo.</div>
+    <div class="cascada">
+      <div class="cascada-titulo">Cascada de Correa — carcinogénesis tipo intestinal</div>
+      <div class="cascada-paso">🦠 <strong>H. pylori</strong> <span class="cascada-flecha">→</span> Gastritis crónica activa</div>
+      <div class="cascada-paso"><span class="cascada-flecha">→</span> Gastritis crónica atrófica</div>
+      <div class="cascada-paso"><span class="cascada-flecha">→</span> Metaplasia intestinal</div>
+      <div class="cascada-paso"><span class="cascada-flecha">→</span> Displasia (bajo grado → alto grado)</div>
+      <div class="cascada-paso"><span class="cascada-flecha">→</span> ⚠️ <strong>Adenocarcinoma gástrico</strong></div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Comentario</th></tr>
+        <tr><td><strong>H. pylori</strong></td><td>FR más importante. Riesgo ×3–6. Erradicación = prevención primaria.</td></tr>
+        <tr><td>Dieta rica en sal, nitratos, ahumados</td><td>Dieta japonesa tradicional. Favorece conversión de nitratos → nitrosaminas (carcinógenos).</td></tr>
+        <tr><td>Tabaquismo</td><td>Riesgo ×1.5–2. Aumenta especialmente cáncer de cardias.</td></tr>
+        <tr><td>Gastrectomía previa (>15 años)</td><td>Reflujo biliar crónico → cambios mucosos. Riesgo ×2–4.</td></tr>
+        <tr><td>Gastritis crónica atrófica / anemia perniciosa</td><td>Aclorhidria → sobrecrecimiento bacteriano → nitrosaminas.</td></tr>
+        <tr><td>Pólipos adenomatosos gástricos</td><td>Riesgo según tamaño y grado de displasia.</td></tr>
+        <tr><td>Cáncer gástrico hereditario difuso (HDGC)</td><td>Mutación CDH1 (E-cadherina). AD. Riesgo lifetime 70–80%. Indicación de gastrectomía profiláctica.</td></tr>
+        <tr><td>Síndrome de Lynch</td><td>MMR mutado → riesgo de Ca gástrico + CCR + otros.</td></tr>
+        <tr><td>Grupo sanguíneo A</td><td>Asociación clásica con tipo difuso (mecanismo poco claro).</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Presentación clínica</div>
+    <div class="hl-danger">⚠️ <strong>El cáncer gástrico es asintomático en estadios tempranos.</strong> Los síntomas aparecen cuando el tumor es localmente avanzado o metastásico. En Japón y Corea (donde existe screening endoscópico masivo), >50% se detecta en estadio temprano. En Argentina y el mundo occidental, >60% se diagnostica en estadios III–IV.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Síntoma / signo</th><th>Estadio típico</th><th>Comentario</th></tr>
+        <tr><td>Dispepsia persistente, pirosis, saciedad precoz</td><td>Temprano / avanzado</td><td>Síntomas inespecíficos. Cualquier dispepsia nueva en >45 años → endoscopía.</td></tr>
+        <tr><td>Pérdida de peso involuntaria</td><td>Avanzado</td><td>Síntoma más frecuente al diagnóstico en Occidente.</td></tr>
+        <tr><td>Anemia ferropénica / sangrado oculto</td><td>Avanzado</td><td>Ulceración del tumor → sangrado crónico.</td></tr>
+        <tr><td>Disfagia</td><td>Avanzado</td><td>Tumores del cardias o unión gastroesofágica (UGE).</td></tr>
+        <tr><td>Masa epigástrica palpable</td><td>Muy avanzado</td><td>Tumor grande o adenopatía.</td></tr>
+        <tr><td>Vómitos en proyectil</td><td>Avanzado</td><td>Tumores antrales con obstrucción pilórica.</td></tr>
+        <tr><td>Hematemesis / melena</td><td>Avanzado</td><td>Sangrado tumoral agudo.</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⭐ <strong>Signos de Virchow, Irish y Blumer → metástasis a distancia:</strong>
+      Ganglio de Virchow (supraclavicular izquierdo) · Ganglio de Irish (axilar izquierdo) · Implante de Blumer (rectal, palpable al tacto rectal) · Nódulo de la Hermana María José (umbilical) · Ovario de Krukenberg (metástasis ovárica por vía transperitoneal).</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-onco">🔍 Diagnóstico y estadificación</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Endoscopía digestiva alta (VEDA) con biopsia — gold standard diagnóstico</strong><br>
+        Permite visualizar el tumor, determinar localización y extensión macroscópica, y tomar biopsias (mínimo 6–8 muestras de distintas áreas del tumor). La clasificación endoscópica de París (0-I pólipo, 0-II plano, 0-III excavado) es clave para el cáncer gástrico temprano. La linitis plástica puede ser difícil de biopsiar por localización submucosa.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>TC de tórax-abdomen-pelvis con contraste — estadificación sistémica</strong><br>
+        Evalúa extensión local (T), adenopatías regionales (N), metástasis hepáticas, pulmonares y peritoneales (M). Sensibilidad limitada para metástasis peritoneales pequeñas → siempre complementar con laparoscopía estadificadora en tumores ≥T3 candidatos a resección.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Ecoendoscopía (USE) — estadificación T y N locorregional</strong><br>
+        Mejor método para determinar la profundidad de invasión (T1–T4) y adenopatías perigástricas. Esencial para decidir resección endoscópica (T1a/b sin invasión linfovascular) vs cirugía.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Laparoscopía estadificadora — en tumores ≥T3 con intención curativa</strong><br>
+        Detecta metástasis peritoneales no visibles en TC (~20–30% de los casos). El lavado peritoneal con citología positiva → M1 (estadio IV, irresecable). Cambia el plan en hasta 30% de los pacientes.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Perfil molecular — imprescindible en enfermedad avanzada</strong><br>
+        <strong>HER2:</strong> sobreexpresión en ~20% (más frecuente en tipo intestinal, cardias/UGE) → trastuzumab + quimioterapia en 1ª línea metastásica.<br>
+        <strong>MSI-H / dMMR:</strong> ~5–10% → primera línea con pembrolizumab (aprobación FDA 2021).<br>
+        <strong>PD-L1 (CPS ≥5):</strong> pembrolizumab en combinación con QT independientemente de MSI.<br>
+        <strong>FGFR2b:</strong> bemarituzumab en estudio.<br>
+        <strong>EBV (+):</strong> asociado a mejor respuesta a inmunoterapia.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-onco">📊 Estadificación TNM (AJCC 8ª ed.)</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>T — Tumor</th><th>Definición</th></tr>
+        <tr><td>T1a</td><td>Invasión de lámina propia o muscular de la mucosa</td></tr>
+        <tr><td>T1b</td><td>Invasión de submucosa</td></tr>
+        <tr><td>T2</td><td>Invasión de muscular propia</td></tr>
+        <tr><td>T3</td><td>Atraviesa subserosa sin peritoneo visceral</td></tr>
+        <tr><td>T4a</td><td>Penetra serosa (peritoneo visceral)</td></tr>
+        <tr><td>T4b</td><td>Invade estructuras adyacentes (bazo, colon, páncreas, aorta)</td></tr>
+      </table>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>TNM</th><th>Sobrevida 5 años</th><th>Tratamiento</th></tr>
+        <tr><td><span class="badge-stage s1">IA</span></td><td>T1 N0 M0</td><td>~90%</td><td>Resección endoscópica (ESD) o gastrectomía</td></tr>
+        <tr><td><span class="badge-stage s1">IB–II</span></td><td>T2–3 N0 / T1 N1–2</td><td>~50–70%</td><td>Gastrectomía + linfadenectomía D2 ± QT perioperatoria</td></tr>
+        <tr><td><span class="badge-stage s2">III</span></td><td>T3–4 N1–3</td><td>~20–40%</td><td>QT perioperatoria (FLOT) + gastrectomía D2</td></tr>
+        <tr><td><span class="badge-stage s4">IV</span></td><td>Cualquier T/N M1</td><td>~5–10%</td><td>QT paliativa ± biológicos (trastuzumab, pembrolizumab)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-onco">💊 Tratamiento</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Resección endoscópica submucosa (ESD) — cáncer gástrico temprano</div>
+      <div class="farma-clase">Tratamiento curativo para T1a seleccionados</div>
+      <div class="farma-detalle">
+        Indicación: tumores T1a (mucosa), bien diferenciados, ≤2 cm, sin ulceración, sin invasión linfovascular. La ESD permite resección en bloque con márgenes. Criterios expandidos (japoneses): tumores mayores o con ulceración bajo criterios estrictos. Ventaja: preserva el estómago, sin morbilidad de la cirugía. Tasa de curación R0 >95% en indicaciones apropiadas.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Gastrectomía con linfadenectomía D2 — estándar curativo</div>
+      <div class="farma-clase">Cirugía · Tratamiento de elección en estadios I–III resecables</div>
+      <div class="dosis-badge">Gastrectomía total o subtotal + D2 (≥15 ganglios)</div>
+      <div class="farma-detalle">
+        <strong>Gastrectomía subtotal:</strong> tumores del antro y cuerpo distal, margen proximal libre ≥5 cm.<br>
+        <strong>Gastrectomía total:</strong> tumores del cuerpo, fondo, cardias o tipo difuso (linitis plástica). Reconstrucción con asa en Y de Roux.<br>
+        <strong>Linfadenectomía D2</strong> (resección de ganglios perigástricos + tronco celíaco/esplénica/hepática común): estándar en centros de alto volumen. D2 vs D1: mayor morbilidad pero mejor control regional y posible beneficio en sobrevida.<br>
+        <strong>Criterio de resecabilidad R0:</strong> márgenes libres ≥3–5 cm.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia perioperatoria — estadios II–III resecables</div>
+      <div class="farma-clase">Neoadyuvancia + adyuvancia · Reduce recurrencia y mejora sobrevida</div>
+      <div class="dosis-badge">FLOT: docetaxel + oxaliplatino + leucovorín + 5-FU · 4 ciclos pre + 4 post</div>
+      <div class="farma-detalle">
+        <strong>Régimen FLOT</strong> (estudio FLOT4-AIO): demostró superioridad sobre ECF/ECX. 4 ciclos preoperatorios → cirugía → 4 ciclos postoperatorios. Respuesta patológica completa en ~16%.<br>
+        <strong>Alternativa:</strong> CAPOX o FOLFOX perioperatorio. En tumores de la UGE (Siewert II–III): quimiorradioterapia (CROSS) o QT perioperatoria según centro.<br>
+        La neoadyuvancia permite downstaging y evalúa respuesta biológica del tumor.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Tratamiento de primera línea metastásico</div>
+      <div class="farma-clase">Enfermedad avanzada / estadio IV</div>
+      <div class="dosis-badge">FLOT o XELOX / FOLFOX ± trastuzumab (HER2+) ± pembrolizumab (PD-L1 CPS≥5)</div>
+      <div class="farma-detalle">
+        <strong>HER2 positivo:</strong> trastuzumab + fluoropirimidina + cisplatino/oxaliplatino (ToGA) → ↑ SG ~2.7 meses.<br>
+        <strong>PD-L1 CPS ≥5 (HER2 negativo):</strong> pembrolizumab + QT → CheckMate 649 y KEYNOTE-590 mostraron beneficio en SG.<br>
+        <strong>MSI-H:</strong> pembrolizumab primera línea independientemente de PD-L1.<br>
+        <strong>Sin biomarcador accionable:</strong> FOLFOX o CAPOX ± nivolumab (CPS ≥5).
+      </div>
+    </div>
+    <div class="hl-info">🇦🇷 <strong>Particularidad argentina:</strong> la alta prevalencia de H. pylori y el diagnóstico tardío son los principales problemas de salud pública. La SAG (Sociedad Argentina de Gastroenterología) recomienda endoscopía diagnóstica ante dispepsia de nuevo inicio en >45 años, y erradicación de H. pylori en todos los infectados (estrategia test-and-treat).</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">5to cáncer más frecuente / 4ta causa de muerte oncológica</span>
+      <span class="pill">95% adenocarcinomas</span>
+      <span class="pill">Clasificación de Lauren: intestinal vs difuso</span>
+      <span class="pill">Cascada de Correa: H. pylori → gastritis → metaplasia → displasia → Ca</span>
+      <span class="pill">H. pylori = carcinógeno clase I OMS, FR más importante</span>
+      <span class="pill">Tipo difuso = CDH1 (E-cadherina), linitis plástica, peor pronóstico</span>
+      <span class="pill">Ca gástrico hereditario difuso (HDGC): CDH1 → gastrectomía profiláctica</span>
+      <span class="pill">Ganglio de Virchow: supraclavicular izquierdo</span>
+      <span class="pill">Krukenberg: metástasis ovárica transperitoneal</span>
+      <span class="pill">Hermana María José: nódulo umbilical</span>
+      <span class="pill">Diagnóstico: VEDA con biopsia ≥6–8 muestras</span>
+      <span class="pill">ESD: cáncer temprano T1a, bien diferenciado, ≤2 cm, sin úlcera</span>
+      <span class="pill">Cirugía estándar: gastrectomía + D2 (≥15 ganglios)</span>
+      <span class="pill">QT perioperatoria estadio II–III: régimen FLOT</span>
+      <span class="pill">HER2(+) ~20%: trastuzumab + QT en metastásico</span>
+      <span class="pill">MSI-H: pembrolizumab primera línea</span>
+      <span class="pill">Diagnóstico tardío: >60% en estadio III–IV en Argentina</span>
+      <span class="pill">Laparoscopía estadificadora: detecta M. peritoneales en ~30%</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Smyth EC et al. Gastric cancer: ESMO Clinical Practice Guideline. Ann Oncol 2023 · Japanese Gastric Cancer Association. Japanese gastric cancer treatment guidelines 2021. Gastric Cancer 2023 · Al-Batran SE et al. FLOT4 trial. Lancet 2019 · Bang YJ et al. ToGA trial. Lancet 2010 · Shitara K et al. KEYNOTE-590. NEJM 2021 · Sociedad Argentina de Gastroenterología (SAG) — Guías de manejo del cáncer gástrico.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
