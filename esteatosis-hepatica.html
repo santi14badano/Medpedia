@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esteatosis Hepática No Alcohólica (NAFLD) — Medpedia</title>
+  <meta name="description" content="NAFLD/NASH: epidemiología, fisiopatología, diagnóstico, estadificación, tratamiento. Causa más frecuente de hepatopatía crónica. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gastro: #1A6B3C; --gastro-claro: #E8F5EE; --gastro-oscuro: #0F4025;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: var(--gastro-claro); color: var(--gastro-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gastro { font-size: 16px; font-weight: 500; color: var(--gastro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-gastro{ border-left: 3px solid var(--gastro); background: var(--gastro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .espectro { display: flex; align-items: stretch; gap: 0; margin-bottom: 14px; border-radius: 14px; overflow: hidden; border: 1px solid var(--borde); }
+    .esp-item { flex: 1; padding: 12px 10px; text-align: center; border-right: 1px solid var(--borde); }
+    .esp-item:last-child { border-right: none; }
+    .esp-item.e1 { background: #E8F5EE; }
+    .esp-item.e2 { background: #FEF0DC; }
+    .esp-item.e3 { background: #FDEAEA; }
+    .esp-item.e4 { background: #F8E8E8; }
+    .esp-nombre { font-size: 12px; font-weight: 700; margin-bottom: 3px; }
+    .esp-nombre.e1 { color: #1A6B3C; }
+    .esp-nombre.e2 { color: #D4730A; }
+    .esp-nombre.e3 { color: #C0392B; }
+    .esp-nombre.e4 { color: #8B0000; }
+    .esp-desc { font-size: 11px; color: var(--texto-sec); line-height: 1.4; }
+    .esp-arrow { display: flex; align-items: center; padding: 0 4px; color: var(--texto-ter); font-size: 18px; font-weight: 300; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--gastro); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--gastro-claro); color: var(--gastro-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .fisio-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; flex-wrap: wrap; }
+    .fisio-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 8px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: var(--texto); }
+    .fisio-arrow { color: var(--gastro); font-weight: 700; font-size: 14px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 14px; text-align: center; }
+    .stat-num { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; color: var(--gastro); }
+    .stat-label { font-size: 11px; color: var(--texto-ter); margin-top: 2px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Gastroenterología</a> › Esteatosis Hepática No Alcohólica</div>
+  <div class="titulo">Esteatosis Hepática<br>No Alcohólica<br><span style="font-size:0.6em; color:var(--texto-sec); font-style:italic;">NAFLD / MAFLD / MASLD</span></div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-fuente">EASL 2023 · AASLD 2023 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-gastro"><strong>NAFLD (Non-Alcoholic Fatty Liver Disease):</strong> acumulación de grasa en el hígado (&gt;5% de los hepatocitos) en ausencia de consumo significativo de alcohol (&lt;20 g/día en mujeres, &lt;30 g/día en hombres), otras hepatopatías crónicas o fármacos hepatotóxicos. Es la <strong>hepatopatía crónica más prevalente en el mundo</strong> y la principal causa de cirrosis en Argentina.</div>
+    <div class="hl-info">💡 <strong>Cambio de nomenclatura (2023):</strong> la EASL y AASLD propusieron renombrar NAFLD como <strong>MASLD</strong> (Metabolic dysfunction-Associated Steatotic Liver Disease) para destacar el papel central de la disfunción metabólica y reducir el estigma de la palabra "alcohólica". La NASH pasa a llamarse <strong>MASH</strong> (Metabolic-Associated Steatohepatitis). Para el concurso, conocer ambas nomenclaturas.</div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">25%</div><div class="stat-label">Prevalencia global de NAFLD en adultos</div></div>
+      <div class="stat-card"><div class="stat-num">75%</div><div class="stat-label">De casos asociados a obesidad o síndrome metabólico</div></div>
+      <div class="stat-card"><div class="stat-num">20%</div><div class="stat-label">De NAFLD progresa a NASH</div></div>
+      <div class="stat-card"><div class="stat-num">20%</div><div class="stat-label">De NASH progresa a cirrosis en 10–20 años</div></div>
+      <div class="stat-card"><div class="stat-num">#1</div><div class="stat-label">Indicación creciente de trasplante hepático en países desarrollados</div></div>
+      <div class="stat-card"><div class="stat-num">10%</div><div class="stat-label">De NAFLD sin obesidad ("NAFLD lean") — factor de riesgo: microbioma, genética</div></div>
+    </div>
+  </div>
+
+  <!-- ESPECTRO -->
+  <div class="seccion">
+    <div class="sec-titulo-gastro">🟢 Espectro de la enfermedad</div>
+    <div class="espectro">
+      <div class="esp-item e1">
+        <div class="esp-nombre e1">Esteatosis simple</div>
+        <div class="esp-desc">Acumulación de grasa &gt;5% sin inflamación significativa. Pronóstico benigno. Reversible.</div>
+      </div>
+      <div class="esp-item e2">
+        <div class="esp-nombre e2">NASH / MASH</div>
+        <div class="esp-desc">Esteatosis + inflamación lobulillar + balonización hepatocitaria. ± fibrosis. Progresiva.</div>
+      </div>
+      <div class="esp-item e3">
+        <div class="esp-nombre e3">Fibrosis avanzada</div>
+        <div class="esp-desc">F3–F4. Remodelado de la arquitectura hepática. Hipertensión portal posible.</div>
+      </div>
+      <div class="esp-item e4">
+        <div class="esp-nombre e4">Cirrosis / CHC</div>
+        <div class="esp-desc">Cirrosis descompensada. CHC puede ocurrir incluso sin cirrosis en NASH.</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>El CHC (carcinoma hepatocelular) puede desarrollarse en NASH sin cirrosis</strong>, a diferencia de otras hepatopatías crónicas. Esta característica es importante para el diagnóstico diferencial y la vigilancia.</div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Fisiopatología — modelo de "múltiples hits"</div>
+    <div class="fisio-row"><div class="fisio-box">Resistencia a la insulina</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ Lipólisis tejido adiposo</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ AGL al hígado</div><div class="fisio-arrow">→</div><div class="fisio-box">Esteatosis hepática (1° hit)</div></div>
+    <div class="fisio-row"><div class="fisio-box">Estrés oxidativo · disfunción mitocondrial · disbiosis intestinal · lipotoxicidad</div><div class="fisio-arrow">→</div><div class="fisio-box">Inflamación + balonización (2° hit)</div><div class="fisio-arrow">→</div><div class="fisio-box">NASH</div></div>
+    <div class="fisio-row"><div class="fisio-box">Activación células estrelladas</div><div class="fisio-arrow">→</div><div class="fisio-box">Fibrosis progresiva</div><div class="fisio-arrow">→</div><div class="fisio-box">Cirrosis</div></div>
+    <div class="hl-gastro">La <strong>resistencia a la insulina</strong> es el mecanismo central y el nexo entre el síndrome metabólico y la NAFLD. Los factores genéticos (variante PNPLA3 I148M y TM6SF2 E167K) modulan la susceptibilidad individual y explican casos sin obesidad.</div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo y condiciones asociadas</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Condiciones de alto riesgo</div>
+        ✦ <strong>Obesidad</strong> (IMC &gt;30): NAFLD en 60–90%<br>
+        ✦ <strong>DBT tipo 2</strong>: NAFLD en 50–75%; NASH en 20–30%<br>
+        ✦ <strong>Síndrome metabólico</strong> (criterios ATP-III)<br>
+        ✦ Dislipemia (especialmente hipertrigliceridemia)<br>
+        ✦ Hipertensión arterial<br>
+        ✦ Hipotiroidismo<br>
+        ✦ Síndrome de ovario poliquístico (SOP)<br>
+        ✦ Apnea del sueño (SAHOS)<br>
+        ✦ Psoriasis · artritis reumatoidea
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Fármacos que causan esteatosis secundaria</div>
+        (excluir antes de diagnosticar NAFLD):<br>
+        ✦ Amiodarona<br>
+        ✦ Metotrexato<br>
+        ✦ Tamoxifeno<br>
+        ✦ Corticoides (esteatosis macrovesicular)<br>
+        ✦ Valproato de sodio<br>
+        ✦ Antirretrovirales (análogos de nucleósidos)<br>
+        ✦ Diltiazem · nifedipina
+      </div>
+    </div>
+  </div>
+
+  <!-- CLÍNICA Y DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica y diagnóstico</div>
+    <div class="hl-gastro">La NAFLD es <strong>mayormente asintomática</strong> hasta estadios avanzados. El diagnóstico suele hacerse de forma incidental por hallazgo de transaminasas elevadas en laboratorio de rutina o hígado hiperecogénico en ecografía.</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Clínica</div>
+        ✦ <strong>Asintomático</strong> (mayoría)<br>
+        ✦ Hepatomegalia leve en el examen físico<br>
+        ✦ Malestar o pesadez en hipocondrio derecho (inespecífico)<br>
+        ✦ Síntomas de síndrome metabólico asociado<br>
+        ✦ En NASH avanzada/cirrosis: síntomas de hipertensión portal (ascitis, várices, ictericia)
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Laboratorio típico</div>
+        ✦ <strong>ALT y AST elevadas</strong> (leve a moderada): ALT &gt; AST (al revés que en la hepatopatía alcohólica)<br>
+        ✦ Cociente AST/ALT &lt;1 (NAFLD) vs. &gt;2 (alcohólica)<br>
+        ✦ GGT elevada<br>
+        ✦ FA puede estar elevada<br>
+        ✦ Bilirrubina y TP normales (salvo cirrosis)<br>
+        ✦ Dislipemia, hiperglucemia frecuentes<br>
+        ✦ <strong>Las transaminasas pueden ser NORMALES</strong> incluso en NASH avanzada
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Método diagnóstico</th><th>Rol</th><th>Limitaciones</th></tr>
+        <tr><td><strong>Ecografía hepática</strong></td><td>1ª línea: detecta esteatosis si &gt;20–30% hepatocitos afectados. Hígado hiperecogénico ("brillante"). Bajo costo, sin radiación.</td><td>Operador-dependiente. No distingue NAFLD de NASH. No cuantifica fibrosis.</td></tr>
+        <tr><td><strong>RM con espectroscopía (PDFF)</strong></td><td>Cuantificación precisa del contenido graso hepático. Gold standard no invasivo para esteatosis.</td><td>Costosa, no disponible en todos los centros.</td></tr>
+        <tr><td><strong>Elastografía hepática (Fibroscan)</strong></td><td>Evalúa fibrosis hepática no invasivamente. CAP (parámetro de atenuación controlada) cuantifica esteatosis.</td><td>Puede sobreestimar fibrosis en obesidad severa.</td></tr>
+        <tr><td><strong>FIB-4 (score)</strong></td><td>Fórmula: edad × AST / (plaquetas × √ALT). Valor &lt;1,3 descarta fibrosis avanzada. &gt;2,67 predice fibrosis avanzada.</td><td>Score, no diagnóstico definitivo. Zona gris entre 1,3 y 2,67.</td></tr>
+        <tr><td><strong>Biopsia hepática</strong></td><td>Gold standard para diagnóstico de NASH y estadificación de fibrosis (escala METAVIR F0–F4). Diferencia esteatosis simple de NASH.</td><td>Invasiva, riesgo de sangrado, error de muestreo, no rutinaria.</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Score FIB-4 en la práctica:</strong> FIB-4 = (edad [años] × AST [U/L]) / (plaquetas [10⁹/L] × √ALT [U/L]). Es el score no invasivo más validado para detección de fibrosis avanzada en NAFLD. Recomendado por EASL 2023 como primera herramienta de estratificación en APS.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial — otras causas de esteatosis hepática</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa</th><th>Clave diferencial</th></tr>
+        <tr><td><strong>Hepatopatía alcohólica</strong></td><td>Consumo &gt;20–30 g/día · AST/ALT &gt;2 · GGT muy elevada · VCM aumentado · CDT positivo</td></tr>
+        <tr><td><strong>Hepatitis C crónica</strong></td><td>Serología HCV positiva · especialmente genotipo 3 (causa esteatosis viral directa)</td></tr>
+        <tr><td><strong>Fármacos</strong></td><td>Amiodarona, metotrexato, tamoxifeno, corticoides · cronología de uso</td></tr>
+        <tr><td><strong>Hígado graso agudo del embarazo</strong></td><td>3° trimestre · microvesicular · cuadro agudo grave con coagulopatía · urgencia obstétrica</td></tr>
+        <tr><td><strong>Lipodistrofia</strong></td><td>Distribución anormal de grasa corporal</td></tr>
+        <tr><td><strong>Hipotiroidismo / Cushing</strong></td><td>TSH, cortisol, clínica endocrina</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-gastro">🟢 Tratamiento</div>
+    <div class="hl-gastro"><strong>No existe fármaco aprobado específicamente para NAFLD/NASH en todos los estadios.</strong> El pilar del tratamiento es la modificación del estilo de vida. En 2024, <strong>resmetirom</strong> fue aprobado por la FDA para MASH con fibrosis F2–F3 (primer fármaco específico aprobado). Vigilar actualización.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Modificación del estilo de vida — 1ª línea universal</div>
+      <div class="farma-clase">Intervención más eficaz con evidencia sólida</div>
+      <div class="farma-detalle">
+        <strong>Pérdida de peso:</strong> reducción de ≥7–10% del peso corporal → mejora histológica de la esteatosis y la inflamación (NASH). Pérdida ≥10% puede revertir fibrosis. Meta: ≥7% en 6–12 meses.<br><br>
+        <strong>Dieta:</strong> reducción calórica (déficit 500–1000 kcal/día) · dieta mediterránea (evidencia más sólida) · reducir azúcares simples (especialmente fructosa y bebidas azucaradas) · reducir grasas saturadas · aumentar omega-3.<br><br>
+        <strong>Ejercicio físico:</strong> 150–300 min/semana de actividad aeróbica moderada (caminar rápido, nadar, bicicleta) + entrenamiento de resistencia. El ejercicio mejora la esteatosis independientemente de la pérdida de peso.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cirugía bariátrica</div>
+      <div class="farma-clase">Para pacientes con obesidad grave (IMC ≥35) que no responden a cambio de estilo de vida</div>
+      <div class="farma-detalle">
+        La cirugía bariátrica (bypass gástrico en Y de Roux, manga gástrica) produce la mayor reducción sostenida de peso y mejora histológica de NASH y fibrosis. Indicada en pacientes con IMC ≥35 kg/m² + comorbilidades metabólicas + sin cirrosis descompensada. La cirrosis Child B–C es contraindicación relativa.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Vitamina E (α-tocoferol)</div>
+      <div class="farma-clase">Antioxidante · Para NASH histológicamente confirmada en no diabéticos sin cirrosis</div>
+      <div class="dosis-badge">800 UI/día VO</div>
+      <div class="farma-detalle">
+        Única intervención farmacológica con evidencia de mejora histológica en el ensayo PIVENS. Mejora la esteatosis, inflamación y balonización en NASH no diabética. <strong>No mejora la fibrosis.</strong> Contraindicaciones relativas: diabetes (menor eficacia), cirrosis, riesgo de sangrado (dosis altas aumentan sangrado). Controversia por posible aumento de mortalidad total con dosis altas en metaanálisis.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Agonistas GLP-1 (semaglutida, liraglutida)</div>
+      <div class="farma-clase">Primera línea en NAFLD + DBT tipo 2 u obesidad</div>
+      <div class="dosis-badge">Semaglutida 0,4 mg/semana SC (en estudios NASH) · dosis metabólica habitual VO/SC</div>
+      <div class="farma-detalle">
+        Evidencia creciente de mejora de la esteatosis e inflamación en NASH. Semaglutida redujo resolución de NASH en el ensayo fase II (en espera de datos fase III). Beneficio adicional: pérdida de peso, control glucémico, reducción de eventos cardiovasculares. <strong>De elección en NAFLD + DBT tipo 2 u obesidad.</strong>
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Resmetirom (Rezdiffra)</div>
+      <div class="farma-clase">Agonista selectivo del receptor tiroideo β hepático (THRβ) · Primer fármaco aprobado FDA para MASH (2024)</div>
+      <div class="dosis-badge">80–100 mg/día VO según peso</div>
+      <div class="farma-detalle">
+        Aprobado por FDA en marzo 2024 para MASH con fibrosis F2–F3 en adultos. Activa el receptor THRβ en el hígado → reduce lipogénesis, aumenta oxidación de ácidos grasos, mejora dislipemia. En ensayo MAESTRO-NASH: resolución de NASH sin empeoramiento de fibrosis en 25–30% y mejora de fibrosis en 24–26%. Efectos adversos: náuseas, diarrea. Pendiente de aprobación en otros países.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">SGLT-2 inhibidores (empagliflozina, dapagliflozina)</div>
+      <div class="farma-clase">En NAFLD + DBT tipo 2 · evidencia emergente</div>
+      <div class="farma-detalle">
+        Reducen la esteatosis hepática y las transaminasas en pacientes con DBT tipo 2. Mecanismo: glucosuria → reducción de peso + ↓ insulinorresistencia + ↓ lipogénesis. Beneficio cardiovascular y renal adicional. Actualmente recomendados en NAFLD + DBT tipo 2 junto con los agonistas GLP-1.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Vigilancia de CHC en NAFLD/NASH</div>
+      <strong>Con cirrosis establecida:</strong> ecografía hepática + AFP cada 6 meses (igual que cualquier cirrosis).<br>
+      <strong>NASH sin cirrosis:</strong> el CHC puede desarrollarse pero el riesgo es bajo → vigilancia no está formalmente recomendada en guías actuales, aunque centros especializados la realizan en pacientes con fibrosis avanzada (F3). Esta recomendación está en evolución.
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">NAFLD = hepatopatía más prevalente en el mundo</span>
+      <span class="pill">Diagnóstico: ausencia de alcohol + esteatosis en eco/histología</span>
+      <span class="pill">Espectro: esteatosis simple → NASH → fibrosis → cirrosis → CHC</span>
+      <span class="pill">NASH: esteatosis + inflamación + balonización hepatocitaria</span>
+      <span class="pill">ALT > AST (al revés que en alcohólica donde AST/ALT > 2)</span>
+      <span class="pill">Transaminasas pueden ser normales incluso en NASH avanzada</span>
+      <span class="pill">FIB-4 < 1,3 descarta fibrosis avanzada</span>
+      <span class="pill">Gold standard diagnóstico: biopsia hepática (escala METAVIR)</span>
+      <span class="pill">Tratamiento #1: pérdida de ≥7–10% del peso corporal</span>
+      <span class="pill">Dieta mediterránea + ejercicio aeróbico 150–300 min/semana</span>
+      <span class="pill">Vitamina E 800 UI/día: NASH histológica en no diabéticos sin cirrosis</span>
+      <span class="pill">GLP-1 (semaglutida): de elección en NAFLD + DBT2 u obesidad</span>
+      <span class="pill">Resmetirom: primer fármaco aprobado FDA 2024 para MASH F2–F3</span>
+      <span class="pill">CHC puede ocurrir en NASH sin cirrosis</span>
+      <span class="pill">NAFLD lean: 10% de casos sin obesidad (factores genéticos PNPLA3)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: European Association for the Study of the Liver (EASL). EASL Clinical Practice Guidelines on non-invasive tests for evaluation of liver disease severity and prognosis. J Hepatol 2021 · Rinella ME, Lazarus JV, Ratziu V, et al. A multisociety Delphi consensus statement on new fatty liver disease nomenclature. J Hepatol 2023 · Harrison SA, et al. Resmetirom (MGL-3196) for the treatment of non-alcoholic steatohepatitis. N Engl J Med 2023 · AASLD Practice Guidance on Metabolic Associated Fatty Liver Disease. Hepatology 2023 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
