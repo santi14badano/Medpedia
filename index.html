@@ -7,85 +7,275 @@
   <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
   <meta name="description" content="Guías clínicas oficiales y protocolos médicos explicados para estudiantes de medicina argentina.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56; --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888; --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff; }
+    :root {
+      --verde: #1D9E75;
+      --verde-claro: rgba(29,158,117,0.15);
+      --verde-oscuro: #0F6E56;
+      --verde-glow: rgba(29,158,117,0.25);
+      --bg: #0d0d0d;
+      --bg2: #161616;
+      --bg3: #1e1e1e;
+      --borde: #2a2a2a;
+      --borde-hover: #3a3a3a;
+      --texto: #f0f0ec;
+      --texto-sec: #999;
+      --texto-ter: #555;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
-    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--borde);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .logo { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 500; color: var(--texto); text-decoration: none; }
     .logo span { color: var(--verde); }
     .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { font-size: 14px; color: var(--texto-sec); text-decoration: none; }
-    .nav-links a:hover { color: var(--verde); }
-    .hero { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 4rem 2rem; text-align: center; }
-    .hero-badge { display: inline-block; background: var(--verde-claro); color: var(--verde-oscuro); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.05em; }
-    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(30px, 5vw, 50px); font-weight: 500; line-height: 1.2; margin-bottom: 1rem; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .nav-links a { font-size: 13.5px; color: var(--texto-sec); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--texto); }
+
+    /* HERO */
+    .hero {
+      border-bottom: 1px solid var(--borde);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 65%);
+      top: -100px; left: 50%; transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: var(--verde);
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(29,158,117,0.3);
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(30px, 5vw, 50px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--texto);
+    }
     .hero h1 em { color: var(--verde); font-style: italic; }
-    .hero p { font-size: 16px; color: var(--texto-sec); max-width: 480px; margin: 0 auto 2rem; line-height: 1.6; }
+    .hero p {
+      font-size: 16px;
+      color: var(--texto-sec);
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* SEARCH */
     .search-wrap { max-width: 560px; margin: 0 auto; position: relative; }
-    .search-wrap input { width: 100%; padding: 14px 20px 14px 48px; border: 1.5px solid var(--borde); border-radius: 40px; font-size: 15px; font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-    .search-wrap input:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(29,158,117,0.08); }
-    .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--texto-ter); pointer-events: none; }
-    #search-results { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 200; overflow: hidden; display: none; text-align: left; }
-    .search-result-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; text-decoration: none; color: var(--texto); border-bottom: 1px solid var(--borde); transition: background 0.1s; }
+    .search-wrap input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg2);
+      color: var(--texto);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-wrap input::placeholder { color: var(--texto-ter); }
+    .search-wrap input:focus {
+      border-color: var(--verde);
+      box-shadow: 0 0 0 3px var(--verde-glow);
+    }
+    .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--texto-ter); pointer-events: none; }
+    #search-results {
+      position: absolute;
+      top: calc(100% + 8px); left: 0; right: 0;
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      z-index: 300;
+      overflow: hidden;
+      display: none;
+      text-align: left;
+    }
+    .search-result-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 16px;
+      text-decoration: none; color: var(--texto);
+      border-bottom: 1px solid var(--borde);
+      transition: background 0.12s;
+    }
     .search-result-item:last-child { border-bottom: none; }
-    .search-result-item:hover { background: var(--fondo); }
-    .result-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
-    .result-title { font-size: 14px; }
-    main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
-    .section-label { font-size: 11px; font-weight: 500; color: var(--texto-ter); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
-    .especialidades { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3rem; }
-    .esp-btn { padding: 7px 16px; border-radius: 20px; font-size: 13px; font-family: 'DM Sans', sans-serif; border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-sec); cursor: pointer; transition: all 0.15s; }
-    .esp-btn:hover, .esp-btn.activo { background: var(--verde); color: white; border-color: var(--verde); }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-    @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
-    .categorias-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
-    .cat-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; text-decoration: none; color: var(--texto); transition: all 0.15s; }
-    .cat-card:hover { border-color: var(--verde); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(29,158,117,0.08); }
-    .cat-icon { font-size: 22px; margin-bottom: 8px; }
-    .cat-nombre { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
-    .cat-desc { font-size: 12px; color: var(--texto-ter); }
-    .articulos-lista { display: flex; flex-direction: column; gap: 8px; }
-    .art-row { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; text-decoration: none; color: var(--texto); transition: all 0.15s; }
-    .art-row:hover { border-color: var(--verde); }
-    .art-titulo { font-size: 14px; }
-    .art-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .art-tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; white-space: nowrap; }
-    .tag-endo { background: #E1F5EE; color: #0F6E56; }
-    .tag-cardio { background: #FCEBEB; color: #A32D2D; }
-    .tag-neuro { background: #EEEDFE; color: #3C3489; }
-    .tag-neumo { background: #E6F1FB; color: #1A5E9A; }
-    .tag-infecto { background: #FFF3E0; color: #E65100; }
-    .tag-gastro { background: #FFF8E1; color: #8B5E0A; }
-    .tag-hemato { background: #F3E5F5; color: #6A1B9A; }
-    .tag-nefro { background: #E3F2FD; color: #1565C0; }
-    .tag-ciru { background: #EBF5FB; color: #2980B9; }
-    .tag-reuma { background: #F0E6FF; color: #6B21A8; }
-    .tag-gineco { background: #FDE8F0; color: #9D174D; }
-    .tag-psiq { background: #E8F4F8; color: #1A5276; }
-    .tag-pediatria { background: #FEF9E7; color: #7D6608; }
-    .art-arrow { color: var(--texto-ter); font-size: 16px; }
-    .art-pro { font-size: 10px; background: var(--verde); color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; }
-    .btn-cafecito { position: fixed; bottom: 24px; right: 24px; background: #00bb2d; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, background 0.2s; }
-    .btn-cafecito:hover { transform: scale(1.05); background: #00a327; }
-    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); margin-top: 2rem; line-height: 1.8; }
+    .search-result-item:hover { background: var(--bg3); }
+    .result-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+    .result-title { font-size: 13.5px; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    /* BENTO */
+    .section-label {
+      font-size: 11px; font-weight: 500; color: var(--texto-ter);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      margin-bottom: 3rem;
+    }
+    .bento-card {
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 1.1rem 1rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hover-bg, transparent);
+      transition: background 0.2s;
+    }
+    .bento-card:hover {
+      border-color: var(--borde-hover);
+      background: var(--bg3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .bento-card.activo {
+      border-color: var(--verde);
+      background: var(--bg3);
+      box-shadow: 0 0 0 1px var(--verde), 0 4px 20px rgba(29,158,117,0.15);
+    }
+    .bento-icon { font-size: 20px; margin-bottom: 7px; line-height: 1; }
+    .bento-nombre { font-size: 13px; font-weight: 500; color: var(--texto); margin-bottom: 2px; line-height: 1.35; }
+    .bento-n { font-size: 11px; color: var(--texto-ter); }
+
+    /* CHIPS */
+    .chips-wrap { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .chip {
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      border: 1px solid var(--borde);
+      background: var(--bg2);
+      color: var(--texto-sec);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--borde-hover); color: var(--texto); background: var(--bg3); }
+    .chip.activo { background: var(--verde); color: #fff; border-color: var(--verde); }
+
+    /* ARTÍCULOS GRID */
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; }
+    .section-titulo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--texto); }
+    .section-count { font-size: 12px; color: var(--texto-ter); }
+
+    .articulos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    @media (max-width: 680px) { .articulos-grid { grid-template-columns: 1fr; } }
+
+    .art-card {
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 11px;
+      padding: 0.95rem 1.1rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      text-decoration: none; color: var(--texto);
+      transition: all 0.15s;
+    }
+    .art-card:hover {
+      border-color: var(--verde);
+      background: var(--bg3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      transform: translateX(2px);
+    }
+    .art-card-left { flex: 1; min-width: 0; }
+    .art-titulo {
+      font-size: 13.5px; font-weight: 400; color: var(--texto);
+      line-height: 1.4; margin-bottom: 5px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .art-tag { font-size: 10.5px; padding: 2px 9px; border-radius: 7px; font-weight: 600; display: inline-block; }
+    .art-arrow { color: var(--texto-ter); font-size: 14px; flex-shrink: 0; transition: color 0.15s, transform 0.15s; }
+    .art-card:hover .art-arrow { color: var(--verde); transform: translateX(3px); }
+
+    /* TAGS DARK */
+    .tag-cardio   { background: rgba(183,28,28,0.2);  color: #ef9a9a; }
+    .tag-neuro    { background: rgba(69,39,160,0.2);  color: #ce93d8; }
+    .tag-neumo    { background: rgba(21,101,192,0.2); color: #90caf9; }
+    .tag-endo     { background: rgba(27,94,32,0.2);   color: #a5d6a7; }
+    .tag-infecto  { background: rgba(191,54,12,0.2);  color: #ffcc80; }
+    .tag-gastro   { background: rgba(123,88,0,0.25);  color: #fff176; }
+    .tag-hemato   { background: rgba(106,27,154,0.2); color: #ce93d8; }
+    .tag-nefro    { background: rgba(1,87,155,0.2);   color: #81d4fa; }
+    .tag-ciru     { background: rgba(40,53,147,0.2);  color: #9fa8da; }
+    .tag-reuma    { background: rgba(107,33,168,0.2); color: #e040fb; }
+    .tag-gineco   { background: rgba(136,14,79,0.2);  color: #f48fb1; }
+    .tag-pediatria{ background: rgba(0,105,92,0.2);   color: #80cbc4; }
+    .tag-cirugia  { background: rgba(40,53,147,0.2);  color: #9fa8da; }
+
+    .empty-state { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--texto-ter); font-size: 14px; }
+
+    /* CAFECITO */
+    .btn-cafecito {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #00bb2d; color: white;
+      padding: 11px 18px; border-radius: 50px;
+      text-decoration: none; font-weight: 500; font-size: 13.5px;
+      box-shadow: 0 4px 20px rgba(0,187,45,0.3); z-index: 1000;
+      display: flex; align-items: center; gap: 7px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cafecito:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(0,187,45,0.4); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); line-height: 1.9; background: var(--bg); }
     footer a { color: var(--verde); text-decoration: none; }
 
-    /* Layout agrupado por especialidad */
-    .grupos-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-    .grupo { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; overflow: hidden; transition: box-shadow 0.15s; }
-    .grupo:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-    .grupo-header { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--borde); background: var(--fondo); }
-    .grupo-icon { font-size: 18px; line-height: 1; }
-    .grupo-titulo { font-size: 14px; font-weight: 600; color: var(--texto); }
-    .grupo-links { display: flex; flex-direction: column; }
-    .grupo-links a { font-size: 13px; color: var(--texto-sec); text-decoration: none; padding: 9px 16px; border-bottom: 1px solid var(--borde); transition: background 0.1s, color 0.1s; line-height: 1.4; }
-    .grupo-links a:last-child { border-bottom: none; }
-    .grupo-links a:hover { background: var(--verde-claro); color: var(--verde-oscuro); }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .art-card { animation: fadeUp 0.25s ease both; }
   </style>
 </head>
 <body>
@@ -104,395 +294,264 @@
   <p>Guías clínicas oficiales y protocolos actualizados, reescritos y simplificados para que puedas estudiar, entender y rendir.</p>
   <div class="search-wrap">
     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco o tema..." autocomplete="off" />
+    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco o tema..." autocomplete="off"/>
     <div id="search-results"></div>
   </div>
 </div>
 
 <main>
-  <div id="especialidades" style="display:none"></div>
-  <div id="articulos" style="display:none"><div class="articulos-lista">
-  </div></div>
 
-  <div class="grupos-wrap">
-
-    <!-- CARDIOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🫀</span>
-        <span class="grupo-titulo">Cardiología</span>
+  <div id="especialidades" style="scroll-margin-top:70px">
+    <div class="section-label">Especialidades</div>
+    <div class="bento" id="bento-grid">
+      <div class="bento-card" data-esp="cardio" onclick="filtrar('cardio',this)">
+        <div class="bento-icon">🫀</div>
+        <div class="bento-nombre">Cardiología</div>
+        <div class="bento-n" id="n-cardio"></div>
       </div>
-      <div class="grupo-links">
-        <a href="iam.html">Infarto Agudo de Miocardio (SCACEST)</a>
-        <a href="scasest.html">SCASEST — SCA sin Elevación del ST</a>
-        <a href="hta.html">Hipertensión Arterial</a>
-        <a href="ic.html">Insuficiencia Cardíaca</a>
-        <a href="fa.html">Fibrilación Auricular</a>
-        <a href="eap.html">Edema Agudo de Pulmón</a>
-        <a href="tep.html">TEP</a>
-        <a href="dislipemias.html">Dislipemias</a>
-        <a href="endocarditis.html">Endocarditis Infecciosa</a>
-        <a href="pericarditis-taponamiento.html">Pericarditis Aguda y Taponamiento</a>
-        <a href="electrocardiograma.html">Electrocardiograma (ECG)</a>
-        <a href="valvulopatias.html">Valvulopatías</a>
+      <div class="bento-card" data-esp="neuro" onclick="filtrar('neuro',this)">
+        <div class="bento-icon">🧠</div>
+        <div class="bento-nombre">Neurología</div>
+        <div class="bento-n" id="n-neuro"></div>
+      </div>
+      <div class="bento-card" data-esp="neumo" onclick="filtrar('neumo',this)">
+        <div class="bento-icon">🫁</div>
+        <div class="bento-nombre">Neumonología</div>
+        <div class="bento-n" id="n-neumo"></div>
+      </div>
+      <div class="bento-card" data-esp="endo" onclick="filtrar('endo',this)">
+        <div class="bento-icon">🧬</div>
+        <div class="bento-nombre">Endocrinología</div>
+        <div class="bento-n" id="n-endo"></div>
+      </div>
+      <div class="bento-card" data-esp="infecto" onclick="filtrar('infecto',this)">
+        <div class="bento-icon">🦠</div>
+        <div class="bento-nombre">Infectología</div>
+        <div class="bento-n" id="n-infecto"></div>
+      </div>
+      <div class="bento-card" data-esp="gastro" onclick="filtrar('gastro',this)">
+        <div class="bento-icon">🫃</div>
+        <div class="bento-nombre">Gastroenterología</div>
+        <div class="bento-n" id="n-gastro"></div>
+      </div>
+      <div class="bento-card" data-esp="nefro" onclick="filtrar('nefro',this)">
+        <div class="bento-icon">🫘</div>
+        <div class="bento-nombre">Nefrología</div>
+        <div class="bento-n" id="n-nefro"></div>
+      </div>
+      <div class="bento-card" data-esp="hemato" onclick="filtrar('hemato',this)">
+        <div class="bento-icon">🩸</div>
+        <div class="bento-nombre">Hematología / Onco</div>
+        <div class="bento-n" id="n-hemato"></div>
+      </div>
+      <div class="bento-card" data-esp="reuma" onclick="filtrar('reuma',this)">
+        <div class="bento-icon">🦴</div>
+        <div class="bento-nombre">Reumatología</div>
+        <div class="bento-n" id="n-reuma"></div>
+      </div>
+      <div class="bento-card" data-esp="gineco" onclick="filtrar('gineco',this)">
+        <div class="bento-icon">🤰</div>
+        <div class="bento-nombre">Obstetricia / Gineco</div>
+        <div class="bento-n" id="n-gineco"></div>
+      </div>
+      <div class="bento-card" data-esp="ciru" onclick="filtrar('ciru',this)">
+        <div class="bento-icon">🔪</div>
+        <div class="bento-nombre">Cirugía</div>
+        <div class="bento-n" id="n-ciru"></div>
+      </div>
+      <div class="bento-card" data-esp="pediatria" onclick="filtrar('pediatria',this)">
+        <div class="bento-icon">👶</div>
+        <div class="bento-nombre">Pediatría</div>
+        <div class="bento-n" id="n-pediatria"></div>
       </div>
     </div>
-
-    <!-- NEUROLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🧠</span>
-        <span class="grupo-titulo">Neurología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="acv.html">ACV Isquémico vs Hemorrágico</a>
-        <a href="meningitis-encefalitis.html">Meningitis y Encefalitis</a>
-        <a href="demencias.html">Demencias y Alzheimer</a>
-        <a href="epilepsia.html">Epilepsia</a>
-        <a href="tec.html">Traumatismo Craneoencefálico (TEC)</a>
-        <a href="convulsion-sincope.html">Convulsión vs Síncope</a>
-        <a href="esclerosis-multiple.html">Esclerosis Múltiple</a>
-        <a href="sindrome-confusional-agudo.html">Síndrome Confusional Agudo (Delirium)</a>
-      </div>
-    </div>
-
-    <!-- NEUMONOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🫁</span>
-        <span class="grupo-titulo">Neumonología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="asma-epoc.html">Asma y EPOC</a>
-        <a href="neumonia.html">Neumonía Adquirida en la Comunidad</a>
-        <a href="tuberculosis.html">Tuberculosis</a>
-        <a href="cancer-de-pulmon.html">Cáncer de Pulmón</a>
-      </div>
-    </div>
-
-    <!-- ENDOCRINOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🧬</span>
-        <span class="grupo-titulo">Endocrinología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="dm2.html">Diabetes Mellitus Tipo 2</a>
-        <a href="cad.html">Cetoacidosis Diabética</a>
-        <a href="obesidad.html">Obesidad y Manejo Metabólico</a>
-        <a href="hipotiroidismo-hipertiroidismo.html">Hipotiroidismo e Hipertiroidismo</a>
-        <a href="trastornos-calcio.html">Trastornos del Calcio</a>
-        <a href="feocromocitoma.html">Feocromocitoma y Paraganglioma</a>
-        <a href="sindrome-metabolico.html">Síndrome Metabólico</a>
-        <a href="insuficiencia-suprarrenal.html">Insuficiencia Suprarrenal</a>
-      </div>
-    </div>
-
-    <!-- INFECTOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🦠</span>
-        <span class="grupo-titulo">Infectología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="sepsis.html">Sepsis y Shock Séptico</a>
-        <a href="dengue.html">Dengue</a>
-        <a href="hiv-sida.html">HIV / SIDA</a>
-        <a href="tuberculosis.html">Tuberculosis</a>
-        <a href="itu.html">Infección del Tracto Urinario</a>
-        <a href="meningitis-encefalitis.html">Meningitis y Encefalitis</a>
-        <a href="enfermedades-exantematicas.html">Enfermedades Exantemáticas</a>
-        <a href="chagas.html">Enfermedad de Chagas</a>
-      </div>
-    </div>
-
-    <!-- GASTROENTEROLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🫃</span>
-        <span class="grupo-titulo">Gastroenterología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="hemorragia-digestiva.html">Hemorragia Digestiva Alta y Baja</a>
-        <a href="ulcera-peptica.html">Úlcera Péptica y H. pylori</a>
-        <a href="pancreatitis.html">Pancreatitis Aguda</a>
-        <a href="pancreatitis-cronica.html">Pancreatitis Crónica</a>
-        <a href="cirrosis.html">Cirrosis Hepática</a>
-        <a href="eii-crohn-colitis-ulcerosa.html">Enfermedad Inflamatoria Intestinal</a>
-        <a href="colecistitis.html">Colecistitis</a>
-        <a href="hepatitis-virales.html">Hepatitis Virales</a>
-        <a href="litiasis-vesicular.html">Litiasis Vesicular y Patología Biliar</a>
-        <a href="cancer-colorrectal.html">Cáncer Colorrectal</a>
-        <a href="esteatosis-hepatica.html">Esteatosis Hepática No Alcohólica (NAFLD)</a>
-      </div>
-    </div>
-
-    <!-- NEFROLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🫘</span>
-        <span class="grupo-titulo">Nefrología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="ira.html">Insuficiencia Renal Aguda</a>
-        <a href="erc.html">Enfermedad Renal Crónica</a>
-        <a href="trastornos-sodio.html">Trastornos del Sodio</a>
-        <a href="trastornos-potasio.html">Trastornos del Potasio</a>
-        <a href="trastornos-calcio.html">Trastornos del Calcio</a>
-        <a href="sindrome-nefrotico-nefritico.html">Síndrome Nefrótico y Nefrítico</a>
-        <a href="sindrome-uremico-hemolitico.html">Síndrome Urémico Hemolítico</a>
-      </div>
-    </div>
-
-    <!-- REUMATOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🦴</span>
-        <span class="grupo-titulo">Reumatología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="artritis-reumatoidea.html">Artritis Reumatoidea</a>
-        <a href="lupus.html">Lupus Eritematoso Sistémico</a>
-        <a href="vasculitis.html">Vasculitis Sistémicas</a>
-        <a href="gota.html">Gota</a>
-      </div>
-    </div>
-
-    <!-- HEMATOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🩸</span>
-        <span class="grupo-titulo">Hematología / Oncología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="anemia.html">Anemias</a>
-        <a href="linfomas.html">Linfomas — Hodgkin y No Hodgkin</a>
-        <a href="leucemias.html">Leucemias — LMA y LLA</a>
-        <a href="oncologia.html">Oncología — Neoplasias Frecuentes</a>
-        <a href="cancer-de-mama.html">Cáncer de Mama</a>
-        <a href="cancer-colorrectal.html">Cáncer Colorrectal</a>
-      </div>
-    </div>
-
-    <!-- TRAUMATOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🦴</span>
-        <span class="grupo-titulo">Traumatología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="traumatologia.html">Fracturas y Esguinces</a>
-      </div>
-    </div>
-
-    <!-- EMERGENCIAS -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🚨</span>
-        <span class="grupo-titulo">Emergencias</span>
-      </div>
-      <div class="grupo-links">
-        <a href="shock.html">Shock — Clasificación y Manejo</a>
-      </div>
-    </div>
-
-    <!-- CIRUGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🔪</span>
-        <span class="grupo-titulo">Cirugía General</span>
-      </div>
-      <div class="grupo-links">
-        <a href="apendicitis.html">Apendicitis Aguda</a>
-        <a href="hernias.html">Hernias de la Pared Abdominal</a>
-        <a href="peritonitis.html">Peritonitis</a>
-        <a href="colangitis.html">Colangitis</a>
-        <a href="obstruccion-intestinal.html">Obstrucción Intestinal</a>
-      </div>
-    </div>
-
-    <!-- OBSTETRICIA / GINECOLOGÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🤰</span>
-        <span class="grupo-titulo">Obstetricia / Ginecología</span>
-      </div>
-      <div class="grupo-links">
-        <a href="preeclampsia.html">Preeclampsia y Eclampsia</a>
-        <a href="amenaza-parto-pretermino.html">Amenaza de Parto Pretérmino</a>
-        <a href="hemorragia-postparto.html">Hemorragia Posparto</a>
-        <a href="embarazo-ectopico.html">Embarazo Ectópico</a>
-        <a href="sop.html">SOP / Hiperandrogenismo Ovárico</a>
-        <a href="anticonceptivos.html">Métodos Anticonceptivos</a>
-        <a href="vacunacion.html">Calendario Nacional de Vacunación</a>
-        <a href="placenta-previa.html">Placenta Previa</a>
-        <a href="desprendimiento-placenta.html">Desprendimiento de Placenta</a>
-        <a href="endometriosis.html">Endometriosis</a>
-        <a href="enfermedad-pelvica-inflamatoria.html">Enfermedad Pélvica Inflamatoria</a>
-        <a href="cancer-de-mama.html">Cáncer de Mama</a>
-      </div>
-    </div>
-
-    <!-- PEDIATRÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">👶</span>
-        <span class="grupo-titulo">Pediatría</span>
-      </div>
-      <div class="grupo-links">
-        <a href="bronquiolitis.html">Bronquiolitis Aguda</a>
-        <a href="sindrome-febril-nino.html">Síndrome Febril en el Niño</a>
-        <a href="crisis-convulsiva-pediatrica.html">Crisis Convulsiva Pediátrica</a>
-        <a href="enfermedades-exantematicas.html">Enfermedades Exantemáticas</a>
-        <a href="diarrea-aguda-pediatrica.html">Diarrea Aguda Pediátrica</a>
-      </div>
-    </div>
-
-    <!-- PSIQUIATRÍA -->
-    <div class="grupo">
-      <div class="grupo-header">
-        <span class="grupo-icon">🧩</span>
-        <span class="grupo-titulo">Psiquiatría</span>
-      </div>
-      <div class="grupo-links">
-        <a href="salud-mental.html">Depresión y Ansiedad</a>
-      </div>
-    </div>
-
   </div>
+
+  <div id="articulos" style="scroll-margin-top:70px">
+    <div class="section-header">
+      <div class="section-titulo" id="section-label">Todos los artículos</div>
+      <div class="section-count" id="art-count"></div>
+    </div>
+    <div class="chips-wrap">
+      <button class="chip activo" onclick="filtrar('all',this)">Todos</button>
+      <button class="chip" onclick="filtrar('cardio',this)">Cardiología</button>
+      <button class="chip" onclick="filtrar('neuro',this)">Neurología</button>
+      <button class="chip" onclick="filtrar('neumo',this)">Neumonología</button>
+      <button class="chip" onclick="filtrar('endo',this)">Endocrinología</button>
+      <button class="chip" onclick="filtrar('infecto',this)">Infectología</button>
+      <button class="chip" onclick="filtrar('gastro',this)">Gastro</button>
+      <button class="chip" onclick="filtrar('nefro',this)">Nefrología</button>
+      <button class="chip" onclick="filtrar('hemato',this)">Hemato/Onco</button>
+      <button class="chip" onclick="filtrar('reuma',this)">Reumatología</button>
+      <button class="chip" onclick="filtrar('gineco',this)">Obst/Gineco</button>
+      <button class="chip" onclick="filtrar('ciru',this)">Cirugía</button>
+      <button class="chip" onclick="filtrar('pediatria',this)">Pediatría</button>
+    </div>
+    <div class="articulos-grid" id="articulos-grid"></div>
+  </div>
+
 </main>
 
-<a href="https://cafecito.app/medpedia" class="btn-cafecito" target="_blank">☕ Invitame un Cafecito</a>
+<a href="https://cafecito.app/TU_USUARIO" class="btn-cafecito" target="_blank">☕ Invitame un Cafecito</a>
 
 <footer>
   <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
   <p>Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank">Ministerio de Salud de la Nación</a> · GINA · GOLD · Consensos de sociedades médicas argentinas</p>
-  <p style="margin-top:6px;">El contenido es de carácter educativo y no reemplaza la consulta médica profesional.</p>
+  <p>El contenido es de carácter educativo y no reemplaza la consulta médica profesional.</p>
 </footer>
 
 <script>
-  document.querySelectorAll('.esp-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.esp-btn').forEach(b => b.classList.remove('activo'));
-      btn.classList.add('activo');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.art-row').forEach(row => {
-        const cat = row.dataset.cat || '';
-        row.style.display = (filter === 'all' || cat.includes(filter)) ? 'flex' : 'none';
-      });
-    });
-  });
-
   const articulos = [
-    { titulo: 'Infarto Agudo de Miocardio', url: 'iam.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'iam infarto agudo miocardio scacest scasest coronaria reperfusion trombolisis alteplasa rtpa angioplastia stent killip killip kimball aspirina clopidogrel ticagrelor prasugrel heparina enoxaparina troponina ck mb dolor toracico st elevado bloqueo rama izquierda fibrinolisis contraindicaciones iabp shock cardiogenico anticoagulacion doble antiagregacion arritmia fibrilacion ventricular desfibrilacion ieca betabloqueante statinas ecg electrocardiograma' },
-    { titulo: 'Hipertensión Arterial', url: 'hta.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'hta hipertension presion arterial antihipertensivos eca ara ieca ara2 calcioantagonistas tiazidas espironolactona amlodipino enalapril losartan hidroclorotiazida valsartan metoprolol carvedilol crisis hipertensiva urgencia emergencia encefalopatia hipertensiva nitroprusiato labetalol daño organo blanco riesgo cardiovascular global jnc acc aha presion sistolica diastolica medicion ambulatoria mapa' },
-    { titulo: 'Insuficiencia Cardíaca', url: 'ic.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'insuficiencia cardiaca ic fevi reducida preservada diureticos betabloqueantes nyha furosemida sacubitrilo valsartan entresto carvedilol bisoprolol metoprolol enalapril ramipril espironolactona eplerenona dapagliflozina empagliflozina ivabradina bnp ntprobnp disnea ortopnea edema crepitantes fraccion eyeccion ecocardiograma descompensacion aguda hospitalización clasificacion aha acc' },
-    { titulo: 'ACV Isquémico vs Hemorrágico', url: 'acv.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'acv stroke ictus cerebrovascular isquemico hemorragico hic hsa hemorragia subaracnoidea trombolisis nihss aspects rtpa alteplasa trombectomia mecanica ataque isquemico transitorio ait hemiparesia afasia disartria hemianopsia ataxia fast tiempo puerta aguja ventana terapeutica anticoagulacion antiagregacion statinas hipertension tratamiento agudo nimodipina labetalol nicardipina reversion anticoagulacion vitamina k ccp idarucizumab andexanet manitol vasoespasmo clipado coil aneurisma toast maves angiopatia amiloide' },
-    { titulo: 'Asma y EPOC', url: 'asma-epoc.html', tag: 'Neumonología', clase: 'tag-neumo', keywords: 'asma epoc gina gold broncodilatador salbutamol corticoide sibilancias disnea laba lama budesonida fluticasona formoterol salmeterol tiotropio indacaterol bromuro ipratropio fenotipo espirometria vef1 cvf obstruccion reversible exacerbacion crisis aguda oxigeno corticoides sistemicos antibioticos heliox ventilacion no invasiva vmni cpap deterioro cognitivo tabaquismo cesacion tabaco rehabilitation pulmonar' },
-    { titulo: 'Neumonía Adquirida en la Comunidad', url: 'neumonia.html', tag: 'Neumonología', clase: 'tag-neumo', keywords: 'neumonia nac neumonía adquirida comunidad antibiotico curb65 psi fine amoxicilina azitromicina ceftriaxona levofloxacina moxifloxacina ampicilina sulbactam consolidacion derrame pleural empiema neumococo atipicos mycoplasma legionella chlamydia antígeno urinario rx torax hospitalizacion uci ventilacion mecanica bacteriemia sepsis' },
-    { titulo: 'Diabetes Mellitus Tipo 2', url: 'dm2.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'diabetes dm2 metformina insulina glucemia hba1c sulfonilurea sglt2 glp1 gliflozina dapagliflozina empagliflozina canagliflozina semaglutida liraglutida dulaglutida exenatida sitagliptina inhibidor dpp4 glibenclamida glimepirida insulina basal bolo nph glargina detemir aspart lispro criterios diagnostico glucemia ayunas ogtt complicaciones macroangiopatia microangiopatia retinopat nefropatia neuropatia pie diabetico' },
-    { titulo: 'Obesidad y Manejo Metabólico', url: 'obesidad.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'obesidad imc sobrepeso metformina orlistat semaglutida tirzepatida liraglutida bariátrica manga gastrica bypass restriccion calorica dieta ejercicio sindrome metabolico resistencia insulina adiposidad visceral circunferencia cintura adiponectina leptina tejido adiposo cirugía bariatrica' },
-    { titulo: 'Dengue — Manejo Clínico', url: 'dengue.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'dengue fiebre aedes mosquito trombocitopenia ns1 igm igg hidratacion plaquetas dengue grave hemorragico plasma fuga hematocrito choque dengue shock plasma leakage artralgia mialgia exantema signos alarma hemoconcentracion derrame ascitis edema pulmonar analgesicos evitar aspirina ibuprofeno paracetamol fiebre alta' },
-    { titulo: 'Sepsis y Shock Séptico', url: 'sepsis.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'sepsis shock septico sofa qsofa antibioticos lactato noradrenalina uci uti bacteriemia surviving sepsis campaign bundle hora 1 hora 3 hora 6 hemocultivos cultivos foco vancomicina piperacilina tazobactam meropenem imipenem disfuncion organica fluidos cristaloides resucitacion vasopresores dopamina hidrocortisona control foco drenaje' },
-    { titulo: 'Fibrilación Auricular', url: 'fa.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'fibrilacion auricular fa anticoagulacion chadsvasc warfarina naco dabigatran rivaroxaban apixaban edoxaban amiodarona cardioversion betabloqueante digoxina control ritmo frecuencia ablacion flutter auricular paroxistica persistente permanente longstanding cardioversion electrica quimica score hasbled sangrado tromboembolismo' },
-    { titulo: 'Pancreatitis Aguda', url: 'pancreatitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'pancreatitis aguda amilasa lipasa ranson apache bisap ayuno hidratacion via biliar coledocolitiasis cpre ercp necrosis walled off coleccion peripancreatica leve moderada grave alcohol tabaquismo hipertrigliceridemia calculos biliares antibioticos necrosectomia drenaje tac tomografia gravedad complicaciones locales sistemicas' },
-    { titulo: 'Tromboembolismo Pulmonar', url: 'tep.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'tep tromboembolismo pulmonar wells pesi anticoagulacion hbpm heparina alteplasa embolia trombosis venosa profunda tvp trombo coagulo angiotac ddimero ecg s1q3t3 ecocardiograma strain vd hipertension pulmonar troponina bnp fibrinolisis trombolisis cateter percutaneo filtro cava warfarina naco rivaroxaban apixaban' },
-    { titulo: 'Anemia — Clasificación, Diagnóstico y Tratamiento', url: 'anemia.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'anemia ferropenia ferritica hemoglobina hematocrito ferritina b12 folato hemolitica aplasica megaloblastica microcítica macrocítica normocítica hierro sulfato ferroso epo eritropoyetina reticulocitos vdm vcm volumen corpuscular media indices globulares saturacion transferrina sideropenica anemia enfermedad cronica renal inflamacion coombs directo indirecto esquistocitos eliptocitos acantocitos esferocitos hemolisis intravascular extravascular hemoglobinuria talasemia hemoglobinopatia' },
-    { titulo: 'Insuficiencia Renal Aguda', url: 'ira.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'ira insuficiencia renal aguda creatinina urea kdigo aki prerenal intrinseca postrenal oliguria anuria diuresis necrosis tubular aguda nta contrast nefrotoxicidad aminoglucosidos aines ciclosporina mioglobinuria rabdomiolisis hidratacion furosemida diálisis indicaciones depuracion extrarenal sindrome nefritico nefrotico glomerulonefritis' },
-    { titulo: 'Colecistitis Aguda', url: 'colecistitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'colecistitis vesicula biliar colelitiasis litiasis biliar calculo murphy ecografia antibiotico cirugia colecistectomia laparoscopica fiebre dolor abdominal hipocondrio derecho nauseas vomitos leucocitosis fiebre acalculosa gangrenosa perforacion complicacion tokyo guidelines clasificacion gravedad piperacilina tazobactam ceftriaxona metronidazol' },
-    { titulo: 'Enfermedad Renal Crónica', url: 'erc.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'erc enfermedad renal cronica creatinina tfg proteinuria albumina kdigo dialisis hemodialisis peritoneal trasplante iecas ara2 anemia renal hiperkalemia hiperfosfatemia hiperparatiroidismo secundario bicarbonato acidosis metabolica restriccion proteica fosfo quelantes calcio vitamina d eritropoyetina darbepoetina estadios progresion complicaciones cardiovasculares' },
-    { titulo: 'Apendicitis Aguda', url: 'apendicitis.html', tag: 'Cirugía General', clase: 'tag-ciru', keywords: 'apendicitis apendice alvarado score mcburney blumberg rovsing fecalito fid fosa iliaca derecha apendicectomia laparoscopica abierta peritonitis plastrón absceso perforada gangrenosa dolor migratorio nauseas fiebre leucocitosis pcr eco tac tomografia wses antibioticos manejo conservador' },
-    { titulo: 'Cirrosis Hepática', url: 'cirrosis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'cirrosis higado fibrosis ascitis child pugh meld varices esofagicas encefalopatia pbe peritonitis bacteriana espontanea shr sindrome hepatorenal terlipresina albumina trasplante lactulosa rifaximina espironolactona furosemida hepatitis alcohol nafld nash biopsia hepatica hipertension portal caput medusae splenomegalia trombocitopenia coagulopatia prolactina banding esclerosis variceal cianocobalamina profilaxis primaria secundaria' },
-    { titulo: 'Edema Agudo de Pulmón', url: 'eap.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'edema agudo pulmon eap insuficiencia cardiaca aguda furosemida nitroglicerina nitroprusito cpap vmni morfina forrester crepitantes ortopnea disnea bnp ntprobnp lmnop dobutamina inotrópico vasopresores posicion semisentada oxigeno saturacion intubacion ventilacion mecanica diureticos alivio preload afterload' },
-    { titulo: 'Artritis Reumatoidea', url: 'artritis-reumatoidea.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'artritis reumatoidea ar metotrexato mtx anti ccp factor reumatoideo fr dmard biologico anti tnf etanercept adalimumab infliximab certolizumab golimumab rituximab tocilizumab sarilumab abatacept baricitinib tofacitinib upadacitinib jak das28 rigidez matutina sinovitis mcf ifp muñecas erosiones pannus articulaciones manos pies simetrica radiologia biologia' },
-    { titulo: 'Vasculitis Sistémicas', url: 'vasculitis.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'vasculitis anca gpa granulomatosis poliangeitis wegener microscopica pam gepa churg strauss arteritis celulas gigantes temporal horton polimialgia reumatica takayasu poliarteritis nodosa pan kawasaki purpura schonlein henoch psh iga nefropatia crioglobulinemia canca panca anti pr3 anti mpo ciclofosfamida rituximab glucocorticoides prednisona biopsia arteria temporal pulsos renales pulmones sinusitis' },
-    { titulo: 'Cetoacidosis Diabética', url: 'cad.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'cetoacidosis diabetica cad insulina hidratacion potasio reposicion bicarbonato glucosa cetonas cetonemia cetonuria anion gap acidosis metabolica diabetes tipo 1 descompensacion hiperglucemia hiperosmolar estado hiperosmolar no cetotico enhnc criterios gravedad triada nauseas vomitos dolor abdominal aliento acetonico' },
-    { titulo: 'Infección del Tracto Urinario', url: 'itu.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'itu infeccion urinaria cistitis pielonefritis urocultivo e coli escherichia klebsiella proteus enterococcus nitrofurantoina trimetoprima fosfomicina ciprofloxacina ceftriaxona cefixima bacteriuria leucocituria disuria polaquiuria urgencia fiebre escalofrios costovertebral punt lumbar complicada no complicada embarazo sonda urinaria cateter resistencia betalactamasas esbl' },
-    { titulo: 'Preeclampsia y Eclampsia', url: 'preeclampsia.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'preeclampsia eclampsia hipertension embarazo proteinuria sulfato magnesio labetalol nifedipina hidralazina convulsiones hellp sindrome trombocitopenia hemolisis enzimas hepaticas elevadas parto prematuro criterios severidad cefalea epigastralgia vision borrosa edema proteinas orina 24h antihipertensivo tocolisis corticoides' },
-    { titulo: 'Meningitis y Encefalitis', url: 'meningitis-encefalitis.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'meningitis encefalitis meningoencefalitis bacteriana viral herpes hsv aciclovir ceftriaxona ampicilina vancomicina dexametasona lcr liquido cefalorraquideo puncion lumbar kernig brudzinski meningococo neumococo listeria criptococo tbc tuberculosa tinta india ada glucosa proteinas lactato leucocitos pleocitosis tac antes puncion profilaxis rifampicina ciprofloxacina contactos encefalitis autoinmune anti nmda' },
-    { titulo: 'Hemorragia Digestiva Alta y Baja', url: 'hemorragia-digestiva.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'hemorragia digestiva hda hdb hematemesis melena hematoquecia ulcera peptica varices esofagicas forrest glasgow blatchford oakland veda endoscopia colonoscopia terlipresina octeotride propranolol profilaxis ibp omeprazol pantoprazol infusion continua hemostasia endoscopica diverticulosis angiodisplasia mallory weiss dieulafoy tips derivacion sangrado activo resangrado transfusion glóbulos rojos' },
-    { titulo: 'Hipotiroidismo e Hipertiroidismo', url: 'hipotiroidismo-hipertiroidismo.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'hipotiroidismo hipertiroidismo tiroides tsh t4 t3 hashimoto tiroiditis autoinmune graves enfermedad trab anti tpo levotiroxina metimazol propiltiouracilo ptu propranolol coma mixedematoso crisis tirotoxica bocio nodulo tiroideo yodo radioactivo rai tiroidectomia anticuerpos antitiroglobulina antitpo subclínico subaguda de quervain amiodarona embarazo gestacion score burch wartofsky' },
-    { titulo: 'Trastornos del Sodio — Hipo e Hipernatremia', url: 'trastornos-sodio.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'hiponatremia hipernatremia sodio siadh diabetes insipida central nefrogénica nefrogénica ddavp desmopresina tolvaptan vaptan mielinolisis pontina desmielinizacion osmotica correccion agua libre osmolaridad tonicidad pseudohiponatremia solucion salina hipertonica 3% euvolemia hipovolemia hipervolemia natriuresis orina fraccion excretada sodio fio isrs fármacos hiponatremia crónica aguda síntomas convulsiones' },
-    { titulo: 'Trastornos del Potasio — Hipo e Hiperkalemia', url: 'trastornos-potasio.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'hipokalemia hiperkalemia potasio gluconato calcio bicarbonato insulina glucosa kayexalate patiromer zirconium resinas onda u onda t picuda qrs ensanchado arritmia fibrilacion ventricular ecg electrocardiograma erc insuficiencia renal iecas ara2 diureticos espironolactona amilorida aldosteronismo alcalosis acidosis redistribucion perdidas digestivas diarrea vomitos' },
-    { titulo: 'Dislipemias', url: 'dislipemias.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'dislipemia dislipidemia colesterol ldl hdl trigliceridos estatinas atorvastatina rosuvastatina simvastatina pravastatina ezetimibe pcsk9 evolocumab alirocumab fibratos fenofibrato gemfibrozil hipercolesterolemia familiar hipertrigliceridemia riesgo cardiovascular hmgcoa reductasa miopatia rabdomiolisis pancreatitis omega3 icosapent reduce-it esc eas acc aha metas ldl riesgo muy alto alto moderado' },
-    { titulo: 'Linfomas — Hodgkin y No Hodgkin', url: 'linfomas.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'linfoma hodgkin no hodgkin linfocito b t nk celulas reed sternberg lacunar abvd escap r-chop r-epoch estadificacion ann arbor lugano pet scan biopsia ganglio adenopatia linfadenopatia síntomas b fiebre sudoración pérdida peso rituxumab cd20 cd30 brentuximab pembrolizumab nivolumab transplante autólogo mediastino esplen' },
-    { titulo: 'Enfermedad Inflamatoria Intestinal — Crohn y Colitis Ulcerosa', url: 'eii-crohn-colitis-ulcerosa.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'enfermedad inflamatoria intestinal eii crohn colitis ulcerosa mesalazina 5asa sulfasalazina corticoides budesonida azatioprina 6mp mercaptopurina infliximab adalimumab vedolizumab ustekinumab tofacitinib ozanimod calprotectina fecal colonoscopia transmural mucosa skip lesions rectitis proctitis pancolitis perianal fistula estenosis absceso megacolon toxico complicaciones quirúrgicas' },
-    { titulo: 'Amenaza de Parto Pretérmino', url: 'amenaza-parto-pretermino.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'parto pretermino prematuro tocolisis nifedipina atosiban betametasona corticoides maduración pulmonar surfactante sulfato magnesio neuroproteccion fibronectina fetal cervix longitud ecografia semanas gestacion rotura prematura membranas amniorrexis progesterona mantenimiento criterios hospitalizacion parto muy prematuro extremo' },
-    { titulo: 'Hemorragia Posparto', url: 'hemorragia-postparto.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'hemorragia postparto posparto oxitocina ergometrina carbetocina acido tranexamico misoprostol atonia uterina 4t tono tejido trauma trombina taponamiento balón bakri sengstaken blakemore histerectomia embolizacion ligadura arterias uterinas hipogastricas manejo activo tercer estadio perdida sangre 500ml 1000 transfusión masiva' },
-    { titulo: 'Úlcera Péptica y H. pylori', url: 'ulcera-peptica.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'ulcera peptica gastrica duodenal helicobacter pylori hpylori ibp omeprazol pantoprazol lansoprazol esomeprazol erradicacion bismuto claritromicina amoxicilina metronidazol tetraciclina levofloxacina test aliento c13 antigeno fecal serologia clo test forrest hemorragia digestiva perforacion obstruccion pilórica penetracion linfoma malt ureasa dispepsia funcional test and treat hambre dolorosa food fear maastricht acg resistencia claritromicina' },
-    { titulo: 'HIV / SIDA', url: 'hiv-sida.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'hiv sida vih aids cd4 carga viral tar antirretroviral elisa western blot inno-lia pcp pneumocystis jirovecii toxoplasmosis criptococo cmv retinitis tbc tuberculosis oportunista prep pep dolutegravir tenofovir bictegravir truvada emtricitabina lamivudina abacavir darunavir ritonavir indetectable u=u sarcoma kaposi linfoma sida iris reconstitución inmune profilaxis cotrimoxazol tmp smx azitromicina mac anfotericina fluconazol valganciclovir hla b5701' },
-    { titulo: 'Tuberculosis', url: 'tuberculosis.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'tuberculosis tbc baar baciloscopia ripe rifampicina isoniacida pirazinamida etambutol ppd mantoux igra quantiferon interferon gamma lowenstein jensen cultivo xpert mtr rif mdr xdr latente activa miliar meningea tuberculosa pleural pott osteoarticular piuria esteril resistente dots tratamiento supervisado neuropatia periférica piridoxina hepatotoxicidad neuritis optica retrobulbar hiperuricemia ada adenosina desaminasa' },
-    { titulo: 'Enfermedades Exantemáticas', url: 'enfermedades-exantematicas.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'exantema sarampion rubeola varicela escarlatina roseola exantema subito eritema infeccioso quinta enfermedad mononucleosis kawasaki rash fiebre erupcion koplik pastia triángulo nasolabial palido strawberry tongue lengua frambuesa conjuntivitis adenopatia vacunacion mmr triple viral varicela zoster culebra herpes zoster anillo culebrilla vhh8 vhh4 virus epstein barr cmv cytomegalovirus' },
-    { titulo: 'Síndrome Febril en el Niño', url: 'sindrome-febril-nino.html', tag: 'Pediatría', clase: 'tag-pediatria', keywords: 'fiebre pediatria nino lactante neonato foco oculto sepsis bacteriemia fiebre sin foco procalcitonina pcr proteina c reactiva hemograma antibiotico internacion yale scale criterios rochester philadelphia boston temperatura axilar rectal oral timpánica antitermico ibuprofeno paracetamol convulsión febril meningitis encefalitis celulitis impetigo otitis media aguda faringitis amigdalitis neumonia itu' },
-    { titulo: 'Crisis Convulsiva Pediátrica', url: 'crisis-convulsiva-pediatrica.html', tag: 'Pediatría', clase: 'tag-pediatria', keywords: 'convulsion crisis convulsiva pediatria febril simple compleja afebril epilepsia primera crisis diazepam midazolam lorazepam clonazepam fenobarbital fenitoína fosfenitoina acido valproico levetiracetam estado epileptico estatus convulsivo anticonvulsivante eeg electroencefalograma postictal respuesta tratamiento agudo mantenimiento profilaxis recurrencia' },
-    { titulo: 'Bronquiolitis Aguda', url: 'bronquiolitis.html', tag: 'Pediatría', clase: 'tag-pediatria', keywords: 'bronquiolitis vsr virus sincicial respiratorio vsr rsv lactante sibilancias tiraje subcostal intercostal retracción saturacion oxigeno salbutamol adrenalina epinefrina suero hipertonico internacion criterios alta score tal wood downes apnea alimentacion hidratacion nasoenteral palivizumab profilaxis prematuro displasia broncopulmonar inmunodeficiencia cardiopatía' },
-    { titulo: 'Trastornos del Calcio — Hipo e Hipercalcemia', url: 'trastornos-calcio.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'hipocalcemia hipercalcemia calcio albumina correccion calcio ionizado parathormona pth vitamina d calcitriol colecalciferol ergocalciferol gluconato calcio tetania chvostek trousseau espasmo carpopedal laringoespasmo qt prolongado hiperparatiroidismo primario adenoma paratiroides hipercalcemia maligna pthrp sarcoidosis granuloma zoledronato pamidronato bifosfonatos calcitonina sindrome leche alcali bones stones groans psychic moans cinacalcet' },
-    { titulo: 'Demencias y Enfermedad de Alzheimer', url: 'demencias.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'demencia alzheimer vascular cuerpos lewy frontotemporal hidrocefalia normotensiva hakim adams tríada marcha magnética incontinencia donepezilo rivastigmina galantamina memantina mmse moca minimental montreal deterioro cognitivo leve dcl mci apoe tau amiloide placa senil ovillo neurofibrilar delirium pseudodemencia depresion causas reversibles b12 tsh sifilis hematoma subdural corregible iris conductual variante' },
-    { titulo: 'Lupus Eritematoso Sistémico (LES)', url: 'lupus.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'lupus les les ana antinucleares anti dsdna anti sm complemento c3 c4 nefritis lupica clase iii iv v hidroxicloroquina hcq micofenolato mmf ciclofosfamida azatioprina belimumab anifrolumab sindrome antifosfolipidico saf anticoagulante lupico anticardiolipina anti b2 glicoproteina rash malar fotosensibilidad alopecia ulceras orales artritis serositis pleuritis pericarditis hematologia anemia hemolitica trombocitopenia leucopenia lupus neonatal anti ro anti la bloqueo cardiaco congenito embarazo' },
-    { titulo: 'Embarazo Ectópico', url: 'embarazo-ectopico.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'embarazo ectopico tubario bhcg beta hcg gonadotrofina corionica metotrexato mtx salpingectomia salpingostomia laparoscopia dolor pelvico amenorrea hemorragia sangrado vaginal diu fiv fertilizacion asistida factor riesgo trompa falopio infeccion pelvica eip antecedente cirugia tubaria criterios medical methotrexate rotura tubaria hemoperitoneo' },
-    { titulo: 'Hernias de la Pared Abdominal', url: 'hernias.html', tag: 'Cirugía', clase: 'tag-cirugia', keywords: 'hernia inguinal directa indirecta femoral crural umbilical incisional epigastrica spiegel obturatriz atascada incarcerada estrangulada hernioplastia lichtenstein mesh malla laparoscopia tep tapp ipom reduccion contenido saco peritoneal anillo herniario contenido criticos signos oclusión intestinal' },
-    { titulo: 'Colangitis y Colecistitis', url: 'colangitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'colangitis colangitis aguda coledocolitiasis colecistitis triada charcot fiebre ictericia dolor cuadrilatero de fry pentada reynolds shock confusion mental criterios tokyo clasificacion leve moderada grave piperacilina tazobactam meropenem colangiopancreatografia retrograda endoscopica ercp cpre papilotomia extraccion calculo antibiótico drenaje biliar colangioscopia' },
-    { titulo: 'Peritonitis', url: 'peritonitis.html', tag: 'Cirugía', clase: 'tag-cirugia', keywords: 'peritonitis primaria secundaria terciaria pbs peritonitis bacteriana espontanea cultivo liquido ascitico pme polimorfonucleares cirrosis cefotaxima norfloxacina profilaxis laparotomia exploradora sepsis abdominal abdomen agudo perforacion viscera apendicitis ulcera peptica perforada diverticulitis epiploitis' },
-    { titulo: 'Pancreatitis Crónica', url: 'pancreatitis-cronica.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'pancreatitis cronica alcohol dolor cronico opiaceos insuficiencia exocrina endocrina malabsorcion esteatorrea esteatorrhea diabetes pancreatica pancreatogena enzimas pancreaticas reemplazo creón lipasa amilasa calcificaciones cálculos ductales colangiografia cpre ercp cirugia frey beger puestow whipple pancreatectomia conducto wirsung dilatado' },
-    { titulo: 'Endocarditis Infecciosa', url: 'endocarditis.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'endocarditis infecciosa estandares duke criterios mayores menores streptococcus viridans sanguis bovis staphylococcus aureus epidermidis enterococcus hacek bartonella hemocultivos ecocardiograma transtoracico transesofagico vegetaciones embolias septicas fiebre valvulopatia prolapso mitral bicúspide aórtica penicilina ampicilina vancomicina daptomicina rifampicina gentamicina profilaxis dental procedimientos' },
-    { titulo: 'SCASEST — SCA sin Elevación del ST', url: 'scasest.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'scasest sca sindrome coronario agudo sin elevacion st iamsst angina inestable timi grace estratificacion antiagregacion heparina ticagrelor prasugrel clopidogrel aspirina bivalirudina inhibidores gp2b3a angioplastia estrategia invasiva conservadora troponina electrocardiograma ecg' },
-    { titulo: 'Obstrucción Intestinal', url: 'obstruccion-intestinal.html', tag: 'Cirugía', clase: 'tag-ciru', keywords: 'obstruccion intestinal mecanica paralitica volvulo ileon colon sigma cecal adherencias bridas hernia incarcerada estrangulada dilatacion asas rx abdomen niquel grado alto bajo sonda nasogastrica laparotomia reseccion anastomosis colostomia neo tumor cancer colon peritonitis signos alarma' },
-    { titulo: 'SOP / Hiperandrogenismo Ovárico', url: 'sop.html', tag: 'Ginecología', clase: 'tag-gineco', keywords: 'sop sindrome ovario poliquistico hiperandrogenismo criterios rotterdam oligomenorrea anovulacion androgenos testosterona dheas lh fsh ecografia anticonceptivos orales metformina insulinoresistencia acne hirsutismo alopecia infertilidad clomifeno letrozol inositol' },
-    { titulo: 'Métodos Anticonceptivos', url: 'anticonceptivos.html', tag: 'Ginecología', clase: 'tag-gineco', keywords: 'anticonceptivos anticoncepcion hormonales combinados progestina sola diu dispositivo intrauterino mirena copper barrera condón preservativo diafragma ligadura vasectomia esterilizacion emergencia levonorgestrel ulipristal eficacia pearl contraindicaciones trombosis evento cardiovascular lactancia anticoncepcion postcoital' },
-    { titulo: 'Calendario Nacional de Vacunación', url: 'vacunacion.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'vacunacion calendario nacional argentina vacunas bcg hepatitis b pentavalente dtpa sabin salk ipv neumococo meningococo mmr triple viral varicela influenza fiebre amarilla antimeningococo vph hpv papiloma humano gardasil cervarix embarazada adulto mayor grupo riesgo inmunocomprometido esquema' },
-    { titulo: 'Gota', url: 'gota.html', tag: 'Reumatología', clase: 'tag-reuma', keywords: 'gota artritis gotosa hiperuricemia acido urico cristales urato monosodico colchicina aines indometacina corticoides alopurinol febuxostat probenecid tofo tofos articulacion metatarsofalangica dedo gordo pie podagra liquido sinovial compensada intercritica cronica prevencion dieta purinas alcohol cerveza' },
-    { titulo: 'Hepatitis Virales', url: 'hepatitis-virales.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'hepatitis a b c d e hav hbv hcv hdv hev virus hepatitis aguda cronica serologias hbsag anti hbs hbeag anti hbe anti hbc igm igg hbv dna hcv rna genotipo cirrosis hepatocarcinoma carcimona hepatocelular tenofovir entecavir sofosbuvir daclatasvir ledipasvir glecaprevir pibrentasvir vacuna hepatitis b profilaxis inmunoglobulina transmision fecal oral parenteral sexual vertical perinatal fulminante transaminasas alt ast bilirrubina coagulacion tp inr' },
-    { titulo: 'Shock — Clasificación, Diagnóstico y Manejo', url: 'shock.html', tag: 'Emergencias', clase: 'tag-cardio', keywords: 'shock hipovolemico distributivo cardiogenico obstructivo septico anafilactico neurogénico presion arterial map taquicardia hipotension perfusion tisular lactato clearance noradrenalina adrenalina epinefrina dobutamina dopamina vasopresores fluidos cristaloides albumina uci monitoreo hemodinamico presion venosa central picco swan ganz gasto cardiaco resistencias vasculares perifericAs indices perfusion shock index volemia estado mental oliguira' },
-    { titulo: 'Pericarditis Aguda y Taponamiento Cardíaco', url: 'pericarditis-taponamiento.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'pericarditis aguda taponamiento cardiaco derrame pericardico pericardio fricccion roce pericardico aines ibuprofeno colchicina corticoides pericardiocentesis ventana pericardica becks triada hipotension ingurgitacion yugular ruidos apagados ecocardiograma derrame electricidad alternante pulso paradojal recurrente constrictiva pericardiectomia troponina ecg saddle back elevacion st difusa pr deprimido idiopatica viral tuberculosa' },
-    { titulo: 'Traumatología — Fracturas y Esguinces', url: 'traumatologia.html', tag: 'Traumatología', clase: 'tag-ciru', keywords: 'fractura esguince luxacion trauma ortopedia reduccion inmovilizacion yeso ortesis aines analgesia cirugia osteosintesis placa tornillo clavo endomedular artroplastia protesis cadera rodilla hombro tobillo muneca radio cubito humero femur tibia perone columna vertebral cervical lumbar fractura compresion osteoporosis patologica consolidacion callo oseo fisioterapia rehabilitacion clasificacion ao neer garden garden clasificacion fracturas abiertas gustilo anderson' },
-    { titulo: 'Epilepsia', url: 'epilepsia.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'epilepsia crisis convulsiva focal generalizada tonico clonica ausencias mioclonica atónica espasmos infantiles sindrome west dravet lennox gastaut eeg electroencefalograma resonancia magnetica antiepilépticos acido valproico lamotrigina levetiracetam carbamazepina oxcarbazepina lacosamida topiramato fenitoina fenobarbital vigabatrina perampanel cenobamate estado epileptico estatus convulsivo diazepam midazolam lorazepam fosfenitoina primera crisis recurrencia farmacocinética embarazo mujer fertil teratogenicidad cirugía epilepsia refractaria' },
-    { titulo: 'Oncología — Neoplasias Frecuentes', url: 'oncologia.html', tag: 'Oncología', clase: 'tag-hemato', keywords: 'oncologia cancer neoplasia tumor maligno carcinoma adenocarcinoma celulas escamosas estadificacion tnm quimioterapia radioterapia inmunoterapia terapia dirigida checkpoint inhibidores pdl1 pd1 ctla4 pembrolizumab nivolumab atezolizumab trastuzumab her2 egfr braf kras mutation cancer pulmon colorrectal mama prostata gastrico hepatico pancreas cervix endometrio ovario melanoma tiroides estadificacion respuesta evaluacion recist efuso pleural peritoneal carcinomatosis' },
-    { titulo: 'Endometriosis', url: 'endometriosis.html', tag: 'Ginecología', clase: 'tag-gineco', keywords: 'endometriosis endometrio ectópico dismenorrea dispareunia infertilidad laparoscopia clasificacion asrm endometrioma ovario peritoneo infiltrante profunda adenomiosis aine ibuprofeno naproxeno anticonceptivos orales dienogest danazol gnrh análogos leuprolide nafarelina add back therapy cirugía ablación excisión fertilización asistida dolor pelvico cronico fiv ca125 resonancia magnetica ultrasonido endometrioma chocolate cyst' },
-    { titulo: 'Cáncer de Mama', url: 'cancer-de-mama.html', tag: 'Oncología', clase: 'tag-hemato', keywords: 'cancer mama carcinoma ductal lobulillar in situ invasor her2 hormonoreceptores re rp triple negativo estadificacion tnm mamografia ecografia biopsia core punch ganglio centinela axila vaciamiento lumpectomia mastectomia radioterapia quimioterapia tamoxifeno aromatasa inhibidores letrozol anastrozol exemestano trastuzumab pertuzumab lapatinib sacituzumab cdk4 6 palbociclib ribociclib abemaciclib bevacizumab olaparib brca1 brca2 brca screening prevención riesgo factores birads' },
-    { titulo: 'Electrocardiograma (ECG)', url: 'electrocardiograma.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'ecg electrocardiograma onda p qrs t st pr qt ritmo sinusal arritmia bloqueo rama izquierda derecha brihh brd bloqueo av primer segundo tercer grado wenckebach mobitz completo flutter fibrilacion auricular ventricular taquicardia supraventricular svt wpw preexcitacion delta infarto scacest elevacion st depresion hipertrofia derecha izquierda eje electrico eje izquierdo derecho indeterminado intervalo pr qt qrs frecuencia cardiaca leer interpretar lectura sistematica' },
-    { titulo: 'Cáncer de Pulmón', url: 'cancer-de-pulmon.html', tag: 'Neumonología', clase: 'tag-neumo', keywords: 'cancer pulmon carcinoma pulmonar celulas pequeñas no pequeñas microcítico adenocarcinoma escamoso celulas grandes estadificacion tnm tabaquismo egfr alk ros1 kras braf met pdl1 pembrolizumab atezolizumab durvalumab osimertinib erlotinib gefitinib alectinib crizotinib quimioterapia cisplatino carboplatino pemetrexed taxol paclitaxel docetaxel tac tomografia pet scan broncoscopia biopsia liquida cirugía lobectomia neumonectomia radioterapia esterotáctica sbrt sindrome vena cava superior pancoast horner paraneoplasico derrame pleural maligno' },
-    { titulo: 'Placenta Previa', url: 'placenta-previa.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'placenta previa oclusiva marginal parcial total sangrado indoloro tercer trimestre cesárea ecografia transvaginal transabdominal vasa previa acretismo placentario placenta acreta increta percreta vascularización anomala cicatriz uterina antecedente cesárea miomectomia curetaje reposo pelvico no relaciones sexuales hemorragia anteparto conducta manejo expectante' },
-    { titulo: 'Desprendimiento de Placenta', url: 'desprendimiento-placenta.html', tag: 'Obstetricia', clase: 'tag-gineco', keywords: 'desprendimiento placenta abruptio placentae hematoma retroplacentario sangrado doloroso tercer trimestre hipertonia uterina sufrimiento fetal coagulopatia cid consumo factores coagulacion fibrinogeno d dimero plaquetas reposicion sangre hemoderivados cesarea parto urgente factores riesgo hipertension trauma tabaquismo cocaina consumo drogas utero en madera' },
-    { titulo: 'Enfermedad Pélvica Inflamatoria', url: 'enfermedad-pelvica-inflamatoria.html', tag: 'Ginecología', clase: 'tag-gineco', keywords: 'epi enfermedad pelvica inflamatoria salpingitis endometritis ooforitis perihepatitis fitz hugh curtis chlamydia trachomatis neisseria gonorrhoeae gardnerella vaginalis criterios minimos adicionales ceftriaxona metronidazol doxiciclina azitromicina dolor pelvico cervicitis flujo vaginal fiebre absceso tubovarico score embarazo ectopico infertilidad secuelas complicaciones' },
-    { titulo: 'Traumatismo Craneoencefálico (TEC)', url: 'tec.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'tec trauma craneoencefálico glasgow gcs escala leve moderado grave hematoma epidural subdural contusion cerebral hemorragia subaracnoidea traumatica edema cerebral hipertension endocraneana hec presion intracraneal pic manitol suero hipertonico hiperventilacion dexametasona corticoides contraindicados craniectomia descompresiva abc trauma espinal collar cervical neuroimagen tac cabeza indicaciones canadian ct head rule pupila midriasis uncus hernia cerebral lesion axonal difusa dap dap' },
-    { titulo: 'Leucemias — LMA y LLA', url: 'leucemias.html', tag: 'Hematología', clase: 'tag-hemato', keywords: 'leucemia lma lla linfoblastica mieloide aguda cronica lmc llc blastos induccion remision consolidacion mantenimiento citarabina ara-c daunorrubicina idarrubicina 7+3 bcr-abl ph cromosoma filadelfia imatinib dasatinib nilotinib ponatinib rituximab blinatumomab inotuzumab venetoclax azacitidina decitabina transplante alogénico médula ósea células madre anemia trombocitopenia neutropenia fiebre neutropenica infeccion oportunista leucostasis liquor puncion lumbar snc profílaxis intratecal cnv hemograma frotis mielograma' },
-    { titulo: 'Convulsión vs Síncope', url: 'convulsion-sincope.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'convulsion sincope diferencial diagnostico diferencial perdida conciencia caida epilepsia vasovagal cardiogenico arritmia bradicardia taquicardia postural ortostatico presincope prodromo aura mordedura lengua incontinencia urinaria postictal confusion mirada fija automatismos tónico clónico eeg ecg holter tilt test mesa basculante hipoglucemia hiponatremia hipomagnesemia hipocalcemia electrolitos alterados fiebre convulsión febril' },
-    { titulo: 'Valvulopatías', url: 'valvulopatias.html', tag: 'Cardiología', clase: 'tag-cardio', keywords: 'valvulopatia estenosis insuficiencia aortica mitral tricuspide pulmonar ecocardiograma doppler gradiente area valvular cirugia reemplazo valvular reparacion bioprotes mecanica anticoagulacion warfarina endocarditis reumatica calcificacion prolapso mitral fiebre reumatica regurgitacion click soplo diastolico sistolico nyha svao insufficiencia aortica cronica aguda' },
-    { titulo: 'Esclerosis Múltiple', url: 'esclerosis-multiple.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'esclerosis multiple em sm desmielinizacion mielina oligodendrocito placa resonancia magnetica rm mri bandas oligoclonales potenciales evocados brote recaida remision forma remitente recurrente rrms primaria progresiva secundaria ppms spms interferon beta acetato glatiramer natalizumab fingolimod ocrelizumab rituximab siponimod ofatumumab cladribina neuritis optica oftalmoscopia neuromielitis optica nmosd aquaporina 4 acs' },
-    { titulo: 'Síndrome Confusional Agudo (Delirium)', url: 'sindrome-confusional-agudo.html', tag: 'Neurología', clase: 'tag-neuro', keywords: 'delirium sindrome confusional agudo sca confusion aguda cam confusion assessment method hiperactivohiboactivo mixto factores precipitantes predisponentes infeccion itu neumonia sepsis dolor retencion urinaria fecaloma deshidratacion hiponatremia hipoxia farmacos benzodiacepinas anticorlinergicos haloperidol risperidona medidas no farmacologicas orientacion reorientacion ancianos postoperatorio uci' },
-    { titulo: 'Síndrome Metabólico', url: 'sindrome-metabolico.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'sindrome metabolico obesidad abdominal cintura hipertension trigliceridos hdl glucosa ayunas ncep atp iii idf criterios diagnostico resistencia insulina hiperinsulinemia riesgo cardiovascular diabetes tipo 2 dislipemia higado graso nafld nash adiposidad visceral metformina estatinas antihipertensivos dieta mediterranea ejercicio' },
-    { titulo: 'Feocromocitoma y Paraganglioma', url: 'feocromocitoma.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'feocromocitoma paraganglioma catecolaminas adrenalina noradrenalina metanefrinas normetanefrinas orina plasma tac suprarrenal resonancia magnetica pet scan gammagrafia mibg regla 10 maligno bilateral extra adrenal familiar men2 vhl sdha sdhb sdhd alfa bloqueante fenoxibenzamina doxazosina betabloqueante crisis hipertensiva cirugia laparoscopica suprarrenalectomia' },
-    { titulo: 'Litiasis Vesicular y Patología Biliar', url: 'litiasis-vesicular.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'litiasis vesicular colelitiasis calculo biliar colesterol pigmento mixto ecografia vesicula biliar colecistitis aguda cronica colangitis coledocolitiasis colecistectomia laparoscopica cirugia cpre ercp papilotomia dispepsia flatulencia dolor hipocondrio derecho ayuno grasa murphy hidropesia empiema perforacion cancer vesicula adenocarcinoma' },
-    { titulo: 'Síndrome Nefrótico y Nefrítico', url: 'sindrome-nefrotico-nefritico.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'sindrome nefrotico nefritico proteinuria albumina edema hipoalbuminemia hiperlipidemia lipiduria cambios minimos focal segmentaria membranosa membranoproliferativa glomerulonefritis gnmp igs nefropatia berger iga post estreptococica hematuria cilindros globulos rojos cilindruria complemento c3 c4 ch50 anca anti mbg anti dna lupica crioglobulinemia biopsia renal inmunosupreson prednisona ciclofosfamida' },
-    { titulo: 'Síndrome Urémico Hemolítico', url: 'sindrome-uremico-hemolitico.html', tag: 'Nefrología', clase: 'tag-nefro', keywords: 'suh sindrome uremico hemolitico microangiopatia trombotica mat anemia hemolitica microangiopatica trombocitopenia insuficiencia renal aguda e coli enterohemorrhagico o157h7 stx shiga toxina shiga toxin producing stec diarrea sanguinolenta hamburguesa carne mal cocida niños hus adultos atipico complement inhibition eculizumab ravulizumab ttp trombocitopenia trombotica purpura adamts13 plasma plasmaferesis recambio' },
-    { titulo: 'Cáncer Colorrectal', url: 'cancer-colorrectal.html', tag: 'Oncología', clase: 'tag-hemato', keywords: 'cancer colorrectal colon recto adenocarcinoma polipo adenoma colonoscopia screening cribado sangre oculta heces sof fob test tnm estadificacion cirugia hemicolectomia sigmoidectomia reseccion anterior baja amputacion abdominoperineal quimioterapia folfox folfiri capecitabina oxaliplatino irinotecan bevacizumab cetuximab panitumumab kras braf mismatch repair mmr inestabilidad microsatelites msi lynch hereditario familiar riesgo' },
-    { titulo: 'Diarrea Aguda Pediátrica', url: 'diarrea-aguda-pediatrica.html', tag: 'Pediatría', clase: 'tag-pediatria', keywords: 'diarrea aguda pediatrica gastroenteritis niño lactante rotavirus norovirus adenovirus e coli salmonella shigella campylobacter deshidratacion sales rehidratacion oral sro ors grado leve moderada severa plan a b c oms ors signos alarma zinc probioticos antibiotico ciprofloxacina azitromicina internacion via oral parenteral peso perdido fecal osmolar brecha' },
-    { titulo: 'Depresión y Ansiedad', url: 'salud-mental.html', tag: 'Psiquiatría', clase: 'tag-psiq', keywords: 'depresion ansiedad trastorno depresivo mayor episodio depresivo tam tag trastorno ansiedad generalizada panico agorafobia fobia social tocfobia toc ptsd trastorno estres postraumatico isrs sertalina fluoxetina paroxetina escitalopram citalopram irsnne venlafaxina duloxetina mirtazapina bupropion tca amitriptilina imao lithio antidepresivos ansioliticos benzodiacepinas alprazolam diazepam lorazepam terapia cognitivo conductual tcc psicoterapia hamilton had criterios dsm5' },
-    { titulo: 'Esteatosis Hepática No Alcohólica (NAFLD)', url: 'esteatosis-hepatica.html', tag: 'Gastroenterología', clase: 'tag-gastro', keywords: 'esteatosis hepatica nafld nash higado graso no alcoholico esteatohepatitis fibrosis cirrosis hepatica resistencia insulina sindrome metabolico obesidad diabetes dm2 dislipemia hipertrigliceridemia transaminasas alt ast ggt ecografia higado brillante elastografia fibroscan fibrosis 4 fib4 nfs nafld fibrosis score biopsia hepatica metformina pioglitazona vitamina e acido obetocolico semaglutida liraglutida resmetirom cardiopatia cardiovascular estatinas alcohol grasa dieta mediterranean ejercicio perdida peso bariatrica' },
-    { titulo: 'Enfermedad de Chagas', url: 'chagas.html', tag: 'Infectología', clase: 'tag-infecto', keywords: 'chagas trypanosoma cruzi vinchuca triatoma benznidazol nifurtimox cardiopatia chagasica miocardiopatia dilatada megaesofago megacolon fase aguda cronica indeterminada romaña signo chagoma serologia elisa hemoaglutinacion indirecta inmunofluorescencia pcr electrocardiograma ecg bloqueo rama derecha extrasistoles ventriculares holter ecocardiograma marcapasos trasplante argentina endemia vector control vectorial tamizaje banco sangre embarazo congenito reactivacion inmunocomprometido hiv' },
-    { titulo: 'Insuficiencia Suprarrenal', url: 'insuficiencia-suprarrenal.html', tag: 'Endocrinología', clase: 'tag-endo', keywords: 'insuficiencia suprarrenal adrenal cortisol acth addison primaria secundaria terciaria crisis adrenal hidrocortisona fludrocortisona dexametasona prednisona estres dosis doble triple cosyntropin synacthen cortrosyn estimulacion insuficiencia relativa critica hiperpigmentacion melanodermia hiponatremia hiperkalemia hipoglucemia autoinmune tuberculosa hemorragia suprarrenal waterhouse friderichsen adrenalitis hipofisitis corticotrofina crh acth hipopituitarismo corticoides supresion eje hpa' },
+    { titulo: 'Infarto Agudo de Miocardio', url: 'iam.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'iam infarto agudo miocardio scacest coronaria reperfusion trombolisis alteplasa angioplastia stent killip aspirina clopidogrel ticagrelor troponina ck mb dolor toracico st elevado fibrinolisis shock cardiogenico ieca betabloqueante statinas ecg' },
+    { titulo: 'SCASEST — SCA sin Elevación del ST', url: 'scasest.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'scasest sca sindrome coronario agudo sin elevacion st angina inestable timi grace antiagregacion heparina ticagrelor prasugrel clopidogrel aspirina troponina ecg' },
+    { titulo: 'Hipertensión Arterial', url: 'hta.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'hta hipertension presion arterial antihipertensivos ieca ara calcioantagonistas tiazidas espironolactona amlodipino enalapril losartan crisis hipertensiva urgencia emergencia encefalopatia hipertensiva nitroprusiato labetalol daño organo blanco' },
+    { titulo: 'Insuficiencia Cardíaca', url: 'ic.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'insuficiencia cardiaca ic fevi reducida preservada diureticos betabloqueantes nyha furosemida sacubitrilo valsartan carvedilol bisoprolol enalapril espironolactona dapagliflozina empagliflozina bnp ntprobnp ecocardiograma' },
+    { titulo: 'Fibrilación Auricular', url: 'fa.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'fibrilacion auricular fa anticoagulacion chadsvasc warfarina naco dabigatran rivaroxaban apixaban amiodarona cardioversion betabloqueante digoxina control ritmo frecuencia ablacion' },
+    { titulo: 'Edema Agudo de Pulmón', url: 'eap.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'edema agudo pulmon eap insuficiencia cardiaca aguda furosemida nitroglicerina cpap vmni morfina forrester crepitantes ortopnea disnea bnp lmnop dobutamina' },
+    { titulo: 'Electrocardiograma (ECG)', url: 'electrocardiograma.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'ecg electrocardiograma onda p qrs t st pr qt ritmo sinusal arritmia bloqueo rama fibrilacion auricular ventricular taquicardia supraventricular wpw infarto hipertrofia' },
+    { titulo: 'Dislipemias', url: 'dislipemias.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'dislipemia dislipidemia colesterol ldl hdl trigliceridos estatinas atorvastatina rosuvastatina ezetimibe pcsk9 evolocumab hipercolesterolemia familiar' },
+    { titulo: 'Pericarditis Aguda y Taponamiento', url: 'pericarditis-taponamiento.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'pericarditis aguda taponamiento cardiaco derrame pericardico roce aines ibuprofeno colchicina pericardiocentesis becks triada pulso paradojal saddle back ecg' },
+    { titulo: 'Endocarditis Infecciosa', url: 'endocarditis.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'endocarditis infecciosa duke criterios streptococcus staphylococcus enterococcus hacek hemocultivos ecocardiograma vegetaciones penicilina vancomicina profilaxis' },
+    { titulo: 'Shock — Clasificación y Manejo', url: 'shock.html', tag: 'Emergencias', clase: 'tag-cardio', esp: 'cardio', keywords: 'shock hipovolemico distributivo cardiogenico obstructivo septico anafilactico noradrenalina adrenalina dobutamina vasopresores fluidos cristaloides map lactato' },
+    { titulo: 'Tromboembolismo Pulmonar', url: 'tep.html', tag: 'Hematología', clase: 'tag-hemato', esp: 'hemato', keywords: 'tep tromboembolismo pulmonar wells pesi anticoagulacion hbpm heparina alteplasa tvp angiotac ddimero ecg s1q3t3 fibrinolisis rivaroxaban apixaban' },
+    { titulo: 'ACV Isquémico vs Hemorrágico', url: 'acv.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'acv stroke ictus cerebrovascular isquemico hemorragico hic hsa trombolisis nihss aspects rtpa trombectomia fast anticoagulacion antiagregacion statinas nimodipina' },
+    { titulo: 'Meningitis y Encefalitis', url: 'meningitis-encefalitis.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'meningitis encefalitis bacteriana viral herpes aciclovir ceftriaxona ampicilina vancomicina dexametasona lcr kernig brudzinski meningococo neumococo listeria anti nmda' },
+    { titulo: 'Demencias y Alzheimer', url: 'demencias.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'demencia alzheimer vascular cuerpos lewy frontotemporal donepezilo rivastigmina galantamina memantina mmse moca tau amiloide' },
+    { titulo: 'Epilepsia', url: 'epilepsia.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'epilepsia crisis convulsiva focal generalizada tonico clonica ausencias eeg acido valproico lamotrigina levetiracetam carbamazepina estado epileptico diazepam midazolam' },
+    { titulo: 'Traumatismo Craneoencefálico (TEC)', url: 'tec.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'tec trauma craneoencefálico glasgow gcs hematoma epidural subdural edema cerebral hipertension endocraneana pic manitol craniectomia descompresiva' },
+    { titulo: 'Convulsión vs Síncope', url: 'convulsion-sincope.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'convulsion sincope diferencial perdida conciencia epilepsia vasovagal cardiogenico arritmia prodromo mordedura lengua postictal tilt test' },
+    { titulo: 'Esclerosis Múltiple', url: 'esclerosis-multiple.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'esclerosis multiple desmielinizante autoinmune brote recaida remision neuritis optica lhermitte uhthoff mcdonald 2017 natalizumab fingolimod ocrelizumab dimetilfumarato lmp jc nmosd' },
+    { titulo: 'Asma y EPOC', url: 'asma-epoc.html', tag: 'Neumonología', clase: 'tag-neumo', esp: 'neumo', keywords: 'asma epoc gina gold broncodilatador salbutamol corticoide laba lama budesonida fluticasona tiotropio espirometria vef1 exacerbacion crisis vmni' },
+    { titulo: 'Neumonía Adquirida en la Comunidad', url: 'neumonia.html', tag: 'Neumonología', clase: 'tag-neumo', esp: 'neumo', keywords: 'neumonia nac antibiotico curb65 psi amoxicilina azitromicina ceftriaxona levofloxacina consolidacion neumococo atipicos mycoplasma legionella uci' },
+    { titulo: 'Tuberculosis', url: 'tuberculosis.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'tuberculosis tbc baar baciloscopia ripe rifampicina isoniacida pirazinamida etambutol ppd mantoux igra xpert mdr xdr dots hepatotoxicidad piridoxina' },
+    { titulo: 'Cáncer de Pulmón', url: 'cancer-de-pulmon.html', tag: 'Neumonología', clase: 'tag-neumo', esp: 'neumo', keywords: 'cancer pulmon carcinoma celulas pequeñas no pequeñas adenocarcinoma egfr alk ros1 braf pdl1 pembrolizumab osimertinib alectinib estadificacion tnm lobectomia sbrt' },
+    { titulo: 'Diabetes Mellitus Tipo 2', url: 'dm2.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'diabetes dm2 metformina insulina glucemia hba1c sglt2 glp1 dapagliflozina empagliflozina semaglutida liraglutida sitagliptina glibenclamida complicaciones retinopati nefropatia neuropatia' },
+    { titulo: 'Cetoacidosis Diabética', url: 'cad.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'cetoacidosis diabetica cad insulina hidratacion potasio bicarbonato glucosa cetonas anion gap acidosis metabolica diabetes tipo 1 hiperosmolar' },
+    { titulo: 'Obesidad y Manejo Metabólico', url: 'obesidad.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'obesidad imc sobrepeso metformina orlistat semaglutida tirzepatida bariátrica manga gastrica bypass sindrome metabolico resistencia insulina cirugía bariatrica' },
+    { titulo: 'Hipotiroidismo e Hipertiroidismo', url: 'hipotiroidismo-hipertiroidismo.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'hipotiroidismo hipertiroidismo tiroides tsh t4 t3 hashimoto graves levotiroxina metimazol propiltiouracilo coma mixedematoso crisis tirotoxica bocio nodulo radioactivo' },
+    { titulo: 'Trastornos del Calcio', url: 'trastornos-calcio.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'hipocalcemia hipercalcemia calcio pth vitamina d gluconato tetania chvostek trousseau qt prolongado hiperparatiroidismo adenoma paratiroides pthrp zoledronato calcitonina' },
+    { titulo: 'Feocromocitoma y Paraganglioma', url: 'feocromocitoma.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'feocromocitoma paraganglioma catecolaminas regla 10 triada cefalea sudoracion palpitaciones hipertension paroxistica men2 vhl nf1 sdhb metanefrinas fenoxibenzamina adrenalectomia fentolamina' },
+    { titulo: 'Insuficiencia Suprarrenal', url: 'insuficiencia-suprarrenal.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'insuficiencia suprarrenal adrenal cortisol acth addison primaria secundaria terciaria crisis adrenal hidrocortisona fludrocortisona dexametasona estres cosyntropin synacthen hiperpigmentacion melanodermia hiponatremia hiperkalemia hipoglucemia autoinmune tuberculosa hemorragia waterhouse friderichsen hipopituitarismo supresion eje hpa' },
+    { titulo: 'Sepsis y Shock Séptico', url: 'sepsis.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'sepsis shock septico sofa qsofa antibioticos lactato noradrenalina surviving sepsis bundle hemocultivos vancomicina piperacilina meropenem disfuncion organica fluidos cristaloides' },
+    { titulo: 'Dengue — Manejo Clínico', url: 'dengue.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'dengue fiebre aedes trombocitopenia ns1 igm igg hidratacion plaquetas dengue grave hemorragico fuga plasma hematocrito choque signos alarma paracetamol evitar aspirina' },
+    { titulo: 'Infección del Tracto Urinario', url: 'itu.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'itu infeccion urinaria cistitis pielonefritis urocultivo e coli nitrofurantoina trimetoprima fosfomicina ciprofloxacina ceftriaxona bacteriuria leucocituria embarazo esbl' },
+    { titulo: 'HIV / SIDA', url: 'hiv-sida.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'hiv sida cd4 carga viral tar antirretroviral dolutegravir tenofovir bictegravir pcp toxoplasmosis criptococo tbc oportunista prep pep indetectable sarcoma kaposi' },
+    { titulo: 'Enfermedades Exantemáticas', url: 'enfermedades-exantematicas.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'exantema sarampion rubeola varicela escarlatina roseola eritema infeccioso mononucleosis kawasaki koplik pastia lengua frambuesa vacunacion mmr epstein barr' },
+    { titulo: 'Calendario Nacional de Vacunación', url: 'vacunacion.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'vacunacion calendario nacional argentina bcg hepatitis b pentavalente dtpa sabin salk neumococo meningococo mmr varicela influenza vph hpv embarazada adulto mayor' },
+    { titulo: 'Hemorragia Digestiva Alta y Baja', url: 'hemorragia-digestiva.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'hemorragia digestiva hda hdb hematemesis melena hematoquecia ulcera peptica varices forrest glasgow blatchford ibp omeprazol terlipresina octreotide endoscopia colonoscopia' },
+    { titulo: 'Pancreatitis Aguda', url: 'pancreatitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'pancreatitis aguda amilasa lipasa ranson apache bisap ayuno hidratacion necrosis colecistitis biliar cpre alcohol hipertrigliceridemia antibioticos tac gravedad' },
+    { titulo: 'Pancreatitis Crónica', url: 'pancreatitis-cronica.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'pancreatitis cronica alcohol dolor cronico insuficiencia exocrina endocrina malabsorcion esteatorrea enzimas pancreaticas calcificaciones cpre cirugia frey beger whipple' },
+    { titulo: 'Cirrosis Hepática', url: 'cirrosis.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'cirrosis ascitis child pugh meld varices esofagicas encefalopatia pbe sindrome hepatorenal terlipresina albumina trasplante lactulosa rifaximina espironolactona hepatitis alcohol nash' },
+    { titulo: 'Úlcera Péptica y H. pylori', url: 'ulcera-peptica.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'ulcera peptica gastrica duodenal helicobacter pylori ibp omeprazol erradicacion claritromicina amoxicilina metronidazol test aliento clo test forrest hemorragia perforacion' },
+    { titulo: 'Enfermedad Inflamatoria Intestinal', url: 'eii-crohn-colitis-ulcerosa.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'enfermedad inflamatoria intestinal crohn colitis ulcerosa mesalazina azatioprina infliximab adalimumab vedolizumab ustekinumab calprotectina transmural mucosa megacolon' },
+    { titulo: 'Colecistitis Aguda', url: 'colecistitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'colecistitis vesicula biliar colelitiasis litiasis calculo murphy ecografia antibiotico colecistectomia laparoscopica fiebre hipocondrio derecho acalculosa gangrenosa perforacion tokyo' },
+    { titulo: 'Colangitis y Colecistitis', url: 'colangitis.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'colangitis colangitis aguda coledocolitiasis colecistitis triada charcot pentada reynolds piperacilina tazobactam meropenem ercp cpre papilotomia extraccion calculo drenaje biliar' },
+    { titulo: 'Hepatitis Virales', url: 'hepatitis-virales.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'hepatitis a b c d e hbsag hbeag anti hbs hcv rna tenofovir entecavir sofosbuvir glecaprevir pibrentasvir cirrosis hepatocarcinoma vacuna profilaxis transmision' },
+    { titulo: 'Esteatosis Hepática No Alcohólica (NAFLD)', url: 'esteatosis-hepatica.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'esteatosis hepatica nafld nash higado graso no alcoholico esteatohepatitis fibrosis cirrosis resistencia insulina sindrome metabolico obesidad diabetes dm2 dislipemia transaminasas alt ast ggt ecografia elastografia fibroscan fib4 nfs biopsia hepatica pioglitazona vitamina e semaglutida liraglutida resmetirom dieta ejercicio bariatrica cardiovascular' },
+    { titulo: 'Insuficiencia Renal Aguda', url: 'ira.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'ira insuficiencia renal aguda creatinina urea kdigo aki prerenal intrinseca postrenal oliguria necrosis tubular nta contrast nefrotoxicidad aminoglucosidos rabdomiolisis dialisis' },
+    { titulo: 'Enfermedad Renal Crónica', url: 'erc.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'erc enfermedad renal cronica creatinina tfg proteinuria kdigo dialisis hemodialisis peritoneal trasplante iecas ara2 anemia renal hiperkalemia hiperfosfatemia hiperparatiroidismo secundario' },
+    { titulo: 'Trastornos del Sodio', url: 'trastornos-sodio.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'hiponatremia hipernatremia sodio siadh diabetes insipida ddavp tolvaptan mielinolisis pontina correccion agua libre osmolaridad pseudohiponatremia hipertonica' },
+    { titulo: 'Trastornos del Potasio', url: 'trastornos-potasio.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'hipokalemia hiperkalemia potasio gluconato calcio bicarbonato insulina glucosa kayexalate patiromer onda u onda t picuda arritmia fibrilacion ventricular ecg aldosteronismo' },
+    { titulo: 'Anemia — Clasificación y Tratamiento', url: 'anemia.html', tag: 'Hematología', clase: 'tag-hemato', esp: 'hemato', keywords: 'anemia ferropenia hemoglobina hematocrito ferritina b12 folato hemolitica aplasica megaloblastica microcítica macrocítica hierro sulfato ferroso epo reticulocitos coombs talasemia' },
+    { titulo: 'Linfomas — Hodgkin y No Hodgkin', url: 'linfomas.html', tag: 'Hematología', clase: 'tag-hemato', esp: 'hemato', keywords: 'linfoma hodgkin no hodgkin celulas reed sternberg abvd escap r-chop r-epoch ann arbor pet scan biopsia ganglio adenopatia síntomas b rituximab cd20 brentuximab pembrolizumab' },
+    { titulo: 'Leucemias — LMA y LLA', url: 'leucemias.html', tag: 'Hematología', clase: 'tag-hemato', esp: 'hemato', keywords: 'leucemia lma lla mieloide linfoblastica blastos bcr-abl imatinib dasatinib rituximab venetoclax azacitidina transplante alogénico medula osea fiebre neutropenica' },
+    { titulo: 'Oncología — Neoplasias Frecuentes', url: 'oncologia.html', tag: 'Oncología', clase: 'tag-hemato', esp: 'hemato', keywords: 'oncologia cancer neoplasia estadificacion tnm quimioterapia radioterapia inmunoterapia checkpoint pdl1 pd1 pembrolizumab nivolumab trastuzumab her2 egfr braf kras recist' },
+    { titulo: 'Cáncer de Mama', url: 'cancer-de-mama.html', tag: 'Oncología', clase: 'tag-hemato', esp: 'hemato', keywords: 'cancer mama carcinoma ductal lobulillar her2 hormonoreceptores triple negativo mamografia biopsia ganglio centinela mastectomia tamoxifeno trastuzumab pertuzumab cdk4 olaparib brca' },
+    { titulo: 'Cáncer Colorrectal', url: 'cancer-colorrectal.html', tag: 'Cirugía / Onco', clase: 'tag-ciru', esp: 'ciru', keywords: 'cancer colorrectal ccr adenocarcinoma colon recto polipo adenoma colonoscopia cea estadificacion tnm hemicolectomia tme neoadyuvancia folfox folfiri bevacizumab cetuximab lynch paf msi pembrolizumab' },
+    { titulo: 'Artritis Reumatoidea', url: 'artritis-reumatoidea.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'artritis reumatoidea ar metotrexato anti ccp factor reumatoideo dmard biologico anti tnf etanercept adalimumab infliximab rituximab tocilizumab baricitinib tofacitinib jak das28 sinovitis' },
+    { titulo: 'Lupus Eritematoso Sistémico', url: 'lupus.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'lupus les ana antinucleares anti dsdna anti sm complemento nefritis lupica hidroxicloroquina micofenolato ciclofosfamida belimumab anifrolumab saf rash malar' },
+    { titulo: 'Vasculitis Sistémicas', url: 'vasculitis.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'vasculitis anca gpa granulomatosis poliangeitis wegener microscopica arteritis celulas gigantes temporal polimialgia reumatica takayasu kawasaki purpura schonlein canca panca ciclofosfamida rituximab' },
+    { titulo: 'Gota', url: 'gota.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'gota artritis gotosa hiperuricemia acido urico cristales urato monosodico colchicina aines corticoides alopurinol febuxostat tofo articulacion metatarsofalangica podagra' },
+    { titulo: 'Preeclampsia y Eclampsia', url: 'preeclampsia.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'preeclampsia eclampsia hipertension embarazo proteinuria sulfato magnesio labetalol nifedipina hidralazina convulsiones hellp trombocitopenia hemolisis parto prematuro criterios severidad' },
+    { titulo: 'Amenaza de Parto Pretérmino', url: 'amenaza-parto-pretermino.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'parto pretermino prematuro tocolisis nifedipina atosiban betametasona corticoides surfactante sulfato magnesio neuroproteccion fibronectina fetal cervix progesterona' },
+    { titulo: 'Hemorragia Posparto', url: 'hemorragia-postparto.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'hemorragia postparto oxitocina ergometrina carbetocina acido tranexamico misoprostol atonia uterina 4t tono tejido trauma trombina balón bakri histerectomia embolizacion woman trial' },
+    { titulo: 'Embarazo Ectópico', url: 'embarazo-ectopico.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'embarazo ectopico tubario bhcg metotrexato salpingectomia salpingostomia laparoscopia dolor pelvico amenorrea hemorragia diu fiv trompa falopio rotura hemoperitoneo' },
+    { titulo: 'SOP / Hiperandrogenismo Ovárico', url: 'sop.html', tag: 'Ginecología', clase: 'tag-gineco', esp: 'gineco', keywords: 'sop sindrome ovario poliquistico hiperandrogenismo criterios rotterdam oligomenorrea testosterona anticonceptivos orales metformina acne hirsutismo infertilidad letrozol' },
+    { titulo: 'Métodos Anticonceptivos', url: 'anticonceptivos.html', tag: 'Ginecología', clase: 'tag-gineco', esp: 'gineco', keywords: 'anticonceptivos anticoncepcion hormonales combinados progestina sola diu mirena copper barrera condón diafragma ligadura vasectomia emergencia levonorgestrel ulipristal pearl' },
+    { titulo: 'Placenta Previa', url: 'placenta-previa.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'placenta previa oclusiva marginal total sangrado indoloro tercer trimestre cesárea ecografia acretismo placentario placenta acreta increta percreta cicatriz uterina' },
+    { titulo: 'Desprendimiento de Placenta', url: 'desprendimiento-placenta.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'desprendimiento placenta abruptio placentae hematoma retroplacentario sangrado doloroso tercer trimestre hipertonia uterina sufrimiento fetal coagulopatia cid fibrinogeno cesarea' },
+    { titulo: 'Endometriosis', url: 'endometriosis.html', tag: 'Ginecología', clase: 'tag-gineco', esp: 'gineco', keywords: 'endometriosis dismenorrea dispareunia infertilidad laparoscopia endometrioma ovario adenomiosis dienogest gnrh análogos add back therapy excisión ablación dolor pelvico cronico' },
+    { titulo: 'Enfermedad Pélvica Inflamatoria', url: 'enfermedad-pelvica-inflamatoria.html', tag: 'Ginecología', clase: 'tag-gineco', esp: 'gineco', keywords: 'epi enfermedad pelvica inflamatoria salpingitis endometritis chlamydia gonorrhoeae gardnerella criterios ceftriaxona metronidazol doxiciclina azitromicina absceso tubovarico embarazo ectopico infertilidad' },
+    { titulo: 'Apendicitis Aguda', url: 'apendicitis.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'apendicitis alvarado score mcburney blumberg rovsing fecalito fid apendicectomia laparoscopica peritonitis plastrón absceso perforada gangrenosa wses antibioticos conservador' },
+    { titulo: 'Hernias de la Pared Abdominal', url: 'hernias.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'hernia inguinal directa indirecta femoral crural umbilical incisional epigastrica spiegel atascada incarcerada estrangulada hernioplastia lichtenstein mesh malla laparoscopia tep tapp' },
+    { titulo: 'Peritonitis', url: 'peritonitis.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'peritonitis primaria secundaria terciaria pbs peritonitis bacteriana espontanea liquido ascitico cefotaxima norfloxacina laparotomia exploradora sepsis abdominal abdomen agudo perforacion viscera' },
+    { titulo: 'Obstrucción Intestinal', url: 'obstruccion-intestinal.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'obstruccion intestinal mecanica paralitica volvulo ileon colon sigma adherencias bridas hernia incarcerada estrangulada rx abdomen laparotomia reseccion colostomia' },
+    { titulo: 'Traumatología — Fracturas y Esguinces', url: 'traumatologia.html', tag: 'Traumatología', clase: 'tag-ciru', esp: 'ciru', keywords: 'fractura esguince luxacion trauma ortopedia reduccion inmovilizacion yeso osteosintesis placa tornillo clavo endomedular artroplastia cadera rodilla hombro osteoporosis consolidacion ao neer garden gustilo' },
+    { titulo: 'Bronquiolitis Aguda', url: 'bronquiolitis.html', tag: 'Pediatría', clase: 'tag-pediatria', esp: 'pediatria', keywords: 'bronquiolitis vsr virus sincicial respiratorio lactante sibilancias tiraje saturacion oxigeno salbutamol adrenalina suero hipertonico score tal wood downes apnea palivizumab profilaxis prematuro' },
+    { titulo: 'Síndrome Febril en el Niño', url: 'sindrome-febril-nino.html', tag: 'Pediatría', clase: 'tag-pediatria', esp: 'pediatria', keywords: 'fiebre pediatria nino lactante neonato foco oculto sepsis bacteriemia fiebre sin foco procalcitonina pcr hemograma antibiotico yale criterios rochester antitermico ibuprofeno paracetamol' },
+    { titulo: 'Cáncer Gástrico', url: 'cancer-gastrico.html', tag: 'Gastro / Oncología', clase: 'tag-gastro', esp: 'gastro', keywords: 'cancer gastrico adenocarcinoma lauren intestinal difuso helicobacter pylori cascada correa metaplasia displasia linitis plastica cdh1 ecadherina hdgc virchow krukenberg hermana maria jose veda endoscopia esd gastrectomia d2 flot trastuzumab her2 pembrolizumab msi pdi1 cpre estadificacion tnm ecoendoscopia laparoscopia estadificadora' },
+    { titulo: 'Trastornos de la Personalidad', url: 'trastornos-personalidad.html', tag: 'Psiquiatría', clase: 'tag-neuro', esp: 'neuro', keywords: 'trastornos personalidad tp cluster a b c paranoide esquizoide esquizotipico antisocial limite borderline tlp histrionico narcisista evitativo dependiente tocp obsesivo compulsivo dsm5 dbt terapia dialectico conductual mbt mentalizacion isrs impulsividad suicidio autolesion abandono grandiosa empatia perfeccionismo' },
+    { titulo: 'ETS / ITS — Enfermedades de Transmisión Sexual', url: 'its-ets.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'its ets enfermedades transmision sexual sifilis treponema pallidum chancro vdrl fta abs penicilina benzatinica gonorrea neisseria ceftriaxona chlamydia doxiciclina azitromicina lgv herpes hsv aciclovir valaciclovir hpv condilomas papiloma vacuna gardasil tricomoniasis metronidazol prep pep tenofovir emtricitabina sifilis congenita pupila argyll robertson neurosifilis rash palmas plantas' },
+    { titulo: 'Enfermedad de Chagas', url: 'chagas.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'chagas trypanosoma cruzi vinchuca triatoma benznidazol nifurtimox cardiopatia chagasica miocardiopatia dilatada megaesofago megacolon fase aguda cronica indeterminada romaña signo chagoma serologia elisa hemoaglutinacion pcr ecg bloqueo rama derecha extrasistoles ventriculares holter ecocardiograma marcapasos reactivacion hiv inmunocomprometido argentina endemia vector congenito tamizaje banco sangre' },
+    { titulo: 'Crisis Convulsiva Pediátrica', url: 'crisis-convulsiva-pediatrica.html', tag: 'Pediatría', clase: 'tag-pediatria', esp: 'pediatria', keywords: 'convulsion crisis convulsiva pediatria febril simple compleja diazepam midazolam lorazepam clonazepam fenobarbital fenitoína valproico levetiracetam estado epileptico anticonvulsivante eeg' },
   ];
 
-  const input = document.getElementById('search-input');
-  const resultsBox = document.getElementById('search-results');
-
-  input.addEventListener('input', () => {
-    const q = input.value.toLowerCase().trim();
-    if (q.length < 2) { resultsBox.style.display = 'none'; return; }
-    const matches = articulos.filter(a => a.titulo.toLowerCase().includes(q) || a.keywords.includes(q));
-    if (matches.length === 0) { resultsBox.style.display = 'none'; return; }
-    resultsBox.innerHTML = matches.map(a => `
-      <a href="${a.url}" class="search-result-item">
-        <span class="art-tag result-tag ${a.clase}">${a.tag}</span>
-        <span class="result-title">${a.titulo}</span>
-      </a>
-    `).join('');
-    resultsBox.style.display = 'block';
+  // Contadores por especialidad
+  const espIds = { cardio:'n-cardio', neuro:'n-neuro', neumo:'n-neumo', endo:'n-endo', infecto:'n-infecto', gastro:'n-gastro', nefro:'n-nefro', hemato:'n-hemato', reuma:'n-reuma', gineco:'n-gineco', ciru:'n-ciru', pediatria:'n-pediatria' };
+  const counts = {};
+  articulos.forEach(a => { counts[a.esp] = (counts[a.esp] || 0) + 1; });
+  Object.keys(espIds).forEach(e => {
+    const el = document.getElementById(espIds[e]);
+    if (el) el.textContent = (counts[e] || 0) + ' artículos';
   });
 
-  document.addEventListener('click', e => {
-    if (!document.querySelector('.search-wrap').contains(e.target)) resultsBox.style.display = 'none';
+  function renderArticulos(lista) {
+    const grid = document.getElementById('articulos-grid');
+    grid.innerHTML = '';
+    if (!lista.length) {
+      grid.innerHTML = '<div class="empty-state">No encontramos artículos para esa búsqueda.</div>';
+      document.getElementById('art-count').textContent = '';
+      return;
+    }
+    lista.forEach((a, i) => {
+      const card = document.createElement('a');
+      card.href = a.url;
+      card.className = 'art-card';
+      card.style.animationDelay = Math.min(i * 15, 300) + 'ms';
+      card.innerHTML = `<div class="art-card-left"><div class="art-titulo">${a.titulo}</div><span class="art-tag ${a.clase}">${a.tag}</span></div><span class="art-arrow">→</span>`;
+      grid.appendChild(card);
+    });
+    document.getElementById('art-count').textContent = lista.length + ' artículos';
+  }
+
+  const labels = { all:'Todos los artículos', cardio:'Cardiología', neuro:'Neurología', neumo:'Neumonología', endo:'Endocrinología', infecto:'Infectología', gastro:'Gastroenterología', nefro:'Nefrología', hemato:'Hematología / Oncología', reuma:'Reumatología', gineco:'Obstetricia / Ginecología', ciru:'Cirugía', pediatria:'Pediatría' };
+
+  function filtrar(esp, el) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('activo'));
+    document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('activo'));
+    if (el) {
+      el.classList.add('activo');
+      // sync: si es bento, activar chip correspondiente; si es chip, activar bento
+      if (el.classList.contains('bento-card')) {
+        document.querySelectorAll('.chip').forEach(c => { if (c.onclick && c.onclick.toString().includes(`'${esp}'`)) c.classList.add('activo'); });
+        document.getElementById('articulos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        document.querySelectorAll('.bento-card').forEach(c => { if (c.dataset.esp === esp) c.classList.add('activo'); });
+      }
+    }
+    document.getElementById('section-label').textContent = labels[esp] || 'Artículos';
+    const filtrados = esp === 'all' ? articulos : articulos.filter(a => a.esp === esp);
+    renderArticulos(filtrados);
+  }
+
+  // Búsqueda
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  searchInput.addEventListener('input', function() {
+    const q = this.value.trim().toLowerCase();
+    if (!q) { searchResults.style.display = 'none'; return; }
+    const matches = articulos.filter(a =>
+      a.titulo.toLowerCase().includes(q) || a.tag.toLowerCase().includes(q) || a.keywords.toLowerCase().includes(q)
+    ).slice(0, 8);
+    if (!matches.length) { searchResults.style.display = 'none'; return; }
+    searchResults.innerHTML = matches.map(a => `<a href="${a.url}" class="search-result-item"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+    searchResults.style.display = 'block';
   });
+  document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) searchResults.style.display = 'none'; });
+
+  // Init
+  renderArticulos(articulos);
+  document.querySelector('.chip.activo');
 </script>
 </body>
 </html>
