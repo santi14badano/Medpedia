@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfermedad de Chagas — Medpedia</title>
+  <meta name="description" content="Enfermedad de Chagas: epidemiología Argentina, ciclo biológico, fases aguda y crónica, diagnóstico serológico, tratamiento tripanocida, miocardiopatía chagásica. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --chagas: #1A5C8A; --chagas-claro: #E6F1FB; --chagas-oscuro: #0F3A5A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--chagas-claro); color: var(--chagas-oscuro); }
+    .tag-argentina { background: #EBF5E9; color: #1A5C2A; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-chagas { font-size: 16px; font-weight: 500; color: var(--chagas); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-chagas{ border-left: 3px solid var(--chagas); background: var(--chagas-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .fase-box { border-radius: 14px; padding: 1.2rem; border: 1.5px solid; margin-bottom: 12px; }
+    .fase-box.aguda { background: #FDEAEA; border-color: #E88080; }
+    .fase-box.indeter { background: #E6F1FB; border-color: #90C0E0; }
+    .fase-box.cronica { background: var(--chagas-claro); border-color: #90B8D8; }
+    .fase-nombre { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .fase-nombre.aguda { color: #C0392B; }
+    .fase-nombre.indeter { color: #1A5E9A; }
+    .fase-nombre.cronica { color: var(--chagas); }
+    .fase-content { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .fase-content strong { color: var(--texto); }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--chagas); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--chagas-claro); color: var(--chagas-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .arg-banner { background: linear-gradient(135deg, #75AADB 0%, #75AADB 33%, #FFFFFF 33%, #FFFFFF 66%, #FCBE30 66%); border-radius: 12px; padding: 1px; margin-bottom: 10px; }
+    .arg-inner { background: var(--blanco); border-radius: 11px; padding: 1rem 1.25rem; font-size: 14px; color: var(--texto-sec); line-height: 1.6; }
+    .arg-inner strong { color: var(--texto); }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 14px; text-align: center; }
+    .stat-num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; color: var(--chagas); }
+    .stat-label { font-size: 11px; color: var(--texto-ter); margin-top: 2px; line-height: 1.4; }
+    .transvias { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .via-badge { font-size: 12px; padding: 6px 14px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+    .via-badge.principal { background: #FDEAEA; border-color: #E08080; color: #922B21; }
+    .via-badge.secundaria { background: var(--chagas-claro); border-color: #90B8D8; color: var(--chagas-oscuro); }
+    .via-badge.vertical { background: #FEF0DC; border-color: #E0A060; color: #8B4500; }
+    .grupo-chagas { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 580px) { .grupo-chagas { grid-template-columns: 1fr 1fr; } }
+    .grupo-card { border-radius: 12px; padding: 12px; border: 1px solid var(--borde); background: var(--blanco); }
+    .grupo-letra { font-size: 20px; font-weight: 700; color: var(--chagas); margin-bottom: 4px; }
+    .grupo-desc { font-size: 11px; color: var(--texto-sec); line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › Enfermedad de Chagas</div>
+  <div class="titulo">Enfermedad de Chagas</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-argentina">🇦🇷 Endémica Argentina</span>
+    <span class="tag tag-fuente">MSAL Argentina · OPS 2022 · TRAPS 2018 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- ARGENTINA -->
+  <div class="seccion">
+    <div class="arg-banner">
+      <div class="arg-inner">
+        <strong>Argentina: uno de los países más afectados del mundo.</strong> Aproximadamente <strong>1,5–2 millones de personas infectadas</strong> con <em>Trypanosoma cruzi</em> en Argentina. La enfermedad de Chagas es la principal causa de <strong>miocardiopatía no isquémica</strong> y de <strong>muerte súbita cardíaca</strong> en adultos jóvenes en las regiones endémicas. Es de notificación obligatoria. El tamizaje serológico es obligatorio en donantes de sangre, embarazadas y recién nacidos de madres seropositivas.
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">7M</div><div class="stat-label">Infectados en América Latina</div></div>
+      <div class="stat-card"><div class="stat-num">1,5M</div><div class="stat-label">Infectados en Argentina</div></div>
+      <div class="stat-card"><div class="stat-num">30%</div><div class="stat-label">De infectados desarrolla cardiopatía chagásica crónica</div></div>
+      <div class="stat-card"><div class="stat-num">10%</div><div class="stat-label">Desarrolla megavísceras (megaesófago o megacolon)</div></div>
+      <div class="stat-card"><div class="stat-num">5%</div><div class="stat-label">Transmisión vertical (madre infectada → hijo)</div></div>
+      <div class="stat-card"><div class="stat-num">21</div><div class="stat-label">Provincias con presencia de vinchuca (Triatoma infestans) en Argentina</div></div>
+    </div>
+  </div>
+
+  <!-- AGENTE Y TRANSMISIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🦠 Agente etiológico y transmisión</div>
+    <div class="hl-chagas"><strong>Trypanosoma cruzi:</strong> protozoo flagelado. Vector principal en Argentina: <em>Triatoma infestans</em> ("vinchuca"). El insecto defeca mientras pica → tripomastigotes en las heces → el huésped los introduce al rascarse. También puede transmitirse por otras vías.</div>
+
+    <div style="margin-bottom:10px;"><div class="col-titulo" style="font-size:11px; font-weight:600; color:var(--texto-ter); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Vías de transmisión</div>
+    <div class="transvias">
+      <span class="via-badge principal">🦟 Vectorial (vinchuca) — principal histórica</span>
+      <span class="via-badge vertical">🤰 Vertical (transplacentaria) — principal actual en zonas urbanas</span>
+      <span class="via-badge secundaria">🩸 Transfusional (donantes no tamizados)</span>
+      <span class="via-badge secundaria">🍖 Oral (alimentos contaminados con heces)</span>
+      <span class="via-badge secundaria">💉 Trasplante de órganos</span>
+      <span class="via-badge secundaria">🔬 Accidental (laboratorio)</span>
+    </div></div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Cambio epidemiológico importante en Argentina</div>
+      Con el control vectorial (eliminación de <em>T. infestans</em> de las viviendas), la <strong>transmisión vertical (congénita) es ahora la principal vía de nuevos casos</strong> en Argentina. Por eso el tamizaje serológico de <strong>toda embarazada</strong> y el seguimiento del recién nacido de madre seropositiva son obligatorios por ley (Ley 26.281).
+    </div>
+  </div>
+
+  <!-- FASES -->
+  <div class="seccion">
+    <div class="sec-titulo-chagas">🔵 Fases de la enfermedad</div>
+
+    <div class="fase-box aguda">
+      <div class="fase-nombre aguda">⚡ Fase Aguda (0–2 meses post-infección)</div>
+      <div class="fase-content">
+        <strong>Parasitemia alta</strong> → parásitos detectables en sangre periférica. La mayoría (60–70%) es <strong>asintomática o leve</strong>.<br><br>
+        <strong>Signos de puerta de entrada (cuando es vectorial):</strong><br>
+        ✦ <strong>Signo de Romaña:</strong> edema bipalpebral unilateral indoloro ("ojo en compota") por inoculación conjuntival → prácticamente patognomónico de Chagas agudo<br>
+        ✦ <strong>Chagoma de inoculación:</strong> lesión dérmica indurada en el sitio de picadura<br><br>
+        <strong>Clínica sistémica:</strong> fiebre prolongada · malestar general · linfadenopatía · hepatoesplenomegalia · edema facial · erupción maculopapular · miocarditis aguda (la complicación más grave: arritmias, IC) · meningoencefalitis (en inmunocomprometidos y niños pequeños, alta mortalidad)<br><br>
+        <strong>Laboratorio:</strong> hemograma (linfocitosis, monocitosis) · transaminasas levemente elevadas. <strong>Diagnóstico parasitológico directo posible: micrométodo, microhematocrito, gota gruesa.</strong>
+      </div>
+    </div>
+
+    <div class="fase-box indeter">
+      <div class="fase-nombre indeter">😴 Fase Indeterminada (años a décadas)</div>
+      <div class="fase-content">
+        <strong>Serología positiva + sin síntomas + ECG normal + Rx tórax normal + sin megavísceras.</strong><br><br>
+        El 60–70% de los infectados permanece en esta fase toda la vida. Son portadores asintomáticos que pueden transmitir la enfermedad (especialmente por vía vertical y transfusional). Tienen parasitemia subpatente (no detectable por métodos directos). <strong>Requieren seguimiento cardiológico periódico</strong> (ECG anual) para detectar progresión precoz a la forma crónica.
+      </div>
+    </div>
+
+    <div class="fase-box cronica">
+      <div class="fase-nombre cronica">🫀 Fase Crónica (30% de los infectados)</div>
+      <div class="fase-content">
+        <strong>Forma cardíaca (más frecuente y grave):</strong> miocardiopatía chagásica crónica → ver sección siguiente<br><br>
+        <strong>Forma digestiva:</strong><br>
+        ✦ <strong>Megaesófago:</strong> disfagia progresiva (primero sólidos, luego líquidos) · regurgitación · pérdida de peso · aspiración → similar clínicamente a acalasia (diagnóstico diferencial principal)<br>
+        ✦ <strong>Megacolon:</strong> constipación severa y crónica · distensión abdominal · fecaloma · riesgo de vólvulo sigmoides (emergencia quirúrgica)<br>
+        ✦ Mecanismo: destrucción de plexos nerviosos autonómicos intramurales (plexo de Auerbach y Meissner) por la respuesta inflamatoria crónica → denervación → dilatación<br><br>
+        <strong>Forma mixta:</strong> cardíaca + digestiva simultáneas
+      </div>
+    </div>
+  </div>
+
+  <!-- CARDIOPATÍA CHAGÁSICA -->
+  <div class="seccion">
+    <div class="sec-titulo-chagas">🫀 Miocardiopatía Chagásica Crónica</div>
+    <div class="hl-chagas">La cardiopatía chagásica crónica es la forma más grave y la principal causa de morbimortalidad en el Chagas. Se desarrolla en el 30% de los infectados, décadas después de la infección inicial. Es la <strong>causa más frecuente de miocardiopatía dilatada en Argentina</strong>.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Descripción</th></tr>
+        <tr><td><strong>Lesión anatomopatológica</strong></td><td>Miocardiopatía dilatada con fibrosis difusa, infiltrado inflamatorio crónico, aneurisma apical del VI (clásico y específico de Chagas), adelgazamiento de la pared</td></tr>
+        <tr><td><strong>Aneurisma apical</strong></td><td>Hallazgo prácticamente patognomónico en la eco. Localización: ápex del VI (a diferencia de los aneurismas post-IAM que son más frecuentes en cara anterior o inferior). Fuente de trombos → embolias sistémicas.</td></tr>
+        <tr><td><strong>Arritmias</strong></td><td>Extrasístoles ventriculares (muy frecuentes) · taquicardia ventricular sostenida o no sostenida · fibrilación ventricular → muerte súbita. También: bloqueo AV, bloqueo de rama derecha + hemibloqueo anterior izquierdo (BRDHH + HBAI = patrón ECG clásico de Chagas)</td></tr>
+        <tr><td><strong>Insuficiencia cardíaca</strong></td><td>Progresiva, biventricular. FEVI disminuida.</td></tr>
+        <tr><td><strong>Tromboembolismo</strong></td><td>ACV embólico por trombo en aneurisma apical o FA. Indicación de anticoagulación.</td></tr>
+        <tr><td><strong>Muerte súbita</strong></td><td>Principal causa de muerte en Chagas crónico. Por arritmias ventriculares malignas en contexto de miocardiopatía con fibrosis.</td></tr>
+      </table>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>ECG del Chagas crónico:</strong> el patrón más característico es el <strong>bloqueo de rama derecha (BRDHH) asociado a hemibloqueo anterior izquierdo (HBAI)</strong>. También: extrasístoles ventriculares, bloqueo AV de 1° y 2° grado, QT prolongado. Un ECG normal en paciente seropositivo orienta hacia fase indeterminada.</div>
+
+    <div style="margin-bottom:12px;">
+      <div class="col-titulo" style="font-size:11px; font-weight:600; color:var(--texto-ter); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Clasificación de Los Andes (cardiopatía chagásica)</div>
+      <div class="grupo-chagas">
+        <div class="grupo-card"><div class="grupo-letra">A</div><div class="grupo-desc">Seropositivo · sin manifestaciones cardíacas · ECG normal</div></div>
+        <div class="grupo-card"><div class="grupo-letra">B1</div><div class="grupo-desc">Alteraciones ECG sin IC ni aneurisma · función VI normal</div></div>
+        <div class="grupo-card"><div class="grupo-letra">B2</div><div class="grupo-desc">Disfunción VI sin IC clínica (FEVI disminuida)</div></div>
+        <div class="grupo-card"><div class="grupo-letra">C</div><div class="grupo-desc">IC compensada o descompensada · FEVI disminuida</div></div>
+        <div class="grupo-card" style="grid-column: 1/-1;"><div class="grupo-letra">D</div><div class="grupo-desc">IC refractaria al tratamiento convencional · candidatos a trasplante cardíaco</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fase</th><th>Método</th><th>Fundamento</th></tr>
+        <tr><td rowspan="3"><strong>Aguda</strong> (parasitemia alta)</td><td><strong>Micrométodo (microhematocrito)</strong></td><td>Concentración de parásitos por centrifugación → observación directa al microscopio. Sensibilidad 60–90% en fase aguda temprana.</td></tr>
+        <tr><td><strong>Gota gruesa / frotis</strong></td><td>Menos sensible que micrométodo. Permite ver la forma tripomastigote.</td></tr>
+        <tr><td><strong>PCR para T. cruzi</strong></td><td>Alta sensibilidad en fase aguda y en inmunocomprometidos. Cuantifica carga parasitaria. De elección en RN de madre seropositiva (en los primeros días de vida).</td></tr>
+        <tr><td rowspan="2"><strong>Crónica / Indeterminada</strong> (parasitemia subpatente)</td><td><strong>Serología: ELISA + HAI o IFI</strong></td><td>Se requieren <strong>2 técnicas serológicas con diferente antígeno</strong> con resultado positivo para confirmar el diagnóstico (criterio OPS). Si discordancia: tercera técnica.</td></tr>
+        <tr><td><strong>Hemaglutinación indirecta (HAI)</strong></td><td>Técnica clásica, frecuentemente usada en Argentina. Alta sensibilidad para Chagas crónico.</td></tr>
+        <tr><td><strong>Chagas congénito</strong></td><td><strong>PCR en RN (primeras 24–48 h)</strong> si madre seropositiva. Si negativo → serología IgG a los 9–10 meses (desaparece la IgG materna).</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Regla diagnóstica clave:</strong> en la fase crónica, <strong>2 serológicas positivas con diferente principio = diagnóstico confirmado</strong>. Si una es positiva y la otra negativa (discordancia) → tercera técnica desempatadora. No diagnosticar Chagas con una sola serología.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-chagas">💊 Tratamiento tripanocida</div>
+    <div class="hl-chagas">El tratamiento tripanocida tiene como objetivo erradicar el parásito. Es más eficaz cuanto más precozmente se administre. En fase crónica, no revierte el daño ya establecido pero puede frenar la progresión.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Benznidazol</div>
+      <div class="farma-clase">Nitroimidazol · Fármaco de primera elección en Argentina</div>
+      <div class="dosis-badge">5–7 mg/kg/día VO en 2 tomas × 60 días</div>
+      <div class="farma-detalle">
+        <strong>Mecanismo:</strong> genera radicales libres que dañan el ADN y las proteínas del parásito.<br>
+        <strong>Eficacia:</strong> fase aguda: 80–90% de curación parasitológica. Fase crónica reciente (&lt;1 año): 50–60%. Fase crónica establecida: 10–20% (frena progresión).<br>
+        <strong>Efectos adversos frecuentes (30–40%):</strong> dermatitis (erupción cutánea, a veces grave → suspender), neuropatía periférica (parestesias → suspender), náuseas, intolerancia digestiva, neutropenia.<br>
+        <strong>Contraindicaciones:</strong> embarazo (teratogénico · contraindicado) · insuficiencia hepática grave · insuficiencia renal grave · lactancia.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Nifurtimox</div>
+      <div class="farma-clase">Nitrofurano · Fármaco alternativo</div>
+      <div class="dosis-badge">Adultos: 8–10 mg/kg/día × 60–90 días · Niños: 15–20 mg/kg/día</div>
+      <div class="farma-detalle">
+        Segunda opción cuando benznidazol no está disponible o hay intolerancia. Mayor tasa de efectos adversos gastrointestinales (náuseas, vómitos, anorexia) y neurológicos (insomnio, excitación, polineuropatía). Eficacia similar al benznidazol. <strong>También contraindicado en embarazo.</strong>
+      </div>
+    </div>
+
+    <div class="tabla-wrap" style="margin-top:14px;">
+      <table>
+        <tr><th>Situación clínica</th><th>Indicación de tratamiento</th></tr>
+        <tr><td><strong>Fase aguda (cualquier mecanismo)</strong></td><td>✅ Siempre indicado. Inicio lo antes posible.</td></tr>
+        <tr><td><strong>Chagas congénito</strong></td><td>✅ Siempre indicado. Curación &gt;95% si se trata en el primer año de vida.</td></tr>
+        <tr><td><strong>Accidente de laboratorio o transfusional</strong></td><td>✅ Tratamiento profiláctico inmediato.</td></tr>
+        <tr><td><strong>Fase crónica en niños y adolescentes (&lt;18 años)</strong></td><td>✅ Siempre indicado (mejor relación beneficio/riesgo).</td></tr>
+        <tr><td><strong>Fase crónica en adultos (indeterminada o cardíaca leve)</strong></td><td>⚠️ Indicado en adultos hasta ~50 años sin cardiopatía avanzada. Evidencia del ensayo BENEFIT (2015): no detuvo la progresión en cardiopatía establecida, pero se recomienda en asintomáticos crónicos jóvenes.</td></tr>
+        <tr><td><strong>Reactivación en inmunocomprometidos (HIV, trasplante)</strong></td><td>✅ Siempre indicado. Alta mortalidad sin tratamiento.</td></tr>
+        <tr><td><strong>Cardiopatía chagásica avanzada (NYHA III–IV)</strong></td><td>❌ No se recomienda tratamiento tripanocida (riesgo &gt; beneficio). Tratar la IC.</td></tr>
+        <tr><td><strong>Embarazo</strong></td><td>❌ Contraindicado. Tratar después del parto y la lactancia.</td></tr>
+      </table>
+    </div>
+
+    <div class="hl-info">💡 <strong>Tratamiento de la cardiopatía chagásica crónica:</strong> igual que cualquier IC: IECA/ARA II + betabloqueantes + diuréticos + espironolactona según estadio. Las arritmias ventriculares graves → amiodarona + considerar CDI (cardiodesfibrilador implantable). Aneurisma apical con trombo → anticoagulación.</div>
+  </div>
+
+  <!-- CHAGAS CONGÉNITO -->
+  <div class="seccion">
+    <div class="sec-titulo">👶 Chagas congénito — protocolo en Argentina</div>
+    <div class="hl-warn">⚠️ El tamizaje de Chagas en el embarazo es <strong>obligatorio en Argentina</strong> (Ley 26.281). Toda embarazada debe tener serología para T. cruzi. Si es positiva → el RN debe estudiarse.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Momento</th><th>Método</th><th>Conducta</th></tr>
+        <tr><td>Primeras 24–48 h de vida</td><td>PCR en sangre del RN</td><td>Si positivo → iniciar benznidazol. Si negativo → repetir a los 30 días.</td></tr>
+        <tr><td>30 días de vida</td><td>PCR + micrométodo</td><td>Si positivo → iniciar tratamiento. Si negativo → continuar seguimiento.</td></tr>
+        <tr><td>9–10 meses de vida</td><td>Serología IgG (ELISA + HAI)</td><td>La IgG materna desaparece a los 6–9 meses. Si positivo a los 9–10 meses → infección confirmada → tratar.</td></tr>
+      </table>
+    </div>
+    <div class="hl-gastro" style="border-color:var(--chagas); background:var(--chagas-claro);">✅ <strong>El Chagas congénito tiene curación &gt;95% si se trata antes del año de vida.</strong> Esta es la ventana terapéutica más importante. Después de los 2 años, la eficacia cae al 50–60%.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Agente: Trypanosoma cruzi · vector: vinchuca (Triatoma infestans)</span>
+      <span class="pill">Transmisión principal actual en Argentina: vertical (congénita)</span>
+      <span class="pill">Signo de Romaña: edema bipalpebral unilateral → fase aguda vectorial</span>
+      <span class="pill">Fase aguda: diagnóstico directo (micrométodo, PCR)</span>
+      <span class="pill">Fase crónica: 2 serológicas positivas con diferente antígeno</span>
+      <span class="pill">60–70% de infectados: fase indeterminada toda la vida</span>
+      <span class="pill">30% desarrolla cardiopatía chagásica crónica</span>
+      <span class="pill">ECG clásico: BRDHH + HBAI</span>
+      <span class="pill">Aneurisma apical VI: patognomónico de Chagas</span>
+      <span class="pill">Muerte súbita: principal causa de muerte en Chagas crónico</span>
+      <span class="pill">Megaesófago chagásico: igual presentación que acalasia</span>
+      <span class="pill">Megacolon: constipación severa + riesgo de vólvulo</span>
+      <span class="pill">Tratamiento: benznidazol 5–7 mg/kg/día × 60 días (1ª línea)</span>
+      <span class="pill">Benznidazol contraindicado en embarazo</span>
+      <span class="pill">Chagas congénito: tratar en primer año → curación >95%</span>
+      <span class="pill">Tamizaje serológico obligatorio en embarazo (Ley 26.281)</span>
+      <span class="pill">Reactivación en HIV/trasplante: siempre tratar</span>
+      <span class="pill">Cardiopatía avanzada NYHA III–IV: no indicar tripanocida</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Ministerio de Salud de la Nación Argentina. Guía para el diagnóstico y tratamiento de la enfermedad de Chagas 2018 (TRAPS) · OPS/OMS. Guías para el diagnóstico y el tratamiento de la enfermedad de Chagas 2022 · Rassi A Jr, Rassi A, Marin-Neto JA. Chagas disease. Lancet 2010 · Morillo CA, et al. Randomized Trial of Benznidazole for Chronic Chagas' Cardiomyopathy (BENEFIT). N Engl J Med 2015 · Harrison's Principles of Internal Medicine, 21st ed. · Ley 26.281/2007 — Programa Nacional de Chagas, Argentina.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
