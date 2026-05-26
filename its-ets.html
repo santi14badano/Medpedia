@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfermedades de Transmisión Sexual (ETS / ITS) — Medpedia</title>
+  <meta name="description" content="ETS e ITS: sífilis, gonorrea, chlamydia, herpes genital, HPV, tricomoniasis, chancroide. Diagnóstico, tratamiento y manejo en Argentina. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --infecto: #B84C00; --infecto-claro: #FEF0DC; --infecto-oscuro: #8A3700;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: var(--infecto-claro); color: var(--infecto-oscuro); }
+    .tag-gineco { background: #FCE4EC; color: #880E4F; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-its { font-size: 16px; font-weight: 500; color: var(--infecto); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-its   { border-left: 3px solid var(--infecto); background: var(--infecto-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .its-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+    .its-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; }
+    .its-nombre { font-size: 15px; font-weight: 600; color: var(--texto); }
+    .its-agente { font-size: 12px; color: var(--texto-ter); margin-top: 1px; }
+    .its-body { padding: 0 16px 14px; }
+    .its-row { display: grid; grid-template-columns: 90px 1fr; gap: 4px 12px; font-size: 13px; margin-bottom: 6px; align-items: start; }
+    .its-label { color: var(--texto-ter); font-weight: 500; padding-top: 1px; }
+    .its-val { color: var(--texto-sec); line-height: 1.55; }
+    .its-val strong { color: var(--texto); }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 2px 9px; border-radius: 9px; font-weight: 500; margin-right: 4px; }
+    .badge-key { background: var(--danger-claro); color: var(--danger); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .color-sifilis { background: #FFF3E0; }
+    .color-gonorrea { background: #E3F2FD; }
+    .color-chlamydia { background: #F3E5F5; }
+    .color-herpes { background: #FFEBEE; }
+    .color-hpv { background: #E8F5E9; }
+    .color-trico { background: #E0F7FA; }
+    .color-chancroide { background: #FBE9E7; }
+    .color-linfogranuloma { background: #EDE7F6; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología</a> › ETS / ITS</div>
+  <div class="titulo">Enfermedades de Transmisión Sexual</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-gineco">Ginecología</span>
+    <span class="tag tag-fuente">CDC STI Guidelines 2021 · OPS 2022 · Guías MSAL Argentina</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Generalidades</div>
+    <div class="hl-its">Las ITS (infecciones de transmisión sexual) son un problema de salud pública mayor. Se estima que hay >1 millón de nuevas ITS por día en el mundo (OMS 2022). En Argentina, la sífilis congénita, la gonorrea y el HPV son prioridades del Ministerio de Salud. <strong>Principio fundamental: tratar a la pareja sexual siempre.</strong></div>
+    <div class="hl-warn">⭐ <strong>Coinfección frecuente:</strong> ante el diagnóstico de cualquier ITS ulcerativa → investigar sífilis + HIV + hepatitis B y C. Solicitar serología completa. Las úlceras genitales aumentan ×3–5 el riesgo de transmisión de HIV.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-its">🔬 ITS ulcerativas — diagnóstico diferencial</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Agente</th><th>Úlcera</th><th>Adenopatía</th><th>Dolor</th></tr>
+        <tr><td><strong>Sífilis primaria</strong> (T. pallidum)</td><td>Indurada, única, bordes regulares, base limpia (chancro)</td><td>Bilateral, indolora, no supurativa</td><td>Indolora ⭐</td></tr>
+        <tr><td><strong>Herpes genital</strong> (HSV-2 &gt; HSV-1)</td><td>Vesículas → úlceras múltiples, superficiales, base eritematosa</td><td>Bilateral, dolorosa</td><td>Muy dolorosa ⭐</td></tr>
+        <tr><td><strong>Chancroide</strong> (H. ducreyi)</td><td>Blanda, bordes irregulares socavados, base purulenta, múltiple</td><td>Unilateral, dolorosa, puede fistulizar (bubón)</td><td>Muy dolorosa ⭐</td></tr>
+        <tr><td><strong>Linfogranuloma venéreo</strong> (C. trachomatis L1-L3)</td><td>Pequeña, transitoria (puede no notarse)</td><td>Unilateral, bubón fluctuante, doloroso</td><td>Úlcera indolora; bubón doloroso</td></tr>
+        <tr><td><strong>Granuloma inguinal</strong> (K. granulomatis)</td><td>Indolora, vegetante, sin adenopatía</td><td>Ausente (pseudoadenomegalias)</td><td>Indolora</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 Mnemotecnia: <strong>"Sífilis = indolora, dura, única. Herpes = dolorosa, blanda, múltiple. Chancroide = dolorosa, blanda, sucia."</strong></div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-its">💊 ITS principales — diagnóstico y tratamiento</div>
+
+    <!-- SÍFILIS -->
+    <div class="its-card">
+      <div class="its-header color-sifilis">
+        <div>
+          <div class="its-nombre">🔴 Sífilis</div>
+          <div class="its-agente">Treponema pallidum · Bacteria · Spirocheta</div>
+        </div>
+        <span class="badge-key">NOTIFICACIÓN OBLIGATORIA</span>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Primaria</span><span class="its-val"><strong>Chancro:</strong> úlcera indurada, indolora, única, base limpia. Aparece 10–90 días post-exposición. Se resuelve espontáneamente en 3–6 semanas.</span></div>
+        <div class="its-row"><span class="its-label">Secundaria</span><span class="its-val"><strong>Rash maculopapular</strong> que incluye <strong>palmas y plantas</strong> (característico), condilomas planos (húmedos), alopecia, muchas veces. 6 semanas – 6 meses post-chancro. Altamente contagiosa.</span></div>
+        <div class="its-row"><span class="its-label">Latente</span><span class="its-val"><strong>Temprana (&lt;1 año):</strong> asintomática, serología (+). <strong>Tardía (&gt;1 año):</strong> asintomática, menos contagiosa. Diferencia práctica: temprana trata con 1 dosis, tardía con 3 dosis.</span></div>
+        <div class="its-row"><span class="its-label">Terciaria</span><span class="its-val"><strong>Gomas sifilíticas</strong> (piel, huesos, vísceras) · <strong>Neurosífilis</strong> (meningitis, tabes dorsal, paresia general, pupila de Argyll Robertson) · <strong>Sífilis cardiovascular</strong> (aortitis sifilítica → aneurisma aorta ascendente)</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val"><strong>No treponémico:</strong> VDRL / RPR (cribado, sigue el título para respuesta al tratamiento). <strong>Treponémico:</strong> FTA-ABS / TPHA (confirma, permanece (+) de por vida). Algoritmo actual: treponémico primero (reverse testing), confirmar con no treponémico.</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <span class="dosis-badge">Primaria / Secundaria / Latente temprana</span> Penicilina G benzatínica 2.4 MU IM dosis única<br>
+          <span class="dosis-badge">Latente tardía / Terciaria no neurológica</span> Penicilina G benzatínica 2.4 MU IM × 3 dosis (semanas 0, 1, 2)<br>
+          <span class="dosis-badge">Neurosífilis</span> Penicilina G cristalina 18–24 MU/día IV × 10–14 días<br>
+          <span class="dosis-badge">Alergia a penicilina</span> Doxiciclina 100 mg c/12h × 14 días (no en embarazo). Embarazada alérgica → desensibilización a penicilina obligatoria.
+        </span></div>
+        <div class="its-row"><span class="its-label">Congénita</span><span class="its-val">Transmisión transplacentaria en cualquier estadio. Prevención: VDRL en 1º trimestre, 28ª semana y parto. Tratar con penicilina antes de la 16ª semana previene la infección fetal.</span></div>
+      </div>
+    </div>
+
+    <!-- GONORREA -->
+    <div class="its-card">
+      <div class="its-header color-gonorrea">
+        <div>
+          <div class="its-nombre">🔵 Gonorrea</div>
+          <div class="its-agente">Neisseria gonorrhoeae · Diplococco gram negativo</div>
+        </div>
+        <span class="badge-key">RESISTENCIA CRECIENTE</span>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Clínica ♂</span><span class="its-val">Uretritis con secreción purulenta amarillo-verdosa, disuria. 2–5 días post-exposición. 10–15% son asintomáticos.</span></div>
+        <div class="its-row"><span class="its-label">Clínica ♀</span><span class="its-val">Mayoría asintomáticas. Cervicitis mucopurulenta (flujo amarillo), disuria. Complicación: EPI (enfermedad pélvica inflamatoria) → salpingitis → infertilidad, embarazo ectópico.</span></div>
+        <div class="its-row"><span class="its-label">Diseminada</span><span class="its-val"><strong>Gonorrea diseminada (GD):</strong> artritis séptica (monoarticular, migratoria), tenosinovitis, lesiones cutáneas pustulosas. Más frecuente en mujeres (menstruación / embarazo favorecen bacteriemia).</span></div>
+        <div class="its-row"><span class="its-label">Neonato</span><span class="its-val"><strong>Oftalmia neonatal</strong> (conjuntivitis purulenta intensa) → ceguera si no se trata. Profilaxis: colirio de eritromicina o nitrato de plata al nacer.</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val">Cultivo en agar Thayer-Martin (gold standard). NAAT (PCR) en secreción uretral/cervical/rectal/faríngea: mayor sensibilidad. Diplococo gram (-) intracelular en el directo: orientador pero no confirma.</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <span class="dosis-badge">No complicada (uretra, cérvix, recto)</span> Ceftriaxona 500 mg IM dosis única (CDC 2021) + azitromicina 1 g VO si no se descartó chlamydia<br>
+          <span class="dosis-badge">Faríngea</span> Ceftriaxona 500 mg IM dosis única (mayor resistencia)<br>
+          <span class="dosis-badge">Diseminada</span> Ceftriaxona 1 g IV/IM × 7 días<br>
+          ⚠️ Resistencia a fluoroquinolonas y tetraciclinas muy alta — no usar ciprofloxacina como primera línea.
+        </span></div>
+      </div>
+    </div>
+
+    <!-- CHLAMYDIA -->
+    <div class="its-card">
+      <div class="its-header color-chlamydia">
+        <div>
+          <div class="its-nombre">🟣 Chlamydia trachomatis</div>
+          <div class="its-agente">C. trachomatis serovares D–K (genital) · L1-L3 (LGV)</div>
+        </div>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Clínica</span><span class="its-val"><strong>ITS bacteriana más frecuente en el mundo.</strong> Mayoritariamente asintomática (70–80%). Cervicitis, uretritis con secreción clara/mucosa. Hombres: epididimitis, síndrome de Reiter (artritis + uretritis + uveítis). Mujeres: EPI, salpingitis crónica → infertilidad tubárica.</span></div>
+        <div class="its-row"><span class="its-label">LGV</span><span class="its-val">Linfogranuloma venéreo: serovares L1–L3. Úlcera pequeña transitoria + <strong>bubón inguinal unilateral</strong> fluctuante y doloroso que puede fistulizar. Proctitis hemorrágica en HSH. Endémico en trópicos; brotes en HSH en Europa/Latinoamérica.</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val">NAAT (PCR) en orina de primera micción, hisopado uretral/endocervical/rectal/faríngeo. Cultivo celular: poco accesible. Screening en embarazadas y mujeres sexualmente activas &lt;25 años.</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <span class="dosis-badge">No complicada / genital</span> Doxiciclina 100 mg c/12h × 7 días (de elección) o azitromicina 1 g VO dosis única<br>
+          <span class="dosis-badge">Embarazo</span> Azitromicina 1 g VO dosis única (doxiciclina contraindicada)<br>
+          <span class="dosis-badge">LGV</span> Doxiciclina 100 mg c/12h × 21 días
+        </span></div>
+      </div>
+    </div>
+
+    <!-- HERPES -->
+    <div class="its-card">
+      <div class="its-header color-herpes">
+        <div>
+          <div class="its-nombre">🔴 Herpes Genital</div>
+          <div class="its-agente">Virus Herpes Simple tipo 2 (HSV-2) &gt; HSV-1 · DNA virus</div>
+        </div>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Primario</span><span class="its-val">Vesículas múltiples dolorosas → úlceras superficiales. Adenopatía bilateral dolorosa. Fiebre, malestar general. Síntomas locales severos 2–3 semanas. Luego: latencia en ganglios sacros.</span></div>
+        <div class="its-row"><span class="its-label">Recurrencias</span><span class="its-val">Más leves y breves que el primario. Desencadenantes: estrés, fiebre, menstruación, inmunosupresión. Pródromo: ardor/prurito/parestesias. El 70% de las transmisiones ocurre en períodos asintomáticos (shed viral).</span></div>
+        <div class="its-row"><span class="its-label">Neonatal</span><span class="its-val">Infección intraparto. Puede ser diseminada (encefalitis, hepatitis, insuficiencia multiorgánica) o localizada (SNC, piel-ojos-boca). Alta mortalidad si no se trata. Cesárea si lesiones activas en parto.</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val">Clínico en presentación típica. Confirmación: PCR en hisopado de la úlcera (mayor sensibilidad). Cultivo viral (menor sensibilidad, especialmente en recurrencias). Serología IgG anti-HSV-2: infección pasada, no diagnóstica de episodio agudo.</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <span class="dosis-badge">Episodio primario</span> Aciclovir 400 mg c/8h × 7–10 días o valaciclovir 1 g c/12h × 7–10 días<br>
+          <span class="dosis-badge">Recurrencia</span> Aciclovir 400 mg c/8h × 5 días o valaciclovir 500 mg c/12h × 3 días<br>
+          <span class="dosis-badge">Supresión crónica (&gt;6 recurrencias/año)</span> Valaciclovir 500 mg/día continuo<br>
+          ⚠️ No es curativo. Reduce duración y frecuencia, pero no elimina el virus.
+        </span></div>
+      </div>
+    </div>
+
+    <!-- HPV -->
+    <div class="its-card">
+      <div class="its-header color-hpv">
+        <div>
+          <div class="its-nombre">🟢 HPV — Virus del Papiloma Humano</div>
+          <div class="its-agente">Papillomavirus humano · &gt;200 genotipos · DNA virus</div>
+        </div>
+        <span class="badge-key">VACUNA DISPONIBLE</span>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Genotipos</span><span class="its-val"><strong>Bajo riesgo (6, 11):</strong> condilomas acuminados (verrugas genitales). <strong>Alto riesgo (16, 18, 31, 33...):</strong> cáncer de cuello uterino, vagina, vulva, ano, orofaringe, pene. HPV 16 y 18 causan ~70% del cáncer de cérvix.</span></div>
+        <div class="its-row"><span class="its-label">Condilomas</span><span class="its-val">Verrugas genitales exofíticas, blandas, en coliflor. Genitales externos, perianal, cuello uterino. No duelen (salvo friabilidad). Tratar por razones estéticas/psicológicas y para reducir transmisión.</span></div>
+        <div class="its-row"><span class="its-label">Screening</span><span class="its-val">PAP (citología) + colposcopía ante anormalidad. Prueba de HPV (detección de DNA viral): más sensible que el PAP. Combinación (co-testing) recomendada en ≥30 años. Argentina: PAP cada 3 años en 25–64 años.</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val">Condilomas: clínico. Test de acetowhite (ácido acético 5%): lesiones subclínicas se tornan blancas. Colposcopía + biopsia: para lesiones cervicales sospechosas (NIC I → III → carcinoma in situ).</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <strong>Condilomas (aplicado por el paciente):</strong> <span class="dosis-badge">Podofilotoxina 0.5% solución c/12h × 3 días/sem × 4 sem</span> o <span class="dosis-badge">Imiquimod 5% crema × 16 sem</span><br>
+          <strong>Aplicado por el médico:</strong> <span class="dosis-badge">Ácido tricloroacético 80–90%</span> · Crioterapia · Escisión quirúrgica<br>
+          <strong>Lesiones cervicales de alto grado (NIC II–III):</strong> LEEP (escisión electroquirúrgica), crioablación, conización.<br>
+          ⚠️ No hay antiviral contra el HPV. El tratamiento es de las lesiones, no del virus.
+        </span></div>
+        <div class="its-row"><span class="its-label">Vacuna</span><span class="its-val"><strong>Argentina:</strong> nonavalente (Gardasil 9, cubre genotipos 6, 11, 16, 18, 31, 33, 45, 52, 58). Calendario nacional: niñas y niños de 11 años, 2 dosis. Captura hasta 26 años en personas no vacunadas. Mayor efectividad antes del inicio de la actividad sexual.</span></div>
+      </div>
+    </div>
+
+    <!-- TRICOMONIASIS -->
+    <div class="its-card">
+      <div class="its-header color-trico">
+        <div>
+          <div class="its-nombre">🔵 Tricomoniasis</div>
+          <div class="its-agente">Trichomonas vaginalis · Protozoo flagelado</div>
+        </div>
+      </div>
+      <div class="its-body">
+        <div class="its-row"><span class="its-label">Clínica ♀</span><span class="its-val">Flujo vaginal <strong>amarillo-verdoso, espumoso, maloliente</strong>, prurito vulvar intenso, disuria. Cuello uterino "en fresa" (colpitis macular). pH vaginal >4.5.</span></div>
+        <div class="its-row"><span class="its-label">Clínica ♂</span><span class="its-val">Mayoritariamente asintomático. Uretritis leve, prostatitis ocasional.</span></div>
+        <div class="its-row"><span class="its-label">Diagnóstico</span><span class="its-val">Examen en fresco de flujo vaginal: protozoo flagelado móvil (sensibilidad 60–70%). NAAT: mayor sensibilidad (~98%). pH vaginal >4.5 + aminas al KOH (también en vaginosis bacteriana).</span></div>
+        <div class="its-row"><span class="its-label">Tratamiento</span><span class="its-val">
+          <span class="dosis-badge">Primera línea</span> Metronidazol 2 g VO dosis única (o 500 mg c/12h × 7 días en mujeres para mayor eficacia)<br>
+          <span class="dosis-badge">Alternativa</span> Tinidazol 2 g VO dosis única<br>
+          Tratar a la pareja siempre. Evitar alcohol durante tratamiento con metronidazol (efecto antabuse).
+        </span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención, profilaxis y notificación</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Intervención</th><th>Detalle</th></tr>
+        <tr><td><strong>Condón masculino</strong></td><td>Reduce transmisión de gonorrea, chlamydia, HIV, sífilis en ~80–90%. Menor eficacia contra HSV y HPV (transmisión por contacto piel-piel).</td></tr>
+        <tr><td><strong>Vacuna HPV</strong></td><td>Nonavalente. Argentina: 11 años, 2 dosis. Captura hasta 26 años. HSH y personas inmunocomprometidas: hasta 45 años.</td></tr>
+        <tr><td><strong>Vacuna hepatitis B</strong></td><td>Calendario nacional. Previene transmisión sexual de VHB. Testear antes de vacunar (si ya inmune, no vacunar).</td></tr>
+        <tr><td><strong>PrEP (Profilaxis Pre-Exposición HIV)</strong></td><td>Tenofovir/emtricitabina diario en personas de alto riesgo. Disponible en Argentina (MSAL). Eficacia >99% si adherencia correcta. No protege de otras ITS.</td></tr>
+        <tr><td><strong>PEP (Profilaxis Post-Exposición HIV)</strong></td><td>Iniciar ≤72 h post-exposición (idealmente &lt;2 h). Duración: 28 días. Esquema: tenofovir + emtricitabina + dolutegravir.</td></tr>
+        <tr><td><strong>Notificación obligatoria</strong></td><td>En Argentina: sífilis (todas las formas), sífilis congénita, gonorrea, HIV/SIDA son de notificación obligatoria al SNVS (Sistema Nacional de Vigilancia de la Salud).</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🚨 <strong>Sífilis congénita:</strong> VDRL a toda embarazada en el 1er control prenatal, en la semana 28 y en el parto. Ante VDRL reactiva → confirmar con FTA-ABS → tratar con penicilina inmediatamente. No esperar la confirmación para tratar en embarazadas.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Chancro sifilítico: indoloro, indurado, único — sífilis primaria</span>
+      <span class="pill">Rash en palmas y plantas → sífilis secundaria</span>
+      <span class="pill">Pupila de Argyll Robertson: no reactiva a la luz, sí a la convergencia — neurosífilis</span>
+      <span class="pill">Sífilis primaria/secundaria/latente temprana: penicilina G benzatínica 2.4 MU IM × 1</span>
+      <span class="pill">Neurosífilis: penicilina G cristalina IV × 10–14 días</span>
+      <span class="pill">VDRL sigue el título: respuesta al tratamiento (debe bajar 4 veces en 6–12 meses)</span>
+      <span class="pill">FTA-ABS permanece (+) de por vida aunque se cure</span>
+      <span class="pill">Gonorrea: secreción purulenta, diplococco gram(-) intracelular</span>
+      <span class="pill">Gonorrea: ceftriaxona 500 mg IM dosis única (CDC 2021)</span>
+      <span class="pill">No usar fluoroquinolonas en gonorrea: alta resistencia</span>
+      <span class="pill">Gonorrea diseminada: artritis migratoria + tenosinovitis + lesiones pustulosas</span>
+      <span class="pill">Chlamydia: ITS bacteriana más frecuente, mayoritariamente asintomática</span>
+      <span class="pill">Chlamydia: doxiciclina 7 días (de elección); azitromicina 1 g dosis única si embarazo</span>
+      <span class="pill">LGV: bubón inguinal unilateral fluctuante, doxiciclina 21 días</span>
+      <span class="pill">Herpes: vesículas dolorosas, múltiples → úlceras superficiales</span>
+      <span class="pill">Herpes neonatal: cesárea si lesiones activas en parto</span>
+      <span class="pill">Aciclovir/valaciclovir: no cura, reduce duración y recurrencias</span>
+      <span class="pill">HPV 16/18: causan ~70% del cáncer de cérvix</span>
+      <span class="pill">HPV 6/11: condilomas acuminados (bajo riesgo)</span>
+      <span class="pill">Vacuna HPV nonavalente: 11 años, 2 dosis, calendario nacional Argentina</span>
+      <span class="pill">Tricomoniasis: flujo verde-espumoso, protozoo móvil en fresco, metronidazol 2 g</span>
+      <span class="pill">Sífilis congénita: VDRL en 1er trimestre, sem 28 y parto</span>
+      <span class="pill">PrEP: tenofovir/emtricitabina diario, eficacia >99%</span>
+      <span class="pill">PEP: iniciar ≤72 h post-exposición HIV, durar 28 días</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: CDC. Sexually Transmitted Infections Treatment Guidelines, 2021. MMWR 2021 · OPS/OMS. Guías para el diagnóstico y tratamiento de las infecciones de transmisión sexual. Washington DC, 2022 · Ministerio de Salud de la Nación Argentina. Guía de atención integral de las ITS. 2021 · CONISIDA. Profilaxis pre y post-exposición al HIV. Argentina 2022 · ACOG Practice Bulletin. Management of Herpes in Pregnancy. 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
