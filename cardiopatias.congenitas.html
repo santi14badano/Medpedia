@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardiopatías Congénitas — Medpedia</title>
+  <meta name="description" content="Cardiopatías congénitas: CIV, CIA, ductus, Tetralogía de Fallot, TGV, coartación de aorta. Acianóticas vs cianóticas, clasificación, diagnóstico, manejo. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ped: #1A5E9A; --ped-claro: #E6F1FB; --ped-oscuro: #0F3A6A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ped { background: var(--ped-claro); color: var(--ped-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ped { font-size: 16px; font-weight: 500; color: var(--ped); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-ped   { border-left: 3px solid var(--ped); background: var(--ped-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .cc-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 16px; overflow: hidden; margin-bottom: 1.25rem; }
+    .cc-header { padding: 0.9rem 1.25rem 0.7rem; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between; align-items: flex-start; }
+    .cc-nombre { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; }
+    .cc-nombre.aciano { color: #1A6B3C; }
+    .cc-nombre.ciano { color: #C0392B; }
+    .cc-badge { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+    .cc-badge.aciano { background: #E8F5EE; color: #1A5C2A; }
+    .cc-badge.ciano { background: #FDEAEA; color: #922B21; }
+    .cc-sub { font-size: 11px; color: var(--texto-ter); margin-top: 2px; }
+    .cc-body { padding: 1rem 1.25rem; font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .cc-body strong { color: var(--texto); }
+    .cc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    @media (max-width: 560px) { .cc-grid { grid-template-columns: 1fr; } }
+    .cc-bloque-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .clasif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .clasif-grid { grid-template-columns: 1fr; } }
+    .clasif-box { border-radius: 14px; padding: 1.1rem; border: 2px solid; }
+    .clasif-box.aciano { background: #E8F5EE; border-color: #80C890; }
+    .clasif-box.ciano { background: #FDEAEA; border-color: #E08080; }
+    .clasif-titulo { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .clasif-titulo.aciano { color: #1A5C2A; }
+    .clasif-titulo.ciano { color: #C0392B; }
+    .clasif-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 4px; }
+    .clasif-item strong { color: var(--texto); }
+    .fisio-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; flex-wrap: wrap; }
+    .fisio-box { background: var(--fondo); border: 1px solid var(--borde); border-radius: 8px; padding: 3px 10px; font-size: 12px; font-weight: 500; color: var(--texto); }
+    .fisio-arrow { color: var(--ped); font-weight: 700; font-size: 14px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría · Cardiología</a> › Cardiopatías Congénitas</div>
+  <div class="titulo">Cardiopatías Congénitas</div>
+  <div class="meta">
+    <span class="tag tag-ped">Pediatría · Cardiología</span>
+    <span class="tag tag-fuente">AHA/ACC 2018 · SAC · Nelson 21ª ed. · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- GENERALIDADES -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Generalidades</div>
+    <div class="hl-ped">Las cardiopatías congénitas (CC) son la malformación congénita más frecuente: afectan al <strong>8–10 por cada 1000 nacidos vivos</strong>. Son la principal causa de mortalidad por malformaciones en el primer año de vida. La clasificación más práctica es clínica: acianóticas vs. cianóticas.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Fisiopatología</th><th>Ejemplos</th><th>Clínica predominante</th></tr>
+        <tr><td><strong>Acianótica con shunt I→D</strong></td><td>Cortocircuito izquierda→derecha. Sobrecarga de volumen pulmonar.</td><td>CIV · CIA · Ductus arterioso</td><td>IC, infecciones respiratorias a repetición. Cianosis solo si se invierte (Eisenmenger)</td></tr>
+        <tr><td><strong>Acianótica obstructiva</strong></td><td>Obstrucción al flujo sin shunt</td><td>Estenosis aórtica · Coartación de aorta · Estenosis pulmonar</td><td>Soplo sistólico, HTA diferencial, IC</td></tr>
+        <tr><td><strong>Cianótica con ↓ flujo pulmonar</strong></td><td>Obstrucción al flujo pulmonar + shunt D→I</td><td>Tetralogía de Fallot · Atresia pulmonar · Atresia tricúspide</td><td>Cianosis + crisis hipóxicas</td></tr>
+        <tr><td><strong>Cianótica con ↑ flujo pulmonar</strong></td><td>Mezcla de sangre sin obstrucción pulmonar</td><td>TGV · DVPAT · Tronco arterioso</td><td>Cianosis neonatal precoz + IC</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Regla práctica — cianosis neonatal:</strong> ante cianosis desde el nacimiento que no mejora con O₂ → pensar en cardiopatía cianótica (especialmente TGV). La prueba de hiperoxia (FiO₂ 100% por 10 min): si PaO₂ &gt;200 mmHg → causa pulmonar; si &lt;100 mmHg → probable cardiopatía cianótica. No esperar: ecocardiograma urgente.</div>
+  </div>
+
+  <!-- CLASIFICACIÓN VISUAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔶 Clasificación clínica</div>
+    <div class="clasif-grid">
+      <div class="clasif-box aciano">
+        <div class="clasif-titulo aciano">🟢 Acianóticas</div>
+        <div class="clasif-item"><strong>Con shunt I→D (sobrecarga pulmonar):</strong></div>
+        <div class="clasif-item">✦ CIV (más frecuente de todas — 30%)</div>
+        <div class="clasif-item">✦ CIA (2ª más frecuente — 10%)</div>
+        <div class="clasif-item">✦ Ductus arterioso persistente (8%)</div>
+        <div class="clasif-item">✦ Canal AV (endocusionario)</div>
+        <div style="margin-top:8px;"><strong>Obstructivas (sin shunt):</strong></div>
+        <div class="clasif-item">✦ Estenosis pulmonar (8%)</div>
+        <div class="clasif-item">✦ Coartación de aorta (5–8%)</div>
+        <div class="clasif-item">✦ Estenosis aórtica congénita</div>
+      </div>
+      <div class="clasif-box ciano">
+        <div class="clasif-titulo ciano">🔴 Cianóticas</div>
+        <div class="clasif-item"><strong>↓ Flujo pulmonar:</strong></div>
+        <div class="clasif-item">✦ <strong>Tetralogía de Fallot</strong> (más frecuente cianótica — 5–7%)</div>
+        <div class="clasif-item">✦ Atresia pulmonar con CIV</div>
+        <div class="clasif-item">✦ Atresia tricúspide</div>
+        <div class="clasif-item">✦ Anomalía de Ebstein</div>
+        <div style="margin-top:8px;"><strong>↑ Flujo pulmonar:</strong></div>
+        <div class="clasif-item">✦ <strong>TGV</strong> (emergencia neonatal)</div>
+        <div class="clasif-item">✦ Drenaje venoso pulmonar anómalo total (DVPAT)</div>
+        <div class="clasif-item">✦ Tronco arterioso</div>
+        <div class="clasif-item">✦ Ventrículo único</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACIANÓTICAS CON SHUNT -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟢 Cardiopatías Acianóticas con Shunt Izquierda→Derecha</div>
+
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre aciano">Comunicación Interventricular (CIV)</div>
+          <div class="cc-sub">Cardiopatía congénita más frecuente · 30% de todas las CC</div>
+        </div>
+        <div class="cc-badge aciano">Acianótica</div>
+      </div>
+      <div class="cc-body">
+        <strong>Fisiopatología:</strong><br>
+        <div class="fisio-row" style="margin:6px 0;"><div class="fisio-box">Shunt VI→VD</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ flujo pulmonar</div><div class="fisio-arrow">→</div><div class="fisio-box">Sobrecarga VI y pulmón</div><div class="fisio-arrow">→</div><div class="fisio-box">HTP → posible Eisenmenger</div></div>
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica según tamaño</div>
+            ✦ <strong>Pequeña:</strong> asintomática · soplo intenso. "Maladie de Roger"<br>
+            ✦ <strong>Grande:</strong> IC en lactante · taquipnea · sudoración con el esfuerzo · infecciones respiratorias a repetición · retraso del desarrollo pondoestatural<br>
+            ✦ <strong>Soplo holosistólico</strong> en mesocardio o borde esternal izquierdo bajo · frémito palpable en CIV grandes
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Diagnóstico y manejo</div>
+            <strong>Eco:</strong> localización (perimembranosa 80% · muscular · outlet · inlet) · tamaño · dirección del shunt · PSAP<br><br>
+            <strong>Historia natural:</strong> 30–50% de CIV pequeñas cierran espontáneamente en los primeros 2–3 años.<br><br>
+            <strong>Cierre:</strong> indicado si Qp/Qs &gt;1,5–2 + síntomas, o HTP. Cierre percutáneo (dispositivo) o quirúrgico.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre aciano">Comunicación Interauricular (CIA)</div>
+          <div class="cc-sub">2ª más frecuente · 10% · Más frecuente en mujeres · Tipo ostium secundum 70%</div>
+        </div>
+        <div class="cc-badge aciano">Acianótica</div>
+      </div>
+      <div class="cc-body">
+        <strong>Fisiopatología:</strong><br>
+        <div class="fisio-row" style="margin:6px 0;"><div class="fisio-box">Shunt AI→AD</div><div class="fisio-arrow">→</div><div class="fisio-box">Sobrecarga VD + pulmón</div><div class="fisio-arrow">→</div><div class="fisio-box">IC derecha · FA · HTP tardía</div></div>
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica</div>
+            ✦ Frecuentemente asintomática en la infancia<br>
+            ✦ Diagnóstico tardío (adultez) en muchos casos<br>
+            ✦ Disnea de esfuerzo progresiva · palpitaciones (FA en adultos)<br>
+            ✦ <strong>Soplo sistólico eyectivo</strong> en foco pulmonar (hiperflujo)<br>
+            ✦ <strong>Desdoblamiento fijo del R2</strong> (signo clásico de CIA)<br>
+            ✦ Soplo diastólico tricúspide (flujo aumentado por tricúspide)
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Tipos y manejo</div>
+            ✦ <strong>Ostium secundum (70%):</strong> cierre percutáneo con dispositivo (Amplatzer) si anatomía apta<br>
+            ✦ <strong>Ostium primum (20%):</strong> más asociado a Síndrome de Down + canal AV parcial → cierre quirúrgico<br>
+            ✦ <strong>Seno venoso (10%):</strong> cerca de desembocadura de VCS o VCI → siempre quirúrgico<br>
+            ✦ <strong>Indicación de cierre:</strong> Qp/Qs &gt;1,5 o síntomas o embolia paradójica
+          </div>
+        </div>
+        <div class="alerta-box" style="margin-top:10px;">
+          <div class="alerta-title">⚠️ Embolia paradójica</div>
+          En CIA con shunt D→I transitorio (maniobra de Valsalva, HTP): coágulo venoso puede pasar a circulación sistémica → ACV en paciente joven sin factores de riesgo habituales. Buscar CIA con ecocardio transesofágico + burbujas en todo ACV joven.
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre aciano">Ductus Arterioso Persistente (DAP)</div>
+          <div class="cc-sub">Más frecuente en prematuros · Conducto entre aorta y arteria pulmonar que no cierra tras el nacimiento</div>
+        </div>
+        <div class="cc-badge aciano">Acianótica</div>
+      </div>
+      <div class="cc-body">
+        <div class="fisio-row" style="margin-bottom:10px;"><div class="fisio-box">Shunt Ao→AP (I→D)</div><div class="fisio-arrow">→</div><div class="fisio-box">↑ flujo pulmonar</div><div class="fisio-arrow">→</div><div class="fisio-box">Sobrecarga VI</div><div class="fisio-arrow">→</div><div class="fisio-box">IC + HTP</div></div>
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica y auscultación</div>
+            ✦ Prematuro: IC + dificultad respiratoria<br>
+            ✦ RNT pequeño: asintomático o leve<br>
+            ✦ <strong>Soplo continuo "en maquinaria" (Gibson)</strong>: sistólico y diastólico, en 2° EII · irradiación a cuello y espalda<br>
+            ✦ <strong>Pulso amplio y saltón</strong> (presión diferencial aumentada)<br>
+            ✦ Precordio hiperdinámico
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Tratamiento</div>
+            <strong>Prematuros:</strong> indometacina IV (inhibidor de COX → ↓ prostaglandinas → cierre del ductus) o ibuprofeno IV. Alternativa: paracetamol IV. Cirugía si falla el médico.<br><br>
+            <strong>RNT y niños:</strong> cierre espontáneo raro después de los 3 meses → cierre percutáneo con dispositivo (de elección) o quirúrgico.<br><br>
+            <strong>Ductus dependiente:</strong> en CC cianóticas con obstrucción pulmonar grave → mantener ductus abierto con <strong>prostaglandina E1 (alprostadil)</strong> hasta la cirugía.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBSTRUCTIVAS -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🟡 Cardiopatías Acianóticas Obstructivas</div>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre aciano">Coartación de Aorta</div>
+          <div class="cc-sub">5–8% de las CC · Más frecuente en varones · Asociada a válvula aórtica bicúspide (50%) y Síndrome de Turner (35%)</div>
+        </div>
+        <div class="cc-badge aciano">Acianótica</div>
+      </div>
+      <div class="cc-body">
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica</div>
+            ✦ <strong>Hipertensión en MMSS + hipotensión en MMII</strong> (gradiente ≥20 mmHg = significativo)<br>
+            ✦ Pulsos femorales débiles o ausentes<br>
+            ✦ Claudicación en MMII (en adultos)<br>
+            ✦ Soplo sistólico interescapular (espalda) y en el borde esternal izquierdo<br>
+            ✦ <strong>Muescas costales</strong> en Rx (erosión por circulación colateral intercostal) — en niños mayores/adultos<br>
+            ✦ En neonatos: IC grave cuando cierra el ductus (coartación ducto-dependiente)
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Diagnóstico y tratamiento</div>
+            <strong>ECG:</strong> HVI (en niños mayores y adultos)<br>
+            <strong>Rx tórax:</strong> signo del "3" (indentación aórtica) + muescas costales<br>
+            <strong>Ecocardiograma/AngioTC:</strong> confirma localización y gradiente<br><br>
+            <strong>Tratamiento:</strong><br>
+            ✦ Neonato crítico: prostaglandina E1 para mantener ductus<br>
+            ✦ Angioplastia con balón ± stent: de elección en adolescentes y adultos<br>
+            ✦ Cirugía: en neonatos y lactantes (resección + anastomosis termino-terminal)
+          </div>
+        </div>
+        <div class="hl-warn" style="margin-top:10px;">⚠️ <strong>Complicación tardía:</strong> la HTA puede persistir incluso tras la corrección. Riesgo de aneurisma cerebral (especialmente en polígono de Willis) → causa de muerte súbita en adultos jóvenes con coartación. Seguimiento de por vida.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIANÓTICAS -->
+  <div class="seccion">
+    <div class="sec-titulo-ped">🔴 Cardiopatías Cianóticas</div>
+
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre ciano">Tetralogía de Fallot (TdF)</div>
+          <div class="cc-sub">CC cianótica más frecuente · 5–7% de todas las CC · 4 componentes anatómicos</div>
+        </div>
+        <div class="cc-badge ciano">Cianótica</div>
+      </div>
+      <div class="cc-body">
+        <div class="alerta-box" style="margin-bottom:10px;">
+          <div class="alerta-title">Los 4 componentes de la Tetralogía de Fallot (mnemotecnia EPAH)</div>
+          ✦ <strong>E</strong>stenosis pulmonar (infundibular/valvular) · <strong>P</strong>osición anterior de la aorta (overriding) · <strong>A</strong>umento de la pared del VD (hipertrofia) · <strong>H</strong>oyo en el septo (CIV grande). La estenosis pulmonar + CIV genera shunt D→I → cianosis.
+        </div>
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica</div>
+            ✦ Cianosis progresiva desde los primeros meses<br>
+            ✦ <strong>Crisis hipóxicas ("spells"):</strong> llanto → agitación → cianosis intensa → síncope. Pico a los 2–4 meses. Emergencia.<br>
+            ✦ <strong>Posición en cuclillas (squatting):</strong> el niño se agacha → aumenta RVP → reduce el shunt D→I → mejora la cianosis. Patognomónico.<br>
+            ✦ Dedos en palillo de tambor (acropaquia) en casos crónicos<br>
+            ✦ Soplo sistólico eyectivo en foco pulmonar (por estenosis) · R2 único (↓ componente pulmonar)
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Diagnóstico y tratamiento</div>
+            <strong>ECG:</strong> HVD · eje a la derecha<br>
+            <strong>Rx tórax:</strong> corazón en "bota" (apex elevado por HVD + pulmones oligohémicos)<br>
+            <strong>Ecocardiograma:</strong> confirma anatomía, gradiente en TSVD<br><br>
+            <strong>Crisis hipóxica — manejo urgente:</strong><br>
+            ✦ Posición rodillas-pecho (acuclillado)<br>
+            ✦ O₂<br>
+            ✦ <strong>Morfina SC</strong> (reduce respuesta al estrés y vasodilatación periférica)<br>
+            ✦ <strong>Propranolol IV</strong> (relaja infundíbulo)<br>
+            ✦ Fenilefrina IV (aumenta RVP → reduce shunt D→I)<br>
+            ✦ Bicarbonato si acidosis<br><br>
+            <strong>Cirugía correctora:</strong> cierre de CIV + ampliación del TSVD. Idealmente a los 3–6 meses.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-card">
+      <div class="cc-header">
+        <div>
+          <div class="cc-nombre ciano">Transposición de Grandes Vasos (TGV)</div>
+          <div class="cc-sub">Emergencia neonatal · 2ª CC cianótica más frecuente · Más frecuente en varones</div>
+        </div>
+        <div class="cc-badge ciano">Cianótica</div>
+      </div>
+      <div class="cc-body">
+        <div class="fisio-row" style="margin-bottom:10px;"><div class="fisio-box">Aorta sale del VD</div><div class="fisio-arrow">+</div><div class="fisio-box">AP sale del VI</div><div class="fisio-arrow">→</div><div class="fisio-box">2 circuitos en paralelo</div><div class="fisio-arrow">→</div><div class="fisio-box">Mezcla solo por FO o ductus</div></div>
+        <div class="cc-grid">
+          <div>
+            <div class="cc-bloque-titulo">Clínica</div>
+            ✦ <strong>Cianosis intensa desde el nacimiento</strong> (primeras horas de vida)<br>
+            ✦ No responde al O₂ (prueba de hiperoxia negativa)<br>
+            ✦ Sin soplo relevante (las válvulas suelen ser normales)<br>
+            ✦ Si hay CIV asociada: algo más estable (mayor mezcla)<br>
+            ✦ Desaturación progresiva → acidosis → colapso si no se trata
+          </div>
+          <div>
+            <div class="cc-bloque-titulo">Tratamiento — urgencia</div>
+            <strong>Inmediato:</strong> <strong>Prostaglandina E1 IV</strong> (alprostadil) → mantiene el ductus arterioso abierto → permite mezcla de sangre → estabiliza al neonato. Iniciar en todo neonato cianótico con sospecha de CC antes de confirmar diagnóstico.<br><br>
+            <strong>Septostomía de Rashkind:</strong> apertura con balón del foramen oval → mejora la mezcla como puente a cirugía.<br><br>
+            <strong>Cirugía definitiva: Switch arterial (Jatene)</strong> → transponer aorta a VI y AP a VD, reimplantar coronarias. Idealmente en primeras 2 semanas de vida.
+          </div>
+        </div>
+        <div class="hl-danger" style="margin-top:8px;">🚨 <strong>La TGV es la emergencia cardíaca neonatal más urgente.</strong> Sin tratamiento, la mortalidad es &gt;90% en el primer mes. Prostaglandina E1 puede ser literalmente salvar la vida mientras se prepara la cirugía.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍNDROME DE EISENMENGER -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Síndrome de Eisenmenger</div>
+    <div class="hl-danger">
+      <strong>Síndrome de Eisenmenger:</strong> consecuencia tardía de un shunt I→D grande no corregido (CIV grande, CIA grande, DAP). El hiperflujo pulmonar crónico → HTP irreversible → resistencia vascular pulmonar supera la sistémica → inversión del shunt (D→I) → cianosis tardía.<br><br>
+      <strong>Clínica:</strong> cianosis en adulto joven · acropaquia · policitemia (eritrocitosis compensadora) · hemoptisis · IC derecha · síncope · muerte súbita.<br><br>
+      <strong>Contraindicación quirúrgica:</strong> una vez establecido el síndrome de Eisenmenger, el cierre del defecto está <strong>contraindicado</strong> (el shunt D→I es el mecanismo compensador de sobrevida). Tratamiento médico: bosentán (antagonista endotelina) · sildenafil · iloprost. Trasplante cardiopulmonar en casos seleccionados.
+    </div>
+  </div>
+
+  <!-- FACTORES DE RIESGO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Asociaciones y factores de riesgo</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Condición materna / genética</th><th>CC más asociada</th></tr>
+        <tr><td>Síndrome de Down (trisomía 21)</td><td>Canal AV (40%) · CIV · CIA</td></tr>
+        <tr><td>Síndrome de Turner (45,X)</td><td>Coartación de aorta · Válvula aórtica bicúspide</td></tr>
+        <tr><td>Síndrome de Noonan</td><td>Estenosis pulmonar valvular · Miocardiopatía hipertrófica</td></tr>
+        <tr><td>Síndrome de DiGeorge (22q11)</td><td>Tetralogía de Fallot · TGV · Interrupción del arco aórtico</td></tr>
+        <tr><td>Síndrome de Williams</td><td>Estenosis aórtica supravalvular · estenosis pulmonar periférica</td></tr>
+        <tr><td>Rubéola congénita</td><td>DAP · Estenosis pulmonar periférica · CIA</td></tr>
+        <tr><td>DBT materna (tipo 1)</td><td>Miocardiopatía hipertrófica transitoria · CC en general</td></tr>
+        <tr><td>Alcohol materno (Síndrome alcohólico fetal)</td><td>CIV · CIA · DAP</td></tr>
+        <tr><td>Litio materno</td><td>Anomalía de Ebstein (malformación de la tricúspide)</td></tr>
+        <tr><td>Isotretinoína materna</td><td>TGV · Tetralogía de Fallot · defectos conotruncales</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CC más frecuente de todas: CIV (30%)</span>
+      <span class="pill">CC cianótica más frecuente: Tetralogía de Fallot</span>
+      <span class="pill">CC cianótica neonatal más urgente: TGV</span>
+      <span class="pill">CIV: soplo holosistólico en mesocardio · puede cerrar espontáneamente</span>
+      <span class="pill">CIA: desdoblamiento fijo del R2 · soplo sistólico pulmonar</span>
+      <span class="pill">DAP: soplo continuo en maquinaria (Gibson) · pulso amplio y saltón</span>
+      <span class="pill">DAP prematuro: indometacina/ibuprofeno IV para cerrar</span>
+      <span class="pill">Coartación: HTA en MMSS + hipotensión MMII · muescas costales · signo del 3</span>
+      <span class="pill">Coartación: asociada a Turner (35%) y válvula bicúspide (50%)</span>
+      <span class="pill">TdF: EPAH · cianosis + crisis hipóxicas + squatting · corazón en bota</span>
+      <span class="pill">Crisis hipóxica TdF: posición rodillas-pecho + morfina + propranolol IV</span>
+      <span class="pill">TGV: cianosis intensa al nacer + no responde a O₂ · PGE1 urgente</span>
+      <span class="pill">TGV: cirugía = switch arterial (Jatene) en primeras 2 semanas</span>
+      <span class="pill">PGE1: mantener ductus abierto en CC ductus-dependientes</span>
+      <span class="pill">Eisenmenger: shunt I→D grande → HTP → inversión → cianosis tardía</span>
+      <span class="pill">Eisenmenger: cierre contraindicado una vez establecido</span>
+      <span class="pill">Down: Canal AV (40%) · Turner: coartación · DiGeorge: TdF</span>
+      <span class="pill">Rubéola congénita: DAP + estenosis pulmonar periférica</span>
+      <span class="pill">Litio materno: anomalía de Ebstein</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Stout KK, Daniels CJ, Aboulhosn JA, et al. 2018 AHA/ACC Guideline for the Management of Adults with Congenital Heart Disease. JACC 2019 · Bhatt AB, et al. Congenital Heart Disease in Adults. N Engl J Med 2024 · Nelson Textbook of Pediatrics, 21st ed. · Harrison's Principles of Internal Medicine, 21st ed. · Sociedad Argentina de Cardiología (SAC). Consenso de Cardiopatías Congénitas del Adulto 2021.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
