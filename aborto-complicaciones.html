@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aborto, Complicaciones e IVE/ILE — Medpedia</title>
+  <meta name="description" content="Aborto espontáneo, tipos, complicaciones (aborto séptico, shock), IVE/ILE — Ley 27.610 Argentina, misoprostol, mifepristona. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gin: #7B2D8B; --gin-claro: #F5E6FA; --gin-oscuro: #5A1F68;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --ley: #155A3A; --ley-claro: #D6EFE3;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gin { background: var(--gin-claro); color: var(--gin-oscuro); }
+    .tag-ley { background: var(--ley-claro); color: var(--ley); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .sec-titulo-ley { font-size: 16px; font-weight: 500; color: var(--ley); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-ley   { border-left: 3px solid var(--ley); background: var(--ley-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-ley { background: var(--ley); }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .tipos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .tipos-grid { grid-template-columns: 1fr; } }
+    .tipo-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.1rem; }
+    .tipo-nombre { font-size: 13.5px; font-weight: 600; color: var(--texto); margin-bottom: 4px; }
+    .tipo-def { font-size: 12.5px; color: var(--texto-sec); line-height: 1.55; }
+    .ley-box { background: var(--ley-claro); border: 2px solid var(--ley); border-radius: 14px; padding: 1.4rem; margin-bottom: 14px; }
+    .ley-titulo { font-size: 16px; font-weight: 700; color: var(--ley); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .ley-item { font-size: 13.5px; color: var(--texto); margin-bottom: 8px; line-height: 1.6; padding-left: 14px; border-left: 2px solid rgba(21,90,58,0.25); margin-left: 4px; }
+    .badge-legal { display: inline-block; background: var(--ley); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-right: 6px; }
+    .badge-urgente { display: inline-block; background: var(--danger); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-right: 4px; }
+    .vs-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .vs-block { grid-template-columns: 1fr; } }
+    .vs-col { border-radius: 12px; padding: 1rem 1.2rem; }
+    .vs-col.izq { background: var(--verde-claro); border: 1.5px solid #a0d8c0; }
+    .vs-col.der { background: var(--info-claro); border: 1.5px solid #a8c8e8; }
+    .vs-titulo { font-size: 13.5px; font-weight: 700; margin-bottom: 8px; }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología / Obstetricia</a> › Aborto e IVE/ILE</div>
+  <div class="titulo">Aborto, Complicaciones e IVE/ILE</div>
+  <div class="meta">
+    <span class="tag tag-gin">Obstetricia / Ginecología</span>
+    <span class="tag tag-ley">Ley 27.610</span>
+    <span class="tag tag-fuente">OMS 2022 · MSAL Argentina · Protocolo IVE/ILE 2022</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación</div>
+    <div class="hl-warn"><strong>Aborto:</strong> interrupción del embarazo con expulsión o extracción del producto de la concepción con peso menor a 500 g o antes de las 22 semanas de gestación (OMS). En Argentina, la ley 27.610 regula la interrupción voluntaria del embarazo hasta las 14 semanas y en toda gestación en causales específicas.</div>
+    <div class="tipos-grid">
+      <div class="tipo-card">
+        <div class="tipo-nombre">🟡 Amenaza de aborto</div>
+        <div class="tipo-def">Sangrado con cuello cerrado, producto vivo. El embarazo puede continuar. Reposo y seguimiento.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-nombre">🟠 Aborto en curso / inevitable</div>
+        <div class="tipo-def">Sangrado + cuello dilatado + contracciones. El embarazo no puede continuar. Evacuación uterina.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-nombre">🔴 Aborto incompleto</div>
+        <div class="tipo-def">Expulsión parcial del producto. Restos en cavidad uterina. Sangrado activo. Evacuación urgente.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-nombre">✅ Aborto completo</div>
+        <div class="tipo-def">Expulsión total del producto y anexos. Cuello cerrado. Útero contraído. Sangrado mínimo. Confirmar con ecografía.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-nombre">⚫ Aborto retenido (diferido)</div>
+        <div class="tipo-def">Muerte fetal intrauterina sin expulsión espontánea. Sin sangrado o mínimo. Diagnóstico ecográfico (ausencia de latido). Riesgo de CID si se demora evacuación.</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-nombre">🔁 Aborto habitual / recurrente</div>
+        <div class="tipo-def">≥2 pérdidas consecutivas (o ≥3 no consecutivas). Investigar: síndrome antifosfolípido, anomalías uterinas, cariotipo, trombofilias, endocrinopatías.</div>
+      </div>
+    </div>
+    <div class="hl-info">⭐ <strong>Aborto séptico</strong> = aborto + signos de infección generalizada. Es la complicación más grave. Ver sección específica abajo.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diagnóstico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Rol</th><th>Hallazgo clave</th></tr>
+        <tr><td><strong>β-hCG cuantitativa</strong></td><td>Confirma embarazo, evalúa viabilidad</td><td>En embarazo viable: duplica cada 48 h en <12 sem. β-hCG que no duplica o cae → aborto o ectópico</td></tr>
+        <tr><td><strong>Ecografía transvaginal</strong></td><td>Gold standard para evaluación de viabilidad y retención de restos</td><td>Saco gestacional sin embrión a las 5 sem, sin latido a las 6 sem → aborto retenido. Restos hiperecogénicos en cavidad → incompleto</td></tr>
+        <tr><td><strong>Hemograma + coagulograma</strong></td><td>Evaluar anemia y coagulopatía (especialmente en retenido prolongado)</td><td>Anemia, trombocitopenia, fibrinógeno bajo → CID</td></tr>
+        <tr><td><strong>Grupo y factor Rh</strong></td><td>Siempre</td><td>Rh negativa → inmunoglobulina anti-D</td></tr>
+        <tr><td><strong>Urocultivo / hemocultivos</strong></td><td>Si sospecha sepsis</td><td>Gérmenes más frecuentes: E. coli, anaerobios, Streptococcus</td></tr>
+      </table>
+    </div>
+    <div class="hl"><strong>Toda paciente Rh negativa</strong> con aborto (espontáneo o inducido) después de las 8 semanas debe recibir <strong>inmunoglobulina anti-D 250–300 µg IM</strong> dentro de las 72 h para prevenir aloinmunización.</div>
+  </div>
+
+  <!-- EVACUACIÓN UTERINA -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">💊 Métodos de evacuación uterina</div>
+    <div class="hl-info">La OMS y el MSAL Argentina priorizan los métodos médicos y la aspiración manual endouterina (AMEU) sobre el legrado instrumental. El legrado con cureta metálica es una técnica obsoleta con mayor tasa de complicaciones.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Misoprostol — método médico de primera línea</div>
+      <div class="farma-clase">Prostaglandina E1 · Análogo sintético · Uterotónico y ablandador cervical</div>
+      <div class="dosis-badge">&lt;13 semanas: 800 µg sublingual o vaginal</div>
+      <div class="dosis-badge">13–22 semanas: 400 µg vaginal / sublingual c/3 h</div>
+      <div class="farma-detalle">
+        Produce contracciones uterinas y maduración cervical → expulsión del producto. Efectos adversos: fiebre, escalofríos, náuseas, diarrea (más frecuentes con vía sublingual). La fiebre por misoprostol es esperada en las primeras 4 h y no indica infección — distinguir de fiebre tardía que sí puede indicar sepsis.<br><br>
+        <strong>Combinación mifepristona + misoprostol (régimen combinado):</strong> mayor eficacia. Mifepristona 200 mg VO → 24–48 h → misoprostol 800 µg vaginal/sublingual. Eficacia >97% hasta las 12 semanas. Disponible en Argentina desde 2021 (aprobación ANMAT).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">AMEU — Aspiración Manual Endouterina</div>
+      <div class="farma-clase">Procedimiento quirúrgico · Primera línea en aborto incompleto o retenido</div>
+      <div class="dosis-badge">Hasta 12–14 semanas · Ambulatorio · Anestesia local</div>
+      <div class="farma-detalle">
+        Técnica segura, eficaz y de baja morbilidad. Recomendada por OMS como método de elección para evacuación uterina hasta las 12–14 semanas. Requiere menos hospitalización que el legrado. Puede realizarse en el primer nivel de atención con entrenamiento adecuado. La AMEU eléctrica (aspiración eléctrica) se usa en gestaciones más avanzadas.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Legrado uterino instrumental (LUI)</div>
+      <div class="farma-clase">Cureta metálica · Técnica en desuso · Solo si no hay AMEU disponible</div>
+      <div class="farma-detalle">
+        La OMS ya no lo recomienda como primera línea por mayor riesgo de perforación, sinequias (síndrome de Asherman) y sangrado. Solo indicado si no hay disponibilidad de AMEU o misoprostol, o como segunda maniobra ante falla del método médico o restos accesibles por tacto.
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Complicaciones — aborto séptico</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> <strong>Aborto séptico:</strong> aborto complicado con infección del útero y/o estructuras adyacentes, con repercusión sistémica. Es la principal causa de muerte materna por aborto inseguro. La demora en el diagnóstico y tratamiento aumenta drásticamente la mortalidad.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Grado (clasificación de Mondor)</th><th>Criterios</th><th>Manejo</th></tr>
+        <tr><td><strong>Grado I</strong> — Infección localizada</td><td>Fiebre + signos locales (útero sensible, flujo fétido). Sin peritonitis.</td><td>ATB IV + evacuación uterina urgente</td></tr>
+        <tr><td><strong>Grado II</strong> — Infección pelviana</td><td>Peritonitis pelviana o parametritis. Signos peritoneales limitados a pelvis.</td><td>ATB IV + evacuación + valorar cirugía</td></tr>
+        <tr><td><strong>Grado III</strong> — Sepsis generalizada</td><td>Peritonitis generalizada, shock séptico, falla multiorgánica.</td><td>ATB IV + UCI + cirugía (histerectomía si necesario)</td></tr>
+      </table>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Antibioticoterapia en aborto séptico</div>
+      <div class="farma-clase">Cobertura polimicrobiana — aerobios gram negativos + anaerobios</div>
+      <div class="dosis-badge">Esquema 1: ampicilina + gentamicina + metronidazol IV</div>
+      <div class="dosis-badge">Esquema 2: piperacilina-tazobactam IV</div>
+      <div class="dosis-badge">Shock séptico: meropenem + vancomicina</div>
+      <div class="farma-detalle">
+        Iniciar ATB IV <strong>antes</strong> de la evacuación uterina. La evacuación uterina es parte esencial del tratamiento (fuente infecciosa) y debe realizarse en cuanto la paciente esté estabilizada, idealmente en las primeras 6–12 h. Gérmenes más frecuentes: <em>E. coli</em>, <em>Streptococcus</em> del grupo B, anaerobios (<em>Bacteroides</em>), <em>Clostridium perfringens</em> (muy grave, hemólisis fulminante).
+      </div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Presentación</th><th>Manejo</th></tr>
+        <tr><td>Hemorragia / shock hipovolémico</td><td>Sangrado profuso, hipotensión, taquicardia</td><td>2 vías periféricas gruesas, cristaloides, transfusión, evacuación urgente</td></tr>
+        <tr><td>CID</td><td>Sangrado en sábana, prolongación de coagulograma, fibrinógeno bajo</td><td>PFC, crioprecipitados, plaquetas, ácido tranexámico</td></tr>
+        <tr><td>Perforación uterina</td><td>Dolor súbito durante el procedimiento, signo de cureta que "cae al vacío"</td><td>Laparoscopía diagnóstica; laparotomía si hay compromiso intestinal o vascular</td></tr>
+        <tr><td>Síndrome de Asherman</td><td>Amenorrea post-legrado, sinequias intrauterinas</td><td>Histeroscopía + lisis de adherencias</td></tr>
+        <tr><td>Insuficiencia renal aguda</td><td>Oligoanuria post-sepsis o post-hemorrágica</td><td>Soporte hemodinámico, diálisis si necesario</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LEY 27.610 -->
+  <div class="seccion">
+    <div class="sec-titulo-ley">⚖️ Ley 27.610 — IVE/ILE en Argentina</div>
+    <div class="ley-box">
+      <div class="ley-titulo">🇦🇷 Ley 27.610 — Acceso a la Interrupción Voluntaria del Embarazo (IVE)</div>
+      <div class="ley-item"><span class="badge-legal">VIGENTE</span> Promulgada el <strong>14 de enero de 2021</strong>. Regula el derecho a la interrupción voluntaria e legal del embarazo en todo el territorio argentino.</div>
+      <div class="ley-item"><strong>IVE (Interrupción Voluntaria del Embarazo):</strong> hasta las <strong>14 semanas de gestación (inclusive)</strong>, por decisión de la persona gestante. No requiere justificación, causal ni autorización judicial. Solo requiere consentimiento informado.</div>
+      <div class="ley-item"><strong>ILE (Interrupción Legal del Embarazo):</strong> en cualquier edad gestacional cuando: (1) el embarazo es producto de una <strong>violación</strong>, o (2) existe <strong>peligro para la vida o la salud integral</strong> de la persona gestante. Salud incluye salud física, mental y social (definición OMS).</div>
+      <div class="ley-item"><strong>Obligación del sistema de salud:</strong> garantizar el acceso en todos los efectores (públicos, privados y de obras sociales). Plazo máximo: <strong>10 días corridos</strong> desde la solicitud.</div>
+      <div class="ley-item"><strong>Objeción de conciencia:</strong> derecho individual del profesional (no institucional). El objetor debe derivar inmediatamente a un profesional no objetor. <strong>No puede objetarse en emergencias o cuando haya riesgo para la vida.</strong></div>
+      <div class="ley-item"><strong>Confidencialidad:</strong> no se puede exigir información sobre las causas o circunstancias. En menores de 13 años: solo consentimiento de la persona menor (con acompañamiento). 13–16 años: consentimiento propio salvo riesgo grave. 16 años+: plena capacidad.</div>
+    </div>
+    <div class="hl-ley">⭐ <strong>Protocolo IVE/ILE (MSAL 2022):</strong> misoprostol 800 µg sublingual o vaginal hasta las 12 semanas. Régimen combinado mifepristona + misoprostol (si disponible): mayor eficacia. AMEU hasta las 12–14 semanas. Para gestaciones de 14–22 semanas: misoprostol 400 µg vaginal/sublingual c/3–6 h + posible AMEU eléctrica.</div>
+    <div class="vs-block">
+      <div class="vs-col izq">
+        <div class="vs-titulo" style="color:var(--ley)">✅ IVE — hasta 14 semanas</div>
+        <div class="vs-item">Decisión autónoma de la persona gestante</div>
+        <div class="vs-item">Sin causal necesaria</div>
+        <div class="vs-item">Sin autorización judicial</div>
+        <div class="vs-item">Solo consentimiento informado</div>
+        <div class="vs-item">Plazo: ≤10 días desde solicitud</div>
+      </div>
+      <div class="vs-col der" style="background:#E6F1FB; border-color:#a8c8e8">
+        <div class="vs-titulo" style="color:var(--info)">✅ ILE — cualquier edad gestacional</div>
+        <div class="vs-item">Violación (declaración jurada de la persona)</div>
+        <div class="vs-item">Peligro para vida o salud integral (física, mental, social)</div>
+        <div class="vs-item">No requiere denuncia policial ni autorización judicial</div>
+        <div class="vs-item">Declaración jurada es suficiente en caso de violación</div>
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>Lo que no puede el profesional:</strong> negarse a atender una emergencia obstétrica por razones de objeción de conciencia · exigir denuncia policial en caso de violación · revelar información sobre la consulta · demorar más de 10 días el procedimiento · derivar sin garantizar que la derivación sea efectiva.</div>
+  </div>
+
+  <!-- ENFOQUE CLÍNICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Enfoque clínico ante sangrado en el primer trimestre</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Estabilización hemodinámica</strong> — evaluar signos de shock (hipotensión, taquicardia, palidez). Vía periférica, cristaloides si inestable. Nunca demorar la evacuación en una paciente con shock por aborto incompleto.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>β-hCG + ecografía transvaginal</strong> — confirmar viabilidad, localización (descartar ectópico), tipo de aborto, presencia de restos.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Clasificar el tipo de aborto</strong> — amenaza (cuello cerrado, vivo), en curso (cuello abierto), incompleto (restos), completo, retenido.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Evaluar infección</strong> — fiebre, flujo fétido, dolor uterino, hipotensión → aborto séptico. Hemocultivos + ATB antes de la evacuación.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Evacuación uterina</strong> — AMEU o misoprostol según disponibilidad y semanas. El legrado instrumental solo si no hay alternativa.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content"><strong>Inmunoglobulina anti-D</strong> — toda Rh negativa en aborto ≥8 semanas. 250–300 µg IM dentro de las 72 h.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content"><strong>Consejería anticonceptiva post-aborto</strong> — ofrecer método anticonceptivo antes del alta. La ovulación puede retornar a las 2 semanas post-aborto. DIU puede insertarse inmediatamente post-evacuación en aborto no séptico.</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Aborto: pérdida &lt;500 g o &lt;22 semanas</span>
+      <span class="pill">Amenaza: cuello cerrado + sangrado + producto vivo</span>
+      <span class="pill">En curso / inevitable: cuello abierto + contracciones</span>
+      <span class="pill">Incompleto: restos en cavidad, sangrado activo → evacuación urgente</span>
+      <span class="pill">Retenido: muerte fetal sin expulsión → riesgo de CID si se demora</span>
+      <span class="pill">Recurrente: ≥2 pérdidas consecutivas → investigar SAF, anomalías uterinas</span>
+      <span class="pill">Método de evacuación de elección: AMEU o misoprostol (no legrado)</span>
+      <span class="pill">Misoprostol: prostaglandina E1, 800 µg sublingual/vaginal hasta 13 sem</span>
+      <span class="pill">Mifepristona + misoprostol: eficacia >97%, régimen combinado preferido</span>
+      <span class="pill">Rh negativa + aborto ≥8 sem: inmunoglobulina anti-D 250–300 µg IM en 72 h</span>
+      <span class="pill">Aborto séptico: Mondor I–III según extensión infección</span>
+      <span class="pill">ATB antes de evacuar. Gérmenes: E. coli, anaerobios, Clostridium</span>
+      <span class="pill">Clostridium: hemólisis fulminante, gas en tejidos, altísima mortalidad</span>
+      <span class="pill">Ley 27.610: IVE hasta 14 sem sin causal. ILE en cualquier EG por violación o salud</span>
+      <span class="pill">ILE por violación: declaración jurada, sin denuncia policial, sin autorización judicial</span>
+      <span class="pill">Plazo máximo sistema de salud: 10 días corridos desde solicitud</span>
+      <span class="pill">Objeción de conciencia: individual, no institucional, no en emergencias</span>
+      <span class="pill">Consejería anticonceptiva: siempre antes del alta. DIU puede colocarse post-AMEU</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: OMS. Aborto sin riesgos: guía técnica y de políticas para sistemas de salud. 3ª edición, 2022 · Ministerio de Salud de la Nación Argentina. Protocolo para la atención integral de las personas con derecho a la interrupción voluntaria y legal del embarazo (IVE/ILE). Actualización 2022 · Ley 27.610. Acceso a la Interrupción Voluntaria del Embarazo. Argentina, 2021 · SEGO. Guía de práctica clínica sobre aborto espontáneo. 2021 · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª edición. Buenos Aires: El Ateneo, 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
