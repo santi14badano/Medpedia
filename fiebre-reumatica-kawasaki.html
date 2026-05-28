@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiebre Reumática y Enfermedad de Kawasaki — Medpedia</title>
+  <meta name="description" content="Fiebre reumática: criterios de Jones, estreptococo, profilaxis. Kawasaki: criterios diagnósticos, aneurismas coronarios, IGIV. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --fr: #C0392B; --fr-claro: #FDEDEC; --fr-oscuro: #922B21;
+      --kaw: #1565C0; --kaw-claro: #E3EDF9; --kaw-oscuro: #0D47A1;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-fr { background: var(--fr-claro); color: var(--fr-oscuro); }
+    .tag-kaw { background: var(--kaw-claro); color: var(--kaw-oscuro); }
+    .tag-ped { background: #E0F2F1; color: #00695C; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-fr { font-size: 16px; font-weight: 500; color: var(--fr); margin-bottom: 12px; }
+    .sec-titulo-kaw { font-size: 16px; font-weight: 500; color: var(--kaw); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--fr); background: var(--fr-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-kaw   { border-left: 3px solid var(--kaw); background: var(--kaw-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .jones-box { background: var(--blanco); border: 2px solid var(--fr); border-radius: 14px; overflow: hidden; margin-bottom: 12px; }
+    .jones-header { background: var(--fr); color: white; padding: 10px 16px; font-size: 14px; font-weight: 700; }
+    .jones-body { display: grid; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 580px) { .jones-body { grid-template-columns: 1fr; } }
+    .jones-col { padding: 14px 16px; }
+    .jones-col:first-child { border-right: 1px solid var(--borde); }
+    .jones-col-title { font-size: 12px; font-weight: 700; color: var(--fr); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .jones-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 7px; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .jones-item strong { color: var(--texto); }
+    .kaw-criterios { background: var(--blanco); border: 2px solid var(--kaw); border-radius: 14px; overflow: hidden; margin-bottom: 12px; }
+    .kaw-header { background: var(--kaw); color: white; padding: 10px 16px; font-size: 14px; font-weight: 700; }
+    .kaw-item { padding: 10px 16px; border-bottom: 1px solid var(--borde); font-size: 13.5px; display: flex; gap: 10px; align-items: flex-start; }
+    .kaw-item:last-child { border-bottom: none; }
+    .kaw-num { width: 22px; height: 22px; border-radius: 50%; background: var(--kaw); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .kaw-text { flex: 1; color: var(--texto-sec); line-height: 1.55; }
+    .kaw-text strong { color: var(--texto); }
+    .divider { border: none; border-top: 2px solid var(--borde); margin: 2.5rem 0; }
+    .enfermedad-titulo { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría / Cardiología</a> › Fiebre Reumática y Kawasaki</div>
+  <div class="titulo">Fiebre Reumática y Enfermedad de Kawasaki</div>
+  <div class="meta">
+    <span class="tag tag-fr">Fiebre Reumática</span>
+    <span class="tag tag-kaw">Kawasaki</span>
+    <span class="tag tag-ped">Pediatría</span>
+    <span class="tag tag-fuente">AHA 2015 · AAP 2022 · SAP Argentina</span>
+  </div>
+
+  <!-- ══════════ FIEBRE REUMÁTICA ══════════ -->
+  <div class="enfermedad-titulo" style="color:var(--fr)">🔴 Fiebre Reumática</div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y patogenia</div>
+    <div class="hl-danger"><strong>Fiebre reumática (FR):</strong> enfermedad inflamatoria sistémica que ocurre como secuela de una faringoamigdalitis por <em>Streptococcus pyogenes</em> (estreptococo β-hemolítico grupo A, EBHGA). No es una infección directa — es una reacción autoinmune por mimetismo molecular entre antígenos estreptocócicos y tejidos cardíaco, articular y nervioso del huésped.</div>
+    <div class="hl"><strong>Mimetismo molecular:</strong> anticuerpos anti-estreptococo (anti-M) reaccionan contra la miosina cardíaca, válvulas cardíacas y otros tejidos → inflamación. La válvula mitral es la más afectada (mitral > aórtica > tricúspide).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Detalle</th></tr>
+        <tr><td>Edad de presentación</td><td>5–15 años. Rara antes de los 3 años o en adultos.</td></tr>
+        <tr><td>Latencia post-faringitis</td><td>2–4 semanas tras la faringitis estreptocócica</td></tr>
+        <tr><td>Epidemiología</td><td>Más frecuente en países en desarrollo. En Argentina es endémica. Hacinamiento, pobreza y falta de acceso a ATB son determinantes.</td></tr>
+        <tr><td>Secuela más grave</td><td>Carditis reumática crónica → valvulopatía (estenosis mitral principalmente). Principal causa de valvulopatía adquirida en jóvenes en países en desarrollo.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-fr">📊 Criterios de Jones (revisión AHA 2015)</div>
+    <div class="hl-danger">Diagnóstico de FR = <strong>evidencia de infección estreptocócica previa</strong> + <strong>2 criterios mayores</strong> o <strong>1 mayor + 2 menores</strong>.<br>
+    En poblaciones de alto riesgo (Argentina): se aceptan 2 menores sin mayor si hay evidencia estreptocócica clara y eco cardíaca anormal.</div>
+
+    <div class="jones-box">
+      <div class="jones-header">Criterios de Jones — AHA 2015</div>
+      <div class="jones-body">
+        <div class="jones-col">
+          <div class="jones-col-title">🔴 Criterios Mayores (JONES)</div>
+          <div class="jones-item"><span>🫀</span><span><strong>J — Carditis</strong> (clínica o subclínica por eco). Pancarditis: pericarditis, miocarditis, endocarditis. Soplo de insuficiencia mitral o aórtica. La carditis subclínica (solo eco) se acepta desde 2015.</span></div>
+          <div class="jones-item"><span>🦵</span><span><strong>O — Poliartritis migratoria</strong>. Articulaciones grandes (rodillas, tobillos, caderas, codos). Migratoria: mejora en una articulación mientras empeora en otra. Muy dolorosa, responde dramáticamente a AAS.</span></div>
+          <div class="jones-item"><span>🧠</span><span><strong>N — Corea de Sydenham</strong> (corea minor). Movimientos involuntarios, irregulares, no repetitivos de cara y extremidades. Puede aparecer semanas-meses después. Más frecuente en niñas.</span></div>
+          <div class="jones-item"><span>💊</span><span><strong>E — Eritema marginado</strong>. Lesiones eritematosas con bordes serpiginosos y centro claro. Tronco y raíz de miembros. Transitorio, evanescente.</span></div>
+          <div class="jones-item"><span>🫀</span><span><strong>S — Nódulos subcutáneos</strong> de Aschoff. Pequeños, firmes, indoloros sobre prominencias óseas (codos, rodillas, occipucio). Poco frecuentes.</span></div>
+        </div>
+        <div class="jones-col">
+          <div class="jones-col-title">🟡 Criterios Menores</div>
+          <div class="jones-item"><span>🌡️</span><span><strong>Fiebre</strong> ≥38.5°C</span></div>
+          <div class="jones-item"><span>🔬</span><span><strong>Reactantes de fase aguda elevados:</strong> VES ≥60 mm/h y/o PCR ≥3 mg/dl</span></div>
+          <div class="jones-item"><span>💓</span><span><strong>Intervalo PR prolongado</strong> en ECG (bloqueo AV 1er grado). No es carditis por sí solo.</span></div>
+          <div class="jones-item"><span>🦵</span><span><strong>Artralgia</strong> (solo si NO se usó artritis como criterio mayor)</span></div>
+          <div class="jones-item" style="margin-top:16px; border-top:1px solid var(--borde); padding-top:12px"><span>🔬</span><span><strong>Evidencia de infección estreptocócica reciente:</strong><br>
+          — ASLO elevada (anti-estreptolisina O) ≥400 U en niños, ≥200 en adultos<br>
+          — Anti-ADNasa B elevada<br>
+          — Cultivo de fauces (+) para EBHGA<br>
+          — Test rápido de estreptococo (+)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hl-warn">⭐ <strong>La corea de Sydenham</strong> puede ser el único criterio presente y es suficiente para diagnóstico de FR sin necesidad de otros criterios (entidad "corea pura"). Aparece tardíamente (2–6 meses post-faringitis), cuando otros criterios ya resolvieron.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-fr">💊 Tratamiento de la fiebre reumática</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Penicilina — erradicación estreptocócica</div>
+      <div class="farma-clase">Paso 1 siempre: erradicar el EBHGA independientemente de cuándo consulta</div>
+      <div class="dosis-badge">Penicilina G benzatínica 1.2 MU IM dosis única (&gt;27 kg) · 600.000 UI (&lt;27 kg)</div>
+      <div class="dosis-badge">Alternativa oral: amoxicilina 50 mg/kg/día × 10 días</div>
+      <div class="farma-detalle">Erradicar el EBHGA de faringe es el primer paso, independientemente de si la faringitis ya resolvió. Alérgicos a penicilina: azitromicina 12 mg/kg/día × 5 días.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">AAS (ácido acetilsalicílico) — artritis</div>
+      <div class="farma-clase">AINE · Anti-inflamatorio · Respuesta dramática en artritis reumática</div>
+      <div class="dosis-badge">80–100 mg/kg/día VO dividido en 4–6 dosis × 4–8 semanas</div>
+      <div class="farma-detalle">La respuesta dramática de la artritis al AAS en 24–48 h es tan característica que su ausencia hace dudar del diagnóstico de FR. Reducir dosis gradualmente al mejorar síntomas. Monitorear salicilemia si dosis altas. Naproxeno es alternativa si preocupan efectos GI.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Corticoides — carditis moderada-grave</div>
+      <div class="farma-clase">Prednisona · Antiinflamatorio potente</div>
+      <div class="dosis-badge">Prednisona 1–2 mg/kg/día (máx 80 mg) × 2–4 semanas → taper</div>
+      <div class="farma-detalle">Indicados en carditis moderada a grave (cardiomegalia, IC, pericarditis). No se ha demostrado que prevengan la valvulopatía crónica. En carditis leve: AAS es suficiente. Reducir dosis en 2 semanas e iniciar overlap con AAS antes de suspender para evitar rebote.</div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Haloperidol / Valproato — corea de Sydenham</div>
+      <div class="farma-clase">Antipsicótico / Antiepiléptico · Para movimientos involuntarios incapacitantes</div>
+      <div class="farma-detalle">La corea suele autolimitarse en 3–6 meses. En casos leves: ambiente tranquilo, reposo. En casos moderados-graves: haloperidol 0.01–0.03 mg/kg/día (de elección) o ácido valproico. Carbamacepina como alternativa. Los corticoides pueden ser útiles en corea grave.</div>
+    </div>
+
+    <div class="sec-titulo-fr" style="margin-top:1.5rem">🛡️ Profilaxis secundaria — fundamental para prevenir recurrencias</div>
+    <div class="hl-danger">⭐ <strong>Cada recurrencia de FR aumenta el riesgo de daño valvular acumulativo.</strong> La profilaxis secundaria con penicilina es la intervención más importante para prevenir la cardiopatía reumática crónica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Régimen de profilaxis</th><th>Duración</th></tr>
+        <tr><td>Sin carditis</td><td rowspan="3">Penicilina G benzatínica 1.2 MU IM <strong>cada 21–28 días</strong><br><small>Alternativa oral: amoxicilina 250 mg c/12h o fenoximetilpenicilina 250 mg c/12h</small></td><td>5 años o hasta los 21 años (lo que sea más largo)</td></tr>
+        <tr><td>Con carditis, sin valvulopatía residual</td><td>10 años o hasta los 21 años</td></tr>
+        <tr><td>Con valvulopatía residual</td><td><strong>10 años o hasta los 40 años</strong> (o de por vida si riesgo alto de reexposición)</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">🇦🇷 <strong>Argentina:</strong> la SAP recomienda penicilina G benzatínica cada <strong>21 días</strong> (no 28) en zonas de alta prevalencia como Argentina, por la mayor frecuencia de faringitis estreptocócica. Los intervalos de 28 días pueden dejar períodos de baja concentración.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════ KAWASAKI ══════════ -->
+  <div class="enfermedad-titulo" style="color:var(--kaw)">🔵 Enfermedad de Kawasaki</div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-kaw"><strong>Enfermedad de Kawasaki (EK):</strong> vasculitis sistémica autolimitada de etiología desconocida que afecta predominantemente a vasos de mediano calibre, con predilección por las <strong>arterias coronarias</strong>. Es la <strong>principal causa de cardiopatía adquirida en niños</strong> en países desarrollados.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Detalle</th></tr>
+        <tr><td>Edad</td><td>80% menores de 5 años. Pico: 6–24 meses. Raro en adolescentes y adultos.</td></tr>
+        <tr><td>Sexo</td><td>Varones 1.5:1</td></tr>
+        <tr><td>Etiología</td><td>Desconocida. Probablemente infecciosa (trigger) en huésped genéticamente susceptible. No es contagiosa.</td></tr>
+        <tr><td>Complicación más temida</td><td>Aneurismas de arterias coronarias (15–25% sin tratamiento → 5% con IGIV). Pueden causar IAM.</td></tr>
+        <tr><td>Fases</td><td><strong>Aguda (0–14 días):</strong> fiebre e inflamación. <strong>Subaguda (14–21 días):</strong> descamación, trombocitosis, mayor riesgo de aneurismas. <strong>Convalecencia (>21 días):</strong> resolución de síntomas.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-kaw">📊 Criterios diagnósticos de Kawasaki</div>
+    <div class="hl-kaw"><strong>Kawasaki clásico:</strong> fiebre ≥5 días + ≥4 de los 5 criterios clínicos (o menos si hay aneurisma coronario confirmado por eco). <strong>Kawasaki incompleto o atípico:</strong> fiebre ≥5 días + 2–3 criterios, sin otra causa → ecocardiograma → si aneurisma: tratar igual.</div>
+
+    <div class="kaw-criterios">
+      <div class="kaw-header">🌡️ Fiebre ≥38.5°C por ≥5 días + ≥4 de los siguientes:</div>
+      <div class="kaw-item">
+        <div class="kaw-num">1</div>
+        <div class="kaw-text"><strong>Conjuntivitis bilateral no purulenta</strong> — inyección conjuntival sin secreción. Involucra limbo (zona alrededor de la córnea). Aparece en los primeros días.</div>
+      </div>
+      <div class="kaw-item">
+        <div class="kaw-num">2</div>
+        <div class="kaw-text"><strong>Cambios en labios y cavidad oral</strong> — labios rojos y agrietados (queilitis), lengua en fresa (papilas prominentes), eritema difuso de mucosa oral y faríngea.</div>
+      </div>
+      <div class="kaw-item">
+        <div class="kaw-num">3</div>
+        <div class="kaw-text"><strong>Exantema polimorfo</strong> — rash maculopapular, eritrodérmico o similar a escarlatina. Difuso, sin vesículas. Predomina en tronco. Aparece en la primera semana.</div>
+      </div>
+      <div class="kaw-item">
+        <div class="kaw-num">4</div>
+        <div class="kaw-text"><strong>Cambios en extremidades</strong> — fase aguda: eritema y edema duro e indurado de palmas y plantas. Fase subaguda (semana 2–3): <strong>descamación periungueal</strong> (signo muy característico, desde la punta de los dedos).</div>
+      </div>
+      <div class="kaw-item">
+        <div class="kaw-num">5</div>
+        <div class="kaw-text"><strong>Adenopatía cervical</strong> — generalmente unilateral, ≥1.5 cm, no supurativa, dolorosa. El criterio menos frecuente (~50% de los casos).</div>
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Hallazgo adicional</th><th>Comentario</th></tr>
+        <tr><td>Irritabilidad marcada</td><td>Muy frecuente; la meningitis aséptica (pleocitosis en LCR) puede ocurrir</td></tr>
+        <tr><td>Uveítis anterior</td><td>En lámpara de hendidura; no visible a simple vista</td></tr>
+        <tr><td>Artritis / artralgia</td><td>Articulaciones grandes; fase aguda o subaguda</td></tr>
+        <tr><td>Hidrops vesicular</td><td>Dolor en hipocondrio derecho; ecografía abdominal</td></tr>
+        <tr><td>Trombocitosis</td><td>Característica de fase subaguda: plaquetas >450.000–1.000.000/µL. Mayor riesgo trombótico.</td></tr>
+        <tr><td>Descamación periungueal</td><td>Aparece en semana 2–3, muy característica. Comienza en puntas de los dedos.</td></tr>
+        <tr><td>Líneas de Beau</td><td>Surcos transversales en las uñas semanas después de la enfermedad aguda</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-kaw">💊 Tratamiento de Kawasaki</div>
+    <div class="hl-danger">⭐ <strong>Iniciar tratamiento dentro de los primeros 10 días de fiebre.</strong> El objetivo es prevenir los aneurismas coronarios. La IGIV reduce la incidencia de aneurismas de 25% a <5%.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">IGIV — Inmunoglobulina IV · Pilar del tratamiento</div>
+      <div class="farma-clase">Inmunomodulador · Dosis única alta · Mecanismo no completamente aclarado</div>
+      <div class="dosis-badge">2 g/kg IV en infusión única durante 10–12 h</div>
+      <div class="farma-detalle">
+        La IGIV en dosis única de 2 g/kg es más eficaz que dosis fraccionadas. Administrar idealmente dentro de los <strong>5–10 días</strong> de inicio de la fiebre. Si se da después del día 10: solo si hay fiebre persistente, signos inflamatorios o aneurismas en progresión. Respuesta: cede la fiebre en 24–48 h en ~85% de los casos.<br><br>
+        <strong>Resistencia a IGIV (~15%):</strong> fiebre persistente o recurrente ≥36 h después de la IGIV → segunda dosis de IGIV 2 g/kg o infliximab (anti-TNFα) o corticoides IV (methylprednisolona).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">AAS — Ácido acetilsalicílico · Combinado con IGIV</div>
+      <div class="farma-clase">Anti-inflamatorio (dosis alta) + Antiagregante plaquetario (dosis baja)</div>
+      <div class="dosis-badge">Fase aguda: 80–100 mg/kg/día c/6 h (máx 4 g/día)</div>
+      <div class="dosis-badge">Fase subaguda (afebril 48–72 h): reducir a 3–5 mg/kg/día hasta sem 6–8</div>
+      <div class="farma-detalle">
+        <strong>Fase aguda:</strong> dosis anti-inflamatoria alta hasta que ceda la fiebre 48–72 h.<br>
+        <strong>Fase subaguda/convalecencia:</strong> dosis antiagregante baja (3–5 mg/kg/día) por 6–8 semanas si no hay aneurismas. <strong>Si hay aneurismas:</strong> AAS indefinidamente ± clopidogrel ± anticoagulación (warfarina o HBPM) según el tamaño.<br><br>
+        ⚠️ Riesgo de síndrome de Reye si el niño contrae influenza o varicela durante tratamiento con AAS. Vacunar contra influenza. Algunos centros usan naproxeno en lugar de AAS hasta confirmar el diagnóstico.
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tamaño del aneurisma coronario</th><th>Clasificación</th><th>Manejo</th></tr>
+        <tr><td>&lt;4 mm (o Z-score &lt;2.5)</td><td>No dilatación</td><td>AAS 6–8 semanas, luego suspender si normal</td></tr>
+        <tr><td>4–8 mm (Z-score 2.5–10)</td><td>Pequeño-mediano</td><td>AAS antiagregante indefinido + seguimiento cardiológico</td></tr>
+        <tr><td>&gt;8 mm (o Z-score &gt;10)</td><td>Gigante</td><td>AAS + anticoagulación (warfarina o HBPM) + cardiología intervencionista</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Fiebre Reumática vs Kawasaki — diferencial</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Fiebre Reumática</th><th>Kawasaki</th></tr>
+        <tr><td><strong>Edad</strong></td><td>5–15 años</td><td>&lt;5 años (pico 6–24 meses)</td></tr>
+        <tr><td><strong>Etiología</strong></td><td>Post-estreptocócica (EBHGA)</td><td>Desconocida (posible trigger infeccioso)</td></tr>
+        <tr><td><strong>Articulaciones</strong></td><td>Poliartritis migratoria dolorosa, grandes articulaciones</td><td>Artralgia/artritis, menos prominente</td></tr>
+        <tr><td><strong>Carditis</strong></td><td>Endocarditis → valvulopatía (mitral)</td><td>Coronaritis → aneurismas coronarios</td></tr>
+        <tr><td><strong>Piel</strong></td><td>Eritema marginado, nódulos de Aschoff</td><td>Exantema polimorfo, descamación periungueal</td></tr>
+        <tr><td><strong>Neurológico</strong></td><td>Corea de Sydenham</td><td>Irritabilidad, meningitis aséptica</td></tr>
+        <tr><td><strong>ASLO</strong></td><td>Elevada</td><td>Normal (no es post-estreptocócica)</td></tr>
+        <tr><td><strong>Tratamiento clave</strong></td><td>Penicilina + AAS/corticoides + profilaxis</td><td>IGIV 2 g/kg + AAS</td></tr>
+        <tr><td><strong>Secuela más temida</strong></td><td>Estenosis mitral</td><td>Aneurismas coronarios → IAM</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">FR: post-estreptocócica por EBHGA, 5–15 años</span>
+      <span class="pill">Mimetismo molecular: anti-M → miosina cardíaca</span>
+      <span class="pill">Criterios JONES: Carditis, pOliartritis, Neurocoreica, Eritema marginado, Subcutáneos</span>
+      <span class="pill">Diagnóstico: 2 mayores O 1 mayor + 2 menores + evidencia estreptocócica</span>
+      <span class="pill">Artritis FR: migratoria, grandes articulaciones, responde dramáticamente al AAS</span>
+      <span class="pill">Corea de Sydenham: puede ser único criterio, aparece 2–6 meses después</span>
+      <span class="pill">PR prolongado en ECG: criterio menor (no es carditis)</span>
+      <span class="pill">Válvula más afectada: mitral > aórtica > tricúspide</span>
+      <span class="pill">Tratamiento FR: penicilina (erradicar) + AAS (artritis) ± corticoides (carditis grave)</span>
+      <span class="pill">Profilaxis secundaria: penicilina G benzatínica IM cada 21 días (Argentina)</span>
+      <span class="pill">Con valvulopatía residual: profilaxis hasta los 40 años o de por vida</span>
+      <span class="pill">Kawasaki: vasculitis de mediano calibre, &lt;5 años, etiología desconocida</span>
+      <span class="pill">Kawasaki: principal causa de cardiopatía adquirida en niños en países desarrollados</span>
+      <span class="pill">Criterios: fiebre ≥5 días + ≥4/5 (conjuntivitis, boca/labios, exantema, extremidades, adenopatía)</span>
+      <span class="pill">Descamación periungueal: fase subaguda semana 2–3, muy característica</span>
+      <span class="pill">Lengua en fresa + labios rojos agrietados: característico de Kawasaki</span>
+      <span class="pill">Kawasaki incompleto: fiebre + 2–3 criterios → ecocardiograma para decidir</span>
+      <span class="pill">Tratamiento: IGIV 2 g/kg dosis única + AAS 80–100 mg/kg/día</span>
+      <span class="pill">IGIV reduce aneurismas de 25% a &lt;5%</span>
+      <span class="pill">Resistencia IGIV: segunda dosis o infliximab</span>
+      <span class="pill">Aneurisma gigante &gt;8 mm: AAS + anticoagulación indefinida</span>
+      <span class="pill">Síndrome de Reye: AAS + influenza/varicela → encefalopatía + hepatitis</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Gewitz MH et al. Revision of Jones Criteria for Diagnosis of Acute Rheumatic Fever. Circulation 2015 (AHA) · McCrindle BW et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease. Circulation 2017 (AHA/AAP) · Sociedad Argentina de Pediatría (SAP). Guías de diagnóstico y tratamiento de fiebre reumática y enfermedad de Kawasaki. 2022 · Newburger JW et al. IGIV in Kawasaki Disease. NEJM 1991.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
