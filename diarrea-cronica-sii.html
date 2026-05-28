@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diarrea Crónica y SII — Medpedia</title>
+  <meta name="description" content="Diarrea crónica: clasificación osmótica/secretora/inflamatoria/grasa. Síndrome de intestino irritable: criterios Roma IV, tratamiento. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gastro: #1A6B3C; --gastro-claro: #E8F5EE; --gastro-oscuro: #0F4025;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gastro { background: var(--gastro-claro); color: var(--gastro-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gastro { font-size: 16px; font-weight: 500; color: var(--gastro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-gastro{ border-left: 3px solid var(--gastro); background: var(--gastro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .tipo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .tipo-grid { grid-template-columns: 1fr; } }
+    .tipo-card { border-radius: 14px; padding: 1.1rem; border: 1.5px solid; }
+    .tipo-card.osmo { background: #E6F1FB; border-color: #90B8D8; }
+    .tipo-card.secr { background: #FEF0DC; border-color: #E0A060; }
+    .tipo-card.infla { background: #FDEAEA; border-color: #E08080; }
+    .tipo-card.grasa { background: var(--gastro-claro); border-color: #80C890; }
+    .tipo-nombre { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .tipo-nombre.osmo { color: #1A5E9A; }
+    .tipo-nombre.secr { color: #8B4500; }
+    .tipo-nombre.infla { color: #C0392B; }
+    .tipo-nombre.grasa { color: var(--gastro); }
+    .tipo-clave { font-size: 11px; font-weight: 600; color: var(--texto-ter); margin-bottom: 5px; }
+    .tipo-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .roma-box { background: var(--gastro-claro); border: 1.5px solid #80C890; border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .roma-titulo { font-size: 15px; font-weight: 600; color: var(--gastro); margin-bottom: 10px; }
+    .roma-item { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 5px; }
+    .roma-item strong { color: var(--texto); }
+    .sii-subtipo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .sii-subtipo { grid-template-columns: repeat(2, 1fr); } }
+    .sub-card { border-radius: 10px; padding: 10px; border: 1px solid var(--borde); text-align: center; background: var(--blanco); }
+    .sub-letra { font-size: 20px; font-weight: 700; color: var(--gastro); }
+    .sub-nombre { font-size: 11px; color: var(--texto-sec); margin-top: 2px; line-height: 1.3; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--gastro); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--gastro-claro); color: var(--gastro-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .gap-score { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    .gap-box { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .gap-titulo { font-size: 13px; font-weight: 600; color: var(--gastro); margin-bottom: 6px; }
+    .gap-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Gastroenterología</a> › Diarrea Crónica y SII</div>
+  <div class="titulo">Diarrea Crónica<br>y Síndrome de Intestino Irritable</div>
+  <div class="meta">
+    <span class="tag tag-gastro">Gastroenterología</span>
+    <span class="tag tag-fuente">Criterios Roma IV · ACG 2021 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- DIARREA CRÓNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición de diarrea crónica</div>
+    <div class="hl-gastro"><strong>Diarrea crónica:</strong> deposiciones de consistencia disminuida (Bristol 6–7), frecuencia aumentada (&gt;3/día) y/o aumento del peso fecal (&gt;200 g/día), con duración <strong>&gt;4 semanas</strong>. La diarrea aguda (&lt;2 semanas) y la persistente (2–4 semanas) tienen causas distintas.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-gastro">🟢 Clasificación fisiopatológica de la diarrea crónica</div>
+    <div class="tipo-grid">
+      <div class="tipo-card osmo">
+        <div class="tipo-nombre osmo">Osmótica</div>
+        <div class="tipo-clave">Clave: cesa con el ayuno</div>
+        <div class="tipo-desc">Solutos osmóticamente activos no absorbidos retienen agua en el lumen. <strong>Gap osmótico fecal &gt;125 mOsm/kg.</strong><br><br>Causas: intolerancia a la lactosa · malabsorción de fructosa/sorbitol · laxantes osmóticos (lactulosa, Mg, PEG) · insuficiencia pancreática exocrina.</div>
+      </div>
+      <div class="tipo-card secr">
+        <div class="tipo-nombre secr">Secretora</div>
+        <div class="tipo-clave">Clave: persiste con el ayuno · voluminosa · acuosa</div>
+        <div class="tipo-desc">Hipersecreción activa de iones y agua o inhibición de la absorción. <strong>Gap osmótico fecal &lt;50 mOsm/kg.</strong><br><br>Causas: tumores secretores (VIPoma, gastrinoma, carcinoide) · diarrea microscópica (colágena/linfocítica) · malabsorción de ácidos biliares · laxantes estimulantes.</div>
+      </div>
+      <div class="tipo-card infla">
+        <div class="tipo-nombre infla">Inflamatoria</div>
+        <div class="tipo-clave">Clave: sangre y/o pus en heces · fiebre · dolor</div>
+        <div class="tipo-desc">Daño de la mucosa intestinal con exudación. Calprotectina fecal elevada. Proteína C reactiva elevada.<br><br>Causas: enfermedad de Crohn · colitis ulcerosa · colitis isquémica · infecciones crónicas (TBC intestinal, C. difficile recurrente, parásitos).</div>
+      </div>
+      <div class="tipo-card grasa">
+        <div class="tipo-nombre grasa">Malabsortiva (Grasa)</div>
+        <div class="tipo-clave">Clave: esteatorrea · pérdida de peso · déficit vitaminas ADEK</div>
+        <div class="tipo-desc">Alteración de la digestión o absorción de grasas. Heces pálidas, brillosas, flotantes, malolientes.<br><br>Causas: enfermedad celíaca · insuficiencia pancreática exocrina · sobrecrecimiento bacteriano intestinal (SIBO) · resección intestinal · linfangiectasia.</div>
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">💡 Gap osmótico fecal — clave para clasificar</div>
+      <strong>Fórmula:</strong> Gap osmótico = 290 − 2 × (Na fecal + K fecal)<br>
+      <strong>&gt;125 mOsm/kg:</strong> diarrea osmótica (hay solutos no absorbidos)<br>
+      <strong>&lt;50 mOsm/kg:</strong> diarrea secretora (no hay diferencia entre lumen e intersticio)<br>
+      <strong>50–125:</strong> zona mixta o inflamatoria
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Señales de alarma — descartar causa orgánica grave</div>
+    <div class="hl-danger">Ante cualquiera de estas señales: colonoscopia + biopsias urgente, no asumir SII hasta descartar patología orgánica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Señal de alarma</th><th>Causa a descartar</th></tr>
+        <tr><td>Sangre en materia fecal · rectorragia</td><td>CCR · EII · colitis isquémica</td></tr>
+        <tr><td>Pérdida de peso involuntaria (&gt;5% en 6 meses)</td><td>CCR · enfermedad celíaca · EII · neoplasia</td></tr>
+        <tr><td>Inicio &gt;50 años sin historia previa</td><td>CCR · diarrea microscópica</td></tr>
+        <tr><td>Antecedente familiar de CCR o EII</td><td>CCR · EII</td></tr>
+        <tr><td>Anemia ferropénica sin causa clara</td><td>CCR · enfermedad celíaca</td></tr>
+        <tr><td>Fiebre persistente</td><td>EII · infección · linfoma</td></tr>
+        <tr><td>Diarrea nocturna que despierta al paciente</td><td>EII · diarrea secretora · microscópica</td></tr>
+        <tr><td>Masa abdominal palpable</td><td>CCR · Crohn · linfoma</td></tr>
+        <tr><td>Calprotectina fecal muy elevada</td><td>EII activa · infección</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAUSAS IMPORTANTES -->
+  <div class="seccion">
+    <div class="sec-titulo-gastro">🔎 Causas importantes de diarrea crónica — claves diagnósticas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad</th><th>Clínica clave</th><th>Diagnóstico</th></tr>
+        <tr><td><strong>Intolerancia a la lactosa</strong></td><td>Diarrea osmótica + meteorismo + dolor cólico tras lácteos. Muy prevalente (50–70% adultos latinoamericanos).</td><td>Test de hidrógeno en aire expirado (gold standard) · respuesta a dieta sin lactosa</td></tr>
+        <tr><td><strong>Enfermedad celíaca</strong></td><td>Diarrea malabsortiva + esteatorrea + pérdida de peso + déficit Fe/folato/B12/Ca + dermatitis herpetiforme. Puede ser silente.</td><td>Anticuerpos anti-transglutaminasa tisular IgA (tTG-IgA) + IgA total · Biopsia duodenal: atrofia vellositaria (gold standard)</td></tr>
+        <tr><td><strong>Diarrea microscópica</strong> (colágena y linfocítica)</td><td>Diarrea acuosa secretora en mujer mayor de 50 años. Colonoscopia macroscópicamente normal. Asociada a AINEs, IBP, ISRS, estatinas.</td><td>Colonoscopia con biopsias (imprescindible — aspecto macro normal)</td></tr>
+        <tr><td><strong>SIBO</strong> (sobrecrecimiento bacteriano)</td><td>Distensión, meteorismo, esteatorrea leve, déficit B12. Factores de riesgo: cirugía abdominal, síndrome de intestino corto, diabetes, aclorhidria.</td><td>Test de hidrógeno en aire expirado con glucosa o lactulosa · respuesta empírica a antibióticos</td></tr>
+        <tr><td><strong>Insuficiencia pancreática exocrina</strong></td><td>Esteatorrea importante + pérdida de peso. Antecedente de pancreatitis crónica, alcoholismo, fibrosis quística.</td><td>Elastasa fecal &lt;100 µg/g (grave) · respuesta a enzimas pancreáticas</td></tr>
+        <tr><td><strong>Tumor carcinoide</strong></td><td>Diarrea secretora + rubor facial (flushing) + broncoespasmo + valvulopatía derecha. Síndrome carcinoide solo cuando hay metástasis hepáticas.</td><td>5-HIAA en orina 24 h · cromogranina A · TC + gammagrafía con octreótide</td></tr>
+        <tr><td><strong>Hipertiroidismo</strong></td><td>Diarrea secretora + taquicardia + pérdida de peso + temblor + intolerancia al calor.</td><td>TSH suprimida + T4 libre elevada</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SII -->
+  <div class="seccion">
+    <div class="sec-titulo-gastro">🟢 Síndrome de Intestino Irritable (SII)</div>
+    <div class="hl-gastro">El SII es el <strong>trastorno gastrointestinal funcional más frecuente</strong>: 10–15% de la población. Mujeres &gt; hombres (2:1). Inicio habitual antes de los 50 años. Es un diagnóstico de inclusión por criterios clínicos, <strong>no de exclusión pura</strong>, aunque deben descartarse señales de alarma.</div>
+
+    <div class="roma-box">
+      <div class="roma-titulo">Criterios de Roma IV para SII</div>
+      <div class="roma-item"><strong>Dolor abdominal recurrente</strong> ≥1 día/semana en promedio en los últimos 3 meses (con inicio de síntomas ≥6 meses antes del diagnóstico)</div>
+      <div class="roma-item">Asociado con ≥2 de los siguientes:</div>
+      <div class="roma-item">1. <strong>Relacionado con la defecación</strong> (el dolor mejora o empeora con las deposiciones)</div>
+      <div class="roma-item">2. <strong>Asociado a cambio en la frecuencia</strong> de las deposiciones</div>
+      <div class="roma-item">3. <strong>Asociado a cambio en la consistencia</strong> (forma) de las deposiciones</div>
+      <div style="background:white; border-radius:8px; padding:8px 12px; margin-top:8px; font-size:12px; color:var(--texto-sec);">⚠️ Diferencia clave con Roma III: en Roma IV se exige <strong>dolor</strong> (no solo malestar) y se elimina el "malestar abdominal" como criterio.</div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:0;">Subtipos según consistencia de heces (Escala de Bristol)</div>
+    <div class="sii-subtipo">
+      <div class="sub-card"><div class="sub-letra">SII-D</div><div class="sub-nombre">Predominio diarrea (Bristol 6–7)</div></div>
+      <div class="sub-card"><div class="sub-letra">SII-E</div><div class="sub-nombre">Predominio estreñimiento (Bristol 1–2)</div></div>
+      <div class="sub-card"><div class="sub-letra">SII-M</div><div class="sub-nombre">Mixto (ambos en mismo día/semana)</div></div>
+      <div class="sub-card"><div class="sub-letra">SII-U</div><div class="sub-nombre">No clasificable</div></div>
+    </div>
+
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Fisiopatología (multifactorial)</div>
+        ✦ <strong>Hipersensibilidad visceral</strong> (umbral de dolor al distender el colon disminuido)<br>
+        ✦ Alteración de la motilidad intestinal<br>
+        ✦ Disfunción del eje intestino–cerebro<br>
+        ✦ Alteración de la microbiota intestinal (disbiosis)<br>
+        ✦ Inflamación de bajo grado (activación de mastocitos)<br>
+        ✦ Factores psicosociales: estrés, ansiedad, depresión (comórbidos en 50–80%)<br>
+        ✦ Antecedente de gastroenteritis infecciosa (SII post-infeccioso)
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Características que orientan al SII</div>
+        ✦ Inicio antes de los 50 años<br>
+        ✦ Sexo femenino<br>
+        ✦ Síntomas crónicos intermitentes con períodos de remisión<br>
+        ✦ <strong>Dolor que mejora con la defecación</strong><br>
+        ✦ Moco en heces (sin sangre)<br>
+        ✦ Distensión abdominal importante<br>
+        ✦ Urgencia defecatoria<br>
+        ✦ Sensación de evacuación incompleta<br>
+        ✦ Síntomas que empeoran con el estrés o la menstruación<br>
+        ✦ Laboratorio e imágenes normales
+      </div>
+    </div>
+
+    <div class="sec-titulo" style="font-size:15px; margin-top:4px;">Evaluación diagnóstica</div>
+    <div class="hl-info">💡 En paciente joven (&lt;50 años) sin señales de alarma con clínica típica de SII: el diagnóstico puede hacerse clínicamente sin necesidad de colonoscopia. Solicitar: hemograma + VSG + PCR + calprotectina fecal + serología celíaca (tTG-IgA) + TSH. Si todo normal y clínica típica → diagnóstico de SII.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estudio</th><th>Indicación en SII</th></tr>
+        <tr><td>Hemograma · PCR · VSG</td><td>Rutina — descartar inflamación sistémica</td></tr>
+        <tr><td>Calprotectina fecal</td><td>Si &lt;50 µg/g: probabilidad muy baja de EII activa. Si elevada → colonoscopia</td></tr>
+        <tr><td>Serología celíaca (tTG-IgA + IgA total)</td><td>Siempre — celíaca puede imitar SII-D</td></tr>
+        <tr><td>TSH</td><td>Descartar hipo/hipertiroidismo</td></tr>
+        <tr><td>Test de hidrógeno (lactosa)</td><td>Si SII-D con síntomas post-lácteos</td></tr>
+        <tr><td>Colonoscopia con biopsias</td><td>Si ≥50 años, señales de alarma, o calprotectina elevada</td></tr>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="font-size:15px; margin-top:14px;">Tratamiento del SII</div>
+    <div class="hl-gastro">El tratamiento es individualizado según el subtipo dominante. La relación médico-paciente y la educación son fundamentales. No existe cura: el objetivo es el control de síntomas y la mejora de la calidad de vida.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Dieta baja en FODMAPs</div>
+      <div class="farma-clase">Intervención dietética de mayor evidencia en SII · 1ª línea no farmacológica</div>
+      <div class="farma-detalle">
+        <strong>FODMAPs:</strong> Fermentable Oligosaccharides, Disaccharides, Monosaccharides And Polyols. Son carbohidratos de cadena corta fermentables que aumentan el agua intraluminal y la producción de gas. Restringir: fructosa (manzana, mango, miel), lactosa, fructooligosacáridos (trigo, ajo, cebolla), sorbitol/manitol (peras, ciruelas). Evidencia: 50–70% de mejoría sintomática en SII.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antiespasmódicos</div>
+      <div class="farma-clase">Bromuro de hioscina · Mebeverina · Diciclomina · Para todos los subtipos, especialmente el dolor y los espasmos</div>
+      <div class="dosis-badge">Hioscina 10–20 mg c/8 h VO · Mebeverina 135 mg c/8 h</div>
+      <div class="farma-detalle">Reducen el espasmo colónico. Tomar antes de las comidas. Útiles para el dolor agudo post-prandial. Efectos anticolinérgicos: boca seca, retención urinaria (leve).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Loperamida</div>
+      <div class="farma-clase">Antidiarreico · Solo para SII-D · No modifica el dolor</div>
+      <div class="dosis-badge">2–4 mg c/6–8 h VO según necesidad</div>
+      <div class="farma-detalle">Agonista opioide periférico → enlentece tránsito · reduce urgencia · aumenta tono del esfínter anal. <strong>No mejora el dolor abdominal.</strong> No usar en SII-E. Uso puntual (antes de situaciones de estrés o salidas).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antidepresivos a dosis bajas</div>
+      <div class="farma-clase">Neuromoduladores del eje intestino–cerebro · Para dolor persistente en cualquier subtipo</div>
+      <div class="dosis-badge">Amitriptilina 10–25 mg/noche (SII-D) · ISRS (sertralina, fluoxetina) para SII-E</div>
+      <div class="farma-detalle">
+        <strong>Amitriptilina (tricíclico):</strong> reduce hipersensibilidad visceral + efecto antidiarreico + mejora el sueño. De elección en SII-D con dolor importante. Dosis subantidepresiva.<br>
+        <strong>ISRS:</strong> aceleran el tránsito → útiles en SII-E. También ayudan si hay ansiedad o depresión comórbida.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Rifaximina</div>
+      <div class="farma-clase">Antibiótico no absorbible · Para SII-D con meteorismo prominente · SIBO</div>
+      <div class="dosis-badge">550 mg c/8 h × 14 días</div>
+      <div class="farma-detalle">Modifica la microbiota intestinal local. Eficacia moderada en SII-D con distensión abdominal dominante. Aprobado por FDA. No disponible en todos los centros en Argentina.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Linaclotida / Plecanatida</div>
+      <div class="farma-clase">Agonistas de guanilato ciclasa C · Para SII-E grave refractario</div>
+      <div class="dosis-badge">Linaclotida 290 µg/día VO en ayunas</div>
+      <div class="farma-detalle">Aumentan la secreción de agua e iones en el lumen intestinal → ablandamiento de heces + aceleración del tránsito. También reducen el dolor visceral (mecanismo independiente del efecto laxante). Alta eficacia en SII-E. Principal efecto adverso: diarrea.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Psicoterapia · TCC · Hipnoterapia</div>
+      <div class="farma-clase">Intervenciones sobre el eje intestino-cerebro · Alta evidencia</div>
+      <div class="farma-detalle">La terapia cognitivo-conductual (TCC) y la hipnoterapia dirigida al intestino tienen evidencia level 1 para mejoría de síntomas en SII. Indicadas cuando hay componente psicológico significativo, en SII refractario o como complemento al tratamiento farmacológico.</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Diarrea crónica: &gt;4 semanas de duración</span>
+      <span class="pill">Osmótica: cesa con el ayuno · gap osmótico &gt;125</span>
+      <span class="pill">Secretora: persiste con el ayuno · voluminosa · gap &lt;50</span>
+      <span class="pill">Inflamatoria: sangre/pus + fiebre + calprotectina ↑</span>
+      <span class="pill">Malabsortiva: esteatorrea + déficit vitaminas ADEK + pérdida de peso</span>
+      <span class="pill">Celíaca: tTG-IgA + biopsia duodenal (atrofia vellositaria)</span>
+      <span class="pill">Diarrea microscópica: colonoscopia macro normal → biopsia siempre</span>
+      <span class="pill">SII: criterios Roma IV = dolor ≥1 día/semana + cambio frecuencia o forma</span>
+      <span class="pill">SII: inicio síntomas ≥6 meses, presentes ≥3 meses</span>
+      <span class="pill">Roma IV vs. III: Roma IV exige dolor (elimina "malestar")</span>
+      <span class="pill">SII-D: loperamida + amitriptilina + dieta baja en FODMAPs</span>
+      <span class="pill">SII-E: linaclotida + ISRS</span>
+      <span class="pill">Calprotectina fecal &lt;50: descarta EII activa con alta probabilidad</span>
+      <span class="pill">Señal de alarma: sangre + &gt;50 años + pérdida de peso + fiebre → colonoscopia</span>
+      <span class="pill">Carcinoide: 5-HIAA en orina 24 h + flushing + diarrea secretora</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Lacy BE, Mearin F, Chang L, et al. Bowel Disorders. Gastroenterology 2016 (Rome IV criteria) · Ford AC, et al. Irritable Bowel Syndrome. N Engl J Med 2017 · American College of Gastroenterology. Clinical Guideline: Management of Irritable Bowel Syndrome. Am J Gastroenterol 2021 · Camilleri M. Chronic diarrhea: a review on pathophysiology and management for the clinical gastroenterologist. Clin Gastroenterol Hepatol 2020 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
