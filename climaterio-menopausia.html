@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climaterio y Menopausia — Medpedia</title>
+  <meta name="description" content="Climaterio y menopausia: definición, síntomas vasomotores, osteoporosis, terapia hormonal de la menopausia (THM), riesgos y contraindicaciones. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --clim: #8B4513; --clim-claro: #FDF0E6; --clim-oscuro: #6B3410;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --gin: #7B2D8B; --gin-claro: #F5E6FA;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gin { background: var(--gin-claro); color: var(--gin); }
+    .tag-endo { background: #E8F5E9; color: #1B5E20; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-clim { font-size: 16px; font-weight: 500; color: var(--clim); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-clim  { border-left: 3px solid var(--clim); background: var(--clim-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .etapas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 600px) { .etapas-grid { grid-template-columns: 1fr; } }
+    .etapa-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; text-align: center; }
+    .etapa-nombre { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .etapa-def { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .sintomas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 580px) { .sintomas-grid { grid-template-columns: 1fr; } }
+    .sint-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.1rem; }
+    .sint-titulo { font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 8px; }
+    .sint-item { font-size: 12.5px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; display: flex; gap: 6px; }
+    .riesgo-tabla { font-size: 13px; }
+    .badge-aumenta { background: var(--danger-claro); color: var(--danger); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+    .badge-reduce { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+    .badge-neutral { background: #f5f5f5; color: #666; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología / Endocrinología</a> › Climaterio y Menopausia</div>
+  <div class="titulo">Climaterio y Menopausia</div>
+  <div class="meta">
+    <span class="tag tag-gin">Ginecología</span>
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-fuente">IMS 2023 · NAMS 2022 · SOGIBA Argentina</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definiciones y etapas</div>
+    <div class="hl-clim"><strong>Menopausia:</strong> cese definitivo de la menstruación por agotamiento folicular ovárico. Se diagnostica retroactivamente, luego de <strong>12 meses consecutivos de amenorrea</strong> sin otra causa patológica. Edad promedio: 50–51 años en Argentina (rango 45–55). <strong>Climaterio:</strong> período de transición que abarca la perimenopausia y la posmenopausia.</div>
+    <div class="etapas-grid">
+      <div class="etapa-card">
+        <div class="etapa-nombre" style="color:var(--clim)">Premenopausia</div>
+        <div class="etapa-def">Ciclos menstruales regulares. Función ovárica aún normal. Leve descenso de la reserva ovárica.</div>
+      </div>
+      <div class="etapa-card">
+        <div class="etapa-nombre" style="color:var(--warn)">Perimenopausia</div>
+        <div class="etapa-def">Desde los primeros síntomas hasta 12 meses post-última menstruación. Ciclos irregulares, síntomas vasomotores. FSH empieza a elevarse.</div>
+      </div>
+      <div class="etapa-card">
+        <div class="etapa-nombre" style="color:var(--info)">Posmenopausia</div>
+        <div class="etapa-def">Desde los 12 meses post-última menstruación en adelante. FSH elevada, estradiol bajo. Mayor riesgo cardiovascular y osteoporosis.</div>
+      </div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Entidad especial</th><th>Definición</th><th>Evaluación</th></tr>
+        <tr><td><strong>Menopausia precoz</strong></td><td>Entre 40 y 45 años</td><td>Investigar causa. Mayor riesgo de osteoporosis y ECV. THM generalmente indicada.</td></tr>
+        <tr><td><strong>Insuficiencia ovárica prematura (IOP)</strong></td><td>Antes de los 40 años (antigua "menopausia precoz")</td><td>FSH ≥25 UI/L en 2 determinaciones separadas. Investigar autoinmunidad (90%), cariotipo, causas iatrogénicas. THM hasta los 51 años.</td></tr>
+        <tr><td><strong>Diagnóstico de menopausia</strong></td><td>Clínico (&gt;45 años con amenorrea 12 meses + síntomas)</td><td>FSH &gt;40 UI/L + estradiol &lt;20 pg/mL confirman en casos dudosos o &lt;45 años. No necesario de rutina en mujer &gt;45 años con cuadro típico.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Manifestaciones clínicas</div>
+    <div class="sintomas-grid">
+      <div class="sint-card">
+        <div class="sint-titulo">🌡️ Síntomas vasomotores</div>
+        <div class="sint-item"><span>⭐</span><span><strong>Sofocos / bochornos:</strong> síntoma más frecuente (75–80%). Sensación súbita de calor, rubor, sudoración, palpitaciones. Duran 1–5 min. Pueden ocurrir decenas de veces por día.</span></div>
+        <div class="sint-item"><span>🌙</span><span><strong>Sudoración nocturna:</strong> sofocos durante el sueño → insomnio → fatiga diurna.</span></div>
+        <div class="sint-item"><span>⏱️</span><span>Duran promedio 7 años. En algunas mujeres persisten más de 10 años.</span></div>
+      </div>
+      <div class="sint-card">
+        <div class="sint-titulo">💧 Síntomas urogenitales</div>
+        <div class="sint-item"><span>🔴</span><span><strong>Síndrome genitourinario de la menopausia (SGM):</strong> atrofia vulvovaginal, sequedad vaginal, dispareunia, prurito, ardor.</span></div>
+        <div class="sint-item"><span>🚻</span><span>Incontinencia urinaria de urgencia o mixta, infecciones urinarias recurrentes, disuria.</span></div>
+        <div class="sint-item"><span>📈</span><span>A diferencia de los sofocos, el SGM no mejora espontáneamente — empeora con el tiempo sin tratamiento.</span></div>
+      </div>
+      <div class="sint-card">
+        <div class="sint-titulo">🧠 Síntomas neuropsicológicos</div>
+        <div class="sint-item"><span>🌫️</span><span>Dificultad de concentración y memoria ("brain fog")</span></div>
+        <div class="sint-item"><span>😔</span><span>Irritabilidad, labilidad emocional, depresión (especialmente en perimenopausia)</span></div>
+        <div class="sint-item"><span>😴</span><span>Insomnio (directo por sudoración nocturna o por hipoestrogenismo)</span></div>
+        <div class="sint-item"><span>🤯</span><span>Cefalea (especialmente en perimenopausia por fluctuaciones estrogénicas)</span></div>
+      </div>
+      <div class="sint-card">
+        <div class="sint-titulo">🦴 Consecuencias a largo plazo</div>
+        <div class="sint-item"><span>🦴</span><span><strong>Osteoporosis:</strong> pérdida acelerada de masa ósea en los primeros 5 años post-menopausia (2–3%/año). Principal causa de fractura en mujeres mayores.</span></div>
+        <div class="sint-item"><span>🫀</span><span><strong>Riesgo cardiovascular:</strong> el estrógeno era cardioprotector. Post-menopausia: ↑ LDL, ↓ HDL, ↑ grasa visceral, ↑ HTA → mayor riesgo de ECV.</span></div>
+        <div class="sint-item"><span>🧠</span><span>Mayor riesgo de deterioro cognitivo (en debate).</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-clim">💊 Terapia Hormonal de la Menopausia (THM)</div>
+    <div class="hl-clim"><strong>La THM es el tratamiento más eficaz para los síntomas vasomotores moderados-graves y el SGM.</strong> La decisión debe individualizarse evaluando síntomas, riesgos, contraindicaciones y preferencias de la paciente. El enfoque actual enfatiza la "ventana de oportunidad": mayor beneficio y menor riesgo si se inicia en los primeros 10 años post-menopausia o antes de los 60 años.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Estrógenos — componente principal de la THM</div>
+      <div class="farma-clase">Estradiol 17β · Estrógenos equinos conjugados (EEC) · Estriol</div>
+      <div class="dosis-badge">Oral: estradiol 1–2 mg/día o EEC 0.3–0.625 mg/día</div>
+      <div class="dosis-badge">Transdérmico: parche estradiol 25–100 µg/día (de elección en riesgo trombótico)</div>
+      <div class="dosis-badge">Local (SGM): estriol crema vaginal, anillo vaginal, óvulos — sin absorción sistémica significativa</div>
+      <div class="farma-detalle">
+        <strong>Vía transdérmica:</strong> evita el primer paso hepático → menor riesgo de tromboembolismo venoso (TEV) y ACV que la vía oral. De elección en mujeres con factores de riesgo trombótico, migraña, dislipemia o HTA.<br><br>
+        <strong>Estrógenos locales (vaginales):</strong> indicados exclusivamente para SGM cuando no hay síntomas vasomotores. No requieren progestágeno. Pueden usarse incluso en sobrevivientes de cáncer de mama con síntomas genitourinarios graves (previa discusión con oncólogo).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Progestágenos — obligatorios si hay útero</div>
+      <div class="farma-clase">Progesterona micronizada (natural) · Acetato de medroxiprogesterona (AMP) · Didrogesterona</div>
+      <div class="dosis-badge">Progesterona micronizada 100–200 mg/noche (continua o cíclica)</div>
+      <div class="dosis-badge">AMP 2.5–5 mg/día continuo o 5–10 mg/día × 12–14 días/mes</div>
+      <div class="farma-detalle">
+        <strong>Objetivo:</strong> proteger el endometrio del efecto proliferativo del estrógeno → prevenir hiperplasia y cáncer endometrial. <strong>Obligatorio en toda mujer con útero intacto.</strong><br><br>
+        <strong>Progesterona micronizada vs AMP:</strong> la progesterona micronizada (natural, body-identical) tiene mejor perfil de seguridad mamaria y cardiovascular que el AMP. Es la preferida en las guías actuales (IMS 2023). El AMP fue el progestágeno del estudio WHI que mostró mayor riesgo de Ca mama — dato clave del examen.<br><br>
+        <strong>Mujer histerectomizada:</strong> solo estrógenos, sin necesidad de progestágeno.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Tibolona — alternativa hormonal</div>
+      <div class="farma-clase">Esteroide sintético con actividad estrogénica, progestagénica y androgénica</div>
+      <div class="dosis-badge">2.5 mg/día oral · Solo en posmenopausia (≥12 meses de amenorrea)</div>
+      <div class="farma-detalle">
+        Mejora síntomas vasomotores, SGM y libido (por componente androgénico). No requiere progestágeno adicional (actividad endometrial propia). Contraindicada en Ca mama previo (estudio LIBERATE mostró mayor recurrencia). No usar en perimenopausia (puede causar sangrado irregular).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Alternativas no hormonales — síntomas vasomotores</div>
+      <div class="farma-clase">Para mujeres con contraindicaciones a la THM o que la rechazan</div>
+      <div class="farma-detalle">
+        <strong>ISRS / IRSN:</strong> venlafaxina (37.5–75 mg/día), desvenlafaxina, paroxetina — reducen sofocos en 40–60%. La paroxetina está aprobada por FDA específicamente para sofocos.<br>
+        <strong>Gabapentin / pregabalina:</strong> útiles especialmente para sofocos nocturnos.<br>
+        <strong>Clonidina:</strong> agonista α2, eficacia modesta, efectos adversos (hipotensión, sequedad de boca).<br>
+        <strong>Fezolinetant:</strong> antagonista del receptor NK3 de neurokinina B. Aprobado FDA 2023 para sofocos moderados-graves. No hormonal, mecanismo central (hipotálamo).<br>
+        <strong>Fitoestrógenos (isoflavonas de soja):</strong> evidencia débil. No recomendados en sobrevivientes de Ca mama.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Riesgos y beneficios de la THM — el estudio WHI y la evidencia actual</div>
+    <div class="hl-warn">⭐ <strong>El estudio WHI (Women's Health Initiative, 2002)</strong> causó alarma al mostrar ↑ riesgo de Ca mama con estrógenos + AMP. La reinterpretación posterior mostró que esos resultados se aplicaban a mujeres de 63 años promedio que iniciaron THM tardíamente — no reflejan el perfil de riesgo de mujeres sintomáticas que inician la THM en los primeros años post-menopausia.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Desenlace</th><th>THM estrógeno + progestágeno</th><th>THM estrógeno solo (histerectomizadas)</th></tr>
+        <tr><td>Cáncer de mama</td><td><span class="badge-aumenta">↑ leve</span> Con AMP &gt;5 años. Con progesterona micronizada: menor riesgo.</td><td><span class="badge-neutral">≈ neutro</span> o leve reducción (WHI)</td></tr>
+        <tr><td>Cáncer endometrial</td><td><span class="badge-neutral">≈ neutro</span> (progestágeno protege)</td><td><span class="badge-aumenta">↑ significativo</span> si útero intacto sin progestágeno</td></tr>
+        <tr><td>TEV / TVP-TEP</td><td><span class="badge-aumenta">↑</span> con vía oral. Vía transdérmica: <span class="badge-neutral">≈ sin aumento</span></td><td>Idem</td></tr>
+        <tr><td>ACV isquémico</td><td><span class="badge-aumenta">↑ leve</span> con vía oral &gt;60 años. Transdérmica: <span class="badge-neutral">≈ neutro</span></td><td>Idem</td></tr>
+        <tr><td>Enfermedad coronaria</td><td><span class="badge-reduce">↓</span> si inicio &lt;60 años / &lt;10 años post-menopausia ("ventana de oportunidad")</td><td>Idem</td></tr>
+        <tr><td>Osteoporosis / fracturas</td><td><span class="badge-reduce">↓ significativa</span> — previene pérdida ósea</td><td>Idem</td></tr>
+        <tr><td>Mortalidad total</td><td><span class="badge-reduce">↓</span> si inicio temprano (&lt;60 años)</td><td>Idem</td></tr>
+        <tr><td>Cáncer de colon</td><td><span class="badge-reduce">↓ leve</span></td><td><span class="badge-neutral">≈ neutro</span></td></tr>
+      </table>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th colspan="2">Contraindicaciones absolutas de la THM sistémica</th></tr>
+        <tr><td>Cáncer de mama activo o historia previa</td><td>Contraindicación absoluta (los estrógenos locales en bajísimas dosis pueden discutirse caso a caso)</td></tr>
+        <tr><td>Cáncer endometrial activo (dependiente de estrógenos)</td><td>Contraindicación. Post-tratamiento: evaluar caso a caso.</td></tr>
+        <tr><td>TEV o ACV reciente (&lt;6 meses)</td><td>Contraindicación. Si es necesaria: solo vía transdérmica con evaluación hematológica.</td></tr>
+        <tr><td>Enfermedad hepática activa grave</td><td>Metabolismo hepático alterado. Vía transdérmica puede considerarse.</td></tr>
+        <tr><td>Sangrado uterino anormal sin diagnóstico</td><td>Siempre descartar patología endometrial antes de iniciar THM.</td></tr>
+        <tr><td>Embarazo</td><td>Contraindicación absoluta.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🦴 Osteoporosis en la menopausia</div>
+    <div class="hl-info">La menopausia es el principal factor de riesgo de osteoporosis en la mujer. La caída del estrógeno activa los osteoclastos → resorción ósea acelerada. La pérdida es máxima en los primeros 5 años post-menopausia (2–3%/año) y luego se estabiliza (~1%/año).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Intervención</th><th>Indicación / Detalle</th></tr>
+        <tr><td><strong>Densitometría ósea (DXA)</strong></td><td>Screening en todas las mujeres ≥65 años. Antes si factores de riesgo (menopausia precoz, corticoides crónicos, fractura previa, IMC bajo). T-score: normal ≥-1; osteopenia -1 a -2.5; osteoporosis ≤-2.5.</td></tr>
+        <tr><td><strong>Calcio + vitamina D</strong></td><td>Calcio 1200 mg/día (dieta + suplemento). Vitamina D 800–1000 UI/día. Objetivo: 25-OH vitamina D ≥30 ng/mL.</td></tr>
+        <tr><td><strong>THM</strong></td><td>Previene la pérdida ósea en posmenopausia. Primera línea en mujeres con síntomas + osteoporosis. No indicada solo para osteoporosis si no hay síntomas.</td></tr>
+        <tr><td><strong>Bifosfonatos</strong></td><td>Alendronato 70 mg/semana, risedronato, ácido zoledrónico IV anual. Primera línea farmacológica para osteoporosis establecida o T-score ≤-2.5 con fractura previa.</td></tr>
+        <tr><td><strong>Denosumab</strong></td><td>Anti-RANKL. 60 mg SC cada 6 meses. Para osteoporosis grave o intolerancia a bifosfonatos. Riesgo de rebote al suspender.</td></tr>
+        <tr><td><strong>Raloxifeno</strong></td><td>SERM (modulador selectivo del receptor estrogénico). Protege hueso y reduce Ca mama. No mejora sofocos (puede empeorarlos). No protege del SGM.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Menopausia: 12 meses de amenorrea sin causa patológica</span>
+      <span class="pill">Edad promedio: 50–51 años en Argentina</span>
+      <span class="pill">IOP: menopausia antes de los 40 años, FSH ≥25 UI/L × 2</span>
+      <span class="pill">Diagnóstico: clínico &gt;45 años; FSH + estradiol si &lt;45 años o dudas</span>
+      <span class="pill">Sofocos: síntoma más frecuente (75–80%), duran promedio 7 años</span>
+      <span class="pill">SGM: no mejora solo, empeora con el tiempo sin tratamiento</span>
+      <span class="pill">THM más eficaz para sofocos moderados-graves</span>
+      <span class="pill">Ventana de oportunidad: iniciar &lt;10 años post-menopausia o &lt;60 años</span>
+      <span class="pill">Progestágeno obligatorio si útero intacto: protege endometrio</span>
+      <span class="pill">Histerectomizada: estrógeno solo, sin progestágeno</span>
+      <span class="pill">Progesterona micronizada: mejor perfil de seguridad mamaria que AMP</span>
+      <span class="pill">WHI (2002): ↑ Ca mama con EEC + AMP, aplicable a inicio tardío (&gt;10 años post-meno)</span>
+      <span class="pill">Vía transdérmica: menor riesgo de TEV y ACV que vía oral</span>
+      <span class="pill">Ca mama: contraindicación absoluta de THM sistémica</span>
+      <span class="pill">Estrógenos locales vaginales: no requieren progestágeno, útiles en SGM</span>
+      <span class="pill">Alternativas no hormonales: venlafaxina, paroxetina, gabapentin, fezolinetant</span>
+      <span class="pill">Raloxifeno: SERM, protege hueso y Ca mama, NO mejora sofocos</span>
+      <span class="pill">Osteoporosis: pérdida ósea 2–3%/año en primeros 5 años post-menopausia</span>
+      <span class="pill">Bifosfonatos: alendronato 70 mg/semana, primera línea en osteoporosis establecida</span>
+      <span class="pill">DXA: screening en todas las mujeres ≥65 años</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Baber RJ et al. IMS Recommendations on women's midlife health and menopause hormone therapy. Climacteric 2023 · The NAMS 2022 Hormone Therapy Position Statement. Menopause 2022 · Rossouw JE et al. WHI Trial. JAMA 2002 · Langer RD. WHI revisited. Climacteric 2017 · Sociedad de Obstetricia y Ginecología de Buenos Aires (SOGIBA) — Consenso de Climaterio y Menopausia 2021 · Cauley JA. Osteoporosis: fracture epidemiology. Nat Rev Rheumatol 2017.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
