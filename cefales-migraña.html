@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cefaleas y Migraña — Medpedia</title>
+  <meta name="description" content="Cefaleas primarias y secundarias: migraña con y sin aura, cefalea tensional, en racimos. Criterios ICHD-3, señales de alarma, tratamiento agudo y profiláctico. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --neuro: #5C35A0; --neuro-claro: #F0EBFC; --neuro-oscuro: #3D2070;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-neuro { font-size: 16px; font-weight: 500; color: var(--neuro); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .cef-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; }
+    .cef-header { padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--borde); }
+    .cef-nombre { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; }
+    .cef-nombre.migrana { color: var(--neuro); }
+    .cef-nombre.tensional { color: #1A6B3C; }
+    .cef-nombre.racimos { color: #C0392B; }
+    .cef-nombre.secundaria { color: #D4730A; }
+    .cef-sub { font-size: 12px; color: var(--texto-ter); margin-top: 2px; }
+    .cef-body { padding: 1rem 1.25rem; }
+    .cef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
+    @media (max-width: 560px) { .cef-grid { grid-template-columns: 1fr; } }
+    .cef-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .cef-bloque-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .cef-bloque strong { color: var(--texto); }
+    .criterio-box { background: var(--neuro-claro); border: 1.5px solid #C0A0E0; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+    .criterio-titulo { font-size: 14px; font-weight: 600; color: var(--neuro); margin-bottom: 8px; }
+    .criterio-item { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 4px; }
+    .criterio-item strong { color: var(--texto); }
+    .red-flags { background: #FDEDEC; border: 1.5px solid #E88080; border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 12px; }
+    .red-flags-titulo { font-size: 14px; font-weight: 700; color: #C0392B; margin-bottom: 10px; }
+    .red-flag-item { display: flex; gap: 8px; margin-bottom: 7px; font-size: 13px; color: var(--texto-sec); line-height: 1.5; }
+    .red-flag-icon { font-size: 16px; flex-shrink: 0; }
+    .red-flag-item strong { color: var(--texto); }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--neuro); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--neuro-claro); color: var(--neuro-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .aura-timeline { display: flex; gap: 0; margin-bottom: 12px; border-radius: 12px; overflow: hidden; border: 1px solid var(--borde); }
+    .aura-fase { flex: 1; padding: 10px 8px; text-align: center; border-right: 1px solid var(--borde); }
+    .aura-fase:last-child { border-right: none; }
+    .aura-fase.prodrome { background: #F5F0FF; }
+    .aura-fase.aura { background: var(--neuro-claro); }
+    .aura-fase.headache { background: #FDEAEA; }
+    .aura-fase.postdrome { background: #F0F5FF; }
+    .aura-nombre { font-size: 11px; font-weight: 700; color: var(--texto-ter); text-transform: uppercase; margin-bottom: 4px; }
+    .aura-tiempo { font-size: 12px; font-weight: 600; color: var(--neuro); margin-bottom: 3px; }
+    .aura-desc { font-size: 11px; color: var(--texto-sec); line-height: 1.4; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Cefaleas</div>
+  <div class="titulo">Cefaleas y Migraña</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-fuente">ICHD-3 · AHS 2024 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Clasificación general</div>
+    <div class="hl-neuro">La <strong>International Headache Society (IHS)</strong> clasifica las cefaleas en primarias (sin causa estructural subyacente) y secundarias (síntoma de otra enfermedad). Las primarias representan el 90% de las cefaleas en la práctica clínica. El diagnóstico es clínico, basado en los criterios ICHD-3.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo</th><th>Ejemplos</th><th>Prevalencia</th></tr>
+        <tr><td><strong>Primarias</strong></td><td>Migraña · Cefalea tensional · Cefalea en racimos · Cefalea hípnica · Cefalea numular</td><td>~90% de las cefaleas</td></tr>
+        <tr><td><strong>Secundarias</strong></td><td>HSA · Meningitis · HTE · Sinusitis · Arteritis temporal · Disección carotídea · HTA grave · Hipotiroidismo</td><td>~10% — siempre descartar</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- RED FLAGS -->
+  <div class="seccion">
+    <div class="sec-titulo">🚨 Señales de alarma — cefalea secundaria hasta demostrar lo contrario</div>
+    <div class="red-flags">
+      <div class="red-flags-titulo">🚩 Mnemotecnia SNNOOP10 — señales de alarma</div>
+      <div class="red-flag-item"><div class="red-flag-icon">⚡</div><div><strong>Thunderclap headache:</strong> cefalea de inicio súbito e intensidad máxima en segundos ("la peor cefalea de mi vida") → descartar hemorragia subaracnoidea urgente (TC + PL)</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🌡️</div><div><strong>Fiebre + cefalea + rigidez de nuca</strong> → meningitis/encefalitis</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🧠</div><div><strong>Focalidad neurológica</strong> nueva (afasia, hemiparesia, ataxia) → ACV, tumor, absceso</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">👁️</div><div><strong>Edema de papila</strong> en fondo de ojo → hipertensión endocraneana</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🔄</div><div><strong>Cambio en el patrón</strong> de una cefalea previa conocida (más frecuente, más intensa, diferente)</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🦠</div><div><strong>HIV, cáncer, inmunosupresión</strong> → infecciones oportunistas, metástasis</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🏋️</div><div><strong>Desencadenada por Valsalva</strong> (tos, esfuerzo, coito) → malformación de Chiari, HSA</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">😴</div><div><strong>Que despierta del sueño</strong> o matutina con vómitos → HTE (tumor, hidrocefalia)</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">👴</div><div><strong>Inicio ≥50 años</strong> sin historia previa → arteritis de células gigantes (temporal), neoplasia</div></div>
+      <div class="red-flag-item"><div class="red-flag-icon">🤰</div><div><strong>Embarazo / puerperio</strong> → preeclampsia, trombosis venosa cerebral</div></div>
+    </div>
+    <div class="hl-danger">🚨 Ante cualquier señal de alarma: neuroimagen urgente (TC sin contraste primero) + evaluación de PL si TC normal y sospecha de HSA.</div>
+  </div>
+
+  <!-- MIGRAÑA -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🟣 1. Migraña</div>
+    <div class="cef-card">
+      <div class="cef-header">
+        <div class="cef-nombre migrana">Migraña</div>
+        <div class="cef-sub">Prevalencia: 12% población general · Mujeres:Hombres = 3:1 · Pico 25–55 años · 2ª causa de discapacidad global</div>
+      </div>
+      <div class="cef-body">
+        <div style="margin-bottom:12px;">
+          <div class="cef-bloque-titulo">Fases de la migraña</div>
+          <div class="aura-timeline">
+            <div class="aura-fase prodrome"><div class="aura-nombre">Pródromo</div><div class="aura-tiempo">Horas–días antes</div><div class="aura-desc">Bostezos · cambios de humor · fotofobia leve · poliuria · antojos alimentarios</div></div>
+            <div class="aura-fase aura"><div class="aura-nombre">Aura</div><div class="aura-tiempo">5–60 min (si presente)</div><div class="aura-desc">Visual · sensitiva · motora · del lenguaje. Reversible. Precede o acompaña la cefalea.</div></div>
+            <div class="aura-fase headache"><div class="aura-nombre">Cefalea</div><div class="aura-tiempo">4–72 horas</div><div class="aura-desc">Unilateral · pulsátil · moderada–grave · fotofobia/fonofobia · náuseas</div></div>
+            <div class="aura-fase postdrome"><div class="aura-nombre">Postdromo</div><div class="aura-tiempo">Horas–días</div><div class="aura-desc">Fatiga · "resaca" · dificultad de concentración · sensibilidad en el cuero cabelludo</div></div>
+          </div>
+        </div>
+
+        <div class="criterio-box">
+          <div class="criterio-titulo">Criterios ICHD-3 — Migraña sin aura (≥5 episodios)</div>
+          <div class="criterio-item">A. ≥5 episodios que cumplen B–D</div>
+          <div class="criterio-item">B. Duración <strong>4–72 horas</strong> sin tratar o tratada ineficazmente</div>
+          <div class="criterio-item">C. ≥2 de: <strong>unilateral · pulsátil · intensidad moderada–grave · empeora con actividad física</strong></div>
+          <div class="criterio-item">D. ≥1 de: <strong>náuseas/vómitos · fotofobia y fonofobia</strong></div>
+          <div class="criterio-item">E. No mejor explicado por otro diagnóstico</div>
+        </div>
+
+        <div class="criterio-box" style="margin-top:10px;">
+          <div class="criterio-titulo">Criterios ICHD-3 — Aura migrañosa típica (≥2 episodios)</div>
+          <div class="criterio-item">✦ Síntomas visuales: escotoma centelleante, fotopsias, líneas en zigzag (fenómeno de <strong>fortification spectrum</strong>) — más frecuente</div>
+          <div class="criterio-item">✦ Síntomas sensitivos: parestesias unilaterales en cara/mano (marcha jacksoniana sensitiva)</div>
+          <div class="criterio-item">✦ Síntomas del habla: afasia o disartria</div>
+          <div class="criterio-item">✦ <strong>Cada síntoma dura 5–60 min · se desarrolla gradualmente (&gt;5 min) · reversible · seguido de cefalea en ≤60 min</strong></div>
+        </div>
+
+        <div class="cef-grid" style="margin-top:12px;">
+          <div class="cef-bloque">
+            <div class="cef-bloque-titulo">Desencadenantes frecuentes</div>
+            ✦ Estrés (y el relajamiento post-estrés)<br>
+            ✦ Alteraciones del sueño (exceso o privación)<br>
+            ✦ Menstruación (migraña menstrual pura)<br>
+            ✦ Ayuno · alcohol (especialmente vino tinto)<br>
+            ✦ Cambios climáticos · altitud<br>
+            ✦ Estímulos sensoriales intensos<br>
+            ✦ Quesos curados · chocolate · glutamato
+          </div>
+          <div class="cef-bloque">
+            <div class="cef-bloque-titulo">Variantes importantes</div>
+            ✦ <strong>Migraña crónica:</strong> ≥15 días/mes de cefalea × ≥3 meses, de los cuales ≥8 días con características migrañosas<br>
+            ✦ <strong>Estado de mal migrañoso:</strong> episodio &gt;72 h → hospitalización<br>
+            ✦ <strong>Migraña hemipléjica:</strong> aura con hemiparesia (familiar o esporádica)<br>
+            ✦ <strong>Migraña basilar (tipo tronco):</strong> aura con vértigo, diplopía, disartria<br>
+            ✦ <strong>Migraña retiniana:</strong> síntomas visuales monoculares
+          </div>
+        </div>
+
+        <div class="alerta-box" style="margin-top:10px;">
+          <div class="alerta-title">⚠️ Cefalea por uso excesivo de analgésicos (MOH)</div>
+          Uso de analgésicos ≥10–15 días/mes → cefalea de rebote crónica. Afecta al 1–2% de la población. <strong>Los triptanes, ergotamínicos y opioides son los más implicados.</strong> Tratamiento: suspensión del analgésico (puede empeorar transitoriamente) + profilaxis migrañosa + apoyo.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEFALEA TENSIONAL -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🟢 2. Cefalea Tensional</div>
+    <div class="cef-card">
+      <div class="cef-header">
+        <div class="cef-nombre tensional">Cefalea Tensional</div>
+        <div class="cef-sub">Más prevalente de todas · 40% de la población · Episódica o crónica (≥15 días/mes)</div>
+      </div>
+      <div class="cef-body">
+        <div class="criterio-box" style="border-color:#90C890; background:#EBF5E9;">
+          <div class="criterio-titulo" style="color:#1A6B3C;">Criterios ICHD-3 — Cefalea tensional episódica (≥10 episodios)</div>
+          <div class="criterio-item">A. Duración <strong>30 min – 7 días</strong></div>
+          <div class="criterio-item">B. ≥2 de: <strong>bilateral · opresiva/no pulsátil · leve–moderada · no empeora con actividad física</strong></div>
+          <div class="criterio-item">C. <strong>Sin náuseas ni vómitos</strong> · puede haber fotofobia O fonofobia (no ambas)</div>
+          <div class="criterio-item">D. No mejor explicado por otro diagnóstico</div>
+        </div>
+        <div class="dos-col" style="margin-top:10px;">
+          <div class="col-bloque">
+            <div class="col-titulo">Características clave</div>
+            ✦ Dolor bilateral en "casco" u "opresión en la cabeza"<br>
+            ✦ No pulsátil (clave: lo opuesto a la migraña)<br>
+            ✦ No empeora con el esfuerzo<br>
+            ✦ Sin fotofobia Y fonofobia simultáneas<br>
+            ✦ Sin náuseas/vómitos<br>
+            ✦ Asociada a estrés, postura, ansiedad
+          </div>
+          <div class="col-bloque">
+            <div class="col-titulo">Tratamiento</div>
+            <strong>Episódica:</strong> AINEs (ibuprofeno 400–600 mg, naproxeno 500 mg), paracetamol, aspirina · evitar opioides<br><br>
+            <strong>Crónica (profilaxis):</strong> amitriptilina 10–75 mg/noche (1ª elección) · técnicas de relajación · biofeedback · fisioterapia
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEFALEA EN RACIMOS -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔴 3. Cefalea en Racimos (Cluster)</div>
+    <div class="cef-card">
+      <div class="cef-header">
+        <div class="cef-nombre racimos">Cefalea en Racimos</div>
+        <div class="cef-sub">Hombres &gt;&gt; Mujeres (5:1) · Inicio 20–40 años · "La cefalea más dolorosa conocida"</div>
+      </div>
+      <div class="cef-body">
+        <div class="criterio-box" style="border-color:#E08080; background:#FEF0DC;">
+          <div class="criterio-titulo" style="color:#C0392B;">Criterios ICHD-3</div>
+          <div class="criterio-item">A. ≥5 episodios que cumplen B–D</div>
+          <div class="criterio-item">B. Dolor unilateral grave o muy grave, <strong>orbitario, supraorbitario o temporal</strong></div>
+          <div class="criterio-item">C. Duración <strong>15–180 minutos sin tratar</strong></div>
+          <div class="criterio-item">D. ≥1 síntoma autonómico ipsilateral: <strong>inyección conjuntival · lagrimeo · congestión nasal · rinorrea · ptosis/miosis (Horner parcial) · edema palpebral · sudoración facial</strong></div>
+          <div class="criterio-item">E. Frecuencia: 1 episodio cada 2 días hasta 8/día · <strong>agitación (no puede quedarse quieto — opuesto a la migraña)</strong></div>
+        </div>
+        <div class="dos-col" style="margin-top:10px;">
+          <div class="col-bloque">
+            <div class="col-titulo">Características diferenciales</div>
+            ✦ Estrictamente unilateral (no cambia de lado en el mismo racimo)<br>
+            ✦ El paciente se agita, golpea la cabeza (vs. migraña: quieto en oscuridad)<br>
+            ✦ Desencadenado por alcohol durante el racimo<br>
+            ✦ Horario: frecuentemente nocturno (1–2 AM), "despertador"<br>
+            ✦ Racimos: períodos de semanas–meses con episodios diarios → remisión de meses–años
+          </div>
+          <div class="col-bloque">
+            <div class="col-titulo">Tratamiento</div>
+            <strong>Agudo (ataque):</strong><br>
+            ✦ <strong>O₂ 100% a 12–15 L/min × 15–20 min</strong> (muy eficaz, 1ª línea)<br>
+            ✦ Sumatriptán 6 mg SC (más rápido) o 20 mg intranasal<br>
+            ✦ Zolmitriptán 5 mg intranasal<br><br>
+            <strong>Profilaxis del racimo:</strong><br>
+            ✦ <strong>Verapamilo 240–960 mg/día</strong> (1ª línea)<br>
+            ✦ Litio · topiramato · corticoides (puente al inicio del racimo)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO MIGRAÑA -->
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🟣 Tratamiento de la Migraña</div>
+
+    <div class="sec-titulo" style="margin-top:0; font-size:15px;">Tratamiento del episodio agudo</div>
+    <div class="farma-card">
+      <div class="farma-nombre">AINEs — 1ª línea en ataques leves–moderados</div>
+      <div class="farma-clase">Ibuprofeno · Naproxeno · AAS · Ketorolac IV/IM</div>
+      <div class="dosis-badge">Ibuprofeno 400–600 mg VO · Naproxeno 500–1000 mg VO · AAS 1000 mg VO</div>
+      <div class="farma-detalle">Tomar lo antes posible al inicio del ataque. La combinación <strong>AAS 500 mg + paracetamol 500 mg + cafeína 130 mg</strong> (Excedrin) es una de las más eficaces para migraña leve–moderada.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Triptanes — 1ª línea en ataques moderados–graves</div>
+      <div class="farma-clase">Agonistas selectivos de receptores 5-HT1B/1D · vasoconstricción + inhibición neuronal trigeminal</div>
+      <div class="dosis-badge">Sumatriptán 50–100 mg VO / 6 mg SC / 10–20 mg IN · Rizatriptán 10 mg VO · Zolmitriptán 2,5 mg VO</div>
+      <div class="farma-detalle">
+        Tomar al inicio del dolor (no durante el aura). Si el primer triptán falla, probar otro de la familia. <strong>Contraindicaciones:</strong> cardiopatía isquémica · ACV/AIT previo · enfermedad arterial periférica · HTA no controlada · migraña hemipléjica o basilar · embarazo (relativa) · uso de IMAO (riesgo de síndrome serotoninérgico).<br>
+        <strong>Límite:</strong> máximo 2 días/semana para evitar MOH.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ergotamínicos</div>
+      <div class="farma-clase">Dihidroergotamina (DHE) · agonista no selectivo 5-HT y adrenérgico</div>
+      <div class="dosis-badge">DHE 1 mg IM/SC/IV · Ergotamina + cafeína (Cafergot) VO</div>
+      <div class="farma-detalle">Útil en ataques prolongados o estado de mal migrañoso (DHE IV). Mayor perfil de efectos adversos que triptanes (náuseas, vasoconstricción). <strong>Contraindicados en embarazo, cardiopatía isquémica, HTA no controlada.</strong></div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Gepantes (rimegepant, ubrogepant) — nuevos</div>
+      <div class="farma-clase">Antagonistas del receptor CGRP · sin vasoconstricción</div>
+      <div class="dosis-badge">Rimegepant 75 mg VO al inicio del ataque</div>
+      <div class="farma-detalle">Alternativa a los triptanes cuando hay contraindicación cardiovascular. También aprobados para profilaxis (rimegepant 75 mg en días alternos). Sin efecto vasoconstrictor → seguros en cardiopatía isquémica. Disponibilidad limitada en Argentina actualmente.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antieméticos</div>
+      <div class="farma-clase">Metoclopramida · Domperidona · Ondansetrón</div>
+      <div class="dosis-badge">Metoclopramida 10 mg IV/IM/VO · Domperidona 10 mg VO</div>
+      <div class="farma-detalle">Tratar náuseas y vómitos que acompañan el ataque. La metoclopramida también tiene efecto analgésico central y mejora la absorción oral de otros fármacos (gastroparesia migrañosa). <strong>En guardia:</strong> metoclopramida IV + ketorolac IV ± dexametasona IV (para prevenir recurrencia precoz).</div>
+    </div>
+
+    <div class="sec-titulo" style="font-size:15px; margin-top:14px;">Tratamiento profiláctico — indicaciones y fármacos</div>
+    <div class="hl-neuro">Indicar profilaxis cuando: ≥4 episodios/mes con discapacidad · ≥8 días de cefalea/mes · ataques que no responden al tratamiento agudo · migraña crónica · contraindicación a triptanes · paciente que lo prefiere.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fármaco</th><th>Dosis</th><th>Eficacia</th><th>Notas</th></tr>
+        <tr><td><strong>Propranolol</strong></td><td>40–240 mg/día</td><td>Alta · 1ª línea</td><td>Contraindicado en asma, bradiarritmias, Raynaud, depresión</td></tr>
+        <tr><td><strong>Amitriptilina</strong></td><td>10–75 mg/noche</td><td>Alta · 1ª línea</td><td>Útil si hay cefalea tensional comórbida o insomnio</td></tr>
+        <tr><td><strong>Topiramato</strong></td><td>50–100 mg/día</td><td>Alta · 1ª línea</td><td>Teratogénico (evitar en embarazo). Puede reducir peso. Riesgo de litiasis renal.</td></tr>
+        <tr><td><strong>Valproato sódico</strong></td><td>500–1500 mg/día</td><td>Alta</td><td>Muy teratogénico → contraindicado en mujeres en edad fértil sin anticoncepción efectiva</td></tr>
+        <tr><td><strong>Venlafaxina</strong></td><td>75–150 mg/día</td><td>Moderada</td><td>Útil si hay depresión/ansiedad comórbida</td></tr>
+        <tr><td><strong>Anticuerpos anti-CGRP</strong> (erenumab, fremanezumab, galcanezumab)</td><td>SC mensual o trimestral</td><td>Muy alta</td><td>Para migraña episódica ≥4 días/mes y crónica. Excelente tolerabilidad. Costo elevado.</td></tr>
+        <tr><td><strong>Toxina botulínica A (Botox)</strong></td><td>155–195 UI cada 12 semanas</td><td>Alta</td><td>Solo para migraña crónica (≥15 días/mes). Aprobado por FDA.</td></tr>
+        <tr><td><strong>Magnesio</strong></td><td>400–600 mg/día</td><td>Moderada</td><td>Seguro en embarazo. Útil en migraña menstrual.</td></tr>
+        <tr><td><strong>Riboflavina (B2)</strong></td><td>400 mg/día</td><td>Moderada</td><td>Sin efectos adversos significativos. Orina amarilla (inocua).</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Migraña y anticonceptivos hormonales:</strong> los ACO combinados (estrógenos + progestágenos) están <strong>contraindicados</strong> en migraña <strong>con aura</strong> (riesgo aumentado de ACV isquémico). Usar progestágenos solos (minipíldora, DIU hormonal) o métodos no hormonales.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Migraña: 4–72 h · unilateral · pulsátil · náuseas · fotofobia y fonofobia</span>
+      <span class="pill">Tensional: bilateral · opresiva · no pulsátil · sin náuseas</span>
+      <span class="pill">Racimos: unilateral orbital · autonómicos ipsilaterales · paciente agitado · O₂ + sumatriptán SC</span>
+      <span class="pill">Racimos profilaxis: verapamilo 1ª línea</span>
+      <span class="pill">Aura: síntomas reversibles 5–60 min antes o durante la cefalea</span>
+      <span class="pill">Aura visual más frecuente: escotoma centelleante / fortification spectrum</span>
+      <span class="pill">Señal de alarma #1: thunderclap headache → TC urgente → PL si TC normal</span>
+      <span class="pill">Triptanes: contraindicados en cardiopatía isquémica y migraña hemipléjica</span>
+      <span class="pill">MOH: analgésicos ≥10–15 días/mes → cefalea crónica</span>
+      <span class="pill">Profilaxis 1ª línea: propranolol · amitriptilina · topiramato</span>
+      <span class="pill">Topiramato y valproato: contraindicados en embarazo</span>
+      <span class="pill">ACO combinados contraindicados en migraña CON aura</span>
+      <span class="pill">Anti-CGRP (erenumab): para migraña ≥4 días/mes refractaria</span>
+      <span class="pill">Botox: solo en migraña crónica ≥15 días/mes</span>
+      <span class="pill">Migraña crónica: ≥15 días/mes cefalea, ≥8 con rasgos migrañosos</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Headache Classification Committee of the IHS. The International Classification of Headache Disorders, 3rd edition (ICHD-3). Cephalalgia 2018 · Silberstein SD, et al. Evidence-based guideline update: pharmacological treatment for episodic migraine prevention in adults. Neurology 2012 · American Headache Society. The American Headache Society Position Statement On Integrating New Migraine Treatments Into Clinical Practice. Headache 2019 · Diener HC, et al. European Academy of Neurology guideline on the pharmacological treatment of migraine. Eur J Neurol 2022 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
