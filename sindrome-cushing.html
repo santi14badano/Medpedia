@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome de Cushing — Medpedia</title>
+  <meta name="description" content="Síndrome de Cushing: causas, clínica, diagnóstico bioquímico paso a paso, localización, tratamiento. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --endo: #7B4F9E; --endo-claro: #F3EDFB; --endo-oscuro: #52347A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: var(--endo-claro); color: var(--endo-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-endo { font-size: 16px; font-weight: 500; color: var(--endo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-endo  { border-left: 3px solid var(--endo); background: var(--endo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--endo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .causa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .causa-grid { grid-template-columns: 1fr; } }
+    .causa-card { border-radius: 14px; padding: 1.1rem; border: 1.5px solid; }
+    .causa-card.exo { background: #FEF0DC; border-color: #E0A060; }
+    .causa-card.acth { background: var(--endo-claro); border-color: #C0A0E0; }
+    .causa-card.indep { background: #E6F1FB; border-color: #90B8D8; }
+    .causa-nombre { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .causa-nombre.exo { color: #8B4500; }
+    .causa-nombre.acth { color: var(--endo); }
+    .causa-nombre.indep { color: #1A5E9A; }
+    .causa-pct { font-size: 11px; color: var(--texto-ter); margin-bottom: 6px; }
+    .causa-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .signo-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 0.9rem 1.1rem; margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; }
+    .signo-icon { font-size: 22px; flex-shrink: 0; }
+    .signo-content { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .signo-content strong { color: var(--texto); }
+    .resultado-ok { color: #1A5C2A; font-weight: 600; }
+    .resultado-mal { color: #C0392B; font-weight: 600; }
+    .diag-box { background: var(--endo-claro); border: 1.5px solid #C0A0E0; border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .diag-titulo { font-size: 15px; font-weight: 600; color: var(--endo); margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Endocrinología</a> › Síndrome de Cushing</div>
+  <div class="titulo">Síndrome de Cushing</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-fuente">Endocrine Society 2022 · Harrison 21ª ed. · UpToDate 2024</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición</div>
+    <div class="hl-endo"><strong>Síndrome de Cushing:</strong> conjunto de manifestaciones clínicas producidas por exposición crónica y excesiva a glucocorticoides, ya sea de origen exógeno (iatrogénico) o endógeno. La causa endógena más frecuente es la <strong>enfermedad de Cushing</strong> (adenoma hipofisario productor de ACTH).</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Terminología clave</div>
+      <strong>Síndrome de Cushing:</strong> término genérico para el hipercortisolismo de cualquier causa.<br>
+      <strong>Enfermedad de Cushing:</strong> específicamente el hipercortisolismo por adenoma hipofisario secretor de ACTH (causa #1 de Cushing endógeno · 70%).<br>
+      <strong>Pseudo-Cushing:</strong> hipercortisolismo leve funcional en obesidad, alcoholismo crónico, depresión mayor, que puede confundir el diagnóstico bioquímico.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-endo">🟣 Causas — ACTH dependiente vs. independiente</div>
+    <div class="causa-grid">
+      <div class="causa-card exo">
+        <div class="causa-nombre exo">Exógeno (Iatrogénico)</div>
+        <div class="causa-pct">Causa más frecuente de todas</div>
+        <div class="causa-desc">Uso crónico de corticoides exógenos (prednisona, dexametasona, betametasona). ACTH suprimida. Atrofia suprarrenal bilateral. Diagnóstico clínico por anamnesis.</div>
+      </div>
+      <div class="causa-card acth">
+        <div class="causa-nombre acth">ACTH-dependiente (endógeno)</div>
+        <div class="causa-pct">80% de los Cushing endógenos</div>
+        <div class="causa-desc">
+          <strong>Enfermedad de Cushing (70%):</strong> adenoma hipofisario corticotropo. Mujeres 20–40 años. Tumor pequeño (microadenoma &lt;10 mm).<br><br>
+          <strong>Ectópico (10%):</strong> tumor no hipofisario productor de ACTH. Carcinoide bronquial (más frecuente), carcinoma microcítico de pulmón, feocromocitoma, tumor carcinoide. ACTH muy elevada. Hipopotasemia marcada. Instalación rápida.
+        </div>
+      </div>
+      <div class="causa-card indep" style="grid-column: 1 / -1;">
+        <div class="causa-nombre indep">ACTH-independiente (endógeno)</div>
+        <div class="causa-pct">20% de los Cushing endógenos · ACTH suprimida por el exceso de cortisol suprarrenal</div>
+        <div class="causa-desc">
+          <strong>Adenoma suprarrenal (15%):</strong> tumor benigno unilateral. Causa más frecuente de Cushing suprarrenal. Buena respuesta a cirugía.<br>
+          <strong>Carcinoma suprarrenal (5%):</strong> masa grande, invasiva. Puede producir andrógenos (virilización) además de cortisol.<br>
+          <strong>Hiperplasia suprarrenal bilateral:</strong> macronodular (ACTH-independiente) o micronodular pigmentada (síndrome de Carney).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Manifestaciones clínicas</div>
+    <div class="hl-endo">Las manifestaciones del Cushing son consecuencia directa del exceso crónico de glucocorticoides sobre múltiples órganos. Algunos signos son muy específicos (aunque poco sensibles); otros son frecuentes pero inespecíficos.</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Signos de alta especificidad (discriminan de obesidad simple)</div>
+        <div class="signo-card"><div class="signo-icon">🟣</div><div class="signo-content"><strong>Estrías violáceas anchas (&gt;1 cm):</strong> abdomen, muslos, axilas. Las estrías blancas del embarazo o la obesidad son de menor valor. Las violáceas anchas son muy específicas de Cushing.</div></div>
+        <div class="signo-card"><div class="signo-icon">💪</div><div class="signo-content"><strong>Miopatía proximal:</strong> debilidad para subir escaleras, levantarse de la silla, levantar los brazos. Sin dolor. Refleja el catabolismo proteico muscular.</div></div>
+        <div class="signo-card"><div class="signo-icon">🩸</div><div class="signo-content"><strong>Fragilidad capilar y equimosis espontáneas:</strong> hematomas con traumatismos mínimos. Piel adelgazada, atrófica.</div></div>
+        <div class="signo-card"><div class="signo-icon">🧒</div><div class="signo-content"><strong>Retraso del crecimiento en niños</strong> con aumento de peso: patrón característico (no se ve en obesidad simple donde hay aceleración del crecimiento).</div></div>
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Signos frecuentes pero menos específicos</div>
+        <div class="signo-card"><div class="signo-icon">🍎</div><div class="signo-content"><strong>Obesidad central (centrípeta):</strong> acumulación de grasa en abdomen, cara ("cara de luna llena"), cuello y dorso ("joroba de búfalo" o almohadilla grasa dorsocervical). Extremidades delgadas por miopatía.</div></div>
+        <div class="signo-card"><div class="signo-icon">🔴</div><div class="signo-content"><strong>Plétora facial:</strong> rubicundez de mejillas y frente. Acné. Hirsutismo (por andrógenos suprarrenales).</div></div>
+        <div class="signo-card"><div class="signo-icon">📈</div><div class="signo-content"><strong>HTA</strong> · <strong>DBT tipo 2 o intolerancia a la glucosa</strong> · dislipemia · osteoporosis (fracturas vertebrales) · nefrolitiasis · infecciones frecuentes (inmunosupresión).</div></div>
+        <div class="signo-card"><div class="signo-icon">🧠</div><div class="signo-content"><strong>Trastornos psiquiátricos:</strong> depresión (más frecuente), ansiedad, irritabilidad, insomnio, psicosis en casos graves.</div></div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ En la <strong>producción ectópica de ACTH</strong> (carcinoma microcítico), el cuadro puede ser <strong>atípico</strong>: instalación rápida, sin obesidad ni estrías, pero con <strong>hipopotasemia grave</strong> (mineralocorticoide por exceso de cortisol), hiperpigmentación (ACTH muy elevada) y debilidad muscular marcada. Pensar en ectópico en varón mayor con síntomas rápidos e hipopotasemia inexplicable.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-endo">🔵 Diagnóstico — algoritmo paso a paso</div>
+    <div class="hl-endo">El diagnóstico del Cushing tiene <strong>dos etapas</strong>: primero <strong>confirmar el hipercortisolismo</strong> (¿hay exceso de cortisol?) y luego <strong>localizar la causa</strong> (¿de dónde viene el exceso?). No saltar etapas.</div>
+
+    <div class="diag-box">
+      <div class="diag-titulo">Etapa 1 — Confirmación del hipercortisolismo (¿existe Cushing?)</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Test de supresión con 1 mg de dexametasona overnight (DBN-1 mg)</strong><br>
+          Administrar 1 mg de dexametasona a las 23 h → medir cortisol plasmático a las 8 AM del día siguiente.<br>
+          <span class="resultado-ok">✓ Normal: cortisol &lt;1,8 µg/dL → descarta Cushing</span><br>
+          <span class="resultado-mal">✗ Anormal: cortisol ≥1,8 µg/dL → sospecha de Cushing → continuar estudio</span><br>
+          Alta sensibilidad (95–98%). Primera prueba de cribado de elección.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Cortisol libre urinario en orina de 24 h (CLU-24h) — confirmar con 2 determinaciones</strong><br>
+          Mide la fracción libre de cortisol excretada. Valor &gt;3–4× el límite superior normal es muy sugestivo de Cushing.<br>
+          Falsos positivos: ingesta alta de líquidos (&gt;5 L/día), síndrome de ovario poliquístico, ejercicio intenso.<br>
+          <span class="resultado-ok">✓ Normal (&lt;50–100 µg/24 h): descarta Cushing</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Cortisol salival nocturno (23–24 h) — 2 determinaciones</strong><br>
+          El cortisol normalmente cae a su nadir a medianoche. En Cushing se pierde el ritmo circadiano → cortisol elevado a las 23–24 h.<br>
+          Alta sensibilidad y especificidad. Cómodo (muestra en domicilio). <span class="resultado-mal">✗ Anormal: &gt;130–145 ng/dL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="diag-box" style="margin-top:12px;">
+      <div class="diag-titulo">Etapa 2 — Localización de la causa (¿de dónde viene?)</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>ACTH plasmática (8 AM)</strong><br>
+          <span class="resultado-ok">ACTH suprimida (&lt;5–10 pg/mL):</span> causa ACTH-independiente (suprarrenal) → TC suprarrenal<br>
+          <span class="resultado-mal">ACTH normal o elevada (&gt;15–20 pg/mL):</span> causa ACTH-dependiente → continuar con test de supresión con dosis altas
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Test de supresión con dexametasona 8 mg (DBN-8 mg) — diferencia hipofisario de ectópico</strong><br>
+          Administrar 8 mg de dexametasona a las 23 h → medir cortisol a las 8 AM.<br>
+          <span class="resultado-ok">Supresión ≥50% del basal:</span> Enfermedad de Cushing hipofisaria (el adenoma hipofisario aún responde a la retroalimentación, aunque de forma incompleta)<br>
+          <span class="resultado-mal">Sin supresión:</span> producción ectópica de ACTH (tumor ectópico es autónomo, no suprimible)
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Neuroimagen e imágenes según sospecha</strong><br>
+          <strong>RMN hipofisaria con gadolinio (protocolo Cushing):</strong> si ACTH-dependiente. El microadenoma puede ser &lt;6 mm → difícil de ver en hasta 40% de casos.<br>
+          <strong>TC suprarrenal:</strong> si ACTH-independiente → adenoma unilateral vs. carcinoma vs. hiperplasia bilateral.<br>
+          <strong>TC tórax-abdomen-pelvis:</strong> si sospecha de ectópico (buscar tumor primario: carcinoide bronquial, microcítico).
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>Cateterismo de senos petrosos inferiores (CSPI) — gold standard para diferenciar hipofisario de ectópico</strong><br>
+          Indicado cuando RMN hipofisaria es negativa o dudosa y ACTH es elevada. Mide ACTH en senos petrosos inferiores (drenaje venoso de la hipófisis) vs. sangre periférica. Gradiente central/periférico &gt;2 basal o &gt;3 post-CRH → confirma origen hipofisario. También puede lateralizar el adenoma.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa</th><th>Tratamiento de elección</th><th>Alternativas</th></tr>
+        <tr><td><strong>Enfermedad de Cushing (adenoma hipofisario)</strong></td><td>Cirugía transesfenoidal (resección del adenoma). Remisión en 70–80% si microadenoma.</td><td>Radioterapia hipofisaria · Ketoconazol · Metirapona · Pasireotida (análogo de somatostatina)</td></tr>
+        <tr><td><strong>Adenoma suprarrenal</strong></td><td>Adrenalectomía laparoscópica unilateral. Curación en prácticamente el 100%.</td><td>—</td></tr>
+        <tr><td><strong>Carcinoma suprarrenal</strong></td><td>Adrenalectomía + mitotane (adrenolítico). Pronóstico reservado.</td><td>Quimioterapia · Metirapona · Ketoconazol para control del hipercortisolismo</td></tr>
+        <tr><td><strong>ACTH ectópico</strong></td><td>Resección del tumor primario. Si no resecable: control médico del hipercortisolismo.</td><td>Ketoconazol · Metirapona · Etomidato IV (en crisis)</td></tr>
+        <tr><td><strong>Cushing iatrogénico</strong></td><td>Reducción gradual de la dosis de corticoides (nunca suspensión brusca → riesgo de IS).</td><td>—</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Post-cirugía hipofisaria exitosa:</strong> la suprarrenal contralateral (y la propia) está atrofiada por la supresión crónica del eje. El paciente queda con IS transitoria que puede durar 6–18 meses → reemplazo con hidrocortisona hasta que el eje se recupere. Sick day rules obligatorias.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Causa más frecuente de Cushing: exógeno (corticoides)</span>
+      <span class="pill">Causa endógena más frecuente: enfermedad de Cushing (adenoma hipofisario)</span>
+      <span class="pill">Enfermedad de Cushing: ACTH ↑ + cortisol ↑ + supresión con 8 mg</span>
+      <span class="pill">Ectópico: ACTH muy ↑↑ + hipopotasemia + inicio rápido + no suprime con 8 mg</span>
+      <span class="pill">Suprarrenal: ACTH suprimida + cortisol ↑</span>
+      <span class="pill">Signos específicos: estrías violáceas anchas + miopatía proximal + equimosis espontáneas</span>
+      <span class="pill">Cribado 1ª elección: test supresión 1 mg dexametasona overnight</span>
+      <span class="pill">Normal: cortisol &lt;1,8 µg/dL post-supresión → descarta Cushing</span>
+      <span class="pill">Gold standard diferencia hipofisario/ectópico: cateterismo senos petrosos</span>
+      <span class="pill">Enfermedad de Cushing: cirugía transesfenoidal</span>
+      <span class="pill">Adenoma suprarrenal: adrenalectomía laparoscópica</span>
+      <span class="pill">Post-cirugía exitosa: IS transitoria → hidrocortisona por 6–18 meses</span>
+      <span class="pill">Niño: retraso del crecimiento + aumento de peso → sospecha de Cushing</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Nieman LK, Biller BMK, Findling JW, et al. Treatment of Cushing's Syndrome. J Clin Endocrinol Metab 2015 (Endocrine Society) · Lacroix A, Feelders RA, Stratakis CA, Nieman LK. Cushing's syndrome. Lancet 2015 · Harrison's Principles of Internal Medicine, 21st ed. · UpToDate: Establishing the diagnosis of Cushing's syndrome. 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
