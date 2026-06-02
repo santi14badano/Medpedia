@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer de Vesícula y Vía Biliar — Medpedia</title>
+  <meta name="description" content="Cáncer de vesícula biliar y colangiocarcinoma: factores de riesgo, diagnóstico, estadificación, cirugía y tratamiento. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ciru: #1A3C6E; --ciru-claro: #E3EBF5; --ciru-oscuro: #122A4E;
+      --onco: #6B3FA0; --onco-claro: #F3EEFE; --onco-oscuro: #4A2570;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ciru { background: var(--ciru-claro); color: var(--ciru-oscuro); }
+    .tag-onco { background: var(--onco-claro); color: var(--onco-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ciru { font-size: 16px; font-weight: 500; color: var(--ciru); margin-bottom: 12px; }
+    .sec-titulo-onco { font-size: 16px; font-weight: 500; color: var(--onco); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-onco  { border-left: 3px solid var(--onco); background: var(--onco-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .divider { border: none; border-top: 2px solid var(--borde); margin: 2.5rem 0; }
+    .enfermedad-titulo { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 500; margin-bottom: 6px; }
+    .badge-stage { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 8px; margin-right: 4px; }
+    .s1 { background: #E8F5E9; color: #1B5E20; }
+    .s2 { background: #FFF8E1; color: #F57F17; }
+    .s3 { background: #FCE4EC; color: #880E4F; }
+    .s4 { background: var(--danger-claro); color: var(--danger); }
+    .vs-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .vs-block { grid-template-columns: 1fr; } }
+    .vs-col { border-radius: 12px; padding: 1rem 1.2rem; }
+    .vs-col.izq { background: var(--warn-claro); border: 1.5px solid #e8c880; }
+    .vs-col.der { background: var(--info-claro); border: 1.5px solid #a8c8e8; }
+    .vs-titulo { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .vs-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía / Oncología</a> › Cáncer de Vesícula y Vía Biliar</div>
+  <div class="titulo">Cáncer de Vesícula y Vía Biliar</div>
+  <div class="meta">
+    <span class="tag tag-ciru">Cirugía</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">ESMO 2022 · NCCN 2024 · SAC Argentina</span>
+  </div>
+
+  <!-- VESÍCULA -->
+  <div class="enfermedad-titulo" style="color:var(--warn)">🟡 Cáncer de Vesícula Biliar</div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología y factores de riesgo</div>
+    <div class="hl-warn"><strong>El cáncer de vesícula biliar (CVB) es el tumor maligno más frecuente del árbol biliar</strong> y el 5to cáncer digestivo más común en Argentina y América Latina. Alta incidencia en países andinos (Bolivia, Chile, Perú), norte de Argentina y poblaciones amerindias. En Argentina, la provincia de Jujuy tiene las tasas más altas del mundo. El 95% son adenocarcinomas.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Comentario</th></tr>
+        <tr><td><strong>Colelitiasis (litiasis vesicular)</strong></td><td>FR más importante. 70–90% de los CVB tienen litiasis. Riesgo proporcional al tamaño del cálculo (&gt;3 cm: riesgo ×10). Sin embargo, solo 1–2% de los pacientes con litiasis desarrollan CVB.</td></tr>
+        <tr><td><strong>Vesícula en porcelana</strong></td><td>Calcificación difusa de la pared vesicular. Riesgo de malignidad ~7–25%. Indicación de colecistectomía profiláctica.</td></tr>
+        <tr><td><strong>Pólipos vesiculares</strong></td><td>≥10 mm → colecistectomía. 6–9 mm con factores de riesgo (&gt;50 años, sésil, único, crecimiento): colecistectomía. &lt;5 mm: seguimiento ecográfico.</td></tr>
+        <tr><td><strong>Anomalía de la unión biliopancreática (AUBP)</strong></td><td>Unión del conducto pancreático y biliar fuera del esfínter de Oddi → reflujo pancreático crónico a la vesícula → metaplasia → carcinoma. Mayor riesgo en jóvenes y sin litiasis.</td></tr>
+        <tr><td>Sexo femenino / obesidad</td><td>Mujeres 3:1. Obesidad favorece la litiasis colesterol.</td></tr>
+        <tr><td>Infección por Salmonella typhi crónica</td><td>Portadores crónicos de S. typhi tienen mayor riesgo de CVB.</td></tr>
+        <tr><td>Genética</td><td>Mayor prevalencia en grupos amerindios. Posible predisposición genética en familias de alta incidencia.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica y diagnóstico</div>
+    <div class="hl-danger">⚠️ <strong>El CVB es asintomático en etapas tempranas.</strong> La mayoría se descubre de forma incidental durante colecistectomía por colelitiasis sintomática o en la pieza quirúrgica al análisis anatomopatológico. Cuando da síntomas, suele ser estadio avanzado.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Presentación</th><th>Estadio típico</th><th>Comentario</th></tr>
+        <tr><td>Hallazgo incidental en colecistectomía</td><td>Temprano (T1–T2)</td><td>~50% de los diagnósticos. La AP de la pieza quirúrgica es fundamental.</td></tr>
+        <tr><td>Dolor en hipocondrio derecho</td><td>Avanzado</td><td>Similar a cólico biliar. No diferenciable clínicamente de colecistitis.</td></tr>
+        <tr><td>Ictericia obstructiva</td><td>Avanzado</td><td>Invasión del colédoco o compresión del hilio hepático.</td></tr>
+        <tr><td>Masa palpable en HD</td><td>Muy avanzado</td><td>Tumor grande o hígado infiltrado.</td></tr>
+        <tr><td>Síndrome constitucional</td><td>Avanzado / metastásico</td><td>Baja de peso, astenia, anorexia.</td></tr>
+      </table>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Estudios diagnósticos y de estadificación</div>
+      <div class="farma-clase">Secuencia diagnóstica recomendada</div>
+      <div class="farma-detalle">
+        <strong>Ecografía abdominal:</strong> primer estudio. Muestra engrosamiento focal de la pared vesicular, masa intraluminal o lesión sólida. Sensibilidad ~80% para masas &gt;1 cm.<br><br>
+        <strong>TC de abdomen y pelvis con contraste (trifásica):</strong> estadificación local (invasión hepática, vía biliar, estructuras adyacentes) y sistémica (adenopatías, metástasis hepáticas, peritoneales). Estudio preoperatorio imprescindible.<br><br>
+        <strong>RMN + colangio-RMN:</strong> evaluación de la vía biliar intrahepática, extensión a hilio hepático, relación con arteria hepática y vena porta. Superior a TC para extensión biliar.<br><br>
+        <strong>Marcadores tumorales:</strong> CA 19-9 y CEA: elevados en >50% de CVB avanzado. No son diagnósticos solos (baja especificidad). Útiles para seguimiento post-resección.<br><br>
+        <strong>Laparoscopía estadificadora:</strong> detecta metástasis peritoneales o hepáticas superficiales no visibles en imágenes (~20–25% de los candidatos "resecables").
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-ciru">📊 Estadificación TNM y tratamiento quirúrgico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estadio</th><th>T</th><th>Cirugía indicada</th><th>Sobrevida 5 años</th></tr>
+        <tr><td><span class="badge-stage s1">T1a</span></td><td>Invasión de lámina propia (mucosa)</td><td>Colecistectomía simple (laparoscópica). Sin reintervención necesaria.</td><td>~85–100%</td></tr>
+        <tr><td><span class="badge-stage s1">T1b</span></td><td>Invasión de muscular propia</td><td>Colecistectomía simple. Algunos grupos recomiendan reintervención con resección en bloque.</td><td>~75–90%</td></tr>
+        <tr><td><span class="badge-stage s2">T2</span></td><td>Invasión del tejido perimuscular</td><td><strong>Colecistectomía extendida:</strong> resección de lecho hepático (segmentos IVb y V) + linfadenectomía del hepatoduodenal.</td><td>~40–70%</td></tr>
+        <tr><td><span class="badge-stage s3">T3</span></td><td>Perforación de serosa o invasión de un órgano adyacente</td><td>Resección hepática mayor (hepatectomía derecha o trisegmentectomía) + linfadenectomía + resección de vía biliar si necesario.</td><td>~15–30%</td></tr>
+        <tr><td><span class="badge-stage s4">T4 / M1</span></td><td>Invasión de vena porta / arteria hepática o metástasis</td><td>Generalmente irresecable. Tratamiento paliativo.</td><td>&lt;5%</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⭐ <strong>Hallazgo incidental de CVB post-colecistectomía laparoscópica:</strong> si el AP reporta T1a → colecistectomía simple fue suficiente. Si T1b → algunos grupos recomiendan reintervención. Si T2 → <strong>reintervención obligatoria</strong> (resección de lecho hepático + linfadenectomía). El port-site debe examinarse si hubo perforación intraoperatoria (riesgo de implante).</div>
+    <div class="hl-info">⭐ <strong>Quimioterapia adyuvante:</strong> capecitabina × 6 meses post-resección R0 en T2 o superior (estudio BILCAP). En enfermedad avanzada/metastásica: gemcitabina + cisplatino (estudio ABC-02) ± durvalumab (estudio TOPAZ-1) como primera línea.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COLANGIOCARCINOMA -->
+  <div class="enfermedad-titulo" style="color:var(--info)">🔵 Colangiocarcinoma (Cáncer de Vía Biliar)</div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Clasificación y epidemiología</div>
+    <div class="hl-info"><strong>Colangiocarcinoma (CCA):</strong> adenocarcinoma originado en el epitelio de los conductos biliares. Se clasifica por localización en intrahepático (iCCA, ~10%), perihiliar o de Klatskin (~60%) y distal (~30%). El tumor de Klatskin (perihiliar) es el más frecuente y el de mayor complejidad quirúrgica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Factor de riesgo</th><th>Comentario</th></tr>
+        <tr><td><strong>Colangitis esclerosante primaria (CEP)</strong></td><td>FR más fuerte para CCA perihiliar. Riesgo de por vida ~10–15%. CCA puede aparecer incluso con CEP bien controlada.</td></tr>
+        <tr><td><strong>Quistes del colédoco (enfermedad de Caroli)</strong></td><td>Dilataciones congénitas de la vía biliar → metaplasia → CCA. Riesgo 10–15%. Indicación de resección profiláctica.</td></tr>
+        <tr><td><strong>Hepatolitiasis (cálculos intrahepáticos)</strong></td><td>Endémica en Asia. Inflamación crónica biliar → CCA intrahepático.</td></tr>
+        <tr><td>Opisthorchis viverrini / Clonorchis sinensis</td><td>Parasitosis hepática endémica en Asia SE → CCA intrahepático. En Argentina: no endémica.</td></tr>
+        <tr><td>Cirrosis / hepatitis B y C</td><td>Factor de riesgo para CCA intrahepático.</td></tr>
+        <tr><td>Exposición a dioxinas / thorotrast</td><td>Agentes carcinogénicos hepatobiliares.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica y diagnóstico</div>
+    <div class="vs-block">
+      <div class="vs-col izq">
+        <div class="vs-titulo" style="color:var(--warn)">🟡 CCA intrahepático</div>
+        <div class="vs-item">Masa hepática. Dolor en hipocondrio derecho, pérdida de peso. Ictericia tardía (solo si comprime vía biliar central).</div>
+        <div class="vs-item">Marcadores: CA 19-9 y AFP. Biopsia necesaria antes de resección en muchos centros.</div>
+      </div>
+      <div class="vs-col der" style="background:var(--info-claro); border-color:#a8c8e8">
+        <div class="vs-titulo" style="color:var(--info)">🔵 CCA perihiliar / distal</div>
+        <div class="vs-item"><strong>Ictericia obstructiva progresiva, indolora</strong> (signo de Courvoisier en distal). Coluria, acolia, prurito.</div>
+        <div class="vs-item">CA 19-9 elevado (&gt;100 U/mL: sensibilidad ~60%, especificidad ~80% en CEP).</div>
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Diagnóstico y estadificación del colangiocarcinoma</div>
+      <div class="farma-clase">Estudios por imagen y procedimientos</div>
+      <div class="farma-detalle">
+        <strong>Colangio-RMN (CPRM):</strong> mejor estudio para evaluar la extensión biliar del tumor, clasificación de Bismuth-Corlette y planificación quirúrgica. No invasiva. Primera línea en CCA perihiliar.<br><br>
+        <strong>TC trifásica tórax-abdomen-pelvis:</strong> estadificación sistémica (metástasis hepáticas, peritoneales, pulmonares, adenopatías).<br><br>
+        <strong>CPRE / CTE (colangiografía transhepática):</strong> para drenaje biliar preoperatorio en ictericia obstructiva severa o colangiografía diagnóstica cuando CPRM no es suficiente. La CPRE permite cepillado para citología (sensibilidad ~30–50%).<br><br>
+        <strong>Ecoendoscopía (USE) con PAAF:</strong> en CCA distal para biopsia de ganglio o masa. En CCA perihiliar: riesgo de diseminación peritoneal por PAAF → preferir diagnóstico por imagen + marcadores.<br><br>
+        <strong>Clasificación de Bismuth-Corlette</strong> (para CCA perihiliar): I = conducto hepático común; II = confluencia; IIIa = conducto derecho; IIIb = conducto izquierdo; IV = ambos ductos intrahepáticos. Clasifica la resecabilidad y extensión de la hepatectomía necesaria.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-ciru">💊 Tratamiento del colangiocarcinoma</div>
+    <div class="farma-card">
+      <div class="farma-nombre">Cirugía — único tratamiento potencialmente curativo</div>
+      <div class="farma-clase">Resección R0 con márgenes libres</div>
+      <div class="farma-detalle">
+        <strong>CCA intrahepático:</strong> hepatectomía (resección anatómica). Márgenes ≥1 cm. Solo 30–35% son resecables al diagnóstico.<br><br>
+        <strong>CCA perihiliar (Klatskin):</strong> hepatectomía derecha o izquierda extendida + resección de la vía biliar extrahepática + reconstrucción con hepaticoyeyunostomía en Y de Roux. La cirugía de Klatskin es una de las más complejas de la cirugía hepatobiliar. Drenaje biliar preoperatorio si bilirrubina &gt;3 mg/dl o colangitis. Embolización portal preoperatoria si remanente hepático &lt;30%.<br><br>
+        <strong>CCA distal:</strong> duodenopancreatectomía cefálica (operación de Whipple). Mayor tasa de resecabilidad (~60%) y mejor pronóstico relativo que el perihiliar.<br><br>
+        <strong>Trasplante hepático:</strong> indicado solo en CCA perihiliar irresecable asociado a CEP, en centros especializados con protocolo estricto (Mayo Clinic protocol). Resultados prometedores: sobrevida a 5 años ~65–70% en seleccionados.
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Quimioterapia y terapias dirigidas</div>
+      <div class="farma-clase">Enfermedad avanzada / irresecable / adyuvancia</div>
+      <div class="dosis-badge">1ª línea avanzado: gemcitabina + cisplatino + durvalumab</div>
+      <div class="dosis-badge">FGFR2 (iCCA ~15%): pemigatinib, infigratinib</div>
+      <div class="dosis-badge">IDH1 mutado (iCCA ~20%): ivosidenib</div>
+      <div class="farma-detalle">
+        <strong>Primera línea sistémica (ABC-02 + TOPAZ-1):</strong> gemcitabina + cisplatino ± durvalumab (anti-PD-L1). La adición de durvalumab mejoró la sobrevida global en el estudio TOPAZ-1 (2022).<br><br>
+        <strong>Mutaciones accionables en CCA intrahepático:</strong> FGFR2 (fusión/reordenamiento): pemigatinib o infigratinib. IDH1 (mutación puntual): ivosidenib. BRAF V600E, HER2, NTRK: opciones emergentes. El perfil molecular es esencial en CCA avanzado.<br><br>
+        <strong>MSI-H / dMMR:</strong> pembrolizumab como segunda línea.<br><br>
+        <strong>Adyuvancia:</strong> capecitabina × 6 meses post-resección R0 (evidencia de beneficio en sobrevida, BILCAP trial).
+      </div>
+    </div>
+    <div class="farma-card">
+      <div class="farma-nombre">Tratamiento paliativo biliar</div>
+      <div class="farma-clase">Ictericia obstructiva irresecable</div>
+      <div class="dosis-badge">CPRE + prótesis biliar metálica autoexpandible (SEMS)</div>
+      <div class="dosis-badge">Drenaje biliar transhepático percutáneo (DBTP) si CPRE falla</div>
+      <div class="farma-detalle">
+        La ictericia obstructiva no tratada → colangitis, insuficiencia hepática, muerte. En CCA perihiliar irresecable: SEMS bilateral en ambos ductos hepáticos o DBTP bilateral. El drenaje biliar paliativo mejora la calidad de vida y permite administrar quimioterapia.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CVB: tumor maligno más frecuente del árbol biliar</span>
+      <span class="pill">Alta incidencia en Argentina (Jujuy) y países andinos</span>
+      <span class="pill">95% adenocarcinomas</span>
+      <span class="pill">FR principal CVB: colelitiasis (70–90% tienen litiasis)</span>
+      <span class="pill">Vesícula en porcelana: riesgo de malignidad → colecistectomía</span>
+      <span class="pill">Pólipo vesicular ≥10 mm → colecistectomía</span>
+      <span class="pill">AUBP: anomalía unión biliopancreática → CVB en jóvenes sin litiasis</span>
+      <span class="pill">CVB hallazgo incidental: T1a → colecistectomía simple suficiente</span>
+      <span class="pill">CVB T2: reintervención obligatoria → resección lecho hepático + linfadenectomía</span>
+      <span class="pill">QT adyuvante CVB/CCA: capecitabina × 6 meses (BILCAP)</span>
+      <span class="pill">CCA: adenocarcinoma de conductos biliares</span>
+      <span class="pill">CCA perihiliar (Klatskin): el más frecuente (60%)</span>
+      <span class="pill">CEP: FR más fuerte para CCA perihiliar (riesgo 10–15%)</span>
+      <span class="pill">Quistes del colédoco: riesgo de CCA → resección profiláctica</span>
+      <span class="pill">CCA perihiliar: ictericia obstructiva progresiva indolora</span>
+      <span class="pill">Bismuth-Corlette: clasificación de extensión del CCA perihiliar</span>
+      <span class="pill">Colangio-RMN: mejor estudio para planificación quirúrgica en CCA perihiliar</span>
+      <span class="pill">CCA distal: Whipple. CCA perihiliar: hepatectomía extendida + reconstrucción biliar</span>
+      <span class="pill">Trasplante hepático: CCA perihiliar irresecable + CEP (protocolo Mayo)</span>
+      <span class="pill">1ª línea avanzado: gemcitabina + cisplatino + durvalumab (TOPAZ-1)</span>
+      <span class="pill">FGFR2 (~15% iCCA): pemigatinib. IDH1 (~20% iCCA): ivosidenib</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Lamarca A et al. ESMO Clinical Practice Guidelines for biliary tract cancer. Ann Oncol 2022 · Valle J et al. ABC-02 trial. NEJM 2010 · Oh DY et al. TOPAZ-1 trial. NEJM 2022 · Primrose JN et al. BILCAP trial. Lancet Oncol 2019 · Bismuth H, Corlette MB. Intrahepatic cholangioenteric anastomosis. Surg Gynecol Obstet 1975 · Asociación Argentina de Cirugía (AAC) — Guías de cáncer hepatobiliar.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
