@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esquizofrenia y Psicosis — Medpedia</title>
+  <meta name="description" content="Esquizofrenia: criterios DSM-5, síntomas positivos y negativos, antipsicóticos típicos y atípicos, efectos adversos, rehabilitación. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --psiq: #4A1E8C; --psiq-claro: #EDE7FD; --psiq-oscuro: #31136B;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-psiq { background: var(--psiq-claro); color: var(--psiq-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-psiq { font-size: 16px; font-weight: 500; color: var(--psiq); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-psiq  { border-left: 3px solid var(--psiq); background: var(--psiq-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .sint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .sint-grid { grid-template-columns: 1fr; } }
+    .sint-card { border-radius: 12px; padding: 1rem 1.2rem; }
+    .sint-pos { background: var(--danger-claro); border: 1.5px solid #e8b0a8; }
+    .sint-neg { background: var(--info-claro); border: 1.5px solid #a8c8e8; }
+    .sint-cog { background: var(--warn-claro); border: 1.5px solid #e8c880; }
+    .sint-titulo { font-size: 13.5px; font-weight: 700; margin-bottom: 8px; }
+    .sint-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.5; }
+    .espectro-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .espectro-grid { grid-template-columns: 1fr; } }
+    .esp-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 0.9rem 1rem; }
+    .esp-nombre { font-size: 13px; font-weight: 600; color: var(--psiq); margin-bottom: 4px; }
+    .esp-def { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .badge-tip { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-right: 4px; }
+    .tip-tipico { background: #FFF3E0; color: #E65100; }
+    .tip-atipico { background: var(--verde-claro); color: var(--verde-oscuro); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Psiquiatría</a> › Esquizofrenia y Psicosis</div>
+  <div class="titulo">Esquizofrenia y Psicosis</div>
+  <div class="meta">
+    <span class="tag tag-psiq">Psiquiatría</span>
+    <span class="tag tag-fuente">DSM-5-TR 2022 · APA Guidelines · NICE 2014</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-psiq"><strong>Esquizofrenia:</strong> trastorno psicótico crónico caracterizado por alteraciones en el pensamiento, la percepción, las emociones y la conducta. Afecta al 1% de la población mundial. Inicio típico entre los 18–25 años en hombres y 25–35 años en mujeres. Curso generalmente crónico con episodios agudos y deterioro progresivo variable.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>Detalle</th></tr>
+        <tr><td>Prevalencia</td><td>~1% de la población. Sin diferencias significativas entre culturas ni países.</td></tr>
+        <tr><td>Sexo</td><td>Igual prevalencia, pero inicio más temprano en hombres (18–25 años) vs mujeres (25–35 años). Las mujeres tienen mejor pronóstico global.</td></tr>
+        <tr><td>Genética</td><td>Concordancia gemelos MZ: ~50% → componente ambiental importante. Riesgo 10% si un progenitor afectado, 40–50% si ambos.</td></tr>
+        <tr><td>Hipótesis dopaminérgica</td><td>Hiperdopaminergia en vía mesolímbica → síntomas positivos. Hipodopaminergia en vía mesocortical (corteza prefrontal) → síntomas negativos y cognitivos. Todos los antipsicóticos bloquean receptores D2.</td></tr>
+        <tr><td>Mortalidad</td><td>Esperanza de vida reducida 15–20 años. Principal causa: enfermedades cardiovasculares + suicidio (5–10% de los pacientes).</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-psiq">📊 Síntomas — tres dimensiones</div>
+    <div class="sint-grid">
+      <div class="sint-card sint-pos">
+        <div class="sint-titulo" style="color:var(--danger)">➕ Síntomas Positivos</div>
+        <div class="sint-item">⭐ <strong>Alucinaciones:</strong> auditivas más frecuentes (voces que comentan, se insultan entre sí, dan órdenes). También visuales, olfativas, táctiles.</div>
+        <div class="sint-item">⭐ <strong>Delirios (ideas delirantes):</strong> persecutorio (más frecuente), de referencia, de grandeza, de control, de inserción/robo/transmisión del pensamiento.</div>
+        <div class="sint-item"><strong>Desorganización del pensamiento:</strong> disgregación, tangencialidad, incoherencia, ensalada de palabras (jergafasia).</div>
+        <div class="sint-item"><strong>Conducta desorganizada o catatónica:</strong> agitación, estupor, posturas bizarras, negativismo, ecolalia, ecopraxia.</div>
+      </div>
+      <div class="sint-card sint-neg">
+        <div class="sint-titulo" style="color:var(--info)">➖ Síntomas Negativos</div>
+        <div class="sint-item">⭐ <strong>Alogia:</strong> pobreza del lenguaje, respuestas monosilábicas.</div>
+        <div class="sint-item">⭐ <strong>Aplanamiento afectivo:</strong> expresión emocional reducida, facies inexpresiva, contacto visual disminuido.</div>
+        <div class="sint-item"><strong>Abulia / apatía:</strong> falta de motivación para actividades dirigidas a metas.</div>
+        <div class="sint-item"><strong>Anhedonia:</strong> incapacidad para experimentar placer.</div>
+        <div class="sint-item"><strong>Asociabilidad:</strong> desinterés por las relaciones sociales.</div>
+        <div class="sint-item" style="margin-top:6px; color:var(--danger); font-size:12px">⚠️ Los síntomas negativos son los más refractarios al tratamiento y los que más impactan en la funcionalidad.</div>
+      </div>
+    </div>
+    <div class="sint-grid">
+      <div class="sint-card sint-cog" style="grid-column:1/-1">
+        <div class="sint-titulo" style="color:var(--warn)">🧠 Síntomas Cognitivos</div>
+        <div class="sint-item">Deterioro de la memoria de trabajo, atención, velocidad de procesamiento y función ejecutiva. Presentes desde antes del primer episodio. No se correlacionan bien con síntomas positivos/negativos. Son el predictor más fuerte de funcionalidad (capacidad de trabajo, vida independiente).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-psiq">📋 Criterios diagnósticos DSM-5</div>
+    <div class="hl-psiq">
+      <strong>Criterio A:</strong> ≥2 de los siguientes, presentes durante ≥1 mes (al menos 1 debe ser alucinaciones, delirios o discurso desorganizado):<br>
+      1. Delirios · 2. Alucinaciones · 3. Discurso desorganizado · 4. Conducta desorganizada o catatónica · 5. Síntomas negativos<br><br>
+      <strong>Criterio B:</strong> Disfunción social/laboral desde el inicio (trabajo, relaciones, autocuidado).<br>
+      <strong>Criterio C:</strong> Duración ≥6 meses (incluyendo pródromos y residuales).<br>
+      <strong>Criterio D–F:</strong> Descartar trastorno esquizoafectivo, trastorno del humor, sustancias/condición médica y trastornos del espectro autista.
+    </div>
+    <div class="hl-warn">⭐ <strong>Duración como criterio diferencial:</strong> síntomas psicóticos &lt;1 mes → trastorno psicótico breve. 1–6 meses → trastorno esquizofreniforme. &gt;6 meses → esquizofrenia. Con episodio mayor del humor → trastorno esquizoafectivo.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Espectro esquizofrénico — diagnóstico diferencial</div>
+    <div class="espectro-grid">
+      <div class="esp-card">
+        <div class="esp-nombre">Psicosis breve</div>
+        <div class="esp-def">Síntomas psicóticos &lt;1 mes. Generalmente desencadenada por estrés. Recuperación completa.</div>
+      </div>
+      <div class="esp-card">
+        <div class="esp-nombre">Trastorno esquizofreniforme</div>
+        <div class="esp-def">Igual a esquizofrenia pero duración 1–6 meses. Puede evolucionar a esquizofrenia.</div>
+      </div>
+      <div class="esp-card">
+        <div class="esp-nombre">Esquizofrenia</div>
+        <div class="esp-def">≥6 meses de síntomas. Disfunción funcional. Curso crónico.</div>
+      </div>
+      <div class="esp-card">
+        <div class="esp-nombre">Trastorno esquizoafectivo</div>
+        <div class="esp-def">Síntomas psicóticos + episodios del humor (depresivo o maníaco). Psicosis persiste sin el humor.</div>
+      </div>
+      <div class="esp-card">
+        <div class="esp-nombre">Trastorno delirante</div>
+        <div class="esp-def">Solo delirios (sin alucinaciones prominentes, sin desorganización). Funcionamiento relativamente conservado.</div>
+      </div>
+      <div class="esp-card">
+        <div class="esp-nombre">Psicosis por sustancias / médica</div>
+        <div class="esp-def">Anfetaminas, cocaína, cannabis (THC), alcohol, corticoides, lupus, encefalitis anti-NMDA → siempre descartar.</div>
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>Encefalitis anti-receptor NMDA:</strong> causa importante de psicosis aguda en jóvenes (especialmente mujeres). Anticuerpos anti-NR1 (receptor NMDA). Asociada a teratoma ovárico. Clínica: psicosis + movimientos anormales + disminución del nivel de conciencia + inestabilidad autonómica. Diagnóstico: anticuerpos en LCR. Tratamiento: inmunoterapia + resección del teratoma.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-psiq">💊 Antipsicóticos — típicos y atípicos</div>
+    <div class="hl-psiq"><strong>Todos los antipsicóticos bloquean receptores dopaminérgicos D2.</strong> La diferencia entre típicos y atípicos radica en el perfil de receptores adicionales (5-HT2A, H1, M1, α1) y en el perfil de efectos adversos.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antipsicóticos típicos (1ª generación)</div>
+      <div class="farma-clase">Bloqueo D2 potente · Alta afinidad por receptores dopaminérgicos</div>
+      <div class="dosis-badge tip-tipico">TÍPICOS</div>
+      <div class="farma-detalle">
+        <strong>Haloperidol:</strong> el más usado. Alta potencia. VO 2–20 mg/día, IM para agitación aguda. Depósito (decanoato): cada 4 semanas para adherencia.<br>
+        <strong>Clorpromazina:</strong> baja potencia, muy sedante. Histórico. Útil en agitación grave.<br>
+        <strong>Trifluoperazina, flufenazina:</strong> alta potencia.<br><br>
+        <strong>Eficacia:</strong> excelente para síntomas positivos. Poca eficacia sobre síntomas negativos y cognitivos.<br>
+        <strong>Efectos adversos extrapiramidales (EPS) — los más importantes:</strong><br>
+        — <strong>Acatisia:</strong> inquietud motora interna, incapacidad de estar quieto. Causa frecuente de abandono del tratamiento. Tratar con propranolol o benzodiacepinas.<br>
+        — <strong>Distonía aguda:</strong> espasmos musculares involuntarios (cuello, mandíbula, oculogyric crisis). Aparece en horas-días. Tratar con biperideno IM o difenhidramina IV.<br>
+        — <strong>Parkinsonismo inducido por fármacos:</strong> rigidez, temblor, bradicinesia. Tratar con biperideno VO.<br>
+        — <strong>Discinesia tardía:</strong> movimientos involuntarios orofaciales crónicos (meses-años de tratamiento). Parcialmente irreversible. Tratar con valbenazina o deutetrabenazina (inhibidores VMAT2). Reducir dosis o cambiar a atípico.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Antipsicóticos atípicos (2ª generación) — primera línea</div>
+      <div class="farma-clase">Bloqueo D2 + 5-HT2A · Menor riesgo de EPS · Mayor riesgo metabólico</div>
+      <div class="dosis-badge tip-atipico">ATÍPICOS</div>
+      <div class="farma-detalle">
+        <strong>Risperidona:</strong> más usado. VO 2–8 mg/día. Depósito IM mensual (Risperdal Consta). A dosis altas puede causar EPS. ↑ prolactina.<br>
+        <strong>Olanzapina:</strong> alta eficacia incluyendo síntomas negativos. Gran riesgo de síndrome metabólico (↑peso, ↑glucemia, ↑lípidos). IM para agitación aguda.<br>
+        <strong>Quetiapina:</strong> muy sedante. Útil también en insomnio y depresión bipolar. Bajo riesgo de EPS y prolactina.<br>
+        <strong>Aripiprazol:</strong> agonista parcial D2 (único mecanismo diferente). Sin ganancia de peso. Sin ↑prolactina. Puede causar acatisia. Depósito mensual disponible.<br>
+        <strong>Clozapina:</strong> la más eficaz. <strong>Reservada para esquizofrenia refractaria</strong> (falla a ≥2 antipsicóticos). Riesgo de <strong>agranulocitosis</strong> (1–2%) → hemograma semanal las primeras 18 semanas, luego mensual. Contraindicada con fármacos que bajan blancos. También: convulsiones (dosis-dependiente), miocarditis, hipersalivación, sedación. Sin EPS significativos.
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Efecto adverso</th><th>Antipsicóticos más asociados</th><th>Manejo</th></tr>
+        <tr><td>Síndrome metabólico</td><td>Olanzapina > clozapina > quetiapina</td><td>Monitoreo glucemia, lípidos, peso. Metformina si diabetes.</td></tr>
+        <tr><td>Hiperprolactinemia</td><td>Risperidona, haloperidol, amisulprida</td><td>Galactorrea, amenorrea, disfunción sexual. Cambiar a aripiprazol o quetiapina.</td></tr>
+        <tr><td>Prolongación QTc</td><td>Haloperidol IV, ziprasidona, tioridazina</td><td>ECG antes de iniciar. Riesgo de Torsades de pointes.</td></tr>
+        <tr><td>Agranulocitosis</td><td>Clozapina (1–2%)</td><td>Hemograma semanal 18 sem → mensual. Suspender si neutrófilos &lt;1000/µL.</td></tr>
+        <tr><td><strong>Síndrome neuroléptico maligno (SNM)</strong></td><td>Cualquier antipsicótico (más con típicos)</td><td>Ver abajo ⚠️</td></tr>
+      </table>
+    </div>
+
+    <div class="hl-danger">🚨 <strong>Síndrome Neuroléptico Maligno (SNM) — emergencia médica:</strong><br>
+    Tétrada: <strong>fiebre alta + rigidez muscular intensa + alteración del sensorio + disautonomía</strong> (taquicardia, HTA lábil, diaforesis). CPK muy elevada (rabdomiólisis). Leucocitosis.<br>
+    <strong>Tratamiento:</strong> suspender el antipsicótico inmediatamente · medidas de soporte (hidratación, enfriamiento) · bromocriptina (agonista dopaminérgico) · dantroleno (relajante muscular directo) · benzodiacepinas para rigidez · UCI si grave. Mortalidad: 5–20% si no se trata.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Fases del tratamiento y estrategia</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fase</th><th>Objetivo</th><th>Tratamiento</th></tr>
+        <tr><td><strong>Aguda</strong> (0–8 semanas)</td><td>Controlar síntomas positivos, agitación, riesgo</td><td>Antipsicótico + BZD si agitación. Olanzapina IM o haloperidol IM en emergencia</td></tr>
+        <tr><td><strong>Estabilización</strong> (8 sem–6 meses)</td><td>Consolidar respuesta, prevenir recaída temprana</td><td>Continuar mismo antipsicótico. Ajustar dosis. Iniciar rehabilitación.</td></tr>
+        <tr><td><strong>Mantenimiento</strong> (&gt;6 meses)</td><td>Prevenir recaídas, mejorar funcionalidad</td><td>Continuar antipsicótico (preferir depósito si adherencia baja). Psicoeducación.</td></tr>
+        <tr><td><strong>Refractariedad</strong></td><td>Falla a ≥2 antipsicóticos con buena adherencia</td><td><strong>Clozapina</strong> — único fármaco con eficacia demostrada en esquizofrenia refractaria</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">💡 <strong>Antipsicóticos de depósito (LAI — long-acting injectable):</strong> solución fundamental para la falta de adherencia (causa principal de recaída). Disponibles: haloperidol decanoato (mensual), risperidona LAI (quincenal), aripiprazol mensual, paliperidona mensual/trimestral. La adherencia al tratamiento es el factor modificable más importante en el pronóstico.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Esquizofrenia: prevalencia ~1%, inicio 18–25 años hombres / 25–35 mujeres</span>
+      <span class="pill">Hipótesis dopaminérgica: hiperdopaminergia mesolímbica → síntomas positivos</span>
+      <span class="pill">Síntomas positivos: alucinaciones auditivas, delirios (persecutorio más frecuente), desorganización</span>
+      <span class="pill">Síntomas negativos: alogia, aplanamiento afectivo, abulia, anhedonia, asociabilidad</span>
+      <span class="pill">Síntomas negativos: más refractarios, mayor impacto funcional</span>
+      <span class="pill">DSM-5: ≥2 síntomas × ≥1 mes + disfunción + duración total ≥6 meses</span>
+      <span class="pill">Psicosis breve &lt;1 mes → esquizofreniforme 1–6 meses → esquizofrenia &gt;6 meses</span>
+      <span class="pill">Encefalitis anti-NMDA: psicosis + movimientos + conciencia + teratoma ovárico</span>
+      <span class="pill">Todos los antipsicóticos: bloqueo D2</span>
+      <span class="pill">Típicos: alta eficacia positivos, mucho EPS (distonía, parkinsonismo, acatisia, discinesia tardía)</span>
+      <span class="pill">Acatisia: inquietud motora → tratar con propranolol</span>
+      <span class="pill">Distonía aguda: biperideno IM o difenhidramina IV</span>
+      <span class="pill">Discinesia tardía: valbenazina o deutetrabenazina</span>
+      <span class="pill">Atípicos: primera línea. Menos EPS, más síndrome metabólico</span>
+      <span class="pill">Olanzapina: gran riesgo metabólico (peso, glucemia, lípidos)</span>
+      <span class="pill">Clozapina: más eficaz, solo en refractariedad → agranulocitosis → hemograma semanal</span>
+      <span class="pill">Aripiprazol: agonista parcial D2, sin aumento de peso, sin ↑prolactina</span>
+      <span class="pill">SNM: fiebre + rigidez + alteración conciencia + disautonomía + CPK alta → emergencia</span>
+      <span class="pill">SNM tratamiento: suspender antipsicótico + bromocriptina + dantroleno</span>
+      <span class="pill">Depósito (LAI): solución para falta de adherencia, principal causa de recaída</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Psychiatric Association. DSM-5-TR. Washington DC: APA, 2022 · APA. Practice Guideline for the Treatment of Patients with Schizophrenia. 3rd ed. 2021 · NICE. Psychosis and schizophrenia in adults. Clinical guideline CG178. 2014 (updated 2023) · Leucht S et al. Comparative efficacy and tolerability of 15 antipsychotic drugs in schizophrenia. Lancet 2013 · Stöppler MC. Neuroleptic malignant syndrome. MedScape 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
