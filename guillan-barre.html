@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Síndrome de Guillain-Barré — Medpedia</title>
+  <meta name="description" content="Guillain-Barré: variantes, criterios diagnósticos, disociación albuminocitológica, tratamiento con IgIV y plasmaféresis, criterios de UTI. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --neuro: #5C35A0; --neuro-claro: #F0EBFC; --neuro-oscuro: #3D2070;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-neuro { background: var(--neuro-claro); color: var(--neuro-oscuro); }
+    .tag-emergencia { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-neuro { font-size: 16px; font-weight: 500; color: var(--neuro); margin-bottom: 12px; }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-neuro { border-left: 3px solid var(--neuro); background: var(--neuro-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--neuro); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .variante-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 14px; padding: 1.1rem; margin-bottom: 10px; }
+    .variante-nombre { font-size: 14px; font-weight: 600; color: var(--neuro); margin-bottom: 4px; }
+    .variante-desc { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .variante-desc strong { color: var(--texto); }
+    .timeline { display: flex; gap: 0; margin-bottom: 14px; border-radius: 12px; overflow: hidden; border: 1px solid var(--borde); }
+    .tl-item { flex: 1; padding: 10px 8px; text-align: center; border-right: 1px solid var(--borde); }
+    .tl-item:last-child { border-right: none; }
+    .tl-item.t1 { background: #FEF0DC; }
+    .tl-item.t2 { background: #FDEAEA; }
+    .tl-item.t3 { background: #E6F1FB; }
+    .tl-item.t4 { background: var(--verde-claro); }
+    .tl-nombre { font-size: 11px; font-weight: 700; }
+    .tl-nombre.t1 { color: #8B4500; }
+    .tl-nombre.t2 { color: #C0392B; }
+    .tl-nombre.t3 { color: #1A5E9A; }
+    .tl-nombre.t4 { color: var(--verde-oscuro); }
+    .tl-tiempo { font-size: 10px; color: var(--texto-ter); margin-top: 2px; }
+    .tl-desc { font-size: 11px; color: var(--texto-sec); margin-top: 3px; line-height: 1.4; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--neuro); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--neuro-claro); color: var(--neuro-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neurología</a> › Guillain-Barré</div>
+  <div class="titulo">Síndrome de Guillain-Barré</div>
+  <div class="meta">
+    <span class="tag tag-neuro">Neurología</span>
+    <span class="tag tag-emergencia">Urgencia neurológica</span>
+    <span class="tag tag-fuente">Brighton Collaboration · EAN 2023 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición</div>
+    <div class="hl-neuro"><strong>Síndrome de Guillain-Barré (SGB):</strong> polirradiculoneuropatía inflamatoria aguda autoinmune, caracterizada por parálisis flácida ascendente, arreflexia y disociación albuminocitológica en el LCR. Es la <strong>causa más frecuente de parálisis flácida aguda en países con cobertura vacunal adecuada</strong>. Incidencia: 1–2 por 100.000 habitantes/año.</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ Antecedente desencadenante — clave diagnóstica</div>
+      El 60–70% de los casos tiene un antecedente infeccioso <strong>2–4 semanas antes</strong> del inicio de los síntomas neurológicos. Los más frecuentes son: <strong>Campylobacter jejuni</strong> (diarrea — el más frecuente, asociado a variante AMAN), virus de Epstein-Barr, CMV, influenza, hepatitis E, Zika, COVID-19. También puede desencadenarse por cirugía, vacunas (muy raramente) o parto.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Variantes clínicas</div>
+    <div class="variante-card">
+      <div class="variante-nombre">AIDP — Polirradiculoneuropatía Inflamatoria Desmielinizante Aguda</div>
+      <div class="variante-desc"><strong>Más frecuente en occidente (85–90%).</strong> Desmielinización segmentaria mediada por anticuerpos y complemento contra antígenos de la mielina del SNP. Velocidad de conducción nerviosa enlentecida. Mejor pronóstico de recuperación que las variantes axonales.</div>
+    </div>
+    <div class="variante-card">
+      <div class="variante-nombre">AMAN — Neuropatía Axonal Motora Aguda</div>
+      <div class="variante-desc"><strong>Más frecuente en Asia y Latinoamérica.</strong> Anticuerpos anti-gangliósido GM1, GD1a. Daño axonal directo (no mielina). Asociada a <em>C. jejuni</em>. Puede ser más grave pero también con recuperación rápida en algunos casos.</div>
+    </div>
+    <div class="variante-card">
+      <div class="variante-nombre">Síndrome de Miller Fisher (SMF)</div>
+      <div class="variante-desc"><strong>Triada clásica: oftalmoplejía + ataxia + arreflexia.</strong> Anticuerpos anti-GQ1b (positivos en &gt;90%). Sin debilidad de miembros (o mínima). Inicio con diplopia. Pronóstico generalmente bueno. Es una variante del espectro GBS.</div>
+    </div>
+    <div class="variante-card">
+      <div class="variante-nombre">AMSAN — Neuropatía Axonal Sensitivomotora Aguda</div>
+      <div class="variante-desc">Afectación axonal tanto motora como sensitiva. Forma más grave. Peor pronóstico de recuperación. Mayor frecuencia de secuelas.</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica — evolución temporal</div>
+    <div class="timeline">
+      <div class="tl-item t1"><div class="tl-nombre t1">Pródromo</div><div class="tl-tiempo">2–4 semanas antes</div><div class="tl-desc">Infección (diarrea por C. jejuni, IVRS viral)</div></div>
+      <div class="tl-item t2"><div class="tl-nombre t2">Progresión</div><div class="tl-tiempo">Días 1–28</div><div class="tl-desc">Parálisis ascendente · arreflexia · parestesias · dolor</div></div>
+      <div class="tl-item t3"><div class="tl-nombre t3">Meseta</div><div class="tl-tiempo">2–4 semanas</div><div class="tl-desc">Máxima debilidad · riesgo insuficiencia respiratoria · disautonomía</div></div>
+      <div class="tl-item t4"><div class="tl-nombre t4">Recuperación</div><div class="tl-tiempo">Semanas–meses</div><div class="tl-desc">Gradual. 80% recuperación funcional a 1 año</div></div>
+    </div>
+
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Manifestaciones motoras y sensitivas</div>
+        ✦ <strong>Debilidad simétrica ascendente:</strong> comienza en MMII → sube a MMSS → puede llegar a músculos respiratorios y pares craneales<br>
+        ✦ <strong>Arreflexia osteotendinosa:</strong> hallazgo cardinal. Primero los ROT distales (aquiliano), luego los proximales<br>
+        ✦ Parestesias distales (hormigueos, quemor) — síntoma de inicio frecuente<br>
+        ✦ <strong>Dolor:</strong> muy frecuente (66%) — lumbar, en los glúteos, en MMII. A veces el síntoma inicial más prominente. Puede confundir con patología lumbar.<br>
+        ✦ Afectación de pares craneales: parálisis facial bilateral (más frecuente), disfagia, disartria, diplopía
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Disautonomía — complicación grave</div>
+        ✦ Presente en 65–70% de los casos hospitalizados<br>
+        ✦ <strong>Taquicardia sinusal</strong> (más frecuente)<br>
+        ✦ Labilidad de la tensión arterial (hiper e hipotensión)<br>
+        ✦ Bradicardia (puede requerir marcapasos transitorio)<br>
+        ✦ Arritmias · íleo paralítico · retención urinaria<br>
+        ✦ <strong>Muerte súbita</strong> por arritmia en contexto de disautonomía grave<br>
+        ✦ Monitoreo cardíaco continuo obligatorio en UTI
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>Insuficiencia respiratoria:</strong> el 20–30% de los pacientes requiere ventilación mecánica. La progresión puede ser rápida. Monitorear: capacidad vital (CV) forzada, presión inspiratoria máxima (PIM) y presión espiratoria máxima (PEM). <strong>Regla del 20/30/40:</strong> CV &lt;20 mL/kg, PIM &lt;30 cmH₂O o PEM &lt;40 cmH₂O → intubación inminente.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-neuro">🔵 Diagnóstico</div>
+    <div class="hl-neuro">El diagnóstico es clínico + LCR + electroneuromiografía. Los criterios de Brighton definen niveles de certeza diagnóstica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterios diagnósticos esenciales</th><th>Características de apoyo</th></tr>
+        <tr><td>Debilidad progresiva bilateral de las extremidades</td><td>Progresión por &lt;4 semanas</td></tr>
+        <tr><td>Arreflexia o hiporreflexia bilateral</td><td>Simetría relativa</td></tr>
+        <tr><td></td><td>Síntomas/signos sensitivos relativamente leves</td></tr>
+        <tr><td></td><td>Afectación de pares craneales</td></tr>
+        <tr><td></td><td>Dolor</td></tr>
+        <tr><td></td><td>Disautonomía</td></tr>
+        <tr><td></td><td>Inicio post-infeccioso</td></tr>
+      </table>
+    </div>
+
+    <div class="dos-col" style="margin-top:12px;">
+      <div class="col-bloque">
+        <div class="col-titulo">LCR — hallazgo clásico</div>
+        <strong>Disociación albuminocitológica:</strong><br>
+        ✦ <strong>Proteínas elevadas</strong> (&gt;45–50 mg/dL, frecuente &gt;100 mg/dL)<br>
+        ✦ <strong>Células normales</strong> (&lt;10 leucocitos/mm³)<br>
+        ✦ Presión de apertura normal<br>
+        ✦ Puede ser normal en la primera semana (proteínas se elevan a partir del día 7–10)<br>
+        ✦ Si células &gt;50/mm³ → pensar en HIV, Lyme, sarcoidosis, linfoma meníngeo
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Electroneuromiografía (ENMG)</div>
+        ✦ Confirma el diagnóstico y distingue variante desmielinizante de axonal<br>
+        ✦ <strong>AIDP:</strong> enlentecimiento de la velocidad de conducción, aumento de la latencia distal, bloqueos de conducción, ondas F prolongadas o ausentes<br>
+        ✦ <strong>AMAN/AMSAN:</strong> reducción de la amplitud del potencial de acción sin enlentecimiento significativo de la velocidad de conducción<br>
+        ✦ Puede ser normal en la primera semana del cuadro
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">💡 Anticuerpos anti-gangliósido</div>
+      Anti-GQ1b: positivo en &gt;90% del síndrome de Miller Fisher y en el SGB con oftalmoplejía. Anti-GM1 y anti-GD1a: en variantes AMAN. No son indispensables para el diagnóstico pero orientan la variante y tienen valor pronóstico.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento</div>
+    <div class="hl-neuro">El tratamiento inmunomodulador debe iniciarse dentro de las <strong>primeras 2–4 semanas del inicio</strong> de los síntomas (mientras el paciente sigue progresando). Después de 4 semanas de estabilidad, el beneficio es dudoso.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Inmunoglobulina IV (IgIV)</div>
+      <div class="farma-clase">Tratamiento de elección · misma eficacia que plasmaféresis · más fácil de administrar</div>
+      <div class="dosis-badge">0,4 g/kg/día IV × 5 días (total 2 g/kg)</div>
+      <div class="farma-detalle">
+        Mecanismo: bloqueo de receptores Fc, neutralización de anticuerpos patogénicos, modulación del complemento. <strong>Equivalente en eficacia a la plasmaféresis.</strong> Ventajas: no requiere acceso venoso central, más disponible. Contraindicada en déficit de IgA (riesgo de anafilaxia). Efectos adversos: cefalea, fiebre, meningitis aséptica, trombosis (en pacientes de alto riesgo).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Plasmaféresis (intercambio plasmático)</div>
+      <div class="farma-clase">Alternativa equivalente a IgIV · de elección si hay contraindicación a IgIV</div>
+      <div class="dosis-badge">4–6 sesiones en 2 semanas · 200–250 mL/kg total</div>
+      <div class="farma-detalle">
+        Elimina anticuerpos patogénicos, complemento y mediadores inflamatorios del plasma. Eficacia demostrada en ensayos aleatorizados. Requiere acceso venoso central. Complicaciones: hipotensión, hipocalcemia, infecciones del catéter. <strong>La combinación IgIV + plasmaféresis NO es superior a cada uno por separado.</strong>
+      </div>
+    </div>
+
+    <div class="hl-danger">🚫 <strong>Los corticoides (prednisona, metilprednisolona) están contraindicados</strong> en el SGB. Múltiples ensayos aleatorizados demostraron que no mejoran el pronóstico y pueden prolongar la recuperación. Esta es una trampa clásica del examen.</div>
+
+    <div class="sec-titulo" style="font-size:15px; margin-top:14px;">Manejo de soporte — tan importante como el tratamiento específico</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Área</th><th>Intervención</th></tr>
+        <tr><td><strong>Respiratorio</strong></td><td>Monitoreo de CV, PIM, PEM cada 4–6 h · Saturación continua · Intubación electiva si CV &lt;20 mL/kg o deterioro rápido (no esperar fallo respiratorio agudo)</td></tr>
+        <tr><td><strong>Cardiovascular</strong></td><td>Monitoreo cardíaco continuo · Evitar fármacos que alteren FC o TA bruscamente · Bradicardia sintomática: atropina / marcapasos temporal</td></tr>
+        <tr><td><strong>Tromboprofilaxis</strong></td><td>HBPM + medias de compresión (alto riesgo de TEP por inmovilidad)</td></tr>
+        <tr><td><strong>Dolor</strong></td><td>Gabapentina o pregabalina · AINEs · opioides si necesario. El dolor es muy invalidante.</td></tr>
+        <tr><td><strong>Nutrición</strong></td><td>SNG o PEG si disfagia/intubado. Evitar desnutrición.</td></tr>
+        <tr><td><strong>Psicológico</strong></td><td>Apoyo intensivo: paciente lúcido en un cuerpo paralizado → alta carga de ansiedad y depresión</td></tr>
+        <tr><td><strong>Rehabilitación</strong></td><td>Fisioterapia precoz · prevención de contracturas · movilización pasiva · logopedia si disfagia</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📊 Pronóstico</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Factores de mal pronóstico</div>
+        ✦ Edad avanzada<br>
+        ✦ Progresión rápida (&lt;7 días al nadir)<br>
+        ✦ Necesidad de ventilación mecánica<br>
+        ✦ Variante axonal (AMAN/AMSAN)<br>
+        ✦ Antecedente de C. jejuni<br>
+        ✦ Amplitudes muy bajas en ENMG<br>
+        ✦ Score EGRIS alto (escala de riesgo de VM)
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Desenlaces a largo plazo</div>
+        ✦ 80% recuperación funcional completa o casi completa al año<br>
+        ✦ 15–20% quedan con déficit motor residual<br>
+        ✦ 3–5% mortalidad (por IR, disautonomía, infecciones)<br>
+        ✦ 2–5% recurrencia (CIDP si &gt;3 episodios)<br>
+        ✦ Fatiga persistente: muy frecuente incluso en los recuperados
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">SGB: causa más frecuente de parálisis flácida aguda en adultos</span>
+      <span class="pill">Antecedente: infección 2–4 semanas antes (C. jejuni el más frecuente)</span>
+      <span class="pill">Clínica: parálisis ascendente + arreflexia + parestesias distales</span>
+      <span class="pill">LCR: disociación albuminocitológica = proteínas ↑ + células normales</span>
+      <span class="pill">LCR puede ser normal en la primera semana</span>
+      <span class="pill">Miller Fisher: oftalmoplejía + ataxia + arreflexia + anti-GQ1b</span>
+      <span class="pill">AIDP: desmielinizante · más frecuente en occidente</span>
+      <span class="pill">AMAN: axonal · asociado a C. jejuni · más frecuente en Asia/Latam</span>
+      <span class="pill">Regla 20/30/40: CV &lt;20, PIM &lt;30, PEM &lt;40 → intubar</span>
+      <span class="pill">Disautonomía: taquicardia + labilidad TA + bradicardia → monitoreo</span>
+      <span class="pill">Tratamiento: IgIV 0,4 g/kg/día × 5 días O plasmaféresis (misma eficacia)</span>
+      <span class="pill">NO combinar IgIV + plasmaféresis (no suma beneficio)</span>
+      <span class="pill">Corticoides: CONTRAINDICADOS en SGB</span>
+      <span class="pill">Pronóstico: 80% recuperación funcional al año</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: van den Berg B, et al. Guillain-Barré syndrome: pathogenesis, diagnosis, treatment and prognosis. Nat Rev Neurol 2014 · Willison HJ, Jacobs BC, van Doorn PA. Guillain-Barré syndrome. Lancet 2016 · Hughes RA, Swan AV, van Doorn PA. Intravenous immunoglobulin for Guillain-Barré syndrome. Cochrane Database 2014 · EAN guideline on diagnosis and treatment of Guillain-Barré syndrome. Eur J Neurol 2023 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
