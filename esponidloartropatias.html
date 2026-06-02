@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espondiloartropatías Seronegativas — Medpedia</title>
+  <meta name="description" content="Espondiloartropatías seronegativas: espondilitis anquilosante, artritis psoriásica, artritis reactiva, artritis enteropática. HLA-B27, criterios ASAS, tratamiento. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --reuma: #C0392B; --reuma-claro: #FDEDEC; --reuma-oscuro: #7B0F0F;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-reuma { background: var(--reuma-claro); color: var(--reuma-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-reuma { font-size: 16px; font-weight: 500; color: var(--reuma); margin-bottom: 12px; }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-reuma { border-left: 3px solid var(--reuma); background: var(--reuma-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .enf-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; }
+    .enf-header { padding: 0.9rem 1.25rem 0.75rem; border-bottom: 1px solid var(--borde); }
+    .enf-nombre { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; }
+    .enf-nombre.ea { color: #1A5E9A; }
+    .enf-nombre.ap { color: #7B2D8B; }
+    .enf-nombre.ar { color: #D4730A; }
+    .enf-nombre.aei { color: var(--gastro, #1A6B3C); }
+    .enf-sub { font-size: 11px; color: var(--texto-ter); margin-top: 2px; }
+    .enf-body { padding: 1rem 1.25rem; font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .enf-body strong { color: var(--texto); }
+    .enf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    @media (max-width: 560px) { .enf-grid { grid-template-columns: 1fr; } }
+    .enf-bloque-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .caract-shared { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .caract-badge { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--reuma-claro); border: 1px solid #E08080; color: var(--reuma-oscuro); font-weight: 500; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--reuma); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--reuma-claro); color: var(--reuma-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .hla-box { background: #EBF5E9; border: 1.5px solid #80C890; border-radius: 14px; padding: 1.1rem; margin-bottom: 12px; }
+    .hla-titulo { font-size: 15px; font-weight: 600; color: #1A5C2A; margin-bottom: 8px; }
+    .hla-desc { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .hla-desc strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Reumatología</a> › Espondiloartropatías Seronegativas</div>
+  <div class="titulo">Espondiloartropatías<br>Seronegativas</div>
+  <div class="meta">
+    <span class="tag tag-reuma">Reumatología</span>
+    <span class="tag tag-fuente">ASAS/EULAR 2022 · ACR 2019 · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Concepto general</div>
+    <div class="hl-reuma">Las <strong>espondiloartropatías (EsA)</strong> son un grupo de enfermedades inflamatorias crónicas que comparten características clínicas, genéticas e inmunológicas. Se llaman <strong>"seronegativas"</strong> porque el <strong>factor reumatoideo (FR) es negativo</strong> (a diferencia de la artritis reumatoidea). El nexo genético común es la asociación con <strong>HLA-B27</strong>.</div>
+
+    <div class="hla-box">
+      <div class="hla-titulo">🧬 HLA-B27 — el marcador genético del grupo</div>
+      <div class="hla-desc">
+        El HLA-B27 es un antígeno de histocompatibilidad de clase I. <strong>Presente en el 8–10% de la población general caucásica</strong> (menor en latinoamericanos, ~4–6%).<br><br>
+        <strong>Asociación con EsA:</strong> espondilitis anquilosante (90–95%) · artritis reactiva (80%) · artritis psoriásica (axial, 60%) · EII con afectación axial (70%).<br><br>
+        <strong>Clave interpretativa:</strong> HLA-B27 positivo NO diagnostica EsA (está en el 8% de sanos). HLA-B27 negativo NO descarta EsA (10% de las EA son B27 negativas). Es un marcador de susceptibilidad, no diagnóstico. Su mayor utilidad es en casos dudosos de espondiloartropatía axial.
+      </div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:0;">Características compartidas por todo el grupo</div>
+    <div class="caract-shared">
+      <span class="caract-badge">FR negativo (seronegativo)</span>
+      <span class="caract-badge">Asociación HLA-B27</span>
+      <span class="caract-badge">Sacroileítis y/o espondilitis</span>
+      <span class="caract-badge">Artritis periférica asimétrica</span>
+      <span class="caract-badge">Entesitis</span>
+      <span class="caract-badge">Dactilitis ("dedo en salchicha")</span>
+      <span class="caract-badge">Manifestaciones extraarticulares (ojo, piel, intestino)</span>
+      <span class="caract-badge">Agregación familiar</span>
+      <span class="caract-badge">Solapamiento entre entidades</span>
+    </div>
+  </div>
+
+  <!-- ESPONDILITIS ANQUILOSANTE -->
+  <div class="seccion">
+    <div class="sec-titulo-reuma">🔴 Espondiloartropatías — las 4 entidades principales</div>
+
+    <div class="enf-card">
+      <div class="enf-header">
+        <div class="enf-nombre ea">Espondilitis Anquilosante (EA)</div>
+        <div class="enf-sub">Prototipo del grupo · HLA-B27 (+) en 90–95% · Hombres jóvenes (20–40 años) · Predominio masculino 3:1</div>
+      </div>
+      <div class="enf-body">
+        <div class="enf-bloque-titulo">Clínica cardinal</div>
+        ✦ <strong>Dolor lumbar inflamatorio crónico:</strong> el síntoma más frecuente y precoz. Características que lo distinguen del mecánico: inicio insidioso, &lt;40 años, mejora con el ejercicio (no con el reposo), empeora con el reposo prolongado (rigidez matutina &gt;30 min), dolor nocturno que despierta al paciente.<br>
+        ✦ <strong>Sacroileítis bilateral:</strong> dolor en región glútea, irradiado a ambos muslos. Maniobra de FABER (Patrick) y Gaenslen positivas.<br>
+        ✦ <strong>Rigidez axial progresiva:</strong> limitación de la movilidad lumbar → torácica → cervical. Test de Schober (normal &gt;5 cm de expansión lumbar).<br>
+        ✦ <strong>Anquilosis:</strong> fusión vertebral progresiva → "columna de bambú" en Rx. Postura en flexión. Riesgo de fractura por trauma mínimo.<br><br>
+        <div class="enf-grid">
+          <div>
+            <div class="enf-bloque-titulo">Manifestaciones extraarticulares</div>
+            ✦ <strong>Uveítis anterior aguda (25–30%):</strong> ojo rojo doloroso unilateral, fotofobia, visión borrosa. Recurrente. La manifestación extraarticular más frecuente.<br>
+            ✦ Insuficiencia aórtica (aortitis)<br>
+            ✦ Fibrosis pulmonar apical<br>
+            ✦ Amiloidosis secundaria (en casos avanzados)<br>
+            ✦ Síndrome de la cola de caballo (compresión)
+          </div>
+          <div>
+            <div class="enf-bloque-titulo">Diagnóstico</div>
+            <strong>Criterios modificados de Nueva York:</strong><br>
+            Clínico: dolor lumbar inflamatorio &gt;3 meses + limitación movilidad lumbar<br>
+            Radiológico: sacroileítis bilateral grado ≥2 o unilateral grado 3–4<br><br>
+            <strong>RMN sacroilíacas:</strong> detecta inflamación activa (edema óseo = signo de "manchas brillantes") antes de los cambios radiológicos → permite diagnóstico precoz (criterios ASAS para EsA axial)<br><br>
+            <strong>Lab:</strong> VSG y PCR elevadas (en actividad). HLA-B27 (+). FR negativo. ANA negativo.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="enf-card">
+      <div class="enf-header">
+        <div class="enf-nombre ap">Artritis Psoriásica (APso)</div>
+        <div class="enf-sub">30% de los pacientes con psoriasis · FR negativo · HLA-B27 variable según patrón · Igual en ambos sexos</div>
+      </div>
+      <div class="enf-body">
+        ✦ <strong>Psoriasis cutánea precede a la artritis en el 75%</strong> (en promedio 10 años). En el 15% la artritis precede a la lesión cutánea. Buscar siempre psoriasis en cuero cabelludo, ombligo, pliegues.<br>
+        ✦ <strong>Dactilitis ("dedo en salchicha"):</strong> inflamación difusa de todo el dedo (no solo articulación) por tenosinovitis + artritis + edema periarticular. Muy sugestivo de APso.<br>
+        ✦ <strong>Onicopatía psoriásica:</strong> pitting (piqueteado de la uña), onicolisis, manchas en aceite. Asociada a artritis IFD.<br><br>
+        <div class="enf-grid">
+          <div>
+            <div class="enf-bloque-titulo">Patrones articulares (Moll y Wright)</div>
+            ✦ Oligoartritis asimétrica (más frecuente, 40%)<br>
+            ✦ Artritis IFD (interfalángicas distales, muy específico)<br>
+            ✦ Artritis mutilante ("telescoping finger")<br>
+            ✦ Poliartritis simétrica (similar a AR pero FR-)<br>
+            ✦ Espondilitis/sacroileítis (axial)
+          </div>
+          <div>
+            <div class="enf-bloque-titulo">Diagnóstico — Criterios CASPAR</div>
+            Psoriasis actual/previa/familiar (3/2/1 punto) + artritis IFD + FR negativo + dactilitis + neoformación ósea en Rx. <strong>Puntaje ≥3 = diagnóstico</strong>.<br><br>
+            <strong>Lab:</strong> VSG/PCR elevadas en actividad. FR negativo (en el 95%). ANA puede ser (+) débil.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="enf-card">
+      <div class="enf-header">
+        <div class="enf-nombre ar">Artritis Reactiva</div>
+        <div class="enf-sub">Triada de Reiter: artritis + uretritis + conjuntivitis · HLA-B27 (+) en 80% · Hombres jóvenes</div>
+      </div>
+      <div class="enf-body">
+        ✦ Artritis estéril que ocurre <strong>2–4 semanas después</strong> de una infección urogenital (<em>Chlamydia trachomatis</em>, <em>Ureaplasma</em>) o gastrointestinal (<em>Salmonella, Shigella, Yersinia, Campylobacter</em>).<br>
+        ✦ <strong>Triada clásica de Reiter:</strong> artritis periférica asimétrica (rodillas, tobillos, dedos de los pies) + uretritis/cervicitis + conjuntivitis. La triada completa aparece en solo el 30–40% de los casos.<br>
+        ✦ <strong>Balanitis circinada:</strong> lesiones erosivas indoloras en el glande. Muy específica.<br>
+        ✦ <strong>Queratodermia blenorrágica:</strong> lesiones hiperqueratósicas en palmas y plantas. Similares histológicamente a la psoriasis pustulosa.<br>
+        ✦ <strong>La artritis es reactiva (estéril):</strong> los cultivos articulares son negativos. El germen desencadenante puede ya no estar presente.<br>
+        ✦ Mayoría autolimitada en 3–6 meses. 10–20% evoluciona a EsA crónica.
+      </div>
+    </div>
+
+    <div class="enf-card">
+      <div class="enf-header">
+        <div class="enf-nombre aei">Artritis Enteropática (EII)</div>
+        <div class="enf-sub">Asociada a enfermedad de Crohn y colitis ulcerosa · Artritis en 20–30% de los pacientes con EII</div>
+      </div>
+      <div class="enf-body">
+        <div class="enf-grid">
+          <div>
+            <div class="enf-bloque-titulo">Patrón periférico (tipo 1)</div>
+            ✦ Oligoartritis aguda asimétrica de grandes articulaciones (rodilla, tobillo, cadera)<br>
+            ✦ <strong>Paralela a la actividad intestinal:</strong> mejora cuando la EII está en remisión<br>
+            ✦ No destructiva<br>
+            ✦ HLA-B27 no asociado
+          </div>
+          <div>
+            <div class="enf-bloque-titulo">Patrón axial (tipo 2)</div>
+            ✦ Sacroileítis y/o espondilitis<br>
+            ✦ <strong>Independiente de la actividad intestinal:</strong> puede progresar aunque la EII esté en remisión<br>
+            ✦ HLA-B27 (+) en 70%<br>
+            ✦ Tratamiento específico de la artritis (anti-TNF)
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:13px; color:var(--texto-sec);">Manifestaciones extraintestinales de la EII que también asocian con EsA: <strong>eritema nodoso, pioderma gangrenoso, uveítis, colangitis esclerosante primaria (CEP)</strong>. La CEP se asocia más a CU.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diferencias clave con Artritis Reumatoidea</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Característica</th><th>EsA Seronegativas</th><th>Artritis Reumatoidea</th></tr>
+        <tr><td>Factor reumatoideo</td><td>Negativo</td><td>Positivo (70–80%)</td></tr>
+        <tr><td>Anti-CCP</td><td>Negativo</td><td>Positivo (95% específico)</td></tr>
+        <tr><td>HLA-B27</td><td>Positivo (variable)</td><td>No asociado</td></tr>
+        <tr><td>Distribución articular</td><td>Asimétrica · grandes articulaciones · axial</td><td>Simétrica · pequeñas articulaciones · IFP, MCF</td></tr>
+        <tr><td>Columna vertebral</td><td>Afectada (sacroileítis, espondilitis)</td><td>Solo cervical alta (C1–C2)</td></tr>
+        <tr><td>Articulaciones IFD</td><td>Afectadas (APso)</td><td>No afectadas</td></tr>
+        <tr><td>Nódulos reumatoides</td><td>No</td><td>Sí (20–30%)</td></tr>
+        <tr><td>Entesitis</td><td>Característica del grupo</td><td>No</td></tr>
+        <tr><td>Dactilitis</td><td>Característica (APso, artritis reactiva)</td><td>No</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-reuma">💊 Tratamiento</div>
+    <div class="hl-reuma">El tratamiento tiene como objetivos: controlar la inflamación, prevenir el daño estructural, mantener la función y la calidad de vida. El pilar son los AINEs y los biológicos anti-TNF.</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">AINEs — 1ª línea en EA y EsA axial</div>
+      <div class="farma-clase">Indometacina · Naproxeno · Diclofenac · Celecoxib</div>
+      <div class="dosis-badge">Indometacina 75–150 mg/día · Naproxeno 500–1000 mg/día</div>
+      <div class="farma-detalle">
+        Son la primera línea para el dolor y la rigidez en la EA y las EsA axiales. <strong>Uso continuo</strong> (no solo a demanda) puede enlentecer la progresión radiológica según algunas evidencias. La indometacina es el AINE clásico de referencia en EA. Monitorear función renal, TA y GI. <strong>Contraindicados en EII activa</strong> (pueden exacerbar la enfermedad intestinal).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Anti-TNF (biológicos) — 2ª línea y en casos refractarios</div>
+      <div class="farma-clase">Etanercept · Adalimumab · Infliximab · Certolizumab · Golimumab</div>
+      <div class="dosis-badge">Adalimumab 40 mg SC cada 2 semanas · Infliximab 5 mg/kg IV c/8 semanas</div>
+      <div class="farma-detalle">
+        Indicados cuando 2 AINEs a dosis plena durante ≥4 semanas no logran controlar la enfermedad. <strong>Muy eficaces para síntomas axiales y periféricos.</strong> Reducen la actividad inflamatoria y mejoran la función. <strong>Screening obligatorio de TBC latente antes de iniciar</strong> (PPD o IGRA + Rx tórax). Contraindicados en IC grave (NYHA III–IV), infecciones activas. Riesgo de reactivación de TBC, hepatitis B, hongos.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Inhibidores de IL-17 (secukinumab, ixekizumab)</div>
+      <div class="farma-clase">Alternativa a anti-TNF · Especialmente eficaces en EA y APso</div>
+      <div class="dosis-badge">Secukinumab 150–300 mg SC mensual (tras carga inicial)</div>
+      <div class="farma-detalle">
+        Bloquean la IL-17A, citoquina central en la patogénesis de las EsA. Alta eficacia en EA y APso. <strong>Cuidado en EII:</strong> los anti-IL-17 pueden exacerbar la EII → evitar en artritis enteropática o Crohn. Menor riesgo de infecciones oportunistas que anti-TNF.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">DMARDs convencionales (metotrexato, sulfasalazina, leflunomida)</div>
+      <div class="farma-clase">Para artritis periférica · No eficaces para la enfermedad axial</div>
+      <div class="dosis-badge">Sulfasalazina 2–3 g/día VO · Metotrexato 15–25 mg/semana</div>
+      <div class="farma-detalle">
+        <strong>Importante:</strong> los DMARDs convencionales (MTX, sulfasalazina) tienen eficacia demostrada para la artritis <strong>periférica</strong> y la APso cutánea, pero <strong>NO son eficaces para la afectación axial</strong> (sacroileítis, espondilitis). Este punto es muy preguntado en el examen. Para la enfermedad axial que no responde a AINEs → directamente biológicos.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">💡 Tratamiento por entidad específica</div>
+      <strong>EA axial:</strong> AINEs → si falla: anti-TNF o anti-IL-17. Los DMARDs no sirven para lo axial.<br>
+      <strong>APso periférica:</strong> AINEs + MTX/leflunomida → si falla: anti-TNF o anti-IL-17 o anti-IL-12/23 (ustekinumab) o inhibidor JAK (tofacitinib).<br>
+      <strong>Artritis reactiva:</strong> AINEs + tratar infección desencadenante (azitromicina si Chlamydia) → si crónica: sulfasalazina.<br>
+      <strong>Artritis enteropática:</strong> tratar la EII. Axial: anti-TNF (infliximab también trata la EII). Evitar anti-IL-17 en Crohn.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">EsA: FR negativo + HLA-B27 + sacroileítis + entesitis</span>
+      <span class="pill">HLA-B27: presente en 90–95% EA · no es diagnóstico por sí solo</span>
+      <span class="pill">EA: dolor lumbar inflamatorio + mejora con ejercicio + rigidez matutina &gt;30 min</span>
+      <span class="pill">EA: sacroileítis bilateral en Rx · columna de bambú (tardía)</span>
+      <span class="pill">EA: uveítis anterior aguda = manifestación extraarticular más frecuente</span>
+      <span class="pill">Test de Schober: movilidad lumbar (normal &gt;5 cm)</span>
+      <span class="pill">APso: psoriasis + artritis FR(-) + dactilitis + onicopatía + IFD</span>
+      <span class="pill">APso: criterios CASPAR ≥3 puntos = diagnóstico</span>
+      <span class="pill">Artritis reactiva: artritis estéril 2–4 semanas post-infección</span>
+      <span class="pill">Triada de Reiter: artritis + uretritis + conjuntivitis (completa en 30%)</span>
+      <span class="pill">Artritis reactiva: balanitis circinada + queratodermia blenorrágica</span>
+      <span class="pill">Artritis enteropática tipo 1: paralela a actividad EII</span>
+      <span class="pill">Artritis enteropática tipo 2 (axial): independiente de la EII</span>
+      <span class="pill">DMARDs: eficaces para artritis periférica pero NO para enfermedad axial</span>
+      <span class="pill">Anti-IL-17: contraindicados en Crohn · útiles en EA y APso</span>
+      <span class="pill">Anti-TNF: screening de TBC latente obligatorio antes de iniciar</span>
+      <span class="pill">EA vs. AR: EsA asimétrica + axial + IFD · AR simétrica + IFP/MCF + FR(+)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: van der Heijde D, et al. 2016 update of the ASAS-EULAR management recommendations for axial spondyloarthritis. Ann Rheum Dis 2017 · Gossec L, et al. EULAR recommendations for the management of psoriatic arthritis 2019. Ann Rheum Dis 2020 · Rudwaleit M, et al. The ASAS classification criteria for axial spondyloarthritis. Ann Rheum Dis 2009 · Taylor W, et al. Classification criteria for psoriatic arthritis (CASPAR). Arthritis Rheum 2006 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
