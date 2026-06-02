@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidatidosis (Equinococosis) — Medpedia</title>
+  <meta name="description" content="Hidatidosis: ciclo biológico, quiste hidatídico hepático y pulmonar, clasificación OMS, diagnóstico, tratamiento PAIR y quirúrgico. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --hida: #2E7D32; --hida-claro: #E8F5E9; --hida-oscuro: #1B5E20;
+      --danger: #C0392B; --danger-claro: #FDEDEC;
+      --warn: #D4730A; --warn-claro: #FEF0DC;
+      --info: #1A5E9A; --info-claro: #E6F1FB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-infecto { background: #FEF0DC; color: #8A3700; }
+    .tag-ciru { background: #E3EBF5; color: #1A3C6E; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-hida { font-size: 16px; font-weight: 500; color: var(--hida); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid var(--warn); background: var(--warn-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid var(--danger); background: var(--danger-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid var(--info); background: var(--info-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-hida  { border-left: 3px solid var(--hida); background: var(--hida-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--hida); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .ciclo-box { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .ciclo-paso { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+    .ciclo-icon { font-size: 18px; flex-shrink: 0; }
+    .ciclo-flecha { color: var(--texto-ter); font-size: 16px; }
+    .oms-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 580px) { .oms-grid { grid-template-columns: 1fr 1fr; } }
+    .oms-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 11px; padding: 0.9rem 1rem; }
+    .oms-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 8px; margin-bottom: 6px; }
+    .ce1 { background: #E8F5E9; color: #1B5E20; }
+    .ce2 { background: #FFF8E1; color: #F57F17; }
+    .ce3 { background: #FFF3E0; color: #E65100; }
+    .ce4 { background: #E3F2FD; color: #1565C0; }
+    .ce5 { background: #F3E5F5; color: #6A1B9A; }
+    .cx  { background: #ECEFF1; color: #37474F; }
+    .oms-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .oms-tto { font-size: 11px; color: var(--hida); font-weight: 600; margin-top: 4px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Infectología / Cirugía</a> › Hidatidosis</div>
+  <div class="titulo">Hidatidosis (Equinococosis)</div>
+  <div class="meta">
+    <span class="tag tag-infecto">Infectología</span>
+    <span class="tag tag-ciru">Cirugía</span>
+    <span class="tag tag-fuente">OMS 2023 · INER Argentina · WHO-IWGE Guidelines</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-hida"><strong>Hidatidosis o equinococosis quística:</strong> zoonosis parasitaria causada por el estadio larvario (metacestode) de <em>Echinococcus granulosus</em>. El humano es un <strong>huésped intermediario accidental</strong>. El quiste hidatídico puede localizarse en cualquier órgano, pero el <strong>hígado (65–70%) y el pulmón (15–20%)</strong> son los más frecuentes.</div>
+    <div class="hl-hida">🇦🇷 <strong>Argentina es uno de los países de mayor endemia mundial.</strong> Regiones más afectadas: Patagonia (Neuquén, Río Negro, Chubut), La Pampa, San Luis, Córdoba, Salta. Zonas ganaderas con perros como centinela del ciclo. Notificación obligatoria en Argentina.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Especie</th><th>Distribución</th><th>Tipo de quiste</th></tr>
+        <tr><td><em>E. granulosus</em></td><td>Mundial, especialmente zonas ganaderas. Argentina endémica.</td><td>Quiste unilocular (hidatidosis quística) — el más frecuente en Argentina</td></tr>
+        <tr><td><em>E. multilocularis</em></td><td>Europa central y del Norte, Asia, América del Norte</td><td>Quiste multilocular alveolar — invasivo, peor pronóstico. No endémico en Argentina.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Ciclo biológico</div>
+    <div class="ciclo-box">
+      <div class="ciclo-paso"><span class="ciclo-icon">🐕</span><span><strong>Huésped definitivo:</strong> perro (y otros cánidos). Aloja la tenia adulta (<em>E. granulosus</em>) en el intestino delgado.</span></div>
+      <div class="ciclo-paso"><span class="ciclo-icon">💩</span><span class="ciclo-flecha">→</span><span>Las proglótides grávidas se eliminan en las heces del perro → liberan <strong>huevos embrionados</strong> al ambiente (pastos, agua, vegetales).</span></div>
+      <div class="ciclo-paso"><span class="ciclo-icon">🐑</span><span class="ciclo-flecha">→</span><span><strong>Huésped intermediario natural:</strong> oveja, vaca, cerdo. Ingiere los huevos → embrión hexacanto atraviesa la pared intestinal → circulación portal → hígado (primer filtro) → pulmón → otros órganos → se desarrolla en <strong>quiste hidatídico (metacestode)</strong>.</span></div>
+      <div class="ciclo-paso"><span class="ciclo-icon">👤</span><span class="ciclo-flecha">→</span><span><strong>Huésped intermediario accidental:</strong> el humano ingiere los huevos por contacto con perros infectados, agua o alimentos contaminados. Se desarrolla el quiste, igual que en la oveja. El ciclo NO continúa desde el humano.</span></div>
+      <div class="ciclo-paso"><span class="ciclo-icon">🐕</span><span class="ciclo-flecha">→</span><span>El perro se infecta al comer vísceras crudas (pulmón, hígado) de oveja con quistes fértiles → escólex → tenia adulta → cierra el ciclo.</span></div>
+    </div>
+    <div class="hl-warn">⭐ <strong>Transmisión al humano: contacto con perros infectados</strong> (huevos en el pelaje) o ingestión de alimentos/agua contaminados con heces de perro. <strong>No hay transmisión persona a persona.</strong> No se transmite por consumir carne de oveja o vaca (el quiste está en las vísceras, no en el músculo).</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Estructura del quiste hidatídico</div>
+    <div class="hl-info">El quiste tiene tres capas: <strong>periquística</strong> (tejido del huésped fibroso — capa externa), <strong>ectoquística o lámina germinativa externa</strong> (lámina blanquecina avascular, acelular, característica), y <strong>endoquística o capa germinativa interna</strong> (capa fértil que produce escólices, vesículas hijas y membranas prolígeras). El contenido es líquido claro ("agua de roca") rico en antígenos.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Estructura</th><th>Origen</th><th>Importancia clínica</th></tr>
+        <tr><td>Periquística</td><td>Tejido del huésped (adventicia fibrosa)</td><td>Puede calcificarse (quiste inactivo). Base para la cirugía (pericistectomía).</td></tr>
+        <tr><td>Lámina ectoquística (blanquecina)</td><td>Parásito (avascular)</td><td>Signo del "lirio" o "nenúfar" en ecografía cuando se desprende. Patognomónica.</td></tr>
+        <tr><td>Endoquística (germinal)</td><td>Parásito (fértil)</td><td>Produce escólices → si se rompe → siembra y anafilaxia.</td></tr>
+        <tr><td>Vesículas hijas</td><td>Endoquística</td><td>Quistes interiores. Indican fertilidad y mayor complejidad quirúrgica.</td></tr>
+        <tr><td>Líquido hidatídico</td><td>Parásito</td><td>"Agua de roca". Si se derrama → reacción anafiláctica (IgE) → shock anafiláctico. Nunca punzar sin precaución.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica — quiste hepático y pulmonar</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th></th><th>Quiste hidatídico hepático</th><th>Quiste hidatídico pulmonar</th></tr>
+        <tr><td><strong>Asintomático</strong></td><td>La mayoría. Hallazgo incidental en ecografía.</td><td>Hallazgo en Rx de tórax.</td></tr>
+        <tr><td><strong>Síntomas</strong></td><td>Dolor/malestar en hipocondrio derecho, hepatomegalia, sensación de plenitud.</td><td>Tos crónica, hemoptisis, dolor torácico.</td></tr>
+        <tr><td><strong>Complicaciones</strong></td><td>Ruptura hacia peritoneo (anafílaxia + siembra), ruptura hacia vía biliar (coledocolitiasis hidatídica, colangitis, ictericia), sobreinfección bacteriana (absceso hidatídico).</td><td>Ruptura hacia bronquio: <strong>vómica hidatídica</strong> — expectoración súbita de líquido salado + membranas blanquecinas ("piel de cebolla"). Puede precipitar anafilaxia. Sobreinfección → neumonía o absceso pulmonar.</td></tr>
+        <tr><td><strong>Signo radiológico</strong></td><td>Ecografía: lesión quística con tabiques, vesículas hijas, calcificaciones. "Signo del nenúfar" (membrana flotante).</td><td>Rx tórax: imagen redondeada homogénea de bordes bien definidos. Con ruptura parcial: "signo del menisco" (aire entre periquística y endoquística) o "signo del camalote" (membrana flotante).</td></tr>
+      </table>
+    </div>
+    <div class="hl-danger">🚨 <strong>Vómica hidatídica:</strong> expectoración brusca y abundante de líquido claro, salado, con membranas blanquecinas. Puede desencadenar anafilaxia y broncoespasmo. Emergencia médica — adrenalina + corticoides + antihistamínicos + soporte. <strong>No confundir con hemoptisis.</strong></div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-hida">📊 Clasificación OMS-IWGE (ecográfica)</div>
+    <div class="hl-hida">La clasificación de la OMS es esencial para decidir el tratamiento. Refleja la actividad del quiste (activo, en transición, inactivo).</div>
+    <div class="oms-grid">
+      <div class="oms-card">
+        <div class="oms-badge ce1">CE1</div>
+        <div class="oms-desc">Quiste unilocular, pared doble. Activo. Arena hidatídica ("nieve cayendo").</div>
+        <div class="oms-tto">→ PAIR o cirugía</div>
+      </div>
+      <div class="oms-card">
+        <div class="oms-badge ce2">CE2</div>
+        <div class="oms-desc">Multivesicular. Vesículas hijas visibles. "Panal de abejas". Activo y fértil.</div>
+        <div class="oms-tto">→ Cirugía (preferente)</div>
+      </div>
+      <div class="oms-card">
+        <div class="oms-badge ce3">CE3a/b</div>
+        <div class="oms-desc">CE3a: desprendimiento membrana (nenúfar). CE3b: vesículas hijas en matriz sólida. En transición.</div>
+        <div class="oms-tto">→ CE3a: PAIR; CE3b: cirugía</div>
+      </div>
+      <div class="oms-card">
+        <div class="oms-badge ce4">CE4</div>
+        <div class="oms-desc">Contenido heterogéneo, sin vesículas. Degenerativo. Inactivo.</div>
+        <div class="oms-tto">→ Observación o albendazol</div>
+      </div>
+      <div class="oms-card">
+        <div class="oms-badge ce5">CE5</div>
+        <div class="oms-desc">Calcificado total o parcialmente. Inactivo.</div>
+        <div class="oms-tto">→ Observación (no requiere tto)</div>
+      </div>
+      <div class="oms-card">
+        <div class="oms-badge cx">CX</div>
+        <div class="oms-desc">No clasificable. Ecografía no concluyente.</div>
+        <div class="oms-tto">→ RMN / TC para definir</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Diagnóstico</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Ecografía abdominal — primera línea diagnóstica y de clasificación</strong><br>
+        El método más accesible y sensible para quiste hepático. Permite clasificar el quiste según OMS y planificar el tratamiento. Hallazgos: quiste con doble pared, vesículas hijas (CE2), membrana desprendida flotante (CE3a — "signo del nenúfar").
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>TC / RMN — estadificación y planificación quirúrgica</strong><br>
+        TC: evalúa relación del quiste con estructuras vasculares y biliares, número y localización de quistes, calcificaciones. RMN: superior para evaluar compromiso biliar e hidatidosis extrahepática. Ambas son necesarias antes de cirugía.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Serología — ELISA + Western blot (confirmatorio)</strong><br>
+        ELISA para IgG anti-Echinococcus: sensibilidad ~85–90% en quiste hepático (menor en pulmonar y en quistes calcificados). Falsos negativos en quistes inactivos o CE5. Western blot (arco 5) o hemaglutinación: confirmatorio. Utilidad mayor para seguimiento post-tratamiento (título cae si el quiste fue eliminado).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Rx de tórax — para quiste pulmonar</strong><br>
+        Imagen redondeada, homogénea, bien delimitada. Con ruptura: "signo del menisco" (aire entre capas) → "signo del camalote" (membrana flotante en cavidad con nivel hidroaéreo).
+      </div>
+    </div>
+    <div class="hl-warn">⭐ <strong>NUNCA hacer punción diagnóstica percutánea</strong> de un quiste hidatídico sin preparación previa con albendazol y sin protocolo PAIR. La punción inadecuada → siembra peritoneal, anafilaxia. La serología y la imagen son suficientes para el diagnóstico en la mayoría de los casos.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-hida">💊 Tratamiento</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Albendazol — antiparasitario de base</div>
+      <div class="farma-clase">Bencimidazol · Inhibe la polimerización de tubulina del parásito</div>
+      <div class="dosis-badge">400 mg c/12h (15 mg/kg/día) × ciclos de 28 días con 14 días de descanso</div>
+      <div class="farma-detalle">
+        <strong>Indicaciones:</strong> como único tratamiento solo en quistes CE1 pequeños (&lt;5 cm), como adyuvante obligatorio en PAIR y pre/post-cirugía (4 semanas antes y 4 semanas después), y en quistes múltiples o recurrentes inoperables.<br><br>
+        <strong>Eficacia como monoterapia:</strong> curación en ~30%, mejoría en ~40%, sin respuesta en ~30%. No es curativamente confiable en quistes grandes.<br><br>
+        <strong>Efectos adversos:</strong> hepatotoxicidad (monitorear transaminasas mensualmente), leucopenia, alopecia, teratogénico (contraindicado en embarazo). Dar con comidas ricas en grasa para mejorar absorción.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">PAIR — Punción-Aspiración-Inyección-Reaspiración</div>
+      <div class="farma-clase">Procedimiento mínimamente invasivo guiado por ecografía · OMS recomienda como primera línea en CE1 y CE3a</div>
+      <div class="dosis-badge">Albendazol 4 días antes y 30 días después</div>
+      <div class="farma-detalle">
+        <strong>Técnica:</strong> punción percutánea guiada por eco → aspiración del líquido hidatídico → inyección de solución escolicida (NaCl hipertónico 20% o etanol 95%) → espera 15–20 min → reaspiración.<br><br>
+        <strong>Indicaciones (OMS):</strong> CE1 y CE3a, quistes &gt;5 cm o sintomáticos, pacientes que rechazan cirugía, embarazo, niños &gt;3 años, recurrencia post-cirugía.<br><br>
+        <strong>Contraindicaciones:</strong> CE2 (vesículas hijas → riesgo de no escolicidación completa), CE4-CE5 (inactivos → no necesario), quistes superficiales con riesgo de siembra, comunicación biliar (riesgo de colangitis esclerosante por escolicida).<br><br>
+        <strong>Complicaciones:</strong> anafilaxia (rara con preparación adecuada), siembra peritoneal si hay derrame, colangitis si hay comunicación biliar (detectar con colangio-RMN previa).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Cirugía — tratamiento de elección en CE2, CE3b, quistes complicados</div>
+      <div class="farma-clase">Técnicas conservadoras y radicales</div>
+      <div class="farma-detalle">
+        <strong>Principios:</strong> siempre con albendazol preoperatorio (4 semanas) para reducir la presión del quiste y matar escólices, y postoperatorio (4 semanas mínimo).<br><br>
+        <strong>Técnicas conservadoras (quistectomía):</strong> punción con trocar + aspiración + inyección escolicida + apertura + evacuación del contenido (germinativa + vesículas hijas) + obliteración de la cavidad residual (epiplooplastia, drenaje). Preserva tejido hepático.<br><br>
+        <strong>Pericistectomía total:</strong> resección de todo el quiste con la periquística. Menor tasa de recurrencia que la conservadora.<br><br>
+        <strong>Resección hepática:</strong> hepatectomía parcial cuando el quiste es muy grande, múltiple o hay destrucción del parénquima. Mayor morbimortalidad.<br><br>
+        <strong>Cirugía pulmonar:</strong> quistectomía + capitonnage (cierre de cavidad con puntos absorbibles). En quistes rotos: limpieza + lobectomía si hay destrucción parenquimatosa.
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Clasificación OMS</th><th>Tratamiento recomendado</th></tr>
+        <tr><td>CE1 (&lt;5 cm)</td><td>Albendazol solo o PAIR + albendazol</td></tr>
+        <tr><td>CE1 (≥5 cm)</td><td>PAIR + albendazol</td></tr>
+        <tr><td>CE2</td><td>Cirugía + albendazol (vesículas hijas: PAIR ineficaz)</td></tr>
+        <tr><td>CE3a</td><td>PAIR + albendazol</td></tr>
+        <tr><td>CE3b</td><td>Cirugía + albendazol</td></tr>
+        <tr><td>CE4</td><td>Observación o albendazol (inactivo, monitorizar)</td></tr>
+        <tr><td>CE5</td><td>Solo observación (calcificado, inactivo)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🛡️ Prevención y control</div>
+    <div class="hl-hida">🇦🇷 <strong>En Argentina:</strong> el INER (Instituto Nacional de Enfermedades Respiratorias) coordina el Programa Nacional de Hidatidosis. Estrategias: desparasitación regular de perros con praziquantel (cada 6 semanas en zonas endémicas), inspección veterinaria de mataderos, no alimentar a los perros con vísceras crudas, lavado de manos, cocción de vegetales, educación sanitaria.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Intervención</th><th>Impacto</th></tr>
+        <tr><td>Desparasitación de perros con praziquantel</td><td>Interrumpe el ciclo definitivo. Medida más efectiva de control poblacional.</td></tr>
+        <tr><td>Inspección de faena y destrucción de vísceras infectadas</td><td>Impide que los perros accedan a vísceras con quistes.</td></tr>
+        <tr><td>Vacuna EG95 para ovinos</td><td>Protege al huésped intermediario. En uso en Nueva Zelanda y China. En estudio en Argentina.</td></tr>
+        <tr><td>Educación sanitaria</td><td>No abrazar perros, lavado de manos, no consumir verduras sin lavar en zonas endémicas.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Agente: Echinococcus granulosus (estadio larvario)</span>
+      <span class="pill">Huésped definitivo: perro (tenia adulta en intestino)</span>
+      <span class="pill">Huésped intermediario: oveja/vaca (quiste en vísceras)</span>
+      <span class="pill">Huésped accidental: humano (no continúa el ciclo)</span>
+      <span class="pill">Transmisión: contacto con perros infectados o alimentos contaminados</span>
+      <span class="pill">NO se transmite por comer carne de oveja</span>
+      <span class="pill">Localización más frecuente: hígado (65–70%) y pulmón (15–20%)</span>
+      <span class="pill">Argentina endémica: Patagonia, La Pampa, Salta. Notificación obligatoria.</span>
+      <span class="pill">Quiste: 3 capas — periquística (huésped), ectoquística (blanquecina), endoquística (germinal)</span>
+      <span class="pill">Líquido "agua de roca": ruptura → anafilaxia</span>
+      <span class="pill">Signo del nenúfar: membrana flotante desprendida (CE3a)</span>
+      <span class="pill">Vómica hidatídica: expectoración de líquido salado + membranas → anafilaxia</span>
+      <span class="pill">Signo del camalote: Rx tórax en quiste pulmonar roto</span>
+      <span class="pill">Diagnóstico: ecografía + serología (ELISA / Western blot arco 5)</span>
+      <span class="pill">NUNCA punción sin protocolo PAIR y albendazol previo</span>
+      <span class="pill">Clasificación OMS: CE1 (activo unilocular) → CE5 (calcificado, inactivo)</span>
+      <span class="pill">CE2 y CE3b: cirugía (vesículas hijas → PAIR insuficiente)</span>
+      <span class="pill">CE1 y CE3a: PAIR + albendazol</span>
+      <span class="pill">CE4-CE5: observación (inactivos)</span>
+      <span class="pill">Albendazol: 400 mg c/12h, ciclos 28/14 días, siempre con cirugía o PAIR</span>
+      <span class="pill">Albendazol contraindicado en embarazo (teratogénico)</span>
+      <span class="pill">Prevención: desparasitación de perros con praziquantel cada 6 semanas</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: WHO Informal Working Group on Echinococcosis (WHO-IWGE). International classification of ultrasound images in cystic echinococcosis. Acta Trop 2003 · Brunetti E et al. Expert consensus for the diagnosis and treatment of cystic and alveolar echinococcosis. Acta Trop 2010 · Instituto Nacional de Enfermedades Respiratorias (INER). Programa Nacional de Hidatidosis. Argentina 2022 · OPS/OMS. Zoonosis y enfermedades transmisibles comunes al hombre y a los animales. 3ª ed. Washington DC, 2003 · Ministerio de Salud de la Nación Argentina. Guías de diagnóstico y tratamiento de hidatidosis. 2021.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
