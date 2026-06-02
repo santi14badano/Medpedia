@@ -16,14 +16,14 @@
       --verde-claro: rgba(29,158,117,0.15);
       --verde-oscuro: #0F6E56;
       --verde-glow: rgba(29,158,117,0.25);
-      --bg: #0d0d0d;
-      --bg2: #161616;
-      --bg3: #1e1e1e;
-      --borde: #2a2a2a;
-      --borde-hover: #3a3a3a;
-      --texto: #f0f0ec;
-      --texto-sec: #999;
-      --texto-ter: #555;
+      --bg: #ffffff;
+      --bg2: #f5f5f3;
+      --bg3: #ebebea;
+      --borde: #e0e0de;
+      --borde-hover: #ccccca;
+      --texto: #111110;
+      --texto-sec: #666662;
+      --texto-ter: #aaaaaa;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,7 +31,7 @@
 
     /* NAV */
     nav {
-      background: rgba(13,13,13,0.9);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--borde);
       padding: 0 2rem;
@@ -126,7 +126,7 @@
       background: var(--bg2);
       border: 1px solid var(--borde);
       border-radius: 12px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
       z-index: 300;
       overflow: hidden;
       display: none;
@@ -392,7 +392,7 @@
 
 </main>
 
-<a href="https://cafecito.app/medpedia" class="btn-cafecito" target="_blank">☕ Invitame un Cafecito</a>
+<a href="https://cafecito.app/TU_USUARIO" class="btn-cafecito" target="_blank">☕ Invitame un Cafecito</a>
 
 <footer>
   <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
@@ -491,6 +491,12 @@
     { titulo: 'Diarrea Crónica y SII', url: 'diarrea-cronica-sii.html', tag: 'Gastroenterología', clase: 'tag-gastro', esp: 'gastro', keywords: 'diarrea cronica sii sindrome intestino irritable roma iv diarrea secretora osmotica inflamatoria grasa malabsorcion celiaquía enfermedad celiaca eii colon irritable loperamida rifaximina antiespasmódicos mebeverina antidepresivos probioticos dieta baja fodmap colonoscopia coprocultivo calprotectina' },
     { titulo: 'Fiebre Reumática y Enfermedad de Kawasaki', url: 'fiebre-reumatica-kawasaki.html', tag: 'Pediatría', clase: 'tag-pediatria', esp: 'pediatria', keywords: 'fiebre reumatica kawasaki streptococo grupo a faringitis amigdalitis criterios jones carditis artritis corea sydenham eritema marginado nodulos subcutaneos penicilina profilaxis valvulopatia estenosis mitral kawasaki coronaria aneurisma aspirina inmunoglobulina ivig ecocardiograma fiebre pediatria vasculitis' },
     { titulo: 'Síndrome de Cushing', url: 'sindrome-cushing.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'sindrome cushing hipercortisolismo acth dependiente independiente adenoma hipofisario corticotropinoma tumor suprarrenal ectopico cortisol libre urinario supresion dexametasona test noche 1mg cortisol saliva nocturno cirugía transesfenoidal adrenalectomia mitotane ketoconazol cushing iatrogeno corticoides exogenos' },
+    { titulo: 'Cáncer de Vesícula y Vía Biliar', url: 'cancer-vesicula-via-biliar.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'cancer vesicula via biliar colangiocarcinoma adenocarcinoma coledoco colecistitis litiasis calculo ecografia tac cea ca19-9 reseccion hepatectomia quimioterapia gemcitabina cisplatino estadificacion tnm laparoscopia incidental' },
+    { titulo: 'Diabetes Gestacional', url: 'diabetes-gestacional.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'diabetes gestacional dmg glucosa tolerancia ogtt sobrecarga 75g 100g insulina metformina macrosomia polihidramnios cesarea hipoglucemia neonatal preeclampsia embarazo screening tamizaje criterios iadpsg ada' },
+    { titulo: 'Espondiloartropatías Seronegativas', url: 'espondiloartropatias.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'espondiloartropatias seronegativas espondilitis anquilosante artritis psoriasica reactiva enteropatica sacroileitis hlab27 aines anti tnf adalimumab etanercept secukinumab ixekizumab criterios asas asdas basdai columna lumbar pelvis mri uveitis ibd' },
+    { titulo: 'Esquizofrenia y Psicosis', url: 'esquizofrenia-psicosis.html', tag: 'Psiquiatría', clase: 'tag-neuro', esp: 'neuro', keywords: 'esquizofrenia psicosis alucinaciones delirios sintomas positivos negativos antipsicóticos tipicos atipicos haloperidol risperidona olanzapina clozapina aripiprazol quetiapina primer episodio catatonia pep ugp trastorno esquizoafectivo depoto criteria dsm5' },
+    { titulo: 'Síndrome de Guillain-Barré', url: 'guillain-barre.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'guillain barre polineuropatia desmielinizante aguda ascendente areflexia debilidad campylobacter inmunoglobulina plasmaferesis ncs emg proteinas liquido cefalorraquideo disociacion albuminocitologica miller fisher bickerstaff aidp aman amsan' },
+    { titulo: 'Hidatidosis (Equinococosis)', url: 'hidatidosis.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'hidatidosis equinococosis echinococcus granulosus quiste hidatidico higado pulmon perro oveja ganaderia argentina rural albendazol pair puncion aspiracion inyeccion reaspiracion cirugía quistectomia periquistectomia serologia elisa hemaglutinacion rotura anafilaxia' },
   ];
 
   // Contadores por especialidad
