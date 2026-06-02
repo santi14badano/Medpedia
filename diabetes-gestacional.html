@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Gestacional — Medpedia</title>
+  <meta name="description" content="Diabetes gestacional: screening, criterios diagnósticos IADPSG/ADA, tratamiento, complicaciones maternas y fetales, seguimiento postparto. Guía para Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --obs: #7B3FA0; --obs-claro: #F4EAFB; --obs-oscuro: #52287A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-obs { background: var(--obs-claro); color: var(--obs-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-obs { font-size: 16px; font-weight: 500; color: var(--obs); margin-bottom: 12px; }
+    .hl { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger { border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-obs { border-left: 3px solid var(--obs); background: var(--obs-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .col-bloque { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .col-titulo { font-size: 11px; font-weight: 600; color: var(--texto-ter); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .col-bloque strong { color: var(--texto); }
+    .diag-box { background: var(--obs-claro); border: 1.5px solid #C0A0D8; border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .diag-titulo { font-size: 15px; font-weight: 600; color: var(--obs); margin-bottom: 10px; }
+    .diag-item { font-size: 13px; color: var(--texto-sec); line-height: 1.6; margin-bottom: 5px; }
+    .diag-item strong { color: var(--texto); }
+    .meta-box { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 14px; padding: 1.1rem; margin-bottom: 12px; }
+    .meta-titulo { font-size: 14px; font-weight: 600; color: var(--obs); margin-bottom: 8px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    @media (max-width: 560px) { .meta-grid { grid-template-columns: 1fr 1fr; } }
+    .meta-card { background: var(--obs-claro); border-radius: 10px; padding: 10px; text-align: center; }
+    .meta-valor { font-size: 18px; font-weight: 700; color: var(--obs); }
+    .meta-label { font-size: 11px; color: var(--texto-sec); margin-top: 2px; line-height: 1.3; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--obs); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--obs-claro); color: var(--obs-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 560px) { .comp-grid { grid-template-columns: 1fr; } }
+    .comp-card { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .comp-card.materna { background: var(--obs-claro); border-color: #C0A0D8; }
+    .comp-card.fetal { background: #FEF0DC; border-color: #E0A060; }
+    .comp-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .comp-titulo.materna { color: var(--obs); }
+    .comp-titulo.fetal { color: #8B4500; }
+    .comp-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 3px; line-height: 1.5; }
+    .comp-item strong { color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Diabetes Gestacional</div>
+  <div class="titulo">Diabetes Gestacional</div>
+  <div class="meta">
+    <span class="tag tag-obs">Obstetricia · Endocrinología</span>
+    <span class="tag tag-fuente">ADA 2024 · IADPSG · SOGIBA · Harrison 21ª ed.</span>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición</div>
+    <div class="hl-obs"><strong>Diabetes gestacional (DG):</strong> cualquier grado de intolerancia a la glucosa que se detecta por primera vez durante el embarazo, independientemente de si persiste después del parto o si ya existía antes de la gestación sin ser diagnosticada. Afecta al <strong>7–15% de los embarazos</strong> (variación según criterios utilizados y población). Es la complicación metabólica más frecuente del embarazo.</div>
+    <div class="alerta-box">
+      <div class="alerta-title">⚠️ DG vs. DBT pregestacional</div>
+      <strong>Diabetes pregestacional:</strong> DBT tipo 1 o tipo 2 conocida antes del embarazo. Mayor riesgo de malformaciones congénitas (especialmente cardíacas y del tubo neural) en las primeras semanas → control glucémico estricto periconcepcional es clave.<br>
+      <strong>Diabetes gestacional:</strong> se desarrolla durante el embarazo (generalmente en el 2° trimestre). No causa malformaciones (el páncreas fetal ya está formado al momento del diagnóstico), pero sí macrosomía y complicaciones perinatales.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Factores de riesgo</div>
+    <div class="dos-col">
+      <div class="col-bloque">
+        <div class="col-titulo">Factores de riesgo para DG</div>
+        ✦ Obesidad (IMC ≥30) — factor de riesgo más importante<br>
+        ✦ Antecedente de DG en embarazo previo (recurrencia 30–70%)<br>
+        ✦ Antecedente de macrosomía fetal (RN &gt;4 kg) o muerte fetal inexplicada<br>
+        ✦ Familiar de 1er grado con DBT tipo 2<br>
+        ✦ Síndrome de ovario poliquístico (SOP)<br>
+        ✦ Glucosuria en orina<br>
+        ✦ Edad materna ≥35 años<br>
+        ✦ Antecedente de síndrome metabólico, HTA, dislipemia
+      </div>
+      <div class="col-bloque">
+        <div class="col-titulo">Fisiopatología</div>
+        La placenta produce hormonas diabetogénicas que aumentan la resistencia a la insulina fisiológicamente en el 2°–3° trimestre (lactógeno placentario, progesterona, cortisol, HPL). En mujeres con reserva pancreática limitada, esta resistencia no puede ser compensada → hiperglucemia.<br><br>
+        La <strong>glucosa cruza la placenta libremente</strong> → hiperglucemia fetal → hiperinsulinismo fetal → macrosomía, hipoglucemia neonatal, maduración pulmonar retardada.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-obs">🔵 Screening y diagnóstico</div>
+    <div class="hl-obs">El screening universal de DG se realiza entre las <strong>semanas 24–28 de gestación</strong> (cuando la resistencia a la insulina es máxima). En pacientes de alto riesgo, también se realiza en el 1er trimestre.</div>
+
+    <div class="diag-box">
+      <div class="diag-titulo">Estrategia de 1 paso — IADPSG/ADA (más usada actualmente en Argentina)</div>
+      <div class="diag-item"><strong>Prueba de tolerancia oral a la glucosa (PTOG) con 75 g en ayunas</strong> entre semanas 24–28</div>
+      <div class="diag-item">Medición de glucemia en <strong>3 puntos:</strong> ayunas · 1 hora · 2 horas</div>
+      <div class="diag-item" style="margin-top:8px; font-weight:600;">Diagnóstico de DG: con 1 SOLO valor alterado:</div>
+      <div class="diag-item">✦ <strong>Ayunas ≥92 mg/dL</strong></div>
+      <div class="diag-item">✦ <strong>1 hora ≥180 mg/dL</strong></div>
+      <div class="diag-item">✦ <strong>2 horas ≥153 mg/dL</strong></div>
+      <div style="background:white; border-radius:8px; padding:8px 12px; margin-top:8px; font-size:12px; color:var(--texto-sec);">Si glucemia en ayunas ≥126 mg/dL o glucemia al azar ≥200 mg/dL + síntomas en el 1er control prenatal → diagnóstico directo de DBT en el embarazo (no requiere PTOG)</div>
+    </div>
+
+    <div class="diag-box" style="background:#E6F1FB; border-color:#90B8D8;">
+      <div class="diag-titulo" style="color:#1A5E9A;">Estrategia de 2 pasos — O'Sullivan (alternativa, algunos centros Argentina)</div>
+      <div class="diag-item"><strong>Paso 1:</strong> Test de O'Sullivan: glucemia 1 hora post 50 g de glucosa (sin ayuno). Si ≥140 mg/dL → positivo → pasar al paso 2</div>
+      <div class="diag-item"><strong>Paso 2:</strong> PTOG con 100 g en ayunas. Diagnóstico con ≥2 valores alterados (criterios de Carpenter-Coustan o NDDG)</div>
+      <div style="background:white; border-radius:8px; padding:8px 12px; margin-top:8px; font-size:12px; color:var(--texto-sec);">La estrategia de 1 paso detecta más casos pero puede sobrediagnosticar. La ADA y IADPSG recomiendan la estrategia de 1 paso desde 2010.</div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🎯 Metas glucémicas durante el embarazo</div>
+    <div class="meta-box">
+      <div class="meta-titulo">Objetivos de glucemia capilar (ADA 2024)</div>
+      <div class="meta-grid">
+        <div class="meta-card"><div class="meta-valor">&lt;95</div><div class="meta-label">Ayunas (mg/dL)</div></div>
+        <div class="meta-card"><div class="meta-valor">&lt;140</div><div class="meta-label">1 hora postprandial (mg/dL)</div></div>
+        <div class="meta-card"><div class="meta-valor">&lt;120</div><div class="meta-label">2 horas postprandial (mg/dL)</div></div>
+        <div class="meta-card"><div class="meta-valor">&lt;6%</div><div class="meta-label">HbA1c (si se usa)</div></div>
+        <div class="meta-card"><div class="meta-valor">&gt;70</div><div class="meta-label">Mínimo aceptable (mg/dL)</div></div>
+        <div class="meta-card"><div class="meta-valor">4/día</div><div class="meta-label">Monitoreo glucemia mínimo</div></div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ La <strong>HbA1c no es útil como herramienta de monitoreo en el embarazo</strong> porque la vida media del eritrocito está acortada (mayor recambio). Usar glucemia capilar (automonitoreo) como herramienta principal.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo-obs">💊 Tratamiento</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Modificación del estilo de vida — 1ª línea en todas las DG</div>
+      <div class="farma-clase">Plan nutricional + actividad física · controla el 70–80% de las DG sin necesidad de insulina</div>
+      <div class="farma-detalle">
+        <strong>Plan nutricional:</strong> distribuir los carbohidratos en 3 comidas principales + 2–3 colaciones. Reducir carbohidratos simples y de alto índice glucémico. Aporte calórico según IMC pregestacional: 30–35 kcal/kg/día en normopeso, 25 kcal/kg/día en sobrepeso/obesidad. <strong>No se recomienda restricción calórica estricta</strong> (riesgo de cetosis de ayuno).<br><br>
+        <strong>Actividad física:</strong> 30 min de ejercicio aeróbico moderado (caminar) la mayoría de los días. Reduce la glucemia postprandial. Contraindicaciones obstétricas habituales.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Insulina — tratamiento farmacológico de elección</div>
+      <div class="farma-clase">Indicada cuando la dieta y el ejercicio no alcanzan los objetivos glucémicos en 1–2 semanas</div>
+      <div class="dosis-badge">Dosis inicial: 0,7–1 UI/kg/día · ajustar según automonitoreo</div>
+      <div class="farma-detalle">
+        <strong>¿Por qué insulina?</strong> No cruza la placenta → no tiene efectos directos sobre el feto. Es el tratamiento farmacológico de referencia con mayor evidencia de seguridad.<br><br>
+        <strong>Esquemas:</strong><br>
+        ✦ <strong>Glucemia en ayunas elevada:</strong> insulina NPH bedtime (antes de dormir) o insulina basal análoga (detemir — el análogo de elección en embarazo)<br>
+        ✦ <strong>Glucemia postprandial elevada:</strong> insulina regular o análogos rápidos (lispro o aspártica — aprobadas en embarazo) antes de cada comida<br>
+        ✦ La mayoría requiere esquema bolo-basal al progresar el embarazo (aumenta la resistencia)<br><br>
+        <strong>Ajuste de dosis:</strong> las necesidades de insulina aumentan progresivamente hasta la semana 36 y disminuyen levemente en las últimas semanas.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Metformina — alternativa en casos seleccionados</div>
+      <div class="farma-clase">Hipoglucemiante oral · uso con consentimiento informado</div>
+      <div class="dosis-badge">500–2500 mg/día VO en 2–3 tomas</div>
+      <div class="farma-detalle">
+        Cruza la placenta (niveles fetales similares a los maternos). Evidencia creciente de seguridad a corto plazo (ensayo MiG Trial). Sin aumento de malformaciones. Efectos a largo plazo en el niño en seguimiento. <strong>Puede ser una alternativa razonable</strong> cuando la insulina no es aceptada por la paciente o no está disponible, con consentimiento informado. La ADA 2024 la reconoce como alternativa. El SOGIBA mantiene a la insulina como primera elección.
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="comp-grid">
+      <div class="comp-card materna">
+        <div class="comp-titulo materna">Complicaciones maternas</div>
+        <div class="comp-item">✦ <strong>Preeclampsia:</strong> riesgo ×2 en DG</div>
+        <div class="comp-item">✦ Parto por cesárea (macrosomía → desproporción)</div>
+        <div class="comp-item">✦ <strong>DBT tipo 2 postparto:</strong> 50% en 10 años</div>
+        <div class="comp-item">✦ Recurrencia DG en próximo embarazo (30–70%)</div>
+        <div class="comp-item">✦ Infecciones urinarias a repetición</div>
+        <div class="comp-item">✦ Polihidramnios (por poliuria fetal)</div>
+      </div>
+      <div class="comp-card fetal">
+        <div class="comp-titulo fetal">Complicaciones fetales/neonatales</div>
+        <div class="comp-item">✦ <strong>Macrosomía</strong> (peso &gt;4 kg): principal complicación · distocia de hombros</div>
+        <div class="comp-item">✦ <strong>Hipoglucemia neonatal</strong> (hiperinsulinismo fetal)</div>
+        <div class="comp-item">✦ Hipocalcemia · hipomagnesemia neonatales</div>
+        <div class="comp-item">✦ Policitemia neonatal</div>
+        <div class="comp-item">✦ <strong>Síndrome de dificultad respiratoria</strong> (maduración pulmonar retardada por hiperinsulinismo)</div>
+        <div class="comp-item">✦ Muerte fetal intrauterina (DG no controlada)</div>
+        <div class="comp-item">✦ Riesgo aumentado de obesidad y DBT tipo 2 en la infancia (programación metabólica)</div>
+      </div>
+    </div>
+    <div class="hl-danger">🚨 <strong>Distocia de hombros:</strong> complicación obstétrica grave asociada a macrosomía. El hombro anterior queda atrapado detrás de la sínfisis púbica tras la expulsión de la cabeza. Maniobra de McRoberts (hiperflexión de caderas) + presión suprapúbica como primera respuesta.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Manejo intraparto y postparto</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Momento</th><th>Conducta</th></tr>
+        <tr><td><strong>Momento del parto</strong></td><td>DG bien controlada con dieta: parto a las 39–40 semanas. DG con insulina o mal controlada: considerar inducción a las 38–39 semanas para evitar macrosomía progresiva.</td></tr>
+        <tr><td><strong>Durante el trabajo de parto</strong></td><td>Glucemia capilar cada 1–2 h. Meta: 70–110 mg/dL. Infusión de insulina IV si glucemia &gt;140 mg/dL. Suspender insulina SC al inicio del trabajo de parto.</td></tr>
+        <tr><td><strong>Postparto inmediato</strong></td><td>Suspender insulina. La mayoría normaliza la glucemia al expulsar la placenta (cesa la producción de hormonas diabetogénicas). Monitorear glucemia en el neonato (riesgo de hipoglucemia).</td></tr>
+        <tr><td><strong>Seguimiento postparto</strong></td><td>PTOG con 75 g a las <strong>6–12 semanas postparto</strong> para reclasificar: normal · prediabetes · DBT tipo 2. Luego cada 1–3 años de por vida. Fomentar cambios del estilo de vida para prevenir DBT tipo 2.</td></tr>
+      </table>
+    </div>
+    <div class="hl-obs">🔑 <strong>La DG no se "cura" con el parto en términos de riesgo metabólico.</strong> El 50% de las mujeres con DG desarrolla DBT tipo 2 en los siguientes 10 años. El seguimiento postparto es obligatorio y muchas veces olvidado.</div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">DG: intolerancia a glucosa detectada por 1ª vez en el embarazo</span>
+      <span class="pill">DG no causa malformaciones (páncreas ya formado al diagnóstico)</span>
+      <span class="pill">DBT pregestacional SÍ causa malformaciones (1er trimestre)</span>
+      <span class="pill">Screening: PTOG 75 g a las 24–28 semanas</span>
+      <span class="pill">IADPSG (1 paso): 1 valor alterado = diagnóstico</span>
+      <span class="pill">Valores: ayunas ≥92 · 1h ≥180 · 2h ≥153 mg/dL</span>
+      <span class="pill">Metas: ayunas &lt;95 · 1h &lt;140 · 2h &lt;120 mg/dL</span>
+      <span class="pill">HbA1c no es útil para monitoreo en embarazo</span>
+      <span class="pill">Tratamiento 1ª línea: dieta + ejercicio (controla 70–80%)</span>
+      <span class="pill">Insulina: fármaco de elección (no cruza placenta)</span>
+      <span class="pill">Análogo basal de elección: detemir</span>
+      <span class="pill">Complicación fetal más frecuente: macrosomía</span>
+      <span class="pill">Macrosomía → distocia de hombros → maniobra de McRoberts</span>
+      <span class="pill">Hipoglucemia neonatal: por hiperinsulinismo fetal</span>
+      <span class="pill">PTOG 6–12 semanas postparto: reclasificar</span>
+      <span class="pill">50% desarrolla DBT tipo 2 en 10 años postparto</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Diabetes Association. Standards of Medical Care in Diabetes 2024. Diabetes Care 2024 · IADPSG Consensus Panel. International Association of Diabetes and Pregnancy Study Groups Recommendations on the Diagnosis and Classification of Hyperglycemia in Pregnancy. Diabetes Care 2010 · SOGIBA. Guía de práctica clínica para el diagnóstico y tratamiento de la diabetes gestacional 2023 · Metzger BE, et al. Hyperglycemia and adverse pregnancy outcomes (HAPO Study). N Engl J Med 2008 · Harrison's Principles of Internal Medicine, 21st ed.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
