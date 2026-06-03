@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCP Avanzado (ACLS) — Medpedia</title>
+  <meta name="description" content="RCP avanzado según AHA ACLS 2020: algoritmos de paro cardíaco, ritmos desfibrilables y no desfibrilables, fármacos, manejo de la vía aérea. Guía para residencias médicas.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --azul: #1A5E9A; --azul-claro: #E6F1FB;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --morado: #7B3FA0; --morado-claro: #F3E8FC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-urgencia { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-rojo  { border-left: 3px solid var(--rojo); background: var(--rojo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-verde { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+
+    /* Algoritmo visual */
+    .algo-box { border: 2px solid var(--rojo); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 8px; background: var(--blanco); }
+    .algo-box.verde { border-color: var(--verde); }
+    .algo-box.azul { border-color: var(--azul); }
+    .algo-box.naranja { border-color: var(--naranja); }
+    .algo-titulo { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; color: var(--rojo); }
+    .algo-titulo.verde { color: var(--verde); }
+    .algo-titulo.azul { color: var(--azul); }
+    .algo-titulo.naranja { color: var(--naranja); }
+    .algo-body { font-size: 13.5px; color: var(--texto-sec); line-height: 1.6; }
+    .algo-body strong { color: var(--texto); }
+    .algo-arrow { text-align: center; font-size: 20px; color: var(--texto-ter); margin: 2px 0; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 560px) { .dos-col { grid-template-columns: 1fr; } }
+    .ritmo-card { border-radius: 14px; padding: 1.1rem; }
+    .ritmo-card.desfib { background: #FDEDEC; border: 1.5px solid #e8b4b0; }
+    .ritmo-card.nodesfib { background: #E6F1FB; border: 1.5px solid #a8c8e8; }
+    .ritmo-titulo { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .ritmo-titulo.desfib { color: var(--rojo); }
+    .ritmo-titulo.nodesfib { color: var(--azul); }
+    .ritmo-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 4px; padding-left: 12px; position: relative; }
+    .ritmo-item::before { content: '·'; position: absolute; left: 0; }
+    .causas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 560px) { .causas-grid { grid-template-columns: 1fr; } }
+    .causa-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .causa-letra { font-size: 24px; font-weight: 700; color: var(--rojo); margin-bottom: 2px; font-family: 'Fraunces', serif; }
+    .causa-titulo { font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 4px; }
+    .causa-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Urgencias</a> › RCP Avanzado (ACLS)</div>
+  <div class="titulo">RCP Avanzado — ACLS</div>
+  <div class="meta">
+    <span class="tag tag-urgencia">Urgencias</span>
+    <span class="tag tag-urgencia">Emergencia crítica</span>
+    <span class="tag tag-fuente">AHA ACLS Guidelines 2020 · ERC 2021</span>
+  </div>
+
+  <!-- CONCEPTOS CLAVE -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Principios fundamentales del ACLS</div>
+    <div class="hl-danger"><span class="badge-urgente">CRÍTICO</span> El <strong>paro cardiorrespiratorio (PCR)</strong> requiere reconocimiento inmediato e inicio de RCP de alta calidad dentro de los primeros 2 minutos. Cada minuto sin desfibrilación en FV/TV sin pulso reduce la supervivencia un <strong>7–10%</strong>.</div>
+    <div class="hl"><strong>Cadena de supervivencia AHA (intrahospitalaria):</strong> Vigilancia y prevención → Reconocimiento y activación → RCP de alta calidad → Desfibrilación rápida → SVA y PPCP (cuidados post-paro).</div>
+    <div class="hl-info"><strong>RCP de alta calidad:</strong> Frecuencia 100–120/min · Profundidad ≥5 cm (≤6 cm) · Reexpansión torácica completa · Minimizar interrupciones · Relación compresión:ventilación = 30:2 sin vía aérea avanzada. Con VAA: compresiones continuas + 1 ventilación cada 6 seg (10/min).</div>
+  </div>
+
+  <!-- ALGORITMO PARO -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Algoritmo de paro cardíaco — visión general</div>
+
+    <div class="algo-box verde">
+      <div class="algo-titulo verde">1 · Verificar seguridad · Reconocer el paro</div>
+      <div class="algo-body">Sin respuesta · Sin respiración o respiración agónica (gasping) · Sin pulso palpable en ≤10 seg → <strong>Activar sistema de emergencias y pedir DEA/desfibrilador</strong></div>
+    </div>
+    <div class="algo-arrow">↓</div>
+    <div class="algo-box">
+      <div class="algo-titulo">2 · Iniciar RCP — 2 min de ciclo</div>
+      <div class="algo-body"><strong>Compresiones cardíacas de alta calidad</strong> · Administrar O₂ · Colocar monitor/desfibrilador · Obtener acceso IV/IO · <strong>Minimizar interrupciones</strong> — las pausas no deben superar 10 seg</div>
+    </div>
+    <div class="algo-arrow">↓</div>
+    <div class="algo-box azul">
+      <div class="algo-titulo azul">3 · Analizar ritmo (cada 2 minutos)</div>
+      <div class="algo-body">¿Ritmo <strong>desfibrilable</strong>? → FV / TV sin pulso<br>¿Ritmo <strong>no desfibrilable</strong>? → Asistolia / AESP</div>
+    </div>
+    <div class="algo-arrow">↓ (bifurca según ritmo)</div>
+
+    <div class="dos-col">
+      <div class="ritmo-card desfib">
+        <div class="ritmo-titulo desfib">⚡ Desfibrilable (FV / TVsp)</div>
+        <div class="ritmo-item">Desfibrilar <strong>inmediatamente</strong></div>
+        <div class="ritmo-item">Reanudar RCP 2 min sin pausa post-choque</div>
+        <div class="ritmo-item">Adrenalina 1 mg IV/IO → cada 3–5 min (desde 3er ciclo)</div>
+        <div class="ritmo-item">Amiodarona 300 mg IV (2ª o 3ª descarga refractaria)</div>
+        <div class="ritmo-item">Amiodarona 2ª dosis: 150 mg IV si persiste</div>
+        <div class="ritmo-item">Lidocaína: alternativa a amiodarona (1–1.5 mg/kg)</div>
+      </div>
+      <div class="ritmo-card nodesfib">
+        <div class="ritmo-titulo nodesfib">📉 No desfibrilable (Asistolia / AESP)</div>
+        <div class="ritmo-item">RCP continua 2 min — <strong>no desfibrilar</strong></div>
+        <div class="ritmo-item">Adrenalina 1 mg IV/IO → tan pronto como posible</div>
+        <div class="ritmo-item">Repetir cada 3–5 min</div>
+        <div class="ritmo-item">Buscar y tratar causas reversibles (<strong>5H / 5T</strong>)</div>
+        <div class="ritmo-item">Analizar ritmo cada 2 min</div>
+        <div class="ritmo-item">Si ritmo pasa a FV/TV → pasar a rama desfibrilable</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENERGÍAS DE DESFIBRILACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">⚡ Energías de desfibrilación</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Tipo de onda</th><th>Energía recomendada</th><th>Nota</th></tr>
+        <tr><td>Bifásica (recomendada)</td><td><strong>120–200 J</strong> (según fabricante)</td><td>Usar dosis máxima si se desconoce el equipo</td></tr>
+        <tr><td>Monofásica</td><td><strong>360 J</strong></td><td>Mayor energía por menor eficiencia</td></tr>
+        <tr><td>Descargas sucesivas</td><td>Misma dosis o escalada</td><td>Sin beneficio claro en escalar en bifásica</td></tr>
+        <tr><td>Cardioversión (FA con inestabilidad)</td><td><strong>120–200 J bifásico sincronizado</strong></td><td>Sincronizar en onda R</td></tr>
+        <tr><td>Cardioversión TV con pulso</td><td><strong>100 J bifásico sincronizado</strong></td><td>Escalar si no revierte</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>No pausar RCP para cargar el desfibrilador.</strong> Cargar durante las compresiones. Pausar <strong>solo</strong> para administrar el choque. Reanudar inmediatamente tras el choque sin verificar pulso primero.</div>
+  </div>
+
+  <!-- CAUSAS REVERSIBLES 5H/5T -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Causas reversibles — Las 5H y las 5T</div>
+    <div class="hl-info">Buscar activamente en <strong>todo PCR</strong>, especialmente en ritmos no desfibrilables. Cada H y T tiene tratamiento específico — identificarla es lo que salva al paciente.</div>
+    <div class="causas-grid">
+      <div class="causa-card"><div class="causa-letra">5H</div>
+        <div class="causa-titulo">Hipovolemia</div><div class="causa-desc">Trauma, hemorragia → fluidos IV/IO agresivos</div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Hipoxia</div><div class="causa-desc">Vía aérea inadecuada → oxigenar, ventilar, intubar</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">H⁺ (Acidosis)</div><div class="causa-desc">Acidosis severa → bicarbonato en contexto claro</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Hipo/Hiperkalemia</div><div class="causa-desc">Hiper: calcio IV, bicarbonato, glucosa+insulina · Hipo: reponer K</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Hipotermia</div><div class="causa-desc">Recalentar activo → no declarar muerte con hipotermia</div></div>
+      </div>
+      <div class="causa-card"><div class="causa-letra">5T</div>
+        <div class="causa-titulo">Neumotórax a Tensión</div><div class="causa-desc">Descompresión inmediata con aguja → 2° EIC línea medioclavicular</div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Taponamiento cardíaco</div><div class="causa-desc">Pericardiocentesis de urgencia</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Tóxicos / sobredosis</div><div class="causa-desc">Antídotos específicos: naloxona (opioides), flumazenil (BZD), ATB</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Trombosis coronaria (SCA)</div><div class="causa-desc">ACTP primaria post-reanimación si se logra PPCP</div></div>
+        <div style="margin-top:8px;"><div class="causa-titulo">Tromboembolismo pulmonar</div><div class="causa-desc">Trombolisis durante RCP: alteplasa 50 mg IV → RCP 60–90 min post-dosis</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VÍA AÉREA -->
+  <div class="seccion">
+    <div class="sec-titulo">🫁 Manejo de la vía aérea en el PCR</div>
+    <div class="hl-info"><strong>La vía aérea avanzada NO es prioridad sobre las compresiones de calidad.</strong> En los primeros ciclos: ventilación bolsa-mascarilla con relación 30:2. Intubar cuando sea posible sin interrumpir prolongadamente las compresiones.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Dispositivo</th><th>Ventaja</th><th>Limitación</th></tr>
+        <tr><td><strong>Mascarilla con reservorio + O₂ 15 L/min</strong></td><td>Inicio inmediato, no invasivo</td><td>Sin protección de aspiración</td></tr>
+        <tr><td><strong>Bolsa-mascarilla (BVM)</strong></td><td>Standard en RCP sin VAA</td><td>Requiere técnica correcta (sello hermético)</td></tr>
+        <tr><td><strong>Tubo orotraqueal (TOT)</strong></td><td>Gold standard, protege vía aérea</td><td>Interrumpe compresiones si no se entrena; riesgo de intubación esofágica</td></tr>
+        <tr><td><strong>Dispositivo supraglótico (DSG)</strong> (LMA, King LT)</td><td>Inserción rápida, sin interrumpir compresiones</td><td>No protege 100% de aspiración</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ Con VAA instalada: <strong>compresiones continuas</strong> (no ciclos 30:2) + <strong>1 ventilación cada 6 segundos</strong> (10/min). Evitar hiperventilación → aumenta presión intratorácica y reduce gasto cardíaco durante RCP.</div>
+    <div class="hl-danger"><strong>Confirmación de intubación:</strong> capnografía cuantitativa (ETCO₂ ≥10 mmHg confirma posición y calidad de RCP; aumento brusco a ≥40 mmHg indica retorno a circulación espontánea — ROSC).</div>
+  </div>
+
+  <!-- FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">💊 Fármacos en el paro cardíaco</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Adrenalina (Epinefrina)</div>
+      <div class="farma-clase">Catecolamina · Vasoconstrictor · Fármaco universal del PCR</div>
+      <div class="dosis-badge">1 mg IV/IO cada 3–5 min — sin límite de dosis durante el paro</div>
+      <div class="farma-detalle">
+        Agonista α y β adrenérgico. En el PCR, el efecto <strong>vasoconstrictor α</strong> aumenta la presión de perfusión coronaria y cerebral durante las compresiones. <strong>En FV/TVsp:</strong> dar a partir del 3er ciclo (luego del 2do análisis de ritmo). <strong>En asistolia/AESP:</strong> dar tan pronto como posible. El efecto β (cronotrópico e inotrópico) es <strong>contraproducente</strong> post-ROSC (puede provocar FV) → suspender al recuperar circulación. <strong>Evidencia (PARAMEDIC-2, 2018):</strong> mejora ROSC y supervivencia al alta, pero sin diferencia en sobrevida neurológica.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Amiodarona</div>
+      <div class="farma-clase">Antiarrítmico clase III · Para FV/TVsp refractaria a ≥2 descargas</div>
+      <div class="dosis-badge">300 mg IV/IO bolo · 2ª dosis: 150 mg IV</div>
+      <div class="farma-detalle">
+        De elección en FV/TV sin pulso que no revierte con 2–3 descargas + adrenalina. Prolonga el período refractario, reduce la velocidad de conducción y aumenta el umbral de desfibrilación. Administrar en bolo rápido durante el PCR (no en infusión lenta como en otros contextos). <strong>Post-ROSC:</strong> puede usarse en infusión continua (1 mg/min × 6 h → 0.5 mg/min × 18 h) si la arritmia motivó el paro.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Lidocaína</div>
+      <div class="farma-clase">Antiarrítmico clase Ib · Alternativa a amiodarona</div>
+      <div class="dosis-badge">1–1.5 mg/kg IV/IO · 2ª dosis: 0.5–0.75 mg/kg · Máx 3 mg/kg</div>
+      <div class="farma-detalle">
+        Alternativa cuando no se dispone de amiodarona. Bloquea canales de Na⁺ → reduce automatismo ventricular. Menor evidencia en PCR que amiodarona. Preferir en toxicidad por anestésicos locales (intralipid 20% también indicado en esos casos).
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Bicarbonato de sodio</div>
+      <div class="farma-clase">Álcali · Solo en indicaciones específicas durante el PCR</div>
+      <div class="dosis-badge">1 mEq/kg IV/IO · Solo en contextos específicos</div>
+      <div class="farma-detalle">
+        <strong>No usar de rutina</strong> en el PCR. Indicaciones específicas: hipercalemia preexistente severa, acidosis metabólica severa documentada (pH &lt;7.1), intoxicación por antidepresivos tricíclicos (alcalinizar), sobredosis de cocaína/bloqueantes de canales de Na. El CO₂ generado puede paradójicamente acidificar el intracelular y empeorar la función cardíaca si no se ventila bien.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Sulfato de magnesio</div>
+      <div class="farma-clase">Electrolito · Solo en Torsades de Pointes</div>
+      <div class="dosis-badge">1–2 g IV en 5–20 min (o bolo si paro)</div>
+      <div class="farma-detalle">
+        Indicado específicamente en <strong>Torsades de Pointes</strong> (TV polimórfica asociada a QT prolongado). No usar en FV/TV monomórfica ni en PCR por otras causas. Mecanismo: bloquea corrientes de calcio → acorta QT.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Vasopresina — Retirada del ACLS 2020</div>
+      La vasopresina (40 UI IV en reemplazo de la primera o segunda dosis de adrenalina) fue eliminada de los algoritmos ACLS 2020 porque estudios no demostraron beneficio adicional sobre la adrenalina sola. Ya no forma parte del algoritmo estándar, aunque aún puede usarse en algunos protocolos institucionales.
+    </div>
+  </div>
+
+  <!-- CUIDADOS POST-PARO -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Cuidados post-paro cardíaco (PPCP)</div>
+    <div class="hl-danger"><strong>ROSC (Return of Spontaneous Circulation) no es el objetivo final.</strong> Hasta el 50–80% de quienes recuperan circulación fallecen en las primeras 24–48 h o quedan con daño neurológico severo si los cuidados post-paro son inadecuados.</div>
+    <div class="step"><div class="step-num-verde">1</div><div class="step-content"><strong>Control de la vía aérea y ventilación:</strong> SpO₂ 94–98% (no hiperoxia). ETCO₂ 35–45 mmHg. Evitar hipocapnia (vasoconstricción cerebral).</div></div>
+    <div class="step"><div class="step-num-verde">2</div><div class="step-content"><strong>Hemodinámico:</strong> PAM ≥65 mmHg. Vasopresores si hipotensión (noradrenalina de primera línea). Evitar hipotensión a toda costa → determinante de pronóstico neurológico.</div></div>
+    <div class="step"><div class="step-num-verde">3</div><div class="step-content"><strong>12 derivaciones urgente:</strong> Si hay supra de ST u oclusión → ACTP primaria inmediata sin esperar despertar (cath lab post-paro). IAM es causa del ~50% de los PCR extrahospitalarios en adultos.</div></div>
+    <div class="step"><div class="step-num-verde">4</div><div class="step-content"><strong>Control de temperatura:</strong> Temperatura objetivo 32–36 °C por 24 h (TTM) en comatosos post-PCR extrahospitalario con ritmo desfibrilable. Evitar fiebre (&gt;37.7 °C) activamente en todos los pacientes post-paro.</div></div>
+    <div class="step"><div class="step-num-verde">5</div><div class="step-content"><strong>Glucemia:</strong> Mantener 140–180 mg/dL. Hipoglucemia y hiperglucemia severa empeoran pronóstico neurológico.</div></div>
+    <div class="step"><div class="step-num-verde">6</div><div class="step-content"><strong>Neuroprognosis:</strong> No antes de 72 h post-ROSC (o 72 h post-rewarming si se usó TTM). Combinar EEG, potenciales evocados somatosensitivos, TC/RMN encéfalo, biomarcadores (NSE, S100B).</div></div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">RCP calidad: 100–120/min · ≥5 cm profundidad</span>
+      <span class="pill">Relación 30:2 sin VAA · continua con VAA</span>
+      <span class="pill">Ritmos desfibrilables: FV y TV sin pulso</span>
+      <span class="pill">Ritmos NO desfibrilables: Asistolia y AESP</span>
+      <span class="pill">Desfibrilación bifásica: 120–200 J</span>
+      <span class="pill">Adrenalina: 1 mg IV/IO cada 3–5 min</span>
+      <span class="pill">En FV: adrenalina desde el 3er ciclo (no el 1ro)</span>
+      <span class="pill">Amiodarona: 300 mg IV en FV refractaria a ≥2 descargas</span>
+      <span class="pill">Bicarbonato: solo en hipercalemia, acidosis severa, TCA</span>
+      <span class="pill">Magnesio: solo en Torsades de Pointes</span>
+      <span class="pill">Vasopresina: eliminada del ACLS 2020</span>
+      <span class="pill">5H y 5T: causas reversibles de PCR</span>
+      <span class="pill">TEP → trombolisis durante RCP: alteplasa 50 mg</span>
+      <span class="pill">ETCO₂ ≥40 mmHg brusco = ROSC</span>
+      <span class="pill">Post-ROSC: PAM ≥65, SpO₂ 94–98%, ECG 12D urgente</span>
+      <span class="pill">Temperatura objetivo: 32–36 °C × 24 h en comatosos</span>
+      <span class="pill">Neuroprognosis: no antes de 72 h post-ROSC</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Heart Association. 2020 AHA Guidelines for CPR and Emergency Cardiovascular Care. Circulation 2020;142(16_suppl_2). · Soar J et al. European Resuscitation Council Guidelines 2021: Adult Advanced Life Support. Resuscitation 2021;161:115–151. · Panchal AR et al. Part 3: Adult Basic and Advanced Life Support. 2020 AHA Guidelines Update for CPR. Circulation 2020. · Perkins GD et al. PARAMEDIC-2 trial: Epinephrine in Out-of-Hospital Cardiac Arrest. NEJM 2018;379:711–721.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
