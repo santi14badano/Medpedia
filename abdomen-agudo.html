@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdomen Agudo — Medpedia</title>
+  <meta name="description" content="Abdomen agudo: causas, diagnóstico diferencial por cuadrante, apendicitis, colecistitis, pancreatitis, perforación, obstrucción intestinal, manejo quirúrgico. Concurso Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --azul: #1565C0; --azul-claro: #E3EEF9;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --morado: #6B3FA0; --morado-claro: #F0E8FA;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cx    { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-urgencia { background: var(--naranja-claro); color: var(--naranja); }
+    .tag-fuente{ background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .indice { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.2rem; margin-bottom: 2rem; }
+    .indice-titulo { font-size: 12px; font-weight: 600; color: var(--texto-ter); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .5px; }
+    .indice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 6px; }
+    .indice-item { font-size: 13px; color: var(--verde); text-decoration: none; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--borde); background: var(--fondo); }
+    .indice-item:hover { background: var(--verde-claro); }
+    .seccion { margin-bottom: 2rem; scroll-margin-top: 75px; }
+    .sec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--borde); }
+    .sec-titulo-txt { font-size: 16px; font-weight: 600; color: var(--texto); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 9px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 600; border-bottom: 1px solid var(--borde); font-size: 12px; }
+    td { padding: 9px 14px; border-bottom: 1px solid var(--borde); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #FAFAFA; }
+    /* CUADRANTES */
+    .cuad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 14px; border: 2px solid var(--borde); border-radius: 14px; overflow: hidden; }
+    .cuad-card { padding: 1rem; background: var(--blanco); }
+    .cuad-card.fdi { border-right: 2px solid var(--borde); border-bottom: 2px solid var(--borde); }
+    .cuad-card.fii { border-bottom: 2px solid var(--borde); }
+    .cuad-card.fdi2 { border-right: 2px solid var(--borde); }
+    .cuad-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .cuad-titulo.fdi { color: var(--naranja); }
+    .cuad-titulo.fii { color: var(--azul); }
+    .cuad-titulo.fdd { color: var(--rojo); }
+    .cuad-titulo.fid { color: var(--morado); }
+    .cuad-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.35; }
+    /* PATOLOGÍA CARDS */
+    .pat-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.2rem; margin-bottom: 12px; }
+    .pat-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .pat-nombre { font-size: 15px; font-weight: 700; }
+    .pat-badge { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; }
+    .badge-q { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .badge-nq { background: var(--azul-claro); color: var(--azul); }
+    .badge-var { background: var(--naranja-claro); color: var(--naranja); }
+    .pat-body { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .pat-body strong { color: var(--texto); }
+    .signo { display: inline-block; background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; margin: 2px; }
+    .signo-rojo { display: inline-block; background: var(--rojo-claro); color: var(--rojo-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; margin: 2px; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 1.5rem 0; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 12px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    @media (max-width: 520px) { .cuad-grid { grid-template-columns: 1fr; } .cuad-card.fdi, .cuad-card.fdi2 { border-right: none; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Abdomen Agudo</div>
+  <div class="titulo">Abdomen Agudo</div>
+  <div class="meta">
+    <span class="tag tag-cx">Cirugía</span>
+    <span class="tag tag-urgencia">Urgencia</span>
+    <span class="tag tag-fuente">Schwartz 11ª · Sabiston 21ª · Harrison 21ª</span>
+  </div>
+
+  <div class="indice">
+    <div class="indice-titulo">Contenido</div>
+    <div class="indice-grid">
+      <a href="#definicion"  class="indice-item">📌 Definición y enfoque</a>
+      <a href="#cuadrantes"  class="indice-item">🗺️ DD por cuadrante</a>
+      <a href="#evaluacion"  class="indice-item">🔎 Evaluación inicial</a>
+      <a href="#signos"      class="indice-item">🖐️ Signos semiológicos</a>
+      <a href="#apendicitis" class="indice-item">🔴 Apendicitis aguda</a>
+      <a href="#colecistitis" class="indice-item">🟡 Colecistitis aguda</a>
+      <a href="#pancreatitis" class="indice-item">🟠 Pancreatitis aguda</a>
+      <a href="#perforacion"  class="indice-item">⚡ Perforación visceral</a>
+      <a href="#oclusion"     class="indice-item">🔵 Oclusión intestinal</a>
+      <a href="#otros"        class="indice-item">➕ Otras causas</a>
+      <a href="#examen"       class="indice-item">📋 Puntos de examen</a>
+    </div>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion" id="definicion">
+    <div class="sec-header"><span style="font-size:20px">📌</span><div class="sec-titulo-txt">Definición y enfoque general</div></div>
+    <div class="hl-danger"><strong>Abdomen agudo:</strong> síndrome clínico caracterizado por dolor abdominal de instauración aguda (&lt;24–48 h) de intensidad suficiente para requerir consulta de urgencia y eventual intervención quirúrgica. No es un diagnóstico sino un síndrome que agrupa múltiples etiologías.</div>
+    <div class="hl-warn">La causa quirúrgica debe identificarse rápidamente: apendicitis perforada, peritonitis, isquemia mesentérica, obstrucción con estrangulación y perforación visceral son emergencias que aumentan su mortalidad con cada hora de retraso.</div>
+    <div class="hl-info"><strong>Clasificación por mecanismo del dolor:</strong><br>
+    — <strong>Visceral:</strong> sordo, mal localizado, periumbilical. Por distensión u isquemia de vísceras huecas o sólidas.<br>
+    — <strong>Somático / parietal:</strong> agudo, bien localizado, se agrava con movimiento. Por irritación del peritoneo parietal.<br>
+    — <strong>Referido:</strong> sentido a distancia del órgano (vesícula → hombro derecho; diafragma → hombro ipsilateral; uréter → ingle y genitales).</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- DIAGNÓSTICO DIFERENCIAL POR CUADRANTE -->
+  <div class="seccion" id="cuadrantes">
+    <div class="sec-header"><span style="font-size:20px">🗺️</span><div class="sec-titulo-txt">Diagnóstico diferencial por cuadrante / región</div></div>
+    <div class="cuad-grid">
+      <div class="cuad-card fdi">
+        <div class="cuad-titulo fdi">🟠 Fosa Ilíaca Derecha (FID)</div>
+        <div class="cuad-item">🔴 <strong>Apendicitis aguda</strong> (causa #1 de abdomen Q)</div>
+        <div class="cuad-item">Adenitis mesentérica</div>
+        <div class="cuad-item">Ileítis terminal (Crohn)</div>
+        <div class="cuad-item">Ovario D: quiste roto, torsión, embarazo ectópico</div>
+        <div class="cuad-item">Hernia inguinal complicada</div>
+        <div class="cuad-item">Psoas absceso</div>
+        <div class="cuad-item">Cólico ureteral D</div>
+      </div>
+      <div class="cuad-card fii">
+        <div class="cuad-titulo fii">🔵 Fosa Ilíaca Izquierda (FII)</div>
+        <div class="cuad-item">🔴 <strong>Diverticulitis aguda</strong> (adultos mayores)</div>
+        <div class="cuad-item">Ovario I: quiste roto, torsión, ectópico</div>
+        <div class="cuad-item">Colitis isquémica (ángulo esplénico)</div>
+        <div class="cuad-item">Hernia inguinal complicada</div>
+        <div class="cuad-item">Cólico ureteral I</div>
+        <div class="cuad-item">Vólvulo de sigma</div>
+      </div>
+      <div class="cuad-card fdi2">
+        <div class="cuad-titulo fdd">🔴 Hipocondrio Derecho (HD)</div>
+        <div class="cuad-item">🔴 <strong>Colecistitis aguda / cólico biliar</strong></div>
+        <div class="cuad-item">Coledocolitiasis, colangitis</div>
+        <div class="cuad-item">Hepatitis aguda (cualquier causa)</div>
+        <div class="cuad-item">Absceso hepático</div>
+        <div class="cuad-item">Pielonefritis / litiasis renal D</div>
+        <div class="cuad-item">Neumonía basal derecha (referido)</div>
+        <div class="cuad-item">Síndrome de Fitz-Hugh-Curtis (perihepatitis)</div>
+      </div>
+      <div class="cuad-card">
+        <div class="cuad-titulo fid">🟣 Hipocondrio Izquierdo (HI)</div>
+        <div class="cuad-item">Pancreatitis aguda (cola)</div>
+        <div class="cuad-item">Rotura/infarto esplénico</div>
+        <div class="cuad-item">Pielonefritis / litiasis renal I</div>
+        <div class="cuad-item">Neumonía basal izquierda (referido)</div>
+        <div class="cuad-item">Colitis isquémica</div>
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Región</th><th>Causas principales</th></tr>
+        <tr><td><strong>Epigastrio</strong></td><td>Pancreatitis aguda (irradiación a dorso), úlcera péptica complicada, gastritis erosiva, IAM inferior (referido), esofagitis, hernia hiatal</td></tr>
+        <tr><td><strong>Periumbilical</strong></td><td>Apendicitis (inicio), obstrucción intestinal, isquemia mesentérica, hernia umbilical complicada, gastroenteritis</td></tr>
+        <tr><td><strong>Hipogastrio / pelvis</strong></td><td>Retención urinaria, cistitis, endometritis, EPI, embarazo ectópico roto, prostatitis, torsión ovárica, miomas</td></tr>
+        <tr><td><strong>Difuso / generalizado</strong></td><td>Peritonitis (cualquier causa), isquemia mesentérica, obstrucción intestinal avanzada, gastroenteritis aguda, crisis drepanocítica, porfiria, cetoacidosis diabética</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Causas no quirúrgicas que simulan abdomen agudo</div>
+      <strong>Metabólicas:</strong> cetoacidosis diabética, porfiria aguda intermitente, uremia, crisis de addison, hipercalcemia.<br>
+      <strong>Cardíacas:</strong> IAM inferior o lateral (dolor epigástrico), pericarditis.<br>
+      <strong>Pulmonares:</strong> neumonía basal, pleuritis, TEP.<br>
+      <strong>Hematológicas:</strong> crisis drepanocítica, leucemia, linfoma.<br>
+      <strong>Farmacológicas:</strong> morfina (íleo), anticolinérgicos, plomo.<br>
+      Siempre ECG y troponinas en dolor abdominal alto + factores de riesgo CV.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EVALUACIÓN INICIAL -->
+  <div class="seccion" id="evaluacion">
+    <div class="sec-header"><span style="font-size:20px">🔎</span><div class="sec-titulo-txt">Evaluación inicial del abdomen agudo</div></div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Historia clínica dirigida:</strong> inicio del dolor (súbito = perforación o disección; gradual = inflamatorio), localización inicial y migración (periumbilical → FID = apendicitis), carácter (cólico vs constante), intensidad, factores que lo alivian o agravan, síntomas acompañantes (fiebre, vómitos, diarrea, ictericia, rectorragia, amenorrea).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Examen físico completo:</strong> inspección (distensión, cicatrices, peristaltismo visible), auscultación (RHA hiperactivos = obstrucción; ausentes = peritonitis o íleo paralítico), percusión (timpanismo = gas; matidez = líquido; neumoperitoneo = timpanismo difuso), palpación (superficial → profunda; defensa, rigidez, rebote).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Laboratorio urgente:</strong> hemograma (leucocitosis con desviación a izquierda), PCR, amilasa/lipasa, función renal, ionograma, glucemia, coagulación, grupo y factor. <strong>Siempre β-HCG en mujeres en edad fértil.</strong> Orina completa. Gasometría si compromiso hemodinámico.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Imágenes:</strong><br>
+      — <strong>RxAbd de pie + acostado:</strong> primer paso. Buscar: niveles hidroaéreos (obstrucción), neumoperitoneo (perforación: aire libre subdiafragmático en RxTx de pie), íleo paralítico, cálculos radiopacos.<br>
+      — <strong>Ecografía abdominal:</strong> colecistitis (Murphy ecográfico, pared engrosada, litiasis), apendicitis, líquido libre, patología ovárica, aneurisma de aorta. Primera línea en pediatría y embarazada.<br>
+      — <strong>TAC de abdomen y pelvis con contraste:</strong> gold standard en adulto. Diagnóstico de apendicitis, diverticulitis, pancreatitis, obstrucción, isquemia mesentérica, masas. Sensibilidad &gt;95% para la mayoría de causas quirúrgicas.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SIGNOS SEMIOLÓGICOS -->
+  <div class="seccion" id="signos">
+    <div class="sec-header"><span style="font-size:20px">🖐️</span><div class="sec-titulo-txt">Signos semiológicos — los del examen</div></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Signo</th><th>Técnica</th><th>Positivo en</th></tr>
+        <tr><td><strong>Blumberg</strong></td><td>Palpación profunda + descompresión brusca → dolor aumenta</td><td>Peritonismo / peritonitis. No específico de apendicitis.</td></tr>
+        <tr><td><strong>McBurney</strong></td><td>Dolor máximo a punto entre ombligo y espina ilíaca ant sup derecha (punto de McBurney)</td><td>Apendicitis aguda</td></tr>
+        <tr><td><strong>Rovsing</strong></td><td>Palpación en FII → dolor referido en FID</td><td>Apendicitis aguda (por desplazamiento de gas)</td></tr>
+        <tr><td><strong>Psoas</strong></td><td>Extensión pasiva o activa del muslo derecho con paciente en decúbito lateral izquierdo → dolor</td><td>Apendicitis retrocecal, absceso de psoas</td></tr>
+        <tr><td><strong>Obturador</strong></td><td>Rotación interna del muslo derecho flexionado → dolor en hipogastrio</td><td>Apendicitis pélvica</td></tr>
+        <tr><td><strong>Murphy</strong></td><td>Palpación profunda en hipocondrio derecho durante inspiración → detiene la inspiración por dolor</td><td>Colecistitis aguda. Murphy ecográfico es más sensible.</td></tr>
+        <tr><td><strong>Courvoisier-Terrier</strong></td><td>Vesícula palpable + ictericia indolora</td><td>Neoplasia de cabeza de páncreas o colédoco (obstrucción extrínseca). Si hay dolor = coledocolitiasis.</td></tr>
+        <tr><td><strong>Grey-Turner</strong></td><td>Equimosis en flancos</td><td>Pancreatitis necro-hemorrágica grave. Signo tardío.</td></tr>
+        <tr><td><strong>Cullen</strong></td><td>Equimosis periumbilical</td><td>Pancreatitis necro-hemorrágica grave, embarazo ectópico roto. Signo tardío.</td></tr>
+        <tr><td><strong>Kehr</strong></td><td>Dolor en hombro izquierdo irradiado</td><td>Sangre o irritación subfrénica izquierda (rotura esplénica, embarazo ectópico roto)</td></tr>
+        <tr><td><strong>Defensa</strong></td><td>Contracción muscular voluntaria al palpar</td><td>Peritonismo inicial (puede ser voluntaria). Si involuntaria → rigidez.</td></tr>
+        <tr><td><strong>Rigidez en tabla</strong></td><td>Abdomen duro, involuntario, como tabla</td><td>Peritonitis generalizada (perforación). Emergencia quirúrgica.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- APENDICITIS -->
+  <div class="seccion" id="apendicitis">
+    <div class="sec-header"><span style="font-size:20px">🔴</span><div class="sec-titulo-txt">Apendicitis Aguda</div></div>
+    <div class="pat-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Apendicitis Aguda</div>
+        <span class="pat-badge badge-q">Quirúrgico</span>
+      </div>
+      <div class="pat-body">
+        <strong>Causa más frecuente de abdomen quirúrgico.</strong> Obstrucción del lumen apendicular (fecalito, hiperplasia linfoide) → distensión → isquemia → infección → perforación (en 24–72 h sin tratamiento).<br><br>
+
+        <strong>Clínica clásica:</strong> dolor periumbilical inicial (visceral, vago) que migra a FID en 12–24 h (al comprometerse el peritoneo parietal) + fiebre baja + náuseas/vómitos + anorexia. La anorexia tiene alta sensibilidad (~95%).<br><br>
+
+        <strong>Presentaciones atípicas:</strong> apéndice retrocecal (FID/lumbar, signo del psoas), apéndice pélvico (hipogastrio, signo del obturador), embarazada (dolor más alto y lateral), ancianos (clínica atenuada, perforación más frecuente al diagnóstico), niños pequeños (&lt;5 años: mayor tasa de perforación por dificultad diagnóstica).<br><br>
+
+        <strong>Score de Alvarado:</strong>
+        <div class="tabla-wrap" style="margin-top:8px;">
+          <table>
+            <tr><th>Variable</th><th>Puntos</th></tr>
+            <tr><td>Migración del dolor a FID</td><td>1</td></tr>
+            <tr><td>Anorexia</td><td>1</td></tr>
+            <tr><td>Náuseas / vómitos</td><td>1</td></tr>
+            <tr><td>Dolor en FID</td><td>2</td></tr>
+            <tr><td>Dolor de rebote (Blumberg)</td><td>1</td></tr>
+            <tr><td>Temperatura &gt;37,5°C</td><td>1</td></tr>
+            <tr><td>Leucocitosis &gt;10.000</td><td>2</td></tr>
+            <tr><td>Desviación a izquierda</td><td>1</td></tr>
+            <tr><td colspan="2"><strong>Total: 10 pts. ≤4: baja probabilidad · 5–6: moderada · ≥7: alta probabilidad → cirugía</strong></td></tr>
+          </table>
+        </div>
+
+        <strong>Diagnóstico por imágenes:</strong> Ecografía (apéndice &gt;6 mm, no compresible, líquido periapendicular). TAC (sensibilidad 95%, especificidad 95%) cuando ecografía no concluyente o en adultos. RMN en embarazadas cuando eco no diagnóstica.<br><br>
+
+        <strong>Tratamiento:</strong> <strong>Apendicectomía</strong> (laparoscópica de elección). ATB preoperatorios: cefazolina + metronidazol. Perforada: lavado + drenaje + ATB prolongados. En apendicitis no perforada seleccionada: tratamiento antibiótico inicial puede ser una opción (evidencia creciente), con apendicectomía diferida o de intervalo.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COLECISTITIS -->
+  <div class="seccion" id="colecistitis">
+    <div class="sec-header"><span style="font-size:20px">🟡</span><div class="sec-titulo-txt">Colecistitis Aguda</div></div>
+    <div class="pat-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Colecistitis Aguda</div>
+        <span class="pat-badge badge-q">Quirúrgico (electivo o urgente)</span>
+      </div>
+      <div class="pat-body">
+        <strong>Inflamación aguda de la vesícula biliar.</strong> 90–95% secundaria a litiasis (impactación en cuello o cístico). 5–10% acalculosa (pacientes graves, ayuno prolongado, quemados, postoperatorio).<br><br>
+
+        <strong>Clínica:</strong> dolor en HD o epigastrio de inicio agudo, con irradiación a escápula derecha u hombro derecho (reflejo del nervio frénico). Fiebre, náuseas, vómitos. <span class="signo">Signo de Murphy positivo</span> (alta especificidad). Inicio frecuente post-ingesta de alimentos grasos.<br><br>
+
+        <strong>Tríada de Charcot</strong> (sugiere <strong>colangitis</strong>): fiebre + ictericia + dolor en HD. Pентada de Reynolds (colangitis grave): tríada + shock + deterioro neurológico.<br><br>
+
+        <strong>Laboratorio:</strong> leucocitosis, PCR elevada. FAL, GGT y bilirrubina directa elevadas si hay compromiso de la vía biliar.<br><br>
+
+        <strong>Ecografía:</strong> litiasis, engrosamiento de pared vesicular (&gt;3–4 mm), líquido perivesicular, Murphy ecográfico positivo. Primera línea diagnóstica.<br><br>
+
+        <strong>Clasificación de gravedad (Tokyo Guidelines):</strong> Leve (sin disfunción orgánica) → colecistectomía laparoscópica electiva temprana (24–72 h). Moderada (leucocitosis marcada, duración &gt;72 h, masa inflamatoria) → colecistectomía laparoscópica temprana o drenaje percutáneo. Grave (disfunción orgánica) → estabilización + drenaje percutáneo, cirugía diferida.<br><br>
+
+        <strong>ATB:</strong> cefalosporinas de 2ª-3ª generación + metronidazol. Duración: 24 h post-colecistectomía en leve; 5–7 días en moderada-grave.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PANCREATITIS -->
+  <div class="seccion" id="pancreatitis">
+    <div class="sec-header"><span style="font-size:20px">🟠</span><div class="sec-titulo-txt">Pancreatitis Aguda</div></div>
+    <div class="pat-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Pancreatitis Aguda</div>
+        <span class="pat-badge badge-nq">Médico (mayormente)</span>
+      </div>
+      <div class="pat-body">
+        <strong>Causas más frecuentes:</strong> litiasis biliar (40–60%) y alcohol (30%). Otras: hipertrigliceridemia (&gt;1000 mg/dl), hipercalcemia, fármacos (azatioprina, tiazidas, valproato, estrógenos), CPRE, trauma, autoinmune.<br><br>
+
+        <strong>Clínica:</strong> dolor epigástrico intenso de inicio agudo, irradiación <strong>en faja al dorso</strong>, alivio en posición antiálgica (fetal o sentado hacia adelante), náuseas, vómitos intensos. En pancreatitis grave: signos de Grey-Turner y Cullen (tardíos).<br><br>
+
+        <strong>Diagnóstico:</strong> 2 de 3 criterios (Atlanta 2012):<br>
+        — Dolor abdominal compatible<br>
+        — Lipasa o amilasa &gt; 3× el límite superior normal<br>
+        — Hallazgos de imagen compatibles (TAC o eco)<br><br>
+
+        <strong>Criterios de gravedad — BISAP:</strong>
+        <div class="tabla-wrap" style="margin-top:8px;">
+          <table>
+            <tr><th>Criterio</th><th>Puntos</th></tr>
+            <tr><td>BUN &gt; 25 mg/dl</td><td>1</td></tr>
+            <tr><td>Deterioro del estado mental (Glasgow &lt;15)</td><td>1</td></tr>
+            <tr><td>SIRS (≥2 criterios)</td><td>1</td></tr>
+            <tr><td>Edad &gt; 60 años</td><td>1</td></tr>
+            <tr><td>Derrame pleural en imagen</td><td>1</td></tr>
+            <tr><td colspan="2"><strong>BISAP ≥3 = alto riesgo de mortalidad</strong></td></tr>
+          </table>
+        </div>
+
+        También: Score de Ranson, APACHE II, PCR &gt;150 mg/L a las 48 h, hematocrito &gt;44% = marcadores de gravedad.<br><br>
+
+        <strong>TAC con contraste (Balthazar):</strong> indicado si duda diagnóstica, o ausencia de mejoría a las 48–72 h. Evalúa necrosis pancreática y complicaciones locales (pseudoquiste, absceso).<br><br>
+
+        <strong>Tratamiento:</strong> <strong>ayuno, analgesia, hidratación agresiva</strong> (Ringer lactato 250–500 ml/h en las primeras 24 h es superior al SF). Reiniciar alimentación oral precoz (cuando tolera, sin esperar amilasa). Pancreatitis grave: UTI, nutrición enteral (sonda nasoyeyunal &gt; parenteral). <strong>ATB: NO profilácticos</strong> (no reduce mortalidad en pancreatitis necrotizante estéril). ATB solo si infección documentada (necrosis infectada, colangitis). CPRE urgente si colangitis asociada.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PERFORACIÓN -->
+  <div class="seccion" id="perforacion">
+    <div class="sec-header"><span style="font-size:20px">⚡</span><div class="sec-titulo-txt">Perforación de Víscera Hueca</div></div>
+    <div class="pat-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Perforación Visceral / Peritonitis</div>
+        <span class="pat-badge badge-q">Emergencia quirúrgica</span>
+      </div>
+      <div class="pat-body">
+        <strong>Causas:</strong> úlcera péptica perforada (más frecuente), apendicitis perforada, diverticulitis perforada, perforación tumoral, cuerpo extraño, trauma.<br><br>
+
+        <strong>Clínica:</strong> dolor abdominal súbito, generalizado, <strong>"como puñalada"</strong> (úlcera péptica). Rápida progresión a peritonitis generalizada. Abdomen en tabla (rigidez involuntaria difusa). Ausencia de ruidos hidroaéreos. Fiebre, taquicardia, sepsis.<br><br>
+
+        <strong>Diagnóstico:</strong> <strong>neumoperitoneo en radiografía de tórax de pie</strong> (aire libre subdiafragmático = signo patognomónico de perforación). Sensibilidad de Rx: 70–80%. Si negativa con alta sospecha: TAC (más sensible).<br><br>
+
+        <strong>Tratamiento:</strong><br>
+        — Resucitación: 2 vías, fluidos IV, antibióticos de amplio espectro (piperacilina-tazobactam o imipenem + metronidazol).<br>
+        — <strong>Cirugía urgente:</strong> cierre primario de la perforación, lavado peritoneal, drenaje. El retraso quirúrgico &gt;6–12 h empeora el pronóstico exponencialmente.<br>
+        — Úlcera péptica perforada: cierre (parche de Graham) + tratamiento de H. pylori post-cirugía.
+      </div>
+    </div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> Neumoperitoneo + peritonitis = cirugía sin demora. No perder tiempo en imágenes adicionales si el diagnóstico es claro.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- OCLUSIÓN INTESTINAL -->
+  <div class="seccion" id="oclusion">
+    <div class="sec-header"><span style="font-size:20px">🔵</span><div class="sec-titulo-txt">Oclusión / Obstrucción Intestinal</div></div>
+    <div class="pat-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Obstrucción Intestinal</div>
+        <span class="pat-badge badge-var">Médico o Quirúrgico según causa</span>
+      </div>
+      <div class="pat-body">
+        <strong>Tipos:</strong><br>
+        — <strong>Mecánica:</strong> obstáculo físico (adherencias post-qx 60%, hernias 20%, neoplasias 10–15%, vólvulo, bezoar). La estrangulación (compromiso vascular) es la complicación más grave.<br>
+        — <strong>Funcional / Íleo paralítico:</strong> ausencia de peristaltismo sin obstáculo mecánico. Causas: post-quirúrgico, peritonitis, hipopotasemia, opioides, trauma, infección abdominal.<br><br>
+
+        <strong>Clínica de obstrucción mecánica:</strong> cuatro síntomas cardinales: <strong>dolor cólico + vómitos + distensión abdominal + ausencia de deposiciones y gases (obstipación)</strong>. Los vómitos son precoces en obstrucción alta (yeyunal/intestino delgado) y tardíos en obstrucción baja (colónica). RHA: hiperactivos y metálicos (lucha contra el obstáculo).<br><br>
+
+        <strong>Íleo paralítico:</strong> distensión sin dolor cólico. RHA ausentes o muy disminuidos. Vómitos biliosos. Sin obstipación absoluta (puede pasar gases).<br><br>
+
+        <strong>Radiografía:</strong> niveles hidroaéreos en escalera (obstrucción de intestino delgado) o dilatación del colon sin gas distal (obstrucción colónica). Grano de café = vólvulo de sigma.<br><br>
+
+        <strong>Signos de alarma (estrangulación):</strong> fiebre, taquicardia, dolor continuo (no cólico), peritonismo, leucocitosis marcada, acidosis. → Cirugía urgente.<br><br>
+
+        <strong>Tratamiento:</strong><br>
+        — <strong>Sonda nasogástrica</strong> descompresión + vía IV + hidratación.<br>
+        — Obstrucción simple de intestino delgado por adherencias: tratamiento conservador 24–48 h (éxito en 70–80%).<br>
+        — Hernia estrangulada, vólvulo, perforación, peritonitis, falla del tratamiento conservador: <strong>cirugía urgente</strong>.<br>
+        — Vólvulo de sigma no complicado: destorsión endoscópica (colonoscopia) como puente a cirugía electiva.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- OTRAS CAUSAS -->
+  <div class="seccion" id="otros">
+    <div class="sec-header"><span style="font-size:20px">➕</span><div class="sec-titulo-txt">Otras causas importantes</div></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Patología</th><th>Clínica clave</th><th>Diagnóstico</th><th>Tratamiento</th></tr>
+        <tr>
+          <td><strong>Isquemia mesentérica aguda</strong></td>
+          <td>Dolor intenso desproporcionado al examen físico ("dolor que asusta pero no hay guarda"). Factores de riesgo: FA, aterosclerosis, bajo gasto. Mortalidad &gt;60% si demora.</td>
+          <td>Angio-TAC mesentérica (gold standard). Lactato elevado (tardío).</td>
+          <td>Urgencia quirúrgica o endovascular. Revascularización + resección de intestino necrótico.</td>
+        </tr>
+        <tr>
+          <td><strong>Diverticulitis aguda</strong></td>
+          <td>Dolor en FII (sigma). Adulto mayor. Fiebre, cambio de hábito intestinal. Peritonitis si perforación.</td>
+          <td>TAC de abdomen (gold standard). Clasificación de Hinchey.</td>
+          <td>Leve (Hinchey I): ATB oral ambulatorio o internación. Grave/perforación: cirugía. ATB: ciprofloxacina + metronidazol.</td>
+        </tr>
+        <tr>
+          <td><strong>Embarazo ectópico roto</strong></td>
+          <td>Mujer en edad fértil + amenorrea + dolor en FII o FID + inestabilidad hemodinámica. β-HCG positiva.</td>
+          <td>β-HCG + eco transvaginal (masa anexial + líquido libre). No hay saco intrauterino.</td>
+          <td>Emergencia quirúrgica (salpingostomía o salpingectomía laparoscópica). Metotrexato si estable y criterios.</td>
+        </tr>
+        <tr>
+          <td><strong>Torsión ovárica</strong></td>
+          <td>Dolor pélvico agudo, severo, unilateral. Náuseas/vómitos. Puede ser intermitente (torsión-destorsión).</td>
+          <td>Ecografía con Doppler (ovario aumentado, flujo ausente o disminuido).</td>
+          <td>Cirugía urgente (laparoscopia): destorsión + ooforopexia si viable, ooforectomía si necrosado.</td>
+        </tr>
+        <tr>
+          <td><strong>Aneurisma de aorta abdominal roto</strong></td>
+          <td>Hombre &gt;60 años, tabaquista. Dolor abdominal + lumbar + hipotensión. Masa pulsátil. Tríada clásica: dolor + hipotensión + masa pulsátil.</td>
+          <td>Ecografía en guardia (si inestable). TAC si estable.</td>
+          <td>Emergencia quirúrgica. Endovascular (EVAR) o cirugía abierta.</td>
+        </tr>
+        <tr>
+          <td><strong>Colangitis aguda</strong></td>
+          <td>Tríada de Charcot: fiebre + ictericia + dolor HD. Pave de Reynolds si grave (+ shock + confusión).</td>
+          <td>Eco (dilatación vía biliar + litiasis). TAC. Laboratorio: leucocitosis, bilirrubina ↑, FAL ↑, GGT ↑.</td>
+          <td>ATB + CPRE urgente para drenaje biliar (en &lt;72 h). Cirugía si CPRE falla.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EXAMEN -->
+  <div class="seccion" id="examen">
+    <div class="sec-header"><span style="font-size:20px">📋</span><div class="sec-titulo-txt">Lo que te preguntan en el examen</div></div>
+    <div class="pill-list">
+      <span class="pill">Dolor periumbilical → FID = apendicitis (migración del dolor)</span>
+      <span class="pill">Score Alvarado ≥7 = alta probabilidad de apendicitis</span>
+      <span class="pill">Anorexia: síntoma más sensible de apendicitis (~95%)</span>
+      <span class="pill">Psoas (+) = apéndice retrocecal</span>
+      <span class="pill">Obturador (+) = apéndice pélvico</span>
+      <span class="pill">Murphy (+) = colecistitis aguda</span>
+      <span class="pill">Courvoisier = vesícula palpable + ictericia indolora = neoplasia pancreática</span>
+      <span class="pill">Tríada de Charcot = fiebre + ictericia + dolor HD = colangitis</span>
+      <span class="pill">Pentada de Reynolds = Charcot + shock + confusión = colangitis grave</span>
+      <span class="pill">Criterios de Atlanta: 2 de 3 para pancreatitis</span>
+      <span class="pill">Pancreatitis: Ringer lactato &gt; SF en primeras 24 h</span>
+      <span class="pill">NO ATB profilácticos en pancreatitis necrotizante</span>
+      <span class="pill">Neumoperitoneo en Rx de pie = perforación visceral → cirugía urgente</span>
+      <span class="pill">Grey-Turner y Cullen = pancreatitis necro-hemorrágica grave</span>
+      <span class="pill">Kehr = dolor en hombro izquierdo = irritación subfrénica (bazo/ectópico)</span>
+      <span class="pill">Niveles hidroaéreos en escalera = obstrucción de intestino delgado</span>
+      <span class="pill">Imagen en grano de café = vólvulo de sigma</span>
+      <span class="pill">Dolor desproporcionado al examen = isquemia mesentérica hasta demostrar lo contrario</span>
+      <span class="pill">Siempre β-HCG en mujer en edad fértil con dolor abdominal</span>
+      <span class="pill">Aorta pulsátil + hipotensión + dolor lumbar = AAA roto (emergencia)</span>
+      <span class="pill">Íleo vs obstrucción: íleo no tiene cólico ni niveles en escalera</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Brunicardi FC et al. Schwartz's Principles of Surgery. 11ª ed. McGraw-Hill 2019 · Townsend CM et al. Sabiston Textbook of Surgery. 21ª ed. Elsevier 2022 · Yokoe M et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018 · Banks PA et al. Classification of acute pancreatitis — 2012: revision of the Atlanta classification. Gut 2013 · Di Saverio S et al. WSES Jerusalem guidelines for diagnosis and treatment of acute appendicitis. World J Emerg Surg 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
