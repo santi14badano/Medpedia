@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotura Prematura de Membranas — Medpedia</title>
+  <meta name="description" content="Rotura prematura de membranas ovulares (RPM): diagnóstico, manejo conservador, corticoides, antibióticos y finalización. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --obs: #1565C0; --obs-claro: #E3F2FD; --obs-oscuro: #0D47A1;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-obs { background: var(--obs-claro); color: var(--obs-oscuro); }
+    .tag-emergencia { background: #FDEDEC; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-obs { font-size: 16px; font-weight: 500; color: var(--obs); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-obs   { border-left: 3px solid var(--obs); background: var(--obs-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.65; margin-bottom: 4px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--obs); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--obs); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; display: inline-block; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; display: inline-block; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia</a> › Rotura Prematura de Membranas</div>
+  <div class="titulo">Rotura Prematura de Membranas (RPM)</div>
+  <div class="meta">
+    <span class="tag tag-obs">Obstetricia</span>
+    <span class="tag tag-emergencia">Emergencia obstétrica</span>
+    <span class="tag tag-fuente">ACOG 2020 · Recomendaciones MSN Argentina · Schwarcz 7ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación</div>
+    <div class="hl-obs"><strong>Rotura Prematura de Membranas (RPM):</strong> solución de continuidad de las membranas ovulares (amnios + corion) antes del inicio del trabajo de parto, con salida de líquido amniótico (LA) a través del cuello uterino.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Tipo</th><th>Edad gestacional</th><th>Relevancia</th></tr></thead>
+        <tbody>
+          <tr><td><strong>RPM a término</strong></td><td>≥37 semanas</td><td>La más frecuente. Generalmente se induce el parto dentro de las 12–24 h si no inicia espontáneamente.</td></tr>
+          <tr><td><strong>RPM pretérmino (RPMP)</strong></td><td>24–36+6 semanas</td><td>Mayor morbimortalidad neonatal. Manejo conservador según EG. Corticoides + antibióticos.</td></tr>
+          <tr><td><strong>RPM periviable</strong></td><td>22–23+6 semanas</td><td>Zona límite de viabilidad. Decisión individualizada con padres y neonatología.</td></tr>
+          <tr><td><strong>RPM previable</strong></td><td>&lt;22 semanas</td><td>Muy mal pronóstico fetal. Altísima mortalidad y morbilidad neonatal grave.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hl-info"><strong>Período de latencia:</strong> tiempo entre la rotura y el inicio del trabajo de parto. A mayor inmadurez fetal, más importante ganar tiempo con manejo conservador. A término, el período de latencia suele ser &lt;24 h en el 90% de los casos.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico</div>
+    <div class="hl"><strong>Diagnóstico clínico:</strong> referencia de salida de líquido por vagina (chorro o pérdida continua), diferente a flujo o pérdida de orina. En el 90% de los casos el diagnóstico es clínico con la visualización de LA saliendo por el orificio cervical en la especuloscopía.</div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Evaluación inicial</div>
+        <div class="card-item">✅ <strong>Especuloscopía estéril:</strong> visualizar LA saliendo por OCI. Tomar cultivo de secreción vaginal y recto-anal para SGB (Streptococcus agalactiae). <strong>No realizar tacto vaginal</strong> salvo trabajo de parto activo (aumenta riesgo de infección).</div>
+        <div class="card-item" style="margin-top:8px">✅ <strong>Test de cristalización (helecho):</strong> LA cristaliza en patrón de helecho al secar en portaobjetos. Simple y accesible.</div>
+        <div class="card-item" style="margin-top:8px">✅ <strong>Prueba de nitrazina (pH):</strong> pH vaginal normal &lt;4,5 → LA eleva pH a 7,0–7,5 → papel de nitrazina cambia a azul. Falsos positivos: sangre, semen, vaginosis.</div>
+        <div class="card-item" style="margin-top:8px">✅ <strong>Ecografía:</strong> oligoamnios o anhidramnios apoya el diagnóstico (ILA &lt;5 o bolsillo máximo &lt;2 cm). No diagnóstica por sí sola.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Tests de alta especificidad</div>
+        <div class="card-item">🔵 <strong>PAMG-1 (AmniSure®):</strong> detecta proteína placentaria alfa-microglobulina-1 en secreción vaginal. Sensibilidad 98%, especificidad 99%. Útil en casos dudosos. Detecta RPM incluso con escaso LA.</div>
+        <div class="card-item" style="margin-top:8px">🔵 <strong>IGFBP-1 (Actim PROM®):</strong> detecta proteína ligadora de IGF-1 de origen amniótico. Alta sensibilidad y especificidad.</div>
+        <div class="card-item" style="margin-top:8px">🔵 <strong>Colorante índigo carmín:</strong> inyección intraamniótica bajo control ecográfico → confirma RPM si colorante aparece en tapón vaginal. Sólo en casos muy dudosos de alta relevancia clínica.</div>
+        <div class="card-item" style="margin-top:8px">⚠️ <strong>Evitar:</strong> TRV (tacto vaginal) sin trabajo de parto activo → acorta período de latencia y aumenta infección.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#C0392B">Maternas</div>
+        <div class="card-item">• <strong>Corioamnionitis:</strong> infección de las membranas y LA. Principal causa de finalización urgente.</div>
+        <div class="card-item">• Endometritis puerperal</div>
+        <div class="card-item">• Sepsis materna</div>
+        <div class="card-item">• Desprendimiento de placenta (DPPNI)</div>
+        <div class="card-item">• Prolapso de cordón</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#1565C0">Fetales / neonatales</div>
+        <div class="card-item">• <strong>Prematurez</strong> y sus complicaciones (SDR, HIV, ECN, sepsis)</div>
+        <div class="card-item">• <strong>Sepsis neonatal</strong> (principalmente por SGB y E. coli)</div>
+        <div class="card-item">• <strong>Hipoplasia pulmonar</strong> si RPM muy precoz (&lt;24 sem) y prolongada</div>
+        <div class="card-item">• <strong>Compresión de cordón</strong> por oligoamnios → bradicardia fetal</div>
+        <div class="card-item">• <strong>Deformidades por compresión</strong> (contracturas, pie equinovaro)</div>
+        <div class="card-item">• Prolapso de cordón umbilical</div>
+      </div>
+    </div>
+
+    <div class="hl-danger">
+      🔴 <strong>Criterios de Corioamnionitis clínica (criterios de Gibbs):</strong> Fiebre materna ≥38°C + 2 o más de: taquicardia materna (>100 lpm), taquicardia fetal (>160 lpm), sensibilidad uterina, LA maloliente, leucocitosis (&gt;15.000/mm³). Ante corioamnionitis → <strong>finalizar el embarazo sin demora</strong> + ATB.
+    </div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-obs">🏥 Manejo según edad gestacional</div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Pilares del manejo de la RPMP</div>
+      <strong>1. Corticoides</strong> (maduración pulmonar fetal) · <strong>2. Antibióticos</strong> (prolongar latencia, prevenir infección) · <strong>3. Sulfato de magnesio</strong> si &lt;32 sem (neuroprotección) · <strong>4. Monitoreo materno-fetal</strong> estricto · <strong>5. Finalización</strong> al llegar a término o ante complicaciones
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Edad gestacional</th><th>Conducta</th><th>Corticoides</th><th>ATB</th><th>MgSO₄</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>&lt;24 sem</strong> (previable)</td>
+            <td>Manejo individualizado. Counseling con padres. Opciones: manejo expectante o interrupción. Pronóstico muy reservado.</td>
+            <td><span class="badge-no">No indicados</span></td>
+            <td><span class="badge-si">Sí (prolongar latencia)</span></td>
+            <td><span class="badge-no">No</span></td>
+          </tr>
+          <tr>
+            <td><strong>24–33+6 sem</strong></td>
+            <td>Manejo <strong>conservador / expectante</strong>. Internación. Monitoreo materno-fetal diario. Finalizar ante complicaciones.</td>
+            <td><span class="badge-si">Sí — betametasona</span></td>
+            <td><span class="badge-si">Sí — ampicilina + azitro</span></td>
+            <td><span class="badge-si">Sí si &lt;32 sem</span></td>
+          </tr>
+          <tr>
+            <td><strong>34–36+6 sem</strong></td>
+            <td>Manejo <strong>expectante breve</strong> (hasta 34 sem completados en algunos centros). Muchos protocolos: finalizar a las 34 sem por balance riesgo-beneficio.</td>
+            <td><span class="badge-si">Sí (si &lt;35 sem)</span></td>
+            <td><span class="badge-si">Sí</span></td>
+            <td><span class="badge-no">No</span></td>
+          </tr>
+          <tr>
+            <td><strong>≥37 sem</strong></td>
+            <td><strong>Finalizar el embarazo</strong>. Inducción con oxitocina. Esperar inicio espontáneo máximo 12–24 h. No hay beneficio en manejo expectante a término.</td>
+            <td><span class="badge-no">No</span></td>
+            <td><span class="badge-si">Profilaxis SGB si cultivo + o desconocido</span></td>
+            <td><span class="badge-no">No</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo-obs">💊 Fármacos clave en RPMP</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Betametasona</div>
+      <div class="farma-clase">Corticoide · Maduración pulmonar fetal</div>
+      <div class="dosis-badge">12 mg IM c/24 h × 2 dosis (total 24 mg)</div>
+      <div class="farma-detalle">
+        Acelera la maduración pulmonar fetal → reduce incidencia de síndrome de distrés respiratorio (SDR), hemorragia intraventricular (HIV) y enterocolitis necrotizante (ECN). Indicada entre <strong>24 y 34+6 semanas</strong>. Una sola tanda (no repetir sistemáticamente). Efecto máximo a las 24–48 h, persiste hasta 7 días. Alternativa: dexametasona 6 mg c/12 h × 4 dosis.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Ampicilina + Azitromicina (esquema NICHD/ACOG)</div>
+      <div class="farma-clase">Antibiótico · Prolongar período de latencia + prevenir infección</div>
+      <div class="dosis-badge">Ampicilina 2 g IV c/6 h × 48 h → luego amoxicilina 250 mg VO c/8 h × 5 días + Azitromicina 1 g VO dosis única</div>
+      <div class="farma-detalle">
+        Esquema del estudio NICHD: prolonga el período de latencia, reduce la corioamnionitis, la sepsis neonatal y las complicaciones de la prematurez. La azitromicina cubre Ureaplasma urealyticum (agente frecuente en RPMP). <strong>Evitar amoxicilina-clavulánico</strong> (Augmentin) por asociación con enterocolitis necrotizante neonatal en el estudio ORACLE.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Sulfato de Magnesio</div>
+      <div class="farma-clase">Neuroprotección fetal · Indicado &lt;32 semanas</div>
+      <div class="dosis-badge">Carga: 4–6 g IV en 20–30 min → Mantenimiento: 1–2 g/h hasta el parto o 12 h postparto</div>
+      <div class="farma-detalle">
+        Reduce la incidencia de parálisis cerebral y disfunción motora gruesa en prematuros extremos. Indicado cuando se anticipa parto inminente antes de las 32 semanas. Monitorear: diuresis, reflejos rotulianos y frecuencia respiratoria. <strong>Antídoto:</strong> gluconato de calcio 1 g IV.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Penicilina G (profilaxis SGB)</div>
+      <div class="farma-clase">Profilaxis intraparto para Streptococcus agalactiae</div>
+      <div class="dosis-badge">5.000.000 UI IV inicial → luego 2.500.000 UI IV c/4 h hasta el parto</div>
+      <div class="farma-detalle">
+        Indicada en RPM a término si cultivo recto-vaginal positivo para SGB, desconocido o no realizado. Alternativa: ampicilina 2 g IV inicial → 1 g IV c/4 h. En alérgicas a penicilina: clindamicina o vancomicina según sensibilidad.
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">RPM: rotura antes del inicio del trabajo de parto</span>
+      <span class="pill">RPMP: RPM antes de las 37 semanas</span>
+      <span class="pill">Diagnóstico: especuloscopía → ver LA saliendo</span>
+      <span class="pill">No hacer tacto vaginal sin trabajo de parto activo</span>
+      <span class="pill">Test de helecho + nitrazina: confirman LA</span>
+      <span class="pill">PAMG-1 (AmniSure): alta sensibilidad y especificidad</span>
+      <span class="pill">Pilares: corticoides + ATB + MgSO₄ + monitoreo</span>
+      <span class="pill">Betametasona: 12 mg IM c/24h × 2 (24–34+6 sem)</span>
+      <span class="pill">Evitar Augmentin (ECN neonatal)</span>
+      <span class="pill">ATB: ampicilina + azitromicina (estudio NICHD)</span>
+      <span class="pill">MgSO₄: neuroprotección si &lt;32 semanas</span>
+      <span class="pill">Antídoto MgSO₄: gluconato de calcio</span>
+      <span class="pill">Corioamnionitis: fiebre + 2 criterios de Gibbs → finalizar</span>
+      <span class="pill">RPM a término: finalizar en 12–24 h</span>
+      <span class="pill">RPM 24–33+6: manejo conservador</span>
+      <span class="pill">Hipoplasia pulmonar: RPM &lt;24 sem prolongada</span>
+      <span class="pill">Profilaxis SGB: penicilina G intraparto</span>
+      <span class="pill">Oligoamnios / anhidramnios: apoya diagnóstico por eco</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: ACOG Practice Bulletin No. 217: Prelabor Rupture of Membranes. Obstet Gynecol 2020 · Mercer BM et al. Antibiotic therapy for reduction of infant morbidity after preterm premature rupture of the membranes (NICHD trial). JAMA 1997 · Magee LA et al. MgSO₄ and other anticonvulsants for women with pre-eclampsia. Cochrane 2010 · Recomendaciones para la prevención, diagnóstico y tratamiento de la amenaza de parto pretérmino. Ministerio de Salud de la Nación Argentina · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo; 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
