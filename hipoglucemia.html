@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hipoglucemia — Medpedia</title>
+  <meta name="description" content="Hipoglucemia: triada de Whipple, clasificación, manejo agudo y crónico, diagnóstico diferencial. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC; --naranja-oscuro: #A35500;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-endo { background: #FFF3E0; color: #E65100; }
+    .tag-emergencia { background: #fdeaea; color: #922B21; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo       { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-naran { font-size: 16px; font-weight: 500; color: var(--naranja); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .dosis-badge-naran { display: inline-block; background: var(--naranja-claro); color: var(--naranja-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--naranja); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .whipple { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .whipple { grid-template-columns: 1fr; } }
+    .w-card { border-radius: 14px; padding: 1.1rem; text-align: center; }
+    .w-card.uno   { background: #FEF0DC; border: 1.5px solid #f0c080; }
+    .w-card.dos   { background: #fdeaea; border: 1.5px solid #ef9a9a; }
+    .w-card.tres  { background: var(--verde-claro); border: 1.5px solid #a8d8c0; }
+    .w-numero { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .w-numero.uno   { color: #D4730A; }
+    .w-numero.dos   { color: #C62828; }
+    .w-numero.tres  { color: var(--verde-oscuro); }
+    .w-titulo { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .w-desc   { font-size: 12px; color: var(--texto-sec); line-height: 1.4; }
+    .versus-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 520px) { .versus-block { grid-template-columns: 1fr; } }
+    .versus-lado { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .versus-lado.izq { background: #FEF0DC; border-color: #f0c080; }
+    .versus-lado.der { background: #E6F1FB; border-color: #90caf9; }
+    .versus-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .versus-titulo.izq { color: #D4730A; }
+    .versus-titulo.der { color: #1565C0; }
+    .versus-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.4; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Endocrinología</a> › Hipoglucemia</div>
+  <div class="titulo">Hipoglucemia</div>
+  <div class="meta">
+    <span class="tag tag-endo">Endocrinología</span>
+    <span class="tag tag-emergencia">Urgencia</span>
+    <span class="tag tag-fuente">ADA 2024 · Endocrine Society 2009 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y tríada de Whipple</div>
+    <div class="hl-warn"><strong>Hipoglucemia:</strong> glucemia plasmática &lt;70 mg/dl (3,9 mmol/L) según ADA. Hipoglucemia clínicamente significativa: &lt;54 mg/dl (3 mmol/L). Hipoglucemia grave: requiere asistencia de otra persona para su tratamiento.</div>
+    <div class="hl-info">El valor de corte de 70 mg/dl es una <strong>alerta de acción</strong>, no siempre implica síntomas (especialmente en diabéticos con hipoglucemia desapercibida). El diagnóstico de hipoglucemia sintomática requiere la tríada de Whipple.</div>
+
+    <div class="whipple">
+      <div class="w-card uno">
+        <div class="w-numero uno">1</div>
+        <div class="w-titulo">Síntomas de hipoglucemia</div>
+        <div class="w-desc">Adrenérgicos o neuroglucopénicos presentes en el momento del episodio</div>
+      </div>
+      <div class="w-card dos">
+        <div class="w-numero dos">2</div>
+        <div class="w-titulo">Glucemia baja confirmada</div>
+        <div class="w-desc">Glucemia plasmática baja documentada durante los síntomas (&lt;54 mg/dl)</div>
+      </div>
+      <div class="w-card tres">
+        <div class="w-numero tres">3</div>
+        <div class="w-titulo">Alivio con glucosa</div>
+        <div class="w-desc">Resolución de los síntomas tras administración de glucosa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍNTOMAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Clínica — síntomas por nivel de glucemia</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Glucemia</th><th>Tipo</th><th>Síntomas</th><th>Mecanismo</th></tr>
+        <tr>
+          <td><strong>60–70 mg/dl</strong></td>
+          <td>Adrenérgicos / autonómicos</td>
+          <td>Sudoración, temblor, taquicardia, palpitaciones, palidez, ansiedad, hambre</td>
+          <td>Descarga catecolaminérgica (respuesta contrarreguladora)</td>
+        </tr>
+        <tr>
+          <td><strong>50–60 mg/dl</strong></td>
+          <td>Neuroglicopénicos leves</td>
+          <td>Dificultad para concentrarse, confusión, cambios de conducta, diplopía, cefalea</td>
+          <td>Déficit de glucosa en SNC</td>
+        </tr>
+        <tr>
+          <td><strong>&lt;50 mg/dl</strong></td>
+          <td>Neuroglicopénicos graves</td>
+          <td>Convulsiones, pérdida de conciencia, coma, focalidad neurológica transitoria</td>
+          <td>Neuroglucopenia severa</td>
+        </tr>
+        <tr>
+          <td><strong>&lt;30 mg/dl</strong></td>
+          <td>Crítica</td>
+          <td>Coma profundo, decorticación, daño neurológico irreversible si se prolonga</td>
+          <td>Falla energética neuronal global</td>
+        </tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Hipoglucemia desapercibida:</strong> diabéticos con episodios repetidos o neuropatía autonómica pueden perder los síntomas adrenérgicos y presentar directamente pérdida de conciencia. Mayor riesgo en tratados con betabloqueantes (enmascaran taquicardia y temblor pero no la sudoración).</div>
+  </div>
+
+  <!-- CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📊 Clasificación — ADA 2024</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Nivel</th><th>Glucemia</th><th>Descripción</th></tr>
+        <tr><td><strong>Nivel 1</strong></td><td>&lt;70 mg/dl y ≥54 mg/dl</td><td>Alerta: umbral para tratamiento preventivo. Puede ser asintomático.</td></tr>
+        <tr><td><strong>Nivel 2</strong></td><td>&lt;54 mg/dl</td><td>Clínicamente significativa. Requiere acción inmediata independientemente de síntomas.</td></tr>
+        <tr><td><strong>Nivel 3</strong></td><td>Cualquier valor</td><td>Grave: deterioro cognitivo o pérdida de conciencia que requiere asistencia de terceros.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAUSAS -->
+  <div class="seccion">
+    <div class="sec-titulo">⚙️ Causas — diabéticos vs no diabéticos</div>
+    <div class="versus-block">
+      <div class="versus-lado izq">
+        <div class="versus-titulo izq">🟠 En diabéticos (causa + frecuente)</div>
+        <div class="versus-item">💊 <strong>Insulina</strong> en exceso (dosis, omisión de comida, ejercicio intenso)</div>
+        <div class="versus-item">💊 <strong>Sulfonilureas</strong> (glibenclamida, glimepirida): hipoglucemia prolongada y grave</div>
+        <div class="versus-item">💊 <strong>Meglitinidas</strong> (repaglinida): menor riesgo que sulfonilureas</div>
+        <div class="versus-item">🍺 Alcohol (inhibe gluconeogénesis hepática)</div>
+        <div class="versus-item">🏃 Ejercicio intenso sin ajuste de dosis</div>
+        <div class="versus-item">🍽️ Ayuno prolongado o vómitos</div>
+        <div class="versus-item">💊 Interacciones: fluoroquinolonas + sulfonilureas, AAS dosis altas</div>
+      </div>
+      <div class="versus-lado der">
+        <div class="versus-titulo der">🔵 En no diabéticos (buscar causa)</div>
+        <div class="versus-item">🔵 <strong>Insulinoma:</strong> tumor pancreático secretor de insulina (tríada de Whipple espontánea)</div>
+        <div class="versus-item">🔵 <strong>Hipoglucemia facticia:</strong> administración clandestina de insulina o sulfonilureas</div>
+        <div class="versus-item">🔵 <strong>Insuficiencia suprarrenal:</strong> cortisol bajo → menor gluconeogénesis</div>
+        <div class="versus-item">🔵 <strong>Insuficiencia hepática grave:</strong> pérdida de capacidad gluconeogénica</div>
+        <div class="versus-item">🔵 <strong>Hipoglucemia posprandial:</strong> post-bypass gástrico (Síndrome de Dumping tardío)</div>
+        <div class="versus-item">🔵 <strong>Sepsis grave</strong></div>
+        <div class="versus-item">🔵 <strong>Tumor no pancreático:</strong> IGF-2 (hipoglucemia tumoral no insulínica — NICTH)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL DEL INSULINOMA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Estudio de hipoglucemia en no diabético — muestra crítica</div>
+    <div class="hl-info">Ante un episodio espontáneo de hipoglucemia en paciente no diabético: extraer <strong>muestra crítica durante la hipoglucemia</strong>. Si el episodio no es espontáneo, se realiza el <strong>ayuno supervisado de 72 horas</strong> (gold standard para diagnóstico de insulinoma).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Insulinoma</th><th>Hipoglucemia facticia (insulina exógena)</th><th>Facticia (sulfonilurea)</th></tr>
+        <tr><td>Glucemia</td><td>Baja</td><td>Baja</td><td>Baja</td></tr>
+        <tr><td>Insulina</td><td>↑ (inapropiadamente alta)</td><td>↑↑ muy alta</td><td>↑</td></tr>
+        <tr><td>Péptido C</td><td>↑ (co-secretado con insulina endógena)</td><td>↓ (suprimido por insulina exógena)</td><td>↑</td></tr>
+        <tr><td>Proinsulina</td><td>↑</td><td>↓</td><td>Normal/↑</td></tr>
+        <tr><td>Sulfonilurea en orina/plasma</td><td>Negativa</td><td>Negativa</td><td>Positiva</td></tr>
+        <tr><td>Anticuerpos anti-insulina</td><td>Negativos</td><td>Positivos (si insulina animal)</td><td>Negativos</td></tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Clave de examen: Péptido C</div>
+      El péptido C se co-secreta con la insulina endógena en equimolar. Si la insulina es <strong>exógena</strong> (inyectada), suprime la producción pancreática → Péptido C <strong>bajo</strong>. Si la insulina es endógena (insulinoma, sulfonilurea) → Péptido C <strong>alto</strong>. Esta es la pregunta clásica para diferenciar insulinoma de hipoglucemia facticia.
+    </div>
+  </div>
+
+  <!-- MANEJO AGUDO -->
+  <div class="seccion">
+    <div class="sec-titulo-naran">🟠 Manejo agudo</div>
+    <div class="hl-danger"><span class="badge-urgente">URGENCIA</span> Tratar toda glucemia &lt;54 mg/dl con síntomas o &lt;70 mg/dl en paciente de riesgo (ancianos, renal crónico, cardiopatía). La neuroglucopenia prolongada causa daño neurológico irreversible.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Paciente consciente y con deglución conservada → regla de los 15</strong><br>
+        Administrar <strong>15 g de hidratos de carbono de absorción rápida</strong>:<br>
+        — 150–200 ml de jugo de naranja o gaseosa regular (no light)<br>
+        — 3–4 comprimidos de glucosa (4 g c/u)<br>
+        — 1 cucharada sopera de azúcar disuelta en agua<br>
+        Controlar glucemia a los <strong>15 minutos</strong>. Si sigue &lt;70 mg/dl: <strong>repetir</strong>. Si normaliza: ingerir colación mixta (CHO + proteína) para prevenir recurrencia. <strong>No usar chocolate ni caramelos con grasa</strong> → absorción más lenta.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Paciente inconsciente o sin deglución → glucosa IV</strong><br>
+        <strong>Dextrosa 50%: 25–50 ml (= 12,5–25 g de glucosa) IV en bolo lento</strong>. Repetir hasta recuperación de conciencia. Luego iniciar infusión de mantenimiento con dextrosa al 10% y monitorizar glucemia cada 30–60 min. En niños: dextrosa 10% 2–5 ml/kg IV lento.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Sin acceso venoso disponible → glucagón IM o SC</strong><br>
+        <strong>Glucagón 1 mg IM o SC</strong> (adultos; niños &lt;25 kg: 0,5 mg). Inicio de acción: 10–15 min. Estimula glucogenólisis hepática → eleva glucemia. <strong>No funciona si glucógeno hepático está depleto</strong> (ayuno prolongado, alcohol, hepatopatía grave). Puede causar náuseas/vómitos → asegurar vía aérea. Nuevo formulado: glucagón nasal (Baqsimi) 3 mg intranasal — alternativa para familiares entrenados.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Hipoglucemia por sulfonilureas — manejo especial</strong><br>
+        Riesgo de <strong>recurrencia prolongada</strong> (vida media larga de sulfonilureas). Internar siempre. Infusión continua de dextrosa. <strong>Octreótide 50–100 mcg SC c/8 h</strong> inhibe la secreción de insulina mediada por sulfonilurea → acorta el período de riesgo. No dar alta hasta al menos 24 h sin hipoglucemia.
+      </div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS -->
+  <div class="seccion">
+    <div class="sec-titulo-naran">🟠 Farmacología clave</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Glucagón</div>
+      <div class="farma-clase">Hormona contrarreguladora pancreática · Urgencias hipoglucémicas sin acceso IV</div>
+      <div class="dosis-badge-naran">Adultos: 1 mg IM/SC · Niños &lt;25 kg: 0,5 mg · Nasal: 3 mg</div>
+      <div class="farma-detalle">
+        Estimula la glucogenólisis y gluconeogénesis hepáticas vía adenilato ciclasa. Eleva glucemia en 10–15 min. <strong>Limitaciones:</strong> requiere glucógeno hepático suficiente (ineficaz en ayuno prolongado, alcoholismo, insuficiencia hepática). Provoca náuseas/vómitos al recuperar conciencia. El kit de glucagón debe estar disponible en domicilio de diabéticos con riesgo de hipoglucemia grave.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Dextrosa (glucosa) IV</div>
+      <div class="farma-clase">Carbohidrato parenteral · Primera línea en hipoglucemia grave con acceso IV</div>
+      <div class="dosis-badge">D50%: 25–50 ml IV en bolo · Mantenimiento: D10% a ritmo según glucemia</div>
+      <div class="farma-detalle">
+        Solución de glucosa al 50% entrega 25 g de glucosa en 50 ml → recuperación de conciencia en 1–3 min. <strong>Cuidados:</strong> vesicante (extravasación causa necrosis tisular → usar vena periférica gruesa o central). En pacientes con Wernicke potencial (alcohólicos, desnutridos): <strong>administrar tiamina 100 mg IV ANTES de la glucosa</strong> → la glucosa puede precipitar encefalopatía de Wernicke en deficientes de tiamina.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Octreótide</div>
+      <div class="farma-clase">Análogo de somatostatina · Hipoglucemia refractaria por sulfonilureas o insulinoma</div>
+      <div class="dosis-badge">50–100 mcg SC c/8 h · Hasta resolución del episodio</div>
+      <div class="farma-detalle">
+        Inhibe la secreción de insulina mediada por sulfonilureas (actúa sobre receptores SSTR en células β). Indicado en hipoglucemia grave por sulfonilureas que no revierte con dextrosa sola, y como puente en insulinoma preoperatorio. <strong>No usar en hipoglucemia por insulina exógena</strong> (no tiene efecto sobre la insulina ya administrada).
+      </div>
+    </div>
+  </div>
+
+  <!-- SITUACIONES ESPECIALES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Situaciones especiales</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Consideración</th></tr>
+        <tr><td><strong>Alcoholismo</strong></td><td>Inhibición de gluconeogénesis por etanol → hipoglucemia en ayuno. Siempre dar tiamina IV antes de glucosa. Glucagón ineficaz (glucógeno depleto).</td></tr>
+        <tr><td><strong>Insuficiencia renal crónica</strong></td><td>Clearance reducido de insulina y sulfonilureas → mayor duración de acción → hipoglucemias prolongadas. Ajustar dosis.</td></tr>
+        <tr><td><strong>Anciano</strong></td><td>Síntomas atípicos (confusión, caídas, ACV-like). Mayor riesgo con glibenclamida. Objetivos glucémicos menos estrictos.</td></tr>
+        <tr><td><strong>Embarazo</strong></td><td>Glucemia materna baja → hipoglucemia fetal. Monitoreo continuo. El glucagón es seguro en embarazo.</td></tr>
+        <tr><td><strong>Post-bypass gástrico</strong></td><td>Síndrome de hipoglucemia posprandial tardía por liberación exagerada de GLP-1 → hiperinsulinemia. Tratamiento: dieta, acarbosa, octreótide.</td></tr>
+        <tr><td><strong>Betabloqueantes</strong></td><td>Enmascaran síntomas adrenérgicos (taquicardia, temblor) pero no la sudoración ni los neuroglicopénicos. Mayor riesgo de hipoglucemia desapercibida.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Tríada de Whipple: síntomas + glucemia baja + alivio con glucosa</span>
+      <span class="pill">Hipoglucemia significativa: &lt;54 mg/dl (ADA)</span>
+      <span class="pill">Hipoglucemia grave: requiere ayuda de terceros</span>
+      <span class="pill">Causa #1 en diabéticos: insulina o sulfonilureas</span>
+      <span class="pill">Regla de los 15: 15 g CHO → control a los 15 min</span>
+      <span class="pill">Inconsciente: Dextrosa 50% IV (25–50 ml) en bolo</span>
+      <span class="pill">Sin acceso IV: glucagón 1 mg IM</span>
+      <span class="pill">Glucagón ineficaz: ayuno, alcoholismo, hepatopatía grave</span>
+      <span class="pill">Tiamina ANTES de glucosa en alcohólico/desnutrido</span>
+      <span class="pill">Sulfonilurea: hipoglucemia prolongada → octreótide + internación 24 h</span>
+      <span class="pill">Insulinoma: Péptido C alto + insulina alta + glucemia baja</span>
+      <span class="pill">Facticia por insulina: Péptido C bajo + insulina alta</span>
+      <span class="pill">Betabloqueantes: enmascaran síntomas adrenérgicos</span>
+      <span class="pill">Post-bypass gástrico: hipoglucemia posprandial tardía (GLP-1)</span>
+      <span class="pill">Ayuno de 72 h: gold standard para diagnóstico de insulinoma</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American Diabetes Association. Standards of Medical Care in Diabetes — 2024. Diabetes Care 2024;47(Suppl 1) · Cryer PE et al. Evaluation and Management of Adult Hypoglycemic Disorders: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab 2009 · Frier BM. Hypoglycaemia in diabetes mellitus: epidemiology and clinical implications. Nat Rev Endocrinol 2014 · Harrison TR. Principios de Medicina Interna. 21ª ed. McGraw-Hill 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
