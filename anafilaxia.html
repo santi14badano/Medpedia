@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anafilaxia — Medpedia</title>
+  <meta name="description" content="Anafilaxia: diagnóstico, adrenalina, manejo de urgencia y criterios de internación. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-emergencia { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-alergia { background: #FFF3E0; color: #E65100; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo     { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--verde); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .dosis-badge-rojo { display: inline-block; background: var(--rojo-claro); color: var(--rojo-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-verde { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .criterios-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .criterios-grid { grid-template-columns: 1fr; } }
+    .criterio-card { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .criterio-card.piel   { background: #FFF3E0; border-color: #ffcc80; }
+    .criterio-card.resp   { background: #fdeaea; border-color: #ef9a9a; }
+    .criterio-card.cardio { background: #F3E8FC; border-color: #ce93d8; }
+    .criterio-card.gi     { background: #E6F1FB; border-color: #90caf9; }
+    .criterio-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .criterio-titulo.piel   { color: #E65100; }
+    .criterio-titulo.resp   { color: #C62828; }
+    .criterio-titulo.cardio { color: #6A1B9A; }
+    .criterio-titulo.gi     { color: #1565C0; }
+    .criterio-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; }
+    .versus-block { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 520px) { .versus-block { grid-template-columns: 1fr; } }
+    .versus-lado { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .versus-lado.izq { background: #fdeaea; border-color: #ef9a9a; }
+    .versus-lado.der { background: #E6F1FB; border-color: #90caf9; }
+    .versus-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .versus-titulo.izq { color: #C62828; }
+    .versus-titulo.der { color: #1565C0; }
+    .versus-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.4; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Urgencias</a> › Anafilaxia</div>
+  <div class="titulo">Anafilaxia</div>
+  <div class="meta">
+    <span class="tag tag-emergencia">Emergencia médica</span>
+    <span class="tag tag-alergia">Alergia e Inmunología</span>
+    <span class="tag tag-fuente">WAO 2020 · NIAID/FAAN · AAAI Guidelines · SEAIC</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición</div>
+    <div class="hl-danger"><strong>Anafilaxia:</strong> reacción de hipersensibilidad grave, generalizada o sistémica, de instauración rápida y potencialmente mortal. Resulta de la liberación masiva de mediadores de mastocitos y basófilos, generalmente mediada por IgE (mecanismo inmunológico Tipo I), aunque también puede ocurrir por mecanismos no IgE-mediados.</div>
+    <div class="hl-warn">⚠️ La adrenalina (epinefrina) es el único tratamiento de primera línea. Antihistamínicos y corticoides son coadyuvantes y <strong>no reemplazan a la adrenalina</strong>. Retrasar la adrenalina aumenta la mortalidad.</div>
+  </div>
+
+  <!-- FISIOPATOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">⚙️ Fisiopatología</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Mecanismo</th><th>Descripción</th><th>Ejemplos</th></tr>
+        <tr><td><strong>IgE-mediado (alérgico)</strong></td><td>Sensibilización previa → reexposición al alérgeno → crosslinking de IgE en mastocitos → degranulación masiva → histamina, triptasa, prostaglandinas, leucotrienos</td><td>Alimentos (maní, frutos secos, mariscos), picadura de himenópteros, látex, penicilina</td></tr>
+        <tr><td><strong>No IgE-mediado (anafilactoide)</strong></td><td>Activación directa de mastocitos/basófilos o sistema del complemento sin sensibilización previa</td><td>Medios de contraste yodados, AINEs, vancomicina (síndrome del hombre rojo), ejercicio, frío</td></tr>
+        <tr><td><strong>Idiopática</strong></td><td>Sin desencadenante identificable tras estudio</td><td>Hasta 20% de los casos</td></tr>
+      </table>
+    </div>
+    <div class="hl-info">Los mediadores liberados producen: vasodilatación masiva → shock distributivo; aumento de la permeabilidad vascular → edema angioneurótico; broncoespasmo; hipersecreción de mucus. La <strong>redistribución de hasta 35% del volumen intravascular</strong> en minutos explica el colapso hemodinámico.</div>
+  </div>
+
+  <!-- DESENCADENANTES -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Desencadenantes más frecuentes</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Categoría</th><th>Agentes principales</th><th>Dato clave para el examen</th></tr>
+        <tr><td><strong>Alimentos</strong></td><td>Maní, nueces, mariscos, leche (en niños), huevo, trigo, soja</td><td>Causa #1 de anafilaxia en niños y adolescentes</td></tr>
+        <tr><td><strong>Fármacos</strong></td><td>Penicilinas y cefalosporinas, AINEs, relajantes musculares, medios de contraste, quimioterapia (taxanos, platinos)</td><td>Causa #1 de anafilaxia fatal en adultos; mayor riesgo con vía IV</td></tr>
+        <tr><td><strong>Venenos de insectos</strong></td><td>Abejas, avispas, hormigas (himenópteros)</td><td>Causa #1 de anafilaxia fatal en el domicilio</td></tr>
+        <tr><td><strong>Látex</strong></td><td>Guantes, catéteres, sondas</td><td>Riesgo en trabajadores de salud y pacientes con espina bífida</td></tr>
+        <tr><td><strong>Ejercicio</strong></td><td>Sola o cofactor (EAI-A: ejercicio + alimento previo)</td><td>La EAI con trigo + ejercicio es clásica de examen</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO CLÍNICO -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Diagnóstico clínico — criterios de la NIAID/FAAN</div>
+    <div class="hl-danger">El diagnóstico es <strong>CLÍNICO</strong>. No esperar laboratorio para iniciar tratamiento. Se cumple con <strong>cualquiera</strong> de los 3 criterios siguientes:</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>#</th><th>Criterio</th><th>Detalle</th></tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>Inicio agudo con <strong>síntomas cutáneos/mucosos + al menos 1</strong> de los siguientes</td>
+          <td>— Compromiso respiratorio (disnea, sibilancias, estridor, hipoxemia)<br>— Hipotensión o síntomas de hipoperfusión (síncope, colapso)</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>≥2 de los siguientes tras exposición a <strong>alérgeno probable</strong></td>
+          <td>— Síntomas cutáneos/mucosos<br>— Compromiso respiratorio<br>— Hipotensión/síntomas de hipoperfusión<br>— Síntomas gastrointestinales persistentes</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>Hipotensión tras exposición a <strong>alérgeno conocido</strong></td>
+          <td>Adultos: TAS &lt;90 mmHg o caída &gt;30% del basal. Niños: TAS baja para la edad.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="criterios-grid">
+      <div class="criterio-card piel">
+        <div class="criterio-titulo piel">🟠 Piel / Mucosas</div>
+        <div class="criterio-item">Urticaria generalizada</div>
+        <div class="criterio-item">Prurito, eritema difuso</div>
+        <div class="criterio-item">Angioedema (labios, lengua, úvula)</div>
+        <div class="criterio-item">Flushing</div>
+      </div>
+      <div class="criterio-card resp">
+        <div class="criterio-titulo resp">🔴 Respiratorio</div>
+        <div class="criterio-item">Broncoespasmo / sibilancias</div>
+        <div class="criterio-item">Estridor (edema laríngeo)</div>
+        <div class="criterio-item">Disnea / taquipnea</div>
+        <div class="criterio-item">Hipoxemia, cianosis</div>
+      </div>
+      <div class="criterio-card cardio">
+        <div class="criterio-titulo cardio">🟣 Cardiovascular</div>
+        <div class="criterio-item">Hipotensión arterial</div>
+        <div class="criterio-item">Taquicardia / bradicardia</div>
+        <div class="criterio-item">Síncope / pérdida de conciencia</div>
+        <div class="criterio-item">Paro cardíaco</div>
+      </div>
+    </div>
+    <div class="criterios-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="criterio-card gi">
+        <div class="criterio-titulo gi">🔵 Gastrointestinal</div>
+        <div class="criterio-item">Náuseas, vómitos</div>
+        <div class="criterio-item">Dolor abdominal tipo cólico</div>
+        <div class="criterio-item">Diarrea</div>
+      </div>
+      <div class="criterio-card piel">
+        <div class="criterio-titulo piel">🟡 Neurológico</div>
+        <div class="criterio-item">Ansiedad, agitación</div>
+        <div class="criterio-item">Cefalea</div>
+        <div class="criterio-item">Confusión, obnubilación</div>
+        <div class="criterio-item">Sensación de muerte inminente</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">⚖️ Diagnóstico diferencial</div>
+    <div class="versus-block">
+      <div class="versus-lado izq">
+        <div class="versus-titulo izq">Simula anafilaxia</div>
+        <div class="versus-item">🔴 <strong>Angioedema hereditario:</strong> sin urticaria, recurrente, historia familiar, sin respuesta a adrenalina</div>
+        <div class="versus-item">🔴 <strong>Síncope vasovagal:</strong> bradicardia, sin urticaria ni broncoespasmo, rápida recuperación en decúbito</div>
+        <div class="versus-item">🔴 <strong>Asma grave:</strong> sin hipotensión ni urticaria</div>
+        <div class="versus-item">🔴 <strong>Síndrome carcinoide:</strong> flushing episódico, diarrea, sin urticaria</div>
+      </div>
+      <div class="versus-lado der">
+        <div class="versus-titulo der">Clave diagnóstica</div>
+        <div class="versus-item">✅ La <strong>combinación</strong> de síntomas cutáneos + compromiso de otro órgano es altamente sugestiva</div>
+        <div class="versus-item">✅ Contexto de exposición a alérgeno en minutos previos</div>
+        <div class="versus-item">✅ Triptasa sérica elevada (pico 1–2 h, persiste 6 h) confirma a posteriori</div>
+        <div class="versus-item">✅ Angioedema hereditario: C4 bajo, C1q normal, C1 inhibidor bajo</div>
+      </div>
+    </div>
+    <div class="hl-info">La <strong>triptasa sérica</strong> es útil para confirmar anafilaxia en forma retrospectiva (forense o para seguimiento), pero nunca retrasa el tratamiento. Extraer muestra en pico (1–2 h) y a las 24 h (basal).</div>
+  </div>
+
+  <!-- MANEJO -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Manejo inmediato — secuencia de acciones</div>
+    <div class="hl-danger"><span class="badge-urgente">EMERGENCIA</span> Actuar en <strong>segundos</strong>. La adrenalina es el primer paso. Mientras se prepara: retirar el alérgeno si es posible, llamar ayuda.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Adrenalina (epinefrina) IM — inmediatamente</strong><br>
+        <strong>0,3–0,5 mg IM en la cara anterolateral del muslo</strong> (adultos). Niños: 0,01 mg/kg (máx 0,5 mg). Usar solución 1:1000 (1 mg/ml). <strong>Repetir cada 5–15 min si no hay respuesta</strong> — hasta 2–3 dosis. La cara anterolateral del muslo tiene mejor absorción que el deltoides. El autoinyector (EpiPen) entrega 0,3 mg en adultos y 0,15 mg en niños.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Posición y vía aérea</strong><br>
+        — Paciente en decúbito supino con miembros inferiores elevados (Trendelenburg) → mejora retorno venoso.<br>
+        — Si predomina el vómito o pérdida de conciencia: decúbito lateral.<br>
+        — Embarazada: decúbito lateral izquierdo.<br>
+        — Si estridor/broncoespasmo grave: sentar y preparar vía aérea avanzada (intubación o cricotirotomía de urgencia si edema laríngeo completo).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Oxígeno suplementario</strong><br>
+        Administrar O₂ por máscara de alto flujo (10–15 L/min) desde el inicio. Monitoreo continuo de SpO₂. Si SpO₂ &lt;90% con máscara: preparar VMI o VNI.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Acceso venoso y fluidos</strong><br>
+        2 vías periféricas gruesas. SF 0,9%: <strong>1–2 L rápido en adultos</strong> (20 ml/kg en niños) si hipotensión. Repetir según respuesta. La expansión de volumen es crítica en el shock anafiláctico por la redistribución vascular masiva.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Adrenalina IV — si no responde a IM</strong><br>
+        Solo en ámbito hospitalario con monitoreo. <strong>Infusión IV:</strong> 1 mg en 250 ml SF → infundir a 1–4 mcg/min y titular. Nunca bolo IV directo (riesgo de arritmia fatal). Alternativa urgente: 0,1 mg (= 1 ml de solución 1:1000 diluido en 9 ml SF → bolo de 1 ml de esa solución = 10 mcg) lento con monitoreo continuo.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <strong>Broncodilatadores (si broncoespasmo refractario)</strong><br>
+        Salbutamol 2,5–5 mg nebulizado cada 20 min (o 4–8 puffs en cámara). Es complemento, no reemplaza a la adrenalina. En broncoespasmo grave: adrenalina IM sigue siendo la prioridad.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <strong>Antihistamínicos y corticoides — 2ª línea</strong><br>
+        — <strong>Difenhidramina 25–50 mg IV/IM</strong> (o clorfenamina 10 mg IM) → alivia urticaria y prurito, no actúa sobre hipotensión ni broncoespasmo.<br>
+        — <strong>Ranitidina 50 mg IV</strong> (antiH2) como coadyuvante.<br>
+        — <strong>Metilprednisolona 1–2 mg/kg IV</strong> (o hidrocortisona 200 mg IV) → inicio de acción 4–6 h → previene recurrencia bifásica. <strong>Ninguno reemplaza a la adrenalina.</strong>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <strong>Glucagón — si el paciente usa betabloqueantes</strong><br>
+        Los betabloqueantes bloquean los receptores β de la adrenalina → la anafilaxia puede ser refractaria. <strong>Glucagón 1–5 mg IV en 5 min</strong> actúa por receptor diferente (adenilato ciclasa). Seguir con infusión 5–15 mcg/min. <strong>Dato de examen: usar glucagón en anafilaxia refractaria en paciente betabloqueado.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS CLAVE -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Farmacología — lo esencial</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Adrenalina (epinefrina)</div>
+      <div class="farma-clase">Catecolamina endógena · Tratamiento de primera línea absoluta · Agonista α y β adrenérgico</div>
+      <div class="dosis-badge-rojo">IM muslo: 0,3–0,5 mg (adulto) · 0,01 mg/kg (niño, máx 0,5 mg) · Solución 1:1000</div>
+      <div class="farma-detalle">
+        <strong>Mecanismo:</strong> α₁ → vasoconstricción → revierte hipotensión y edema angioneurótico; β₁ → efecto inotrópico y cronotrópico; β₂ → broncodilatación, reduce liberación de mediadores. Actúa en los 3 sistemas afectados simultáneamente. <strong>Vía IM en muslo de elección:</strong> mayor Cmax y Tmax más rápido que IM deltoides o SC. <strong>Errores fatales:</strong> dar antihistamínico primero, demorar adrenalina, dar SC en vez de IM.
+      </div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Glucagón</div>
+      <div class="farma-clase">Hormona pancreática · Rescate en anafilaxia refractaria por betabloqueantes</div>
+      <div class="dosis-badge">1–5 mg IV en 5 min → infusión 5–15 mcg/min</div>
+      <div class="farma-detalle">
+        Activa la adenilato ciclasa de forma independiente de receptores β → aumenta AMPc → efecto inotrópico y cronotrópico que no es antagonizado por betabloqueantes. Efecto adverso principal: náuseas y vómitos (proteger vía aérea). La hiperglucemia es un efecto menor en este contexto.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Reacción bifásica — concepto de examen</div>
+      Recurrencia de los síntomas anafilácticos tras resolución aparente, <strong>sin nueva exposición al alérgeno</strong>, generalmente entre 1 y 72 h (más frecuente a las 8–12 h). Ocurre en 1–20% de los casos. Los corticoides son el tratamiento preventivo, aunque la evidencia de su eficacia es moderada. <strong>Por esto todo paciente con anafilaxia debe permanecer en observación al menos 4–6 h (y hasta 24 h si fue grave o bifásica previa).</strong>
+    </div>
+  </div>
+
+  <!-- CRITERIOS INTERNACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Alta, observación e internación</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación</th><th>Conducta</th></tr>
+        <tr><td>Anafilaxia leve-moderada, buena respuesta a adrenalina IM única</td><td>Observación <strong>mínimo 4–6 h</strong> en guardia; alta con adrenalina autoinyectable + plan de acción escrito + derivación a alergología</td></tr>
+        <tr><td>Anafilaxia grave (hipotensión, broncoespasmo severo, pérdida de conciencia)</td><td>Internación <strong>24 h</strong> con monitoreo</td></tr>
+        <tr><td>Requirió ≥2 dosis de adrenalina o adrenalina IV</td><td>Internación en UTI o área de monitoreo</td></tr>
+        <tr><td>Anafilaxia en paciente betabloqueado, con asma o ECV previa</td><td>Mayor riesgo → internación incluso si respuesta inicial buena</td></tr>
+        <tr><td>Antecedente de reacción bifásica</td><td>Observación mínima 24 h</td></tr>
+      </table>
+    </div>
+    <div class="hl"><strong>Al alta SIEMPRE:</strong> prescribir autoinyector de adrenalina (EpiPen o equivalente), educar sobre uso, pulsera de alerta médica, evitar desencadenante identificado y derivar a alergología para estudio completo.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Adrenalina IM en muslo = primera línea siempre</span>
+      <span class="pill">Dosis adulto: 0,3–0,5 mg IM; niño: 0,01 mg/kg</span>
+      <span class="pill">Solución 1:1000 para IM (NO 1:10.000)</span>
+      <span class="pill">Antihistamínicos no reemplazan a la adrenalina</span>
+      <span class="pill">Corticoides: previenen reacción bifásica (inicio 4–6 h)</span>
+      <span class="pill">Reacción bifásica: hasta 72 h, más frecuente a las 8–12 h</span>
+      <span class="pill">Observación mínima: 4–6 h post-adrenalina</span>
+      <span class="pill">Glucagón: anafilaxia refractaria en betabloqueado</span>
+      <span class="pill">Angioedema hereditario: sin urticaria, no responde a adrenalina</span>
+      <span class="pill">Triptasa: confirma anafilaxia post-facto (pico 1–2 h)</span>
+      <span class="pill">Alimentos: causa #1 en niños (maní, frutos secos)</span>
+      <span class="pill">Fármacos: causa #1 de anafilaxia fatal en adultos</span>
+      <span class="pill">Himenópteros: causa #1 de anafilaxia fatal en domicilio</span>
+      <span class="pill">EAI-A: ejercicio + alimento = cofactor desencadenante</span>
+      <span class="pill">Síncope vasovagal: bradicardia, sin urticaria ni broncoespasmo</span>
+      <span class="pill">Alta siempre con autoinyector de adrenalina</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Simons FER et al. World Allergy Organization anaphylaxis guidelines: 2020 update. J Allergy Clin Immunol Pract 2020 · Sampson HA et al. Second symposium on the definition and management of anaphylaxis: summary report — Second National Institute of Allergy and Infectious Disease/Food Allergy and Anaphylaxis Network symposium. J Allergy Clin Immunol 2006 · Campbell RL et al. Emergency department diagnosis and treatment of anaphylaxis: a practice parameter. Ann Allergy Asthma Immunol 2014 · Shaker MS et al. Anaphylaxis — a 2023 practice parameter update. Ann Allergy Asthma Immunol 2023.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
