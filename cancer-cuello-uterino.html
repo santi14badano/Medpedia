@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáncer de Cuello Uterino — Medpedia</title>
+  <meta name="description" content="Cáncer de cuello uterino: HPV, lesiones precursoras, estadificación FIGO, tratamiento y seguimiento. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --gin: #9C27B0; --gin-claro: #F3E5F5; --gin-oscuro: #6A1B9A;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-gineco { background: var(--gin-claro); color: var(--gin-oscuro); }
+    .tag-onco { background: #FCE4EC; color: #880E4F; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-gin { font-size: 16px; font-weight: 500; color: var(--gin); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-gin   { border-left: 3px solid var(--gin); background: var(--gin-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.65; margin-bottom: 4px; }
+    .badge { display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .badge-hpv { background: var(--gin-claro); color: var(--gin-oscuro); }
+    .badge-alto { background: #FCE4EC; color: #880E4F; }
+    .badge-bajo { background: #E8F5E9; color: #1B5E20; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gin); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .figo-badge { display: inline-block; background: var(--gin); color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-right: 6px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Ginecología</a> › Cáncer de Cuello Uterino</div>
+  <div class="titulo">Cáncer de Cuello Uterino</div>
+  <div class="meta">
+    <span class="tag tag-gineco">Ginecología</span>
+    <span class="tag tag-onco">Oncología</span>
+    <span class="tag tag-fuente">FIGO 2018 · ACOG · Guía de Prevención CCU Argentina · WHO 2022</span>
+  </div>
+
+  <!-- EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Epidemiología y factores de riesgo</div>
+    <div class="hl-gin"><strong>El cáncer de cuello uterino (CCU) es causado en >99% de los casos por el Virus Papiloma Humano (HPV).</strong> Es el 4° cáncer más frecuente en mujeres a nivel mundial y la 2ª causa de muerte por cáncer ginecológico en Argentina. La mayoría de los casos son prevenibles con vacunación y tamizaje.</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Factores de riesgo</div>
+        <div class="card-item">• Infección por HPV de alto riesgo (16, 18 →70% de casos)</div>
+        <div class="card-item">• Inicio temprano de actividad sexual</div>
+        <div class="card-item">• Múltiples parejas sexuales</div>
+        <div class="card-item">• Tabaquismo (cofactor)</div>
+        <div class="card-item">• Inmunosupresión (HIV, trasplante, corticoides)</div>
+        <div class="card-item">• Coinfección por otras ITS (Chlamydia, HSV-2)</div>
+        <div class="card-item">• No realización de Pap / tamizaje</div>
+        <div class="card-item">• Paridad elevada</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">HPV — datos clave</div>
+        <div class="badge badge-alto">Alto riesgo oncogénico</div>
+        <div class="card-item"><strong>AR (oncogénicos):</strong> 16, 18, 31, 33, 45, 52, 58. Los tipos 16 y 18 causan el 70% de los CCU.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Proteínas E6/E7</strong> del HPV inactivan p53 y Rb → pérdida del control del ciclo celular → transformación maligna.</div>
+        <div class="badge badge-bajo" style="margin-top:8px">Bajo riesgo</div>
+        <div class="card-item"><strong>BR (condilomas):</strong> 6 y 11 → verrugas genitales, NO cáncer.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Vacunas disponibles:</strong> bivalente (16/18), tetravalente (6/11/16/18), nonavalente (6/11/16/18/31/33/45/52/58). Argentina: vacuna bivalente en Calendario Nacional (11 años, niñas y niños).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTOLOGÍA Y LESIONES PRECURSORAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Histología y lesiones precursoras</div>
+    <div class="hl-info"><strong>Zona de transformación (ZT):</strong> unión escamo-cilíndrica del cuello uterino → sitio donde ocurre la infección por HPV y el desarrollo de lesiones precursoras. Es el área que debe visualizarse en la colposcopía.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Nomenclatura antigua</th><th>Nomenclatura actual (OMS/Bethesda)</th><th>Descripción</th><th>Conducta</th></tr></thead>
+        <tbody>
+          <tr><td>NIC I</td><td><strong>LSIL / L-SIL</strong> (lesión intraepitelial de bajo grado)</td><td>Displasia leve. Coilocitos. En su mayoría regresa espontáneamente.</td><td>Controlar con Pap + colpo en 6–12 meses. Mayoría regresa.</td></tr>
+          <tr><td>NIC II</td><td><strong>HSIL / H-SIL</strong> (lesión intraepitelial de alto grado)</td><td>Displasia moderada. Mayor riesgo de progresión.</td><td>Colposcopía + biopsia → LEEP/conización si confirmada.</td></tr>
+          <tr><td>NIC III / CIS</td><td><strong>HSIL</strong> (incluye carcinoma in situ)</td><td>Displasia severa/CIS. Alto riesgo de invasión si no se trata.</td><td>Tratamiento escisional obligatorio (LEEP o conización).</td></tr>
+          <tr><td>—</td><td><strong>Carcinoma invasor</strong></td><td>Ruptura de membrana basal → invasión estromal ≥3–5 mm.</td><td>Cirugía / radioterapia / quimiorradiación según estadio.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Tipos histológicos del CCU invasor</div>
+        <div class="card-item">• <strong>Carcinoma escamoso o epidermoide:</strong> 70–80%. Relacionado con HPV 16.</div>
+        <div class="card-item">• <strong>Adenocarcinoma:</strong> 15–25%. Relacionado con HPV 18. Origen en glándulas endocervicales. Mayor dificultad diagnóstica con Pap.</div>
+        <div class="card-item">• <strong>Adenoescamoso:</strong> mixto, peor pronóstico.</div>
+        <div class="card-item">• <strong>Neuroendocrino de células pequeñas:</strong> raro, muy agresivo.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Clínica del CCU</div>
+        <div class="card-item">🔴 <strong>Precoz / in situ:</strong> asintomático (se detecta solo por tamizaje).</div>
+        <div class="card-item" style="margin-top:6px">🔴 <strong>Invasor temprano:</strong> sangrado post-coital (síntoma más característico), leucorrea, sangrado intermenstrual o postmenopáusico.</div>
+        <div class="card-item" style="margin-top:6px">🔴 <strong>Avanzado:</strong> dolor pelviano, lumbociatalgia (invasión parametrial/nerviosa), edema en MMII (linfático), fístulas vesico/recto-vaginales, hematuria, rectorragia.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAMIZAJE -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Tamizaje — Algoritmo argentino</div>
+    <div class="hl"><strong>Programa Nacional de Prevención del CCU (Argentina):</strong> tamizaje con Pap cada 3 años en mujeres de 25–64 años con historia sexual activa, o prueba de HPV (test de ADN-HPV) cada 5 años. La prueba de HPV es más sensible y actualmente recomendada como primera línea en Argentina (Guía MSN 2022).</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Test de HPV (ADN-HPV):</strong> detecta presencia de HPV de alto riesgo. Sensibilidad >95%. Si negativo: repetir a los 5 años. Si positivo: continuar con Pap de triaje.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Pap (citología):</strong> si HPV positivo con Pap negativo → repetir a los 12 meses. Si Pap LSIL o ASCUS → colposcopía. Si Pap HSIL → colposcopía inmediata.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Colposcopía con biopsia dirigida:</strong> confirma lesión y grado. Define conducta. Si biopsia confirma HSIL (NIC II–III) → tratamiento escisional (LEEP).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>LEEP / conización:</strong> extirpa zona de transformación. Material enviado a histología para confirmación y evaluación de márgenes. Cura la mayoría de las lesiones preinvasoras.</div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Excepciones al tamizaje estándar</div>
+      <strong>Iniciar a los 21 años</strong> con citología independientemente del inicio de vida sexual (ACOG). <strong>Inmunocomprometidas (HIV+):</strong> Pap cada 6–12 meses desde el inicio de la actividad sexual. <strong>Histerectomía total por causas benignas</strong> sin historia de HSIL: puede suspender tamizaje. <strong>Mayores de 65 años</strong> con 3 citologías negativas en los últimos 10 años: pueden suspender tamizaje.
+    </div>
+  </div>
+
+  <!-- ESTADIFICACIÓN FIGO 2018 -->
+  <div class="seccion">
+    <div class="sec-titulo-gin">🏷️ Estadificación FIGO 2018</div>
+    <div class="hl-gin">La estadificación del CCU es <strong>clínica</strong> (examen físico + imágenes). A partir de 2018, la FIGO incorpora la imágenes (TAC, RMN, PET-TC) y la evaluación ganglionar para estadificar.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Estadio</th><th>Descripción</th><th>Tratamiento principal</th></tr></thead>
+        <tbody>
+          <tr><td><span class="figo-badge">IA</span></td><td>Microinvasor: invasión estromal &lt;3 mm (IA1) o 3–5 mm (IA2)</td><td>IA1: conización con márgenes libres o histerectomía simple. IA2: histerectomía simple o radical tipo II</td></tr>
+          <tr><td><span class="figo-badge">IB</span></td><td>Lesión clínicamente visible confinada al cuello (IB1 &lt;2cm; IB2 2–4cm; IB3 ≥4cm)</td><td>Histerectomía radical tipo III (Wertheim-Meigs) + linfadenectomía pélvica bilateral, O quimiorradiación</td></tr>
+          <tr><td><span class="figo-badge">IIA</span></td><td>Extensión al tercio superior de vagina, sin invasión parametrial</td><td>Quirúrgico (IIA1) o quimiorradiación (IIA2)</td></tr>
+          <tr><td><span class="figo-badge">IIB</span></td><td>Invasión parametrial (sin llegar a pared pélvica)</td><td>Quimiorradiación (RT pélvica + braquiterapia + cisplatino)</td></tr>
+          <tr><td><span class="figo-badge">III</span></td><td>Extensión a pared pélvica, tercio inferior de vagina, o compromiso renal/ganglionar pélvico o paraaórtico</td><td>Quimiorradiación. Estadio IIIC: ganglios positivos → RT ampliada</td></tr>
+          <tr><td><span class="figo-badge">IVA</span></td><td>Invasión mucosa vesical o rectal</td><td>Quimiorradiación ± exenteración pélvica en casos seleccionados</td></tr>
+          <tr><td><span class="figo-badge">IVB</span></td><td>Metástasis a distancia (pulmón, hígado, hueso)</td><td>Quimioterapia sistémica paliativa (paclitaxel + carboplatino ± bevacizumab ± pembrolizumab)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Ganglio centinela y ganglios paraaórticos</div>
+      La presencia de <strong>ganglios pélvicos o paraaórticos positivos</strong> (estadio IIIC1 y IIIC2 respectivamente) fue incorporada en FIGO 2018. La detección de ganglio centinela con mapeo laparoscópico permite estadificar mejor los tumores IB1–IIA. Si hay compromiso paraaórtico (IIIC2) → RT con campo extendido.
+    </div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">💊 Tratamiento — puntos clave</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#9C27B0">Estadios iniciales (IA – IB1)</div>
+        <div class="card-item">• <strong>Conización:</strong> IA1 sin invasión linfovascular (preserva fertilidad).</div>
+        <div class="card-item">• <strong>Traquelectomía radical:</strong> IB1 ≤2 cm, deseo de fertilidad, sin ganglios positivos.</div>
+        <div class="card-item">• <strong>Histerectomía radical (Wertheim-Meigs):</strong> extirpa útero, parametrios, manguito vaginal + linfadenectomía pélvica bilateral.</div>
+        <div class="card-item" style="margin-top:8px">Clasificación de Querleu-Morrow: tipos A, B, C1, C2, D. El tipo C2 equivale al Wertheim clásico.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#9C27B0">Estadios localmente avanzados (IB2–IVA)</div>
+        <div class="card-item">• <strong>Quimiorradiación concurrente</strong> es el estándar: RT pélvica externa (45–50 Gy) + braquiterapia cervical + cisplatino semanal (40 mg/m²).</div>
+        <div class="card-item" style="margin-top:6px">• El cisplatino actúa como radiosensibilizador.</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Braquiterapia:</strong> componente esencial → dosis alta a tumor primario. Idealmente guiada por RMN (braquiterapia adaptada a imagen).</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Pembrolizumab</strong> (anti PD-1) + quimio: aprobado en CCU avanzado/recurrente con expresión de PD-L1 (KEYNOTE-826).</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Hidronefrosis bilateral</strong> en CCU avanzado = estadio IIIB (extensión a pared pélvica con oclusión ureteral). Requiere derivación urinaria urgente antes de iniciar tratamiento.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CCU: >99% causado por HPV</span>
+      <span class="pill">HPV 16 y 18: 70% de los casos</span>
+      <span class="pill">E6/E7 inactivan p53 y Rb</span>
+      <span class="pill">Síntoma más característico: sangrado post-coital</span>
+      <span class="pill">LSIL = NIC I: conducta expectante</span>
+      <span class="pill">HSIL = NIC II-III: tratamiento escisional (LEEP)</span>
+      <span class="pill">Zona de transformación: sitio de origen del CCU</span>
+      <span class="pill">Tamizaje Argentina: test HPV cada 5 años o Pap cada 3 años</span>
+      <span class="pill">FIGO IB: confinado al cuello, visible clínicamente</span>
+      <span class="pill">FIGO IIB: invasión parametrial → quimiorradiación</span>
+      <span class="pill">FIGO IIIC1: ganglios pélvicos positivos</span>
+      <span class="pill">FIGO IVA: invasión de vejiga o recto</span>
+      <span class="pill">Wertheim-Meigs: útero + parametrios + linfadenectomía pélvica</span>
+      <span class="pill">Quimiorradiación: RT + cisplatino semanal (radiosensibilizador)</span>
+      <span class="pill">Traquelectomía radical: preserva fertilidad en IB1 ≤2 cm</span>
+      <span class="pill">Braquiterapia: esencial en tratamiento conservador</span>
+      <span class="pill">Pembrolizumab: aprobado en CCU avanzado PD-L1+</span>
+      <span class="pill">Hidronefrosis bilateral: estadio IIIB</span>
+      <span class="pill">Vacuna HPV: Calendario Nacional a los 11 años (Argentina)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: FIGO Committee on Gynecologic Oncology. Revised FIGO staging for carcinoma of the cervix uteri. Int J Gynaecol Obstet 2019 · Guía de Prevención del Cáncer Cervicouterino. Ministerio de Salud de la Nación Argentina, 2022 · WHO Comprehensive cervical cancer control. A guide to essential practice. 2ª ed. Geneva: WHO, 2022 · ACOG Practice Bulletin No. 168: Cervical Cancer Screening and Prevention. Obstet Gynecol 2016 · Colombo N et al. ESMO–ESGO consensus conference recommendations on ovarian cancer. Ann Oncol 2019 · Tewari KS et al. Pembrolizumab plus chemotherapy in cervical cancer (KEYNOTE-826). N Engl J Med 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
