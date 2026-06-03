@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibromialgia — Medpedia</title>
+  <meta name="description" content="Fibromialgia: criterios diagnósticos ACR 2010/2016, fisiopatología, tratamiento farmacológico y no farmacológico. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --reuma: #5C6BC0; --reuma-claro: #E8EAF6; --reuma-oscuro: #3949AB;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-reuma { background: var(--reuma-claro); color: var(--reuma-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-reuma { font-size: 16px; font-weight: 500; color: var(--reuma); margin-bottom: 12px; }
+    .hl        { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn   { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info   { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-reuma  { border-left: 3px solid var(--reuma); background: var(--reuma-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.7; margin-bottom: 4px; }
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 500; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase { font-size: 12px; color: var(--reuma); margin-bottom: 6px; }
+    .dosis-badge { display: inline-block; background: var(--reuma-claro); color: var(--reuma-oscuro); font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .farma-detalle { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .criterio-box { background: var(--reuma-claro); border: 1.5px solid var(--reuma); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 12px; }
+    .criterio-titulo { font-size: 14px; font-weight: 600; color: var(--reuma-oscuro); margin-bottom: 10px; }
+    .criterio-item { font-size: 13px; color: var(--texto-sec); line-height: 1.7; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .badge-si { background: var(--verde-claro); color: var(--verde-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; display: inline-block; }
+    .badge-no { background: #fdeaea; color: #922B21; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; display: inline-block; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Clínica / Reumatología</a> › Fibromialgia</div>
+  <div class="titulo">Fibromialgia</div>
+  <div class="meta">
+    <span class="tag tag-reuma">Reumatología</span>
+    <span class="tag tag-reuma" style="background:#EDE7F6;color:#4527A0">Clínica Médica</span>
+    <span class="tag tag-fuente">ACR 2010/2016 · EULAR 2017 · Häuser et al.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y epidemiología</div>
+    <div class="hl-reuma">
+      <strong>Fibromialgia (FM):</strong> síndrome de dolor crónico generalizado de origen central, caracterizado por dolor musculoesquelético difuso, fatiga, trastornos del sueño y disfunción cognitiva (<em>"fibro fog"</em>), en ausencia de inflamación o daño tisular demostrable. Es un trastorno de <strong>sensibilización central</strong>.
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Epidemiología</div>
+        <div class="card-item">• Prevalencia: 2–4% de la población general.</div>
+        <div class="card-item">• Relación mujer:hombre ≈ 7–9:1.</div>
+        <div class="card-item">• Edad de presentación: 30–55 años (puede ser a cualquier edad).</div>
+        <div class="card-item">• Segunda causa de consulta reumatológica (tras la osteoartritis).</div>
+        <div class="card-item">• Alta comorbilidad con depresión, ansiedad, síndrome de intestino irritable, cefalea tensional y vejiga hiperactiva.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Fisiopatología — Sensibilización central</div>
+        <div class="card-item">• <strong>Hiperalgesia:</strong> respuesta aumentada a estímulos dolorosos.</div>
+        <div class="card-item">• <strong>Alodinia:</strong> dolor ante estímulos normalmente no dolorosos.</div>
+        <div class="card-item">• Alteración en las vías descendentes inhibitorias del dolor (serotonina y noradrenalina ↓).</div>
+        <div class="card-item">• Aumento de neurotransmisores excitatorios (sustancia P, glutamato) en LCR.</div>
+        <div class="card-item">• Neuroimágenes: activación aumentada en áreas de procesamiento del dolor (corteza somatosensorial, ínsula, cíngulo anterior).</div>
+        <div class="card-item">• Factores predisponentes: genéticos, trauma físico/emocional, infecciones, trastornos del sueño, estrés crónico.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRITERIOS DIAGNÓSTICOS -->
+  <div class="seccion">
+    <div class="sec-titulo-reuma">📋 Criterios diagnósticos ACR 2010 / revisados 2016</div>
+    <div class="hl-info">Los criterios de 1990 (18 puntos gatillo) fueron reemplazados. Los criterios actuales (ACR 2010, revisados 2016) no requieren el examen de puntos gatillo y pueden ser autoadministrados.</div>
+
+    <div class="criterio-box">
+      <div class="criterio-titulo">Criterios ACR 2016 — Se requieren LOS 3:</div>
+      <div class="criterio-item"><strong>1. Índice de Dolor Generalizado (IDG / WPI) ≥ 7</strong> + <strong>Escala de Gravedad de Síntomas (SSS) ≥ 5</strong><br>
+      <em>— O —</em> IDG 4–6 + SSS ≥ 9</div>
+      <div class="criterio-item" style="margin-top:8px"><strong>2. Síntomas presentes durante al menos 3 meses con nivel similar de intensidad.</strong></div>
+      <div class="criterio-item" style="margin-top:8px"><strong>3. El diagnóstico de fibromialgia es válido independientemente de otras patologías concomitantes.</strong> (No es diagnóstico de exclusión.)</div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Escala</th><th>Qué evalúa</th><th>Puntaje</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>WPI (Widespread Pain Index)</strong></td>
+            <td>19 áreas corporales en las que el paciente tuvo dolor en la última semana (mandíbula, cuello, hombros, brazos, antebrazos, manos, tórax, abdomen, espalda alta/baja, caderas, muslos, piernas, pies — bilaterales)</td>
+            <td>0–19</td>
+          </tr>
+          <tr>
+            <td><strong>SSS (Symptom Severity Scale)</strong></td>
+            <td>Fatiga (0–3) + sueño no reparador (0–3) + síntomas cognitivos (0–3) + síntomas somáticos adicionales (0–3)</td>
+            <td>0–12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ La fibromialgia NO es un diagnóstico de exclusión</div>
+      Puede coexistir con artritis reumatoidea, LES, hipotiroidismo u otras enfermedades. No se requiere descartar todas las enfermedades antes de diagnosticarla. Sin embargo, es obligatorio realizar estudios básicos para no perder patologías tratables que simulan FM (ver diagnóstico diferencial).
+    </div>
+  </div>
+
+  <!-- CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Clínica</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Síntomas cardinales</div>
+        <div class="card-item">🔴 <strong>Dolor generalizado:</strong> difuso, bilateral, afecta musculatura axial y apendicular. Fluctuante. Empeora con frío, estrés, actividad excesiva.</div>
+        <div class="card-item">🟠 <strong>Fatiga:</strong> presente en >90%. Desproporcionada al esfuerzo. No mejora con el reposo.</div>
+        <div class="card-item">🟡 <strong>Sueño no reparador:</strong> dificultad para conciliar, múltiples despertares, sensación de no haber descansado. Patrón EEG: intrusión de ondas alfa en sueño no-REM.</div>
+        <div class="card-item">🔵 <strong>Disfunción cognitiva ("fibro fog"):</strong> dificultad de concentración, memoria, palabra. Muy invalidante para la vida laboral.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Síntomas asociados frecuentes</div>
+        <div class="card-item">• Cefalea tensional / migraña</div>
+        <div class="card-item">• Síndrome de intestino irritable (SII)</div>
+        <div class="card-item">• Vejiga hiperactiva / cistitis intersticial</div>
+        <div class="card-item">• Síndrome de piernas inquietas</div>
+        <div class="card-item">• Parestesias en MMSS y MMII (sin déficit neurológico)</div>
+        <div class="card-item">• Síndrome de Raynaud leve</div>
+        <div class="card-item">• Trastornos del ánimo: depresión (30–40%), ansiedad</div>
+        <div class="card-item">• Sensibilidad a olores, ruidos, luces (sensibilización central multisistémica)</div>
+        <div class="card-item">• Disfunción temporomandibular</div>
+      </div>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>Señales de alarma ("red flags") que obligan a descartar otra patología:</strong> artritis con sinovitis objetiva, fiebre, pérdida de peso, debilidad muscular proximal (pensar polimialgia reumática/miopatía), datos de inflamación en laboratorio (VSG/PCR elevadas), enzimas musculares elevadas (CPK), alteraciones en el hemograma, TSH anormal.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO DIFERENCIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Diagnóstico diferencial y estudios</div>
+    <div class="hl">En la FM el <strong>laboratorio y las imágenes son normales</strong>. Su utilidad es excluir otras causas de dolor generalizado.</div>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Patología a descartar</th><th>Estudio clave</th><th>Diferencia con FM</th></tr></thead>
+        <tbody>
+          <tr><td>Hipotiroidismo</td><td>TSH</td><td>CPK elevada, mixedema, TSH alta</td></tr>
+          <tr><td>Polimialgia reumática</td><td>VSG, PCR, IL-6</td><td>Dolor en cintura escapular/pelviana, VSG >40, edad >50, responde a corticoides</td></tr>
+          <tr><td>LES / conectivopatías</td><td>ANA, anti-DNA, complemento</td><td>Artritis, serositis, rash, citopenias, ANA + en título alto</td></tr>
+          <tr><td>Artritis reumatoidea</td><td>FR, anti-CCP, Rx manos</td><td>Sinovitis objetiva, rigidez matinal >1 h, anti-CCP+</td></tr>
+          <tr><td>Miopatía inflamatoria</td><td>CPK, aldolasa, EMG, biopsia</td><td>Debilidad muscular proximal objetiva, CPK muy elevada</td></tr>
+          <tr><td>Espondiloartropatía</td><td>HLA-B27, RMN sacroilíacas</td><td>Dolor inflamatorio (mejora con movimiento), sacroileítis en imagen</td></tr>
+          <tr><td>Depresión mayor</td><td>Evaluación psiquiátrica</td><td>Puede coexistir. En depresión, el dolor suele ser menos prominente que el humor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Estudios básicos recomendados:</strong> hemograma completo, VSG, PCR, glucemia, función renal y hepática, CPK, TSH, calcemia, vitamina D, ANA (si hay sospecha clínica de conectivopatía). Rx y estudios de imagen solo si hay hallazgos clínicos específicos.</div>
+  </div>
+
+  <!-- TRATAMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo-reuma">💊 Tratamiento — Enfoque multimodal</div>
+    <div class="hl-reuma"><strong>El tratamiento de la FM es multimodal e individualizado.</strong> La educación del paciente y el ejercicio físico son los pilares con mayor evidencia. El tratamiento farmacológico es complementario, no curativo.</div>
+
+    <div class="sec-titulo" style="margin-top:1rem">🏃 Tratamiento no farmacológico (primera línea)</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#1D9E75">Ejercicio físico aeróbico</div>
+        <div class="card-item">Evidencia más sólida disponible (nivel A). Mejora dolor, fatiga, calidad de vida y estado de ánimo. Inicio gradual para evitar el "ciclo de boom-bust". Recomendado: caminata, natación, bicicleta, aquagym.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#1D9E75">Terapia cognitivo-conductual (TCC)</div>
+        <div class="card-item">Eficaz para el manejo del dolor crónico, la catastrofización y la adaptación funcional. Especialmente útil en pacientes con comorbilidad psiquiátrica o mal afrontamiento.</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:8px">
+      <div class="card">
+        <div class="card-titulo" style="color:#5C6BC0">Educación al paciente</div>
+        <div class="card-item">Explicar el modelo de sensibilización central. Validar el dolor como real (no "imaginado"). Fijar expectativas realistas. Grupos de apoyo. Reduce consultas innecesarias y mejora adherencia.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#5C6BC0">Higiene del sueño y mindfulness</div>
+        <div class="card-item">Horarios regulares, evitar pantallas nocturnas, limitar cafeína. El mindfulness y la meditación tienen evidencia moderada para el manejo del dolor y la calidad de vida.</div>
+      </div>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1.5rem">💊 Tratamiento farmacológico</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Duloxetina</div>
+      <div class="farma-clase">IRSN (Inhibidor de recaptación de serotonina y noradrenalina) · Primera línea</div>
+      <div class="dosis-badge">30 mg/día inicial → 60 mg/día (hasta 120 mg/día)</div>
+      <div class="farma-detalle">Aprobada por FDA para FM. Mejora dolor, fatiga y calidad de vida. Especialmente útil en pacientes con depresión concomitante. Iniciar con dosis baja y titular para minimizar náuseas (efecto adverso más frecuente). Evitar en: epilepsia no controlada, uso de IMAO.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Pregabalina</div>
+      <div class="farma-clase">Anticonvulsivante (ligando α₂δ de canales de calcio) · Primera línea</div>
+      <div class="dosis-badge">75 mg c/12 h inicial → 150–225 mg c/12 h (máx 450 mg/día)</div>
+      <div class="farma-detalle">Aprobada por FDA para FM. Reduce la liberación de neurotransmisores excitatorios. Mejora dolor, sueño y calidad de vida. Efectos adversos: somnolencia, mareos, aumento de peso, edema periférico. Titular gradualmente. Alternativa: gabapentin (menor evidencia, no aprobado para FM).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Amitriptilina</div>
+      <div class="farma-clase">Antidepresivo tricíclico · Segunda línea / adyuvante nocturno</div>
+      <div class="dosis-badge">10–25 mg/noche (dosis analgésica, no antidepresiva)</div>
+      <div class="farma-detalle">Ampliamente usado por su disponibilidad y bajo costo. Mejora el sueño y el dolor a dosis bajas. No aprobado formalmente por FDA para FM. Efectos adversos: sedación, boca seca, constipación, retención urinaria, QT prolongado. Contraindicado en glaucoma, HBP, arritmias.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Milnaciprán</div>
+      <div class="farma-clase">IRSN · Aprobado FDA para FM (no disponible en Argentina)</div>
+      <div class="dosis-badge">50 mg c/12 h (hasta 200 mg/día)</div>
+      <div class="farma-detalle">Aprobado por FDA para FM junto con duloxetina y pregabalina. No disponible en Argentina. Relevante para el examen.</div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">❌ Lo que NO usar en fibromialgia</div>
+      <strong>AINE y corticoides:</strong> no tienen eficacia demostrada en FM (no hay inflamación). <strong>Opioides fuertes:</strong> no recomendados (riesgo de dependencia, hiperalgesia inducida por opioides, sin evidencia sólida). <strong>Tramadol:</strong> puede usarse a corto plazo con cautela como rescate, pero no como tratamiento base.
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">FM: trastorno de sensibilización central</span>
+      <span class="pill">No hay inflamación ni daño tisular demostrable</span>
+      <span class="pill">Relación mujer:hombre 7–9:1</span>
+      <span class="pill">Criterios ACR 2016: WPI + SSS (no puntos gatillo)</span>
+      <span class="pill">WPI ≥7 + SSS ≥5 (o WPI 4–6 + SSS ≥9)</span>
+      <span class="pill">Síntomas ≥3 meses</span>
+      <span class="pill">NO es diagnóstico de exclusión</span>
+      <span class="pill">Laboratorio normal en FM</span>
+      <span class="pill">Fisiopatología: déficit de serotonina y noradrenalina, sustancia P ↑</span>
+      <span class="pill">Hiperalgesia + alodinia = sensibilización central</span>
+      <span class="pill">Fibro fog: disfunción cognitiva</span>
+      <span class="pill">Ejercicio aeróbico: mayor evidencia (nivel A)</span>
+      <span class="pill">TCC: eficaz para dolor crónico y catastrofización</span>
+      <span class="pill">Duloxetina: IRSN, aprobada FDA para FM</span>
+      <span class="pill">Pregabalina: ligando α₂δ, aprobada FDA para FM</span>
+      <span class="pill">Milnaciprán: aprobado FDA (no disponible en Argentina)</span>
+      <span class="pill">Amitriptilina: dosis baja nocturna, mejora sueño y dolor</span>
+      <span class="pill">AINE y corticoides: NO tienen eficacia en FM</span>
+      <span class="pill">Opioides fuertes: NO recomendados</span>
+      <span class="pill">Comorbilidades: depresión, ansiedad, SII, migraña</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Wolfe F et al. 2010 Revisions to the 2010/2011 fibromyalgia diagnostic criteria. Semin Arthritis Rheum 2011 · Wolfe F et al. 2016 Revisions to the 2010/2011 fibromyalgia diagnostic criteria. Semin Arthritis Rheum 2016 · Häuser W et al. EULAR revised recommendations for the management of fibromyalgia. Ann Rheum Dis 2017 · Clauw DJ. Fibromyalgia: A Clinical Review. JAMA 2014 · Arnold LM et al. EULAR evidence-based recommendations for the management of fibromyalgia syndrome. Ann Rheum Dis 2016.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
