@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricotiroidotomía de Urgencia — Medpedia</title>
+  <meta name="description" content="Cricotiroidotomía de urgencia: indicaciones CICO, técnica quirúrgica y con bougie, anatomía, complicaciones. Guía para residencias médicas.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --azul: #1A5E9A; --azul-claro: #E6F1FB;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --morado: #7B3FA0; --morado-claro: #F3E8FC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-urgencia { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-ciru { background: #E8F5E9; color: #2E7D32; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-rojo  { border-left: 3px solid var(--rojo); background: var(--rojo-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-verde { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .cico-box { background: #d32f2f; color: white; border-radius: 14px; padding: 1.25rem; margin-bottom: 14px; }
+    .cico-titulo { font-size: 17px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .cico-sub { font-size: 13px; opacity: 0.92; line-height: 1.6; }
+    .tecnica-header { background: var(--rojo); color: white; border-radius: 12px 12px 0 0; padding: 0.7rem 1.1rem; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .tecnica-body { border: 1.5px solid var(--rojo); border-top: none; border-radius: 0 0 12px 12px; padding: 1rem 1.1rem; margin-bottom: 14px; background: var(--blanco); }
+    .tecnica-header.verde { background: var(--verde); }
+    .tecnica-body.verde { border-color: var(--verde); }
+    .anatom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 560px) { .anatom-grid { grid-template-columns: 1fr; } }
+    .anatom-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem; }
+    .anatom-titulo { font-size: 13px; font-weight: 600; color: var(--azul); margin-bottom: 6px; }
+    .anatom-desc { font-size: 12.5px; color: var(--texto-sec); line-height: 1.55; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Urgencias</a> › Cricotiroidotomía de Urgencia</div>
+  <div class="titulo">Cricotiroidotomía de Urgencia</div>
+  <div class="meta">
+    <span class="tag tag-urgencia">Urgencias</span>
+    <span class="tag tag-ciru">Cirugía de urgencia</span>
+    <span class="tag tag-fuente">DAS Guidelines 2015 · NAP4 · ATLS 10ª ed.</span>
+  </div>
+
+  <!-- CICO -->
+  <div class="seccion">
+    <div class="cico-box">
+      <div class="cico-titulo">⚠️ CICO — Can't Intubate, Can't Oxygenate</div>
+      <div class="cico-sub">La cricotiroidotomía de urgencia es el procedimiento de <strong>rescate final</strong> en la situación CICO: fracasaron todos los intentos de intubación orotraqueal y de oxigenación con mascarilla. Es una urgencia de minutos — la hipoxia severa lleva a muerte cerebral en 3–5 minutos.</div>
+    </div>
+    <div class="hl-danger"><span class="badge-urgente">NO DEMORAR</span> En situación CICO, la cricotiroidotomía debe realizarse <strong>inmediatamente</strong>. No es momento de intentar una técnica más. Cada minuto de hipoxia severa (SpO₂ &lt;80%) genera daño neurológico irreversible.</div>
+  </div>
+
+  <!-- INDICACIONES / CONTRAINDICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Indicaciones y contraindicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Indicaciones</th><th>Contraindicaciones relativas</th></tr>
+        <tr>
+          <td>
+            <strong>Situación CICO</strong> (principal indicación)<br>
+            Trauma facial grave con destrucción de vía aérea superior<br>
+            Obstrucción supraglótica no resoluble (cuerpo extraño impactado, angioedema masivo, epiglotitis, quemadura)<br>
+            Trismus/lockjaw (no puede abrir la boca)<br>
+            Laringoespasmo prolongado<br>
+            Fractura laríngea con imposibilidad de vía oral
+          </td>
+          <td>
+            <strong>Edad &lt;8-10 años</strong> (usar punción cricoidea con catéter en niños pequeños)<br>
+            Fractura laríngea completa (riesgo de lesión)<br>
+            Tumor/masa que ocupa el espacio cricotiroideo<br>
+            Coagulopatía severa (relativa — si hay CICO, igualmente se realiza)<br>
+            Anatomía cervical no identificable (obeso, cuello corto, hematoma masivo)
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ Las contraindicaciones son <strong>relativas</strong>: en situación CICO real (hipoxia severa, vida en riesgo inmediato), no existe contraindicación absoluta. La muerte por hipoxia es peor que cualquier complicación del procedimiento.</div>
+  </div>
+
+  <!-- ANATOMÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Anatomía del espacio cricotiroideo</div>
+    <div class="hl-info"><strong>Membrana cricotiroidea (MCT):</strong> es la estructura objetivo. Está ubicada entre el cartílago tiroides (superior) y el cartílago cricoides (inferior), en la línea media anterior del cuello.</div>
+    <div class="anatom-grid">
+      <div class="anatom-card">
+        <div class="anatom-titulo">Dimensiones de la MCT</div>
+        <div class="anatom-desc">Altura promedio: <strong>9 mm</strong> (rango 5–15 mm). Ancho: 20–30 mm. Superficie accesible en la línea media: ~9 × 30 mm. Espacio real para el tubo: reducido → usar tubo 6.0 ó 6.5 mm DI (máx 7.0 en hombre adulto).</div>
+      </div>
+      <div class="anatom-card">
+        <div class="anatom-titulo">Relaciones vasculares</div>
+        <div class="anatom-desc">Arteria cricotiroidea cruza el tercio superior de la membrana. <strong>Incisión en el tercio inferior</strong> de la MCT → menor riesgo de hemorragia. Las venas tiroideas están más laterales; la incisión en línea media las evita.</div>
+      </div>
+      <div class="anatom-card">
+        <div class="anatom-titulo">Palpación — técnica LEMON / HEAVEN</div>
+        <div class="anatom-desc">Palpar de arriba a abajo: escotadura tiroidea → prominencia del tiroides → espacio blando (MCT) → arco del cricoides. En obesos: usar índice para recorrer la tráquea hacia craneal hasta identificar el cricoides.</div>
+      </div>
+      <div class="anatom-card">
+        <div class="anatom-titulo">Identificación con ecografía</div>
+        <div class="anatom-desc">Sonda lineal en plano sagital sobre la línea media. MCT aparece como espacio hipoecoico entre las estructuras hiperecogénicas del tiroides y cricoides. Útil en obesidad o anatomía difícil <strong>antes</strong> de la urgencia.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TÉCNICA QUIRÚRGICA (Standard) -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Técnica quirúrgica estándar (con bisturí)</div>
+    <div class="hl-rojo"><strong>Material necesario:</strong> Bisturí mango 3 con hoja 10 o 20 · Gancho traqueal (o dedo índice) · Bougie o guía de intubación · Tubo orotraqueal 6.0–6.5 mm DI (o tubo de traqueostomía 6.0) · Jeringa 10 ml · Venda para fijación · Fuente de O₂.</div>
+
+    <div class="tecnica-header">Técnica estándar en 4 pasos (DAS 2015)</div>
+    <div class="tecnica-body">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Palpación y estabilización:</strong> Hiperextender el cuello (si no hay sospecha de lesión cervical). Mano no dominante: pulgar e índice estabilizan la laringe en posición vertical. Palpar la MCT entre tiroides y cricoides.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Incisión:</strong> Incisión <strong>horizontal</strong> en el tercio inferior de la MCT, 8–10 mm de largo. Profundizar hasta entrar en la vía aérea (se escucha/siente flujo de aire). <strong>Mantener el dedo en el orificio</strong> para no perder el acceso.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Dilatar y guiar:</strong> Introducir el <strong>gancho traqueal</strong> caudalmente para traccionar el cricoides hacia abajo y agrandar el orificio. Si no se tiene gancho: usar el dedo índice o la parte posterior del bisturí para dilatar. Introducir el <strong>bougie</strong> (guía) en dirección caudal.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Tubo e inflado:</strong> Pasar el tubo (6.0–6.5 mm DI) sobre el bougie en dirección caudal. Inflar el balón con <strong>5–8 ml de aire</strong>. Ventilar y confirmar: expansión torácica, auscultación, capnografía. Fijar el tubo. <strong>Profundidad desde la piel: ~2–3 cm.</strong></div></div>
+    </div>
+
+    <div class="tecnica-header verde">Técnica con bougie primero (preferida por DAS 2015 — "Scalpel-Bougie-Tube")</div>
+    <div class="tecnica-body verde">
+      <div class="step"><div class="step-num-verde">1</div><div class="step-content"><strong>Palpar MCT · Incisión:</strong> Incisión vertical en la piel (2–3 cm) + incisión horizontal en MCT.</div></div>
+      <div class="step"><div class="step-num-verde">2</div><div class="step-content"><strong>Introducir bougie directamente</strong> a través de la incisión en MCT, orientado caudalmente. Confirmar posición: sensación de anillos traqueales al avanzar ("click traqueal").</div></div>
+      <div class="step"><div class="step-num-verde">3</div><div class="step-content"><strong>Pasar tubo 6.0 sobre el bougie.</strong> Inflar balón. Retirar bougie. Ventilar y confirmar.</div></div>
+      <div class="step"><div class="step-num-verde">4</div><div class="step-content"><strong>Fijar el tubo.</strong> Esta posición es provisional: convertir a traqueostomía formal dentro de las 24–72 h.</div></div>
+    </div>
+  </div>
+
+  <!-- CRICOTIROIDOTOMÍA POR PUNCIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">💉 Cricotiroidotomía por punción (solo oxigenación de emergencia)</div>
+    <div class="hl-warn">⚠️ La punción con catéter (ej: Quicktrach®, catéter 14G) permite <strong>oxigenación de emergencia transitoria</strong>, NO ventilación adecuada. Genera hipercapnia progresiva. <strong>Tiempo máximo: 30–45 minutos.</strong> Debe convertirse inmediatamente a técnica quirúrgica.</div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Material:</strong> Catéter venoso 14G (o kit Quicktrach) + jeringa con SF + fuente O₂ a alta presión.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Técnica:</strong> Puncionar MCT con catéter 14G en ángulo de 45° caudal. Aspirar con jeringa → burbujas de aire confirman posición intraluminal. Avanzar catéter. Conectar a fuente O₂.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Oxigenación jet:</strong> 15 L/min, pausa de 1 seg/4 seg (1:4) para permitir espiración pasiva. Sin válvula espiratoria adecuada → riesgo de barotrauma y enfisema subcutáneo.</div></div>
+    <div class="alerta-box" style="margin-top:10px;">
+      <div class="alerta-title">⭐ En niños &lt;8 años</div>
+      La punción cricotiroidea con catéter 14–18G es <strong>preferida</strong> sobre la cricotiroidotomía quirúrgica por el menor tamaño de la MCT y riesgo de daño al cricoides (que sostiene toda la tráquea en niños). Usar kit pediátrico específico si está disponible.
+    </div>
+  </div>
+
+  <!-- COMPLICACIONES -->
+  <div class="seccion">
+    <div class="sec-titulo">⚠️ Complicaciones</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Complicación</th><th>Frecuencia</th><th>Manejo</th></tr>
+        <tr><td><strong>Posición incorrecta del tubo</strong> (esofágica, extraluminal)</td><td>Más frecuente en urgencia</td><td>Confirmar siempre con capnografía y auscultación. Reposicionar.</td></tr>
+        <tr><td>Hemorragia</td><td>~5–10%</td><td>Compresión directa; raramente requiere sutura. Arteria cricotiroidea en tercio superior.</td></tr>
+        <tr><td>Enfisema subcutáneo</td><td>~5%</td><td>Generalmente autolimitado. Confirmar posición del tubo.</td></tr>
+        <tr><td>Lesión del nervio laríngeo recurrente</td><td>Raro si se incide en línea media</td><td>Disfonía o disfonía persistente. Consulta con fonoaudiología/ORL.</td></tr>
+        <tr><td>Estenosis subglótica</td><td>Complicación tardía</td><td>Principal razón para convertir a traqueostomía en &lt;72 h.</td></tr>
+        <tr><td>Perforación posterior de la tráquea</td><td>Raro</td><td>Puede lesionar el esófago. Cuidado al profundizar en exceso.</td></tr>
+        <tr><td>Obstrucción del tubo por sangre/secreciones</td><td>Relativamente frecuente</td><td>Aspirar; tubo fino → fácil de obstruir → use 6.0 mínimo.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MANEJO POST-PROCEDIMIENTO -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Post-procedimiento</div>
+    <div class="hl"><strong>Confirmación de posición:</strong> Capnografía cuantitativa (ETCO₂ ≥20 mmHg), expansión torácica simétrica, auscultación bilateral, ausencia de ruidos epigástricos.</div>
+    <div class="hl-info"><strong>Conversión a traqueostomía formal:</strong> dentro de las <strong>24–72 h</strong>. La cricotiroidotomía es un procedimiento de rescate temporal. La posición subglótica del tubo causa estenosis si se mantiene más tiempo.</div>
+    <div class="hl-warn">Inmovilizar el tubo con sutura o fijador comercial. La pérdida del acceso en el posoperatorio inmediato es catastrófica — el orificio se cierra en minutos en tejido fresco.</div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CICO = Can't Intubate, Can't Oxygenate → indicación principal</span>
+      <span class="pill">MCT: entre cartílago tiroides (arriba) y cricoides (abajo)</span>
+      <span class="pill">Incisión en tercio inferior de la MCT → evitar arteria cricotiroidea</span>
+      <span class="pill">Técnica DAS: bisturí + bougie + tubo 6.0</span>
+      <span class="pill">Tubo a usar: 6.0–6.5 mm DI (máx 7.0 en hombre adulto)</span>
+      <span class="pill">Profundidad: ~2–3 cm desde la piel</span>
+      <span class="pill">Punción con catéter: solo oxigenación temporal, máx 30–45 min</span>
+      <span class="pill">En niños &lt;8 años: punción cricotiroidea con catéter, no quirúrgica</span>
+      <span class="pill">Confirmar posición: capnografía + auscultación bilateral</span>
+      <span class="pill">Convertir a traqueostomía en &lt;72 h (evitar estenosis subglótica)</span>
+      <span class="pill">Complicación más frecuente: posición incorrecta del tubo</span>
+      <span class="pill">Complicación tardía: estenosis subglótica</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Frerk C et al. Difficult Airway Society 2015 guidelines for management of unanticipated difficult intubation in adults. Br J Anaesth 2015;115(6):827–848. · Cook TM et al. Major complications of airway management in the UK: results of the 4th National Audit Project of the Royal College of Anaesthetists and the Difficult Airway Society. Br J Anaesth 2011. · American College of Surgeons. ATLS Advanced Trauma Life Support, 10th ed. 2018. · Apfelbaum JL et al. 2022 American Society of Anesthesiologists Practice Guidelines for Management of the Difficult Airway. Anesthesiology 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
