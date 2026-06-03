@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trauma de Pelvis — Medpedia</title>
+  <meta name="description" content="Trauma de pelvis: clasificación Tile/AO, Young-Burgess, hemorragia pélvica, damage control ortopédico, packing pélvico, angioembolización. Guía para residencias médicas.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --azul: #1A5E9A; --azul-claro: #E6F1FB;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --morado: #7B3FA0; --morado-claro: #F3E8FC;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-urgencia { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-ciru { background: #E8F5E9; color: #2E7D32; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-verde { width: 28px; height: 28px; border-radius: 50%; background: var(--verde); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .clasif-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    @media (max-width: 600px) { .clasif-grid { grid-template-columns: 1fr; } }
+    .clasif-card { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .clasif-card.estable { background: #E8F5E9; border-color: #81C784; }
+    .clasif-card.rotacion { background: #FEF0DC; border-color: #f0c080; }
+    .clasif-card.inestable { background: #FDEDEC; border-color: #e8b4b0; }
+    .clasif-letra { font-size: 22px; font-weight: 700; margin-bottom: 4px; font-family: 'Fraunces', serif; }
+    .clasif-letra.estable { color: #2E7D32; }
+    .clasif-letra.rotacion { color: #D4730A; }
+    .clasif-letra.inestable { color: var(--rojo); }
+    .clasif-titulo { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+    .clasif-desc { font-size: 12px; color: var(--texto-sec); line-height: 1.5; }
+    .mortalidad-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 8px; margin-top: 4px; }
+    .mortalidad-badge.baja { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .mortalidad-badge.media { background: #FEF0DC; color: #D4730A; }
+    .mortalidad-badge.alta { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .hemo-box { background: var(--blanco); border: 1.5px solid var(--rojo); border-radius: 12px; padding: 1.1rem; margin-bottom: 8px; }
+    .hemo-titulo { font-size: 13px; font-weight: 700; color: var(--rojo); margin-bottom: 6px; }
+    .hemo-desc { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    .tto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 560px) { .tto-grid { grid-template-columns: 1fr; } }
+    .tto-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.1rem; }
+    .tto-titulo { font-size: 13px; font-weight: 600; color: var(--azul); margin-bottom: 6px; }
+    .tto-desc { font-size: 12.5px; color: var(--texto-sec); line-height: 1.55; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Trauma de Pelvis</div>
+  <div class="titulo">Trauma de Pelvis</div>
+  <div class="meta">
+    <span class="tag tag-urgencia">Urgencias</span>
+    <span class="tag tag-ciru">Cirugía / Traumatología</span>
+    <span class="tag tag-fuente">ATLS 10ª ed. · WSES Guidelines 2023 · EAU Trauma Guidelines</span>
+  </div>
+
+  <!-- EPIDEMIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Magnitud del problema</div>
+    <div class="hl-danger"><span class="badge-urgente">CRÍTICO</span> Las fracturas pélvicas inestables son causa de hemorragia masiva y muerte en politraumatizados. El espacio retroperitoneal puede contener hasta <strong>3–4 litros de sangre</strong> antes de que la presión lo tamponade. Mortalidad global en fracturas pélvicas inestables con shock: <strong>20–50%</strong>.</div>
+    <div class="hl-info"><strong>Mecanismos frecuentes:</strong> Accidentes de tránsito de alta energía (70%), atropellos peatonales, caídas de altura, aplastamiento. La pelvis es el indicador de la energía transferida — una fractura pélvica inestable implica alto riesgo de lesiones asociadas (tórax, abdomen, columna, extremidades).</div>
+  </div>
+
+  <!-- CLASIFICACIÓN TILE/AO y YOUNG-BURGESS -->
+  <div class="seccion">
+    <div class="sec-titulo">🦴 Clasificación — Tile/AO y Young-Burgess</div>
+    <div class="hl-info">La clasificación más relevante clínicamente es <strong>Tile/AO</strong> (A = estable, B = inestabilidad rotacional, C = inestabilidad completa). Young-Burgess clasifica por mecanismo (LC, APC, VS, CM) y se correlaciona con tipo de hemorragia.</div>
+
+    <div class="clasif-grid">
+      <div class="clasif-card estable">
+        <div class="clasif-letra estable">Tile A</div>
+        <div class="clasif-titulo">Estable</div>
+        <div class="clasif-desc">Sin interrupción del anillo pélvico posterior. Fracturas del sacro sin desplazamiento, avulsiones, ramas pubianas aisladas.</div>
+        <div class="mortalidad-badge baja">Mortalidad baja</div>
+      </div>
+      <div class="clasif-card rotacion">
+        <div class="clasif-letra rotacion">Tile B</div>
+        <div class="clasif-titulo">Inestabilidad rotacional</div>
+        <div class="clasif-desc">Fractura de libro abierto (APC II/III) o compresión lateral. Inestabilidad en rotación pero estabilidad vertical conservada.</div>
+        <div class="mortalidad-badge media">Mortalidad intermedia</div>
+      </div>
+      <div class="clasif-card inestable">
+        <div class="clasif-letra inestable">Tile C</div>
+        <div class="clasif-titulo">Inestabilidad total</div>
+        <div class="clasif-desc">Inestabilidad rotacional <strong>y</strong> vertical. Lesión del ligamento sacroilíaco posterior. VS (cizallamiento vertical). Mayor hemorragia.</div>
+        <div class="mortalidad-badge alta">Mortalidad alta (20–50%)</div>
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Patrón Young-Burgess</th><th>Mecanismo</th><th>Ligamentos lesionados</th><th>Hemorragia esperada</th></tr>
+        <tr><td><strong>LC I–III</strong> (compresión lateral)</td><td>Impacto lateral</td><td>LC I: ninguno mayor · LC III: sacroilíaco ant.</td><td>Moderada (venosa)</td></tr>
+        <tr><td><strong>APC I–III</strong> (compresión anteroposterior)</td><td>Impacto frontal</td><td>APC II: sínfisis + SI ant · APC III: todos SI</td><td>APC II–III: severa (venosa + arterial)</td></tr>
+        <tr><td><strong>VS</strong> (cizallamiento vertical)</td><td>Caída de altura unipodal</td><td>Todos los ligamentos SI homolateral</td><td>Muy severa (arterial, especialmente a. ilíaca interna)</td></tr>
+        <tr><td><strong>CM</strong> (combinado)</td><td>Alta energía mixta</td><td>Variables</td><td>Variable, generalmente grave</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ El <strong>libro abierto (APC III)</strong> y el <strong>cizallamiento vertical (VS)</strong> son los patrones de mayor hemorragia. En el libro abierto, el cierre de la pelvis con cinturón pélvico o fijador externo <strong>reduce el volumen pélvico y tamponade la hemorragia</strong>.</div>
+  </div>
+
+  <!-- HEMORRAGIA PÉLVICA -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Hemorragia pélvica — el problema principal</div>
+    <div class="hl-danger"><strong>El 60–80% de la hemorragia pélvica es de origen venoso</strong> (plexo presacro, venas pélvicas). El 10–20% es arterial (arteria ilíaca interna y ramas). El sangrado venoso responde al taponamiento mecánico; el arterial requiere angioembolización.</div>
+
+    <div class="hemo-box">
+      <div class="hemo-titulo">Orígenes de hemorragia en fractura pélvica inestable</div>
+      <div class="hemo-desc">
+        <strong>1. Venoso (plexo presacro y pélvico):</strong> 60–80% → responde a cierre mecánico de la pelvis + packing pélvico preperitoneal.<br>
+        <strong>2. Arterial (a. ilíaca interna y ramas):</strong> 10–20% → requiere angioembolización selectiva.<br>
+        <strong>3. Fracturas óseas (hueso esponjoso):</strong> siempre contribuye → el hueso en fracturas pélvicas puede sangrar significativamente.<br>
+        <strong>4. Lesiones viscerales asociadas (vejiga, recto, vagina, uretra):</strong> evaluar en todo politraumatizado pélvico.
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Punta de ICEBERG — lesiones asociadas</div>
+      <strong>Vejiga:</strong> ruptura intraperitoneal o extraperitoneal (hematuria macro en 80–95% de ruptura vesical). <strong>Uretra:</strong> especialmente en hombres, fractura de ramas del pubis → uretrorragia, próstata alta al tacto rectal. <strong>Recto:</strong> fractura sacrococcígea con compromiso. <strong>Vagina:</strong> laceración en fracturas de ramas en mujeres. <strong>No sondar uretra si hay sospecha de lesión uretral</strong> → riesgo de completar la lesión parcial.
+    </div>
+  </div>
+
+  <!-- EVALUACIÓN INICIAL -->
+  <div class="seccion">
+    <div class="sec-titulo">🔍 Evaluación inicial — ABCDE en trauma pélvico</div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Reconocimiento clínico:</strong> Mecanismo de alta energía + inestabilidad hemodinámica inexplicable = fractura pélvica hasta que se demuestre lo contrario. Dolor en cintura pélvica, asimetría de miembros inferiores, acortamiento de miembro.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Examen pélvico:</strong> Comprimir la pelvis suavemente en las crestas ilíacas (compresión lateral) → inestabilidad ≠ repetir en múltiples oportunidades (moviliza coágulos). <strong>Solo una vez el examen de stress</strong>. Buscar hematoma perineal (signo de Destot), equimosis escrotal/labial, uretrorragia.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Radiografía de pelvis AP:</strong> En el politraumatizado, la Rx de pelvis AP forma parte del FAST extendido. Identifica fracturas mayores del anillo, diástasis de sínfisis (>2.5 cm = ligamento sacroilíaco anterior roto) y asimetría sacroilíaca.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><strong>TC de abdomen-pelvis con contraste:</strong> Estudio definitivo en paciente hemodinámicamente estable. Identifica hemorragia activa (blush arterial), lesiones viscerales, fracturas sacras, lesiones ligamentarias.</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><strong>FAST abdominal:</strong> Evalúa hemoperitoneo libre. Si FAST(+) + inestabilidad → laparotomía. Si FAST(–) + inestabilidad → origen pélvico probable → packing + fijación.</div></div>
+  </div>
+
+  <!-- MANEJO DAMAGE CONTROL -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Damage Control — manejo escalonado de la hemorragia</div>
+    <div class="hl-rojo" style="border-left-color: var(--rojo); background: var(--rojo-claro);">El manejo moderno integra el concepto de <strong>Damage Control Orthopedics (DCO)</strong>: controlar la hemorragia primero, tratar la fractura definitivamente después. La secuencia es simultánea con la reanimación.</div>
+
+    <div class="tto-grid">
+      <div class="tto-card">
+        <div class="tto-titulo">① Cinturón pélvico / sábana</div>
+        <div class="tto-desc"><strong>Primera maniobra.</strong> Colocar a nivel de los trocánteres mayores (no en crestas ilíacas). Reduce el volumen del anillo pélvico en fracturas de libro abierto. Uso prehospitalario y en sala de emergencias. Disponible en cualquier nivel.<br><em>Especialmente efectivo en: APC II–III.</em></div>
+      </div>
+      <div class="tto-card">
+        <div class="tto-titulo">② Fijador externo pélvico</div>
+        <div class="tto-desc">Estabilización mecánica provisional del anillo anterior. Se coloca bajo anestesia general o local en sala de emergencias/quirófano. Más estable que el cinturón para traslados y procedimientos. No definitivo para fracturas posteriores.<br><em>Tipos: clamp de Ganz (pericetabular), fijador anterior en crestas.</em></div>
+      </div>
+      <div class="tto-card">
+        <div class="tto-titulo">③ Packing pélvico preperitoneal (PPP)</div>
+        <div class="tto-desc">Taponamiento quirúrgico del espacio preperitoneal (espacio de Retzius) con gasas · Sin abrir el peritoneo · Comprime el plexo venoso presacro. <strong>Indicado en hemorragia venosa masiva</strong> refractaria al cinturón/fijador. Se retiran las gasas a las 24–48 h en 2ª cirugía.</div>
+      </div>
+      <div class="tto-card">
+        <div class="tto-titulo">④ Angioembolización</div>
+        <div class="tto-desc">Tratamiento de la hemorragia <strong>arterial</strong>. Indicado cuando persiste inestabilidad hemodinámica a pesar de packing o cuando TC muestra "blush" arterial activo. Embolización selectiva de ramas de a. ilíaca interna. Complicaciones: isquemia glútea, necrosis de vejiga (raro).</div>
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Secuencia según WSES 2023 en fractura pélvica con shock</div>
+      <strong>Paso 1:</strong> Cinturón pélvico inmediato + reanimación con hemoderivados (protocolo 1:1:1 GR:PFC:PLQ). <strong>Paso 2:</strong> FAST — si FAST(+) hemoperitoneo masivo → laparotomía de control de daños. <strong>Paso 3:</strong> Packing pélvico preperitoneal ± fijador externo (puede hacerse simultáneamente con laparotomía). <strong>Paso 4:</strong> Angioembolización si persiste hemorragia arterial con paciente estabilizado para TC o en sala de híbrido.
+    </div>
+  </div>
+
+  <!-- REANIMACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🩸 Reanimación en trauma pélvico severo</div>
+    <div class="hl-danger"><strong>Triada letal del trauma:</strong> Hipotermia + Acidosis + Coagulopatía → se retroalimentan y se potencian. El objetivo del Damage Control Resuscitation (DCR) es interrumpir este círculo.</div>
+    <div class="step"><div class="step-num-verde">1</div><div class="step-content"><strong>Hipotensión permisiva:</strong> PAM objetivo <strong>50 mmHg</strong> (TAS ~80–90 mmHg) hasta hemostasia definitiva. Excepto en TEC asociado: PAM ≥80 mmHg.</div></div>
+    <div class="step"><div class="step-num-verde">2</div><div class="step-content"><strong>Transfusión masiva:</strong> Activar protocolo de transfusión masiva (PTM) precoz. Relación GR:PFC:PLQ = <strong>1:1:1</strong>. Minimizar cristaloides (dilución, hipotermia, acidosis).</div></div>
+    <div class="step"><div class="step-num-verde">3</div><div class="step-content"><strong>Ácido tranexámico (ATX):</strong> 1 g IV en 10 min, tan pronto como posible (<strong>dentro de las 3 h del trauma</strong>). Segunda dosis 1 g IV en 8 h. Reduce mortalidad por hemorragia (CRASH-2 trial). No usar si &gt;3 h del trauma (posible daño).</div></div>
+    <div class="step"><div class="step-num-verde">4</div><div class="step-content"><strong>Fibrinógeno:</strong> Si fibrinógeno &lt;1.5–2 g/L → crioprecipitados o concentrado de fibrinógeno. El fibrinógeno es el primer factor en consumirse en hemorragia masiva.</div></div>
+    <div class="step"><div class="step-num-verde">5</div><div class="step-content"><strong>Evitar hipotermia:</strong> Fluidos tibios, mantas térmicas, sala caliente. La hipotermia inhibe la cascada de coagulación y aumenta la fibrinólisis.</div></div>
+  </div>
+
+  <!-- LESIONES UROLÓGICAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🫀 Lesiones urológicas y pélvicas asociadas</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Lesión</th><th>Sospecha clínica</th><th>Diagnóstico</th><th>Manejo</th></tr>
+        <tr><td><strong>Ruptura vesical</strong></td><td>Hematuria macro, fractura de ramas</td><td>Cistografía (TC con contraste retrógrado)</td><td>Intraperitoneal → cirugía; extraperitoneal → sonda Foley</td></tr>
+        <tr><td><strong>Lesión uretral</strong></td><td>Uretrorragia, próstata alta, hematoma perineal</td><td>Uretrografía retrógrada</td><td>No sondaje inmediato · Cistostomía suprapúbica de urgencia · Reparación diferida</td></tr>
+        <tr><td><strong>Lesión rectal</strong></td><td>Tacto rectal (sangre, disrupción)</td><td>Proctoscopía, TC</td><td>Colostomía de derivación + irrigación rectal</td></tr>
+        <tr><td><strong>Lesión vaginal</strong></td><td>Mujeres con fractura de ramas</td><td>Examen vaginal</td><td>Sutura primaria, drenaje</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- CIRUGÍA DEFINITIVA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔩 Tratamiento definitivo de la fractura</div>
+    <div class="hl-info">La osteosíntesis definitiva se realiza <strong>diferida</strong> (5–7 días) una vez que el paciente está estable, la coagulopatía revertida y la inflamación tisular disminuida. Cirugía en agudo solo si hay inestabilidad hemodinámica irreducible que requiere exploración quirúrgica.</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Zona</th><th>Método definitivo</th><th>Indicación</th></tr>
+        <tr><td>Sínfisis pubiana (diástasis &gt;2.5 cm)</td><td>Placa de sínfisis (RAFI)</td><td>APC II–III estabilizados</td></tr>
+        <tr><td>Ramas del pubis</td><td>Tornillo percutáneo anterógrado o RAFI</td><td>Desplazamiento significativo</td></tr>
+        <tr><td>Articulación sacroilíaca</td><td>Tornillos sacroilíacos percutáneos iliosacros</td><td>Diástasis SI, fracturas sacras Denis I–II</td></tr>
+        <tr><td>Sacro (fractura vertical U/H)</td><td>RAFI + tornillos iliosacros bilaterales</td><td>Denis III, fracturas en U (spinopélvica)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LO QUE PREGUNTAN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Tile C = inestabilidad rotacional + vertical → mayor hemorragia</span>
+      <span class="pill">60–80% de hemorragia pélvica = venosa (plexo presacro)</span>
+      <span class="pill">10–20% arterial → angioembolización de a. ilíaca interna</span>
+      <span class="pill">Cinturón pélvico: a nivel de trocánteres (no crestas ilíacas)</span>
+      <span class="pill">Libro abierto (APC): cinturón cierra la pelvis → reduce volumen</span>
+      <span class="pill">Packing pélvico: taponamiento espacio preperitoneal (Retzius)</span>
+      <span class="pill">Angioembolización: hemorragia arterial activa (blush en TC)</span>
+      <span class="pill">Triada letal: hipotermia + acidosis + coagulopatía</span>
+      <span class="pill">Hipotensión permisiva: TAS 80–90 mmHg hasta hemostasia</span>
+      <span class="pill">Transfusión masiva: GR:PFC:PLQ = 1:1:1</span>
+      <span class="pill">ATX: 1 g IV dentro de las 3 h del trauma (CRASH-2)</span>
+      <span class="pill">Uretrorragia: NO sondar → cistostomía suprapúbica de urgencia</span>
+      <span class="pill">Diástasis sínfisis &gt;2.5 cm: ligamento sacroilíaco anterior roto</span>
+      <span class="pill">TC definitivo en estable; FAST(+) + inestable → laparotomía</span>
+      <span class="pill">Cirugía definitiva: diferida 5–7 días post-estabilización</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American College of Surgeons. ATLS Advanced Trauma Life Support, 10th ed. 2018. · Coccolini F et al. Pelvic trauma: WSES classification and guidelines. World J Emerg Surg 2023;18:1. · Tile M. Fractures of the Pelvis and Acetabulum. 3rd ed. Williams & Wilkins, 1995. · Burkhardt M et al. Damage control orthopedics. Unfallchirurg 2005. · CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients. Lancet 2010;376:23–32. · Bjurlin MA et al. Genitourinary injuries in pelvic fracture morbidity and mortality. J Trauma 2009.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
