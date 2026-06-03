@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valores Normales de Laboratorio — Medpedia</title>
+  <meta name="description" content="Valores de referencia de laboratorio: hemograma, coagulación, ionograma, función renal, hepática, lipídica, tiroides, marcadores cardíacos y más. Tubos y muestras. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --azul: #1565C0; --azul-claro: #E3EEF9;
+      --morado: #6B3FA0; --morado-claro: #F0E8FA;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --celeste: #0288D1; --celeste-claro: #E1F5FE;
+      --gris: #546E7A; --gris-claro: #ECEFF1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-lab    { background: var(--gris-claro); color: var(--gris); }
+    .tag-ref    { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+
+    /* ÍNDICE */
+    .indice { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 2rem; }
+    .indice-titulo { font-size: 12px; font-weight: 600; color: var(--texto-ter); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .5px; }
+    .indice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+    .indice-item { font-size: 13px; color: var(--verde); text-decoration: none; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--borde); background: var(--fondo); display: flex; align-items: center; gap: 6px; }
+    .indice-item:hover { background: var(--verde-claro); }
+
+    /* TUBOS */
+    .tubos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .tubo-card { border-radius: 14px; padding: 1rem 1.1rem; border: 2px solid; }
+    .tubo-card.rojo    { background: #fff5f5; border-color: #e57373; }
+    .tubo-card.lila    { background: var(--morado-claro); border-color: #ce93d8; }
+    .tubo-card.verde-t { background: var(--verde-claro); border-color: #80cba8; }
+    .tubo-card.azul-t  { background: var(--azul-claro); border-color: #90caf9; }
+    .tubo-card.amarill { background: #FFFDE7; border-color: #fff176; }
+    .tubo-card.gris-t  { background: var(--gris-claro); border-color: #b0bec5; }
+    .tubo-card.naranj  { background: var(--naranja-claro); border-color: #ffb74d; }
+    .tubo-card.negro   { background: #F5F5F5; border-color: #616161; }
+    .tubo-dot { width: 18px; height: 18px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; flex-shrink: 0; }
+    .tubo-titulo { font-size: 14px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; }
+    .tubo-aditivo { font-size: 11px; font-weight: 500; margin-bottom: 6px; }
+    .tubo-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 3px; line-height: 1.35; }
+
+    /* SECCIÓN */
+    .seccion { margin-bottom: 2rem; scroll-margin-top: 75px; }
+    .sec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--borde); }
+    .sec-icono { font-size: 20px; }
+    .sec-titulo-txt { font-size: 16px; font-weight: 600; color: var(--texto); }
+
+    /* TABLA LAB */
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 9px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 600; border-bottom: 1px solid var(--borde); font-size: 12px; }
+    td { padding: 9px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.45; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #FAFAFA; }
+    .val { font-weight: 600; color: var(--azul); white-space: nowrap; }
+    .val-rojo { font-weight: 600; color: var(--rojo); }
+    .val-verde { font-weight: 600; color: var(--verde-oscuro); }
+    .nota { font-size: 11px; color: var(--texto-ter); }
+
+    .hl      { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 13.5px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 1.5rem 0; }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    @media (max-width: 600px) { .tubos-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Referencia</a> › Valores Normales de Laboratorio</div>
+  <div class="titulo">Valores Normales de Laboratorio</div>
+  <div class="meta">
+    <span class="tag tag-lab">Laboratorio</span>
+    <span class="tag tag-ref">Referencia rápida</span>
+    <span class="tag tag-fuente">Harrison 21ª · Fischbach · Wallach · CLSI</span>
+  </div>
+
+  <div class="indice">
+    <div class="indice-titulo">Ir a sección</div>
+    <div class="indice-grid">
+      <a href="#tubos"     class="indice-item">🧪 Tipos de tubos</a>
+      <a href="#hemograma" class="indice-item">🩸 Hemograma completo</a>
+      <a href="#coagulacion" class="indice-item">🔴 Coagulación</a>
+      <a href="#ionograma" class="indice-item">⚡ Ionograma</a>
+      <a href="#renal"     class="indice-item">🫘 Función renal</a>
+      <a href="#hepatica"  class="indice-item">🟤 Función hepática</a>
+      <a href="#lipidos"   class="indice-item">💛 Perfil lipídico</a>
+      <a href="#glucosa"   class="indice-item">🍬 Glucosa y diabetes</a>
+      <a href="#tiroides"  class="indice-item">🦋 Función tiroidea</a>
+      <a href="#cardiaco"  class="indice-item">❤️ Marcadores cardíacos</a>
+      <a href="#hepatitis" class="indice-item">🟡 Marcadores hepáticos/inflamatorios</a>
+      <a href="#gasometria" class="indice-item">💨 Gasometría arterial</a>
+      <a href="#orina"     class="indice-item">💧 Orina completa</a>
+      <a href="#hormonas"  class="indice-item">🧬 Hormonas y endocrinología</a>
+      <a href="#vitaminas" class="indice-item">🌿 Vitaminas y minerales</a>
+      <a href="#otros"     class="indice-item">📋 Otros marcadores</a>
+    </div>
+  </div>
+
+  <!-- TUBOS -->
+  <div class="seccion" id="tubos">
+    <div class="sec-header">
+      <div class="sec-icono">🧪</div>
+      <div class="sec-titulo-txt">Tipos de tubos — color, aditivo y uso</div>
+    </div>
+    <div class="tubos-grid">
+      <div class="tubo-card rojo">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#e53935;"></span>Rojo / Dorado</div>
+        <div class="tubo-aditivo" style="color:#C62828;">Sin aditivo o con gel separador (SST)</div>
+        <div class="tubo-item">✔ Química sanguínea: glucosa, urea, creatinina, ácido úrico</div>
+        <div class="tubo-item">✔ Enzimas: TGO, TGP, FAL, GGT, LDH, amilasa, lipasa</div>
+        <div class="tubo-item">✔ Proteínas: albúmina, proteínas totales</div>
+        <div class="tubo-item">✔ Lípidos: colesterol, TG, HDL, LDL</div>
+        <div class="tubo-item">✔ Hormonas, marcadores tumorales, serología</div>
+        <div class="tubo-item">✔ Troponina, BNP, PCR, ferritina</div>
+        <div class="tubo-item">⏳ Dejar coagular 20–30 min antes de centrifugar</div>
+      </div>
+      <div class="tubo-card lila">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#8e24aa;"></span>Lila / Violeta (EDTA)</div>
+        <div class="tubo-aditivo" style="color:#6B3FA0;">EDTA — anticoagulante quelante de Ca²⁺</div>
+        <div class="tubo-item">✔ <strong>Hemograma completo</strong> (glóbulos, hemoglobina, hematocrito, plaquetas)</div>
+        <div class="tubo-item">✔ Reticulocitos, frotis de sangre periférica</div>
+        <div class="tubo-item">✔ Grupo sanguíneo y factor Rh</div>
+        <div class="tubo-item">✔ Hemoglobina glicosilada (HbA1c)</div>
+        <div class="tubo-item">✔ Eritrosedimentación (VSG)</div>
+        <div class="tubo-item">⚠️ No mezclar con otros tubos</div>
+      </div>
+      <div class="tubo-card azul-t">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#1e88e5;"></span>Celeste (citrato)</div>
+        <div class="tubo-aditivo" style="color:#1565C0;">Citrato de sodio 3,2% — anticoagulante</div>
+        <div class="tubo-item">✔ <strong>Coagulación:</strong> TP, RIN, KPTT, fibrinógeno</div>
+        <div class="tubo-item">✔ Dímero D, antitrombina III</div>
+        <div class="tubo-item">✔ Estudio de trombofilia</div>
+        <div class="tubo-item">⚠️ Debe llenarse exactamente hasta la marca (relación 9:1 sangre:citrato)</div>
+        <div class="tubo-item">⚠️ Si el hematocrito &gt;55%: ajustar volumen de citrato</div>
+      </div>
+      <div class="tubo-card verde-t">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#43a047;"></span>Verde (heparina)</div>
+        <div class="tubo-aditivo" style="color:#2E7D32;">Heparina de litio o sodio</div>
+        <div class="tubo-item">✔ Química urgente (plasma disponible más rápido)</div>
+        <div class="tubo-item">✔ Ionograma en urgencias</div>
+        <div class="tubo-item">✔ Amonio plasmático</div>
+        <div class="tubo-item">✔ Pruebas de función renal urgente</div>
+        <div class="tubo-item">⚠️ No usar para coagulación ni hemograma</div>
+      </div>
+      <div class="tubo-card gris-t">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#78909c;"></span>Gris (fluoruro)</div>
+        <div class="tubo-aditivo" style="color:#546E7A;">Fluoruro de sodio + oxalato — inhibe glucólisis</div>
+        <div class="tubo-item">✔ <strong>Glucemia en ayunas y posprandial</strong></div>
+        <div class="tubo-item">✔ Curva de tolerancia a la glucosa (PTOG)</div>
+        <div class="tubo-item">✔ Lactato plasmático</div>
+        <div class="tubo-item">⚠️ Específico para glucosa: el fluoruro inhibe la glucólisis ex vivo preservando el resultado</div>
+      </div>
+      <div class="tubo-card naranj">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#fb8c00;"></span>Naranja / Amarillo</div>
+        <div class="tubo-aditivo" style="color:#D4730A;">Gel separador + activador de coagulación (ACD para banco)</div>
+        <div class="tubo-item">✔ Banco de sangre: pruebas de compatibilidad, tipificación</div>
+        <div class="tubo-item">✔ Estudios de paternidad, ADN</div>
+        <div class="tubo-item">✔ (Amarillo con ACD): preservación de células para cultivos</div>
+      </div>
+      <div class="tubo-card negro">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#424242;"></span>Negro</div>
+        <div class="tubo-aditivo" style="color:#424242;">Citrato de sodio 3,8%</div>
+        <div class="tubo-item">✔ <strong>Eritrosedimentación (VSG) método Westergren</strong></div>
+        <div class="tubo-item">⚠️ Solo para VSG — no intercambiable con celeste</div>
+      </div>
+      <div class="tubo-card lila" style="background:#fce4ec; border-color:#f48fb1;">
+        <div class="tubo-titulo"><span class="tubo-dot" style="background:#e91e63;"></span>Rosa</div>
+        <div class="tubo-aditivo" style="color:#880E4F;">EDTA — igual que lila pero mayor volumen</div>
+        <div class="tubo-item">✔ Banco de sangre: prueba de Coombs directo e indirecto</div>
+        <div class="tubo-item">✔ Transfusiones: compatibilidad urgente</div>
+      </div>
+    </div>
+    <div class="hl-info"><strong>Orden de extracción recomendado (CLSI H3-A6):</strong> hemocultivos → celeste (citrato) → rojo/dorado → verde (heparina) → lila (EDTA) → gris (fluoruro). El EDTA puede contaminar muestras de coagulación si se invierte el orden.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HEMOGRAMA -->
+  <div class="seccion" id="hemograma">
+    <div class="sec-header">
+      <div class="sec-icono">🩸</div>
+      <div class="sec-titulo-txt">Hemograma completo</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor de referencia</th><th>Significado clínico</th></tr>
+        <tr><td><strong>Hemoglobina (Hb)</strong></td><td><span class="val">H: 13–17 g/dl · M: 12–16 g/dl</span></td><td>↓ anemia · ↑ policitemia / deshidratación</td></tr>
+        <tr><td><strong>Hematocrito (Hto)</strong></td><td><span class="val">H: 40–54% · M: 36–48%</span></td><td>Refleja proporción de eritrocitos. Hto ≈ Hb × 3</td></tr>
+        <tr><td><strong>Glóbulos rojos (GR)</strong></td><td><span class="val">H: 4,5–6,0 × 10⁶/µL · M: 3,8–5,2 × 10⁶/µL</span></td><td>↓ anemia · ↑ poliglobulia</td></tr>
+        <tr><td><strong>VCM</strong> (volumen corpuscular medio)</td><td><span class="val">80–100 fL</span></td><td>&lt;80: microcítico (ferropenia, talasemia) · &gt;100: macrocítico (B12, folato, alcohol)</td></tr>
+        <tr><td><strong>HCM</strong> (hemoglobina corpuscular media)</td><td><span class="val">26–34 pg</span></td><td>&lt;26: hipocrómica (ferropenia) · &gt;34: hipercrómica (esferocitosis)</td></tr>
+        <tr><td><strong>CHCM</strong> (concentración HCM)</td><td><span class="val">32–36 g/dl</span></td><td>↑ esferocitosis hereditaria · ↓ ferropenia</td></tr>
+        <tr><td><strong>ADE / RDW</strong> (anisocitosis)</td><td><span class="val">&lt;14,5%</span></td><td>↑ indica heterogeneidad de tamaño (ferropenia, mixta). Útil para diferenciar talasemia (RDW normal) de ferropenia (RDW ↑)</td></tr>
+        <tr><td><strong>Reticulocitos</strong></td><td><span class="val">0,5–2,5% · 25.000–100.000/µL</span></td><td>↑ anemia hemolítica o hemorragia (médula activa) · ↓ aplasia, anemia ferropénica crónica</td></tr>
+        <tr><td><strong>Leucocitos (GB)</strong></td><td><span class="val">4.000–11.000/µL</span></td><td>↑ infección, inflamación, leucemia · ↓ aplasia, quimioterapia, LES</td></tr>
+        <tr><td>— Neutrófilos</td><td><span class="val">45–75% · 1.800–7.500/µL</span></td><td>↑ infección bacteriana, estrés, corticoides · ↓ &lt;500/µL = neutropenia grave</td></tr>
+        <tr><td>— Linfocitos</td><td><span class="val">20–40% · 1.000–4.000/µL</span></td><td>↑ infección viral, LLC · ↓ VIH, inmunosupresión</td></tr>
+        <tr><td>— Monocitos</td><td><span class="val">2–10% · 200–800/µL</span></td><td>↑ infección crónica, TBC, endocarditis, monocitosis reactiva</td></tr>
+        <tr><td>— Eosinófilos</td><td><span class="val">1–6% · 100–500/µL</span></td><td>↑ parasitosis, alergia, síndrome hipereosinofílico, DRESS · &gt;1500 = eosinofilia</td></tr>
+        <tr><td>— Basófilos</td><td><span class="val">0–1% · &lt;100/µL</span></td><td>↑ reacciones alérgicas, LMC (basofilia marcada)</td></tr>
+        <tr><td><strong>Plaquetas</strong></td><td><span class="val">150.000–450.000/µL</span></td><td>&lt;100.000: trombocitopenia · &lt;20.000: riesgo hemorrágico espontáneo · &gt;450.000: trombocitosis</td></tr>
+        <tr><td><strong>VSG</strong> (eritrosedimentación)</td><td><span class="val">H: &lt;15 mm/h · M: &lt;20 mm/h</span><br><span class="nota">(Westergren; aumenta con la edad)</span></td><td>Marcador inespecífico de inflamación. ↑ infección, enf. autoinmune, neoplasia, anemia, embarazo</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Clasificación de anemias por VCM:</strong> Microcítica (&lt;80 fL): ferropenia, talasemia, anemia de enfermedad crónica (leve). Normocítica (80–100): hemorragia aguda, hemólisis, aplasia, IRC. Macrocítica (&gt;100): déficit de B12/folato, alcohol, hipotiroidismo, quimioterapia, displasia.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COAGULACIÓN -->
+  <div class="seccion" id="coagulacion">
+    <div class="sec-header">
+      <div class="sec-icono">🔴</div>
+      <div class="sec-titulo-txt">Coagulación</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Significado clínico</th></tr>
+        <tr><td><strong>TP</strong> (tiempo de protrombina)</td><td><span class="val">11–14 seg</span></td><td>Evalúa vía extrínseca + común (factores I, II, V, VII, X). ↑ en hepatopatía, AVK, déficit de Vitamina K, CID</td></tr>
+        <tr><td><strong>RIN / INR</strong></td><td><span class="val">0,9–1,2</span><br><span class="nota">Objetivo terapéutico con warfarina: 2–3 (o 2,5–3,5 en válvulas mecánicas)</span></td><td>Estandarización del TP entre laboratorios. &gt;1,5 → riesgo hemorrágico clínicamente significativo</td></tr>
+        <tr><td><strong>KPTT / APTT</strong> (tiempo de tromboplastina parcial activada)</td><td><span class="val">25–35 seg</span><br><span class="nota">(o ratio 0,8–1,2 respecto al control)</span></td><td>Evalúa vía intrínseca + común (XII, XI, IX, VIII, X, V, II, I). ↑ heparina no fraccionada (HNF), hemofilia A/B, enfermedad de von Willebrand, inhibidores (anticoagulante lúpico), CID</td></tr>
+        <tr><td><strong>Fibrinógeno</strong></td><td><span class="val">200–400 mg/dl</span></td><td>↓ CID, hepatopatía grave, hipofibrinogenemia congénita · ↑ inflamación, embarazo (reactante de fase aguda)</td></tr>
+        <tr><td><strong>Tiempo de trombina (TT)</strong></td><td><span class="val">14–21 seg</span></td><td>↑ heparina, disfibrinogenemia, inhibidores de trombina directos (dabigatrán)</td></tr>
+        <tr><td><strong>Dímero D</strong></td><td><span class="val">&lt;500 ng/ml (o &lt;0,5 µg/ml)</span></td><td>Producto de degradación de la fibrina. ↑ TVP/TEP, CID, embarazo, cirugía reciente, infección grave. Valor negativo tiene alto VPN para TEP (excluye con probabilidad pre-test baja)</td></tr>
+        <tr><td><strong>Antitrombina III</strong></td><td><span class="val">80–120%</span></td><td>↓ trombofilia, CID, hepatopatía, síndrome nefrótico, heparina</td></tr>
+        <tr><td><strong>Proteína C</strong></td><td><span class="val">70–140%</span></td><td>↓ trombofilia hereditaria, hepatopatía, CID, warfarina (vitamina K dependiente)</td></tr>
+        <tr><td><strong>Proteína S</strong></td><td><span class="val">60–140%</span></td><td>↓ trombofilia, embarazo, warfarina, hepatopatía, síndrome nefrótico</td></tr>
+        <tr><td><strong>Factor V Leiden</strong></td><td><span class="val">Negativo (estudio genético)</span></td><td>Mutación más frecuente de trombofilia hereditaria (↑ resistencia a proteína C activada)</td></tr>
+        <tr><td><strong>Tiempo de sangría</strong></td><td><span class="val">2–9 min (Ivy)</span></td><td>Evalúa función plaquetaria y vWF. ↑ EvW, trombocitopatías, AAS</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn"><strong>Patrón de laboratorio en CID:</strong> TP ↑ · KPTT ↑ · Fibrinógeno ↓ · Plaquetas ↓ · Dímero D ↑↑ · Esquistocitos en frotis. Pensar en sepsis, trauma grave, desprendimiento de placenta, leucemia promielocítica aguda (LPA).</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- IONOGRAMA -->
+  <div class="seccion" id="ionograma">
+    <div class="sec-header">
+      <div class="sec-icono">⚡</div>
+      <div class="sec-titulo-txt">Ionograma y electrolitos</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Electrolito</th><th>Valor normal</th><th>↓ Causa (hipo-)</th><th>↑ Causa (hiper-)</th></tr>
+        <tr><td><strong>Sodio (Na⁺)</strong></td><td><span class="val">136–145 mEq/L</span></td><td>Hiponatremia: SIADH, ICC, cirrosis, hipotiroidismo, polidipsia psicógena, diuréticos</td><td>Hipernatremia: diabetes insípida, deshidratación hipertónica, hiperaldosteronismo</td></tr>
+        <tr><td><strong>Potasio (K⁺)</strong></td><td><span class="val">3,5–5,0 mEq/L</span></td><td>Hipopotasemia: diuréticos de asa, vómitos, diarrea, hiperaldosteronismo, β-agonistas, insulina</td><td>Hiperpotasemia: IRA/IRC, acidosis metabólica, IECA/ARA-II, ahorradores de K⁺, hemólisis</td></tr>
+        <tr><td><strong>Cloro (Cl⁻)</strong></td><td><span class="val">98–106 mEq/L</span></td><td>Hipocloremia: vómitos, alcalosis metabólica, diuréticos de asa</td><td>Hipercloremia: acidosis metabólica hiperclorémica, diarrea, acidosis tubular renal</td></tr>
+        <tr><td><strong>Calcio total</strong></td><td><span class="val">8,5–10,5 mg/dl</span><br><span class="nota">Calcio iónico: 4,5–5,3 mg/dl (1,1–1,3 mmol/L)</span></td><td>Hiipocalcemia: hipoparatiroidismo, déficit de vitamina D, pancreatitis, hipoalbuminemia, IRC</td><td>Hipercalcemia: hiperparatiroidismo, neoplasia (PTHrP), granulomas (sarcoidosis), vitamina D tóxica, tiazidas</td></tr>
+        <tr><td><strong>Fósforo (P)</strong></td><td><span class="val">2,5–4,5 mg/dl</span></td><td>Hipofosfatemia: hiperparatiroidismo, síndrome de realimentación, antiácidos, vit. D déficit</td><td>Hiperfosfatemia: IRC, hipoparatiroidismo, rabdomiólisis, acidosis</td></tr>
+        <tr><td><strong>Magnesio (Mg²⁺)</strong></td><td><span class="val">1,7–2,4 mg/dl (0,7–1,0 mmol/L)</span></td><td>Hipomagnesemia: alcohol, diarrea, IBP crónicos, diuréticos de asa, aminoglucósidos</td><td>Hipermagnesemia: IRC, laxantes con Mg, toxicidad por litio</td></tr>
+        <tr><td><strong>Bicarbonato (HCO₃⁻)</strong></td><td><span class="val">22–28 mEq/L</span></td><td>Acidosis metabólica: cetoacidosis, IRA, diarrea, acidosis láctica</td><td>Alcalosis metabólica: vómitos, diuréticos, aldosteronismo</td></tr>
+        <tr><td><strong>Anión gap (AG)</strong></td><td><span class="val">8–12 mEq/L</span><br><span class="nota">AG = Na⁺ − (Cl⁻ + HCO₃⁻)</span></td><td colspan="2">AG elevado (&gt;12): MUDPILES: Metanol, Uremia, DKA, Propilen-glicol, Isoniazida/Hierro, Lactato, Etilenglicol, Salicilatos</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Corrección del calcio por albúmina:</strong> Ca corregido = Ca medido + 0,8 × (4 − albúmina g/dl). Por cada 1 g/dl de descenso de albúmina, el calcio total disminuye ~0,8 mg/dl sin verdadera hipocalcemia. Usar calcio iónico cuando sea posible.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FUNCIÓN RENAL -->
+  <div class="seccion" id="renal">
+    <div class="sec-header">
+      <div class="sec-icono">🫘</div>
+      <div class="sec-titulo-txt">Función renal</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Significado clínico</th></tr>
+        <tr><td><strong>Creatinina sérica</strong></td><td><span class="val">H: 0,7–1,2 mg/dl · M: 0,5–1,0 mg/dl</span></td><td>↑ IRA, IRC, rabdomiólisis, deshidratación. Limitada: no detecta descenso de FG hasta pérdida del 50% de nefrones</td></tr>
+        <tr><td><strong>Urea (BUN × 2,14)</strong></td><td><span class="val">Urea: 15–45 mg/dl · BUN: 7–20 mg/dl</span></td><td>↑ IRA, IRC, hemorragia digestiva, dieta hiperproteica, catabolismo. ↓ hepatopatía grave, desnutrición</td></tr>
+        <tr><td><strong>Relación BUN/Creatinina</strong></td><td><span class="val">10–20</span></td><td>&gt;20: IRA prerrenal o hemorragia digestiva alta · &lt;10: IRA parenquimatosa, hepatopatía</td></tr>
+        <tr><td><strong>TFG estimada (CKD-EPI)</strong></td><td><span class="val">≥60 ml/min/1,73 m²</span></td><td>Estadios IRC: G1 ≥90, G2 60–89, G3a 45–59, G3b 30–44, G4 15–29, G5 &lt;15. CKD-EPI más precisa que MDRD en TFG normal-alta</td></tr>
+        <tr><td><strong>Cistatina C</strong></td><td><span class="val">0,5–1,0 mg/L</span></td><td>Mejor marcador de FG que creatinina (no depende de masa muscular). Útil en ancianos, desnutridos, amputados</td></tr>
+        <tr><td><strong>Ácido úrico</strong></td><td><span class="val">H: 3,4–7,0 mg/dl · M: 2,4–6,0 mg/dl</span></td><td>↑ gota, IRC, síndrome de lisis tumoral, diuréticos tiazídicos, alcohol · ↓ SIADH, xantinuria</td></tr>
+        <tr><td><strong>Proteinuria en orina 24 h</strong></td><td><span class="val">&lt;150 mg/24 h</span></td><td>150 mg–3,5 g: nefropatía no nefrótica · &gt;3,5 g: síndrome nefrótico</td></tr>
+        <tr><td><strong>Cociente albumin/creatinina (orina)</strong></td><td><span class="val">&lt;30 mg/g</span></td><td>30–300: microalbuminuria (nefropatía diabética temprana) · &gt;300: macroalbuminuria / proteinuria franca</td></tr>
+        <tr><td><strong>Fracción excretada de Na⁺ (FENa)</strong></td><td><span class="val">—</span><br><span class="nota">FENa = (Na orina × Cr plasma) / (Na plasma × Cr orina) × 100</span></td><td>&lt;1%: IRA prerrenal (riñón retiene Na⁺) · &gt;2%: IRA intrínseca (daño tubular). No válida con diuréticos (usar FEUrea)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FUNCIÓN HEPÁTICA -->
+  <div class="seccion" id="hepatica">
+    <div class="sec-header">
+      <div class="sec-icono">🟤</div>
+      <div class="sec-titulo-txt">Función hepática y enzimas</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Significado clínico</th></tr>
+        <tr><td><strong>TGO / AST</strong> (aspartato aminotransferasa)</td><td><span class="val">H: &lt;40 UI/L · M: &lt;35 UI/L</span></td><td>↑ hepatitis (viral, tóxica, isquémica), IAM, rabdomiólisis. Menos específica de hígado que TGP</td></tr>
+        <tr><td><strong>TGP / ALT</strong> (alanina aminotransferasa)</td><td><span class="val">H: &lt;41 UI/L · M: &lt;33 UI/L</span></td><td>↑ hepatitis aguda (marcador más específico de hígado). TGP &gt;&gt; TGO: hepatitis viral. TGO &gt; TGP (ratio &gt;2): hepatitis alcohólica</td></tr>
+        <tr><td><strong>FAL</strong> (fosfatasa alcalina)</td><td><span class="val">44–147 UI/L</span><br><span class="nota">(↑ fisiológica en embarazo, crecimiento óseo, niños)</span></td><td>↑ colestasis (intra o extrahepática), enfermedad ósea (Paget, metástasis óseas), hiperparatiroidismo. Fracción hepática vs ósea por GGT</td></tr>
+        <tr><td><strong>GGT</strong> (gamma-glutamil transferasa)</td><td><span class="val">H: &lt;61 UI/L · M: &lt;36 UI/L</span></td><td>Marcador sensible de daño hepático (inductible por alcohol, medicamentos). Si FAL ↑ + GGT ↑ → origen hepático. Si FAL ↑ + GGT normal → origen óseo</td></tr>
+        <tr><td><strong>LDH</strong> (lactato deshidrogenasa)</td><td><span class="val">125–220 UI/L</span></td><td>Muy inespecífica: ↑ hemólisis, IAM, hepatitis, neoplasia, tromboembolismo, rabdomiólisis, anemia megaloblástica. LDH &gt;600 en HELLP.</td></tr>
+        <tr><td><strong>Bilirrubina total</strong></td><td><span class="val">&lt;1,0 mg/dl</span></td><td>↑ hepatitis, colestasis, hemólisis, síndrome de Gilbert</td></tr>
+        <tr><td><strong>Bilirrubina directa (conjugada)</strong></td><td><span class="val">&lt;0,3 mg/dl</span></td><td>↑ colestasis intra o extrahepática, hepatitis (predominantemente directa indica daño hepatocelular con retención)</td></tr>
+        <tr><td><strong>Bilirrubina indirecta (no conjugada)</strong></td><td><span class="val">&lt;0,8 mg/dl</span></td><td>↑ hemólisis, síndrome de Gilbert, síndrome de Crigler-Najjar</td></tr>
+        <tr><td><strong>Proteínas totales</strong></td><td><span class="val">6,4–8,3 g/dl</span></td><td>↓ desnutrición, hepatopatía, síndrome nefrótico, malabsorción</td></tr>
+        <tr><td><strong>Albúmina</strong></td><td><span class="val">3,5–5,0 g/dl</span></td><td>Marcador de síntesis hepática y estado nutricional. ↓ hepatopatía crónica, desnutrición, síndr. nefrótico, inflamación crónica (VN 20 días)</td></tr>
+        <tr><td><strong>Amilasa sérica</strong></td><td><span class="val">30–110 UI/L</span></td><td>↑ pancreatitis aguda (&gt;3× VN), parotiditis, obstrucción intestinal, perforación. Menos específica que lipasa</td></tr>
+        <tr><td><strong>Lipasa sérica</strong></td><td><span class="val">0–60 UI/L</span></td><td>↑ pancreatitis aguda (&gt;3× VN = criterio diagnóstico, más sensible y específica que amilasa). Permanece elevada más tiempo (7–14 días)</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Score de Child-Pugh:</strong> usa albúmina, bilirrubina, TP/INR, ascitis y encefalopatía para estadificar cirrosis. <strong>Score de MELD:</strong> creatinina + bilirrubina + INR → estima mortalidad a 3 meses y prioriza en lista de trasplante.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LÍPIDOS -->
+  <div class="seccion" id="lipidos">
+    <div class="sec-header">
+      <div class="sec-icono">💛</div>
+      <div class="sec-titulo-txt">Perfil lipídico</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor deseable</th><th>Interpretación</th></tr>
+        <tr><td><strong>Colesterol total</strong></td><td><span class="val-verde">&lt;200 mg/dl deseable</span></td><td>200–239: límite alto · ≥240: alto. Requiere ayuno de 9–12 h para perfil completo</td></tr>
+        <tr><td><strong>LDL-colesterol</strong></td><td><span class="val">&lt;100 mg/dl óptimo</span><br><span class="nota">(&lt;70 en muy alto riesgo CV · &lt;55 en riesgo extremo)</span></td><td>Principal objetivo terapéutico. LDL = Col total − HDL − TG/5 (fórmula de Friedewald, válida si TG &lt;400)</td></tr>
+        <tr><td><strong>HDL-colesterol</strong></td><td><span class="val-verde">H: &gt;40 mg/dl · M: &gt;50 mg/dl</span></td><td>&lt;40 en H / &lt;50 en M: factor de riesgo CV. ≥60: protector. ↑ ejercicio, alcohol moderado, estrógenos</td></tr>
+        <tr><td><strong>Triglicéridos (TG)</strong></td><td><span class="val-verde">&lt;150 mg/dl normal</span></td><td>150–199: límite · 200–499: alto · ≥500: muy alto (riesgo de pancreatitis aguda). ↑ diabetes, alcohol, obesidad, hipotiroidismo, tiazidas</td></tr>
+        <tr><td><strong>No-HDL colesterol</strong></td><td><span class="val">&lt;130 mg/dl</span></td><td>Col total − HDL. Incluye LDL + VLDL + IDL + Lp(a). Útil cuando TG &gt;400 (Friedewald inválido)</td></tr>
+        <tr><td><strong>Apolipoproteína B (ApoB)</strong></td><td><span class="val">&lt;90 mg/dl (&lt;65 en alto riesgo)</span></td><td>Mejor predictor de riesgo CV que LDL. Refleja el número total de partículas aterogénicas</td></tr>
+        <tr><td><strong>Lipoproteína (a) — Lp(a)</strong></td><td><span class="val">&lt;30 mg/dl</span></td><td>Factor de riesgo independiente. Determinada genéticamente. No responde a estatinas.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLUCOSA -->
+  <div class="seccion" id="glucosa">
+    <div class="sec-header">
+      <div class="sec-icono">🍬</div>
+      <div class="sec-titulo-txt">Glucosa y marcadores de diabetes</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Normal</th><th>Prediabetes</th><th>Diabetes</th></tr>
+        <tr><td><strong>Glucemia en ayunas</strong></td><td><span class="val-verde">&lt;100 mg/dl</span></td><td><span class="val">100–125 mg/dl</span> (GAA)</td><td><span class="val-rojo">≥126 mg/dl</span> (confirmado en 2 días)</td></tr>
+        <tr><td><strong>PTOG 2 horas (75 g glucosa)</strong></td><td><span class="val-verde">&lt;140 mg/dl</span></td><td><span class="val">140–199 mg/dl</span> (ITG)</td><td><span class="val-rojo">≥200 mg/dl</span></td></tr>
+        <tr><td><strong>HbA1c</strong></td><td><span class="val-verde">&lt;5,7%</span></td><td><span class="val">5,7–6,4%</span></td><td><span class="val-rojo">≥6,5%</span></td></tr>
+        <tr><td><strong>Glucemia casual</strong></td><td>—</td><td>—</td><td><span class="val-rojo">≥200 mg/dl + síntomas</span></td></tr>
+      </table>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor</th><th>Uso clínico</th></tr>
+        <tr><td><strong>HbA1c objetivo en DM2</strong></td><td><span class="val">&lt;7% (general) · &lt;6,5% (jóvenes sin complicaciones) · &lt;8% (ancianos frágiles)</span></td><td>Control glucémico a largo plazo (refleja 3 meses). No válida en hemoglobinopatías, hemólisis, gestación</td></tr>
+        <tr><td><strong>Fructosamina</strong></td><td><span class="val">200–285 µmol/L</span></td><td>Control glucémico a corto plazo (2–3 semanas). Útil en embarazo y hemoglobinopatías</td></tr>
+        <tr><td><strong>Insulinemia en ayunas</strong></td><td><span class="val">2–25 µU/ml</span></td><td>↑ insulinorresistencia, insulinoma · ↓ DM1</td></tr>
+        <tr><td><strong>Péptido C</strong></td><td><span class="val">0,9–4,0 ng/ml</span></td><td>Refleja secreción de insulina endógena. ↑ insulinoma · ↓ DM1, hipoglucemia facticia por insulina exógena</td></tr>
+        <tr><td><strong>Lactato</strong></td><td><span class="val">0,5–2,0 mmol/L (venoso) · &lt;1,0 mmol/L (arterial)</span></td><td>&gt;2 mmol/L: hiperlactatemia · &gt;4 mmol/L: acidosis láctica. ↑ shock, metformina, isquemia, sepsis, insuficiencia hepática</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TIROIDES -->
+  <div class="seccion" id="tiroides">
+    <div class="sec-header">
+      <div class="sec-icono">🦋</div>
+      <div class="sec-titulo-txt">Función tiroidea</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Interpretación</th></tr>
+        <tr><td><strong>TSH</strong></td><td><span class="val">0,4–4,0 mUI/L</span><br><span class="nota">(Varía según laboratorio y generación del ensayo)</span></td><td>Mejor screening tiroideo. ↑ hipotiroidismo (primario) · ↓ hipertiroidismo (o hipotiroidismo central si T4 también ↓)</td></tr>
+        <tr><td><strong>T4 libre (FT4)</strong></td><td><span class="val">0,8–1,8 ng/dl</span></td><td>↓ hipotiroidismo · ↑ hipertiroidismo. No afectada por TBG (a diferencia de T4 total)</td></tr>
+        <tr><td><strong>T3 libre (FT3)</strong></td><td><span class="val">2,3–4,2 pg/ml</span></td><td>Útil en diagnóstico de tirotoxicosis por T3. ↓ en síndrome de T3 baja (enfermedad no tiroidea grave)</td></tr>
+        <tr><td><strong>T4 total</strong></td><td><span class="val">5,0–12,0 µg/dl</span></td><td>Afectada por proteínas transportadoras (TBG ↑ en embarazo, estrógenos; TBG ↓ en desnutrición, andrógenos)</td></tr>
+        <tr><td><strong>T3 total</strong></td><td><span class="val">80–200 ng/dl</span></td><td>Menor utilidad diagnóstica que FT3 por variación de TBG</td></tr>
+        <tr><td><strong>Anti-TPO</strong> (antiperoxidasa)</td><td><span class="val">&lt;35 UI/ml</span></td><td>↑ tiroiditis de Hashimoto (hipotiroidismo autoinmune), Graves</td></tr>
+        <tr><td><strong>Anti-Tg</strong> (anti-tiroglobulina)</td><td><span class="val">&lt;115 UI/ml</span></td><td>↑ Hashimoto, Graves, cáncer de tiroides (interfiere con medición de tiroglobulina)</td></tr>
+        <tr><td><strong>TRAb / TSI</strong> (receptor de TSH)</td><td><span class="val">Negativo (&lt;1,75 UI/L)</span></td><td>↑ enfermedad de Graves (estimula el receptor) · Útil en diagnóstico y seguimiento</td></tr>
+        <tr><td><strong>Tiroglobulina</strong></td><td><span class="val">&lt;55 ng/ml</span></td><td>Marcador de recaída en cáncer diferenciado de tiroides post-tiroidectomía (debe ser indetectable)</td></tr>
+        <tr><td><strong>Calcitonina</strong></td><td><span class="val">H: &lt;10 pg/ml · M: &lt;5 pg/ml</span></td><td>↑ carcinoma medular de tiroides. Screening en nódulo tiroideo en algunos contextos</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Patrón de hipotiroidismo subclínico:</strong> TSH ↑ + FT4 normal. <strong>Hipotiroidismo clínico:</strong> TSH ↑ + FT4 ↓. <strong>Hipertiroidismo subclínico:</strong> TSH ↓ + FT4 normal. <strong>Hipertiroidismo clínico:</strong> TSH ↓ + FT4 ↑.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MARCADORES CARDÍACOS -->
+  <div class="seccion" id="cardiaco">
+    <div class="sec-header">
+      <div class="sec-icono">❤️</div>
+      <div class="sec-titulo-txt">Marcadores cardíacos</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Marcador</th><th>Inicio ↑</th><th>Pico</th><th>Normaliza</th><th>Valor / Uso</th></tr>
+        <tr><td><strong>Troponina I ultrasensible</strong></td><td>1–3 h</td><td>12–24 h</td><td>5–14 días</td><td><span class="val">&lt;16–52 ng/L según laboratorio (percentil 99)</span>. Gold standard para IAM. Algoritmos 0/1h o 0/3h permiten descartar/incluir en urgencias. ↑ en IAM, miocarditis, TEP, IC aguda, rabdomiólisis, IRC</td></tr>
+        <tr><td><strong>Troponina T ultrasensible</strong></td><td>1–3 h</td><td>12–24 h</td><td>5–14 días</td><td><span class="val">&lt;19 ng/L (percentil 99 mixto)</span>. Igual sensibilidad que TnI. Menos específica en IRC (acumulación). Algoritmo 0/1h ESC.</td></tr>
+        <tr><td><strong>CK-MB</strong></td><td>3–6 h</td><td>12–24 h</td><td>48–72 h</td><td><span class="val">H: &lt;7,6 ng/ml · M: &lt;4,3 ng/ml · Masa &lt;5 µg/L</span>. Útil para detectar re-infarto (vuelve a subir). Reemplazada por troponina en la mayoría de los contextos</td></tr>
+        <tr><td><strong>CK total</strong></td><td>4–8 h</td><td>24 h</td><td>3–4 días</td><td><span class="val">H: 30–200 UI/L · M: 20–170 UI/L</span>. ↑ rabdomiólisis, IAM, miopatías, trauma muscular, inyecciones IM, convulsiones. CK &gt;5.000 = rabdomiólisis grave</td></tr>
+        <tr><td><strong>BNP</strong> (péptido natriurético B)</td><td>Horas</td><td>—</td><td>—</td><td><span class="val">&lt;100 pg/ml excluye IC aguda · &gt;400 IC muy probable</span>. 100–400: zona gris. ↑ en disfunción ventricular, TEP grave, hipertensión pulmonar, IRC. Vida media 20 min.</td></tr>
+        <tr><td><strong>NT-proBNP</strong></td><td>Horas</td><td>—</td><td>—</td><td><span class="val">&lt;300 pg/ml excluye IC · &gt;450 (&lt;50 años), &gt;900 (50–75 años), &gt;1800 (&gt;75 años) diagnóstico</span>. Vida media más larga que BNP. Mejor en IRC.</td></tr>
+        <tr><td><strong>Mioglobina</strong></td><td>1–3 h</td><td>6–9 h</td><td>24 h</td><td><span class="val">H: &lt;90 µg/L · M: &lt;76 µg/L</span>. Primera en elevarse; baja sensibilidad y especificidad. Útil para excluir temprano. ↑ rabdomiólisis, IAM, trauma muscular.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MARCADORES INFLAMATORIOS Y HEPÁTICOS -->
+  <div class="seccion" id="hepatitis">
+    <div class="sec-header">
+      <div class="sec-icono">🟡</div>
+      <div class="sec-titulo-txt">Marcadores inflamatorios, hepáticos virales y tumorales</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Uso clínico</th></tr>
+        <tr><td><strong>PCR (proteína C reactiva)</strong></td><td><span class="val">&lt;5 mg/L (o &lt;0,5 mg/dl)</span></td><td>Reactante de fase aguda. ↑ infección bacteriana, inflamación, trauma, necrosis. Más sensible que VSG para cambios agudos. PCR &lt;1 mg/L: bajo riesgo CV.</td></tr>
+        <tr><td><strong>PCR ultrasensible (hsCRP)</strong></td><td><span class="val">&lt;1 mg/L bajo riesgo CV</span></td><td>Riesgo cardiovascular: &lt;1 bajo · 1–3 moderado · &gt;3 alto</td></tr>
+        <tr><td><strong>Procalcitonina (PCT)</strong></td><td><span class="val">&lt;0,1 ng/ml</span></td><td>&lt;0,25: sin sepsis bacteriana (bajo VPN) · 0,25–0,5: zona gris · &gt;0,5: probable sepsis bacteriana · &gt;2: sepsis grave · &gt;10: shock séptico. Guía el uso de antibióticos.</td></tr>
+        <tr><td><strong>Ferritina</strong></td><td><span class="val">H: 15–200 µg/L · M: 12–150 µg/L</span></td><td>↓ ferropenia (único marcador específico de reservas de hierro vacías) · ↑ inflamación, hepatitis, síndrome hemofagocítico, hemocromatosis. Reactante de fase aguda (puede ser normal pese a ferropenia en inflamación)</td></tr>
+        <tr><td><strong>Hierro sérico</strong></td><td><span class="val">60–170 µg/dl</span></td><td>↓ ferropenia, inflamación crónica · ↑ hemocromatosis, hemólisis</td></tr>
+        <tr><td><strong>TIBC</strong> (capacidad total de fijación de hierro)</td><td><span class="val">250–370 µg/dl</span></td><td>↑ ferropenia (el organismo produce más transferrina) · ↓ inflamación, hepatopatía, hemocromatosis</td></tr>
+        <tr><td><strong>Saturación de transferrina</strong></td><td><span class="val">20–50%</span></td><td>&lt;16%: ferropenia · &gt;60%: hemocromatosis o sobrecarga de hierro</td></tr>
+        <tr><td><strong>HBsAg</strong></td><td>Negativo</td><td>Antígeno de superficie de VHB. Positivo en infección aguda o crónica activa</td></tr>
+        <tr><td><strong>Anti-HBs</strong></td><td>Negativo / &gt;10 UI/L = inmune</td><td>Indica inmunidad (post-vacuna o infección resuelta). &gt;10 UI/L = protegido</td></tr>
+        <tr><td><strong>Anti-HBc IgM</strong></td><td>Negativo</td><td>Infección aguda por VHB (marcador más sensible de infección reciente)</td></tr>
+        <tr><td><strong>Anti-VHC</strong></td><td>Negativo</td><td>Indica exposición. Confirmar con carga viral (ARN-VHC). Puede ser negativo en infección muy reciente o inmunocomprometidos</td></tr>
+        <tr><td><strong>Carga viral VHC (ARN)</strong></td><td>No detectable</td><td>Confirma infección activa. Monitorea respuesta al tratamiento. RVS12: ARN indetectable 12 semanas post-tratamiento = curación</td></tr>
+      </table>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Marcador tumoral</th><th>Valor normal</th><th>Neoplasia asociada (principal)</th></tr>
+        <tr><td><strong>AFP</strong> (alfafetoproteína)</td><td><span class="val">&lt;10 ng/ml</span></td><td>Hepatocarcinoma (↑ &gt;400 diagnóstico en cirrosis), tumores de células germinales (no-seminoma)</td></tr>
+        <tr><td><strong>CEA</strong> (antígeno carcinoembrionario)</td><td><span class="val">&lt;3,4 ng/ml (no fumador) · &lt;5 ng/ml (fumador)</span></td><td>Colon, recto, pulmón, mama, páncreas. Más útil para seguimiento que diagnóstico</td></tr>
+        <tr><td><strong>CA 19-9</strong></td><td><span class="val">&lt;37 UI/ml</span></td><td>Páncreas (sensibilidad 70–80%), colangiocarcinoma, gástrico. Falsos positivos en pancreatitis, colestasis</td></tr>
+        <tr><td><strong>CA 125</strong></td><td><span class="val">&lt;35 UI/ml</span></td><td>Cáncer de ovario epitelial (seguimiento). Falsos positivos: endometriosis, embarazo, ascitis, menstruación</td></tr>
+        <tr><td><strong>CA 15-3</strong></td><td><span class="val">&lt;30 UI/ml</span></td><td>Cáncer de mama (seguimiento de recaída). Falsos positivos: enfermedades benignas de mama, hepatopatía</td></tr>
+        <tr><td><strong>PSA</strong> (antígeno prostático específico)</td><td><span class="val">&lt;4 ng/ml</span><br><span class="nota">(Límites por edad: &lt;2,5 en &lt;50 años)</span></td><td>Cáncer de próstata (no es diagnóstico solo; combinar con PSA libre/total y tacto rectal). ↑ en HBP, prostatitis, post-biopsia</td></tr>
+        <tr><td><strong>β-HCG</strong></td><td><span class="val">Hombre y no embarazada: &lt;5 mUI/ml</span></td><td>Embarazo, mola hidatiforme, coriocarcinoma, tumores germinales. Screening de embarazo ectópico en guardia.</td></tr>
+        <tr><td><strong>Enolasa neuronal específica (NSE)</strong></td><td><span class="val">&lt;12 µg/L</span></td><td>Carcinoma microcítico de pulmón, neuroblastoma, tumores neuroendócrinos</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GASOMETRÍA -->
+  <div class="seccion" id="gasometria">
+    <div class="sec-header">
+      <div class="sec-icono">💨</div>
+      <div class="sec-titulo-txt">Gasometría arterial (GSA)</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal (arterial)</th><th>Interpretación</th></tr>
+        <tr><td><strong>pH</strong></td><td><span class="val">7,35–7,45</span></td><td>&lt;7,35: acidemia · &gt;7,45: alcalemia</td></tr>
+        <tr><td><strong>PaCO₂</strong></td><td><span class="val">35–45 mmHg</span></td><td>↑ retención de CO₂ (hipoventilación / acidosis respiratoria) · ↓ hiperventilación / alcalosis respiratoria</td></tr>
+        <tr><td><strong>PaO₂</strong></td><td><span class="val">80–100 mmHg (respirando aire ambiente)</span></td><td>&lt;80: hipoxemia · &lt;60: hipoxemia grave (insuficiencia respiratoria)</td></tr>
+        <tr><td><strong>HCO₃⁻</strong></td><td><span class="val">22–28 mEq/L</span></td><td>↓ acidosis metabólica · ↑ alcalosis metabólica</td></tr>
+        <tr><td><strong>BE (exceso de base)</strong></td><td><span class="val">−2 a +2 mEq/L</span></td><td>BE &lt;−2: acidosis metabólica · BE &gt;+2: alcalosis metabólica</td></tr>
+        <tr><td><strong>SaO₂</strong></td><td><span class="val">95–100%</span></td><td>&lt;90%: hipoxemia grave (emergencia)</td></tr>
+        <tr><td><strong>Lactato</strong></td><td><span class="val">&lt;2 mmol/L (arterial)</span></td><td>&gt;2: hiperlactatemia · &gt;4: acidosis láctica (sepsis, shock, isquemia)</td></tr>
+      </table>
+    </div>
+    <div class="hl-info"><strong>Gradiente alvéolo-arterial de O₂ (A-aO₂):</strong> PAO₂ − PaO₂. PAO₂ = FiO₂ × (Patm − PH₂O) − PaCO₂/0,8 ≈ 150 − PaCO₂/0,8 (a nivel del mar, aire ambiente). Normal: &lt;(edad/4 + 4) mmHg. ↑ en patología pulmonar intrínseca (shunt, TEP, neumonía). Normal en hipoventilación pura (sedación, obstrucción central).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Trastorno</th><th>pH</th><th>PaCO₂</th><th>HCO₃⁻</th><th>Compensación esperada</th></tr>
+        <tr><td>Acidosis respiratoria</td><td>↓</td><td>↑</td><td>↑ (compensación)</td><td>HCO₃⁻ sube 1 mEq/L por cada 10 mmHg ↑ CO₂ (aguda) o 3,5 (crónica)</td></tr>
+        <tr><td>Alcalosis respiratoria</td><td>↑</td><td>↓</td><td>↓ (compensación)</td><td>HCO₃⁻ baja 2 mEq/L por cada 10 mmHg ↓ CO₂ (aguda) o 5 (crónica)</td></tr>
+        <tr><td>Acidosis metabólica</td><td>↓</td><td>↓ (compensación)</td><td>↓</td><td>PCO₂ = 1,5 × HCO₃⁻ + 8 ± 2 (fórmula de Winter)</td></tr>
+        <tr><td>Alcalosis metabólica</td><td>↑</td><td>↑ (compensación)</td><td>↑</td><td>PCO₂ sube 0,7 mmHg por cada 1 mEq/L ↑ HCO₃⁻</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ORINA -->
+  <div class="seccion" id="orina">
+    <div class="sec-header">
+      <div class="sec-icono">💧</div>
+      <div class="sec-titulo-txt">Orina completa (sedimento urinario)</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Alteración y significado</th></tr>
+        <tr><td><strong>pH urinario</strong></td><td><span class="val">4,5–8,0</span></td><td>Ácido: dieta proteica, acidosis metabólica, fiebre · Alcalino: infección urinaria por Proteus, alcalosis metabólica, dieta vegetariana</td></tr>
+        <tr><td><strong>Densidad</strong></td><td><span class="val">1.010–1.030</span></td><td>&lt;1.005: diabetes insípida, polidipsia · &gt;1.030: deshidratación, SIADH</td></tr>
+        <tr><td><strong>Proteínas</strong></td><td><span class="val">Negativo (&lt;150 mg/día)</span></td><td>↑ síndrome nefrótico, nefritis, mieloma (proteína de Bence-Jones), preeclampsia</td></tr>
+        <tr><td><strong>Glucosa</strong></td><td><span class="val">Negativo</span></td><td>↑ diabetes (glucemia &gt;180 mg/dl), síndrome de Fanconi (glucosuria normoglucémica)</td></tr>
+        <tr><td><strong>Cetonas</strong></td><td><span class="val">Negativo</span></td><td>↑ cetoacidosis diabética, ayuno prolongado, alcoholismo, vómitos</td></tr>
+        <tr><td><strong>Hematíes</strong></td><td><span class="val">&lt;5/campo (400×)</span></td><td>↑ cálculos, tumor, infección, nefropatía, trauma · Hematuria macroscópica: &gt;2500 hematíes/µL</td></tr>
+        <tr><td><strong>Leucocitos</strong></td><td><span class="val">&lt;5/campo</span></td><td>↑ infección urinaria, nefritis intersticial (leucocituria estéril)</td></tr>
+        <tr><td><strong>Nitritos</strong></td><td><span class="val">Negativo</span></td><td>↑ bacterias gram-negativas (E. coli, Klebsiella) que reducen nitratos a nitritos</td></tr>
+        <tr><td><strong>Cilindros hialinos</strong></td><td><span class="val">0–2/campo</span></td><td>Inespecíficos, pueden estar en esfuerzo o deshidratación leve</td></tr>
+        <tr><td><strong>Cilindros granulosos / céreos</strong></td><td><span class="val">Ausentes</span></td><td>↑ IRA grave o IRC avanzada (disfunción tubular)</td></tr>
+        <tr><td><strong>Cilindros eritrocitarios</strong></td><td><span class="val">Ausentes</span></td><td>Patognomónicos de glomerulonefritis activa</td></tr>
+        <tr><td><strong>Cilindros leucocitarios</strong></td><td><span class="val">Ausentes</span></td><td>Nefritis intersticial aguda, pielonefritis</td></tr>
+        <tr><td><strong>Eosinófilos en orina</strong></td><td><span class="val">Ausentes</span></td><td>Nefritis intersticial alérgica (tinción de Hansel)</td></tr>
+        <tr><td><strong>Cristales de oxalato</strong></td><td><span class="val">Raros</span></td><td>↑ intoxicación por etilenglicol, hiperoxaluria primaria, dieta rica en oxalatos</td></tr>
+        <tr><td><strong>Osmolaridad urinaria</strong></td><td><span class="val">300–900 mOsm/kg (variable)</span></td><td>&lt;100 en diabetes insípida · &gt;800 en SIADH o hipovolemia (riñón concentra)</td></tr>
+        <tr><td><strong>Na⁺ urinario</strong></td><td><span class="val">20–250 mEq/L (variable con ingesta)</span></td><td>&lt;20: IRA prerrenal, hipovolemia · &gt;40: IRA intrínseca, SIADH</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HORMONAS -->
+  <div class="seccion" id="hormonas">
+    <div class="sec-header">
+      <div class="sec-icono">🧬</div>
+      <div class="sec-titulo-txt">Hormonas y endocrinología</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Uso clínico</th></tr>
+        <tr><td><strong>Cortisol basal (8 am)</strong></td><td><span class="val">6–23 µg/dl</span></td><td>&lt;3: insuficiencia suprarrenal probable · &gt;18: excluye IS. Test de estimulación con ACTH (Synachten): cortisol pico &gt;18 µg/dl a los 30–60 min = respuesta normal</td></tr>
+        <tr><td><strong>ACTH (8 am)</strong></td><td><span class="val">10–60 pg/ml</span></td><td>↑ insuficiencia suprarrenal primaria, Cushing ectópico · ↓ hipofisario (central) o suprarrenal autónomo</td></tr>
+        <tr><td><strong>Aldosterona plasmática</strong></td><td><span class="val">4–31 ng/dl (sedente)</span></td><td>↑ hiperaldosteronismo primario (conn) o secundario (IRC, estenosis renal)</td></tr>
+        <tr><td><strong>Renina plasmática (ARP)</strong></td><td><span class="val">0,5–4 ng/ml/h (en reposo)</span></td><td>Relación aldosterona/renina &gt;30 (ng/dl / ng/ml/h): screening de hiperaldosteronismo primario</td></tr>
+        <tr><td><strong>PTH intacta</strong></td><td><span class="val">15–65 pg/ml</span></td><td>↑ hiperparatiroidismo primario o secundario · ↓ hipoparatiroidismo, hipercalcemia no PTH-mediada (neoplasia)</td></tr>
+        <tr><td><strong>Vitamina D (25-OH-D₃)</strong></td><td><span class="val">&gt;30 ng/ml suficiente · 20–30: insuficiente · &lt;20: déficit</span></td><td>↓ osteoporosis, malabsorción, poca exposición solar, IRC, síndrome nefrótico</td></tr>
+        <tr><td><strong>Prolactina</strong></td><td><span class="val">H: &lt;18 ng/ml · M: &lt;29 ng/ml</span><br><span class="nota">(hasta 20× en embarazo)</span></td><td>↑ prolactinoma, compresión del tallo hipofisario, metoclopramida, antipsicóticos, hipotiroidismo, embarazo. &gt;200 ng/ml: casi siempre prolactinoma</td></tr>
+        <tr><td><strong>GH (hormona de crecimiento)</strong></td><td><span class="val">Basal variable; IGF-1 más útil</span></td><td>Test de supresión con glucosa: GH &lt;1 ng/ml a los 120 min excluye acromegalia</td></tr>
+        <tr><td><strong>IGF-1</strong></td><td><span class="val">Varía por edad y sexo (ver tablas por laboratorio)</span></td><td>↑ acromegalia · ↓ déficit de GH, desnutrición, hepatopatía</td></tr>
+        <tr><td><strong>Metanefrinas plasmáticas</strong></td><td><span class="val">Metanefrina libre &lt;0,5 nmol/L · Normetanefrina &lt;0,9 nmol/L</span></td><td>Screening de feocromocitoma (sensibilidad &gt;95%). Fracciones urinarias también válidas en orina 24 h.</td></tr>
+        <tr><td><strong>FSH / LH</strong></td><td><span class="val">Variable por fase del ciclo y sexo</span></td><td>FSH ↑ + LH ↑ + estradiol ↓: falla ovárica primaria (menopausia, síndrome de Turner). FSH ↓ + LH ↓: hipofisario</td></tr>
+        <tr><td><strong>Testosterona total</strong></td><td><span class="val">H: 300–1.000 ng/dl · M: 15–70 ng/dl</span></td><td>↓ hipogonadismo (H) · ↑ PCOS, tumores suprarrenales o gonadales (M)</td></tr>
+        <tr><td><strong>DHEA-S</strong></td><td><span class="val">Varía por sexo y edad</span></td><td>↑ hiperplasia suprarrenal congénita, tumores suprarrenales, PCOS</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- VITAMINAS Y MINERALES -->
+  <div class="seccion" id="vitaminas">
+    <div class="sec-header">
+      <div class="sec-icono">🌿</div>
+      <div class="sec-titulo-txt">Vitaminas y minerales</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Déficit: causa y clínica</th></tr>
+        <tr><td><strong>Vitamina B12 (cobalamina)</strong></td><td><span class="val">200–900 pg/ml</span></td><td>&lt;200: déficit. Causa: anemia perniciosa, dieta vegana, cirugía gástrica, metformina. Clínica: anemia megaloblástica, neuropatía subaguda combinada, glositis</td></tr>
+        <tr><td><strong>Ácido fólico (folato)</strong></td><td><span class="val">2,5–20 ng/ml (sérico) · &gt;140 ng/ml (eritrocitario)</span></td><td>&lt;2,5: déficit. Causa: dieta, alcohol, embarazo, metotrexato, antiepilépticos. Clínica: anemia megaloblástica, defectos del tubo neural (sin neuropatía, a diferencia de B12)</td></tr>
+        <tr><td><strong>Vitamina D (25-OH)</strong></td><td><span class="val">&gt;30 ng/ml</span></td><td>&lt;20: déficit. Raquitismo (niños), osteomalacia (adultos), hiperparatiroidismo secundario, miopatía proximal</td></tr>
+        <tr><td><strong>Vitamina B1 (tiamina)</strong></td><td><span class="val">70–180 nmol/L</span></td><td>Déficit en alcoholismo, desnutrición, anorexia. Clínica: Wernicke-Korsakoff (confusión + oftalmoplejía + ataxia), beriberi (húmedo: IC + edema; seco: neuropatía periférica)</td></tr>
+        <tr><td><strong>Vitamina C (ácido ascórbico)</strong></td><td><span class="val">0,4–1,5 mg/dl</span></td><td>Déficit: escorbuto (hemorragias pericapilares, petecias perifoliculares, encías sangrantes, mala cicatrización)</td></tr>
+        <tr><td><strong>Vitamina A (retinol)</strong></td><td><span class="val">30–65 µg/dl</span></td><td>Déficit: ceguera nocturna, xeroftalmia, queratomalacia. Toxicidad crónica: seudotumor cerebral, hipercalcemia, teratogenicidad</td></tr>
+        <tr><td><strong>Vitamina K</strong></td><td><span class="val">0,13–1,19 ng/ml</span></td><td>Déficit: RIN elevado, sangrado (factores II, VII, IX, X dependientes). Causa: malabsorción de grasas, antibióticos, recién nacido</td></tr>
+        <tr><td><strong>Zinc</strong></td><td><span class="val">70–120 µg/dl</span></td><td>Déficit: retraso en cicatrización, hipogeusia, hiposmia, dermatitis acrodermatitis, inmunosupresión, diarrea persistente</td></tr>
+        <tr><td><strong>Cobre</strong></td><td><span class="val">70–140 µg/dl</span></td><td>Déficit: anemia normocítica, neutropenia, neuropatía. ↑ enfermedad de Wilson (ceruloplasmina ↓ + cobre en orina ↑ + anillos de Kayser-Fleischer)</td></tr>
+        <tr><td><strong>Ceruloplasmina</strong></td><td><span class="val">20–60 mg/dl</span></td><td>↓ enfermedad de Wilson (depósito de cobre en hígado, ojo, ganglios basales) · ↑ embarazo, inflamación (reactante positivo)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- OTROS -->
+  <div class="seccion" id="otros">
+    <div class="sec-header">
+      <div class="sec-icono">📋</div>
+      <div class="sec-titulo-txt">Otros marcadores frecuentes en la práctica clínica</div>
+    </div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Valor normal</th><th>Uso clínico</th></tr>
+        <tr><td><strong>Proteínas en LCR</strong></td><td><span class="val">15–45 mg/dl</span></td><td>↑ meningitis bacteriana (&gt;100), GBS, neoplasia, hemorragia subaracnoidea</td></tr>
+        <tr><td><strong>Glucosa en LCR</strong></td><td><span class="val">50–80 mg/dl (≥60% de glucemia)</span></td><td>↓ meningitis bacteriana o fúngica, carcinomatosis meníngea</td></tr>
+        <tr><td><strong>Células en LCR</strong></td><td><span class="val">&lt;5 leucocitos/µL (linfocitos)</span></td><td>↑ PMN: meningitis bacteriana · ↑ Linfocitos: viral, TBC, fúngica, LEMP</td></tr>
+        <tr><td><strong>Amonio (amoniaco)</strong></td><td><span class="val">15–60 µmol/L</span></td><td>↑ encefalopatía hepática, hiperamonemia congénita (ciclo de la urea), falla hepática aguda. Extracto venoso, no arterial.</td></tr>
+        <tr><td><strong>Velocidad de filtrado glomerular (VFG) — medida</strong></td><td><span class="val">100–130 ml/min/1,73 m² (adulto joven)</span></td><td>Gold standard con inulina o EDTA marcado; en práctica clínica se estima (CKD-EPI, MDRD)</td></tr>
+        <tr><td><strong>Clearance de creatinina (orina 24 h)</strong></td><td><span class="val">H: 85–125 ml/min · M: 75–115 ml/min</span></td><td>Sobreestima FG real (creatinina se secreta en túbulo). Útil en embarazo y valores extremos de creatinina</td></tr>
+        <tr><td><strong>Osmolaridad sérica</strong></td><td><span class="val">280–295 mOsm/kg</span></td><td>= 2×Na + glucosa/18 + urea/2,8. ↑ hipernatremia, diabetes, alcoholes tóxicos. Osmol gap &gt;10: alcohol tóxico</td></tr>
+        <tr><td><strong>Complemento C3</strong></td><td><span class="val">90–180 mg/dl</span></td><td>↓ LES activo, glomerulonefritis membranoproliferativa, endocarditis, crioglobulinemia</td></tr>
+        <tr><td><strong>Complemento C4</strong></td><td><span class="val">16–47 mg/dl</span></td><td>↓ LES, angioedema hereditario (junto con C1-inhibidor ↓). Más sensible que C3 en LES</td></tr>
+        <tr><td><strong>ANA</strong> (anticuerpos antinucleares)</td><td><span class="val">Negativo (o &lt;1/80)</span></td><td>↑ LES (sensibilidad 95%, baja especificidad), esclerodermia, Sjögren, hepatitis autoinmune, miopatías inflamatorias</td></tr>
+        <tr><td><strong>Anti-dsDNA</strong></td><td><span class="val">Negativo</span></td><td>↑ LES (alta especificidad ~95%). Correlaciona con actividad y nefritis lúpica</td></tr>
+        <tr><td><strong>Anti-Sm</strong></td><td><span class="val">Negativo</span></td><td>Muy específico de LES (30–40% sensibilidad)</td></tr>
+        <tr><td><strong>FR</strong> (factor reumatoide)</td><td><span class="val">&lt;14 UI/ml</span></td><td>↑ AR (sensibilidad 70%), Sjögren, crioglobulinemia, otras. Inespecífico en ancianos</td></tr>
+        <tr><td><strong>Anti-CCP</strong></td><td><span class="val">Negativo (&lt;20 UI/ml)</span></td><td>Alta especificidad para AR (90–97%). Puede ser positivo años antes del diagnóstico clínico</td></tr>
+        <tr><td><strong>ANCA-PR3 (c-ANCA)</strong></td><td><span class="val">Negativo</span></td><td>Granulomatosis con poliangeítis (Wegener)</td></tr>
+        <tr><td><strong>ANCA-MPO (p-ANCA)</strong></td><td><span class="val">Negativo</span></td><td>PAM (poliangeítis microscópica), síndrome de Churg-Strauss, glomerulonefritis necrosante pauci-inmune</td></tr>
+        <tr><td><strong>IgE total</strong></td><td><span class="val">&lt;100 UI/ml (adulto)</span></td><td>↑ atopia, asma alérgica, parasitosis, ABPA, síndrome de Hyper-IgE</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Fischbach FT, Fischbach MA. A Manual of Laboratory and Diagnostic Tests. 10ª ed. Wolters Kluwer 2018 · Wallach JB. Interpretation of Diagnostic Tests. 8ª ed. Lippincott 2007 · Harrison TR. Principios de Medicina Interna. 21ª ed. McGraw-Hill 2022 (Appendix: Laboratory Values) · CLSI. Reference Intervals and Decision Limits for Clinical Laboratory Tests; Approved Guideline. 4ª ed. 2020 · American Diabetes Association. Standards of Medical Care in Diabetes 2024 · European Society of Cardiology. Guidelines on Dyslipidaemias 2019 · KDIGO. Clinical Practice Guideline for Acute Kidney Injury 2012 · KDIGO. CKD Guidelines 2022.<br>
+    Los valores de referencia pueden variar según el método, el laboratorio y la población. Consultar siempre los intervalos de referencia del laboratorio propio. El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
