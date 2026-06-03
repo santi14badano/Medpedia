@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espirometría e Interpretación — Medpedia</title>
+  <meta name="description" content="Espirometría: volúmenes, capacidades, patrones obstructivo y restrictivo, curva flujo-volumen, interpretación por patología. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --azul: #1565C0; --azul-claro: #E3EEF9;
+      --morado: #6B3FA0; --morado-claro: #F0E8FA;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-pulmo   { background: var(--azul-claro); color: var(--azul); }
+    .tag-dx      { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .tag-fuente  { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .indice { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.2rem; margin-bottom: 2rem; }
+    .indice-titulo { font-size: 12px; font-weight: 600; color: var(--texto-ter); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .5px; }
+    .indice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+    .indice-item { font-size: 13px; color: var(--verde); text-decoration: none; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--borde); background: var(--fondo); }
+    .indice-item:hover { background: var(--verde-claro); }
+    .seccion { margin-bottom: 2rem; scroll-margin-top: 75px; }
+    .sec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--borde); }
+    .sec-titulo-txt { font-size: 16px; font-weight: 600; color: var(--texto); }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-morado{ border-left: 3px solid var(--morado); background: var(--morado-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 9px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 600; border-bottom: 1px solid var(--borde); font-size: 12px; }
+    td { padding: 9px 14px; border-bottom: 1px solid var(--borde); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #FAFAFA; }
+    .val-bajo { color: var(--rojo); font-weight: 600; }
+    .val-norm { color: var(--verde-oscuro); font-weight: 600; }
+    .val-alto { color: var(--azul); font-weight: 600; }
+    .divider { border: none; border-top: 2px dashed var(--borde); margin: 1.5rem 0; }
+    /* VOLÚMENES */
+    .vol-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .vol-card { border-radius: 12px; padding: .9rem 1rem; border: 1.5px solid; }
+    .vol-card.azul   { background: var(--azul-claro); border-color: #90caf9; }
+    .vol-card.verde  { background: var(--verde-claro); border-color: #80cba8; }
+    .vol-card.morado { background: var(--morado-claro); border-color: #ce93d8; }
+    .vol-card.naran  { background: var(--naranja-claro); border-color: #ffb74d; }
+    .vol-card.rojo   { background: var(--rojo-claro); border-color: #e57373; }
+    .vol-sigla { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+    .vol-sigla.azul   { color: var(--azul); }
+    .vol-sigla.verde  { color: var(--verde-oscuro); }
+    .vol-sigla.morado { color: var(--morado); }
+    .vol-sigla.naran  { color: var(--naranja); }
+    .vol-sigla.rojo   { color: var(--rojo); }
+    .vol-nombre { font-size: 12px; font-weight: 600; margin-bottom: 5px; color: var(--texto); }
+    .vol-ref    { font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+    .vol-desc   { font-size: 11.5px; color: var(--texto-sec); line-height: 1.35; }
+    /* PATRON CARDS */
+    .patron-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 560px) { .patron-grid { grid-template-columns: 1fr; } }
+    .patron-card { border-radius: 14px; padding: 1.2rem; border: 2px solid; }
+    .patron-card.obs { background: var(--naranja-claro); border-color: #ffb74d; }
+    .patron-card.res { background: var(--azul-claro); border-color: #90caf9; }
+    .patron-card.mix { background: var(--morado-claro); border-color: #ce93d8; }
+    .patron-titulo { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+    .patron-titulo.obs { color: var(--naranja); }
+    .patron-titulo.res { color: var(--azul); }
+    .patron-titulo.mix { color: var(--morado); }
+    .patron-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,.06); }
+    .patron-row:last-child { border-bottom: none; }
+    .patron-param { color: var(--texto-sec); font-weight: 500; }
+    .patron-val   { font-weight: 700; }
+    /* PATOLOGÍA CARDS */
+    .patologia-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 12px; }
+    .pat-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 10px; flex-wrap: wrap; }
+    .pat-nombre { font-size: 15px; font-weight: 700; color: var(--texto); }
+    .pat-tipo-badge { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+    .badge-obs { background: var(--naranja-claro); color: var(--naranja); }
+    .badge-res { background: var(--azul-claro); color: var(--azul); }
+    .badge-mix { background: var(--morado-claro); color: var(--morado); }
+    .badge-norm { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .pat-espiro { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-bottom: 10px; }
+    .pat-val { background: var(--fondo); border-radius: 8px; padding: 6px 8px; text-align: center; border: 1px solid var(--borde); }
+    .pat-val-label { font-size: 10px; color: var(--texto-ter); margin-bottom: 2px; }
+    .pat-val-num { font-size: 13px; font-weight: 700; }
+    .bajo { color: var(--rojo); }
+    .norm { color: var(--verde-oscuro); }
+    .alto { color: var(--azul); }
+    .pat-notas { font-size: 13px; color: var(--texto-sec); line-height: 1.6; }
+    /* SVG DIAGRAMS */
+    .diagrama-wrap { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1rem; margin-bottom: 14px; text-align: center; }
+    .diagrama-titulo { font-size: 13px; font-weight: 600; color: var(--texto-sec); margin-bottom: 10px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 12px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .paso-algo { display: flex; gap: 0; flex-direction: column; margin-bottom: 14px; }
+    .paso { display: flex; gap: 12px; align-items: flex-start; background: var(--blanco); border: 1px solid var(--borde); padding: 10px 14px; margin-bottom: 2px; border-radius: 0; font-size: 13.5px; }
+    .paso:first-child { border-radius: 12px 12px 0 0; }
+    .paso:last-child  { border-radius: 0 0 12px 12px; }
+    .paso-num { font-weight: 800; color: var(--azul); font-size: 15px; flex-shrink: 0; width: 22px; }
+    .paso-content { flex: 1; color: var(--texto-sec); line-height: 1.55; }
+    .paso-content strong { color: var(--texto); }
+    .paso-decision { background: var(--azul-claro); border-color: #90caf9; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Neumología</a> › Espirometría</div>
+  <div class="titulo">Espirometría e Interpretación</div>
+  <div class="meta">
+    <span class="tag tag-pulmo">Neumología</span>
+    <span class="tag tag-dx">Diagnóstico funcional</span>
+    <span class="tag tag-fuente">ATS/ERS 2022 · GOLD 2024 · GINA 2024 · ERS/ATS Spirometry 2019</span>
+  </div>
+
+  <div class="indice">
+    <div class="indice-titulo">Contenido</div>
+    <div class="indice-grid">
+      <a href="#volumenes"   class="indice-item">📐 Volúmenes y capacidades</a>
+      <a href="#parametros"  class="indice-item">📊 Parámetros clave</a>
+      <a href="#patrones"    class="indice-item">🔁 Patrones espirométricos</a>
+      <a href="#curva"       class="indice-item">📈 Curva flujo-volumen</a>
+      <a href="#algoritmo"   class="indice-item">🧭 Algoritmo de interpretación</a>
+      <a href="#patologias"  class="indice-item">🫁 Espirometría por patología</a>
+      <a href="#bdr"         class="indice-item">💊 Prueba broncodilatadora</a>
+      <a href="#calidad"     class="indice-item">✅ Criterios de calidad</a>
+      <a href="#examen"      class="indice-item">📋 Puntos clave de examen</a>
+    </div>
+  </div>
+
+  <!-- VOLÚMENES -->
+  <div class="seccion" id="volumenes">
+    <div class="sec-header"><span style="font-size:20px">📐</span><div class="sec-titulo-txt">Volúmenes y capacidades pulmonares</div></div>
+    <div class="hl-info">La espirometría mide los volúmenes que se pueden movilizar voluntariamente. Los volúmenes estáticos no movilizables (VR, CPT) requieren pletismografía o dilución de helio.</div>
+    <div class="vol-grid">
+      <div class="vol-card azul">
+        <div class="vol-sigla azul">VT</div>
+        <div class="vol-nombre">Volumen Corriente (Tidal)</div>
+        <div class="vol-ref" style="color:var(--azul)">≈ 500 ml (7 ml/kg)</div>
+        <div class="vol-desc">Volumen movilizado en cada respiración normal en reposo</div>
+      </div>
+      <div class="vol-card verde">
+        <div class="vol-sigla verde">VRI</div>
+        <div class="vol-nombre">Vol. Reserva Inspiratoria</div>
+        <div class="vol-ref" style="color:var(--verde-oscuro)">≈ 3.000 ml</div>
+        <div class="vol-desc">Volumen adicional que se puede inspirar desde el final de una inspiración normal</div>
+      </div>
+      <div class="vol-card morado">
+        <div class="vol-sigla morado">VRE</div>
+        <div class="vol-nombre">Vol. Reserva Espiratoria</div>
+        <div class="vol-ref" style="color:var(--morado)">≈ 1.100 ml</div>
+        <div class="vol-desc">Volumen adicional que se puede espirar desde el final de una espiración normal</div>
+      </div>
+      <div class="vol-card rojo">
+        <div class="vol-sigla rojo">VR</div>
+        <div class="vol-nombre">Volumen Residual</div>
+        <div class="vol-ref" style="color:var(--rojo)">≈ 1.200 ml</div>
+        <div class="vol-desc">Volumen que queda en el pulmón tras una espiración máxima forzada. <strong>NO medible por espirometría</strong></div>
+      </div>
+      <div class="vol-card azul">
+        <div class="vol-sigla azul">CVF</div>
+        <div class="vol-nombre">Capacidad Vital Forzada</div>
+        <div class="vol-ref" style="color:var(--azul)">> 80% del teórico</div>
+        <div class="vol-desc">Volumen total espirado en maniobra forzada desde inspiración máxima. CVF = VRI + VT + VRE</div>
+      </div>
+      <div class="vol-card verde">
+        <div class="vol-sigla verde">CPT</div>
+        <div class="vol-nombre">Capacidad Pulmonar Total</div>
+        <div class="vol-ref" style="color:var(--verde-oscuro)">≈ 5.800–6.000 ml</div>
+        <div class="vol-desc">Volumen total en el pulmón tras inspiración máxima. CPT = CVF + VR. <strong>Requiere pletismografía</strong></div>
+      </div>
+      <div class="vol-card morado">
+        <div class="vol-sigla morado">CRF</div>
+        <div class="vol-nombre">Capacidad Residual Funcional</div>
+        <div class="vol-ref" style="color:var(--morado)">≈ 2.300 ml</div>
+        <div class="vol-desc">Volumen en pulmón al final de una espiración normal (VRE + VR). Punto de equilibrio torácico</div>
+      </div>
+      <div class="vol-card naran">
+        <div class="vol-sigla naran">CI</div>
+        <div class="vol-nombre">Capacidad Inspiratoria</div>
+        <div class="vol-ref" style="color:var(--naranja)">≈ 3.500 ml</div>
+        <div class="vol-desc">Volumen máximo que se puede inspirar desde el final de una espiración normal (VT + VRI)</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PARÁMETROS CLAVE -->
+  <div class="seccion" id="parametros">
+    <div class="sec-header"><span style="font-size:20px">📊</span><div class="sec-titulo-txt">Parámetros espirométricos clave</div></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Parámetro</th><th>Definición</th><th>Valor normal</th><th>Significado de la alteración</th></tr>
+        <tr>
+          <td><strong>VEF₁</strong><br><small>(FEV₁)</small></td>
+          <td>Volumen espirado en el <strong>primer segundo</strong> de una maniobra forzada</td>
+          <td><span class="val-norm">≥ 80% del teórico</span></td>
+          <td>↓ en obstrucción (flujo limitado) y restricción (volumen reducido). El parámetro más reproducible.</td>
+        </tr>
+        <tr>
+          <td><strong>CVF</strong><br><small>(FVC)</small></td>
+          <td>Volumen total espirado en maniobra forzada desde inspiración máxima</td>
+          <td><span class="val-norm">≥ 80% del teórico</span></td>
+          <td>↓ en restricción (pulmón pequeño). Puede estar conservada o levemente ↓ en obstrucción.</td>
+        </tr>
+        <tr>
+          <td><strong>VEF₁/CVF</strong><br><small>(índice de Tiffeneau)</small></td>
+          <td>Relación entre el volumen del primer segundo y la capacidad vital forzada</td>
+          <td><span class="val-norm">≥ 0,70 (o LIN*)</span></td>
+          <td>↓ = obstrucción al flujo aéreo. <strong>Es el criterio diagnóstico de obstrucción.</strong> *LIN = límite inferior de la normalidad (percentil 5)</td>
+        </tr>
+        <tr>
+          <td><strong>FEF₂₅₋₇₅%</strong><br><small>(MMEF)</small></td>
+          <td>Flujo espiratorio forzado entre el 25% y 75% de la CVF (flujo mesoespiratorio)</td>
+          <td><span class="val-norm">≥ 65% del teórico</span></td>
+          <td>Refleja las vías aéreas pequeñas. ↓ precozmente en obstrucción leve y en fumadores. Alta variabilidad: interpretación cautelosa.</td>
+        </tr>
+        <tr>
+          <td><strong>FEM</strong><br><small>(PEF)</small></td>
+          <td>Flujo espiratorio máximo (pico de flujo)</td>
+          <td><span class="val-norm">≥ 80% del teórico</span></td>
+          <td>↓ obstrucción de vía aérea central o periférica. Útil en monitoreo domiciliario del asma. Muy dependiente del esfuerzo.</td>
+        </tr>
+        <tr>
+          <td><strong>VR/CPT</strong></td>
+          <td>Relación volumen residual / capacidad pulmonar total</td>
+          <td><span class="val-norm">≤ 0,35 (35%)</span></td>
+          <td>↑ en hiperinsuflación (EPOC, asma grave). Indica atrapamiento aéreo.</td>
+        </tr>
+        <tr>
+          <td><strong>DLCO</strong><br><small>(difusión de CO)</small></td>
+          <td>Capacidad de difusión del monóxido de carbono (no es espirometría, pero se interpreta junto)</td>
+          <td><span class="val-norm">≥ 80% del teórico</span></td>
+          <td>↓ enfisema (destrucción alveolar), fibrosis pulmonar, anemia, TEP · Normal en asma y bronquitis crónica · ↑ hemorragia alveolar, obesidad, poliglobulia</td>
+        </tr>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ El índice de Tiffeneau es EL parámetro más importante</div>
+      VEF₁/CVF &lt; 0,70 post-broncodilatador = obstrucción. Es el criterio de GOLD para EPOC y de GINA para asma (aunque en asma puede ser normal entre crisis). Si el índice es normal, la obstrucción queda descartada independientemente del VEF₁. Los valores se expresan como porcentaje del teórico (predicho según edad, sexo, talla y etnia).
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PATRONES -->
+  <div class="seccion" id="patrones">
+    <div class="sec-header"><span style="font-size:20px">🔁</span><div class="sec-titulo-txt">Patrones espirométricos</div></div>
+    <div class="patron-grid">
+      <div class="patron-card obs">
+        <div class="patron-titulo obs">🟠 Patrón Obstructivo</div>
+        <div class="patron-row"><span class="patron-param">VEF₁/CVF</span><span class="patron-val" style="color:var(--rojo)">↓ &lt; 0,70</span></div>
+        <div class="patron-row"><span class="patron-param">VEF₁</span><span class="patron-val" style="color:var(--rojo)">↓</span></div>
+        <div class="patron-row"><span class="patron-param">CVF</span><span class="patron-val" style="color:var(--verde-oscuro)">Normal o ↓ leve</span></div>
+        <div class="patron-row"><span class="patron-param">CPT</span><span class="patron-val" style="color:var(--azul)">Normal o ↑</span></div>
+        <div class="patron-row"><span class="patron-param">VR</span><span class="patron-val" style="color:var(--azul)">↑ (atrapamiento)</span></div>
+        <div class="patron-row"><span class="patron-param">DLCO</span><span class="patron-val">Variable</span></div>
+        <div style="margin-top:10px; font-size:12px; color:var(--naranja); font-weight:600;">Enfermedades: EPOC, Asma, Bronquiectasias, Bronquiolitis obliterante, Fibrosis quística</div>
+      </div>
+      <div class="patron-card res">
+        <div class="patron-titulo res">🔵 Patrón Restrictivo</div>
+        <div class="patron-row"><span class="patron-param">VEF₁/CVF</span><span class="patron-val" style="color:var(--verde-oscuro)">Normal o ↑</span></div>
+        <div class="patron-row"><span class="patron-param">VEF₁</span><span class="patron-val" style="color:var(--rojo)">↓</span></div>
+        <div class="patron-row"><span class="patron-param">CVF</span><span class="patron-val" style="color:var(--rojo)">↓</span></div>
+        <div class="patron-row"><span class="patron-param">CPT</span><span class="patron-val" style="color:var(--rojo)">↓ &lt; 80%</span></div>
+        <div class="patron-row"><span class="patron-param">VR</span><span class="patron-val" style="color:var(--verde-oscuro)">Normal o ↓</span></div>
+        <div class="patron-row"><span class="patron-param">DLCO</span><span class="patron-val" style="color:var(--rojo)">↓ (si intersticial)</span></div>
+        <div style="margin-top:10px; font-size:12px; color:var(--azul); font-weight:600;">Enfermedades: Fibrosis pulmonar, Sarcoidosis, Enf. neuromuscular, Cifoescoliosis, Obesidad, Derrame pleural</div>
+      </div>
+    </div>
+    <div class="patron-grid">
+      <div class="patron-card mix">
+        <div class="patron-titulo mix">🟣 Patrón Mixto</div>
+        <div class="patron-row"><span class="patron-param">VEF₁/CVF</span><span class="patron-val" style="color:var(--rojo)">↓ &lt; 0,70</span></div>
+        <div class="patron-row"><span class="patron-param">VEF₁</span><span class="patron-val" style="color:var(--rojo)">↓↓</span></div>
+        <div class="patron-row"><span class="patron-param">CVF</span><span class="patron-val" style="color:var(--rojo)">↓</span></div>
+        <div class="patron-row"><span class="patron-param">CPT</span><span class="patron-val" style="color:var(--rojo)">↓ &lt; 80%</span></div>
+        <div style="margin-top:10px; font-size:12px; color:var(--morado); font-weight:600;">Obstrucción + Restricción simultáneas. Fibrosis quística avanzada, EPOC con fibrosis, sarcoidosis avanzada</div>
+      </div>
+      <div class="patron-card" style="background:var(--verde-claro); border-color:#80cba8;">
+        <div class="patron-titulo" style="color:var(--verde-oscuro);">🟢 Espirometría Normal</div>
+        <div class="patron-row"><span class="patron-param">VEF₁/CVF</span><span class="patron-val" style="color:var(--verde-oscuro)">≥ 0,70</span></div>
+        <div class="patron-row"><span class="patron-param">VEF₁</span><span class="patron-val" style="color:var(--verde-oscuro)">≥ 80%</span></div>
+        <div class="patron-row"><span class="patron-param">CVF</span><span class="patron-val" style="color:var(--verde-oscuro)">≥ 80%</span></div>
+        <div class="patron-row"><span class="patron-param">CPT</span><span class="patron-val" style="color:var(--verde-oscuro)">≥ 80%</span></div>
+        <div style="margin-top:10px; font-size:12px; color:var(--verde-oscuro); font-weight:600;">No descarta asma (puede ser normal entre crisis). En restricción moderada la espirometría puede sugerir pero CPT confirma.</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Trampa del patrón restrictivo en espirometría:</strong> La espirometría sola no confirma restricción. CVF reducida con Tiffeneau normal sugiere restricción pero puede ocurrir en obstrucción severa por colapso precoz (CVF pseudorrestrictiva). Para confirmar restricción se necesita CPT &lt;80% por <strong>pletismografía corporal</strong>.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CURVA FLUJO-VOLUMEN -->
+  <div class="seccion" id="curva">
+    <div class="sec-header"><span style="font-size:20px">📈</span><div class="sec-titulo-txt">Curva flujo-volumen — interpretación visual</div></div>
+    <div class="hl-info">La curva flujo-volumen grafica el flujo espiratorio (eje Y) en función del volumen (eje X) durante una maniobra forzada. La rama espiratoria tiene forma de triángulo con pico agudo (FEM) seguido de descenso lineal. La rama inspiratoria tiene forma semicircular simétrica.</div>
+
+    <div class="diagrama-wrap">
+      <div class="diagrama-titulo">Curvas flujo-volumen — comparación de patrones</div>
+      <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+        <!-- Ejes -->
+        <line x1="40" y1="20" x2="40" y2="280" stroke="#ccc" stroke-width="1.5"/>
+        <line x1="40" y1="150" x2="650" y2="150" stroke="#ccc" stroke-width="1.5"/>
+        <!-- Labels -->
+        <text x="340" y="310" text-anchor="middle" font-size="11" fill="#888" font-family="DM Sans, sans-serif">Volumen (L) →</text>
+        <text x="14" y="150" text-anchor="middle" font-size="11" fill="#888" font-family="DM Sans, sans-serif" transform="rotate(-90,14,150)">Flujo (L/s)</text>
+        <text x="42" y="18" font-size="10" fill="#888" font-family="DM Sans, sans-serif">+</text>
+        <text x="42" y="285" font-size="10" fill="#888" font-family="DM Sans, sans-serif">−</text>
+        <!-- Curva normal -->
+        <path d="M 80,150 L 80,60 Q 100,35 130,38 Q 200,42 250,80 Q 300,110 340,130 Q 380,145 420,149 L 420,150 Q 300,195 200,195 Q 130,195 80,155 Z" fill="none" stroke="#1D9E75" stroke-width="2.5"/>
+        <text x="135" y="30" font-size="11" fill="#1D9E75" font-weight="600" font-family="DM Sans, sans-serif">Normal</text>
+        <!-- Curva obstructiva -->
+        <path d="M 80,150 L 80,75 Q 100,55 120,58 Q 160,62 200,95 Q 250,128 300,142 Q 360,150 420,150 Q 300,200 200,200 Q 130,200 80,155 Z" fill="none" stroke="#D4730A" stroke-width="2.5" stroke-dasharray="6,3"/>
+        <text x="430" y="100" font-size="11" fill="#D4730A" font-weight="600" font-family="DM Sans, sans-serif">Obstructivo</text>
+        <text x="430" y="113" font-size="10" fill="#D4730A" font-family="DM Sans, sans-serif">(cóncavo, FEM ↓)</text>
+        <!-- Curva restrictiva -->
+        <path d="M 150,150 L 150,65 Q 165,45 190,48 Q 230,52 270,90 Q 300,118 320,140 Q 335,149 350,150 Q 280,195 230,195 Q 185,195 150,155 Z" fill="none" stroke="#1565C0" stroke-width="2.5" stroke-dasharray="4,4"/>
+        <text x="430" y="140" font-size="11" fill="#1565C0" font-weight="600" font-family="DM Sans, sans-serif">Restrictivo</text>
+        <text x="430" y="153" font-size="10" fill="#1565C0" font-family="DM Sans, sans-serif">(estrecho, CPT ↓)</text>
+        <!-- Espiratorio / inspiratorio labels -->
+        <text x="250" y="25" font-size="10" fill="#888" font-family="DM Sans, sans-serif">ESPIRACIÓN →</text>
+        <text x="250" y="290" font-size="10" fill="#888" font-family="DM Sans, sans-serif">← INSPIRACIÓN</text>
+        <!-- FEM marker -->
+        <circle cx="130" cy="38" r="4" fill="#1D9E75"/>
+        <text x="132" y="33" font-size="9" fill="#1D9E75" font-family="DM Sans, sans-serif">FEM</text>
+      </svg>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Patrón</th><th>Rama espiratoria</th><th>Rama inspiratoria</th><th>Característica visual</th></tr>
+        <tr><td><strong>Normal</strong></td><td>Pico agudo (FEM alto) + descenso lineal</td><td>Semicírculo simétrico</td><td>Figura de "triángulo + semicírculo"</td></tr>
+        <tr><td><strong>Obstructivo</strong></td><td>Pico reducido, descenso <strong>cóncavo</strong> (ahuecado hacia adentro)</td><td>Relativamente conservada</td><td>Concavidad espiratoria = sello del obstructivo</td></tr>
+        <tr><td><strong>Restrictivo</strong></td><td>Pico reducido, descenso relativamente lineal pero <strong>estrecho</strong></td><td>Semicírculo pequeño</td><td>Curva normal en miniatura (todo reducido proporcionalmente)</td></tr>
+        <tr><td><strong>Obstrucción VAS fija</strong><br><small>(traqueal, tumoral)</small></td><td>Meseta aplanada en la parte superior</td><td>Meseta aplanada (ambas ramas)</td><td>Doble meseta: obstrucción extratoráxica fija</td></tr>
+        <tr><td><strong>Obstrucción VAS variable extratoráxica</strong><br><small>(parálisis cuerdas vocales)</small></td><td>Normal</td><td>Meseta aplanada inspiratoria</td><td>Aplanamiento inspiratorio selectivo</td></tr>
+        <tr><td><strong>Obstrucción VAS variable intratoráxica</strong><br><small>(traqueomalacia)</small></td><td>Meseta aplanada espiratoria</td><td>Normal</td><td>Aplanamiento espiratorio selectivo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ALGORITMO -->
+  <div class="seccion" id="algoritmo">
+    <div class="sec-header"><span style="font-size:20px">🧭</span><div class="sec-titulo-txt">Algoritmo de interpretación paso a paso</div></div>
+    <div class="paso-algo">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <div class="paso-content"><strong>¿Es la espirometría de calidad aceptable?</strong> Verificar criterios ATS/ERS: maniobra de al menos 6 seg, sin artefactos, al menos 3 maniobras reproducibles (VEF₁ y CVF con diferencia &lt;150 ml entre las 2 mejores).</div>
+      </div>
+      <div class="paso paso-decision">
+        <div class="paso-num">2</div>
+        <div class="paso-content"><strong>¿VEF₁/CVF &lt; 0,70 (o &lt;LIN)?</strong><br>
+        — <strong>SÍ → Patrón obstructivo.</strong> Clasificar gravedad por VEF₁ (% teórico post-BD): leve ≥80%, moderado 50–79%, grave 30–49%, muy grave &lt;30%.<br>
+        — <strong>NO → Sin obstrucción. Ir al paso 3.</strong></div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <div class="paso-content"><strong>¿CVF reducida (&lt;80%)?</strong><br>
+        — <strong>SÍ → Sospecha de restricción.</strong> Confirmar con CPT por pletismografía. Si CPT &lt;80% → restricción confirmada.<br>
+        — <strong>NO → Espirometría normal.</strong></div>
+      </div>
+      <div class="paso paso-decision">
+        <div class="paso-num">4</div>
+        <div class="paso-content"><strong>Si hay obstrucción: ¿Realizar prueba broncodilatadora (PBD)?</strong><br>
+        Administrar 400 mcg de salbutamol inhalado. Medir a los 15–20 min.<br>
+        — <strong>Respuesta significativa:</strong> ↑ VEF₁ ≥ 12% Y ≥ 200 ml respecto al valor pre-BD → broncodilatación positiva (compatible con asma, aunque no exclusiva).<br>
+        — <strong>Sin respuesta significativa:</strong> obstrucción fija (más compatible con EPOC).</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">5</div>
+        <div class="paso-content"><strong>¿Hay atrapamiento aéreo?</strong> Si se dispone de pletismografía: VR/CPT &gt;35% o CPT &gt;120% del teórico → hiperinsuflación. Frecuente en EPOC avanzado y asma grave.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">6</div>
+        <div class="paso-content"><strong>Integrar con clínica, DLCO y TAC de tórax</strong> para diagnóstico definitivo. La espirometría clasifica el patrón funcional; no diagnostica etiología sola.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ESPIROMETRÍA POR PATOLOGÍA -->
+  <div class="seccion" id="patologias">
+    <div class="sec-header"><span style="font-size:20px">🫁</span><div class="sec-titulo-txt">Espirometría por patología — guía detallada</div></div>
+
+    <!-- EPOC -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">EPOC (Enfermedad Pulmonar Obstructiva Crónica)</div>
+        <span class="pat-tipo-badge badge-obs">Obstructivo</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF post-BD</div><div class="pat-val-num bajo">&lt; 0,70</div></div>
+        <div class="pat-val"><div class="pat-val-label">VEF₁</div><div class="pat-val-num bajo">↓ variable</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num">Normal/↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num alto">↑ (hiperinsufl.)</div></div>
+        <div class="pat-val"><div class="pat-val-label">VR/CPT</div><div class="pat-val-num alto">↑↑</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num bajo">↓ (enfisema)</div></div>
+        <div class="pat-val"><div class="pat-val-label">PBD</div><div class="pat-val-num">Parcial/negativa</div></div>
+      </div>
+      <div class="pat-notas"><strong>Clave diagnóstica:</strong> VEF₁/CVF &lt; 0,70 POST-broncodilatador (persistente) en paciente con exposición al tabaco o biomasa. La PBD puede ser parcialmente positiva pero no revierte completamente la obstrucción (a diferencia del asma). <strong>Clasificación GOLD por VEF₁:</strong> GOLD 1 ≥80% · GOLD 2 50–79% · GOLD 3 30–49% · GOLD 4 &lt;30%. <strong>DLCO ↓</strong> distingue el componente enfisematoso (destrucción alveolar) de la bronquitis crónica pura (DLCO normal). La hiperinsuflación (CPT ↑, VR ↑) explica la disnea por aplanamiento del diafragma y aumento del trabajo respiratorio.</div>
+    </div>
+
+    <!-- ASMA -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Asma Bronquial</div>
+        <span class="pat-tipo-badge badge-obs">Obstructivo reversible</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF</div><div class="pat-val-num bajo">↓ (en crisis)</div></div>
+        <div class="pat-val"><div class="pat-val-label">VEF₁</div><div class="pat-val-num bajo">↓ (en crisis)</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num">Normal/↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">Espiro. intercrisis</div><div class="pat-val-num norm">Puede ser NORMAL</div></div>
+        <div class="pat-val"><div class="pat-val-label">PBD</div><div class="pat-val-num alto">Positiva ↑≥12%+200ml</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num norm">Normal</div></div>
+        <div class="pat-val"><div class="pat-val-label">Variabilidad FEM</div><div class="pat-val-num bajo">&gt;10% diurna</div></div>
+      </div>
+      <div class="pat-notas"><strong>Lo que define el asma:</strong> obstrucción variable y reversible. La espirometría puede ser completamente <strong>normal entre las crisis</strong> — esto no descarta asma. La PBD positiva (↑VEF₁ ≥12% y ≥200 ml) apoya el diagnóstico. <strong>Si espirometría normal con sospecha de asma:</strong> realizar prueba de provocación bronquial (metacolina, ejercicio, manitol). PC20 metacolina &lt;4 mg/ml = hiperrespuesta severa. La variabilidad del FEM &gt;10% en 2 semanas también apoya el diagnóstico. En asma grave crónica puede haber remodelado con obstrucción parcialmente fija.</div>
+    </div>
+
+    <!-- FIBROSIS PULMONAR -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Fibrosis Pulmonar Idiopática (FPI / UIP)</div>
+        <span class="pat-tipo-badge badge-res">Restrictivo</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF</div><div class="pat-val-num alto">Normal o ↑</div></div>
+        <div class="pat-val"><div class="pat-val-label">VEF₁</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num bajo">↓↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num bajo">↓ &lt;80%</div></div>
+        <div class="pat-val"><div class="pat-val-label">VR</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num bajo">↓↓ (precoz)</div></div>
+        <div class="pat-val"><div class="pat-val-label">PBD</div><div class="pat-val-num">Negativa</div></div>
+      </div>
+      <div class="pat-notas"><strong>Patrón restrictivo puro.</strong> El Tiffeneau está normal o incluso elevado porque tanto VEF₁ como CVF caen proporcionalmente (o CVF cae más). <strong>DLCO es el marcador más sensible y precoz</strong> — puede estar ↓ antes de que la CVF baje. La caída de CVF &gt;5–10% en 6 meses indica progresión y es criterio para iniciar antifibróticos (pirfenidona, nintedanib). En la FPI con EPOC asociada (fumadores), el patrón puede ser mixto o incluso con Tiffeneau borderline.</div>
+    </div>
+
+    <!-- SARCOIDOSIS -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Sarcoidosis Pulmonar</div>
+        <span class="pat-tipo-badge badge-res">Restrictivo (variable)</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF</div><div class="pat-val-num">Normal o ↑</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num bajo">↓ (estadios II–IV)</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">Obstrucción posible</div><div class="pat-val-num">20–30% casos</div></div>
+      </div>
+      <div class="pat-notas">La sarcoidosis pulmonar típicamente produce patrón restrictivo por infiltración granulomatosa del parénquima. Sin embargo, la afectación endobronquial por granulomas puede causar obstrucción en el 20–30% de los casos, produciendo un patrón mixto o incluso predominantemente obstructivo. El estadio radiológico (I–IV) no correlaciona perfectamente con la función pulmonar.</div>
+    </div>
+
+    <!-- FIBROSIS QUÍSTICA -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Fibrosis Quística</div>
+        <span class="pat-tipo-badge badge-mix">Mixto (obstructivo → mixto)</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">VEF₁</div><div class="pat-val-num bajo">↓↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num">Normal o ↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">VR/CPT</div><div class="pat-val-num alto">↑ (atrapamiento)</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num bajo">↓ tardío</div></div>
+      </div>
+      <div class="pat-notas">Inicialmente obstructivo (acumulación de moco + inflamación bronquial). Con la progresión aparece destrucción del parénquima y bronquiectasias → patrón mixto. <strong>El VEF₁ es el principal predictor de mortalidad y de indicación de trasplante pulmonar</strong> (VEF₁ &lt;30% = candidato). La PBD puede ser parcialmente positiva en episodios agudos. La colonización crónica por Pseudomonas aeruginosa acelera el deterioro funcional.</div>
+    </div>
+
+    <!-- ENFERMEDADES NEUROMUSCULARES -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Enfermedades Neuromusculares (ELA, Guillain-Barré, miastenia)</div>
+        <span class="pat-tipo-badge badge-res">Restrictivo</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">VEF₁/CVF</div><div class="pat-val-num norm">Normal o ↑</div></div>
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num bajo">↓↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">Pmax inspiratoria</div><div class="pat-val-num bajo">↓↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO corregida</div><div class="pat-val-num norm">Normal</div></div>
+      </div>
+      <div class="pat-notas">La restricción es por debilidad de los músculos respiratorios, no por enfermedad del parénquima. <strong>CVF en decúbito supino vs sentado:</strong> caída de CVF &gt;20% en decúbito = disfunción del diafragma (muy sensible en ELA y parálisis frénica). <strong>CVF &lt;50% o PaCO₂ en aumento = indicación de VNI nocturna.</strong> La DLCO corregida por volumen alveolar es normal (el parénquima está intacto). Monitorear con CVF en cada consulta.</div>
+    </div>
+
+    <!-- OBESIDAD -->
+    <div class="patologia-card">
+      <div class="pat-header">
+        <div class="pat-nombre">Obesidad</div>
+        <span class="pat-tipo-badge badge-res">Restrictivo leve</span>
+      </div>
+      <div class="pat-espiro">
+        <div class="pat-val"><div class="pat-val-label">CVF</div><div class="pat-val-num">Normal o ↓ leve</div></div>
+        <div class="pat-val"><div class="pat-val-label">VRE</div><div class="pat-val-num bajo">↓↓ (marcado)</div></div>
+        <div class="pat-val"><div class="pat-val-label">CRF</div><div class="pat-val-num bajo">↓</div></div>
+        <div class="pat-val"><div class="pat-val-label">CPT</div><div class="pat-val-num">Normal o ↓ leve</div></div>
+        <div class="pat-val"><div class="pat-val-label">DLCO</div><div class="pat-val-num norm">Normal o ↑</div></div>
+      </div>
+      <div class="pat-notas">La obesidad reduce el VRE y la CRF (el peso abdominal en decúbito desplaza el diafragma hacia arriba). La CPT puede estar normal. En supino empeora por cierre de pequeñas vías aéreas en las bases → atelectasias. La DLCO puede estar aumentada por la mayor masa de hemoglobina. La alteración más característica es la caída del VRE con CRF baja.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRUEBA BRONCODILATADORA -->
+  <div class="seccion" id="bdr">
+    <div class="sec-header"><span style="font-size:20px">💊</span><div class="sec-titulo-txt">Prueba Broncodilatadora (PBD)</div></div>
+    <div class="hl-info"><strong>Protocolo:</strong> Espirometría basal → Administrar 400 mcg de salbutamol (4 puffs) con espaciador → Esperar 15–20 min → Repetir espirometría. El paciente debe haber suspendido broncodilatadores previos (SABA: 4–6 h; LABA: 12 h; SAMA: 4–6 h; LAMA: 24 h).</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Resultado</th><th>Criterio (ATS/ERS 2022)</th><th>Interpretación</th></tr>
+        <tr><td><strong>PBD positiva (significativa)</strong></td><td>↑ VEF₁ ≥ 12% <strong>Y</strong> ≥ 200 ml vs. basal</td><td>Sugiere reversibilidad. Compatible con asma. También puede verse en EPOC (no excluye EPOC). Sin valor para diferenciar asma de EPOC solo con este criterio.</td></tr>
+        <tr><td><strong>PBD negativa</strong></td><td>↑ VEF₁ &lt; 12% o &lt; 200 ml</td><td>Obstrucción fija. Más compatible con EPOC. No descarta asma (puede ser negativa entre crisis o con tratamiento previo).</td></tr>
+        <tr><td><strong>Respuesta en CVF</strong></td><td>↑ CVF ≥ 12% y ≥ 200 ml</td><td>Puede reflejar reducción del atrapamiento aéreo (mejoría de hiperinsuflación) incluso sin cambio en VEF₁. Relevante en EPOC.</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>PBD positiva ≠ diagnóstico de asma. PBD negativa ≠ descarta asma.</strong> La respuesta broncodilatadora es un dato más dentro de la evaluación clínica. Un paciente con EPOC puede tener PBD positiva. Un asmático en remisión puede tener PBD negativa.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CALIDAD -->
+  <div class="seccion" id="calidad">
+    <div class="sec-header"><span style="font-size:20px">✅</span><div class="sec-titulo-txt">Criterios de calidad de la espirometría (ATS/ERS)</div></div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Requisito</th></tr>
+        <tr><td><strong>Inicio de maniobra</strong></td><td>Comienzo explosivo: volumen extrapolado &lt;5% de CVF o &lt;0,15 L. FEM alcanzado &lt;120 ms.</td></tr>
+        <tr><td><strong>Duración</strong></td><td>Mínimo 6 segundos (o hasta llegar a meseta: cambio &lt;0,025 L en 1 segundo). En niños: mínimo 3 seg.</td></tr>
+        <tr><td><strong>Sin artefactos</strong></td><td>Sin tos en el primer segundo, sin cierre glótico, sin fuga por la boquilla, sin maniobra submáxima.</td></tr>
+        <tr><td><strong>Reproducibilidad</strong></td><td>Al menos 3 maniobras aceptables. Diferencia entre las 2 mejores CVF &lt;150 ml y entre los 2 mejores VEF₁ &lt;150 ml. Se registra el mayor valor.</td></tr>
+        <tr><td><strong>Número máximo</strong></td><td>No más de 8 intentos para evitar fatiga muscular.</td></tr>
+      </table>
+    </div>
+    <div class="hl">Una espirometría de baja calidad puede llevar a diagnósticos erróneos. Siempre reportar el grado de calidad de la maniobra (A-F según ATS/ERS 2022).</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EXAMEN -->
+  <div class="seccion" id="examen">
+    <div class="sec-header"><span style="font-size:20px">📋</span><div class="sec-titulo-txt">Lo que te preguntan en el examen</div></div>
+    <div class="pill-list">
+      <span class="pill">Tiffeneau &lt; 0,70 post-BD = obstrucción (criterio GOLD)</span>
+      <span class="pill">Obstrucción: VEF₁ ↓, CVF normal, Tiffeneau ↓</span>
+      <span class="pill">Restricción: VEF₁ ↓, CVF ↓, Tiffeneau normal o ↑, CPT ↓</span>
+      <span class="pill">Restricción se confirma con CPT &lt;80% (pletismografía)</span>
+      <span class="pill">PBD positiva: ↑VEF₁ ≥ 12% Y ≥ 200 ml post-salbutamol</span>
+      <span class="pill">Asma: espirometría puede ser NORMAL entre crisis</span>
+      <span class="pill">EPOC: obstrucción persistente post-BD en fumador/biomasa</span>
+      <span class="pill">DLCO ↓ en enfisema pero normal en bronquitis crónica</span>
+      <span class="pill">DLCO ↓ en FPI (marcador precoz) y normal en patología NM</span>
+      <span class="pill">Curva obstructiva = concavidad espiratoria (cóncavo hacia dentro)</span>
+      <span class="pill">Curva restrictiva = normal en miniatura (todo proporcional)</span>
+      <span class="pill">VR/CPT &gt;35% = hiperinsuflación / atrapamiento aéreo</span>
+      <span class="pill">GOLD 1: VEF₁ ≥80% · GOLD 2: 50–79% · GOLD 3: 30–49% · GOLD 4: &lt;30%</span>
+      <span class="pill">FPI: caída CVF &gt;5% en 6 meses = progresión → iniciar antifibrótico</span>
+      <span class="pill">ELA: CVF &lt;50% o caída &gt;20% en supino = indicación de VNI</span>
+      <span class="pill">FQ: VEF₁ &lt;30% = candidato a trasplante pulmonar</span>
+      <span class="pill">Meseta inspiratoria = obstrucción VAS extratoráxica variable</span>
+      <span class="pill">Meseta ambas ramas = obstrucción fija (tumor traqueal)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Graham BL et al. 2017 ERS/ATS Standards for single-breath carbon monoxide uptake in the lung. Eur Respir J 2017 · Pellegrino R et al. Interpretive strategies for lung function tests. Eur Respir J 2005 · Stanojevic S et al. ERS/ATS technical standard on interpretive strategies for routine lung function tests. Eur Respir J 2022 · Global Initiative for Chronic Obstructive Lung Disease (GOLD). 2024 Report · Global Initiative for Asthma (GINA). 2024 Report · Pellegrino R. Interpretive strategies for lung function tests. Eur Respir J 2005.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+<footer><p>Medpedia · <a href="index.html">Volver al inicio</a></p></footer>
+</body>
+</html>
