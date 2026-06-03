@@ -149,7 +149,7 @@
 
     /* BENTO */
     .section-label {
-      font-size: 11px; font-weight: 500; color: var(--texto-ter);
+      font-size: 11px; font-weight: 700; color: var(--texto-sec);
       letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;
     }
     .bento {
@@ -188,7 +188,7 @@
       box-shadow: 0 0 0 1px var(--verde), 0 4px 20px rgba(29,158,117,0.15);
     }
     .bento-icon { font-size: 20px; margin-bottom: 7px; line-height: 1; }
-    .bento-nombre { font-size: 13px; font-weight: 500; color: var(--texto); margin-bottom: 2px; line-height: 1.35; }
+    .bento-nombre { font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 2px; line-height: 1.35; }
     .bento-n { font-size: 11px; color: var(--texto-ter); }
 
     /* CHIPS */
@@ -210,7 +210,7 @@
 
     /* ARTÍCULOS GRID */
     .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; }
-    .section-titulo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--texto); }
+    .section-titulo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: var(--texto); }
     .section-count { font-size: 12px; color: var(--texto-ter); }
 
     .articulos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
@@ -497,6 +497,18 @@
     { titulo: 'Esquizofrenia y Psicosis', url: 'esquizofrenia-psicosis.html', tag: 'Psiquiatría', clase: 'tag-neuro', esp: 'neuro', keywords: 'esquizofrenia psicosis alucinaciones delirios sintomas positivos negativos antipsicóticos tipicos atipicos haloperidol risperidona olanzapina clozapina aripiprazol quetiapina primer episodio catatonia pep ugp trastorno esquizoafectivo depoto criteria dsm5' },
     { titulo: 'Síndrome de Guillain-Barré', url: 'guillain-barre.html', tag: 'Neurología', clase: 'tag-neuro', esp: 'neuro', keywords: 'guillain barre polineuropatia desmielinizante aguda ascendente areflexia debilidad campylobacter inmunoglobulina plasmaferesis ncs emg proteinas liquido cefalorraquideo disociacion albuminocitologica miller fisher bickerstaff aidp aman amsan' },
     { titulo: 'Hidatidosis (Equinococosis)', url: 'hidatidosis.html', tag: 'Infectología', clase: 'tag-infecto', esp: 'infecto', keywords: 'hidatidosis equinococosis echinococcus granulosus quiste hidatidico higado pulmon perro oveja ganaderia argentina rural albendazol pair puncion aspiracion inyeccion reaspiracion cirugía quistectomia periquistectomia serologia elisa hemaglutinacion rotura anafilaxia' },
+    { titulo: 'Anafilaxia', url: 'anafilaxia.html', tag: 'Urgencias', clase: 'tag-infecto', esp: 'infecto', keywords: 'anafilaxia adrenalina epinefrina alergia reaccion alergica angioedema urticaria shock anafilactico antihistaminico corticoides adrenalina intramuscular criterios diagnostico internacion alta medica' },
+    { titulo: 'Cáncer de Cuello Uterino', url: 'cancer-cuello-uterino.html', tag: 'Ginecología', clase: 'tag-gineco', esp: 'gineco', keywords: 'cancer cuello uterino cervix hpv papiloma lesiones precursoras nic cin estadificacion figo conizacion histerectomia radioterapia quimioterapia cisplatino bevacizumab pembrolizumab pap colposcopia biopsia cervical' },
+    { titulo: 'Control Prenatal y Screening Gestacional', url: 'control-prenatal.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'control prenatal embarazo screening primer segundo trimestre ecografia translucencia nucal bhcg papp-a triple marcador feto adn libre celulas consultas vacunas toxoide tetanico tdpa influenza hepatitis b rubéola toxoplasma sifilis hiv estudios obligatorios' },
+    { titulo: 'Crisis Hipertensiva', url: 'crisis-hipertensiva.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'crisis hipertensiva urgencia emergencia hipertension arterial tension arterial labetalol nitroprusiato nitroglicerina hidralazina enalaprilato furosemida encefalopatia hipertensiva diseccion aortica edema pulmonar eclampsia antihipertensivos intravenosos' },
+    { titulo: 'Deshidratación y Rehidratación Oral', url: 'deshidratacion-rehidratacion.html', tag: 'Pediatría', clase: 'tag-pediatria', esp: 'pediatria', keywords: 'deshidratacion rehidratacion oral pediatria plan a b c oms suero oral sales ringer lactato diarrea vomito lactante niño clasificacion leve moderada severa signo pliegue fontanela ojos hundidos llanto sin lagrimas' },
+    { titulo: 'Fibromialgia', url: 'fibromialgia.html', tag: 'Reumatología', clase: 'tag-reuma', esp: 'reuma', keywords: 'fibromialgia dolor cronico generalizado fatiga tender points criterios acr 2010 2016 wpi sscs pregabalina duloxetina amitriptilina ejercicio terapia cognitivo conductual sueño' },
+    { titulo: 'Hipoglucemia', url: 'hipoglucemia.html', tag: 'Endocrinología', clase: 'tag-endo', esp: 'endo', keywords: 'hipoglucemia glucosa triada whipple insulina glucagon dextrosa dextrose clasificacion leve moderada severa diabetes insulina sulfonilureas ayuno alcohol insulinoma diagnostico diferencial somatostatina octreotide' },
+    { titulo: 'Intoxicaciones Agudas', url: 'intoxicaciones-agudas.html', tag: 'Urgencias', clase: 'tag-infecto', esp: 'infecto', keywords: 'intoxicaciones agudas paracetamol acetilcisteina organofosforados atropina pralidoxima benzodiacepinas flumazenil opioides naloxona monoxido carbono oxigeno salicilatos alcalinizacion antidepresivos triciclicos bicarbonato alcohol etilico metanol fomate carbon activado lavado gastrico antidoto toxicologia' },
+    { titulo: 'Trastornos del Medio Interno', url: 'medio-interno.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'medio interno equilibrio acido base bicarbonato pco2 ph acidosis metabolica respiratoria alcalosis brecha anionica anion gap compensacion sodio potasio calcio magnesio fosforo electrolitos gasometria' },
+    { titulo: 'Rotura Prematura de Membranas', url: 'rotura-prematura-membranas.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'rotura prematura membranas rpm ovulares diagnostico amnioscopia pooling ferning cristalizacion fibronectina fetal corticoides betametasona antibioticos ampicilina eritromicina manejo conservador finalizacion embarazo corioamnionitis' },
+    { titulo: 'Trauma Abdominal y Abdomen Agudo', url: 'trauma-abdominal.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'trauma abdominal cerrado penetrante fast ecografia focused laparotomia control daños dcs hemoperitoneo lesion hepatica esplenica pancreatica intestinal abdomen agudo diagnostico diferencial peritonitis obstruccion isquemia' },
+    { titulo: 'Valores Normales de Laboratorio', url: 'valores-laboratorio.html', tag: 'Referencia', clase: 'tag-hemato', esp: 'hemato', keywords: 'valores normales laboratorio referencia hemograma hemoglobina hematocrito leucocitos plaquetas coagulacion tp aptt fibrinogeno ionograma sodio potasio calcio magnesio fosforo creatinina urea clearance tfg transaminasas alt ast bilirrubina albumina lipidograma colesterol trigliceridos tiroides tsh t4 marcadores cardiacos troponina bnp tubos muestras' },
   ];
 
   // Contadores por especialidad
