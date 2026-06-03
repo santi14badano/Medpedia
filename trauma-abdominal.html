@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trauma Abdominal y Abdomen Agudo — Medpedia</title>
+  <meta name="description" content="Trauma abdominal: clasificación, FAST, laparotomía de control de daños. Abdomen agudo: diagnóstico diferencial y manejo. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --ciru: #C0392B; --ciru-claro: #FDEDEC; --ciru-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-ciru { background: var(--ciru-claro); color: var(--ciru-oscuro); }
+    .tag-emergencia { background: #FFF3E0; color: #E65100; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-ciru { font-size: 16px; font-weight: 500; color: var(--ciru); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-ciru  { border-left: 3px solid var(--ciru); background: var(--ciru-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.7; margin-bottom: 4px; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ciru); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cirugía</a> › Trauma Abdominal y Abdomen Agudo</div>
+  <div class="titulo">Trauma Abdominal y Abdomen Agudo</div>
+  <div class="meta">
+    <span class="tag tag-ciru">Cirugía</span>
+    <span class="tag tag-emergencia">Emergencias</span>
+    <span class="tag tag-fuente">ATLS 10ª ed. · WSES Guidelines · Schwartz Cirugía</span>
+  </div>
+
+  <!-- CLASIFICACIÓN DEL TRAUMA ABDOMINAL -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Clasificación del trauma abdominal</div>
+    <div class="hl-ciru"><strong>Trauma abdominal:</strong> causa frecuente de mortalidad prevenible. El abdomen puede albergar hemorragia masiva oculta sin signos externos evidentes. El manejo inicial sigue la secuencia ATLS: ABCDE.</div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#C0392B">Trauma cerrado (contuso)</div>
+        <div class="card-item">• Causa más frecuente: accidentes de tránsito (cinturón de seguridad, airbag), caídas, golpes directos.</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Órganos más lesionados:</strong> bazo (40%) → hígado (35%) → intestino delgado → mesenterio → colon.</div>
+        <div class="card-item" style="margin-top:6px">• Mecanismo: desaceleración brusca → desgarro de pedículos vasculares; compresión directa → estallido de víscera sólida.</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Signo del cinturón:</strong> equimosis en faja en abdomen → sospechar lesión de intestino delgado y/o fractura de columna lumbar (fractura de Chance).</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#C0392B">Trauma penetrante</div>
+        <div class="card-item">• <strong>Herida por arma blanca (HAB):</strong> lesiona estructuras en su trayecto. Solo el 30% requiere laparotomía. Exploración local de herida → si penetra fascia: laparoscopía diagnóstica o laparotomía.</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Herida por arma de fuego (HAF):</strong> 90–95% requiere laparotomía exploratoria. Cavitación, onda de presión y trayecto impredecible.</div>
+        <div class="card-item" style="margin-top:6px">• <strong>Órganos más lesionados en penetrante:</strong> intestino delgado → colon → hígado → vasos abdominales.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVALUACIÓN INICIAL: FAST y TAC -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Evaluación inicial: FAST y TAC</div>
+
+    <div class="hl-info"><strong>FAST (Focused Assessment with Sonography in Trauma):</strong> ecografía dirigida a detectar líquido libre (sangre) en cavidades. Rápida, no invasiva, repetible. Se realiza en la sala de emergencias simultáneamente con la evaluación primaria ATLS.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Ventana ecográfica FAST</th><th>Qué detecta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pericárdica (subxifoidea)</strong></td><td>Hemopericardio / taponamiento cardíaco</td></tr>
+          <tr><td><strong>Perihepática (Morrison)</strong></td><td>Líquido en espacio hepatorrenal (el más sensible)</td></tr>
+          <tr><td><strong>Perisplénica (Koller)</strong></td><td>Líquido en espacio esplenorrenal</td></tr>
+          <tr><td><strong>Pelviana (Douglas)</strong></td><td>Líquido libre en pelvis (el declive más dependiente)</td></tr>
+          <tr><td><strong>eFAST (torácico bilateral)</strong></td><td>Neumotórax y hemotórax</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">FAST positivo + inestabilidad hemodinámica</div>
+        <div class="card-item">→ <strong>Laparotomía de emergencia inmediata</strong> sin TAC.</div>
+        <div class="card-item" style="margin-top:6px">No hay tiempo para estudios adicionales. El paciente en shock con líquido libre en abdomen = sangrado intraabdominal activo hasta que se demuestre lo contrario.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">FAST positivo o negativo + estabilidad hemodinámica</div>
+        <div class="card-item">→ <strong>TAC de abdomen y pelvis con contraste IV</strong> (gold standard para estadificar lesiones).</div>
+        <div class="card-item" style="margin-top:6px">Permite clasificar lesiones de órganos sólidos (escala AAST), identificar sangrado activo (blush de contraste) y planificar manejo conservador vs. intervencionista.</div>
+      </div>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>FAST negativo no descarta lesión:</strong> las lesiones retroperitoneales (duodeno, páncreas, riñón) y las lesiones de vísceras huecas pueden no generar líquido libre inicial. En trauma cerrado con sospecha clínica persistente → TAC o reevaluación.</div>
+  </div>
+
+  <!-- MANEJO SEGÚN ESTABILIDAD -->
+  <div class="seccion">
+    <div class="sec-titulo-ciru">🏥 Algoritmo de manejo según estabilidad hemodinámica</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Evaluación primaria ATLS (ABCDE):</strong> vía aérea, ventilación, circulación (2 VVP gruesas + fluidos + transfusión masiva si necesario), discapacidad neurológica (Glasgow), exposición. Control de hemorragia externa.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Reanimación hemostática:</strong> en shock hemorrágico grave → <strong>ratio GR:PFC:plaquetas 1:1:1</strong> (protocolo de transfusión masiva). Ácido tranexámico 1 g IV dentro de las 3 h del trauma (estudio CRASH-2). Evitar cristaloides en exceso (dilución de factores).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>¿Hemodinámicamente inestable con FAST +?</strong> → Laparotomía exploradora de emergencia. Si en ruta: REBOA (Resuscitative Endovascular Balloon Occlusion of the Aorta) como puente.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>¿Estable?</strong> → TAC con contraste → clasificar lesiones → manejo no operatorio (MNO) si criterios cumplidos, o cirugía electiva/semieleciva según hallazgos.</div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Laparotomía de control de daños (Damage Control Surgery)</div>
+      Indicada en paciente con la "tríada letal": <strong>hipotermia + acidosis + coagulopatía</strong>. Estrategia en 3 tiempos: <strong>(1)</strong> cirugía abreviada → control del sangrado y contaminación, abdomen abierto (bolsa de Bogotá). <strong>(2)</strong> UCI → corrección de la tríada letal (recalentar, corregir pH y coagulopatía). <strong>(3)</strong> Reoperación definitiva a las 24–48 h cuando el paciente está estabilizado.
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Órgano lesionado</th><th>Manejo no operatorio (MNO)</th><th>Indicación quirúrgica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bazo</strong></td><td>MNO en grados I–III estables. TAC seriado. Embolización angiográfica si blush de contraste.</td><td>Inestabilidad, falla del MNO, grado IV–V con compromiso vascular hiliar. Esplenectomía o esplenorrafia.</td></tr>
+          <tr><td><strong>Hígado</strong></td><td>MNO en grados I–III. Embolización arterial si sangrado activo en TAC.</td><td>Inestabilidad, lesión de vena cava/suprahepáticas, falla del MNO. Packing perihepático.</td></tr>
+          <tr><td><strong>Riñón</strong></td><td>MNO en grados I–III. Grado IV con extravasación → stent ureteral o nefrostomía.</td><td>Avulsión del pedículo renal, inestabilidad, grado V.</td></tr>
+          <tr><td><strong>Intestino / víscera hueca</strong></td><td>No tiene MNO. Toda lesión confirmada requiere cirugía.</td><td>Siempre. Resección + anastomosis primaria o estoma según contaminación.</td></tr>
+          <tr><td><strong>Páncreas</strong></td><td>Grados I–II (sin lesión ductal): drenaje y observación.</td><td>Lesión ductal (grado III+): pancreatectomía distal ± esplenectomía o drenaje de Wirsung.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ABDOMEN AGUDO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔴 Abdomen agudo — Diagnóstico diferencial</div>
+    <div class="hl-ciru"><strong>Abdomen agudo:</strong> síndrome clínico de dolor abdominal de inicio brusco, intensidad variable, que puede requerir tratamiento quirúrgico urgente. El diagnóstico diferencial es amplio y la evaluación clínica (historia + examen físico) sigue siendo fundamental.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Causa</th><th>Localización dolor</th><th>Signos clave</th><th>Estudio inicial</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Apendicitis aguda</strong></td><td>FID (inicio periumbilical)</td><td>McBurney, Blumberg, Rovsing, psoas</td><td>Score Alvarado · Eco / TAC</td></tr>
+          <tr><td><strong>Colecistitis aguda</strong></td><td>HCD / epigastrio</td><td>Murphy, fiebre, náuseas post-ingesta grasa</td><td>Ecografía abdominal</td></tr>
+          <tr><td><strong>Úlcera perforada</strong></td><td>Epigastrio → generalizado</td><td>Abdomen en tabla, neumoperitoneo</td><td>Rx tórax (aire subdiafragmático)</td></tr>
+          <tr><td><strong>Obstrucción intestinal</strong></td><td>Difuso / periumbilical</td><td>Distensión, timpanismo, niveles hidroaéreos</td><td>Rx abdomen de pie · TAC</td></tr>
+          <tr><td><strong>Pancreatitis aguda</strong></td><td>Epigastrio → dorso (en cinturón)</td><td>Cullens / Grey-Turner (equimosis), Ranson</td><td>Lipasa · TAC (Balthazar)</td></tr>
+          <tr><td><strong>Vólvulo de sigma</strong></td><td>FII → generalizado</td><td>Distensión asimétrica, grano de café en Rx</td><td>Rx abdomen · TAC · colonoscopía</td></tr>
+          <tr><td><strong>Isquemia mesentérica</strong></td><td>Periumbilical</td><td>Dolor desproporcionado al examen, FRA de FA</td><td>TAC con contraste (angioTAC)</td></tr>
+          <tr><td><strong>Embarazo ectópico roto</strong></td><td>FID o FII → generalizado</td><td>Amenorrea, bhCG +, inestabilidad</td><td>Eco transvaginal · bhCG</td></tr>
+          <tr><td><strong>Torsión ovárica</strong></td><td>FID o FII, irradiado a ingle</td><td>Inicio brusco, náuseas, masa en eco</td><td>Ecografía Doppler</td></tr>
+          <tr><td><strong>Disección aórtica</strong></td><td>Epigastrio / lumbar</td><td>Diferencia de pulsos, HTA severa</td><td>AngioTAC urgente</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hl-danger">🔴 <strong>Signos de peritonitis:</strong> dolor a la descompresión (Blumberg), defensa muscular involuntaria, abdomen en tabla → indicación de laparotomía exploratoria urgente. No demorar por esperar estudios si el paciente está en shock.</div>
+
+    <div class="hl-warn">⚠️ <strong>Isquemia mesentérica aguda:</strong> dolor abdominal <em>desproporcionado</em> al examen físico (abdomen blando con dolor intenso) + FRA de FA o aterosclerosis → pensar siempre en este diagnóstico. Mortalidad >50% si el diagnóstico se retrasa.</div>
+  </div>
+
+  <!-- SIGNOS SEMIOLÓGICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">🩺 Signos semiológicos importantes</div>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Signo</th><th>Maniobra</th><th>Positivo en</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Blumberg</strong></td><td>Descompresión brusca del abdomen → dolor</td><td>Peritonitis (irritación peritoneal)</td></tr>
+          <tr><td><strong>Murphy</strong></td><td>Palpación en HCD durante inspiración profunda → detención por dolor</td><td>Colecistitis aguda</td></tr>
+          <tr><td><strong>McBurney</strong></td><td>Punto entre 1/3 externo y 2/3 internos de la línea espino-umbilical</td><td>Apendicitis aguda</td></tr>
+          <tr><td><strong>Rovsing</strong></td><td>Palpación en FII → dolor referido en FID</td><td>Apendicitis aguda</td></tr>
+          <tr><td><strong>Psoas</strong></td><td>Extensión pasiva del muslo derecho → dolor en FID</td><td>Apendicitis retrocecal</td></tr>
+          <tr><td><strong>Obturador</strong></td><td>Rotación interna de cadera derecha flexionada → dolor hipogástrico</td><td>Apendicitis pélvica</td></tr>
+          <tr><td><strong>Cullen</strong></td><td>Equimosis periumbilical</td><td>Pancreatitis necro-hemorrágica, hemoperitoneo</td></tr>
+          <tr><td><strong>Grey-Turner</strong></td><td>Equimosis en flanco</td><td>Pancreatitis necro-hemorrágica, RPM retroperitoneal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Órgano más lesionado en trauma cerrado: bazo</span>
+      <span class="pill">Órgano más lesionado en trauma penetrante: intestino delgado</span>
+      <span class="pill">FAST: 4 ventanas + eFAST bilateral</span>
+      <span class="pill">FAST + + inestable → laparotomía inmediata sin TAC</span>
+      <span class="pill">FAST + + estable → TAC con contraste</span>
+      <span class="pill">Tríada letal: hipotermia + acidosis + coagulopatía</span>
+      <span class="pill">Damage Control: cirugía abreviada → UCI → reoperación</span>
+      <span class="pill">Transfusión masiva: GR:PFC:plaquetas 1:1:1</span>
+      <span class="pill">ATX (ácido tranexámico): dentro de las 3 h del trauma</span>
+      <span class="pill">Bolsa de Bogotá: cierre temporal del abdomen abierto</span>
+      <span class="pill">Signo del cinturón → sospechar lesión intestinal + fractura Chance</span>
+      <span class="pill">HAF: 90-95% requiere laparotomía</span>
+      <span class="pill">Blumberg: peritonitis (descompresión dolorosa)</span>
+      <span class="pill">Murphy: colecistitis aguda</span>
+      <span class="pill">Rovsing: apendicitis (dolor FID al comprimir FII)</span>
+      <span class="pill">Cullen / Grey-Turner: pancreatitis necro-hemorrágica</span>
+      <span class="pill">Isquemia mesentérica: dolor desproporcionado al examen</span>
+      <span class="pill">Neumoperitoneo: Rx tórax → aire subdiafragmático → perforación</span>
+      <span class="pill">Vólvulo de sigma: grano de café en Rx</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: American College of Surgeons. ATLS — Advanced Trauma Life Support. 10ª ed. 2018 · Coccolini F et al. WSES classification and guidelines for liver trauma. World J Emerg Surg 2020 · CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients. Lancet 2010 · Biffl WL et al. Western Trauma Association critical decisions in trauma: management of abdominal vascular injuries. J Trauma Acute Care Surg 2015 · Schwartz SI et al. Schwartz's Principles of Surgery. 11ª ed. McGraw-Hill, 2019.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
