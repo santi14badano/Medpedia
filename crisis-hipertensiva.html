@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crisis Hipertensiva — Medpedia</title>
+  <meta name="description" content="Crisis hipertensiva: urgencia vs emergencia, manejo, fármacos antihipertensivos IV y orales. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --morado: #6B3FA0; --morado-claro: #F0E8FA;
+      --azul: #1565C0; --azul-claro: #E3EEF9;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-cardio    { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-emergencia{ background: var(--naranja-claro); color: var(--naranja); }
+    .tag-fuente    { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; scroll-margin-top: 80px; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .sec-titulo-azul { font-size: 16px; font-weight: 500; color: var(--azul); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    /* VERSUS */
+    .versus-block { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 540px) { .versus-block { grid-template-columns: 1fr; } }
+    .versus-lado { border-radius: 14px; padding: 1.1rem 1.2rem; border: 2px solid; }
+    .versus-lado.izq { background: var(--rojo-claro); border-color: #e57373; }
+    .versus-lado.der { background: var(--naranja-claro); border-color: #ffb74d; }
+    .versus-titulo { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+    .versus-titulo.izq { color: var(--rojo-oscuro); }
+    .versus-titulo.der { color: var(--naranja); }
+    .versus-item { font-size: 13px; color: var(--texto-sec); margin-bottom: 6px; line-height: 1.4; }
+    /* FARMA CARDS */
+    .farma-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 10px; }
+    .farma-nombre { font-size: 15px; font-weight: 600; color: var(--texto); margin-bottom: 2px; }
+    .farma-clase  { font-size: 12px; color: var(--verde); font-weight: 500; margin-bottom: 7px; }
+    .dosis-badge  { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; margin-right: 4px; }
+    .db-rojo   { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .db-azul   { background: var(--azul-claro); color: var(--azul); }
+    .db-verde  { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .db-morado { background: var(--morado-claro); color: var(--morado); }
+    .db-naran  { background: var(--naranja-claro); color: var(--naranja); }
+    .farma-det { font-size: 13px; color: var(--texto-sec); line-height: 1.65; }
+    /* ÓRGANO BLANCO GRID */
+    .ob-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .ob-card { border-radius: 12px; padding: .9rem 1rem; border: 1.5px solid; }
+    .ob-card.neuro  { background: #F0E8FA; border-color: #ce93d8; }
+    .ob-card.cardio { background: var(--rojo-claro); border-color: #e57373; }
+    .ob-card.renal  { background: var(--azul-claro); border-color: #90caf9; }
+    .ob-card.ocular { background: var(--verde-claro); border-color: #a8d8c0; }
+    .ob-card.aorti  { background: var(--naranja-claro); border-color: #ffb74d; }
+    .ob-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .ob-titulo.neuro  { color: var(--morado); }
+    .ob-titulo.cardio { color: var(--rojo); }
+    .ob-titulo.renal  { color: var(--azul); }
+    .ob-titulo.ocular { color: var(--verde-oscuro); }
+    .ob-titulo.aorti  { color: var(--naranja); }
+    .ob-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.35; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 12px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Cardiología</a> › Crisis Hipertensiva</div>
+  <div class="titulo">Crisis Hipertensiva</div>
+  <div class="meta">
+    <span class="tag tag-cardio">Cardiología</span>
+    <span class="tag tag-emergencia">Urgencia / Emergencia</span>
+    <span class="tag tag-fuente">ESH/ESC 2023 · JNC 8 · AHA/ACC 2017 · Harrison 21ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y CLASIFICACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y clasificación</div>
+    <div class="hl-warn">Crisis hipertensiva: elevación aguda y marcada de la PA, habitualmente <strong>TAS &gt;180 mmHg y/o TAD &gt;120 mmHg</strong>. La clasificación en urgencia o emergencia no depende del valor de PA sino de la presencia o ausencia de <strong>daño agudo de órgano blanco (DOB)</strong>.</div>
+
+    <div class="versus-block">
+      <div class="versus-lado izq">
+        <div class="versus-titulo izq">🔴 Emergencia Hipertensiva</div>
+        <div class="versus-item">PA muy elevada <strong>+ daño agudo de órgano blanco</strong></div>
+        <div class="versus-item">Riesgo inmediato de muerte o discapacidad permanente</div>
+        <div class="versus-item">Requiere <strong>internación y tratamiento IV inmediato</strong></div>
+        <div class="versus-item">Reducción controlada: <strong>↓ 20–25% en la primera hora</strong></div>
+        <div class="versus-item">Ejemplos: encefalopatía HT, disección aórtica, EAP, SCA, eclampsia</div>
+      </div>
+      <div class="versus-lado der">
+        <div class="versus-titulo der">🟠 Urgencia Hipertensiva</div>
+        <div class="versus-item">PA muy elevada <strong>sin daño agudo de órgano blanco</strong></div>
+        <div class="versus-item">Sin riesgo inmediato de vida</div>
+        <div class="versus-item">Tratamiento <strong>oral, descenso gradual en 24–48 h</strong></div>
+        <div class="versus-item">No requiere internación necesariamente</div>
+        <div class="versus-item">Síntomas: cefalea, ansiedad, epistaxis (no implican DOB por sí solos)</div>
+      </div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Concepto clave para el examen</div>
+      La cefalea, la epistaxis y la ansiedad aisladas <strong>no</strong> constituyen emergencia hipertensiva aunque la PA sea muy alta. Lo que define la emergencia es el daño orgánico agudo. Un paciente con TAS 220 mmHg, asintomático, sin fondo de ojo patológico ni troponina elevada → <strong>urgencia</strong>, no emergencia.
+    </div>
+  </div>
+
+  <!-- ÓRGANOS BLANCO -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Órganos blanco en la emergencia hipertensiva</div>
+    <div class="ob-grid">
+      <div class="ob-card neuro">
+        <div class="ob-titulo neuro">🧠 Neurológico</div>
+        <div class="ob-item"><strong>Encefalopatía HT:</strong> cefalea intensa, confusión, PRES (síndrome de encefalopatía posterior reversible), convulsiones, coma</div>
+        <div class="ob-item"><strong>ACV isquémico o hemorrágico</strong></div>
+      </div>
+      <div class="ob-card cardio">
+        <div class="ob-titulo cardio">❤️ Cardiovascular</div>
+        <div class="ob-item">Síndrome coronario agudo</div>
+        <div class="ob-item">Edema agudo de pulmón (EAP)</div>
+        <div class="ob-item">Insuficiencia cardíaca aguda</div>
+      </div>
+      <div class="ob-card aorti">
+        <div class="ob-titulo aorti">🩸 Vascular</div>
+        <div class="ob-item"><strong>Disección aórtica aguda</strong> — emergencia quirúrgica</div>
+        <div class="ob-item">Diferencia de PA entre brazos &gt;20 mmHg</div>
+        <div class="ob-item">Dolor torácico desgarrante irradiado a dorso</div>
+      </div>
+      <div class="ob-card renal">
+        <div class="ob-titulo renal">🫘 Renal</div>
+        <div class="ob-item">Microangiopatía trombótica</div>
+        <div class="ob-item">Hematuria, proteinuria, elevación de creatinina</div>
+        <div class="ob-item">Nefropatía hipertensiva aguda</div>
+      </div>
+      <div class="ob-card ocular">
+        <div class="ob-titulo ocular">👁️ Ocular</div>
+        <div class="ob-item">Papiledema (grado IV Keith-Wagener)</div>
+        <div class="ob-item">Hemorragias y exudados retinianos</div>
+        <div class="ob-item">Oclusión de arteria o vena retiniana</div>
+      </div>
+    </div>
+    <div class="hl-info"><strong>Evaluación inicial siempre incluye:</strong> fondo de ojo (papiledema), ECG (isquemia, HVI), troponinas, creatinina, ionograma, orina (proteinuria, cilindros), RxTx (cardiomegalia, edema), y según contexto: TAC de cráneo, ecocardiograma, TAC de tórax (disección).</div>
+  </div>
+
+  <!-- MANEJO EMERGENCIA -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Manejo de la Emergencia Hipertensiva</div>
+    <div class="hl-danger"><span class="badge-urgente">CLAVE</span> El objetivo <strong>NO es normalizar la PA rápidamente</strong>. Una reducción brusca puede causar isquemia cerebral, coronaria o renal por pérdida de la autorregulación. La regla general: reducir la PAM no más del <strong>20–25% en la primera hora</strong>, luego descender gradualmente hacia 160/100 mmHg en las siguientes horas.</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Monitorización continua</strong> — PA invasiva (línea arterial) si es posible, ECG continuo, SpO₂, acceso venoso central o periférico grueso, diuresis horaria (sonda vesical).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Identificar el órgano blanco afectado</strong> → determina el fármaco de elección. No existe un único antihipertensivo para todas las emergencias. La elección es órgano-específica.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Fármaco IV de elección según órgano blanco afectado</strong> (ver tabla y cards abajo).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>Excepción — ACV isquémico agudo:</strong> NO bajar la PA si es &lt;220/120 mmHg, salvo que se vaya a trombolizar (en ese caso: &lt;185/110 mmHg previo al rtPA). La hipertensión en el ACV isquémico es protectora en las primeras horas.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><strong>Excepción — Disección aórtica:</strong> objetivo muy agresivo: TAS &lt;120 mmHg y FC &lt;60 en los primeros 20 min. Labetalol o esmolol + nitroprusiato o nicardipino. <strong>Nunca vasodilatador puro sin betabloqueante previo</strong> (el reflejo taquicardizante aumenta la tensión parietal aórtica).</div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Situación clínica</th><th>Fármaco de elección IV</th><th>Evitar</th></tr>
+        <tr><td>Encefalopatía hipertensiva / PRES</td><td>Labetalol, nicardipino, nitroprusiato</td><td>—</td></tr>
+        <tr><td>ACV hemorrágico (TAS &gt;180)</td><td>Labetalol, nicardipino, urapidilo</td><td>Nitroprusiato (↑ PIC)</td></tr>
+        <tr><td>ACV isquémico agudo</td><td>Solo si &gt;220/120 o pre-trombolisis: labetalol, nicardipino</td><td>Nifedipina SL, nitroprusiato</td></tr>
+        <tr><td>Edema agudo de pulmón</td><td>Nitroprusiato + diurético (furosemida), nitroglicerina IV</td><td>Labetalol (inotropismo negativo)</td></tr>
+        <tr><td>SCA / angina inestable</td><td>Nitroglicerina IV, labetalol</td><td>Hidralazina, nifedipina SL</td></tr>
+        <tr><td>Disección aórtica</td><td>Esmolol o labetalol → luego nitroprusiato o nicardipino</td><td>Vasodilatador sin BB previo</td></tr>
+        <tr><td>Eclampsia / preeclampsia grave</td><td>Labetalol IV, hidralazina IV, nicardipino IV</td><td>IECA, ARA-II, nitroprusiato (toxicidad fetal)</td></tr>
+        <tr><td>Crisis adrenérgica (feocromocitoma)</td><td>Fentolamina (bloqueante α) + labetalol</td><td>Betabloqueante solo sin alfa (crisis paradójica)</td></tr>
+        <tr><td>IRA / nefropatía hipertensiva</td><td>Nicardipino, labetalol, fenoldopam</td><td>IECA en estenosis de arteria renal bilateral</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FÁRMACOS IV -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Fármacos IV — los más importantes</div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Labetalol</div>
+      <div class="farma-clase">Bloqueante α₁ y β (no selectivo) · Versátil — útil en la mayoría de emergencias</div>
+      <div class="dosis-badge db-rojo">Bolo: 20 mg IV en 2 min → repetir 40–80 mg c/10 min (máx 300 mg)</div>
+      <div class="dosis-badge db-rojo">Infusión: 1–2 mg/min IV continua</div>
+      <div class="farma-det">Inicio de acción: 5–10 min. Duración: 3–6 h. Reduce PA sin taquicardia refleja (el bloqueo β lo evita). <strong>Contraindicaciones:</strong> asma, EPOC grave, bradiarritmias, ICC descompensada, bloqueo AV. <strong>Seguro en embarazo</strong> (eclampsia). De elección en disección aórtica combinado con nitroprusiato.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Nitroprusiato de sodio</div>
+      <div class="farma-clase">Donante de NO · Vasodilatador arterial y venoso potente · Acción ultracorta</div>
+      <div class="dosis-badge db-morado">Infusión: 0,25–10 mcg/kg/min IV. Titular cada 5 min.</div>
+      <div class="farma-det">Inicio inmediato, duración 1–2 min → control milimétrico. Requiere monitorización invasiva. <strong>Toxicidad por cianuro y tiocianato</strong> si se usa &gt;48–72 h o en insuficiencia renal/hepática. Signos: acidosis metabólica, taquifilaxia, deterioro neurológico. <strong>Aumenta la presión intracraneal</strong> → evitar en ACV hemorrágico y encefalopatía. De elección en EAP + emergencia HT.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Nicardipino</div>
+      <div class="farma-clase">Bloqueante de canales de calcio dihidropiridínico IV · Vasodilatador arteriolar selectivo</div>
+      <div class="dosis-badge db-azul">Infusión: 5–15 mg/h IV. Inicio con 5 mg/h, aumentar 2,5 mg/h c/5–15 min.</div>
+      <div class="farma-det">No tiene el riesgo de cianuro del nitroprusiato. Menor efecto inotrópico negativo que otros BCC. <strong>Útil en: encefalopatía HT, ACV, eclampsia, postoperatorio</strong>. Cuidado en ICC sistólica (vasodilatación puede empeorar el llenado). No disponible en todos los centros de Argentina.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Nitroglicerina IV</div>
+      <div class="farma-clase">Donante de NO · Predominio venodilatador en dosis bajas, arteriodilatador en dosis altas</div>
+      <div class="dosis-badge db-verde">Infusión: 5–100 mcg/min IV. Iniciar con 5 mcg/min, titular.</div>
+      <div class="farma-det">De elección en emergencia HT con <strong>isquemia coronaria o EAP</strong>. Reduce precarga (↓ edema pulmonar) y poscarga. Cefalea es el efecto adverso más frecuente. Taquifilaxia a las 24–48 h. Evitar en IAM de VD (depende de precarga). Contraindicado con inhibidores de PDE-5 (sildenafil).</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Esmolol</div>
+      <div class="farma-clase">Betabloqueante β₁ selectivo · Vida media ultraclara (9 min) · Ideal en disección aórtica</div>
+      <div class="dosis-badge db-rojo">Bolo: 500 mcg/kg en 1 min → Infusión: 50–300 mcg/kg/min</div>
+      <div class="farma-det">Control preciso de FC y PA. Indicado en disección aórtica (objetivo FC &lt;60) y emergencias post-quirúrgicas. Su corta duración permite ajuste rápido y suspensión si aparece broncoespasmo u otro efecto adverso. Contraindicaciones similares a labetalol.</div>
+    </div>
+
+    <div class="farma-card">
+      <div class="farma-nombre">Hidralazina IV</div>
+      <div class="farma-clase">Vasodilatador arteriolar directo · Segunda línea · Uso preferente en embarazo</div>
+      <div class="dosis-badge db-naran">5–10 mg IV cada 20 min (máx 20 mg por dosis)</div>
+      <div class="farma-det">Acción impredecible e inicio retardado (20 min). Produce taquicardia refleja y retención de sodio con el uso crónico. Útil en eclampsia cuando no se dispone de labetalol o nicardipino. <strong>Evitar en SCA y disección aórtica</strong> (taquicardia refleja aumenta consumo de O₂ y tensión parietal aórtica).</div>
+    </div>
+  </div>
+
+  <!-- URGENCIA HIPERTENSIVA -->
+  <div class="seccion">
+    <div class="sec-titulo-azul">🔵 Manejo de la Urgencia Hipertensiva</div>
+    <div class="hl-info">Sin daño de órgano blanco. Objetivo: reducir la PA a &lt;160/100 mmHg en <strong>24–48 horas</strong> con tratamiento oral. No hay beneficio en bajar más rápido; puede haber daño.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Fármaco oral</th><th>Dosis</th><th>Comentario</th></tr>
+        <tr><td><strong>Captopril</strong></td><td>25–50 mg VO (puede repetirse a los 30–60 min)</td><td>IECA de inicio rápido. De elección en urgencia con ICC o nefropatía. Contraindicado en embarazo, estenosis bilateral de arteria renal, hiperpotasemia.</td></tr>
+        <tr><td><strong>Amlodipina</strong></td><td>5–10 mg VO</td><td>BCC dihidropiridínico. Útil en urgencia con intolerancia a IECA o en adultos mayores.</td></tr>
+        <tr><td><strong>Labetalol oral</strong></td><td>200–400 mg VO</td><td>Opción si hay taquicardia asociada. Contraindicaciones habituales del betabloqueante.</td></tr>
+        <tr><td><strong>Clonidina</strong></td><td>0,1–0,2 mg VO c/1 h (máx 0,6 mg)</td><td>Agonista α₂ central. Útil en crisis adrenérgica leve. Riesgo de rebote si se suspende bruscamente.</td></tr>
+      </table>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>Nifedipina sublingual: NO se recomienda.</strong> Produce descenso brusco e impredecible de la PA → riesgo de hipoperfusión coronaria y cerebral. Está formalmente desaconsejada en las guías actuales pese a su uso histórico.</div>
+
+    <div class="hl">Toda urgencia hipertensiva debe tener seguimiento ambulatorio: ajuste del tratamiento crónico, buscar causas secundarias (HTA renovascular, hiperaldosteronismo, feocromocitoma) si la HTA es refractaria o de reciente inicio.</div>
+  </div>
+
+  <!-- CAUSAS SECUNDARIAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Causas secundarias de HTA a sospechar en crisis</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Causa</th><th>Claves diagnósticas</th></tr>
+        <tr><td><strong>Feocromocitoma</strong></td><td>Crisis paroxísticas de HTA + taquicardia + cefalea + diaforesis + palidez. Catecolaminas urinarias o metanefrinas plasmáticas.</td></tr>
+        <tr><td><strong>HTA renovascular</strong></td><td>Joven con HTA grave resistente o anciano con ateromatosis. Soplo abdominal. Doppler renal, arteriografía.</td></tr>
+        <tr><td><strong>Hiperaldosteronismo primario</strong></td><td>HTA + hipopotasemia espontánea. Relación aldosterona/renina elevada.</td></tr>
+        <tr><td><strong>Síndrome de Cushing</strong></td><td>Obesidad central, estrías, facies de luna llena, hiperglucemia. Cortisol libre urinario.</td></tr>
+        <tr><td><strong>Síndrome de apnea del sueño</strong></td><td>HTA resistente + obesidad + ronquidos + somnolencia diurna.</td></tr>
+        <tr><td><strong>Drogas / fármacos</strong></td><td>Cocaína, anfetaminas, AINE, anticonceptivos, eritropoyetina, descongestionantes nasales.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Emergencia = PA alta + daño de órgano blanco</span>
+      <span class="pill">Urgencia = PA alta sin daño de órgano blanco</span>
+      <span class="pill">Reducción máxima 1ª hora: 20–25% de la PAM</span>
+      <span class="pill">ACV isquémico: NO bajar PA si &lt;220/120 mmHg</span>
+      <span class="pill">Disección aórtica: TAS &lt;120 mmHg + FC &lt;60 en 20 min</span>
+      <span class="pill">Disección: BB primero, luego vasodilatador (nunca vasodilatador solo)</span>
+      <span class="pill">EAP hipertensivo: nitroprusiato + furosemida</span>
+      <span class="pill">Eclampsia: labetalol IV o hidralazina IV — NO IECA ni nitroprusiato</span>
+      <span class="pill">Feocromocitoma: fentolamina + labetalol (nunca BB solo)</span>
+      <span class="pill">Nitroprusiato: riesgo de intoxicación por cianuro &gt;48 h</span>
+      <span class="pill">Nitroprusiato contraindicado en ACV hemorrágico (↑PIC)</span>
+      <span class="pill">Nifedipina SL: NO recomendada (descenso brusco impredecible)</span>
+      <span class="pill">Urgencia: captopril VO o amlodipina VO — descenso en 24–48 h</span>
+      <span class="pill">Cefalea + epistaxis + PA alta sin DOB = urgencia, no emergencia</span>
+      <span class="pill">Papiledema = emergencia (fondo de ojo es parte del examen)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Williams B et al. ESC/ESH Guidelines for the management of arterial hypertension. Eur Heart J 2018 · Mancia G et al. ESH Guidelines 2023 · Whelton PK et al. AHA/ACC 2017 Guideline for Prevention, Detection, Evaluation, and Management of High Blood Pressure. J Am Coll Cardiol 2018 · van den Born BH et al. ESC Council on hypertension position document on the management of hypertensive emergencies. Eur Heart J Cardiovasc Pharmacother 2019 · Harrison TR. Principios de Medicina Interna. 21ª ed. McGraw-Hill 2022.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
