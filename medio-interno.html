@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trastornos del Medio Interno — Medpedia</title>
+  <meta name="description" content="Alteraciones del equilibrio ácido-base, sodio, potasio y otros electrolitos. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --azul: #1A5E9A; --azul-claro: #E6F1FB; --azul-oscuro: #154E82;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-clinica { background: #E8F5E9; color: #1B5E20; }
+    .tag-urgencia { background: #FFF3E0; color: #E65100; }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-azul { font-size: 16px; font-weight: 500; color: var(--azul); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-morado { border-left: 3px solid #7B3FA0; background: #F3E8FC; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .card-sub { font-size: 11px; color: var(--texto-ter); margin-bottom: 8px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.65; margin-bottom: 4px; }
+    .badge { display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 10px; font-weight: 500; margin-bottom: 8px; }
+    .badge-acido { background: #FFF3E0; color: #E65100; }
+    .badge-base { background: #E3F2FD; color: #0D47A1; }
+    .badge-mix { background: #F3E8FC; color: #6A1B9A; }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .formula { background: #F5F5F5; border-radius: 8px; padding: 10px 14px; font-size: 13px; font-family: monospace; margin-bottom: 10px; color: var(--texto); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Clínica</a> › Trastornos del Medio Interno</div>
+  <div class="titulo">Trastornos del Medio Interno</div>
+  <div class="meta">
+    <span class="tag tag-clinica">Clínica Médica</span>
+    <span class="tag tag-urgencia">Emergencias</span>
+    <span class="tag tag-fuente">Harrison · Marino "El libro de la UCI" · Guías KDIGO</span>
+  </div>
+
+  <!-- EQUILIBRIO ÁCIDO-BASE -->
+  <div class="seccion">
+    <div class="sec-titulo">🧪 Equilibrio ácido-base — Valores normales</div>
+    <div class="hl-info">
+      <strong>pH:</strong> 7,35–7,45 &nbsp;|&nbsp; <strong>PaCO₂:</strong> 35–45 mmHg &nbsp;|&nbsp; <strong>HCO₃⁻:</strong> 22–26 mEq/L &nbsp;|&nbsp; <strong>EB:</strong> ±2 mEq/L
+    </div>
+    <div class="hl">
+      <strong>Regla general:</strong> pH ↓ = acidosis / pH ↑ = alcalosis. El parámetro <em>primario</em> alterado define el trastorno (respiratorio = CO₂; metabólico = HCO₃⁻). La compensación va en la misma dirección que el trastorno primario pero nunca lo corrige completamente.
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Trastorno</th><th>pH</th><th>Parámetro 1°</th><th>Compensación</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Acidosis metabólica</strong></td><td>↓</td><td>HCO₃⁻ ↓</td><td>PaCO₂ ↓ (hiperventilación)</td></tr>
+          <tr><td><strong>Alcalosis metabólica</strong></td><td>↑</td><td>HCO₃⁻ ↑</td><td>PaCO₂ ↑ (hipoventilación)</td></tr>
+          <tr><td><strong>Acidosis respiratoria</strong></td><td>↓</td><td>PaCO₂ ↑</td><td>HCO₃⁻ ↑ (retención renal)</td></tr>
+          <tr><td><strong>Alcalosis respiratoria</strong></td><td>↑</td><td>PaCO₂ ↓</td><td>HCO₃⁻ ↓ (excreción renal)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-titulo" style="margin-top:1.2rem">Fórmulas de compensación esperada</div>
+    <div class="formula">Acidosis metabólica → PaCO₂ esperada = (1,5 × HCO₃⁻) + 8 ± 2 &nbsp;[Fórmula de Winter]</div>
+    <div class="formula">Alcalosis metabólica → PaCO₂ esperada = (0,7 × HCO₃⁻) + 21 ± 2</div>
+    <div class="formula">Acidosis resp. aguda → HCO₃⁻ sube 1 mEq/L por cada 10 mmHg ↑ CO₂</div>
+    <div class="formula">Acidosis resp. crónica → HCO₃⁻ sube 3,5 mEq/L por cada 10 mmHg ↑ CO₂</div>
+    <div class="formula">Alcalosis resp. aguda → HCO₃⁻ baja 2 mEq/L por cada 10 mmHg ↓ CO₂</div>
+    <div class="formula">Alcalosis resp. crónica → HCO₃⁻ baja 5 mEq/L por cada 10 mmHg ↓ CO₂</div>
+
+    <div class="alerta-box" style="margin-top:10px">
+      <div class="alerta-title">⚠️ Si la compensación no coincide → trastorno mixto</div>
+      PaCO₂ menor a la esperada en acidosis metabólica = alcalosis respiratoria concomitante. PaCO₂ mayor = acidosis respiratoria concomitante. Los trastornos mixtos son frecuentes en UCI y exámenes.
+    </div>
+  </div>
+
+  <!-- ANIÓN GAP -->
+  <div class="seccion">
+    <div class="sec-titulo">📐 Anión Gap (AG) y acidosis metabólica</div>
+    <div class="formula">AG = Na⁺ − (Cl⁻ + HCO₃⁻) &nbsp;&nbsp; Normal: 8–12 mEq/L (sin albúmina) · Corregir: AG + 2,5 × (4 − albúmina)</div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#C0392B">Acidosis AG elevado (>12)</div>
+        <div class="card-sub">Acumulación de ácidos no medibles</div>
+        <div class="card-item">🅰️ <strong>MUDPILES / KUSSMAUL:</strong></div>
+        <div class="card-item">• <strong>M</strong>etanol → formiato</div>
+        <div class="card-item">• <strong>U</strong>remia (IRC)</div>
+        <div class="card-item">• <strong>D</strong>KA / cetoacidosis alcohólica</div>
+        <div class="card-item">• <strong>P</strong>araldehído</div>
+        <div class="card-item">• <strong>I</strong>soniacida / Iron (hierro)</div>
+        <div class="card-item">• <strong>L</strong>actato (shock, hipoxia)</div>
+        <div class="card-item">• <strong>E</strong>tilenglicol → oxalato</div>
+        <div class="card-item">• <strong>S</strong>alicilatos</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#1A5E9A">Acidosis AG normal (hiperclorémica)</div>
+        <div class="card-sub">Pérdida de HCO₃⁻ o incapacidad de excretar H⁺</div>
+        <div class="card-item">• Diarrea (pérdida digestiva de HCO₃⁻)</div>
+        <div class="card-item">• Acidosis tubular renal (ATR) tipos 1, 2, 4</div>
+        <div class="card-item">• Administración de NaCl en exceso</div>
+        <div class="card-item">• Ureteroenterostomía</div>
+        <div class="card-item">• Acetazolamida</div>
+        <div class="card-item">• Hipoaldosteronismo (ATR tipo 4)</div>
+        <div class="card-item" style="margin-top:8px">💡 Usar <strong>gradiente urinario de NH₄⁺</strong> (anión gap urinario) para diferencial.</div>
+      </div>
+    </div>
+
+    <div class="hl-info">
+      <strong>Regla delta-delta:</strong> en AG elevado, calcular si hay trastorno metabólico mixto: ΔAG / ΔHCO₃⁻. Si >2 → alcalosis metabólica concomitante. Si &lt;1 → acidosis metabólica de AG normal concomitante.
+    </div>
+  </div>
+
+  <!-- ALCALOSIS METABÓLICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔵 Alcalosis metabólica</div>
+    <div class="hl-info">HCO₃⁻ > 26 mEq/L · PaCO₂ compensadora ↑ · Causas: vómitos, SNG, diuréticos de asa, síndrome de Bartter/Gitelman, hiperaldosteronismo, hipopotasemia severa.</div>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Tipo</th><th>ClNa urinario</th><th>Causa principal</th><th>Tratamiento</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cloro-sensible</strong></td><td>&lt;20 mEq/L</td><td>Vómitos, diuréticos (suspendidos), SNG</td><td>Reponer volumen con SF 0,9% + KCl</td></tr>
+          <tr><td><strong>Cloro-resistente</strong></td><td>&gt;20 mEq/L</td><td>Hiperaldosteronismo, Cushing, Bartter, Gitelman</td><td>Tratar causa. Espironolactona si hiperaldo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ La hipopotasemia mantiene y agrava la alcalosis metabólica → siempre reponer K⁺ junto con el déficit de cloro.</div>
+  </div>
+
+  <!-- TRASTORNOS DEL SODIO -->
+  <div class="seccion">
+    <div class="sec-titulo">🧂 Trastornos del sodio</div>
+    <div class="hl"><strong>Na⁺ normal:</strong> 135–145 mEq/L. El sodio regula la osmolaridad plasmática (OSMp = 2×Na + glucosa/18 + urea/6, normal 275–295 mOsm/kg).</div>
+
+    <div class="sec-titulo-azul" style="margin-top:1rem">Hiponatremia (Na⁺ &lt; 135 mEq/L)</div>
+    <div class="hl-danger">⚠️ Corrección rápida → <strong>mielinólisis pontina central (síndrome de desmielinización osmótica)</strong>. Regla: no corregir más de <strong>8–10 mEq/L en 24 h</strong> en hiponatremia crónica.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Tipo (por volumen)</th><th>Estado del volumen</th><th>Causas</th><th>Tratamiento</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hipovolémica</strong></td><td>Hipovolemia</td><td>Vómitos, diarrea, diuréticos, tercer espacio</td><td>SF 0,9% para reponer volumen</td></tr>
+          <tr><td><strong>Isovolémica</strong></td><td>Euvolemia</td><td>SIADH, hipotiroidismo, insuficiencia suprarrenal, polidipsia psicógena</td><td>Restricción hídrica. Tolvaptán en SIADH refractario</td></tr>
+          <tr><td><strong>Hipervolémica</strong></td><td>Hipervolemia</td><td>IC, cirrosis, síndrome nefrótico, IRA/IRC</td><td>Restricción hídrica + sal. Diuréticos</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hl-info">
+      <strong>SIADH — criterios diagnósticos:</strong> Na⁺ &lt;135 · osmolaridad plasmática &lt;275 · osmolaridad urinaria >100 · Na⁺ urinario >40 · euvolemia · sin diuréticos · función tiroidea y suprarrenal normal. Causas: neumonía, TEC, tumores (CPCP), fármacos (ISRS, carbamazepina, oxitocina).
+    </div>
+
+    <div class="formula">Déficit de Na⁺ (mEq) = 0,6 × peso (kg) × (Na deseado − Na actual)</div>
+    <div class="formula">Velocidad máxima corrección: 0,5 mEq/L/h → no más de 8–10 mEq/L en 24 h</div>
+
+    <div class="sec-titulo-azul" style="margin-top:1rem">Hipernatremia (Na⁺ > 145 mEq/L)</div>
+    <div class="hl-warn">Siempre implica déficit de agua libre (hiperosmolaridad). Causas: pérdidas insensibles, diabetes insípida central/nefrogénica, diarrea osmótica, ingesta insuficiente de agua (ancianos, intubados).</div>
+    <div class="formula">Déficit de agua libre (L) = 0,6 × peso × (Na actual/145 − 1)</div>
+    <div class="hl-info">Corrección: agua libre vía oral o SG 5% IV. No bajar más de <strong>10–12 mEq/L en 24 h</strong> para evitar edema cerebral. En diabetes insípida central: desmopresina (DDAVP).</div>
+  </div>
+
+  <!-- TRASTORNOS DEL POTASIO -->
+  <div class="seccion">
+    <div class="sec-titulo">⚡ Trastornos del potasio</div>
+    <div class="hl"><strong>K⁺ normal:</strong> 3,5–5,0 mEq/L. El 98% es intracelular. Regulado por aldosterona (excreción urinaria) y pH (acidosis → K⁺ sale de célula; alcalosis → entra). Cada 0,1 de cambio en pH → K⁺ cambia ~0,6 mEq/L en sentido inverso.</div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo" style="color:#d32f2f">Hipopotasemia (K⁺ &lt; 3,5)</div>
+        <div class="badge badge-acido">Riesgo arrítmico</div>
+        <div class="card-item"><strong>Causas:</strong> vómitos/SNG, diarrea, diuréticos de asa y tiazídicos, hiperaldosteronismo, alcalosis metabólica, insulina, β2-agonistas, Bartter/Gitelman, hipomagnesemia.</div>
+        <div class="card-item" style="margin-top:8px"><strong>ECG:</strong> onda U prominente, T aplanada, ST descendido, QT prolongado → TV/FV si grave.</div>
+        <div class="card-item" style="margin-top:8px"><strong>Síntomas:</strong> debilidad muscular, calambres, íleo paralítico, rabdomiólisis si severa.</div>
+        <div class="card-item" style="margin-top:8px"><strong>Tratamiento:</strong> KCl oral si leve (K >3). IV si grave o intolerancia oral: <strong>máximo 20 mEq/h por vía periférica, 40 mEq/h por vía central</strong>. No dar en bolo. Corregir hipomagnesemia concomitante.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo" style="color:#1A5E9A">Hiperpotasemia (K⁺ > 5,0)</div>
+        <div class="badge badge-base">Emergencia si >6,5</div>
+        <div class="card-item"><strong>Causas:</strong> IRA/IRC, hipoaldosteronismo (ATR tipo 4), IECA/ARA II + espironolactona, heparina, acidosis, hemólisis/rabdomiólisis, pseudohiperpotasemia.</div>
+        <div class="card-item" style="margin-top:8px"><strong>ECG (secuencia):</strong> T picuda → PR largo → QRS ancho → onda sinusoidal → FV/asistolia.</div>
+        <div class="card-item" style="margin-top:8px"><strong>Tratamiento escalonado:</strong></div>
+        <div class="card-item">1. <strong>Gluconato de Ca²⁺ 10%</strong> 10 mL IV en 2–3 min → estabiliza membrana (inicio inmediato, dura 30–60 min)</div>
+        <div class="card-item">2. <strong>Insulina regular</strong> 10 UI + SG 50% 50 mL IV → desplaza K⁺ al intracelular</div>
+        <div class="card-item">3. <strong>Salbutamol</strong> nebulizado 10–20 mg → efecto complementario</div>
+        <div class="card-item">4. <strong>Bicarbonato</strong> si acidosis metabólica severa</div>
+        <div class="card-item">5. <strong>Resinas / Patiromer / Kayexalate</strong> → eliminación digestiva</div>
+        <div class="card-item">6. <strong>Diálisis</strong> si refractario o anuria</div>
+      </div>
+    </div>
+    <div class="hl-warn">⚠️ <strong>Hipomagnesemia</strong> refractariza la hipopotasemia: el Mg²⁺ es necesario para que el K⁺ entre a la célula. Siempre medir y corregir Mg²⁺ ante hipopotasemia persistente.</div>
+  </div>
+
+  <!-- TRASTORNOS DEL MAGNESIO Y FÓSFORO -->
+  <div class="seccion">
+    <div class="sec-titulo">🔬 Otros electrolitos frecuentes en examen</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Hipomagnesemia (Mg²⁺ &lt; 1,8 mg/dL)</div>
+        <div class="card-item"><strong>Causas:</strong> diarrea crónica, diuréticos de asa, IBP crónicos, alcoholismo, malnutrición, síndrome de realimentación.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Clínica:</strong> tetania, convulsiones, arritmias (QT largo), hipopotasemia/hipocalcemia refractaria.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Tratamiento:</strong> sulfato de Mg²⁺ IV u oral (óxido de Mg).</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Síndrome de realimentación</div>
+        <div class="card-item"><strong>Fisiopatología:</strong> al reintroducir hidratos en paciente desnutrido → insulina ↑ → entrada masiva de K⁺, Mg²⁺ y PO₄³⁻ al intracelular → caída brusca plasmática.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Riesgo:</strong> anorexia, ayuno prolongado, oncológicos, alcohólicos.</div>
+        <div class="card-item" style="margin-top:6px"><strong>Prevención:</strong> iniciar nutrición gradualmente, monitorear electrolitos, suplementar K⁺, Mg²⁺, PO₄³⁻ y tiamina antes de iniciar realimentación.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMEN PARA EL EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">pH normal: 7,35–7,45</span>
+      <span class="pill">PaCO₂ normal: 35–45 mmHg</span>
+      <span class="pill">HCO₃⁻ normal: 22–26 mEq/L</span>
+      <span class="pill">Fórmula de Winter: PaCO₂ = 1,5×HCO₃ + 8 ± 2</span>
+      <span class="pill">AG = Na − (Cl + HCO₃) · Normal: 8–12</span>
+      <span class="pill">AG elevado: MUDPILES (lactato, cetoacidosis, uremia, tóxicos)</span>
+      <span class="pill">AG normal: diarrea, ATR, NaCl en exceso</span>
+      <span class="pill">Delta-delta: detecta trastornos mixtos</span>
+      <span class="pill">SIADH: euvolemia + Na urinario >40 + osm urina >osm plasma</span>
+      <span class="pill">Hiponatremia crónica: corregir máx 8–10 mEq/L/24h</span>
+      <span class="pill">Mielinólisis: por corrección rápida de hiponatremia</span>
+      <span class="pill">Hipopotasemia ECG: onda U, T aplanada</span>
+      <span class="pill">Hiperpotasemia ECG: T picuda → QRS ancho → sinusoide</span>
+      <span class="pill">Gluconato Ca²⁺: estabiliza membrana en hiperpotasemia (no desplaza K⁺)</span>
+      <span class="pill">Insulina + glucosa: desplaza K⁺ al intracelular</span>
+      <span class="pill">Hipomagnesemia: causa de hipopotasemia refractaria</span>
+      <span class="pill">Alcalosis metabólica cloro-sensible: SF + KCl</span>
+      <span class="pill">Alcalosis metabólica cloro-resistente: tratar causa primaria</span>
+      <span class="pill">Síndrome realimentación: hipofosfatemia + hipokalemia + hipomagnesemia</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Harrison TR et al. Harrison's Principles of Internal Medicine. 21ª ed. McGraw-Hill, 2022 · Marino PL. El libro de la UCI. 4ª ed. Lippincott Williams & Wilkins, 2014 · Adrogué HJ, Madias NE. Primary Care: The Management of Hyponatremia. N Engl J Med 2000 · Rose BD, Post TW. Clinical Physiology of Acid-Base and Electrolyte Disorders. 5ª ed. McGraw-Hill, 2001 · Guías KDIGO 2023 (alteraciones electrolíticas en ERC).<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
