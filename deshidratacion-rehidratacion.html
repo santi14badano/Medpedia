@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deshidratación y Rehidratación Oral — Medpedia</title>
+  <meta name="description" content="Deshidratación en pediatría: clasificación, evaluación clínica, plan A/B/C de la OMS, rehidratación oral e IV. Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --rojo: #C0392B; --rojo-claro: #FDEDEC; --rojo-oscuro: #922B21;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+      --azul: #1565C0; --azul-claro: #E3EEF9;
+      --naranja: #D4730A; --naranja-claro: #FEF0DC;
+      --celeste: #0288D1; --celeste-claro: #E1F5FE;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-pediatria  { background: var(--celeste-claro); color: var(--celeste); }
+    .tag-emergencia { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+    .tag-fuente     { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo      { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-azul { font-size: 16px; font-weight: 500; color: var(--azul); margin-bottom: 12px; }
+    .sec-titulo-rojo { font-size: 16px; font-weight: 500; color: var(--rojo); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; color: var(--texto); }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    /* PLAN CARDS */
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 600px) { .plan-grid { grid-template-columns: 1fr; } }
+    .plan-card { border-radius: 14px; padding: 1.15rem; border: 2px solid; }
+    .plan-card.a { background: var(--verde-claro); border-color: #80cba8; }
+    .plan-card.b { background: var(--naranja-claro); border-color: #ffb74d; }
+    .plan-card.c { background: var(--rojo-claro); border-color: #e57373; }
+    .plan-letra { font-size: 30px; font-weight: 800; margin-bottom: 4px; }
+    .plan-letra.a { color: var(--verde-oscuro); }
+    .plan-letra.b { color: var(--naranja); }
+    .plan-letra.c { color: var(--rojo); }
+    .plan-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .plan-titulo.a { color: var(--verde-oscuro); }
+    .plan-titulo.b { color: var(--naranja); }
+    .plan-titulo.c { color: var(--rojo); }
+    .plan-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 5px; line-height: 1.4; }
+    /* GRADO CARDS */
+    .grado-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grado-grid { grid-template-columns: 1fr; } }
+    .grado-card { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .grado-card.leve  { background: var(--verde-claro); border-color: #80cba8; }
+    .grado-card.mod   { background: var(--naranja-claro); border-color: #ffb74d; }
+    .grado-card.grave { background: var(--rojo-claro); border-color: #e57373; }
+    .grado-titulo { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .grado-titulo.leve  { color: var(--verde-oscuro); }
+    .grado-titulo.mod   { color: var(--naranja); }
+    .grado-titulo.grave { color: var(--rojo); }
+    .grado-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.35; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--azul); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-num-rojo { width: 28px; height: 28px; border-radius: 50%; background: var(--rojo); color: white; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; font-size: 14px; color: var(--texto-sec); line-height: 1.65; }
+    .step-content strong { color: var(--texto); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 12px; font-size: 14px; color: var(--texto); }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .badge-urgente { display: inline-block; background: #d32f2f; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; vertical-align: middle; margin-right: 4px; }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .sodio-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .sodio-grid { grid-template-columns: 1fr; } }
+    .sodio-card { border-radius: 12px; padding: 1rem; border: 1.5px solid; }
+    .sodio-card.iso  { background: var(--verde-claro); border-color: #80cba8; }
+    .sodio-card.hipo { background: var(--azul-claro); border-color: #90caf9; }
+    .sodio-card.hiper{ background: var(--rojo-claro); border-color: #e57373; }
+    .sodio-titulo { font-size: 13px; font-weight: 700; margin-bottom: 7px; }
+    .sodio-titulo.iso  { color: var(--verde-oscuro); }
+    .sodio-titulo.hipo { color: var(--azul); }
+    .sodio-titulo.hiper{ color: var(--rojo); }
+    .sodio-item { font-size: 12px; color: var(--texto-sec); margin-bottom: 4px; line-height: 1.35; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Pediatría</a> › Deshidratación y Rehidratación Oral</div>
+  <div class="titulo">Deshidratación y Rehidratación Oral</div>
+  <div class="meta">
+    <span class="tag tag-pediatria">Pediatría</span>
+    <span class="tag tag-emergencia">Urgencia</span>
+    <span class="tag tag-fuente">OMS 2005 · AAP 2018 · ESPGHAN 2014 · SAP · Nelson 21ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y contexto</div>
+    <div class="hl-info">La deshidratación es la causa más frecuente de hospitalización pediátrica evitable en Argentina y en el mundo. La <strong>gastroenteritis aguda</strong> es su principal etiología en pediatría. La rehidratación oral (TRO) con soluciones de baja osmolaridad es tan eficaz como la IV en deshidratación leve-moderada y tiene menor riesgo de complicaciones.</div>
+    <div class="hl-warn">⚠️ Los niños menores de 2 años son los más vulnerables por mayor proporción de agua corporal total, mayor recambio hídrico relativo y menor reserva funcional renal.</div>
+  </div>
+
+  <!-- EVALUACIÓN CLÍNICA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔎 Evaluación clínica — clasificación por grado</div>
+    <div class="hl">El <strong>mejor indicador de deshidratación</strong> es la pérdida de peso aguda: cada gramo perdido = 1 ml de agua. Si no hay peso previo reciente, la clínica guía el grado.</div>
+
+    <div class="grado-grid">
+      <div class="grado-card leve">
+        <div class="grado-titulo leve">🟢 Leve (&lt;5% lactante / &lt;3% mayor)</div>
+        <div class="grado-item">Mucosas ligeramente secas</div>
+        <div class="grado-item">Sed levemente aumentada</div>
+        <div class="grado-item">FC y diuresis normales</div>
+        <div class="grado-item">Llanto con lágrimas</div>
+        <div class="grado-item">Fontanela plana (lactante)</div>
+        <div class="grado-item">Turgencia cutánea normal</div>
+      </div>
+      <div class="grado-card mod">
+        <div class="grado-titulo mod">🟠 Moderada (5–10% lactante / 3–6% mayor)</div>
+        <div class="grado-item">Mucosas secas</div>
+        <div class="grado-item">Sed marcada, irritabilidad</div>
+        <div class="grado-item">Taquicardia, oliguria</div>
+        <div class="grado-item">Llanto con pocas o sin lágrimas</div>
+        <div class="grado-item">Fontanela deprimida</div>
+        <div class="grado-item">Turgencia cutánea: pliegue retorna &gt;2 seg</div>
+        <div class="grado-item">Ojos levemente hundidos</div>
+      </div>
+      <div class="grado-card grave">
+        <div class="grado-titulo grave">🔴 Grave (&gt;10% lactante / &gt;6% mayor)</div>
+        <div class="grado-item">Mucosas muy secas</div>
+        <div class="grado-item">Letargia, hipotonia, coma</div>
+        <div class="grado-item">Taquicardia intensa, hipotensión</div>
+        <div class="grado-item">Sin lágrimas</div>
+        <div class="grado-item">Fontanela muy deprimida</div>
+        <div class="grado-item">Pliegue no retorna (&gt;3 seg)</div>
+        <div class="grado-item">Ojos profundamente hundidos</div>
+        <div class="grado-item">Extremidades frías, relleno capilar &gt;3 seg</div>
+        <div class="grado-item">Anuria</div>
+      </div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr>
+          <th>Parámetro</th>
+          <th>Sin deshidratación</th>
+          <th>Deshidratación moderada</th>
+          <th>Deshidratación grave</th>
+        </tr>
+        <tr><td>Estado general</td><td>Alerta, activo</td><td>Irritable</td><td>Letárgico, inconsciente</td></tr>
+        <tr><td>Ojos</td><td>Normales</td><td>Levemente hundidos</td><td>Muy hundidos</td></tr>
+        <tr><td>Lágrimas</td><td>Presentes</td><td>Disminuidas</td><td>Ausentes</td></tr>
+        <tr><td>Boca / lengua</td><td>Húmeda</td><td>Seca</td><td>Muy seca</td></tr>
+        <tr><td>Sed</td><td>Normal</td><td>Bebe ansiosamente</td><td>Incapaz de beber o bebe poco</td></tr>
+        <tr><td>Pliegue cutáneo</td><td>Retorna inmediato</td><td>Retorna lento (&lt;2 seg)</td><td>Persiste (&gt;2 seg)</td></tr>
+        <tr><td>Pulso</td><td>Normal</td><td>Rápido y débil</td><td>Muy rápido, filiforme o indetectable</td></tr>
+        <tr><td>PA</td><td>Normal</td><td>Normal o baja</td><td>Hipotensión, shock</td></tr>
+        <tr><td>Diuresis</td><td>Normal</td><td>Oliguria</td><td>Anuria</td></tr>
+      </table>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Score de Gorelick (≥3 de los siguientes = deshidratación moderada-grave)</div>
+      Capillar refill &gt;2 seg · Ausencia de lágrimas · Mucosas secas · Frecuencia respiratoria elevada · Reducción de turgencia cutánea · Pulso débil · Ojos hundidos · Estado de conciencia alterado<br>
+      <small>Validado en niños de 1 mes a 5 años con gastroenteritis aguda</small>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN POR NATREMIA -->
+  <div class="seccion">
+    <div class="sec-titulo">🧪 Clasificación por tipo según natremia</div>
+    <div class="sodio-grid">
+      <div class="sodio-card iso">
+        <div class="sodio-titulo iso">🟢 Isotónica</div>
+        <div class="sodio-item"><strong>Na⁺ 130–150 mEq/L</strong></div>
+        <div class="sodio-item">Pérdida proporcional de agua y sodio</div>
+        <div class="sodio-item">Más frecuente (80–85%)</div>
+        <div class="sodio-item">Síntomas proporcionales al % de pérdida</div>
+      </div>
+      <div class="sodio-card hipo">
+        <div class="sodio-titulo hipo">🔵 Hipotónica</div>
+        <div class="sodio-item"><strong>Na⁺ &lt;130 mEq/L</strong></div>
+        <div class="sodio-item">Pérdida de Na⁺ &gt; agua (p.ej: reposición solo con agua libre)</div>
+        <div class="sodio-item">Síntomas más graves para el mismo % de pérdida (el agua pasa al intracelular)</div>
+        <div class="sodio-item">Riesgo de edema cerebral</div>
+      </div>
+      <div class="sodio-card hiper">
+        <div class="sodio-titulo hiper">🔴 Hipertónica</div>
+        <div class="sodio-item"><strong>Na⁺ &gt;150 mEq/L</strong></div>
+        <div class="sodio-item">Pérdida de agua &gt; Na⁺ (diarrea hiperosmolar, fiebre alta, diabetes insípida)</div>
+        <div class="sodio-item">Piel con textura "pastosa", irritabilidad intensa</div>
+        <div class="sodio-item">Corrección lenta (&lt;10 mEq/L/día) para evitar edema cerebral por rebote</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANES OMS -->
+  <div class="seccion">
+    <div class="sec-titulo-azul">🔵 Planes de tratamiento OMS — Plan A, B y C</div>
+    <div class="plan-grid">
+      <div class="plan-card a">
+        <div class="plan-letra a">A</div>
+        <div class="plan-titulo a">Sin deshidratación</div>
+        <div class="plan-item">🏠 Manejo ambulatorio</div>
+        <div class="plan-item">Continuar alimentación habitual</div>
+        <div class="plan-item">Ofrecer SRO después de cada deposición líquida: <strong>&lt;2 años: 50–100 ml; 2–10 años: 100–200 ml; &gt;10 años: a libre demanda</strong></div>
+        <div class="plan-item">Enseñar a los padres signos de alarma</div>
+        <div class="plan-item">Lactancia materna: continuar sin restricción</div>
+      </div>
+      <div class="plan-card b">
+        <div class="plan-letra b">B</div>
+        <div class="plan-titulo b">Deshidratación leve-moderada</div>
+        <div class="plan-item">🏥 Rehidratación oral supervisada (guardia / CAPS)</div>
+        <div class="plan-item"><strong>75 ml/kg de SRO en 4 horas</strong></div>
+        <div class="plan-item">Administrar fraccionado: 5 ml c/1–2 min con jeringa o cuchara</div>
+        <div class="plan-item">Reevaluar al final de las 4 h: si mejoró → pasar a Plan A; si empeoró → Plan C</div>
+        <div class="plan-item">Si vomita: esperar 10 min y reintentar con volúmenes menores</div>
+        <div class="plan-item">Alimentación: no suspender, reanudar a las 4 h de iniciada la TRO</div>
+      </div>
+      <div class="plan-card c">
+        <div class="plan-letra c">C</div>
+        <div class="plan-titulo c">Deshidratación grave / shock</div>
+        <div class="plan-item"><span class="badge-urgente">URGENCIA</span> Hidratación IV inmediata</div>
+        <div class="plan-item"><strong>Expansión: SF 0,9% o RL 20 ml/kg IV en 20–30 min</strong></div>
+        <div class="plan-item">Repetir hasta signos de mejoría hemodinámica (máx 60 ml/kg en 1 h)</div>
+        <div class="plan-item">Luego: mantenimiento + reposición de déficit</div>
+        <div class="plan-item">Pasar a TRO cuando tolere vía oral</div>
+        <div class="plan-item">Monitoreo: FC, PA, diuresis, estado de conciencia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLUCIÓN DE REHIDRATACIÓN ORAL -->
+  <div class="seccion">
+    <div class="sec-titulo-azul">🔵 Solución de Rehidratación Oral (SRO) — composición y claves</div>
+    <div class="hl-info">La SRO funciona por el mecanismo de cotransporte Na⁺-glucosa en el enterocito: la glucosa facilita la absorción de Na⁺ incluso en presencia de diarrea → el agua sigue al Na⁺ → rehidratación efectiva oral.</div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Componente</th><th>SRO estándar OMS (2002)</th><th>SRO hipoosmolar OMS</th></tr>
+        <tr><td>Sodio (Na⁺)</td><td>90 mEq/L</td><td><strong>75 mEq/L</strong></td></tr>
+        <tr><td>Potasio (K⁺)</td><td>20 mEq/L</td><td>20 mEq/L</td></tr>
+        <tr><td>Cloro (Cl⁻)</td><td>80 mEq/L</td><td>65 mEq/L</td></tr>
+        <tr><td>Citrato</td><td>10 mEq/L</td><td>10 mEq/L</td></tr>
+        <tr><td>Glucosa</td><td>111 mmol/L</td><td><strong>75 mmol/L</strong></td></tr>
+        <tr><td>Osmolaridad</td><td>311 mOsm/L</td><td><strong>245 mOsm/L (recomendada)</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="hl"><strong>La SRO hipoosmolar (245 mOsm/L) es la recomendada por OMS desde 2002</strong> para diarrea aguda no colérica en niños: reduce el volumen de deposiciones, disminuye los vómitos y baja la tasa de fracaso de TRO. En Argentina: Rehidrat®, Pedialyte®, o preparación casera equivalente.</div>
+
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ Lo que NO usar para rehidratar</div>
+      <strong>Jugos de fruta, gaseosas, agua de arroz, bebidas deportivas (Gatorade):</strong> alta osmolaridad, exceso de azúcar, escaso sodio → aumentan la diarrea osmótica o son insuficientes para reponer Na⁺.<br>
+      <strong>Suero fisiológico oral artesanal sin glucosa:</strong> no promueve el cotransporte Na⁺-glucosa → absorción ineficaz.<br>
+      <strong>Solución glucosada sola (D5%):</strong> no repone Na⁺, puede producir hiponatremia dilucional.
+    </div>
+  </div>
+
+  <!-- HIDRATACIÓN IV -->
+  <div class="seccion">
+    <div class="sec-titulo-rojo">🔴 Hidratación IV — cálculo del plan de hidratación</div>
+    <div class="hl-danger"><span class="badge-urgente">PLAN C</span> Indicaciones de vía IV: shock, deshidratación grave, vómitos incoercibles, íleo, alteración de conciencia, fracaso de TRO (vómitos persistentes o empeoramiento clínico).</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Expansión (emergencia hemodinámica):</strong> SF 0,9% o Ringer lactato <strong>20 ml/kg IV en 20–30 min</strong>. Repetir hasta restaurar perfusión. Máximo 3 bolos (60 ml/kg) antes de reevaluar con ecografía punto de cuidado si hay disponibilidad.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Calcular requerimiento total en 24 h = mantenimiento + déficit + pérdidas continuas.</strong>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Mantenimiento (fórmula de Holliday-Segar):</strong><br>
+        — 0–10 kg: <strong>100 ml/kg/día</strong><br>
+        — 10–20 kg: 1000 ml + <strong>50 ml/kg/día</strong> por cada kg sobre 10<br>
+        — &gt;20 kg: 1500 ml + <strong>20 ml/kg/día</strong> por cada kg sobre 20<br>
+        En ml/h: 4 ml/kg/h (primeros 10 kg) + 2 ml/kg/h (10–20 kg) + 1 ml/kg/h (&gt;20 kg) → <strong>regla 4-2-1</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Déficit = peso (kg) × % deshidratación × 10 (→ ml)</strong><br>
+        Ejemplo: niño de 10 kg con 8% de deshidratación → déficit = 10 × 0,08 × 1000 = 800 ml. Reponer el 50% en las primeras 8 h y el 50% restante en las siguientes 16 h.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Pérdidas continuas:</strong> estimar 10 ml/kg por deposición líquida adicional o 5 ml/kg por vómito. Reponer ml a ml con SRO si es posible, o con SF/RL si es IV.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <strong>Solución de mantenimiento:</strong> en pediatría se recomienda actualmente <strong>solución salina isotónica (SF 0,9% o SalGlucosado 1:1)</strong> como fluido de mantenimiento para reducir el riesgo de hiponatremia iatrogénica. Las soluciones hipotónicas (D5% en agua) aumentan el riesgo de hiponatremia en niños hospitalizados.
+      </div>
+    </div>
+
+    <div class="hl-warn">⚠️ <strong>Deshidratación hipernatrémica:</strong> corrección muy lenta. Bajar el Na⁺ no más de <strong>10–12 mEq/L cada 24 horas</strong>. Una corrección rápida produce edema cerebral por gradiente osmótico (entrada brusca de agua al SNC). Preferir TRO si es posible.</div>
+  </div>
+
+  <!-- INDICACIONES DE INTERNACIÓN -->
+  <div class="seccion">
+    <div class="sec-titulo">🏥 Criterios de internación y signos de alarma</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Detalle</th></tr>
+        <tr><td><strong>Deshidratación grave</strong></td><td>Signos de shock o &gt;10% de pérdida de peso</td></tr>
+        <tr><td><strong>Fracaso de TRO</strong></td><td>Vómitos incoercibles, empeoramiento clínico pese a 4 h de TRO supervisada</td></tr>
+        <tr><td><strong>Alteración del estado de conciencia</strong></td><td>Letargia, convulsiones, irritabilidad inconsolable</td></tr>
+        <tr><td><strong>Edad &lt;3 meses</strong></td><td>Riesgo elevado de deterioro rápido</td></tr>
+        <tr><td><strong>Comorbilidades</strong></td><td>Cardiopatía, nefropatía, desnutrición, inmunodeficiencia</td></tr>
+        <tr><td><strong>Diarrea con sangre</strong></td><td>Shigelosis, STEC, invaginación — requiere evaluación completa</td></tr>
+        <tr><td><strong>Contexto social</strong></td><td>Imposibilidad de seguimiento, padres sin comprensión del plan, vivienda sin agua potable</td></tr>
+      </table>
+    </div>
+
+    <div class="tabla-wrap">
+      <table>
+        <tr><th colspan="2">Signos de alarma — indicación de consulta inmediata</th></tr>
+        <tr><td>🔴 Deposiciones con sangre</td><td>🔴 Vómitos biliosos o persistentes</td></tr>
+        <tr><td>🔴 Fiebre &gt;38,5°C en &lt;3 meses o &gt;39°C con aspecto tóxico</td><td>🔴 Distensión abdominal progresiva</td></tr>
+        <tr><td>🔴 Rechazo del pecho o del biberón</td><td>🔴 Más de 8 deposiciones en 8 horas</td></tr>
+        <tr><td>🔴 No orina en 8 horas (lactante) o 12 h (niño mayor)</td><td>🔴 Somnolencia o llanto débil</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ZINC Y PROBIÓTICOS -->
+  <div class="seccion">
+    <div class="sec-titulo">➕ Zinc y probióticos — complemento de la TRO</div>
+    <div class="hl"><strong>Zinc oral:</strong> recomendado por OMS en países en desarrollo. <strong>10 mg/día (&lt;6 meses) o 20 mg/día (&gt;6 meses) por 10–14 días</strong>. Reduce la duración y la gravedad de la diarrea, y previene episodios durante los 3 meses siguientes. Mecanismo: restaura la función del enterocito y la integridad de la mucosa.</div>
+    <div class="hl-info"><strong>Probióticos:</strong> evidencia moderada. <em>Lactobacillus rhamnosus GG</em> y <em>Saccharomyces boulardii</em> reducen la duración de la diarrea en 1 día. La ESPGHAN los recomienda como complemento, no como reemplazo de la TRO. La evidencia es mayor para gastroenteritis viral.</div>
+  </div>
+
+  <!-- ETIOLOGÍA -->
+  <div class="seccion">
+    <div class="sec-titulo">⚙️ Etiologías frecuentes de diarrea aguda en pediatría</div>
+    <div class="tabla-wrap">
+      <table>
+        <tr><th>Agente</th><th>Características</th><th>Consideraciones</th></tr>
+        <tr><td><strong>Rotavirus</strong></td><td>Principal causa en &lt;5 años. Diarrea acuosa, vómitos, fiebre. Brotes invernales.</td><td>Vacuna en calendario nacional. La hospitalización descendió drásticamente post-vacunación.</td></tr>
+        <tr><td><strong>Norovirus</strong></td><td>Gastroenteritis epidémica. Todas las edades. Inicio brusco, vómitos predominantes.</td><td>No hay vacuna disponible.</td></tr>
+        <tr><td><strong>ECET (E. coli enterotoxigénica)</strong></td><td>Diarrea del viajero. Diarrea acuosa, sin sangre.</td><td>TRO suficiente en la mayoría de los casos.</td></tr>
+        <tr><td><strong>STEC (O157:H7)</strong></td><td>Diarrea con sangre → síndrome urémico hemolítico (SUH).</td><td><strong>NO usar antibióticos</strong> (aumentan riesgo de SUH). Soporte + diálisis si IRA.</td></tr>
+        <tr><td><strong>Salmonella</strong></td><td>Diarrea ± sangre, fiebre. Zoonosis (aves, huevo).</td><td>Antibióticos solo en &lt;3 meses, inmunocomprometidos o bacteriemia.</td></tr>
+        <tr><td><strong>Giardia lamblia</strong></td><td>Diarrea crónica o recurrente, esteatorrea, flatulencia, sin fiebre.</td><td>Metronidazol 15 mg/kg/día × 5–7 días o tinidazol dosis única.</td></tr>
+      </table>
+    </div>
+    <div class="hl-warn">⚠️ <strong>SUH en Argentina:</strong> el país tiene una de las incidencias más altas del mundo. Ante diarrea con sangre en niño: pensar en STEC O157:H7. NO dar antibióticos, NO dar antiperistálticos. Derivar para monitoreo de función renal, hemograma y recuento de plaquetas.</div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">Pliegue que no retorna = deshidratación moderada-grave</span>
+      <span class="pill">Plan A: SRO 50–100 ml post-deposición (domicilio)</span>
+      <span class="pill">Plan B: 75 ml/kg de SRO en 4 horas supervisado</span>
+      <span class="pill">Plan C: SF 20 ml/kg IV en 20–30 min, repetir si es necesario</span>
+      <span class="pill">SRO hipoosmolar 245 mOsm/L = recomendada por OMS desde 2002</span>
+      <span class="pill">Cotransporte Na⁺-glucosa = base de la rehidratación oral</span>
+      <span class="pill">Holliday-Segar: 100/50/20 ml/kg/día o regla 4-2-1 en ml/h</span>
+      <span class="pill">Déficit = kg × % deshidratación × 10 (en ml)</span>
+      <span class="pill">Hipernatremia: corrección lenta, máx 10–12 mEq/L por día</span>
+      <span class="pill">Gaseosas / jugos: NO sirven para rehidratar</span>
+      <span class="pill">Zinc: 20 mg/día × 10–14 días en &gt;6 meses (OMS)</span>
+      <span class="pill">STEC: NO antibióticos (riesgo SUH)</span>
+      <span class="pill">SUH: Argentina = alta incidencia → diarrea con sangre → pensar STEC</span>
+      <span class="pill">Rotavirus: vacuna en calendario nacional</span>
+      <span class="pill">Solución de mantenimiento isotónica previene hiponatremia iatrogénica</span>
+      <span class="pill">Fracaso de TRO → vía IV (no es fracaso de los padres, es indicación clínica)</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: WHO. The treatment of diarrhoea: a manual for physicians and other senior health workers. 4ª ed. Ginebra 2005 · Guarino A et al. ESPGHAN/ESPID Evidence-based Guidelines for the Management of Acute Gastroenteritis in Children in Europe. JPGN 2014 · King CK et al. Managing Acute Gastroenteritis Among Children. MMWR 2003 · Sociedad Argentina de Pediatría. Guías de diagnóstico y tratamiento: Enfermedad diarreica aguda 2020 · Kliegman RM. Nelson Textbook of Pediatrics. 21ª ed. 2020 · Freedman SB. Acute infectious pediatric gastroenteritis. Pediatr Rev 2021.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
