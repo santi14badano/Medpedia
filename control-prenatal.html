@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Prenatal y Screening Gestacional — Medpedia</title>
+  <meta name="description" content="Control prenatal: cronograma de consultas, estudios obligatorios, screening del primer y segundo trimestre, vacunas. Guía para el Concurso de Residencias 2026.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #1D9E75; --verde-claro: #E1F5EE; --verde-oscuro: #0F6E56;
+      --obs: #1565C0; --obs-claro: #E3F2FD; --obs-oscuro: #0D47A1;
+      --texto: #1a1a1a; --texto-sec: #555; --texto-ter: #888;
+      --borde: #e8e8e8; --fondo: #fafaf8; --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--fondo); color: var(--texto); }
+    nav { background: var(--blanco); border-bottom: 1px solid var(--borde); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Fraunces', serif; font-size: 22px; color: var(--texto); text-decoration: none; }
+    .logo span { color: var(--verde); }
+    .nav-back { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; }
+    .contenido { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .breadcrumb { font-size: 12px; color: var(--texto-ter); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--verde); text-decoration: none; }
+    .titulo { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-obs { background: var(--obs-claro); color: var(--obs-oscuro); }
+    .tag-aps { background: var(--verde-claro); color: var(--verde-oscuro); }
+    .tag-fuente { background: var(--fondo); color: var(--texto-ter); border: 1px solid var(--borde); }
+    .seccion { margin-bottom: 2rem; }
+    .sec-titulo { font-size: 16px; font-weight: 500; color: var(--texto); margin-bottom: 12px; }
+    .sec-titulo-obs { font-size: 16px; font-weight: 500; color: var(--obs); margin-bottom: 12px; }
+    .hl       { border-left: 3px solid var(--verde); background: var(--verde-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-warn  { border-left: 3px solid #EF9F27; background: #FAEEDA; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-danger{ border-left: 3px solid #d32f2f; background: #fdeaea; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-info  { border-left: 3px solid #378ADD; background: #E6F1FB; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .hl-obs   { border-left: 3px solid var(--obs); background: var(--obs-claro); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .tabla-wrap { border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 14px; background: var(--fondo); color: var(--texto-sec); font-weight: 500; border-bottom: 1px solid var(--borde); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); vertical-align: top; line-height: 1.5; }
+    tr:last-child td { border-bottom: none; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1.2rem; }
+    .card-titulo { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .card-item { font-size: 13px; color: var(--texto-sec); line-height: 1.7; margin-bottom: 4px; }
+    .trim-card { background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 14px; padding: 1.25rem; margin-bottom: 12px; }
+    .trim-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .trim-num { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: white; flex-shrink: 0; }
+    .trim-1 { background: var(--obs); }
+    .trim-2 { background: var(--verde-oscuro); }
+    .trim-3 { background: #6A1B9A; }
+    .trim-titulo { font-size: 15px; font-weight: 600; color: var(--texto); }
+    .trim-sub { font-size: 12px; color: var(--texto-ter); }
+    .trim-item { font-size: 13px; color: var(--texto-sec); line-height: 1.7; margin-bottom: 5px; padding-left: 10px; border-left: 2px solid var(--borde); }
+    .alerta-box { background: #FFF8E1; border: 1.5px solid #F9C74F; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; font-size: 14px; }
+    .alerta-title { font-weight: 600; font-size: 13px; color: #8B5E0A; margin-bottom: 6px; }
+    .vacuna-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--borde); }
+    .vacuna-row:last-child { border-bottom: none; }
+    .vacuna-nombre { font-size: 13px; font-weight: 500; min-width: 140px; color: var(--texto); }
+    .vacuna-det { font-size: 13px; color: var(--texto-sec); line-height: 1.6; flex: 1; }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--borde); color: var(--texto-sec); }
+    .fuente { font-size: 11px; color: var(--texto-ter); padding-top: 1.5rem; border-top: 1px solid var(--borde); margin-top: 2rem; line-height: 1.6; }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); }
+    footer a { color: var(--verde); text-decoration: none; }
+    .badge-ob { background: var(--obs-claro); color: var(--obs-oscuro); font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 500; display: inline-block; }
+    .badge-op { background: #F3E8FC; color: #6A1B9A; font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 500; display: inline-block; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Med<span>pedia</span></a>
+  <a href="index.html" class="nav-back">← Volver</a>
+</nav>
+
+<div class="contenido">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › <a href="#">Obstetricia / APS</a> › Control Prenatal y Screening Gestacional</div>
+  <div class="titulo">Control Prenatal y Screening Gestacional</div>
+  <div class="meta">
+    <span class="tag tag-obs">Obstetricia</span>
+    <span class="tag tag-aps">Atención Primaria</span>
+    <span class="tag tag-fuente">Guía APN Bajo Riesgo MSN · OMS 2016 · ACOG · Schwarcz 7ª ed.</span>
+  </div>
+
+  <!-- DEFINICIÓN Y OBJETIVOS -->
+  <div class="seccion">
+    <div class="sec-titulo">📌 Definición y objetivos del control prenatal</div>
+    <div class="hl-obs"><strong>Control prenatal (CPN):</strong> conjunto de acciones y procedimientos sistemáticos y periódicos destinados a la prevención, diagnóstico y tratamiento de factores que puedan condicionar morbimortalidad materna y perinatal. Un CPN adecuado es aquel que comienza <strong>antes de las 12 semanas</strong> y tiene <strong>al menos 5 consultas</strong> (OMS recomendaba 4, actualmente recomienda 8 o más en el modelo 2016).</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Objetivos del CPN</div>
+        <div class="card-item">✅ Detectar y tratar precozmente enfermedades maternas</div>
+        <div class="card-item">✅ Vigilar el crecimiento y la vitalidad fetal</div>
+        <div class="card-item">✅ Prevenir complicaciones del embarazo, parto y puerperio</div>
+        <div class="card-item">✅ Detectar anomalías congénitas fetales (screening)</div>
+        <div class="card-item">✅ Promover hábitos saludables (nutrición, actividad física, tabaco, alcohol)</div>
+        <div class="card-item">✅ Planificar el parto y preparar a la familia</div>
+        <div class="card-item">✅ Vacunar a la embarazada según calendario</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">CPN de bajo riesgo — Argentina (MSN)</div>
+        <div class="card-item">• <strong>Inicio:</strong> antes de la semana 12 (idealmente precoz, preconcepcional)</div>
+        <div class="card-item">• <strong>Mínimo de consultas:</strong> 5 (OMS 2016 recomienda ≥8)</div>
+        <div class="card-item">• <strong>Cronograma sugerido:</strong> semanas 6–12 / 20–22 / 28–30 / 34–36 / 38–40</div>
+        <div class="card-item">• <strong>Embarazo de alto riesgo:</strong> mayor frecuencia de controles según patología. Derivación a nivel de mayor complejidad.</div>
+        <div class="card-item">• <strong>Ley de parto humanizado (25.929):</strong> respeto por la autonomía, acompañamiento, información y decisión libre de la mujer.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMERA CONSULTA -->
+  <div class="seccion">
+    <div class="sec-titulo-obs">🩺 Primera consulta (≤12 semanas)</div>
+    <div class="hl-info">La primera consulta es la más extensa. Se establece la edad gestacional, se realiza la historia clínica completa, se solicitan los estudios basales y se brinda información sobre el embarazo.</div>
+
+    <div class="trim-card">
+      <div class="trim-header">
+        <div class="trim-num trim-1">1°</div>
+        <div><div class="trim-titulo">Primer trimestre — hasta semana 13+6</div><div class="trim-sub">Consulta inicial + screening precoz</div></div>
+      </div>
+      <div class="trim-item"><strong>Anamnesis completa:</strong> antecedentes obstétricos (FO: G/P/A/C), FUM, enfermedades previas, medicamentos, alergias, antecedentes familiares, situación sociofamiliar, hábitos (tabaco, alcohol, drogas).</div>
+      <div class="trim-item"><strong>Cálculo de FPP:</strong> Regla de Naegele: FUM + 7 días − 3 meses (o + 9 meses) = FPP. Confirmación ecográfica (LCC en semana 11–13+6).</div>
+      <div class="trim-item"><strong>Examen físico:</strong> peso, talla, IMC, PA, temperatura. Mamas. Pelvis. Especuloscopía + PAP + cultivo de flujo si corresponde.</div>
+      <div class="trim-item"><strong>Estudios de laboratorio obligatorios:</strong> hemograma, glucemia en ayunas, uricemia, grupo y factor (Rh), Coombs indirecto, VDRL, HIV (con consentimiento), toxoplasmosis (IgG/IgM), rubéola (IgG), hepatitis B (HBsAg), Chagas (en zonas endémicas o riesgo), orina completa y urocultivo.</div>
+      <div class="trim-item"><strong>Ecografía obstétrica 11–13+6:</strong> confirmar viabilidad y EG (LCC), número de fetos y corionicidad, marcadores de aneuploidía: <strong>traslucencia nucal (TN)</strong>, presencia de hueso nasal, ductus venoso, regurgitación tricuspídea.</div>
+      <div class="trim-item"><strong>Screening combinado 1er trimestre (11–13+6):</strong> TN + β-hCG libre + PAPP-A. Detecta ~90% de trisomías 21, 18 y 13 con tasa de falsos positivos del 5%. Expresado como riesgo (ej: 1/300).</div>
+      <div class="trim-item"><strong>Suplementación:</strong> ácido fólico 400 μg/día (desde preconcepcional hasta semana 12, idealmente); sulfato ferroso desde semana 16 (o antes si anemia); yodo en zonas deficientes.</div>
+    </div>
+  </div>
+
+  <!-- SEGUNDO TRIMESTRE -->
+  <div class="seccion">
+    <div class="sec-titulo-obs">🩺 Segundo trimestre (semanas 14–27)</div>
+    <div class="trim-card">
+      <div class="trim-header">
+        <div class="trim-num trim-2">2°</div>
+        <div><div class="trim-titulo">Segundo trimestre — semanas 14 a 27+6</div><div class="trim-sub">Screening morfológico + anatomía fetal</div></div>
+      </div>
+      <div class="trim-item"><strong>Semana 16–18:</strong> screening bioquímico 2° trimestre (triple / cuádruple marcador): AFP, hCG, estriol no conjugado ± inhibina A. Detecta trisomía 21, 18, defectos del tubo neural abiertos (AFP ↑). Actualmente poco utilizado si se hizo screening combinado 1T.</div>
+      <div class="trim-item"><strong>Ecografía morfológica 20–24 semanas ("eco de la 20"):</strong> evaluación detallada de la anatomía fetal. Detecta malformaciones estructurales mayores (cardíacas, del SNC, gastrointestinales, renales, del esqueleto). Marcadores blandos de aneuploidía: hueso nasal corto, pliegue nucal engrosado, foco ecogénico intracardíaco, pielectasia, intestino hiperecogénico, acortamiento fémur/húmero.</div>
+      <div class="trim-item"><strong>Semana 24–28:</strong> Test de O'Sullivan (PTOG 50 g, sin ayuno): screening de diabetes gestacional. Glucemia 1 h post-carga. <strong>Positivo si ≥140 mg/dL</strong> → confirmar con PTOG 75 g o 100 g con criterios ADIPS/ADA.</div>
+      <div class="trim-item"><strong>Laboratorio:</strong> hemograma de control, VDRL de control, orina completa, Coombs indirecto (si Rh negativa → repetir y valorar inmunoglobulina anti-D).</div>
+      <div class="trim-item"><strong>Profilaxis Rh:</strong> en gestante Rh negativa no sensibilizada → gammaglobulina anti-D 300 μg IM a las <strong>28 semanas</strong> (y dentro de las 72 h de cualquier evento sensibilizante: aborto, amniocentesis, trauma abdominal, hemorragia).</div>
+      <div class="trim-item"><strong>Vacuna antigripal:</strong> en cualquier trimestre, especialmente en temporada. Recomendación Argentina: a partir de la semana 14 (o antes si hay epidemia).</div>
+    </div>
+  </div>
+
+  <!-- TERCER TRIMESTRE -->
+  <div class="seccion">
+    <div class="sec-titulo-obs">🩺 Tercer trimestre (semanas 28–40)</div>
+    <div class="trim-card">
+      <div class="trim-header">
+        <div class="trim-num trim-3">3°</div>
+        <div><div class="trim-titulo">Tercer trimestre — semanas 28 a 40+</div><div class="trim-sub">Vigilancia fetal + preparación para el parto</div></div>
+      </div>
+      <div class="trim-item"><strong>Ecografía 30–34 semanas:</strong> crecimiento fetal (biometría: DBP, CC, CA, LF), índice de líquido amniótico (ILA), localización placentaria, presentación fetal. Detecta RCIU, macrosomía, oligoamnios/polihidramnios.</div>
+      <div class="trim-item"><strong>Semana 35–37 — Cultivo rectovaginal para SGB</strong> (Streptococcus agalactiae / grupo B): hisopado de introito vaginal + margen anal. Si positivo → profilaxis antibiótica intraparto con penicilina G.</div>
+      <div class="trim-item"><strong>Monitoreo fetal anteparto (NST / RCTG basal):</strong> indicado en embarazos de riesgo (RCIU, post-término, DG insulinorrequiriente, HTA). Perfil biofísico (PBF) si NST no reactivo.</div>
+      <div class="trim-item"><strong>Laboratorio:</strong> hemograma de control, glucemia (si DG), VDRL de control (3er trimestre), HIV de control (si no se realizó en 2do trimestre), urocultivo, coagulación si preeclampsia.</div>
+      <div class="trim-item"><strong>Vacuna dTpa (difteria, tétanos, pertussis acelular):</strong> a partir de la semana 20 (idealmente semana 28–32). Una dosis en cada embarazo para proteger al RN frente a la tos convulsa mediante transferencia pasiva de anticuerpos. <strong>Obligatoria en Argentina desde 2012.</strong></div>
+      <div class="trim-item"><strong>Semana 38–40:</strong> valorar madurez cervical (score de Bishop), presentación, planificar vía y lugar del parto. Educación en signos de alarma y reconocimiento del trabajo de parto.</div>
+    </div>
+  </div>
+
+  <!-- SCREENING ANEUPLOIDÍAS -->
+  <div class="seccion">
+    <div class="sec-titulo">🧬 Screening de aneuploidías — Resumen</div>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Estudio</th><th>Semanas</th><th>Componentes</th><th>Detecta</th><th>Sensibilidad</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Screening combinado 1T</strong></td><td>11–13+6</td><td>TN + β-hCG libre + PAPP-A + edad materna</td><td>T21, T18, T13</td><td>~90% (FP 5%)</td></tr>
+          <tr><td><strong>Cuádruple marcador 2T</strong></td><td>15–20</td><td>AFP + hCG + estriol + inhibina A + edad materna</td><td>T21, DTN abiertos</td><td>~80% (FP 5%)</td></tr>
+          <tr><td><strong>ADN fetal en sangre materna (NIPT/NACE)</strong></td><td>≥10</td><td>ADN fetal libre en plasma materno (NGS)</td><td>T21, T18, T13, sexo fetal, algunas microdeleciones</td><td>>99% T21 (FP &lt;0,1%)</td></tr>
+          <tr><td><strong>Diagnóstico invasivo</strong></td><td>Variable</td><td>Biopsia de vellosidades coriales (BVC) 11–14 sem · Amniocentesis 15–20 sem</td><td>Cariotipo completo + array CGH</td><td>Diagnóstico definitivo (riesgo pérdida 0,5–1%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-title">⭐ NIPT (ADN fetal libre en sangre materna)</div>
+      Técnica de <strong>screening</strong> (no diagnóstico). Alta sensibilidad y especificidad para T21. Un resultado positivo debe confirmarse con técnica invasiva (amniocentesis + cariotipo). Indicada en embarazadas de alto riesgo (edad ≥35, screening combinado de riesgo intermedio/alto, antecedente de aneuploidía previa). En Argentina actualmente no está incluido en el PAMI ni en la mayoría de las obras sociales.
+    </div>
+
+    <div class="hl-info">
+      <strong>Trisomía 21 (Down) — perfil bioquímico:</strong> β-hCG libre ↑ + PAPP-A ↓ + TN ↑ en 1T. En 2T: AFP ↓ + hCG ↑ + estriol ↓.<br>
+      <strong>Trisomía 18 (Edwards):</strong> todos los marcadores ↓ (β-hCG ↓, PAPP-A ↓, AFP ↓, estriol ↓).<br>
+      <strong>DTN abiertos (espina bífida, anencefalia):</strong> AFP ↑↑ en 2T + ecografía morfológica.
+    </div>
+  </div>
+
+  <!-- VACUNAS EN EL EMBARAZO -->
+  <div class="seccion">
+    <div class="sec-titulo">💉 Vacunas en el embarazo — Calendario Argentina</div>
+    <div class="tabla-wrap">
+      <table>
+        <thead><tr><th>Vacuna</th><th>Momento</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>dTpa</strong><br><span class="badge-ob">Obligatoria</span></td>
+            <td>A partir de la semana 20 (idealmente 28–32) · Una dosis por embarazo</td>
+            <td>Proteger al RN frente a tos convulsa (coqueluche) por transferencia pasiva de anticuerpos maternos. Convivientes: también deben recibirla si no la tienen (estrategia capullo).</td>
+          </tr>
+          <tr>
+            <td><strong>Influenza</strong><br><span class="badge-ob">Obligatoria (temp.)</span></td>
+            <td>Cualquier trimestre durante la temporada de influenza. A partir de semana 14.</td>
+            <td>Reducir hospitalización materna y perinatal por influenza. Protección neonatal por anticuerpos transferidos.</td>
+          </tr>
+          <tr>
+            <td><strong>Hepatitis B</strong><br><span class="badge-op">Si no inmunizada</span></td>
+            <td>3 dosis: 0 – 1 – 6 meses. Segura en embarazo.</td>
+            <td>Prevenir transmisión vertical de hepatitis B. Si madre HBsAg+: RN debe recibir vacuna + gammaglobulina hiperinmune al nacer.</td>
+          </tr>
+          <tr>
+            <td><strong>COVID-19</strong><br><span class="badge-op">Recomendada</span></td>
+            <td>Cualquier trimestre. Completar esquema.</td>
+            <td>Reducir formas graves de COVID-19 en el embarazo (mayor riesgo de parto pretérmino, RCIU y muerte materna).</td>
+          </tr>
+          <tr>
+            <td><strong>Rubéola, varicela, sarampión</strong><br><span class="badge-ob" style="background:#fdeaea;color:#922B21">Contraindicadas</span></td>
+            <td>—</td>
+            <td>Vacunas a virus vivos atenuados: contraindicadas durante el embarazo. Administrar en puerperio inmediato si la paciente no tiene inmunidad.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SIGNOS DE ALARMA -->
+  <div class="seccion">
+    <div class="sec-titulo">🔴 Signos de alarma durante el embarazo</div>
+    <div class="hl-danger">
+      Consultar inmediatamente ante: <strong>sangrado vaginal</strong> en cualquier trimestre · <strong>dolor abdominal intenso</strong> · <strong>cefalea intensa / epigastralgia / alteraciones visuales</strong> (preeclampsia) · <strong>pérdida de líquido amniótico</strong> · <strong>ausencia de movimientos fetales</strong> (≥28 semanas) · fiebre · disuria intensa · edema brusco de cara y manos · vómitos incoercibles · síntomas de ACV (raro pero grave en embarazo).
+    </div>
+  </div>
+
+  <!-- EXAMEN -->
+  <div class="seccion">
+    <div class="sec-titulo">📋 Lo que te preguntan en el examen</div>
+    <div class="pill-list">
+      <span class="pill">CPN óptimo: inicio antes de semana 12</span>
+      <span class="pill">Mínimo 5 consultas (OMS 2016: ≥8)</span>
+      <span class="pill">Regla de Naegele: FUM + 7 días − 3 meses</span>
+      <span class="pill">1er consulta: laboratorio completo + eco 11–13+6 + TN</span>
+      <span class="pill">Ácido fólico: desde preconcepcional hasta semana 12</span>
+      <span class="pill">Sulfato ferroso: desde semana 16 (o antes si anemia)</span>
+      <span class="pill">Screening combinado 1T: TN + β-hCG + PAPP-A → 90% sensibilidad T21</span>
+      <span class="pill">T21: β-hCG ↑ + PAPP-A ↓ + TN ↑</span>
+      <span class="pill">T18: todos los marcadores ↓</span>
+      <span class="pill">DTN: AFP ↑↑ en 2T</span>
+      <span class="pill">Eco morfológica: 20–24 semanas</span>
+      <span class="pill">Test O'Sullivan: 24–28 sem, positivo ≥140 mg/dL</span>
+      <span class="pill">SGB: cultivo rectovaginal 35–37 semanas</span>
+      <span class="pill">Profilaxis Rh anti-D: 28 semanas en Rh negativa no sensibilizada</span>
+      <span class="pill">dTpa: obligatoria ≥20 semanas, una dosis por embarazo</span>
+      <span class="pill">Influenza: obligatoria, cualquier trimestre en temporada</span>
+      <span class="pill">Rubéola / varicela: contraindicadas en embarazo (virus vivos)</span>
+      <span class="pill">NIPT: screening (no diagnóstico), positivo → confirmar con amniocentesis</span>
+      <span class="pill">Amniocentesis: 15–20 sem, riesgo pérdida 0,5–1%</span>
+      <span class="pill">BVC: 11–14 sem, riesgo pérdida levemente mayor</span>
+    </div>
+  </div>
+
+  <div class="fuente">
+    Fuentes: Ministerio de Salud de la Nación Argentina. Guía de Atención Prenatal de Bajo Riesgo, 2021 · OMS. Recommendations on antenatal care for a positive pregnancy experience. Geneva: WHO, 2016 · ACOG Practice Bulletin No. 226: Gestational Hypertension and Preeclampsia. 2020 · Nicolaides KH. Screening for chromosomal defects. Ultrasound Obstet Gynecol 2003 · Schwarcz R, Fescina R, Duverges C. Obstetricia. 7ª ed. Buenos Aires: El Ateneo, 2016 · Calendario Nacional de Vacunación Argentina, 2024.<br>
+    El contenido de Medpedia es de carácter educativo y no reemplaza la consulta médica profesional.
+  </div>
+</div>
+
+<footer>
+  <p>Medpedia · <a href="index.html">Volver al inicio</a></p>
+</footer>
+</body>
+</html>
