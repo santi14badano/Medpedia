@@ -327,6 +327,25 @@
     .vade-sec { background: var(--bg3); padding: 10px; border-radius: 8px; border: 1px solid var(--borde); }
     .vade-sec-title { font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--texto); margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
 
+    .vade-search { margin-bottom: 12px; }
+    .vade-search input {
+      width: 100%; padding: 12px 16px; border: 1px solid var(--borde); border-radius: 10px;
+      font-size: 14px; font-family: 'DM Sans', sans-serif; background: var(--bg2); color: var(--texto); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .vade-search input:focus { border-color: var(--verde); box-shadow: 0 0 0 3px var(--verde-glow); }
+    .vade-aviso { font-size: 12px; color: var(--texto-sec); background: var(--bg2); border: 1px dashed var(--borde-hover); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; line-height: 1.5; }
+    details.vade-card { padding: 0; }
+    details.vade-card > summary { list-style: none; cursor: pointer; padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    details.vade-card > summary::-webkit-details-marker { display: none; }
+    details.vade-card > summary::after { content: '+'; font-size: 20px; color: var(--verde); font-weight: 400; margin-left: auto; }
+    details.vade-card[open] > summary::after { content: '\2212'; }
+    details.vade-card[open] { border-color: var(--verde); }
+    .vade-detalle { padding: 0 1.2rem 1.2rem; }
+    .vade-sec.vade-pearl { grid-column: 1 / -1; background: var(--verde-claro); border-color: rgba(29,158,117,0.3); }
+    .vade-sec.vade-pearl .vade-sec-title { color: var(--verde); }
+    .vade-hl { background: rgba(255,200,0,0.35); color: inherit; border-radius: 2px; }
+
     /* CALCULADORAS STYLES */
     .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
     .calc-card {
@@ -543,19 +562,14 @@
   <!-- VIEW 2: VADEMÉCUM -->
   <div id="vademecum-view" class="main-view" style="display: none;">
     <div class="section-header">
-      <div class="section-titulo">Vademécum Clínico de Bolsillo</div>
+      <div class="section-titulo">Vademécum Clínico</div>
       <div class="section-count" id="vade-count"></div>
     </div>
-    <div class="chips-wrap">
-      <button class="chip activo" onclick="filtrarVade('all',this)">Todos</button>
-      <button class="chip" onclick="filtrarVade('atb',this)">Antibióticos</button>
-      <button class="chip" onclick="filtrarVade('cardio',this)">Antihipertensivos/Cardio</button>
-      <button class="chip" onclick="filtrarVade('analgesia',this)">Analgésicos/AINES</button>
-      <button class="chip" onclick="filtrarVade('anticoag',this)">Anticoagulantes</button>
-      <button class="chip" onclick="filtrarVade('psiquiat',this)">Psicofármacos</button>
-      <button class="chip" onclick="filtrarVade('gastro',this)">Gastroenterología</button>
-      <button class="chip" onclick="filtrarVade('endo',this)">Endocrino/Diabetes</button>
+    <div class="vade-search">
+      <input type="text" id="vade-search" placeholder="Filtrar por fármaco, marca, clase o indicación (ej: ceftriaxona, IECA, meningitis)..." autocomplete="off" aria-label="Filtrar vademécum">
     </div>
+    <div class="chips-wrap" id="vade-chips"></div>
+    <div class="vade-aviso">Contenido educativo para estudio. Las dosis son de referencia para adultos (y pediátricas cuando se indica): verificá siempre con el prospecto, ANMAT y la guía vigente antes de aplicarlas.</div>
     <div class="vademecum-grid" id="vademecum-grid"></div>
   </div>
 
@@ -612,7 +626,7 @@
             <option value="1">1 - Sin respuesta</option>
           </select>
         </div>
-        <div class="calc-result" id="res-gcs">Puntaje: 15/15 — Normal / TEC leve.</div>
+        <div class="calc-result" id="res-gcs">Puntaje: 15/15 — Normal.</div>
       </div>
 
       <!-- WELLS TEP -->
@@ -667,7 +681,7 @@
             <option value="0.85">Femenino</option>
           </select>
         </div>
-        <div class="calc-result" id="res-cg">ClCr estimado: 78.8 mL/min (Función renal conservada).</div>
+        <div class="calc-result" id="res-cg">ClCr estimado: 77.8 mL/min (Función renal conservada).</div>
       </div>
 
     </div>
@@ -683,6 +697,7 @@
   <p>El contenido es de carácter educativo y no reemplaza la consulta médica profesional.</p>
 </footer>
 
+<script src="vademecum.js"></script>
 <script>
   const articulos = [
     { titulo: 'Infarto Agudo de Miocardio', url: 'iam.html', tag: 'Cardiología', clase: 'tag-cardio', esp: 'cardio', keywords: 'iam infarto agudo miocardio scacest coronaria reperfusion trombolisis alteplasa angioplastia stent killip aspirina clopidogrel ticagrelor troponina ck mb dolor toracico st elevado fibrinolisis shock cardiogenico ieca betabloqueante statinas ecg' },
@@ -801,97 +816,6 @@
     { titulo: 'Trauma de Pelvis', url: 'trauma-pelvis.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'trauma pelvis fractura pelvica tile ao young burgess clasificacion inestable estable libro abierto apc compresion lateral lc cizallamiento vertical vs hemorragia pelvica plexo presacro arteria iliaca interna angioembolizacion packing pelvico preperitoneal fijador externo cinturon pelvico damage control ortopedico dco triada letal hipotermia acidosis coagulopatia transfusion masiva acido tranexamico atx crash-2 ruptura vesical lesion uretral uretrorragia cistostomia sinfisis pubiana sacroiliaca sinfisis diástasis fast ecografia politraumatismo reanimacion hipotension permisiva' },
   ];
 
-  const vademecum = [
-    {
-      nombre: 'Amoxicilina + Ácido Clavulánico',
-      marcas: 'Optamox, Amoxidal Plus, Trifamox IBL',
-      cat: 'atb',
-      clase: 'Antibiótico β-lactámico + Inhibidor de β-lactamasa',
-      posologia: 'VO: 875/125 mg c/12 hs. Pediatría: 40-80 mg/kg/día dividido en 2-3 tomas.',
-      indicaciones: 'NAC, sinusitis aguda, otitis media, infecciones intraabdominales e ITU complejas.',
-      ajuste: 'Si ClCr 10-30 mL/min: administrar c/12-24 hs. Si ClCr <10 mL/min: c/24 hs.',
-      contraind: 'Hipersensibilidad a penicilinas/cefalosporinas, antecedente de ictericia por amoxi-clav.',
-      presentacion: 'Comp. 875/125 mg, 500/125 mg. Suspensión oral 400-57 mg/5mL.'
-    },
-    {
-      nombre: 'Enalapril',
-      marcas: 'Lotrial, Gadopril, Renitec',
-      cat: 'cardio',
-      clase: 'Inhibidor de la ECA (IECA)',
-      posologia: 'VO: 5 a 40 mg/día en 1 o 2 tomas. Dosis inicial en HTA: 5 mg/día.',
-      indicaciones: 'Hipertensión arterial, insuficiencia cardíaca con FEVI reducida, nefropatía diabética.',
-      ajuste: 'Si ClCr <30 mL/min: dosis inicial 2.5 mg/día. Titular según respuesta.',
-      contraind: 'Antecedente de angioedema por IECA, embarazo (contraindicado), estenosis bilateral de arterias renales.',
-      presentacion: 'Comp. 5 mg, 10 mg, 20 mg.'
-    },
-    {
-      nombre: 'Furosemida',
-      marcas: 'Lasix, Koloyd, Nuriban',
-      cat: 'cardio',
-      clase: 'Diurético del asa',
-      posologia: 'VO: 20-80 mg/día. EV (crisis/EAP): 20-40 mg bolo directo, repetir según respuesta.',
-      indicaciones: 'Edema agudo de pulmón, insuficiencia cardíaca, síndrome nefrótico, cirrosis con ascitis, HTA grave.',
-      ajuste: 'No requiere ajuste severo pero monitorizar función renal e ionograma (hipokalemia).',
-      contraind: 'Anuria, hipovolemia grave, hipokalemia severa, encefalopatía hepática.',
-      presentacion: 'Comp. 40 mg. Ampollas 20 mg/2mL.'
-    },
-    {
-      nombre: 'Ibuprofeno',
-      marcas: 'Ibu Evinol, Actron, Ibupirac',
-      cat: 'analgesia',
-      clase: 'AINES (Inhibidor de COX-1 y COX-2)',
-      posologia: 'VO: 400 mg c/6-8 hs (máx 2400 mg/día). Pediatría: 5-10 mg/kg/dosis c/6-8 hs.',
-      indicaciones: 'Dolor leve a moderado, fiebre, cuadros inflamatorios articulares.',
-      ajuste: 'Evitar en insuficiencia renal moderada a severa (ClCr <30 mL/min).',
-      contraind: 'Úlcera péptica activa, sangrado digestivo, insuficiencia cardíaca grave, 3° trimestre embarazo.',
-      presentacion: 'Comp. 400 mg, 600 mg. Suspensión 2% y 4%.'
-    },
-    {
-      nombre: 'Enoxaparina',
-      marcas: 'Clexane, Dilutol',
-      cat: 'anticoag',
-      clase: 'Heparina de Bajo Peso Molecular (HBPM)',
-      posologia: 'Profilaxis: 40 mg SC c/24 hs. Tratamiento (SCA/TEP/TVP): 1 mg/kg SC c/12 hs.',
-      indicaciones: 'Profilaxis de ETEV, tratamiento de TVP/TEP, SCA sin elevación del ST e IAMCEST.',
-      ajuste: 'Si ClCr <30 mL/min: ajustar dosis a 1 mg/kg SC c/24 hs (profilaxis: 20 mg SC c/24 hs).',
-      contraind: 'Sangrado activo mayor, trombocitopenia inducida por heparina (HIT), hemorragia intracraneal.',
-      presentacion: 'Jeringas prellenadas 20, 40, 60, 80 mg.'
-    },
-    {
-      nombre: 'Sertralina',
-      marcas: 'Zoloft, Atenix, Irradial',
-      cat: 'psiquiat',
-      clase: 'Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)',
-      posologia: 'VO: 50 a 200 mg/día en una sola toma (preferentemente mañana o noche).',
-      indicaciones: 'Trastorno depresivo mayor, TAG, trastorno de pánico, TOC, fobia social.',
-      ajuste: 'No requiere ajuste renal significativo. Usar con precaución en insuficiencia hepática.',
-      contraind: 'Uso concomitante con IMAO, hipersensibilidad al fármaco.',
-      presentacion: 'Comp. 50 mg y 100 mg.'
-    },
-    {
-      nombre: 'Omeprazol',
-      marcas: 'Losec, Acimed, Hufral',
-      cat: 'gastro',
-      clase: 'Inhibidor de la Bomba de Protones (IBP)',
-      posologia: 'VO: 20-40 mg/día en ayunas. EV: 40 mg c/12-24 hs (HDA: bolo 80 mg + infusión 8 mg/h).',
-      indicaciones: 'Úlcera péptica, ERGE, profilaxis de úlcera de estrés, profilaxis por AINES, HDA.',
-      ajuste: 'No requiere ajuste en insuficiencia renal.',
-      contraind: 'Hipersensibilidad a sustitutos del benzimidazol, coadministración con rilpivirina.',
-      presentacion: 'Cáps. 20 mg. Frasco ampolla EV 40 mg.'
-    },
-    {
-      nombre: 'Metformina',
-      marcas: 'Glucophage, Bi-EUGUCON, Baligluc',
-      cat: 'endo',
-      clase: 'Biguanida (Antidiabético oral)',
-      posologia: 'VO: 500-850 mg 2-3 veces al día con comidas (máx 2550 mg/día).',
-      indicaciones: 'Diabetes Mellitus Tipo 2, Síndrome de Ovario Poliquístico (SOP).',
-      ajuste: 'Si TFG 30-45 mL/min: reducir dosis un 50%. Si TFG <30 mL/min: contraindicado por riesgo de acidosis láctica.',
-      contraind: 'Insuficiencia renal severa (TFG <30), hipoxia severa, shock, insuficiencia hepática, alcoholismo agudo.',
-      presentacion: 'Comp. 500 mg, 850 mg, 1000 mg.'
-    }
-  ];
-
   // Theme Manager
   function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -918,6 +842,7 @@
     document.querySelectorAll('.main-view').forEach(v => v.style.display = 'none');
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(viewId).style.display = 'block';
+    if(!btn) btn = document.querySelector(`.tab-btn[onclick*="'${viewId}'"]`);
     if(btn) btn.classList.add('active');
   }
 
@@ -969,6 +894,21 @@
   }
 
   // Vademecum Render & Filter
+  const norm = t => (t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  let vadeCat = 'all';
+  vademecum.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+  vademecum.forEach(v => { v._idx = norm([v.nombre, v.marcas, v.clase, v.indicaciones, VADE_CATS[v.cat]].join(' ')); });
+
+  function buildVadeChips() {
+    const wrap = document.getElementById('vade-chips');
+    const cnt = {};
+    vademecum.forEach(v => { cnt[v.cat] = (cnt[v.cat] || 0) + 1; });
+    let html = `<button class="chip activo" data-cat="all">Todos (${vademecum.length})</button>`;
+    Object.keys(VADE_CATS).forEach(k => { if (cnt[k]) html += `<button class="chip" data-cat="${k}">${VADE_CATS[k]} (${cnt[k]})</button>`; });
+    wrap.innerHTML = html;
+    wrap.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => filtrarVade(c.dataset.cat)));
+  }
+
   function renderVademecum(lista) {
     const grid = document.getElementById('vademecum-grid');
     grid.innerHTML = '';
@@ -977,35 +917,47 @@
       document.getElementById('vade-count').textContent = '';
       return;
     }
+    const frag = document.createDocumentFragment();
     lista.forEach(v => {
-      const card = document.createElement('div');
+      const card = document.createElement('details');
       card.className = 'vade-card';
       card.innerHTML = `
-        <div class="vade-header">
+        <summary>
           <div>
             <div class="vade-nombre">${v.nombre}</div>
             <div class="vade-marca">Marcas Arg: ${v.marcas}</div>
           </div>
           <span class="vade-clase">${v.clase}</span>
-        </div>
-        <div class="vade-body">
+        </summary>
+        <div class="vade-detalle"><div class="vade-body">
           <div class="vade-sec"><div class="vade-sec-title">📍 Indicaciones</div>${v.indicaciones}</div>
-          <div class="vade-sec"><div class="vade-sec-title">💉 Posología y Vía</div>${v.posologia}</div>
-          <div class="vade-sec"><div class="vade-sec-title">⚠️ Ajuste Renal</div>${v.ajuste}</div>
+          <div class="vade-sec"><div class="vade-sec-title">💉 Posología y vía</div>${v.posologia}</div>
+          <div class="vade-sec"><div class="vade-sec-title">⚠️ Ajuste renal / hepático</div>${v.ajuste}</div>
           <div class="vade-sec"><div class="vade-sec-title">🚫 Contraindicaciones</div>${v.contraind}</div>
-        </div>
-      `;
-      grid.appendChild(card);
+          <div class="vade-sec"><div class="vade-sec-title">🩺 Efectos adversos</div>${v.efectos}</div>
+          <div class="vade-sec"><div class="vade-sec-title">🤰 Embarazo y lactancia</div>${v.embarazo}</div>
+          <div class="vade-sec vade-pearl"><div class="vade-sec-title">⭐ Perla de examen</div>${v.perla}</div>
+        </div></div>`;
+      frag.appendChild(card);
     });
+    grid.appendChild(frag);
     document.getElementById('vade-count').textContent = lista.length + ' fármacos';
   }
 
-  function filtrarVade(cat, el) {
-    document.querySelectorAll('#vademecum-view .chip').forEach(c => c.classList.remove('activo'));
-    if(el) el.classList.add('activo');
-    const filtrados = cat === 'all' ? vademecum : vademecum.filter(v => v.cat === cat);
-    renderVademecum(filtrados);
+  function aplicarVade() {
+    const q = norm(document.getElementById('vade-search').value.trim());
+    const lista = vademecum.filter(v => (vadeCat === 'all' || v.cat === vadeCat) && (!q || v._idx.includes(q)));
+    renderVademecum(lista);
+    if (q && lista.length === 1) document.querySelector('#vademecum-grid details').open = true;
   }
+
+  function filtrarVade(cat) {
+    vadeCat = cat;
+    document.querySelectorAll('#vade-chips .chip').forEach(c => c.classList.toggle('activo', c.dataset.cat === cat));
+    aplicarVade();
+  }
+
+  document.getElementById('vade-search').addEventListener('input', aplicarVade);
 
   // CALCULADORAS LOGIC
   function calcCURB() {
@@ -1029,8 +981,8 @@
     const m = parseInt(document.getElementById('gcs-m').value);
     const total = o + v + m;
     let res = `Puntaje: ${total}/15 — `;
-    if(total >= 14) res += "Normal / TEC Leve.";
-    else if(total >= 9) res += "TEC Moderado.";
+    if(total >= 13) res += total === 15 ? "Normal." : "TEC Leve (GCS 13-14).";
+    else if(total >= 9) res += "TEC Moderado (GCS 9-12).";
     else res += "TEC Grave / Evaluar intubación orotraqueal (GCS ≤ 8).";
     document.getElementById('res-gcs').textContent = res;
   }
@@ -1114,24 +1066,30 @@
       return; 
     }
     
+    const nq = norm(q);
+
     // Coincidencias en artículos
     const matchArt = articulos.filter(a =>
-      a.titulo.toLowerCase().includes(q) || a.tag.toLowerCase().includes(q) || a.keywords.toLowerCase().includes(q)
-    ).map(a => ({ titulo: a.titulo, url: a.url, tag: a.tag, clase: a.clase, tipo: 'Artículo' }));
+      norm(a.titulo).includes(nq) || norm(a.tag).includes(nq) || norm(a.keywords).includes(nq)
+    ).map(a => ({ titulo: a.titulo, url: a.url, tag: a.tag, clase: a.clase }));
 
-    // Coincidencias en vademecum
+    // Coincidencias en vademécum (nombre, marca, clase)
     const matchVade = vademecum.filter(v =>
-      v.nombre.toLowerCase().includes(q) || v.marcas.toLowerCase().includes(q) || v.indicaciones.toLowerCase().includes(q)
-    ).map(v => ({ titulo: `💊 ${v.nombre} (${v.marcas})`, url: '#vademecum-view', tag: 'Vademécum', clase: 'tag-endo', tipo: 'Fármaco', action: () => { switchView('vademecum-view'); } }));
+      norm(v.nombre).includes(nq) || norm(v.marcas).includes(nq) || norm(v.clase).includes(nq)
+    ).map(v => ({ titulo: `💊 ${v.nombre}`, url: '#vademecum-view', tag: 'Vademécum', clase: 'tag-endo', vade: v.nombre }));
 
-    const matches = [...matchArt, ...matchVade].slice(0, 8);
-    
-    if (!matches.length) { 
+    const matches = [...matchArt.slice(0, 6), ...matchVade.slice(0, 4)];
+    if (matches.length < 8) {
+      const extra = [...matchArt.slice(6), ...matchVade.slice(4)].slice(0, 8 - matches.length);
+      matches.push(...extra);
+    }
+
+    if (!matches.length) {
       searchResults.innerHTML = '<div class="search-no-results">No se encontraron resultados para tu búsqueda</div>';
     } else {
-      searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+      searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"${a.vade ? ` data-vade="${a.vade}"` : ''}><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
     }
-    
+
     searchResults.style.display = 'block';
     searchInput.setAttribute('aria-expanded', 'true');
   });
@@ -1159,6 +1117,18 @@
     }
   });
 
+  searchResults.addEventListener('click', e => {
+    const item = e.target.closest('.search-result-item[data-vade]');
+    if (!item) return;
+    e.preventDefault();
+    switchView('vademecum-view');
+    document.getElementById('vade-search').value = item.dataset.vade;
+    filtrarVade('all');
+    searchResults.style.display = 'none';
+    searchInput.setAttribute('aria-expanded', 'false');
+    document.getElementById('vademecum-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   document.addEventListener('click', e => { 
     if (!e.target.closest('.search-wrap')) {
       searchResults.style.display = 'none'; 
@@ -1173,6 +1143,7 @@
 
   // Init Views & Content
   renderArticulos(articulos);
+  buildVadeChips();
   renderVademecum(vademecum);
 </script>
 </body>
