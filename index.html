@@ -6,6 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
   <meta name="description" content="Guías clínicas oficiales y protocolos médicos explicados para estudiantes de medicina argentina.">
+  
+  <!-- Open Graph / Meta etiquetas para redes sociales y mensajería -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://medpedia.com.ar/">
+  <meta property="og:title" content="Medpedia — Medicina explicada para estudiar">
+  <meta property="og:description" content="Guías clínicas oficiales y protocolos actualizados, reescritos y simplificados para estudiantes de medicina en Argentina.">
+  <meta property="og:image" content="https://medpedia.com.ar/favicon.png">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Medpedia — Medicina explicada para estudiar">
+  <meta name="twitter:description" content="Guías clínicas oficiales y protocolos médicos explicados para estudiantes de medicina argentina.">
+  <meta name="twitter:image" content="https://medpedia.com.ar/favicon.png">
+
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,7 +157,13 @@
       transition: background 0.12s;
     }
     .search-result-item:last-child { border-bottom: none; }
-    .search-result-item:hover { background: var(--bg3); }
+    .search-result-item:hover, .search-result-item.selected { background: var(--bg3); }
+    .search-no-results {
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: var(--texto-sec);
+      text-align: center;
+    }
     .result-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
     .result-title { font-size: 13.5px; }
 
@@ -299,8 +319,8 @@
   <p>Guías clínicas oficiales y protocolos actualizados, reescritos y simplificados para que puedas estudiar, entender y rendir.</p>
   <div class="search-wrap">
     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco o tema..." autocomplete="off"/>
-    <div id="search-results"></div>
+    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco o tema..." autocomplete="off" aria-expanded="false" aria-autocomplete="list" role="combobox"/>
+    <div id="search-results" role="listbox"></div>
   </div>
 </div>
 
@@ -570,7 +590,6 @@
     document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('activo'));
     if (el) {
       el.classList.add('activo');
-      // sync: si es bento, activar chip correspondiente; si es chip, activar bento
       if (el.classList.contains('bento-card')) {
         document.querySelectorAll('.chip').forEach(c => { if (c.onclick && c.onclick.toString().includes(`'${esp}'`)) c.classList.add('activo'); });
         document.getElementById('articulos').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -583,24 +602,78 @@
     renderArticulos(filtrados);
   }
 
-  // Búsqueda
+  // Búsqueda interactiva con soporte para teclado y mensaje sin resultados
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
+  let selectedIndex = -1;
+
+  function setSelectedIndex(index, items) {
+    items.forEach((item, i) => {
+      if (i === index) {
+        item.classList.add('selected');
+        item.scrollIntoView({ block: 'nearest' });
+      } else {
+        item.classList.remove('selected');
+      }
+    });
+    selectedIndex = index;
+  }
+
   searchInput.addEventListener('input', function() {
     const q = this.value.trim().toLowerCase();
-    if (!q) { searchResults.style.display = 'none'; return; }
+    selectedIndex = -1;
+    if (!q) { 
+      searchResults.style.display = 'none'; 
+      searchInput.setAttribute('aria-expanded', 'false');
+      return; 
+    }
+    
     const matches = articulos.filter(a =>
       a.titulo.toLowerCase().includes(q) || a.tag.toLowerCase().includes(q) || a.keywords.toLowerCase().includes(q)
     ).slice(0, 8);
-    if (!matches.length) { searchResults.style.display = 'none'; return; }
-    searchResults.innerHTML = matches.map(a => `<a href="${a.url}" class="search-result-item"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+    
+    if (!matches.length) { 
+      searchResults.innerHTML = '<div class="search-no-results">No se encontraron resultados para tu búsqueda</div>';
+    } else {
+      searchResults.innerHTML = matches.map(a => `<a href="${a.url}" class="search-result-item" role="option"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+    }
+    
     searchResults.style.display = 'block';
+    searchInput.setAttribute('aria-expanded', 'true');
   });
-  document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) searchResults.style.display = 'none'; });
 
-  // Init
+  searchInput.addEventListener('keydown', function(e) {
+    const items = searchResults.querySelectorAll('.search-result-item');
+    if (searchResults.style.display !== 'block' || !items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const nextIndex = selectedIndex < items.length - 1 ? selectedIndex + 1 : 0;
+      setSelectedIndex(nextIndex, items);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prevIndex = selectedIndex > 0 ? selectedIndex - 1 : items.length - 1;
+      setSelectedIndex(prevIndex, items);
+    } else if (e.key === 'Enter') {
+      if (selectedIndex >= 0 && items[selectedIndex]) {
+        e.preventDefault();
+        items[selectedIndex].click();
+      }
+    } else if (e.key === 'Escape') {
+      searchResults.style.display = 'none';
+      searchInput.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('click', e => { 
+    if (!e.target.closest('.search-wrap')) {
+      searchResults.style.display = 'none'; 
+      searchInput.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Inicialización
   renderArticulos(articulos);
-  document.querySelector('.chip.activo');
 </script>
 </body>
 </html>
