@@ -5,25 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medpedia — Fuente de información médica para estudiantes argentinos</title>
-  <meta name="description" content="Guías clínicas oficiales y protocolos médicos explicados para estudiantes de medicina argentina.">
+  <meta name="description" content="Guías clínicas oficiales, vademécum y calculadoras médicas para estudiantes de medicina argentina.">
   
-  <!-- Open Graph / Meta etiquetas para redes sociales y mensajería -->
+  <!-- Open Graph / Meta etiquetas para redes sociales -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://medpedia.com.ar/">
   <meta property="og:title" content="Medpedia — Medicina explicada para estudiar">
-  <meta property="og:description" content="Guías clínicas oficiales y protocolos actualizados, reescritos y simplificados para estudiantes de medicina en Argentina.">
+  <meta property="og:description" content="Guías clínicas oficiales, vademécum y calculadoras médicas explicadas y simplificadas para estudiantes de medicina en Argentina.">
   <meta property="og:image" content="https://medpedia.com.ar/favicon.png">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Medpedia — Medicina explicada para estudiar">
-  <meta name="twitter:description" content="Guías clínicas oficiales y protocolos médicos explicados para estudiantes de medicina argentina.">
+  <meta name="twitter:description" content="Guías clínicas oficiales, vademécum y calculadoras médicas para estudiantes de medicina argentina.">
   <meta name="twitter:image" content="https://medpedia.com.ar/favicon.png">
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --verde: #1D9E75;
@@ -38,10 +38,23 @@
       --texto: #111110;
       --texto-sec: #666662;
       --texto-ter: #aaaaaa;
+      --card-bg: #f5f5f3;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --bg2: #1e1e1e;
+      --bg3: #2a2a2a;
+      --borde: #2d2d2d;
+      --borde-hover: #444444;
+      --texto: #f0f0f0;
+      --texto-sec: #aaaaaa;
+      --texto-ter: #666666;
+      --card-bg: #1e1e1e;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--texto); -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--texto); -webkit-font-smoothing: antialiased; transition: background 0.2s, color 0.2s; }
 
     /* NAV */
     nav {
@@ -56,17 +69,36 @@
       position: sticky;
       top: 0;
       z-index: 200;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    [data-theme="dark"] nav {
+      background: rgba(18,18,18,0.92);
     }
     .logo { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 500; color: var(--texto); text-decoration: none; }
     .logo span { color: var(--verde); }
-    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links { display: flex; gap: 1.2rem; align-items: center; }
     .nav-links a { font-size: 13.5px; color: var(--texto-sec); text-decoration: none; transition: color 0.15s; }
     .nav-links a:hover { color: var(--texto); }
+    
+    .theme-toggle {
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--texto);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--verde); }
 
     /* HERO */
     .hero {
       border-bottom: 1px solid var(--borde);
-      padding: 5rem 2rem 4.5rem;
+      padding: 4rem 2rem 3.5rem;
       text-align: center;
       position: relative;
       overflow: visible;
@@ -110,11 +142,32 @@
     .hero p {
       font-size: 16px;
       color: var(--texto-sec);
-      max-width: 460px;
+      max-width: 520px;
       margin: 0 auto 2.5rem;
       line-height: 1.65;
       font-weight: 300;
     }
+
+    /* TABS */
+    .view-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      padding: 8px 18px;
+      border-radius: 25px;
+      border: 1px solid var(--borde);
+      background: var(--bg2);
+      color: var(--texto-sec);
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { background: var(--bg3); color: var(--texto); }
+    .tab-btn.active { background: var(--verde); color: #fff; border-color: var(--verde); }
 
     /* SEARCH */
     .search-wrap { max-width: 560px; margin: 0 auto; position: relative; }
@@ -192,18 +245,11 @@
       position: relative;
       overflow: hidden;
     }
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--hover-bg, transparent);
-      transition: background 0.2s;
-    }
     .bento-card:hover {
       border-color: var(--borde-hover);
       background: var(--bg3);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
     .bento-card.activo {
       border-color: var(--verde);
@@ -251,7 +297,7 @@
     .art-card:hover {
       border-color: var(--verde);
       background: var(--bg3);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
       transform: translateX(2px);
     }
     .art-card-left { flex: 1; min-width: 0; }
@@ -264,7 +310,47 @@
     .art-arrow { color: var(--texto-ter); font-size: 14px; flex-shrink: 0; transition: color 0.15s, transform 0.15s; }
     .art-card:hover .art-arrow { color: var(--verde); transform: translateX(3px); }
 
-    /* TAGS DARK */
+    /* VADEMECUM STYLES */
+    .vademecum-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .vade-card {
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: all 0.2s;
+    }
+    .vade-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+    .vade-nombre { font-size: 16px; font-weight: 700; color: var(--texto); }
+    .vade-marca { font-size: 12.5px; color: var(--verde); font-weight: 500; }
+    .vade-clase { font-size: 10.5px; padding: 3px 10px; border-radius: 12px; background: var(--verde-claro); color: var(--verde); font-weight: 600; }
+    .vade-body { font-size: 13px; line-height: 1.6; color: var(--texto-sec); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 10px; }
+    .vade-sec { background: var(--bg3); padding: 10px; border-radius: 8px; border: 1px solid var(--borde); }
+    .vade-sec-title { font-weight: 700; font-size: 11px; text-transform: uppercase; color: var(--texto); margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
+
+    /* CALCULADORAS STYLES */
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+    .calc-card {
+      background: var(--bg2);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .calc-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin-bottom: 6px; color: var(--texto); }
+    .calc-desc { font-size: 12px; color: var(--texto-sec); margin-bottom: 12px; }
+    .calc-field { margin-bottom: 10px; }
+    .calc-field label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; color: var(--texto); }
+    .calc-field select, .calc-field input {
+      width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--borde);
+      background: var(--bg); color: var(--texto); font-family: inherit; font-size: 13px; outline: none;
+    }
+    .calc-check { display: flex; align-items: center; gap: 8px; font-size: 12.5px; margin-bottom: 6px; color: var(--texto-sec); cursor: pointer; }
+    .calc-result {
+      margin-top: 14px; padding: 10px 12px; border-radius: 8px; background: var(--verde-claro);
+      border: 1px solid rgba(29,158,117,0.3); color: var(--verde-oscuro); font-size: 13px; font-weight: 600;
+    }
+    [data-theme="dark"] .calc-result { color: #52e0b1; }
+
+    /* TAGS COLOR CODE */
     .tag-cardio    { background: rgba(183,28,28,0.12);   color: #b71c1c; }
     .tag-neuro     { background: rgba(69,39,160,0.12);   color: #4527a0; }
     .tag-psiquiat  { background: rgba(38,50,56,0.12);    color: #263238; }
@@ -279,7 +365,21 @@
     .tag-reuma     { background: rgba(107,33,168,0.12);  color: #6b1fa8; }
     .tag-gineco    { background: rgba(136,14,79,0.12);   color: #880e4f; }
     .tag-pediatria { background: rgba(0,105,92,0.12);    color: #00695c; }
-    .tag-cirugia   { background: rgba(40,53,147,0.12);   color: #283593; }
+
+    [data-theme="dark"] .tag-cardio { background: rgba(239,83,80,0.2); color: #ef5350; }
+    [data-theme="dark"] .tag-neuro { background: rgba(179,157,219,0.2); color: #b39ddb; }
+    [data-theme="dark"] .tag-psiquiat { background: rgba(176,190,197,0.2); color: #b0bec5; }
+    [data-theme="dark"] .tag-neumo { background: rgba(144,202,249,0.2); color: #90caf9; }
+    [data-theme="dark"] .tag-endo { background: rgba(165,214,167,0.2); color: #a5d6a7; }
+    [data-theme="dark"] .tag-infecto { background: rgba(255,171,145,0.2); color: #ffab91; }
+    [data-theme="dark"] .tag-urgencia { background: rgba(239,83,80,0.2); color: #ef5350; }
+    [data-theme="dark"] .tag-gastro { background: rgba(255,224,130,0.2); color: #ffe082; }
+    [data-theme="dark"] .tag-hemato { background: rgba(206,147,216,0.2); color: #ce93d8; }
+    [data-theme="dark"] .tag-nefro { background: rgba(128,203,196,0.2); color: #80cbd4; }
+    [data-theme="dark"] .tag-ciru { background: rgba(159,168,218,0.2); color: #9fa8da; }
+    [data-theme="dark"] .tag-reuma { background: rgba(206,147,216,0.2); color: #ce93d8; }
+    [data-theme="dark"] .tag-gineco { background: rgba(244,143,177,0.2); color: #f48fb1; }
+    [data-theme="dark"] .tag-pediatria { background: rgba(128,203,196,0.2); color: #80cbc4; }
 
     .empty-state { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--texto-ter); font-size: 14px; }
 
@@ -296,11 +396,11 @@
     .btn-cafecito:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(0,187,45,0.4); }
 
     /* FOOTER */
-    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); line-height: 1.9; background: var(--bg); }
+    footer { border-top: 1px solid var(--borde); padding: 2rem; text-align: center; font-size: 12px; color: var(--texto-ter); line-height: 1.9; background: var(--bg); transition: background 0.2s, border-color 0.2s; }
     footer a { color: var(--verde); text-decoration: none; }
 
     @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-    .art-card { animation: fadeUp 0.25s ease both; }
+    .art-card, .vade-card, .calc-card { animation: fadeUp 0.25s ease both; }
   </style>
 </head>
 <body>
@@ -310,121 +410,267 @@
   <div class="nav-links">
     <a href="#especialidades">Especialidades</a>
     <a href="#articulos">Artículos</a>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+      <span id="theme-icon">🌙</span> <span id="theme-text">Oscuro</span>
+    </button>
   </div>
 </nav>
 
 <div class="hero">
   <div class="hero-badge">Para estudiantes de medicina argentina 🇦🇷</div>
   <h1>El conocimiento médico, <em>explicado para estudiar</em></h1>
-  <p>Guías clínicas oficiales y protocolos actualizados, reescritos y simplificados para que puedas estudiar, entender y rendir.</p>
+  <p>Guías clínicas oficiales, vademécum práctico y calculadoras médicas en una sola plataforma rápida y accesible.</p>
+  
+  <div class="view-tabs">
+    <button class="tab-btn active" onclick="switchView('articulos-view', this)">📚 Artículos</button>
+    <button class="tab-btn" onclick="switchView('vademecum-view', this)">💊 Vademécum</button>
+    <button class="tab-btn" onclick="switchView('calculadoras-view', this)">🧮 Calculadoras</button>
+  </div>
+
   <div class="search-wrap">
     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco o tema..." autocomplete="off" aria-expanded="false" aria-autocomplete="list" role="combobox"/>
+    <input type="text" id="search-input" placeholder="Buscá una patología, fármaco, calculadora o palabra clave..." autocomplete="off" aria-expanded="false" aria-autocomplete="list" role="combobox"/>
     <div id="search-results" role="listbox"></div>
   </div>
 </div>
 
 <main>
 
-  <div id="especialidades" style="scroll-margin-top:70px">
-    <div class="section-label">Especialidades</div>
-    <div class="bento" id="bento-grid">
-      <div class="bento-card" data-esp="cardio" onclick="filtrar('cardio',this)">
-        <div class="bento-icon">Cdlg</div>
-        <div class="bento-nombre">Cardiología</div>
-        <div class="bento-n" id="n-cardio"></div>
+  <!-- VIEW 1: ARTÍCULOS -->
+  <div id="articulos-view" class="main-view">
+    <div id="especialidades" style="scroll-margin-top:70px">
+      <div class="section-label">Especialidades</div>
+      <div class="bento" id="bento-grid">
+        <div class="bento-card" data-esp="cardio" onclick="filtrar('cardio',this)">
+          <div class="bento-icon">Cdlg</div>
+          <div class="bento-nombre">Cardiología</div>
+          <div class="bento-n" id="n-cardio"></div>
+        </div>
+        <div class="bento-card" data-esp="neuro" onclick="filtrar('neuro',this)">
+          <div class="bento-icon">Neur</div>
+          <div class="bento-nombre">Neurología</div>
+          <div class="bento-n" id="n-neuro"></div>
+        </div>
+        <div class="bento-card" data-esp="psiquiat" onclick="filtrar('psiquiat',this)">
+          <div class="bento-icon">Psiq</div>
+          <div class="bento-nombre">Psiquiatría</div>
+          <div class="bento-n" id="n-psiquiat"></div>
+        </div>
+        <div class="bento-card" data-esp="neumo" onclick="filtrar('neumo',this)">
+          <div class="bento-icon">Nmo</div>
+          <div class="bento-nombre">Neumonología</div>
+          <div class="bento-n" id="n-neumo"></div>
+        </div>
+        <div class="bento-card" data-esp="endo" onclick="filtrar('endo',this)">
+          <div class="bento-icon">Endo</div>
+          <div class="bento-nombre">Endocrinología</div>
+          <div class="bento-n" id="n-endo"></div>
+        </div>
+        <div class="bento-card" data-esp="infecto" onclick="filtrar('infecto',this)">
+          <div class="bento-icon">Inf</div>
+          <div class="bento-nombre">Infectología</div>
+          <div class="bento-n" id="n-infecto"></div>
+        </div>
+        <div class="bento-card" data-esp="urgencia" onclick="filtrar('urgencia',this)">
+          <div class="bento-icon">Urg</div>
+          <div class="bento-nombre">Urgencias</div>
+          <div class="bento-n" id="n-urgencia"></div>
+        </div>
+        <div class="bento-card" data-esp="gastro" onclick="filtrar('gastro',this)">
+          <div class="bento-icon">Gstr</div>
+          <div class="bento-nombre">Gastroenterología</div>
+          <div class="bento-n" id="n-gastro"></div>
+        </div>
+        <div class="bento-card" data-esp="nefro" onclick="filtrar('nefro',this)">
+          <div class="bento-icon">Nfr</div>
+          <div class="bento-nombre">Nefrología</div>
+          <div class="bento-n" id="n-nefro"></div>
+        </div>
+        <div class="bento-card" data-esp="hemato" onclick="filtrar('hemato',this)">
+          <div class="bento-icon">Hmt</div>
+          <div class="bento-nombre">Hematología / Onco</div>
+          <div class="bento-n" id="n-hemato"></div>
+        </div>
+        <div class="bento-card" data-esp="reuma" onclick="filtrar('reuma',this)">
+          <div class="bento-icon">Rum</div>
+          <div class="bento-nombre">Reumatología</div>
+          <div class="bento-n" id="n-reuma"></div>
+        </div>
+        <div class="bento-card" data-esp="gineco" onclick="filtrar('gineco',this)">
+          <div class="bento-icon">Gin</div>
+          <div class="bento-nombre">Obstetricia / Gineco</div>
+          <div class="bento-n" id="n-gineco"></div>
+        </div>
+        <div class="bento-card" data-esp="ciru" onclick="filtrar('ciru',this)">
+          <div class="bento-icon">Cir</div>
+          <div class="bento-nombre">Cirugía</div>
+          <div class="bento-n" id="n-ciru"></div>
+        </div>
+        <div class="bento-card" data-esp="pediatria" onclick="filtrar('pediatria',this)">
+          <div class="bento-icon">Ped</div>
+          <div class="bento-nombre">Pediatría</div>
+          <div class="bento-n" id="n-pediatria"></div>
+        </div>
       </div>
-      <div class="bento-card" data-esp="neuro" onclick="filtrar('neuro',this)">
-        <div class="bento-icon">Neur</div>
-        <div class="bento-nombre">Neurología</div>
-        <div class="bento-n" id="n-neuro"></div>
+    </div>
+
+    <div id="articulos" style="scroll-margin-top:70px">
+      <div class="section-header">
+        <div class="section-titulo" id="section-label">Todos los artículos</div>
+        <div class="section-count" id="art-count"></div>
       </div>
-      <div class="bento-card" data-esp="psiquiat" onclick="filtrar('psiquiat',this)">
-        <div class="bento-icon">Psiq</div>
-        <div class="bento-nombre">Psiquiatría</div>
-        <div class="bento-n" id="n-psiquiat"></div>
+      <div class="chips-wrap">
+        <button class="chip activo" onclick="filtrar('all',this)">Todos</button>
+        <button class="chip" onclick="filtrar('cardio',this)">Cardiología</button>
+        <button class="chip" onclick="filtrar('neuro',this)">Neurología</button>
+        <button class="chip" onclick="filtrar('psiquiat',this)">Psiquiatría</button>
+        <button class="chip" onclick="filtrar('neumo',this)">Neumonología</button>
+        <button class="chip" onclick="filtrar('endo',this)">Endocrinología</button>
+        <button class="chip" onclick="filtrar('infecto',this)">Infectología</button>
+        <button class="chip" onclick="filtrar('urgencia',this)">Urgencias</button>
+        <button class="chip" onclick="filtrar('gastro',this)">Gastro</button>
+        <button class="chip" onclick="filtrar('nefro',this)">Nefrología</button>
+        <button class="chip" onclick="filtrar('hemato',this)">Hemato/Onco</button>
+        <button class="chip" onclick="filtrar('reuma',this)">Reumatología</button>
+        <button class="chip" onclick="filtrar('gineco',this)">Obst/Gineco</button>
+        <button class="chip" onclick="filtrar('ciru',this)">Cirugía</button>
+        <button class="chip" onclick="filtrar('pediatria',this)">Pediatría</button>
       </div>
-      <div class="bento-card" data-esp="neumo" onclick="filtrar('neumo',this)">
-        <div class="bento-icon">Nmo</div>
-        <div class="bento-nombre">Neumonología</div>
-        <div class="bento-n" id="n-neumo"></div>
-      </div>
-      <div class="bento-card" data-esp="endo" onclick="filtrar('endo',this)">
-        <div class="bento-icon">Endo</div>
-        <div class="bento-nombre">Endocrinología</div>
-        <div class="bento-n" id="n-endo"></div>
-      </div>
-      <div class="bento-card" data-esp="infecto" onclick="filtrar('infecto',this)">
-        <div class="bento-icon">Inf</div>
-        <div class="bento-nombre">Infectología</div>
-        <div class="bento-n" id="n-infecto"></div>
-      </div>
-      <div class="bento-card" data-esp="urgencia" onclick="filtrar('urgencia',this)">
-        <div class="bento-icon">Urg</div>
-        <div class="bento-nombre">Urgencias</div>
-        <div class="bento-n" id="n-urgencia"></div>
-      </div>
-      <div class="bento-card" data-esp="gastro" onclick="filtrar('gastro',this)">
-        <div class="bento-icon">Gstr</div>
-        <div class="bento-nombre">Gastroenterología</div>
-        <div class="bento-n" id="n-gastro"></div>
-      </div>
-      <div class="bento-card" data-esp="nefro" onclick="filtrar('nefro',this)">
-        <div class="bento-icon">Nfr</div>
-        <div class="bento-nombre">Nefrología</div>
-        <div class="bento-n" id="n-nefro"></div>
-      </div>
-      <div class="bento-card" data-esp="hemato" onclick="filtrar('hemato',this)">
-        <div class="bento-icon">Hmt</div>
-        <div class="bento-nombre">Hematología / Onco</div>
-        <div class="bento-n" id="n-hemato"></div>
-      </div>
-      <div class="bento-card" data-esp="reuma" onclick="filtrar('reuma',this)">
-        <div class="bento-icon">Rum</div>
-        <div class="bento-nombre">Reumatología</div>
-        <div class="bento-n" id="n-reuma"></div>
-      </div>
-      <div class="bento-card" data-esp="gineco" onclick="filtrar('gineco',this)">
-        <div class="bento-icon">Gin</div>
-        <div class="bento-nombre">Obstetricia / Gineco</div>
-        <div class="bento-n" id="n-gineco"></div>
-      </div>
-      <div class="bento-card" data-esp="ciru" onclick="filtrar('ciru',this)">
-        <div class="bento-icon">Cir</div>
-        <div class="bento-nombre">Cirugía</div>
-        <div class="bento-n" id="n-ciru"></div>
-      </div>
-      <div class="bento-card" data-esp="pediatria" onclick="filtrar('pediatria',this)">
-        <div class="bento-icon">Ped</div>
-        <div class="bento-nombre">Pediatría</div>
-        <div class="bento-n" id="n-pediatria"></div>
-      </div>
+      <div class="articulos-grid" id="articulos-grid"></div>
     </div>
   </div>
 
-  <div id="articulos" style="scroll-margin-top:70px">
+  <!-- VIEW 2: VADEMÉCUM -->
+  <div id="vademecum-view" class="main-view" style="display: none;">
     <div class="section-header">
-      <div class="section-titulo" id="section-label">Todos los artículos</div>
-      <div class="section-count" id="art-count"></div>
+      <div class="section-titulo">Vademécum Clínico de Bolsillo</div>
+      <div class="section-count" id="vade-count"></div>
     </div>
     <div class="chips-wrap">
-      <button class="chip activo" onclick="filtrar('all',this)">Todos</button>
-      <button class="chip" onclick="filtrar('cardio',this)">Cardiología</button>
-      <button class="chip" onclick="filtrar('neuro',this)">Neurología</button>
-      <button class="chip" onclick="filtrar('psiquiat',this)">Psiquiatría</button>
-      <button class="chip" onclick="filtrar('neumo',this)">Neumonología</button>
-      <button class="chip" onclick="filtrar('endo',this)">Endocrinología</button>
-      <button class="chip" onclick="filtrar('infecto',this)">Infectología</button>
-      <button class="chip" onclick="filtrar('urgencia',this)">Urgencias</button>
-      <button class="chip" onclick="filtrar('gastro',this)">Gastro</button>
-      <button class="chip" onclick="filtrar('nefro',this)">Nefrología</button>
-      <button class="chip" onclick="filtrar('hemato',this)">Hemato/Onco</button>
-      <button class="chip" onclick="filtrar('reuma',this)">Reumatología</button>
-      <button class="chip" onclick="filtrar('gineco',this)">Obst/Gineco</button>
-      <button class="chip" onclick="filtrar('ciru',this)">Cirugía</button>
-      <button class="chip" onclick="filtrar('pediatria',this)">Pediatría</button>
+      <button class="chip activo" onclick="filtrarVade('all',this)">Todos</button>
+      <button class="chip" onclick="filtrarVade('atb',this)">Antibióticos</button>
+      <button class="chip" onclick="filtrarVade('cardio',this)">Antihipertensivos/Cardio</button>
+      <button class="chip" onclick="filtrarVade('analgesia',this)">Analgésicos/AINES</button>
+      <button class="chip" onclick="filtrarVade('anticoag',this)">Anticoagulantes</button>
+      <button class="chip" onclick="filtrarVade('psiquiat',this)">Psicofármacos</button>
+      <button class="chip" onclick="filtrarVade('gastro',this)">Gastroenterología</button>
+      <button class="chip" onclick="filtrarVade('endo',this)">Endocrino/Diabetes</button>
     </div>
-    <div class="articulos-grid" id="articulos-grid"></div>
+    <div class="vademecum-grid" id="vademecum-grid"></div>
+  </div>
+
+  <!-- VIEW 3: CALCULADORAS -->
+  <div id="calculadoras-view" class="main-view" style="display: none;">
+    <div class="section-header">
+      <div class="section-titulo">Calculadoras y Escalas Clínicas</div>
+    </div>
+    <div class="calc-grid">
+
+      <!-- CURB 65 -->
+      <div class="calc-card">
+        <div class="calc-title">CURB-65 (Neumonía NAC)</div>
+        <div class="calc-desc">Estratificación de riesgo de mortalidad a 30 días en NAC.</div>
+        <label class="calc-check"><input type="checkbox" id="curb-c" onchange="calcCURB()"> Confusión mental</label>
+        <label class="calc-check"><input type="checkbox" id="curb-u" onchange="calcCURB()"> Uremia (>19 mg/dL o Urea >50 mg/dL)</label>
+        <label class="calc-check"><input type="checkbox" id="curb-r" onchange="calcCURB()"> Frecuencia respiratoria ≥ 30/min</label>
+        <label class="calc-check"><input type="checkbox" id="curb-b" onchange="calcCURB()"> PAS <90 mmHg o PAD ≤60 mmHg</label>
+        <label class="calc-check"><input type="checkbox" id="curb-65" onchange="calcCURB()"> Edad ≥ 65 años</label>
+        <div class="calc-result" id="res-curb">Puntaje: 0 — Manejo ambulatorio bajo riesgo.</div>
+      </div>
+
+      <!-- GLASGOW -->
+      <div class="calc-card">
+        <div class="calc-title">Escala de Glasgow</div>
+        <div class="calc-desc">Evaluación del nivel de conciencia en TEC / Coma.</div>
+        <div class="calc-field">
+          <label>Respuesta Ocular</label>
+          <select id="gcs-o" onchange="calcGCS()">
+            <option value="4">4 - Espontánea</option>
+            <option value="3">3 - A la orden verbal</option>
+            <option value="2">2 - Al dolor</option>
+            <option value="1">1 - Sin respuesta</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Respuesta Verbal</label>
+          <select id="gcs-v" onchange="calcGCS()">
+            <option value="5">5 - Orientado y conversando</option>
+            <option value="4">4 - Desorientado / Confuso</option>
+            <option value="3">3 - Palabras inapropiadas</option>
+            <option value="2">2 - Sonidos incomprensibles</option>
+            <option value="1">1 - Sin respuesta</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Respuesta Motora</label>
+          <select id="gcs-m" onchange="calcGCS()">
+            <option value="6">6 - Obedece órdenes</option>
+            <option value="5">5 - Localiza el dolor</option>
+            <option value="4">4 - Retirada al dolor</option>
+            <option value="3">3 - Flexión anormal (decorticación)</option>
+            <option value="2">2 - Extensión anormal (descerebración)</option>
+            <option value="1">1 - Sin respuesta</option>
+          </select>
+        </div>
+        <div class="calc-result" id="res-gcs">Puntaje: 15/15 — Normal / TEC leve.</div>
+      </div>
+
+      <!-- WELLS TEP -->
+      <div class="calc-card">
+        <div class="calc-title">Score de Wells para TEP</div>
+        <div class="calc-desc">Probabilidad clínica de Tromboembolismo Pulmonar.</div>
+        <label class="calc-check"><input type="checkbox" id="wells-tvp" onchange="calcWells()"> Signos clínicos de TVP (+3)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-noalt" onchange="calcWells()"> TEP más probable que otro dx (+3)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-fc" onchange="calcWells()"> FC > 100 lpm (+1.5)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-inmov" onchange="calcWells()"> Cirugía/Inmovilización previa (+1.5)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-antec" onchange="calcWells()"> Antecedente de TVP/TEP (+1.5)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-hemopt" onchange="calcWells()"> Hemoptisis (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="wells-ca" onchange="calcWells()"> Cáncer activo (+1)</label>
+        <div class="calc-result" id="res-wells">Puntaje: 0 — Probabilidad Baja (Solicitar Dímero D).</div>
+      </div>
+
+      <!-- CHA2DS2-VASc -->
+      <div class="calc-card">
+        <div class="calc-title">CHA₂DS₂-VASc (Riesgo en FA)</div>
+        <div class="calc-desc">Evaluación del riesgo de ACV en Fibrilación Auricular.</div>
+        <label class="calc-check"><input type="checkbox" id="cha-c" onchange="calcCHA()"> Insuficiencia Cardíaca (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-h" onchange="calcCHA()"> Hipertensión arterial (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-a2" onchange="calcCHA()"> Edad ≥ 75 años (+2)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-d" onchange="calcCHA()"> Diabetes Mellitus (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-s2" onchange="calcCHA()"> ACV / AIT / Tromboembolismo previo (+2)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-v" onchange="calcCHA()"> Enfermedad vascular previa (IAM, EAP) (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-a" onchange="calcCHA()"> Edad 65 - 74 años (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-sc" onchange="calcCHA()"> Sexo femenino (+1)</label>
+        <div class="calc-result" id="res-cha">Puntaje: 0 — Riesgo bajo (No requiere anticoagulación).</div>
+      </div>
+
+      <!-- COCKCROFT-GAULT -->
+      <div class="calc-card">
+        <div class="calc-title">Clearance de Creatinina</div>
+        <div class="calc-desc">Fórmula de Cockcroft-Gault para estimación de TFG.</div>
+        <div class="calc-field">
+          <label>Edad (años)</label>
+          <input type="number" id="cg-edad" value="60" oninput="calcCG()">
+        </div>
+        <div class="calc-field">
+          <label>Peso (kg)</label>
+          <input type="number" id="cg-peso" value="70" oninput="calcCG()">
+        </div>
+        <div class="calc-field">
+          <label>Creatinina sérica (mg/dL)</label>
+          <input type="number" step="0.1" id="cg-creat" value="1.0" oninput="calcCG()">
+        </div>
+        <div class="calc-field">
+          <label>Sexo</label>
+          <select id="cg-sexo" onchange="calcCG()">
+            <option value="1.0">Masculino</option>
+            <option value="0.85">Femenino</option>
+          </select>
+        </div>
+        <div class="calc-result" id="res-cg">ClCr estimado: 78.8 mL/min (Función renal conservada).</div>
+      </div>
+
+    </div>
   </div>
 
 </main>
@@ -547,13 +793,133 @@
     { titulo: 'Rotura Prematura de Membranas', url: 'rotura-prematura-membranas.html', tag: 'Obstetricia', clase: 'tag-gineco', esp: 'gineco', keywords: 'rotura prematura membranas rpm ovulares diagnostico amnioscopia pooling ferning cristalizacion fibronectina fetal corticoides betametasona antibioticos ampicilina eritromicina manejo conservador finalizacion embarazo corioamnionitis' },
     { titulo: 'Trauma Abdominal y Abdomen Agudo', url: 'trauma-abdominal.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'trauma abdominal cerrado penetrante fast ecografia focused laparotomia control daños dcs hemoperitoneo lesion hepatica esplenica pancreatica intestinal abdomen agudo diagnostico diferencial peritonitis obstruccion isquemia' },
     { titulo: 'Valores Normales de Laboratorio', url: 'valores-laboratorio.html', tag: 'Referencia', clase: 'tag-hemato', esp: 'hemato', keywords: 'valores normales laboratorio referencia hemograma hemoglobina hematocrito leucocitos plaquetas coagulacion tp aptt fibrinogeno ionograma sodio potasio calcio magnesio fosforo creatinina urea clearance tfg transaminasas alt ast bilirrubina albumina lipidograma colesterol trigliceridos tiroides tsh t4 marcadores cardiacos troponina bnp tubos muestras' },
-    { titulo: 'Espirometría e Interpretación', url: 'espirometria.html', tag: 'Neumología', clase: 'tag-neumo', esp: 'neumo', keywords: 'espirometria interpretacion volúmenes capacidades patron obstructivo restrictivo mixto curva flujo volumen fvc fev1 fev1fvc tiffeneau cvf cpf vems dlco reversibilidad broncodilatador asma epoc fibrosis pulmonar sarcoidosis kco tlc vr gold gina ats ers 2022 espirometro pletismografia kilopattern obstruccion restriccion' },
+    { titulo: 'Espirometría e Interpretación', url: 'espirometria.html', tag: 'Neumonología', clase: 'tag-neumo', esp: 'neumo', keywords: 'espirometria interpretacion volúmenes capacidades patron obstructivo restrictivo mixto curva flujo volumen fvc fev1 fev1fvc tiffeneau cvf cpf vems dlco reversibilidad broncodilatador asma epoc fibrosis pulmonar sarcoidosis kco tlc vr gold gina ats ers 2022 espirometro pletismografia kilopattern obstruccion restriccion' },
     { titulo: 'Síndrome Urémico Hemolítico', url: 'sindrome-uremico-hemolitico.html', tag: 'Nefrología', clase: 'tag-nefro', esp: 'nefro', keywords: 'sindrome uremico hemolitico suh stec escherichia coli o157h7 verotoxina shiga toxina tríada anemia hemolitica microangiopatica trombocitopenia insuficiencia renal aguda diarrea sangrienta colitis hemorragica pediatria ninos argentina incidencia purpura trombocitopenica trombotica ptt complemento atipico eculizumab dialisis hemofiltración banco sangre transfusion plaquetas' },
     { titulo: 'Abdomen Agudo', url: 'abdomen-agudo.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'abdomen agudo dolor abdominal diagnostico diferencial cuadrantes apendicitis colecistitis pancreatitis perforacion ulcera obstruccion intestinal isquemia mesenterica volvulo invaginacion hernia estrangulada embarazo ectopico rotura hepatica splenica signo blumberg rebote mcburney murphy psoas obturador peritonitis laparotomia laparoscopia eco fast tac quirurgico no quirurgico' },
     { titulo: 'RCP Avanzado (ACLS)', url: 'rcp-avanzado-acls.html', tag: 'Urgencias', clase: 'tag-urgencia', esp: 'urgencia', keywords: 'rcp reanimacion cardiopulmonar acls paro cardiaco pcr fibrilacion ventricular fv taquicardia ventricular tv asistolia aesp actividad electrica sin pulso desfibrilacion cardioversion adrenalina epinefrina amiodarona lidocaina bicarbonato magnesio torsades pointes 5h 5t causas reversibles hipovolemia hipoxia acidosis hipotermia taponamiento neumotrax tension tep tromboembolismo pulmonar rosc cuidados post paro temperatura objetivo ttm cadena supervivencia aha algoritmo paro cardiaco bvm intubacion capnografia etco2 vasopresina crash' },
     { titulo: 'Cricotiroidotomía de Urgencia', url: 'cricotiroidotomia-urgencia.html', tag: 'Urgencias', clase: 'tag-urgencia', esp: 'urgencia', keywords: 'cricotiroidotomia urgencia cico cant intubate cant oxygenate via aerea dificil membrana cricotiroidea cartilago tiroides cricoides bisturi bougie tubo orotraqueal vad difficult airway society das 2015 tecnica scalpel bougie tube cricotirotomia puncion cateter quicktrach jet ventilation oxigenacion emergencia traqueostomia estenosis subglotica anatomia cuello laringe trismus angioedema epiglotitis quemadura obstruccion via aerea superior' },
     { titulo: 'Trauma de Pelvis', url: 'trauma-pelvis.html', tag: 'Cirugía', clase: 'tag-ciru', esp: 'ciru', keywords: 'trauma pelvis fractura pelvica tile ao young burgess clasificacion inestable estable libro abierto apc compresion lateral lc cizallamiento vertical vs hemorragia pelvica plexo presacro arteria iliaca interna angioembolizacion packing pelvico preperitoneal fijador externo cinturon pelvico damage control ortopedico dco triada letal hipotermia acidosis coagulopatia transfusion masiva acido tranexamico atx crash-2 ruptura vesical lesion uretral uretrorragia cistostomia sinfisis pubiana sacroiliaca sinfisis diástasis fast ecografia politraumatismo reanimacion hipotension permisiva' },
   ];
+
+  const vademecum = [
+    {
+      nombre: 'Amoxicilina + Ácido Clavulánico',
+      marcas: 'Optamox, Amoxidal Plus, Trifamox IBL',
+      cat: 'atb',
+      clase: 'Antibiótico β-lactámico + Inhibidor de β-lactamasa',
+      posologia: 'VO: 875/125 mg c/12 hs. Pediatría: 40-80 mg/kg/día dividido en 2-3 tomas.',
+      indicaciones: 'NAC, sinusitis aguda, otitis media, infecciones intraabdominales e ITU complejas.',
+      ajuste: 'Si ClCr 10-30 mL/min: administrar c/12-24 hs. Si ClCr <10 mL/min: c/24 hs.',
+      contraind: 'Hipersensibilidad a penicilinas/cefalosporinas, antecedente de ictericia por amoxi-clav.',
+      presentacion: 'Comp. 875/125 mg, 500/125 mg. Suspensión oral 400-57 mg/5mL.'
+    },
+    {
+      nombre: 'Enalapril',
+      marcas: 'Lotrial, Gadopril, Renitec',
+      cat: 'cardio',
+      clase: 'Inhibidor de la ECA (IECA)',
+      posologia: 'VO: 5 a 40 mg/día en 1 o 2 tomas. Dosis inicial en HTA: 5 mg/día.',
+      indicaciones: 'Hipertensión arterial, insuficiencia cardíaca con FEVI reducida, nefropatía diabética.',
+      ajuste: 'Si ClCr <30 mL/min: dosis inicial 2.5 mg/día. Titular según respuesta.',
+      contraind: 'Antecedente de angioedema por IECA, embarazo (contraindicado), estenosis bilateral de arterias renales.',
+      presentacion: 'Comp. 5 mg, 10 mg, 20 mg.'
+    },
+    {
+      nombre: 'Furosemida',
+      marcas: 'Lasix, Koloyd, Nuriban',
+      cat: 'cardio',
+      clase: 'Diurético del asa',
+      posologia: 'VO: 20-80 mg/día. EV (crisis/EAP): 20-40 mg bolo directo, repetir según respuesta.',
+      indicaciones: 'Edema agudo de pulmón, insuficiencia cardíaca, síndrome nefrótico, cirrosis con ascitis, HTA grave.',
+      ajuste: 'No requiere ajuste severo pero monitorizar función renal e ionograma (hipokalemia).',
+      contraind: 'Anuria, hipovolemia grave, hipokalemia severa, encefalopatía hepática.',
+      presentacion: 'Comp. 40 mg. Ampollas 20 mg/2mL.'
+    },
+    {
+      nombre: 'Ibuprofeno',
+      marcas: 'Ibu Evinol, Actron, Ibupirac',
+      cat: 'analgesia',
+      clase: 'AINES (Inhibidor de COX-1 y COX-2)',
+      posologia: 'VO: 400 mg c/6-8 hs (máx 2400 mg/día). Pediatría: 5-10 mg/kg/dosis c/6-8 hs.',
+      indicaciones: 'Dolor leve a moderado, fiebre, cuadros inflamatorios articulares.',
+      ajuste: 'Evitar en insuficiencia renal moderada a severa (ClCr <30 mL/min).',
+      contraind: 'Úlcera péptica activa, sangrado digestivo, insuficiencia cardíaca grave, 3° trimestre embarazo.',
+      presentacion: 'Comp. 400 mg, 600 mg. Suspensión 2% y 4%.'
+    },
+    {
+      nombre: 'Enoxaparina',
+      marcas: 'Clexane, Dilutol',
+      cat: 'anticoag',
+      clase: 'Heparina de Bajo Peso Molecular (HBPM)',
+      posologia: 'Profilaxis: 40 mg SC c/24 hs. Tratamiento (SCA/TEP/TVP): 1 mg/kg SC c/12 hs.',
+      indicaciones: 'Profilaxis de ETEV, tratamiento de TVP/TEP, SCA sin elevación del ST e IAMCEST.',
+      ajuste: 'Si ClCr <30 mL/min: ajustar dosis a 1 mg/kg SC c/24 hs (profilaxis: 20 mg SC c/24 hs).',
+      contraind: 'Sangrado activo mayor, trombocitopenia inducida por heparina (HIT), hemorragia intracraneal.',
+      presentacion: 'Jeringas prellenadas 20, 40, 60, 80 mg.'
+    },
+    {
+      nombre: 'Sertralina',
+      marcas: 'Zoloft, Atenix, Irradial',
+      cat: 'psiquiat',
+      clase: 'Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)',
+      posologia: 'VO: 50 a 200 mg/día en una sola toma (preferentemente mañana o noche).',
+      indicaciones: 'Trastorno depresivo mayor, TAG, trastorno de pánico, TOC, fobia social.',
+      ajuste: 'No requiere ajuste renal significativo. Usar con precaución en insuficiencia hepática.',
+      contraind: 'Uso concomitante con IMAO, hipersensibilidad al fármaco.',
+      presentacion: 'Comp. 50 mg y 100 mg.'
+    },
+    {
+      nombre: 'Omeprazol',
+      marcas: 'Losec, Acimed, Hufral',
+      cat: 'gastro',
+      clase: 'Inhibidor de la Bomba de Protones (IBP)',
+      posologia: 'VO: 20-40 mg/día en ayunas. EV: 40 mg c/12-24 hs (HDA: bolo 80 mg + infusión 8 mg/h).',
+      indicaciones: 'Úlcera péptica, ERGE, profilaxis de úlcera de estrés, profilaxis por AINES, HDA.',
+      ajuste: 'No requiere ajuste en insuficiencia renal.',
+      contraind: 'Hipersensibilidad a sustitutos del benzimidazol, coadministración con rilpivirina.',
+      presentacion: 'Cáps. 20 mg. Frasco ampolla EV 40 mg.'
+    },
+    {
+      nombre: 'Metformina',
+      marcas: 'Glucophage, Bi-EUGUCON, Baligluc',
+      cat: 'endo',
+      clase: 'Biguanida (Antidiabético oral)',
+      posologia: 'VO: 500-850 mg 2-3 veces al día con comidas (máx 2550 mg/día).',
+      indicaciones: 'Diabetes Mellitus Tipo 2, Síndrome de Ovario Poliquístico (SOP).',
+      ajuste: 'Si TFG 30-45 mL/min: reducir dosis un 50%. Si TFG <30 mL/min: contraindicado por riesgo de acidosis láctica.',
+      contraind: 'Insuficiencia renal severa (TFG <30), hipoxia severa, shock, insuficiencia hepática, alcoholismo agudo.',
+      presentacion: 'Comp. 500 mg, 850 mg, 1000 mg.'
+    }
+  ];
+
+  // Theme Manager
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('medpedia-theme', newTheme);
+    updateThemeUI(newTheme);
+  }
+
+  function updateThemeUI(theme) {
+    const icon = document.getElementById('theme-icon');
+    const text = document.getElementById('theme-text');
+    if (theme === 'dark') {
+      icon.textContent = '☀️';
+      text.textContent = 'Claro';
+    } else {
+      icon.textContent = '🌙';
+      text.textContent = 'Oscuro';
+    }
+  }
+
+  // View Switcher
+  function switchView(viewId, btn) {
+    document.querySelectorAll('.main-view').forEach(v => v.style.display = 'none');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(viewId).style.display = 'block';
+    if(btn) btn.classList.add('active');
+  }
 
   // Contadores por especialidad
   const espIds = { cardio:'n-cardio', neuro:'n-neuro', psiquiat:'n-psiquiat', neumo:'n-neumo', endo:'n-endo', infecto:'n-infecto', urgencia:'n-urgencia', gastro:'n-gastro', nefro:'n-nefro', hemato:'n-hemato', reuma:'n-reuma', gineco:'n-gineco', ciru:'n-ciru', pediatria:'n-pediatria' };
@@ -602,7 +968,127 @@
     renderArticulos(filtrados);
   }
 
-  // Búsqueda interactiva con soporte para teclado y mensaje sin resultados
+  // Vademecum Render & Filter
+  function renderVademecum(lista) {
+    const grid = document.getElementById('vademecum-grid');
+    grid.innerHTML = '';
+    if (!lista.length) {
+      grid.innerHTML = '<div class="empty-state">No se encontraron fármacos.</div>';
+      document.getElementById('vade-count').textContent = '';
+      return;
+    }
+    lista.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'vade-card';
+      card.innerHTML = `
+        <div class="vade-header">
+          <div>
+            <div class="vade-nombre">${v.nombre}</div>
+            <div class="vade-marca">Marcas Arg: ${v.marcas}</div>
+          </div>
+          <span class="vade-clase">${v.clase}</span>
+        </div>
+        <div class="vade-body">
+          <div class="vade-sec"><div class="vade-sec-title">📍 Indicaciones</div>${v.indicaciones}</div>
+          <div class="vade-sec"><div class="vade-sec-title">💉 Posología y Vía</div>${v.posologia}</div>
+          <div class="vade-sec"><div class="vade-sec-title">⚠️ Ajuste Renal</div>${v.ajuste}</div>
+          <div class="vade-sec"><div class="vade-sec-title">🚫 Contraindicaciones</div>${v.contraind}</div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    document.getElementById('vade-count').textContent = lista.length + ' fármacos';
+  }
+
+  function filtrarVade(cat, el) {
+    document.querySelectorAll('#vademecum-view .chip').forEach(c => c.classList.remove('activo'));
+    if(el) el.classList.add('activo');
+    const filtrados = cat === 'all' ? vademecum : vademecum.filter(v => v.cat === cat);
+    renderVademecum(filtrados);
+  }
+
+  // CALCULADORAS LOGIC
+  function calcCURB() {
+    let pts = 0;
+    if(document.getElementById('curb-c').checked) pts++;
+    if(document.getElementById('curb-u').checked) pts++;
+    if(document.getElementById('curb-r').checked) pts++;
+    if(document.getElementById('curb-b').checked) pts++;
+    if(document.getElementById('curb-65').checked) pts++;
+
+    let res = `Puntaje: ${pts} — `;
+    if(pts <= 1) res += "Manejo ambulatorio (Bajo riesgo de mortalidad).";
+    else if(pts === 2) res += "Manejo en internación general o ambulatorio estricto.";
+    else res += "Manejo hospitalario (Evaluar criterios de UCI / Cuidado intensivo).";
+    document.getElementById('res-curb').textContent = res;
+  }
+
+  function calcGCS() {
+    const o = parseInt(document.getElementById('gcs-o').value);
+    const v = parseInt(document.getElementById('gcs-v').value);
+    const m = parseInt(document.getElementById('gcs-m').value);
+    const total = o + v + m;
+    let res = `Puntaje: ${total}/15 — `;
+    if(total >= 14) res += "Normal / TEC Leve.";
+    else if(total >= 9) res += "TEC Moderado.";
+    else res += "TEC Grave / Evaluar intubación orotraqueal (GCS ≤ 8).";
+    document.getElementById('res-gcs').textContent = res;
+  }
+
+  function calcWells() {
+    let pts = 0;
+    if(document.getElementById('wells-tvp').checked) pts += 3;
+    if(document.getElementById('wells-noalt').checked) pts += 3;
+    if(document.getElementById('wells-fc').checked) pts += 1.5;
+    if(document.getElementById('wells-inmov').checked) pts += 1.5;
+    if(document.getElementById('wells-antec').checked) pts += 1.5;
+    if(document.getElementById('wells-hemopt').checked) pts += 1;
+    if(document.getElementById('wells-ca').checked) pts += 1;
+
+    let res = `Puntaje: ${pts} — `;
+    if(pts <= 1.5) res += "Probabilidad Baja (Solicitar Dímero D ultrasensible).";
+    else if(pts <= 6) res += "Probabilidad Moderada (Dímero D o AngioTAC).";
+    else res += "Probabilidad Alta (Indicación directa de AngioTAC de tórax).";
+    document.getElementById('res-wells').textContent = res;
+  }
+
+  function calcCHA() {
+    let pts = 0;
+    if(document.getElementById('cha-c').checked) pts += 1;
+    if(document.getElementById('cha-h').checked) pts += 1;
+    if(document.getElementById('cha-a2').checked) pts += 2;
+    if(document.getElementById('cha-d').checked) pts += 1;
+    if(document.getElementById('cha-s2').checked) pts += 2;
+    if(document.getElementById('cha-v').checked) pts += 1;
+    if(document.getElementById('cha-a').checked) pts += 1;
+    if(document.getElementById('cha-sc').checked) pts += 1;
+
+    let res = `Puntaje: ${pts} — `;
+    if(pts === 0) res += "Riesgo bajo (Sin indicación de anticoagulación).";
+    else if(pts === 1) res += "Riesgo intermedio (Considerar anticoagulación según riesgo/beneficio).";
+    else res += "Riesgo elevado (Indicación formal de anticoagulación oral: ACOD / Warfarina).";
+    document.getElementById('res-cha').textContent = res;
+  }
+
+  function calcCG() {
+    const edad = parseFloat(document.getElementById('cg-edad').value) || 0;
+    const peso = parseFloat(document.getElementById('cg-peso').value) || 0;
+    const creat = parseFloat(document.getElementById('cg-creat').value) || 1;
+    const sexo = parseFloat(document.getElementById('cg-sexo').value);
+
+    if(edad <= 0 || peso <= 0 || creat <= 0) return;
+
+    const clcr = (((140 - edad) * peso) / (72 * creat)) * sexo;
+    let res = `ClCr estimado: ${clcr.toFixed(1)} mL/min — `;
+    if(clcr >= 90) res += "Función renal conservada (G1).";
+    else if(clcr >= 60) res += "Disminución leve (G2).";
+    else if(clcr >= 30) res += "Disminución moderada a severa (G3-G4). Requiere ajuste de dosis.";
+    else res += "Falla renal severa (G5). Precaución extrema con fármacos de excreción renal.";
+
+    document.getElementById('res-cg').textContent = res;
+  }
+
+  // Búsqueda Global (Artículos + Vademécum)
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
   let selectedIndex = -1;
@@ -628,14 +1114,22 @@
       return; 
     }
     
-    const matches = articulos.filter(a =>
+    // Coincidencias en artículos
+    const matchArt = articulos.filter(a =>
       a.titulo.toLowerCase().includes(q) || a.tag.toLowerCase().includes(q) || a.keywords.toLowerCase().includes(q)
-    ).slice(0, 8);
+    ).map(a => ({ titulo: a.titulo, url: a.url, tag: a.tag, clase: a.clase, tipo: 'Artículo' }));
+
+    // Coincidencias en vademecum
+    const matchVade = vademecum.filter(v =>
+      v.nombre.toLowerCase().includes(q) || v.marcas.toLowerCase().includes(q) || v.indicaciones.toLowerCase().includes(q)
+    ).map(v => ({ titulo: `💊 ${v.nombre} (${v.marcas})`, url: '#vademecum-view', tag: 'Vademécum', clase: 'tag-endo', tipo: 'Fármaco', action: () => { switchView('vademecum-view'); } }));
+
+    const matches = [...matchArt, ...matchVade].slice(0, 8);
     
     if (!matches.length) { 
       searchResults.innerHTML = '<div class="search-no-results">No se encontraron resultados para tu búsqueda</div>';
     } else {
-      searchResults.innerHTML = matches.map(a => `<a href="${a.url}" class="search-result-item" role="option"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+      searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
     }
     
     searchResults.style.display = 'block';
@@ -672,8 +1166,14 @@
     }
   });
 
-  // Inicialización
+  // Init Theme
+  const savedTheme = localStorage.getItem('medpedia-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeUI(savedTheme);
+
+  // Init Views & Content
   renderArticulos(articulos);
+  renderVademecum(vademecum);
 </script>
 </body>
 </html>
