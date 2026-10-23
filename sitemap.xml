@@ -1,577 +1,577 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/</loc>
+    <loc>https://medpedia.com.ar/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/iam.html</loc>
+    <loc>https://medpedia.com.ar/iam.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/scasest.html</loc>
+    <loc>https://medpedia.com.ar/scasest.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hta.html</loc>
+    <loc>https://medpedia.com.ar/hta.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/ic.html</loc>
+    <loc>https://medpedia.com.ar/ic.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/fa.html</loc>
+    <loc>https://medpedia.com.ar/fa.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/eap.html</loc>
+    <loc>https://medpedia.com.ar/eap.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/electrocardiograma.html</loc>
+    <loc>https://medpedia.com.ar/electrocardiograma.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/dislipemias.html</loc>
+    <loc>https://medpedia.com.ar/dislipemias.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/pericarditis-taponamiento.html</loc>
+    <loc>https://medpedia.com.ar/pericarditis-taponamiento.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/endocarditis.html</loc>
+    <loc>https://medpedia.com.ar/endocarditis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/shock.html</loc>
+    <loc>https://medpedia.com.ar/shock.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/tep.html</loc>
+    <loc>https://medpedia.com.ar/tep.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/acv.html</loc>
+    <loc>https://medpedia.com.ar/acv.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/meningitis-encefalitis.html</loc>
+    <loc>https://medpedia.com.ar/meningitis-encefalitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/demencias.html</loc>
+    <loc>https://medpedia.com.ar/demencias.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/epilepsia.html</loc>
+    <loc>https://medpedia.com.ar/epilepsia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/tec.html</loc>
+    <loc>https://medpedia.com.ar/tec.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/convulsion-sincope.html</loc>
+    <loc>https://medpedia.com.ar/convulsion-sincope.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/esclerosis-multiple.html</loc>
+    <loc>https://medpedia.com.ar/esclerosis-multiple.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/asma-epoc.html</loc>
+    <loc>https://medpedia.com.ar/asma-epoc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/neumonia.html</loc>
+    <loc>https://medpedia.com.ar/neumonia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/tuberculosis.html</loc>
+    <loc>https://medpedia.com.ar/tuberculosis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-de-pulmon.html</loc>
+    <loc>https://medpedia.com.ar/cancer-de-pulmon.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/dm2.html</loc>
+    <loc>https://medpedia.com.ar/dm2.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cad.html</loc>
+    <loc>https://medpedia.com.ar/cad.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/obesidad.html</loc>
+    <loc>https://medpedia.com.ar/obesidad.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hipotiroidismo-hipertiroidismo.html</loc>
+    <loc>https://medpedia.com.ar/hipotiroidismo-hipertiroidismo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trastornos-calcio.html</loc>
+    <loc>https://medpedia.com.ar/trastornos-calcio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/feocromocitoma.html</loc>
+    <loc>https://medpedia.com.ar/feocromocitoma.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/insuficiencia-suprarrenal.html</loc>
+    <loc>https://medpedia.com.ar/insuficiencia-suprarrenal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sepsis.html</loc>
+    <loc>https://medpedia.com.ar/sepsis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/dengue.html</loc>
+    <loc>https://medpedia.com.ar/dengue.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/itu.html</loc>
+    <loc>https://medpedia.com.ar/itu.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hiv-sida.html</loc>
+    <loc>https://medpedia.com.ar/hiv-sida.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/enfermedades-exantematicas.html</loc>
+    <loc>https://medpedia.com.ar/enfermedades-exantematicas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/vacunacion.html</loc>
+    <loc>https://medpedia.com.ar/vacunacion.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hemorragia-digestiva.html</loc>
+    <loc>https://medpedia.com.ar/hemorragia-digestiva.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/pancreatitis.html</loc>
+    <loc>https://medpedia.com.ar/pancreatitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/pancreatitis-cronica.html</loc>
+    <loc>https://medpedia.com.ar/pancreatitis-cronica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cirrosis.html</loc>
+    <loc>https://medpedia.com.ar/cirrosis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/ulcera-peptica.html</loc>
+    <loc>https://medpedia.com.ar/ulcera-peptica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/eii-crohn-colitis-ulcerosa.html</loc>
+    <loc>https://medpedia.com.ar/eii-crohn-colitis-ulcerosa.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/colecistitis.html</loc>
+    <loc>https://medpedia.com.ar/colecistitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/colangitis.html</loc>
+    <loc>https://medpedia.com.ar/colangitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hepatitis-virales.html</loc>
+    <loc>https://medpedia.com.ar/hepatitis-virales.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/esteatosis-hepatica.html</loc>
+    <loc>https://medpedia.com.ar/esteatosis-hepatica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/ira.html</loc>
+    <loc>https://medpedia.com.ar/ira.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/erc.html</loc>
+    <loc>https://medpedia.com.ar/erc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trastornos-sodio.html</loc>
+    <loc>https://medpedia.com.ar/trastornos-sodio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trastornos-potasio.html</loc>
+    <loc>https://medpedia.com.ar/trastornos-potasio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/anemia.html</loc>
+    <loc>https://medpedia.com.ar/anemia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/linfomas.html</loc>
+    <loc>https://medpedia.com.ar/linfomas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/leucemias.html</loc>
+    <loc>https://medpedia.com.ar/leucemias.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/oncologia.html</loc>
+    <loc>https://medpedia.com.ar/oncologia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-de-mama.html</loc>
+    <loc>https://medpedia.com.ar/cancer-de-mama.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-colorrectal.html</loc>
+    <loc>https://medpedia.com.ar/cancer-colorrectal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/artritis-reumatoidea.html</loc>
+    <loc>https://medpedia.com.ar/artritis-reumatoidea.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/lupus.html</loc>
+    <loc>https://medpedia.com.ar/lupus.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/vasculitis.html</loc>
+    <loc>https://medpedia.com.ar/vasculitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/gota.html</loc>
+    <loc>https://medpedia.com.ar/gota.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/preeclampsia.html</loc>
+    <loc>https://medpedia.com.ar/preeclampsia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/amenaza-parto-pretermino.html</loc>
+    <loc>https://medpedia.com.ar/amenaza-parto-pretermino.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hemorragia-postparto.html</loc>
+    <loc>https://medpedia.com.ar/hemorragia-postparto.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/embarazo-ectopico.html</loc>
+    <loc>https://medpedia.com.ar/embarazo-ectopico.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sop.html</loc>
+    <loc>https://medpedia.com.ar/sop.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/anticonceptivos.html</loc>
+    <loc>https://medpedia.com.ar/anticonceptivos.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/placenta-previa.html</loc>
+    <loc>https://medpedia.com.ar/placenta-previa.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/desprendimiento-placenta.html</loc>
+    <loc>https://medpedia.com.ar/desprendimiento-placenta.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/endometriosis.html</loc>
+    <loc>https://medpedia.com.ar/endometriosis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/enfermedad-pelvica-inflamatoria.html</loc>
+    <loc>https://medpedia.com.ar/enfermedad-pelvica-inflamatoria.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/apendicitis.html</loc>
+    <loc>https://medpedia.com.ar/apendicitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hernias.html</loc>
+    <loc>https://medpedia.com.ar/hernias.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/peritonitis.html</loc>
+    <loc>https://medpedia.com.ar/peritonitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/obstruccion-intestinal.html</loc>
+    <loc>https://medpedia.com.ar/obstruccion-intestinal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/traumatologia.html</loc>
+    <loc>https://medpedia.com.ar/traumatologia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/bronquiolitis.html</loc>
+    <loc>https://medpedia.com.ar/bronquiolitis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-febril-nino.html</loc>
+    <loc>https://medpedia.com.ar/sindrome-febril-nino.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-gastrico.html</loc>
+    <loc>https://medpedia.com.ar/cancer-gastrico.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trastornos-personalidad.html</loc>
+    <loc>https://medpedia.com.ar/trastornos-personalidad.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/its-ets.html</loc>
+    <loc>https://medpedia.com.ar/its-ets.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/chagas.html</loc>
+    <loc>https://medpedia.com.ar/chagas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/crisis-convulsiva-pediatrica.html</loc>
+    <loc>https://medpedia.com.ar/crisis-convulsiva-pediatrica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/aborto-complicaciones.html</loc>
+    <loc>https://medpedia.com.ar/aborto-complicaciones.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cardiopatias-congenitas.html</loc>
+    <loc>https://medpedia.com.ar/cardiopatias-congenitas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cefaleas-migrana.html</loc>
+    <loc>https://medpedia.com.ar/cefaleas-migrana.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/climaterio-menopausia.html</loc>
+    <loc>https://medpedia.com.ar/climaterio-menopausia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/diarrea-cronica-sii.html</loc>
+    <loc>https://medpedia.com.ar/diarrea-cronica-sii.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/fiebre-reumatica-kawasaki.html</loc>
+    <loc>https://medpedia.com.ar/fiebre-reumatica-kawasaki.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-cushing.html</loc>
+    <loc>https://medpedia.com.ar/sindrome-cushing.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-vesicula-via-biliar.html</loc>
+    <loc>https://medpedia.com.ar/cancer-vesicula-via-biliar.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/diabetes-gestacional.html</loc>
+    <loc>https://medpedia.com.ar/diabetes-gestacional.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/espondiloartropatias.html</loc>
+    <loc>https://medpedia.com.ar/espondiloartropatias.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/esquizofrenia-psicosis.html</loc>
+    <loc>https://medpedia.com.ar/esquizofrenia-psicosis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/ansiedad-depresion.html</loc>
+    <loc>https://medpedia.com.ar/ansiedad-depresion.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/guillain-barre.html</loc>
+    <loc>https://medpedia.com.ar/guillain-barre.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hidatidosis.html</loc>
+    <loc>https://medpedia.com.ar/hidatidosis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/anafilaxia.html</loc>
+    <loc>https://medpedia.com.ar/anafilaxia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cancer-cuello-uterino.html</loc>
+    <loc>https://medpedia.com.ar/cancer-cuello-uterino.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/control-prenatal.html</loc>
+    <loc>https://medpedia.com.ar/control-prenatal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/crisis-hipertensiva.html</loc>
+    <loc>https://medpedia.com.ar/crisis-hipertensiva.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/deshidratacion-rehidratacion.html</loc>
+    <loc>https://medpedia.com.ar/deshidratacion-rehidratacion.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/fibromialgia.html</loc>
+    <loc>https://medpedia.com.ar/fibromialgia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/hipoglucemia.html</loc>
+    <loc>https://medpedia.com.ar/hipoglucemia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/intoxicaciones-agudas.html</loc>
+    <loc>https://medpedia.com.ar/intoxicaciones-agudas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/medio-interno.html</loc>
+    <loc>https://medpedia.com.ar/medio-interno.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/rotura-prematura-membranas.html</loc>
+    <loc>https://medpedia.com.ar/rotura-prematura-membranas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trauma-abdominal.html</loc>
+    <loc>https://medpedia.com.ar/trauma-abdominal.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/valores-laboratorio.html</loc>
+    <loc>https://medpedia.com.ar/valores-laboratorio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/espirometria.html</loc>
+    <loc>https://medpedia.com.ar/espirometria.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/sindrome-uremico-hemolitico.html</loc>
+    <loc>https://medpedia.com.ar/sindrome-uremico-hemolitico.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/abdomen-agudo.html</loc>
+    <loc>https://medpedia.com.ar/abdomen-agudo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/rcp-avanzado-acls.html</loc>
+    <loc>https://medpedia.com.ar/rcp-avanzado-acls.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/cricotiroidotomia-urgencia.html</loc>
+    <loc>https://medpedia.com.ar/cricotiroidotomia-urgencia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://medpedia-7ahi.vercel.app/trauma-pelvis.html</loc>
+    <loc>https://medpedia.com.ar/trauma-pelvis.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
