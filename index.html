@@ -24,6 +24,8 @@
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://medpedia.com.ar/">
+  <script>try{var t=localStorage.getItem('medpedia-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
   <style>
     :root {
       --verde: #1D9E75;
@@ -37,7 +39,7 @@
       --borde-hover: #ccccca;
       --texto: #111110;
       --texto-sec: #666662;
-      --texto-ter: #aaaaaa;
+      --texto-ter: #76766f;
       --card-bg: #f5f5f3;
     }
 
@@ -107,7 +109,7 @@
     .hero::before {
       content: '';
       position: absolute;
-      width: 600px; height: 600px;
+      width: min(600px, 100%); height: 600px;
       background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 65%);
       top: -100px; left: 50%; transform: translateX(-50%);
       pointer-events: none;
@@ -145,7 +147,7 @@
       max-width: 520px;
       margin: 0 auto 2.5rem;
       line-height: 1.65;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* TABS */
@@ -304,7 +306,7 @@
     .art-titulo {
       font-size: 13.5px; font-weight: 400; color: var(--texto);
       line-height: 1.4; margin-bottom: 5px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
     .art-tag { font-size: 10.5px; padding: 2px 9px; border-radius: 7px; font-weight: 600; display: inline-block; }
     .art-arrow { color: var(--texto-ter); font-size: 14px; flex-shrink: 0; transition: color 0.15s, transform 0.15s; }
@@ -347,7 +349,7 @@
     .vade-hl { background: rgba(255,200,0,0.35); color: inherit; border-radius: 2px; }
 
     /* CALCULADORAS STYLES */
-    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 16px; }
     .calc-card {
       background: var(--bg2);
       border: 1px solid var(--borde);
@@ -394,9 +396,9 @@
     [data-theme="dark"] .tag-urgencia { background: rgba(239,83,80,0.2); color: #ef5350; }
     [data-theme="dark"] .tag-gastro { background: rgba(255,224,130,0.2); color: #ffe082; }
     [data-theme="dark"] .tag-hemato { background: rgba(206,147,216,0.2); color: #ce93d8; }
-    [data-theme="dark"] .tag-nefro { background: rgba(128,203,196,0.2); color: #80cbd4; }
+    [data-theme="dark"] .tag-nefro { background: rgba(129,212,250,0.2); color: #81d4fa; }
     [data-theme="dark"] .tag-ciru { background: rgba(159,168,218,0.2); color: #9fa8da; }
-    [data-theme="dark"] .tag-reuma { background: rgba(206,147,216,0.2); color: #ce93d8; }
+    [data-theme="dark"] .tag-reuma { background: rgba(197,163,255,0.2); color: #c5a3ff; }
     [data-theme="dark"] .tag-gineco { background: rgba(244,143,177,0.2); color: #f48fb1; }
     [data-theme="dark"] .tag-pediatria { background: rgba(128,203,196,0.2); color: #80cbc4; }
 
@@ -420,6 +422,42 @@
 
     @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
     .art-card, .vade-card, .calc-card { animation: fadeUp 0.25s ease both; }
+  
+    /* ---- Legibilidad e interacción ---- */
+    :root { --verde-txt: #0F6E56; }
+    [data-theme="dark"] { --verde-txt: #3ddc9f; }
+    body { font-size: 15px; line-height: 1.5; }
+    :focus-visible { outline: 2px solid var(--verde); outline-offset: 2px; }
+    .hero-badge, .vade-marca, .vade-clase, .bento-icon, footer a, .vade-sec.vade-pearl .vade-sec-title { color: var(--verde-txt); }
+    .tab-btn.active, .chip.activo { background: var(--verde-oscuro); border-color: var(--verde-oscuro); color: #fff; }
+    .nav-links { gap: 1.4rem; }
+    .nav-links a { font-size: 14px; }
+    .nav-links a.active { color: var(--verde-txt); font-weight: 600; }
+    .section-titulo { font-size: 22px; }
+    .section-count { font-size: 13px; color: var(--texto-sec); }
+    .chip { font-size: 13px; padding: 6px 14px; }
+    .bento-card { display: block; width: 100%; text-align: left; font-family: inherit; color: inherit; }
+    .bento-card > span { display: block; }
+    .bento-card > .bento-icon { display: flex; align-items: center; gap: 6px; font-size: 11.5px; }
+    .bento-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor !important; flex-shrink: 0; }
+    .bento-nombre { font-size: 14px; }
+    .bento-n { font-size: 12px; color: var(--texto-sec); }
+    .art-titulo { font-size: 14.5px; }
+    .art-tag { font-size: 11.5px; }
+    .vade-body { font-size: 14px; line-height: 1.65; }
+    .vade-sec-title { font-size: 12px; }
+    .calc-desc, .calc-field label { font-size: 13px; }
+    .calc-check { font-size: 13.5px; }
+    .calc-result { font-size: 14px; line-height: 1.5; }
+    main { scroll-margin-top: 70px; }
+    @media (max-width: 680px) {
+      nav { padding: 0 1rem; }
+      .nav-links a { display: none; }
+      .hero { padding: 2.5rem 1rem; }
+      main { padding: 2rem 1rem 5rem; }
+      .view-tabs { flex-wrap: wrap; }
+      .btn-cafecito { padding: 10px 14px; bottom: 16px; right: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -427,8 +465,9 @@
 <nav>
   <a href="index.html" class="logo">Med<span>pedia</span></a>
   <div class="nav-links">
-    <a href="#especialidades">Especialidades</a>
-    <a href="#articulos">Artículos</a>
+    <a href="#" data-view="articulos-view" class="active">Artículos</a>
+    <a href="#vademecum" data-view="vademecum-view">Vademécum</a>
+    <a href="#calculadoras" data-view="calculadoras-view">Calculadoras</a>
     <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
       <span id="theme-icon">🌙</span> <span id="theme-text">Oscuro</span>
     </button>
@@ -441,9 +480,9 @@
   <p>Guías clínicas oficiales, vademécum práctico y calculadoras médicas en una sola plataforma rápida y accesible.</p>
   
   <div class="view-tabs">
-    <button class="tab-btn active" onclick="switchView('articulos-view', this)">📚 Artículos</button>
-    <button class="tab-btn" onclick="switchView('vademecum-view', this)">💊 Vademécum</button>
-    <button class="tab-btn" onclick="switchView('calculadoras-view', this)">🧮 Calculadoras</button>
+    <button class="tab-btn active" data-view="articulos-view">📚 Artículos</button>
+    <button class="tab-btn" data-view="vademecum-view">💊 Vademécum</button>
+    <button class="tab-btn" data-view="calculadoras-view">🧮 Calculadoras</button>
   </div>
 
   <div class="search-wrap">
@@ -459,78 +498,7 @@
   <div id="articulos-view" class="main-view">
     <div id="especialidades" style="scroll-margin-top:70px">
       <div class="section-label">Especialidades</div>
-      <div class="bento" id="bento-grid">
-        <div class="bento-card" data-esp="cardio" onclick="filtrar('cardio',this)">
-          <div class="bento-icon">Cdlg</div>
-          <div class="bento-nombre">Cardiología</div>
-          <div class="bento-n" id="n-cardio"></div>
-        </div>
-        <div class="bento-card" data-esp="neuro" onclick="filtrar('neuro',this)">
-          <div class="bento-icon">Neur</div>
-          <div class="bento-nombre">Neurología</div>
-          <div class="bento-n" id="n-neuro"></div>
-        </div>
-        <div class="bento-card" data-esp="psiquiat" onclick="filtrar('psiquiat',this)">
-          <div class="bento-icon">Psiq</div>
-          <div class="bento-nombre">Psiquiatría</div>
-          <div class="bento-n" id="n-psiquiat"></div>
-        </div>
-        <div class="bento-card" data-esp="neumo" onclick="filtrar('neumo',this)">
-          <div class="bento-icon">Nmo</div>
-          <div class="bento-nombre">Neumonología</div>
-          <div class="bento-n" id="n-neumo"></div>
-        </div>
-        <div class="bento-card" data-esp="endo" onclick="filtrar('endo',this)">
-          <div class="bento-icon">Endo</div>
-          <div class="bento-nombre">Endocrinología</div>
-          <div class="bento-n" id="n-endo"></div>
-        </div>
-        <div class="bento-card" data-esp="infecto" onclick="filtrar('infecto',this)">
-          <div class="bento-icon">Inf</div>
-          <div class="bento-nombre">Infectología</div>
-          <div class="bento-n" id="n-infecto"></div>
-        </div>
-        <div class="bento-card" data-esp="urgencia" onclick="filtrar('urgencia',this)">
-          <div class="bento-icon">Urg</div>
-          <div class="bento-nombre">Urgencias</div>
-          <div class="bento-n" id="n-urgencia"></div>
-        </div>
-        <div class="bento-card" data-esp="gastro" onclick="filtrar('gastro',this)">
-          <div class="bento-icon">Gstr</div>
-          <div class="bento-nombre">Gastroenterología</div>
-          <div class="bento-n" id="n-gastro"></div>
-        </div>
-        <div class="bento-card" data-esp="nefro" onclick="filtrar('nefro',this)">
-          <div class="bento-icon">Nfr</div>
-          <div class="bento-nombre">Nefrología</div>
-          <div class="bento-n" id="n-nefro"></div>
-        </div>
-        <div class="bento-card" data-esp="hemato" onclick="filtrar('hemato',this)">
-          <div class="bento-icon">Hmt</div>
-          <div class="bento-nombre">Hematología / Onco</div>
-          <div class="bento-n" id="n-hemato"></div>
-        </div>
-        <div class="bento-card" data-esp="reuma" onclick="filtrar('reuma',this)">
-          <div class="bento-icon">Rum</div>
-          <div class="bento-nombre">Reumatología</div>
-          <div class="bento-n" id="n-reuma"></div>
-        </div>
-        <div class="bento-card" data-esp="gineco" onclick="filtrar('gineco',this)">
-          <div class="bento-icon">Gin</div>
-          <div class="bento-nombre">Obstetricia / Gineco</div>
-          <div class="bento-n" id="n-gineco"></div>
-        </div>
-        <div class="bento-card" data-esp="ciru" onclick="filtrar('ciru',this)">
-          <div class="bento-icon">Cir</div>
-          <div class="bento-nombre">Cirugía</div>
-          <div class="bento-n" id="n-ciru"></div>
-        </div>
-        <div class="bento-card" data-esp="pediatria" onclick="filtrar('pediatria',this)">
-          <div class="bento-icon">Ped</div>
-          <div class="bento-nombre">Pediatría</div>
-          <div class="bento-n" id="n-pediatria"></div>
-        </div>
-      </div>
+      <div class="bento" id="bento-grid"></div>
     </div>
 
     <div id="articulos" style="scroll-margin-top:70px">
@@ -538,23 +506,7 @@
         <div class="section-titulo" id="section-label">Todos los artículos</div>
         <div class="section-count" id="art-count"></div>
       </div>
-      <div class="chips-wrap">
-        <button class="chip activo" onclick="filtrar('all',this)">Todos</button>
-        <button class="chip" onclick="filtrar('cardio',this)">Cardiología</button>
-        <button class="chip" onclick="filtrar('neuro',this)">Neurología</button>
-        <button class="chip" onclick="filtrar('psiquiat',this)">Psiquiatría</button>
-        <button class="chip" onclick="filtrar('neumo',this)">Neumonología</button>
-        <button class="chip" onclick="filtrar('endo',this)">Endocrinología</button>
-        <button class="chip" onclick="filtrar('infecto',this)">Infectología</button>
-        <button class="chip" onclick="filtrar('urgencia',this)">Urgencias</button>
-        <button class="chip" onclick="filtrar('gastro',this)">Gastro</button>
-        <button class="chip" onclick="filtrar('nefro',this)">Nefrología</button>
-        <button class="chip" onclick="filtrar('hemato',this)">Hemato/Onco</button>
-        <button class="chip" onclick="filtrar('reuma',this)">Reumatología</button>
-        <button class="chip" onclick="filtrar('gineco',this)">Obst/Gineco</button>
-        <button class="chip" onclick="filtrar('ciru',this)">Cirugía</button>
-        <button class="chip" onclick="filtrar('pediatria',this)">Pediatría</button>
-      </div>
+      <div class="chips-wrap" id="art-chips"></div>
       <div class="articulos-grid" id="articulos-grid"></div>
     </div>
   </div>
@@ -581,19 +533,19 @@
     <div class="calc-grid">
 
       <!-- CURB 65 -->
-      <div class="calc-card">
+      <div class="calc-card" id="calc-curb">
         <div class="calc-title">CURB-65 (Neumonía NAC)</div>
         <div class="calc-desc">Estratificación de riesgo de mortalidad a 30 días en NAC.</div>
         <label class="calc-check"><input type="checkbox" id="curb-c" onchange="calcCURB()"> Confusión mental</label>
-        <label class="calc-check"><input type="checkbox" id="curb-u" onchange="calcCURB()"> Uremia (>19 mg/dL o Urea >50 mg/dL)</label>
+        <label class="calc-check"><input type="checkbox" id="curb-u" onchange="calcCURB()"> Uremia (BUN >19 mg/dL o Urea >42 mg/dL)</label>
         <label class="calc-check"><input type="checkbox" id="curb-r" onchange="calcCURB()"> Frecuencia respiratoria ≥ 30/min</label>
         <label class="calc-check"><input type="checkbox" id="curb-b" onchange="calcCURB()"> PAS <90 mmHg o PAD ≤60 mmHg</label>
         <label class="calc-check"><input type="checkbox" id="curb-65" onchange="calcCURB()"> Edad ≥ 65 años</label>
-        <div class="calc-result" id="res-curb">Puntaje: 0 — Manejo ambulatorio bajo riesgo.</div>
+        <div class="calc-result" role="status" aria-live="polite" id="res-curb">Puntaje: 0 — Manejo ambulatorio bajo riesgo.</div>
       </div>
 
       <!-- GLASGOW -->
-      <div class="calc-card">
+      <div class="calc-card" id="calc-gcs">
         <div class="calc-title">Escala de Glasgow</div>
         <div class="calc-desc">Evaluación del nivel de conciencia en TEC / Coma.</div>
         <div class="calc-field">
@@ -626,11 +578,11 @@
             <option value="1">1 - Sin respuesta</option>
           </select>
         </div>
-        <div class="calc-result" id="res-gcs">Puntaje: 15/15 — Normal.</div>
+        <div class="calc-result" role="status" aria-live="polite" id="res-gcs">Puntaje: 15/15 — Normal.</div>
       </div>
 
       <!-- WELLS TEP -->
-      <div class="calc-card">
+      <div class="calc-card" id="calc-wells">
         <div class="calc-title">Score de Wells para TEP</div>
         <div class="calc-desc">Probabilidad clínica de Tromboembolismo Pulmonar.</div>
         <label class="calc-check"><input type="checkbox" id="wells-tvp" onchange="calcWells()"> Signos clínicos de TVP (+3)</label>
@@ -640,26 +592,26 @@
         <label class="calc-check"><input type="checkbox" id="wells-antec" onchange="calcWells()"> Antecedente de TVP/TEP (+1.5)</label>
         <label class="calc-check"><input type="checkbox" id="wells-hemopt" onchange="calcWells()"> Hemoptisis (+1)</label>
         <label class="calc-check"><input type="checkbox" id="wells-ca" onchange="calcWells()"> Cáncer activo (+1)</label>
-        <div class="calc-result" id="res-wells">Puntaje: 0 — Probabilidad Baja (Solicitar Dímero D).</div>
+        <div class="calc-result" role="status" aria-live="polite" id="res-wells">Puntaje: 0 — Probabilidad Baja (Solicitar Dímero D).</div>
       </div>
 
       <!-- CHA2DS2-VASc -->
-      <div class="calc-card">
+      <div class="calc-card" id="calc-cha">
         <div class="calc-title">CHA₂DS₂-VASc (Riesgo en FA)</div>
         <div class="calc-desc">Evaluación del riesgo de ACV en Fibrilación Auricular.</div>
         <label class="calc-check"><input type="checkbox" id="cha-c" onchange="calcCHA()"> Insuficiencia Cardíaca (+1)</label>
         <label class="calc-check"><input type="checkbox" id="cha-h" onchange="calcCHA()"> Hipertensión arterial (+1)</label>
-        <label class="calc-check"><input type="checkbox" id="cha-a2" onchange="calcCHA()"> Edad ≥ 75 años (+2)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-a2" onchange="calcCHA(this)"> Edad ≥ 75 años (+2)</label>
         <label class="calc-check"><input type="checkbox" id="cha-d" onchange="calcCHA()"> Diabetes Mellitus (+1)</label>
         <label class="calc-check"><input type="checkbox" id="cha-s2" onchange="calcCHA()"> ACV / AIT / Tromboembolismo previo (+2)</label>
         <label class="calc-check"><input type="checkbox" id="cha-v" onchange="calcCHA()"> Enfermedad vascular previa (IAM, EAP) (+1)</label>
-        <label class="calc-check"><input type="checkbox" id="cha-a" onchange="calcCHA()"> Edad 65 - 74 años (+1)</label>
+        <label class="calc-check"><input type="checkbox" id="cha-a" onchange="calcCHA(this)"> Edad 65 - 74 años (+1)</label>
         <label class="calc-check"><input type="checkbox" id="cha-sc" onchange="calcCHA()"> Sexo femenino (+1)</label>
-        <div class="calc-result" id="res-cha">Puntaje: 0 — Riesgo bajo (No requiere anticoagulación).</div>
+        <div class="calc-result" role="status" aria-live="polite" id="res-cha">Puntaje: 0 — Riesgo bajo (No requiere anticoagulación).</div>
       </div>
 
       <!-- COCKCROFT-GAULT -->
-      <div class="calc-card">
+      <div class="calc-card" id="calc-cg">
         <div class="calc-title">Clearance de Creatinina</div>
         <div class="calc-desc">Fórmula de Cockcroft-Gault para estimación de TFG.</div>
         <div class="calc-field">
@@ -681,7 +633,7 @@
             <option value="0.85">Femenino</option>
           </select>
         </div>
-        <div class="calc-result" id="res-cg">ClCr estimado: 77.8 mL/min (Función renal conservada).</div>
+        <div class="calc-result" role="status" aria-live="polite" id="res-cg">ClCr estimado: 77.8 mL/min (Función renal conservada).</div>
       </div>
 
     </div>
@@ -689,11 +641,11 @@
 
 </main>
 
-<a href="https://cafecito.app/medpedia" class="btn-cafecito" target="_blank">☕ Invitame un Cafecito</a>
+<a href="https://cafecito.app/medpedia" class="btn-cafecito" target="_blank" rel="noopener">☕ Invitame un Cafecito</a>
 
 <footer>
   <p>Medpedia · Fuente de información médica para estudiantes de medicina argentina</p>
-  <p>Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank">Ministerio de Salud de la Nación</a> · GINA · GOLD · Consensos de sociedades médicas argentinas</p>
+  <p>Basado en guías oficiales del <a href="https://www.argentina.gob.ar/salud" target="_blank" rel="noopener">Ministerio de Salud de la Nación</a> · GINA · GOLD · Consensos de sociedades médicas argentinas</p>
   <p>El contenido es de carácter educativo y no reemplaza la consulta médica profesional.</p>
 </footer>
 
@@ -821,7 +773,7 @@
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('medpedia-theme', newTheme);
+    try { localStorage.setItem('medpedia-theme', newTheme); } catch (e) {}
     updateThemeUI(newTheme);
   }
 
@@ -837,22 +789,50 @@
     }
   }
 
-  // View Switcher
-  function switchView(viewId, btn) {
-    document.querySelectorAll('.main-view').forEach(v => v.style.display = 'none');
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(viewId).style.display = 'block';
-    if(!btn) btn = document.querySelector(`.tab-btn[onclick*="'${viewId}'"]`);
-    if(btn) btn.classList.add('active');
+  const esc = t => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+  // Vistas: Artículos / Vademécum / Calculadoras
+  const VIEW_HASH = { 'articulos-view': '', 'vademecum-view': '#vademecum', 'calculadoras-view': '#calculadoras' };
+  function switchView(viewId, fromUser) {
+    document.querySelectorAll('.main-view').forEach(v => v.style.display = v.id === viewId ? 'block' : 'none');
+    document.querySelectorAll('[data-view]').forEach(b => {
+      const on = b.dataset.view === viewId;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on);
+    });
+    try { history.replaceState(null, '', location.pathname + location.search + VIEW_HASH[viewId]); } catch (e) {}
+    if (fromUser) {
+      const m = document.querySelector('main');
+      if (window.scrollY > m.offsetTop - 80) m.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
-  // Contadores por especialidad
-  const espIds = { cardio:'n-cardio', neuro:'n-neuro', psiquiat:'n-psiquiat', neumo:'n-neumo', endo:'n-endo', infecto:'n-infecto', urgencia:'n-urgencia', gastro:'n-gastro', nefro:'n-nefro', hemato:'n-hemato', reuma:'n-reuma', gineco:'n-gineco', ciru:'n-ciru', pediatria:'n-pediatria' };
+  // Especialidades (una sola fuente para tarjetas y chips)
+  const ESPS = [
+    ['cardio','Cdlg','Cardiología','Cardiología'], ['neuro','Neur','Neurología','Neurología'],
+    ['psiquiat','Psiq','Psiquiatría','Psiquiatría'], ['neumo','Nmo','Neumonología','Neumonología'],
+    ['endo','Endo','Endocrinología','Endocrinología'], ['infecto','Inf','Infectología','Infectología'],
+    ['urgencia','Urg','Urgencias','Urgencias'], ['gastro','Gstr','Gastroenterología','Gastro'],
+    ['nefro','Nfr','Nefrología','Nefrología'], ['hemato','Hmt','Hematología / Onco','Hemato/Onco'],
+    ['reuma','Rum','Reumatología','Reumatología'], ['gineco','Gin','Obstetricia / Gineco','Obst/Gineco'],
+    ['ciru','Cir','Cirugía','Cirugía'], ['pediatria','Ped','Pediatría','Pediatría']
+  ];
   const counts = {};
   articulos.forEach(a => { counts[a.esp] = (counts[a.esp] || 0) + 1; });
-  Object.keys(espIds).forEach(e => {
-    const el = document.getElementById(espIds[e]);
-    if (el) el.textContent = (counts[e] || 0) + ' artículos';
+  document.getElementById('bento-grid').innerHTML = ESPS.map(([k, ab, n]) =>
+    `<button type="button" class="bento-card" data-esp="${k}"><span class="bento-icon"><i class="bento-dot tag-${k}"></i>${ab}</span><span class="bento-nombre">${n}</span><span class="bento-n">${counts[k] || 0} artículos</span></button>`).join('');
+  document.getElementById('art-chips').innerHTML =
+    `<button type="button" class="chip activo" data-esp="all">Todos (${articulos.length})</button>` +
+    ESPS.map(([k, , , c]) => `<button type="button" class="chip" data-esp="${k}">${c}</button>`).join('');
+
+  document.addEventListener('click', e => {
+    const v = e.target.closest('[data-view]');
+    if (v) { e.preventDefault(); switchView(v.dataset.view, true); return; }
+    const b = e.target.closest('.bento-card, #art-chips .chip');
+    if (!b) return;
+    const bento = b.classList.contains('bento-card');
+    filtrar(bento && b.dataset.esp === espActual ? 'all' : b.dataset.esp);
+    if (bento) document.getElementById('articulos').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   function renderArticulos(lista) {
@@ -874,24 +854,20 @@
     document.getElementById('art-count').textContent = lista.length + ' artículos';
   }
 
-  const labels = { all:'Todos los artículos', cardio:'Cardiología', neuro:'Neurología', psiquiat:'Psiquiatría', neumo:'Neumonología', endo:'Endocrinología', infecto:'Infectología', urgencia:'Urgencias', gastro:'Gastroenterología', nefro:'Nefrología', hemato:'Hematología / Oncología', reuma:'Reumatología', gineco:'Obstetricia / Ginecología', ciru:'Cirugía', pediatria:'Pediatría' };
+  const labels = { all: 'Todos los artículos' };
+  ESPS.forEach(e => { labels[e[0]] = e[2]; });
+  let espActual = 'all';
 
-  function filtrar(esp, el) {
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('activo'));
-    document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('activo'));
-    if (el) {
-      el.classList.add('activo');
-      if (el.classList.contains('bento-card')) {
-        document.querySelectorAll('.chip').forEach(c => { if (c.onclick && c.onclick.toString().includes(`'${esp}'`)) c.classList.add('activo'); });
-        document.getElementById('articulos').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        document.querySelectorAll('.bento-card').forEach(c => { if (c.dataset.esp === esp) c.classList.add('activo'); });
-      }
-    }
+  function filtrar(esp) {
+    espActual = esp;
+    document.querySelectorAll('#art-chips .chip, .bento-card').forEach(c => c.classList.toggle('activo', c.dataset.esp === esp));
     document.getElementById('section-label').textContent = labels[esp] || 'Artículos';
-    const filtrados = esp === 'all' ? articulos : articulos.filter(a => a.esp === esp);
-    renderArticulos(filtrados);
+    renderArticulos(esp === 'all' ? articulos : articulos.filter(a => a.esp === esp));
   }
+
+  // Si vademecum.js no carga, el resto del sitio sigue funcionando
+  if (typeof vademecum === 'undefined') window.vademecum = [];
+  if (typeof VADE_CATS === 'undefined') window.VADE_CATS = {};
 
   // Vademecum Render & Filter
   const norm = t => (t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -921,6 +897,7 @@
     lista.forEach(v => {
       const card = document.createElement('details');
       card.className = 'vade-card';
+      card.dataset.nombre = v.nombre;
       card.innerHTML = `
         <summary>
           <div>
@@ -944,20 +921,22 @@
     document.getElementById('vade-count').textContent = lista.length + ' fármacos';
   }
 
-  function aplicarVade() {
+  function aplicarVade(exact) {
     const q = norm(document.getElementById('vade-search').value.trim());
     const lista = vademecum.filter(v => (vadeCat === 'all' || v.cat === vadeCat) && (!q || v._idx.includes(q)));
     renderVademecum(lista);
-    if (q && lista.length === 1) document.querySelector('#vademecum-grid details').open = true;
+    const ex = exact ? [...document.querySelectorAll('#vademecum-grid details')].find(d => d.dataset.nombre === exact)
+      : (q && lista.length === 1 ? document.querySelector('#vademecum-grid details') : null);
+    if (ex) { ex.open = true; if (exact) ex.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   }
 
-  function filtrarVade(cat) {
+  function filtrarVade(cat, exact) {
     vadeCat = cat;
     document.querySelectorAll('#vade-chips .chip').forEach(c => c.classList.toggle('activo', c.dataset.cat === cat));
-    aplicarVade();
+    aplicarVade(exact);
   }
 
-  document.getElementById('vade-search').addEventListener('input', aplicarVade);
+  document.getElementById('vade-search').addEventListener('input', () => aplicarVade());
 
   // CALCULADORAS LOGIC
   function calcCURB() {
@@ -1004,43 +983,51 @@
     document.getElementById('res-wells').textContent = res;
   }
 
-  function calcCHA() {
+  function calcCHA(src) {
+    const g = id => document.getElementById(id);
+    // Edad ≥75 y 65-74 son excluyentes
+    if (src && src.checked) {
+      if (src.id === 'cha-a2') g('cha-a').checked = false;
+      if (src.id === 'cha-a') g('cha-a2').checked = false;
+    }
+    const w = { 'cha-c': 1, 'cha-h': 1, 'cha-a2': 2, 'cha-d': 1, 'cha-s2': 2, 'cha-v': 1, 'cha-a': 1 };
     let pts = 0;
-    if(document.getElementById('cha-c').checked) pts += 1;
-    if(document.getElementById('cha-h').checked) pts += 1;
-    if(document.getElementById('cha-a2').checked) pts += 2;
-    if(document.getElementById('cha-d').checked) pts += 1;
-    if(document.getElementById('cha-s2').checked) pts += 2;
-    if(document.getElementById('cha-v').checked) pts += 1;
-    if(document.getElementById('cha-a').checked) pts += 1;
-    if(document.getElementById('cha-sc').checked) pts += 1;
-
-    let res = `Puntaje: ${pts} — `;
-    if(pts === 0) res += "Riesgo bajo (Sin indicación de anticoagulación).";
-    else if(pts === 1) res += "Riesgo intermedio (Considerar anticoagulación según riesgo/beneficio).";
-    else res += "Riesgo elevado (Indicación formal de anticoagulación oral: ACOD / Warfarina).";
-    document.getElementById('res-cha').textContent = res;
+    for (const id in w) if (g(id).checked) pts += w[id];
+    const fem = g('cha-sc').checked ? 1 : 0;
+    let res = `Puntaje: ${pts + fem} — `;
+    // El sexo femenino solo no justifica anticoagular (ESC 2020: hombres ≥2 / mujeres ≥3)
+    if (pts === 0) res += fem ? 'Riesgo bajo (el sexo femenino aislado no indica anticoagulación).' : 'Riesgo bajo (Sin indicación de anticoagulación).';
+    else if (pts === 1) res += 'Riesgo intermedio (Considerar anticoagulación según riesgo/beneficio).';
+    else res += 'Riesgo elevado (Indicación formal de anticoagulación oral: ACOD / Warfarina).';
+    g('res-cha').textContent = res;
   }
 
   function calcCG() {
-    const edad = parseFloat(document.getElementById('cg-edad').value) || 0;
-    const peso = parseFloat(document.getElementById('cg-peso').value) || 0;
-    const creat = parseFloat(document.getElementById('cg-creat').value) || 1;
+    const edad = parseFloat(document.getElementById('cg-edad').value);
+    const peso = parseFloat(document.getElementById('cg-peso').value);
+    const creat = parseFloat(document.getElementById('cg-creat').value);
     const sexo = parseFloat(document.getElementById('cg-sexo').value);
-
-    if(edad <= 0 || peso <= 0 || creat <= 0) return;
+    const out = document.getElementById('res-cg');
+    if (!(edad > 0 && peso > 0 && creat > 0)) { out.textContent = 'Completá edad, peso y creatinina para calcular.'; return; }
 
     const clcr = (((140 - edad) * peso) / (72 * creat)) * sexo;
     let res = `ClCr estimado: ${clcr.toFixed(1)} mL/min — `;
-    if(clcr >= 90) res += "Función renal conservada (G1).";
-    else if(clcr >= 60) res += "Disminución leve (G2).";
-    else if(clcr >= 30) res += "Disminución moderada a severa (G3-G4). Requiere ajuste de dosis.";
-    else res += "Falla renal severa (G5). Precaución extrema con fármacos de excreción renal.";
-
-    document.getElementById('res-cg').textContent = res;
+    if (clcr >= 90) res += 'G1: función renal conservada.';
+    else if (clcr >= 60) res += 'G2: disminución leve.';
+    else if (clcr >= 30) res += 'G3: disminución moderada. Revisar ajuste de dosis.';
+    else if (clcr >= 15) res += 'G4: disminución severa. Requiere ajuste de dosis.';
+    else res += 'G5: falla renal. Precaución extrema con fármacos de excreción renal.';
+    out.textContent = res;
   }
 
-  // Búsqueda Global (Artículos + Vademécum)
+  // Búsqueda Global (Artículos + Vademécum + Calculadoras)
+  const calculadoras = [
+    { titulo: 'CURB-65 (Neumonía NAC)', id: 'calc-curb', kw: 'curb65 neumonia nac mortalidad' },
+    { titulo: 'Escala de Glasgow', id: 'calc-gcs', kw: 'glasgow gcs tec coma conciencia' },
+    { titulo: 'Score de Wells para TEP', id: 'calc-wells', kw: 'wells tep tromboembolismo pulmonar' },
+    { titulo: 'CHA₂DS₂-VASc', id: 'calc-cha', kw: 'chads vasc chadsvasc fibrilacion auricular acv anticoagulacion' },
+    { titulo: 'Clearance de Creatinina (Cockcroft-Gault)', id: 'calc-cg', kw: 'cockcroft gault clearance filtrado glomerular tfg renal' }
+  ];
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
   let selectedIndex = -1;
@@ -1075,10 +1062,13 @@
 
     // Coincidencias en vademécum (nombre, marca, clase)
     const matchVade = vademecum.filter(v =>
-      norm(v.nombre).includes(nq) || norm(v.marcas).includes(nq) || norm(v.clase).includes(nq)
+      v._idx.includes(nq)
     ).map(v => ({ titulo: `💊 ${v.nombre}`, url: '#vademecum-view', tag: 'Vademécum', clase: 'tag-endo', vade: v.nombre }));
 
-    const matches = [...matchArt.slice(0, 6), ...matchVade.slice(0, 4)];
+    const matchCalc = calculadoras.filter(c => norm(c.titulo + ' ' + c.kw).includes(nq))
+      .map(c => ({ titulo: `🧮 ${c.titulo}`, url: '#calculadoras', tag: 'Calculadora', clase: 'tag-neumo', calc: c.id }));
+
+    const matches = [...matchCalc, ...matchArt.slice(0, 6), ...matchVade.slice(0, 4)];
     if (matches.length < 8) {
       const extra = [...matchArt.slice(6), ...matchVade.slice(4)].slice(0, 8 - matches.length);
       matches.push(...extra);
@@ -1087,7 +1077,7 @@
     if (!matches.length) {
       searchResults.innerHTML = '<div class="search-no-results">No se encontraron resultados para tu búsqueda</div>';
     } else {
-      searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"${a.vade ? ` data-vade="${a.vade}"` : ''}><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
+      searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"${a.vade ? ` data-vade="${esc(a.vade)}"` : ''}${a.calc ? ` data-calc="${a.calc}"` : ''}><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
     }
 
     searchResults.style.display = 'block';
@@ -1107,10 +1097,8 @@
       const prevIndex = selectedIndex > 0 ? selectedIndex - 1 : items.length - 1;
       setSelectedIndex(prevIndex, items);
     } else if (e.key === 'Enter') {
-      if (selectedIndex >= 0 && items[selectedIndex]) {
-        e.preventDefault();
-        items[selectedIndex].click();
-      }
+      e.preventDefault();
+      (items[selectedIndex] || items[0]).click();
     } else if (e.key === 'Escape') {
       searchResults.style.display = 'none';
       searchInput.setAttribute('aria-expanded', 'false');
@@ -1118,15 +1106,19 @@
   });
 
   searchResults.addEventListener('click', e => {
-    const item = e.target.closest('.search-result-item[data-vade]');
+    const item = e.target.closest('.search-result-item[data-vade], .search-result-item[data-calc]');
     if (!item) return;
     e.preventDefault();
-    switchView('vademecum-view');
-    document.getElementById('vade-search').value = item.dataset.vade;
-    filtrarVade('all');
     searchResults.style.display = 'none';
     searchInput.setAttribute('aria-expanded', 'false');
-    document.getElementById('vademecum-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (item.dataset.calc) {
+      switchView('calculadoras-view');
+      document.getElementById(item.dataset.calc).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      switchView('vademecum-view');
+      document.getElementById('vade-search').value = item.dataset.vade;
+      filtrarVade('all', item.dataset.vade);
+    }
   });
 
   document.addEventListener('click', e => { 
@@ -1137,7 +1129,7 @@
   });
 
   // Init Theme
-  const savedTheme = localStorage.getItem('medpedia-theme') || 'light';
+  const savedTheme = document.documentElement.getAttribute('data-theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeUI(savedTheme);
 
@@ -1145,6 +1137,8 @@
   renderArticulos(articulos);
   buildVadeChips();
   renderVademecum(vademecum);
+  calcCURB(); calcGCS(); calcWells(); calcCHA(); calcCG();
+  { const h = location.hash.slice(1); if (h === 'vademecum' || h === 'calculadoras') switchView(h + '-view'); }
 </script>
 </body>
 </html>
