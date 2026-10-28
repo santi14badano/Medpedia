@@ -458,6 +458,9 @@
       .view-tabs { flex-wrap: wrap; }
       .btn-cafecito { padding: 10px 14px; bottom: 16px; right: 16px; }
     }
+    .search-ext { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 12px; border-top: 1px solid var(--borde); background: var(--bg2); position: sticky; bottom: 0; }
+    .search-ext a { font-size: 13px; font-weight: 500; color: var(--verde-txt); text-decoration: none; padding: 6px 12px; border: 1px solid var(--borde); border-radius: 20px; background: var(--bg); }
+    .search-ext a:hover { border-color: var(--verde); }
   </style>
 </head>
 <body>
@@ -1080,6 +1083,8 @@
       searchResults.innerHTML = matches.map((a, i) => `<a href="${a.url}" class="search-result-item" role="option" data-idx="${i}"${a.vade ? ` data-vade="${esc(a.vade)}"` : ''}${a.calc ? ` data-calc="${a.calc}"` : ''}><span class="result-tag ${a.clase}">${a.tag}</span><span class="result-title">${a.titulo}</span></a>`).join('');
     }
 
+    const qe = encodeURIComponent(this.value.trim());
+    searchResults.insertAdjacentHTML('beforeend', `<div class="search-ext"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=${qe}" target="_blank" rel="noopener">🔬 Buscar en PubMed</a></div>`);
     searchResults.style.display = 'block';
     searchInput.setAttribute('aria-expanded', 'true');
   });
